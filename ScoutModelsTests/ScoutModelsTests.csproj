@@ -45,7 +45,7 @@
     <PackageReference Include="Ninject.Extensions.Logging.Log4net" Version="3.3.0" />
     <PackageReference Include="NUnit" Version="3.13.1" />
     <PackageReference Include="NUnit.ConsoleRunner" Version="3.12.0" />
-    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="6.0.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
     <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
   </ItemGroup>
   <ItemGroup>
