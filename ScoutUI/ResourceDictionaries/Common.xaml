@@ -1,0 +1,17 @@
+<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/ConverterResources.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Misc.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/ImageResources.xaml" />
+
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/Canvas.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/Geometry.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/SolidColorBrushes.xaml" />
+		
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/StoryBoards.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+</ResourceDictionary>

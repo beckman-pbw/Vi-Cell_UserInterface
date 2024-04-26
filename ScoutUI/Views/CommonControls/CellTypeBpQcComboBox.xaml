@@ -1,0 +1,76 @@
+﻿<!-- ReSharper disable once InconsistentNaming -->
+<UserControl x:Class="ScoutUI.Views.ucCommon.CellTypeBpQcComboBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ucC="clr-namespace:ScoutUI.Views.ucCommon"
+             x:Name="ucComboBox" mc:Ignorable="d"
+             Focusable="False">
+    <Menu Name="CellTypeMenu" Background="Transparent"
+                  Width="Auto" Height="{Binding ActualHeight, ElementName=ucComboBox}"
+                  FocusManager.IsFocusScope="False">
+        <MenuItem Name="CellTypeMenuItem" Uid="textTemplateCellType"
+                      Height="{Binding ActualHeight, ElementName=ucComboBox}"
+                      ItemsSource="{Binding Path=CellTypeBpQcCollection, Mode=TwoWay, ElementName=ucComboBox}"
+                      Background="Transparent"
+                      SubmenuOpened="CellTypeMenuItem_SubmenuOpened"
+                      TabIndex="{Binding Path=TabIndex,
+                                RelativeSource={RelativeSource
+                                                AncestorType={x:Type ucC:CellTypeBpQcComboBox}}}">
+            <MenuItem.Style>
+                <Style TargetType="MenuItem">
+                    <Setter Property="Header" Value="{Binding Header}" />
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Normal">
+                            <Setter Property="Template" Value="{StaticResource NormalMenuItemControlTemplate}" />
+                            <Setter Property="ItemContainerStyle" Value="{StaticResource NormalMenuItemStyle}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Default">
+                            <Setter Property="Template" Value="{StaticResource DefaultMenuItemControlTemplate}" />
+                            <Setter Property="ItemContainerStyle" Value="{StaticResource DefaultMenuItemStyle}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Edit">
+                            <Setter Property="Template" Value="{StaticResource EditMenuItemControlTemplate}" />
+                            <Setter Property="ItemContainerStyle" Value="{StaticResource EditMenuItemStyle}" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Setting">
+                            <Setter Property="Template" Value="{StaticResource NormalMenuItemControlTemplate}" />
+                            <Setter Property="ItemContainerStyle" Value="{StaticResource NormalMenuItemStyle}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </MenuItem.Style>
+            <MenuItem.Header>
+                <ContentControl Content="{Binding}" Focusable="False" IsTabStop="False">
+                    <ContentControl.Style>
+                        <Style TargetType="ContentControl">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Normal">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource NormalDataTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Default">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource DefaultDataTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Edit">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource EditDataTemplate}" />
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding ComboStyleType, ElementName=ucComboBox}" Value="Setting">
+                                    <Setter Property="ContentTemplate" Value="{StaticResource SettingDataTemplate}" />
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </ContentControl.Style>
+                </ContentControl>
+            </MenuItem.Header>
+
+            <MenuItem.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding CellTypeQualityControlChildItems, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock x:Name="TxtTemplate" Text="{Binding Path=Name, Converter={StaticResource CellTypeToTextConverter}}" FontSize="16" VerticalAlignment="Center" Margin="4"/>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </MenuItem.ItemTemplate>
+        </MenuItem>
+    </Menu>
+</UserControl>

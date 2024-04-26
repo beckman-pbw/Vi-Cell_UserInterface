@@ -1,0 +1,300 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.DustReferenceDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        Title="DustReferenceDialog" 
+        mc:Ignorable="d" Height="800" Width="1280" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}" >
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewMouseDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseLeftButtonDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseLeftButtonDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseEnter">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseLeftButtonDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseLeftButtonDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="PreviewKeyDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseLeftButtonDown" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Window.Resources>
+        <Style x:Key="checkBoxProgress" TargetType="CheckBox">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="CheckBox">
+                        <Grid Name="TCheck">
+                            <Grid Name="indicator">
+                                <controls:LoadingIndicator Style="{StaticResource ProgressIndicatorThreeDotsStyle}" Foreground="{DynamicResource GenericVeryDark}" 
+                                                           Height="{TemplateBinding Height}" Width="{TemplateBinding Width}" />
+
+                            </Grid>
+                            <Grid Name="check">
+                                <Path Data="M153.70183,113.41382 L145.00312,119.47835 C145.00312,119.47835 143.33657,121.37169 145.00317,123.08012 146.66977,124.78855 178.62468,152.37719 178.62468,152.37719 178.62468,152.37719 180.49968,154.1273 184.04135,152.00218 187.58302,149.87706 249.24883,96.749253 249.24883,96.749253 249.24883,96.749253 251.66547,95.207517 248.87383,92.457394 246.08218,89.707272 241.37437,87.031432 241.37437,87.031432 241.37437,87.031432 239.20663,86.709551 237.66498,87.834589 L182.93839,133.43913 C182.93839,133.43913 181.40939,135.27074 178.96374,133.1774 L156.3642,113.87559 C156.3642,113.87559 155.15014,112.97564 153.70183,113.41382 z"
+                                    HorizontalAlignment="Center" Height="{TemplateBinding Height}" Stretch="Fill" VerticalAlignment="Center" Width="40" Fill="Green" />
+                            </Grid>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsChecked" Value="True">
+                                <Setter TargetName="indicator" Property="Visibility" Value="Collapsed" />
+                                <Setter TargetName="check" Property="Visibility" Value="Visible" />
+                            </Trigger>
+                            <Trigger Property="IsChecked" Value="False">
+                                <Setter TargetName="indicator" Property="Visibility" Value="Visible" />
+                                <Setter TargetName="check" Property="Visibility" Value="Collapsed" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+
+        </Style>
+    </Window.Resources>
+    <Border BorderBrush="{StaticResource Level1Background}" BorderThickness="5" Width="963" Height="670">
+        <Grid Background="{StaticResource Main_Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            <Grid Grid.Row="2" HorizontalAlignment="Stretch" Visibility="{Binding IsStepOneEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="380" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="25" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Name="lblDustRefStep1Description" Margin="0,6,0,0" HorizontalAlignment="Left" Width="Auto" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1"
+                           Text="{Binding ResourceKeys[LID_MSGBOX_DustReference], Source={StaticResource ScoutUILanguageResource}}" Style="{StaticResource SetFocusTextStyle}" />
+
+                <Button Name="btnStartDust" Grid.Row="0" Grid.Column="2" Margin="2,3,0,0" Width="20" Height="20" HorizontalAlignment="Left" Style="{StaticResource RoundButtonDashBoardStyle}"
+                        Focusable="False" IsTabStop="False">
+                    <Image Source="{StaticResource NextSource}" />
+                </Button>
+                
+                <Grid Grid.Column="0" Grid.Row="5" HorizontalAlignment="Right" Width="930" Grid.ColumnSpan="4">
+                    <Button Name="btnStartDustRef"  HorizontalAlignment="Right" VerticalAlignment="Bottom" Width="40" Height="40" Margin="0,0,15,0"
+                            Command="{Binding StartDusReferenceCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Image Source="{StaticResource NextSource}" />
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsStepTwoEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="420" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="480" />
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="1" Name="lblDustRefStep2Description" HorizontalAlignment="Left" VerticalAlignment="Top"
+                           Text="{Binding ResourceKeys[LID_FrameLabel_DustRemover], Source={StaticResource ScoutUILanguageResource}}" Style="{StaticResource SetFocusTextStyle}" />
+                
+                <Grid Grid.Row="1" Grid.Column="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <RadioButton IsChecked="{Binding IsFinalImgEnable, Mode=TwoWay}" Grid.Column="1" Style="{StaticResource SelectionTabStyle}" x:Name="btnFinalImage"
+                                 Margin="5,0" IsEnabled="{Binding IsImageActive, Mode=TwoWay}" Command="{Binding ImageCommand}" CommandParameter="Final">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+
+                            <Image Source="{StaticResource CameraSource}" Grid.Column="3" />
+                            <TextBlock Grid.Column="1" Text="{Binding ResourceKeys[LID_Label_FinalImage], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Style="{StaticResource TabTextBlockStyle}" />
+                        </Grid>
+                    </RadioButton>
+
+                    <RadioButton IsChecked="{Binding IsImgActive, Mode=TwoWay}" Style="{StaticResource SelectionTabStyle}" Grid.Column="2" x:Name="btnImage" Margin="5,0"
+                                 IsEnabled="{Binding IsImageActive, Mode=TwoWay}" Command="{Binding ImageCommand}" CommandParameter="ImgList">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="0" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            
+                            <Image Source="{StaticResource ImagePlusSource}" Grid.Column="3" />
+                            <TextBlock Grid.Column="1" Text="{Binding ResourceKeys[LID_Label_Image], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Style="{StaticResource TabTextBlockStyle}" />
+                        </Grid>
+                    </RadioButton>
+
+                </Grid>
+
+                <Border Grid.Column="1" Height="410" Grid.Row="2" CornerRadius="8">
+                    <Border.Background>
+                        <SolidColorBrush Color="{Binding Color, Source={StaticResource Level2Background}}" />
+                    </Border.Background>
+                </Border>
+
+                <Grid x:Name="BPBarGraph" Grid.Column="1" Grid.Row="2" Margin="0" Height="410" Width="450" 
+                      Visibility="{Binding IsImgActive,Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                    <ucCommon:ImageView IsHorizontalPaginationVisible="True" DataContext="{Binding}" MinHeight="400" MinWidth="430" IsImageTypeAvailable="False" 
+                                        IsPaginationButtonEnable="True"
+                                        ExpandCommand="{Binding ImageExpandCommand}"
+                                        SelectedImageType="{Binding SelectedImageType, Mode=TwoWay}"
+                                        AdjustState="{Binding AdjustState, Mode=TwoWay}"
+                                        ImageIndexList="{Binding ImageIndexList}"
+                                        ShowSlideShowButtons="{Binding ShowSlideShowButtons, Mode=TwoWay}"
+                                        SelectedImageIndex="{Binding SelectedImageIndex, Mode=TwoWay}"
+                                        ImageList="{Binding ImageList, Mode=OneWay}"
+                                        SelectedImage="{Binding SampleImageDomain, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        SelectedRightClickImageType="{Binding ImageViewType, Mode=TwoWay}"/>
+                </Grid>
+
+                <Grid x:Name="BPImage" Grid.Column="1" Grid.Row="2" Margin="0" Height="410" Visibility="{Binding IsFinalImgEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <ucCommon:ImageView IsHorizontalPaginationVisible="False" IsLiveImageOn="False" MinHeight="400" MinWidth="430"
+                                        ExpandCommand="{Binding FinalImageExpandCommand}" IsImageTypeAvailable="False" 
+                                        IsPaginationButtonEnable="True" 
+                                        ShowSlideShowButtons="{Binding ShowSlideShowButtons, Mode=TwoWay}"
+                                        SelectedImageService="{Binding FinalImage, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                        SelectedRightClickImageType="{Binding FinalImageViewType, Mode=TwoWay}"/>
+                </Grid>
+
+                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="GridNoImageBrush" Grid.Column="1" Grid.Row="2"
+                      Visibility="{Binding IsImageActive, Mode=TwoWay, Converter={StaticResource InverseVisibilityConverter}}">
+                    <Border Background="{StaticResource NoImageBrush}" Height="80" Width="80" />
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="2" Grid.ColumnSpan="2" Background="Transparent">
+                    <ListView ItemsSource="{Binding ProgressList}" Margin="10,10,0,0" VerticalAlignment="Top" Background="Transparent" Height="190" BorderBrush="Transparent">
+                        <ListView.ItemContainerStyle>
+                            <Style TargetType="ListViewItem">
+                                <Setter Property="Focusable" Value="false" />
+                            </Style>
+                        </ListView.ItemContainerStyle>
+
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="100" />
+                                        <ColumnDefinition Width="300" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <CheckBox Style="{StaticResource checkBoxProgress}" Grid.Column="0" IsEnabled="False" Height="20" Width="80" 
+                                              IsChecked="{Binding IsProgressComplete, Mode=TwoWay}"
+                                              Visibility="{Binding IsResponseAvailable, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}" />
+
+                                    <Label Style="{StaticResource SetFocusLabelStyle}" Grid.Column="1" HorizontalAlignment="Left" FontSize="18">
+                                        <TextBlock TextWrapping="WrapWithOverflow" Text="{Binding ProgressLabel}"/>
+                                    </Label>
+
+                                </Grid>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
+
+                <Grid Grid.Column="3" Grid.Row="3" VerticalAlignment="Top">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="160" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Column="1" HorizontalAlignment="Right" Margin="0,0,10,0">
+                        <Button Width="40" Height="40" Command="{Binding AcceptCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                            <Image Source="{StaticResource TickSource}" />
+                        </Button>
+
+                        <Button Command="{Binding DeclineCommand}" Width="40" Height="40" 
+                                Style="{StaticResource RoundButtonDashBoardStyle}" >
+                            <Path x:Name="ExpandPath" Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="19" Height="19" Data="{StaticResource PathCloseIcon}" />
+                        </Button>
+                    </StackPanel>
+
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsStepThreeEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="5" />
+                    <RowDefinition Height="380" />
+                    <RowDefinition Height="80" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="40" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="25" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Name="lblSetFocusStep3Description" Margin="0,6,0,0" HorizontalAlignment="Left" Grid.Row="0" Grid.RowSpan="3" Grid.Column="1" 
+                           Text="{Binding ResourceKeys[LID_HELP_CompleteDust], Source={StaticResource ScoutUILanguageResource}}" Style="{StaticResource SetFocusTextStyle}" />
+
+                <Grid Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="33" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="602" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+
+                    <Button Name="btnOk" Grid.Column="5" Grid.Row="0" Grid.RowSpan="2" Margin="0,-15,0,0" Width="40" Height="40" 
+                            Command="{Binding AcceptCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Image Source="{StaticResource TickSource}" />
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+        </Grid>
+    </Border>
+</local:Dialog>

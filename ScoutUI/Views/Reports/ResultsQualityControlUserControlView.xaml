@@ -1,0 +1,160 @@
+<UserControl x:Class="ScoutUI.Views.Admin.Reports.ResultsQualityControlUserControlView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controlHelper="clr-namespace:ScoutUI.Common.Helper"
+             FontFamily="Segoe UI" Focusable="False" IsTabStop="False">
+    <Grid Focusable="False" KeyDown="GdOpenSample_OnKeyDown">
+        <Grid Focusable="False" Opacity="{Binding IsOpenFileEnable, Converter={StaticResource BooleanToOpacityConverter}, FallbackValue=0.5}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="0" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="50" />
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="0" Focusable="False">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <Grid Focusable="False">
+                    <TextBlock Foreground="{StaticResource Label_Foreground}" HorizontalAlignment="Left"
+                               Margin="10,10,0,0" FontWeight="Bold" FontSize="25"
+                               Text="{Binding ResourceKeys[LID_Label_QualityControlReport], Source={StaticResource ScoutUILanguageResource}}" />
+
+                    <StackPanel Background="Transparent" HorizontalAlignment="Right" ZIndex="201"
+                                VerticalAlignment="Top" Orientation="Horizontal" Margin="0,10,0,0">
+
+                        <Button Name="btnReportPrinter" HorizontalAlignment="Right"
+                                Command="{Binding OpenFolderCommand}" VerticalAlignment="Center"
+                                Style="{StaticResource RoundButtonDashBoardStyle}" Margin="6,0,10,0"
+                                IsTabStop="{Binding IsOpenFileEnable}">
+                            <Image Source="{StaticResource openSource}" Height="50" Width="50" />
+                        </Button>
+
+                        <Button Name="btnReportPrint" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                Command="{Binding PrintCommand}" IsEnabled="{Binding IsPrintButtonEnabled}"
+                                Style="{StaticResource RoundButtonDashBoardStyle}" Margin="6,0,10,0"
+                                IsTabStop="{Binding IsOpenFileEnable}"
+                                IsDefault="{Binding IsOpenFileEnable}">
+                            <Rectangle Width="31" Height="32" Margin="-2,0,0,0"  Fill="{StaticResource PdfIconBrush}" />
+                        </Button>
+
+                    </StackPanel>
+                </Grid>
+
+                <StackPanel Grid.Row="1" Orientation="Vertical" Height="70">
+                    <Label Content="{Binding ResourceKeys[LID_MSGBOX_EnterQualityControlName], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource ReportCommonLabelStyle}" Margin="6,-10,15,0" />
+                    <TextBox HorizontalAlignment="Left" FontSize="16" IsReadOnly="True" IsReadOnlyCaretVisible="True" 
+                             Focusable="False" Text="{Binding SelectedQualityControl.QcName,Mode=TwoWay}" IsEnabled="False"
+                             Style="{StaticResource ResultTextBoxStyle}" Width="250" Height="40" Margin="6,0,0,0" BorderThickness="0" />
+                </StackPanel>
+
+            </Grid>
+
+            <Rectangle Grid.Row="1" Style="{StaticResource ReportRectangleStyle}" Margin="0,18,0,0" />
+
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Name="lblPrintTitle"
+                       Content="{Binding ResourceKeys[LID_Label_PrintTitle], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource ReportCommonLabelStyle}" Margin="10,0,5,0" />
+
+                <TextBox Grid.Column="1" Style="{StaticResource ResultTextBoxStyle}" MaxLength="30"
+                         Text="{Binding PrintTitle, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         HorizontalAlignment="Left" controlHelper:ControlValidationHelper.TrimText="True"
+                         BorderThickness="0" Height="40" Width="300" IsTabStop="{Binding IsOpenFileEnable}"/>
+            </Grid>
+
+            <Grid Grid.Row="5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="120" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Grid.Column="0" Name="lblComments" Style="{StaticResource ReportCommonLabelStyle}" Margin="10,0,5,0" 
+                       Content="{Binding ResourceKeys[LID_Label_Comments], Source={StaticResource ScoutUILanguageResource}}" />
+
+                <TextBox Grid.Column="1" Style="{StaticResource ResultTextBoxStyle}" HorizontalAlignment="Left"
+                         Text="{Binding Comments, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                         controlHelper:ControlValidationHelper.TrimText="True" Height="40" Width="700" 
+                         IsTabStop="{Binding IsOpenFileEnable}"/>
+            </Grid>
+        </Grid>
+
+        <Grid Name="gdOpenSample" HorizontalAlignment="Center" VerticalAlignment="Center"
+              Visibility="{Binding IsOpenFileEnable, Converter={StaticResource InverseVisibilityConverter},FallbackValue=Visible}">
+
+            <Border BorderBrush="{StaticResource Border_Dark}" BorderThickness="3">
+                <Grid Background="{StaticResource Main_Background}" Height="Auto" Width="Auto">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="10" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Height="40" Grid.Row="0" Background="{StaticResource Level1Background}">
+                        <Label Content="{Binding ResourceKeys[LID_POPUPHeader_OpenQc], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource PopLabelHeader}" />
+
+                        <Button Command="{Binding CloseSelectSampleCommand}" Style="{StaticResource CloseButtonStyle}">
+                            <Button.Content>
+                                <Image Source="{StaticResource close_1Source}" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+
+                    <Border Grid.Row="1" CornerRadius="12" Margin="10" BorderThickness="1" BorderBrush="{StaticResource Border_Light}">
+
+                        <Grid x:Name="mainGrid">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="5" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <Grid Margin="5" Width="250" HorizontalAlignment="Center">
+                                <ListBox Style="{StaticResource QualityControlProcessListBox}"
+                                         ItemsSource="{Binding QualityControlList}"
+                                         SelectedItem="{Binding SelectedQualityControl,Mode=TwoWay}"
+                                         Grid.Column="0" Grid.Row="0" VerticalAlignment="Top" Height="330"
+                                         KeyboardNavigation.TabNavigation="Continue">
+                                    <ListBox.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <TextBlock Text="{Binding QcName,Mode=TwoWay}" 
+                                                           Focusable="{Binding IsOpenFileEnable, Converter={StaticResource InverseBooleanConverter}}"
+                                                           KeyboardNavigation.IsTabStop="{Binding IsOpenFileEnable, Converter={StaticResource InverseBooleanConverter}}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListBox.ItemTemplate>
+                                </ListBox>
+                            </Grid>
+
+                            <Grid Grid.Row="2">
+                                <Button Width="55" Height="55" Margin="0,0,20,10" Tag="30" HorizontalAlignment="Right"
+                                        Style="{StaticResource RoundButtonDashBoardStyle}"
+                                        Command="{Binding SelectSampleCommand}"
+                                        Focusable="{Binding IsOpenFileEnable, Converter={StaticResource InverseBooleanConverter}}"
+                                        IsTabStop="{Binding IsOpenFileEnable, Converter={StaticResource InverseBooleanConverter}}"
+                                        IsDefault="{Binding IsOpenFileEnable, Converter={StaticResource InverseBooleanConverter}}">
+                                    <Button.Content>
+                                        <Image Source="{StaticResource TickSource}" />
+                                    </Button.Content>
+                                </Button>
+                            </Grid>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+    </Grid>
+</UserControl>

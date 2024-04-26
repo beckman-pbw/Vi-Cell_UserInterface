@@ -1,0 +1,4887 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LID_ERRMSGBOX_HardwareFault" xml:space="preserve">
+    <value>ハードウェア不良</value>
+  </data>
+  <data name="LID_AdminReportsHeader_DateTime" xml:space="preserve">
+    <value>日時</value>
+  </data>
+  <data name="LID_AdminReportsHeader_UserName" xml:space="preserve">
+    <value>ユーザー名</value>
+  </data>
+  <data name="LID_BPHeader_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="LID_BPHeader_Reactor" xml:space="preserve">
+    <value>リアクター</value>
+  </data>
+  <data name="LID_ButtonContent_Analyze" xml:space="preserve">
+    <value>測定</value>
+  </data>
+  <data name="LID_ButtonContent_Aspirate" xml:space="preserve">
+    <value>アスピレート</value>
+  </data>
+  <data name="LID_ButtonContent_Cancel" xml:space="preserve">
+    <value>キャンセル</value>
+  </data>
+  <data name="LID_ButtonContent_ContAnalyze" xml:space="preserve">
+    <value>連続測定</value>
+  </data>
+  <data name="LID_ButtonContent_Dispense" xml:space="preserve">
+    <value>ディスペンス</value>
+  </data>
+  <data name="LID_ButtonContent_DustRef" xml:space="preserve">
+    <value>ダストリファレンス...</value>
+  </data>
+  <data name="LID_ButtonContent_Expel" xml:space="preserve">
+    <value>放出</value>
+  </data>
+  <data name="LID_ButtonContent_Flush" xml:space="preserve">
+    <value>フラッシュ</value>
+  </data>
+  <data name="LID_ButtonContent_Go" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="LID_ButtonContent_Load" xml:space="preserve">
+    <value>ロード</value>
+  </data>
+  <data name="LID_ButtonContent_No" xml:space="preserve">
+    <value>いいえ</value>
+  </data>
+  <data name="LID_ButtonContent_Nudge" xml:space="preserve">
+    <value>微調整</value>
+  </data>
+  <data name="LID_ButtonContent_OK" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="LID_ButtonContent_Prime" xml:space="preserve">
+    <value>プライム</value>
+  </data>
+  <data name="LID_ButtonContent_Reagent" xml:space="preserve">
+    <value>試薬</value>
+  </data>
+  <data name="LID_ButtonContent_ReplaceReagentPack" xml:space="preserve">
+    <value>試薬パックを交換...</value>
+  </data>
+  <data name="LID_ButtonContent_RestoreFocus" xml:space="preserve">
+    <value>フォーカスをリストア</value>
+  </data>
+  <data name="LID_ButtonContent_Sample" xml:space="preserve">
+    <value>サンプル</value>
+  </data>
+  <data name="LID_ButtonContent_SetFocus" xml:space="preserve">
+    <value>フォーカスを設定</value>
+  </data>
+  <data name="LID_ButtonContent_Syringe" xml:space="preserve">
+    <value>シリンジ</value>
+  </data>
+  <data name="LID_ButtonContent_Valve" xml:space="preserve">
+    <value>バルブ</value>
+  </data>
+  <data name="LID_ButtonContent_Yes" xml:space="preserve">
+    <value>はい</value>
+  </data>
+  <data name="LID_CheckBox_AnalysisParameters" xml:space="preserve">
+    <value>測定項目</value>
+  </data>
+  <data name="LID_CheckBox_AverageDiameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_CheckBox_BackgroundCircularity" xml:space="preserve">
+    <value>バックグラウンドの真円度</value>
+  </data>
+  <data name="LID_CheckBox_CameraImage" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="LID_CheckBox_CircularityDistribution" xml:space="preserve">
+    <value>真円度の分布</value>
+  </data>
+  <data name="LID_CheckBox_ClusterSizeDistribution" xml:space="preserve">
+    <value>クラスターサイズ分布</value>
+  </data>
+  <data name="LID_CheckBox_Data" xml:space="preserve">
+    <value>データ</value>
+  </data>
+  <data name="LID_CheckBox_DeviceSerialNumber" xml:space="preserve">
+    <value>シリアルナンバー</value>
+  </data>
+  <data name="LID_CheckBox_Export" xml:space="preserve">
+    <value>エクスポート</value>
+  </data>
+  <data name="LID_CheckBox_Graphs" xml:space="preserve">
+    <value>グラフ</value>
+  </data>
+  <data name="LID_CheckBox_Other" xml:space="preserve">
+    <value>その他</value>
+  </data>
+  <data name="LID_CheckBox_Reagentcontainer" xml:space="preserve">
+    <value>試薬容器</value>
+  </data>
+  <data name="LID_CheckBox_ReticleImage" xml:space="preserve">
+    <value>レチクル画像</value>
+  </data>
+  <data name="LID_CheckBox_Signatures" xml:space="preserve">
+    <value>署名</value>
+  </data>
+  <data name="LID_CheckBox_TotalCellConcentration" xml:space="preserve">
+    <value>総細胞濃度(x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_CheckBox_NonviableCellConcentration" xml:space="preserve">
+    <value>死細胞濃度 (x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_CheckBox_TotalCount" xml:space="preserve">
+    <value>総細胞数</value>
+  </data>
+  <data name="LID_CheckBox_ViableCells" xml:space="preserve">
+    <value>生細胞数</value>
+  </data>
+  <data name="LID_CheckBox_ViableCellType" xml:space="preserve">
+    <value>生細胞分布</value>
+  </data>
+  <data name="LID_ContextMenu_GreyLevelHistogram" xml:space="preserve">
+    <value>グレーレベルヒストグラム</value>
+  </data>
+  <data name="LID_ContextMenu_ImageActualSize" xml:space="preserve">
+    <value>拡大表示</value>
+  </data>
+  <data name="LID_ContextMenu_ImageFitToWindow" xml:space="preserve">
+    <value>全画面表示</value>
+  </data>
+  <data name="LID_ERRMSGBOX_DisplayNameRange" xml:space="preserve">
+    <value>表示名は15文字以下にして下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ImportingConfigration" xml:space="preserve">
+    <value>構成ファイルをインポートすると、この装置の既存の構成が削除されます。インポートする前にバックアップを作成して下さい。続行しますか？</value>
+  </data>
+  <data name="LID_ERRMSGBOX_InvalidUserId" xml:space="preserve">
+    <value>誤ったユーザー名またはパスワードが入力されました。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_OldPwdSameNw" xml:space="preserve">
+    <value>古いパスワードの使い回しはできません。新しいパスワードを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PasswordRange" xml:space="preserve">
+    <value>パスワードの必要条件を満たしていません。パスワードは次の条件を満たす必要があります。 1.最低10文字 2.小文字1文字以上 3.大文字1文字以上 4.数字1文字以上 5.特殊文字1文字以上</value>
+  </data>
+  <data name="LID_ERRMSGBOX_UserIdAlreadyExist" xml:space="preserve">
+    <value>入力したユーザーIDまたは表示名は既に使用されています。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_UserIdRange" xml:space="preserve">
+    <value>ユーザー名は100文字未満でなければなりません。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_WrongOldPassword" xml:space="preserve">
+    <value>誤ったパスワードが入力されました。</value>
+  </data>
+  <data name="LID_FrameLabel_DefaultSample" xml:space="preserve">
+    <value>初期設定サンプル</value>
+  </data>
+  <data name="LID_FrameLabel_GraphOptions" xml:space="preserve">
+    <value>グラフオプション</value>
+  </data>
+  <data name="LID_FrameLabel_Language" xml:space="preserve">
+    <value>言語</value>
+  </data>
+  <data name="LID_FrameLabel_PrintOptions" xml:space="preserve">
+    <value>印刷オプション</value>
+  </data>
+  <data name="LID_FrameLabel_RunResultReport" xml:space="preserve">
+    <value>測定結果レポート</value>
+  </data>
+  <data name="LID_FrameLabel_Security" xml:space="preserve">
+    <value>セキュリティ</value>
+  </data>
+  <data name="LID_FrameLabel_ShowResult" xml:space="preserve">
+    <value>測定項目</value>
+  </data>
+  <data name="LID_FrameLabel_Storage" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="LID_GraphLabel_AdjustSize" xml:space="preserve">
+    <value>調整済みサイズ</value>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentration" xml:space="preserve">
+    <value>アッセイ値</value>
+  </data>
+  <data name="LID_GraphLabel_Count" xml:space="preserve">
+    <value>カウント</value>
+  </data>
+  <data name="LID_GraphLabel_ElapsedTime" xml:space="preserve">
+    <value>経過時間（時間）</value>
+  </data>
+  <data name="LID_GraphLabel_InFoucs" xml:space="preserve">
+    <value>最大フォーカスカウント</value>
+  </data>
+  <data name="LID_GraphLabel_Mean" xml:space="preserve">
+    <value>平均値</value>
+  </data>
+  <data name="LID_GraphLabel_Mode" xml:space="preserve">
+    <value>最頻値</value>
+  </data>
+  <data name="LID_GraphLabel_OriginalConcentration" xml:space="preserve">
+    <value>オリジナル濃度</value>
+  </data>
+  <data name="LID_GraphLabel_OriginalSize" xml:space="preserve">
+    <value>オリジナルサイズ</value>
+  </data>
+  <data name="LID_GraphLabel_Range" xml:space="preserve">
+    <value>レンジ</value>
+  </data>
+  <data name="LID_GraphLabel_SizeDistribution" xml:space="preserve">
+    <value>サイズ分布</value>
+  </data>
+  <data name="LID_GraphLabel_SubrangeStatics" xml:space="preserve">
+    <value>統計値</value>
+  </data>
+  <data name="LID_GridHeader_ActiveInavtive" xml:space="preserve">
+    <value>アクティブ/インアクティブ</value>
+  </data>
+  <data name="LID_GridLabel_CellTypes" xml:space="preserve">
+    <value>セルタイプ</value>
+  </data>
+  <data name="LID_GridLabel_CompletedRunSummary" xml:space="preserve">
+    <value>測定結果の概要</value>
+  </data>
+  <data name="LID_GridLabel_NoOfTubes" xml:space="preserve">
+    <value>チューブ</value>
+  </data>
+  <data name="LID_GridLabel_QualityControl" xml:space="preserve">
+    <value>精度管理</value>
+  </data>
+  <data name="LID_GridLabel_RunResult" xml:space="preserve">
+    <value>測定結果</value>
+  </data>
+  <data name="LID_GridListHeader_QueueParameters" xml:space="preserve">
+    <value>サンプルリストの測定項目</value>
+  </data>
+  <data name="LID_HB_About" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="LID_HB_Admin" xml:space="preserve">
+    <value>管理者</value>
+  </data>
+  <data name="LID_HB_Bioprocess" xml:space="preserve">
+    <value>バイオプロセス</value>
+  </data>
+  <data name="LID_HB_Help" xml:space="preserve">
+    <value>ヘルプ</value>
+  </data>
+  <data name="LID_HB_Home" xml:space="preserve">
+    <value>ホーム</value>
+  </data>
+  <data name="LID_HB_Maintenance" xml:space="preserve">
+    <value>メンテナンス</value>
+  </data>
+  <data name="LID_HB_QualityControl" xml:space="preserve">
+    <value>精度管理</value>
+  </data>
+  <data name="LID_HB_SystemLock" xml:space="preserve">
+    <value>システムロック</value>
+  </data>
+  <data name="LID_HB_Review" xml:space="preserve">
+    <value>レビュー</value>
+  </data>
+  <data name="LID_HB_Settings" xml:space="preserve">
+    <value>設定</value>
+  </data>
+  <data name="LID_HB_Signout" xml:space="preserve">
+    <value>サインアウト</value>
+  </data>
+  <data name="LID_HELP_AcceptNewFocus" xml:space="preserve">
+    <value>新しいフォーカスポジションを受け入れますか?</value>
+  </data>
+  <data name="LID_HELP_Cleaning" xml:space="preserve">
+    <value>クリーニング中</value>
+  </data>
+  <data name="LID_HELP_CloseReagent" xml:space="preserve">
+    <value>試薬ドアを閉じ、次をタップします。</value>
+  </data>
+  <data name="LID_HELP_DecontaminateCup" xml:space="preserve">
+    <value>サンプルに接触した可能性がある廃棄トレイ、装置部品および外装を同じ0.5%次亜塩素酸ナトリウム水溶液でデコンタミネーションして下さい。</value>
+  </data>
+  <data name="LID_HELP_EmptyPostion" xml:space="preserve">
+    <value>カローセルの全てのポジションを空にします。</value>
+  </data>
+  <data name="LID_HELP_EmptyWasteTube" xml:space="preserve">
+    <value>廃棄トレイを空にします。</value>
+  </data>
+  <data name="LID_HELP_Export" xml:space="preserve">
+    <value>エクスポート先</value>
+  </data>
+  <data name="LID_HELP_PlaceCup" xml:space="preserve">
+    <value>フォーカスコントロールビーズをサンプルチューブに入れてカロ―セルの空の位置にロードするか、ビーズを96ウェルプレートのA1にロードします。</value>
+  </data>
+  <data name="LID_HELP_PlaceTheBleach" xml:space="preserve">
+    <value>調整した漂白液をチューブに入れ、カローセルに置くか、または96ウェルプレートのA1位置に入れます。</value>
+  </data>
+  <data name="LID_HELP_PrePareSolution" xml:space="preserve">
+    <value>0.5%の次亜塩素酸ナトリウム（5%の家庭用漂白剤と水を1：9の割合で混合）を0.3mL調製します。</value>
+  </data>
+  <data name="LID_HELP_ReagentLoad" xml:space="preserve">
+    <value>認識した試薬情報を以下に示します。確認し、次をタップします。</value>
+  </data>
+  <data name="LID_HELP_ReaplaceReagent" xml:space="preserve">
+    <value>試薬パックが交換されました。</value>
+  </data>
+  <data name="LID_HELP_RemoveReagent" xml:space="preserve">
+    <value>ドアが開いています。使用済みのパックを外し新しい試薬パックを挿入して下さい。</value>
+  </data>
+  <data name="LID_HELP_SelectReagent" xml:space="preserve">
+    <value>ドレインまたはパージする試薬を選択して下さい。</value>
+  </data>
+  <data name="LID_HELP_Step" xml:space="preserve">
+    <value>ステップ</value>
+  </data>
+  <data name="LID_Label_AppType" xml:space="preserve">
+    <value>測定タイプ</value>
+  </data>
+  <data name="LID_Label_BioProcessReport" xml:space="preserve">
+    <value>バイオプロセスレポート</value>
+  </data>
+  <data name="LID_Label_CameraLamp" xml:space="preserve">
+    <value>明視野LED</value>
+  </data>
+  <data name="LID_Label_CameraLampIntensity" xml:space="preserve">
+    <value>カメラランプ強度</value>
+  </data>
+  <data name="LID_Label_Caption" xml:space="preserve">
+    <value>見出し</value>
+  </data>
+  <data name="LID_Label_Carousel" xml:space="preserve">
+    <value>カローセル</value>
+  </data>
+  <data name="LID_Label_Carousel96Well" xml:space="preserve">
+    <value>カローセル/96ウェル</value>
+  </data>
+  <data name="LID_Label_CellBrightness" xml:space="preserve">
+    <value>セルブライトネス</value>
+  </data>
+  <data name="LID_Label_CellSharpness" xml:space="preserve">
+    <value>セルシャープネス</value>
+  </data>
+  <data name="LID_Label_CellTypeRemoved" xml:space="preserve">
+    <value>削除されました</value>
+  </data>
+  <data name="LID_Label_CellTypeReport" xml:space="preserve">
+    <value>細胞タイプ</value>
+  </data>
+  <data name="LID_Label_ChoosePath" xml:space="preserve">
+    <value>場所</value>
+  </data>
+  <data name="LID_Label_Comments" xml:space="preserve">
+    <value>コメント</value>
+  </data>
+  <data name="LID_Label_CompletedRun" xml:space="preserve">
+    <value>実施済み測定の概要レポート</value>
+  </data>
+  <data name="LID_Label_CopyRight" xml:space="preserve">
+    <value>Copyright ©{0} Beckman Coulter Life Sciences.無断転載を禁ず。</value>
+  </data>
+  <data name="LID_Label_CurFocus" xml:space="preserve">
+    <value>現在のフォーカスポジション</value>
+  </data>
+  <data name="LID_Label_Date" xml:space="preserve">
+    <value>日付</value>
+  </data>
+  <data name="LID_Label_DeclusterDegree" xml:space="preserve">
+    <value>クラスター分離度</value>
+  </data>
+  <data name="LID_Label_Dilution" xml:space="preserve">
+    <value>希釈</value>
+  </data>
+  <data name="LID_Label_Disable" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="LID_Label_ErrorCode" xml:space="preserve">
+    <value>エラーコード</value>
+  </data>
+  <data name="LID_Label_FileName" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="LID_Label_FirmwareVersion" xml:space="preserve">
+    <value>ファームウェアバージョン</value>
+  </data>
+  <data name="LID_Label_FLowCellDepth" xml:space="preserve">
+    <value>フローセルの深さ（mm）</value>
+  </data>
+  <data name="LID_Label_FocusHome" xml:space="preserve">
+    <value>フォーカスホーム</value>
+  </data>
+  <data name="LID_Label_From" xml:space="preserve">
+    <value>開始日（YYYY/MM/DD）</value>
+  </data>
+  <data name="LID_Label_Imageanalysissoftwareversion" xml:space="preserve">
+    <value>画像分析ソフトウエアバージョン</value>
+  </data>
+  <data name="LID_Label_Images" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="LID_Label_InActivityTimeout" xml:space="preserve">
+    <value>無操作タイムアウト</value>
+  </data>
+  <data name="LID_Label_Indicator" xml:space="preserve">
+    <value>短縮形</value>
+  </data>
+  <data name="LID_Label_InFocus" xml:space="preserve">
+    <value>インフォーカスカウント</value>
+  </data>
+  <data name="LID_Label_UpdatingFirmware" xml:space="preserve">
+    <value>ファームウェア更新中</value>
+  </data>
+  <data name="LID_Label_LastCalibrationDate" xml:space="preserve">
+    <value>濃度スロープの最終設定日：</value>
+  </data>
+  <data name="LID_Label_SystemLockDescription" xml:space="preserve">
+    <value>システムは現在ロックされています。管理者レベルユーザーおよびサービスユーザーのみが下のボタンからロック解除をリクエストできます。</value>
+  </data>
+  <data name="LID_Label_LiveImage" xml:space="preserve">
+    <value>ライブ画像：</value>
+  </data>
+  <data name="LID_Label_MaxDiameter" xml:space="preserve">
+    <value>最大直径</value>
+  </data>
+  <data name="LID_Label_Description" xml:space="preserve">
+    <value>説明</value>
+  </data>
+  <data name="LID_Label_MergeFile" xml:space="preserve">
+    <value>既存のエクセルファイルとマージ</value>
+  </data>
+  <data name="LID_Label_MinCircularity" xml:space="preserve">
+    <value>最小真円度</value>
+  </data>
+  <data name="LID_Label_MinDiameter" xml:space="preserve">
+    <value>最小直径</value>
+  </data>
+  <data name="LID_Label_MinimumCircularity" xml:space="preserve">
+    <value>最小真円度</value>
+  </data>
+  <data name="LID_Label_MotorStatusState" xml:space="preserve">
+    <value>モーターステータスの状態</value>
+  </data>
+  <data name="LID_Label_NewRecommended" xml:space="preserve">
+    <value>推奨位置</value>
+  </data>
+  <data name="LID_Label_OpenTheWaste" xml:space="preserve">
+    <value>1.廃棄トレイドアを開きます。</value>
+  </data>
+  <data name="LID_Label_Password" xml:space="preserve">
+    <value>パスワード</value>
+  </data>
+  <data name="LID_Label_PassworsExpire" xml:space="preserve">
+    <value>パスワードの期限</value>
+  </data>
+  <data name="LID_Label_PN" xml:space="preserve">
+    <value>製品番号</value>
+  </data>
+  <data name="LID_Label_Position" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_Label_PreviosRecommended" xml:space="preserve">
+    <value>以前の位置</value>
+  </data>
+  <data name="LID_Label_PrintTitle" xml:space="preserve">
+    <value>印刷タイトル</value>
+  </data>
+  <data name="LID_Label_ProbeHome" xml:space="preserve">
+    <value>プローブホーム</value>
+  </data>
+  <data name="LID_Label_QualityControlReport" xml:space="preserve">
+    <value>精度管理レポート</value>
+  </data>
+  <data name="LID_Label_RadiusHome" xml:space="preserve">
+    <value>半径ホーム</value>
+  </data>
+  <data name="LID_Label_ReagentDoor" xml:space="preserve">
+    <value>試薬ドア</value>
+  </data>
+  <data name="LID_Label_ReagentLower" xml:space="preserve">
+    <value>試薬下限</value>
+  </data>
+  <data name="LID_Label_ReagentPack" xml:space="preserve">
+    <value>試薬パック</value>
+  </data>
+  <data name="LID_Label_ReagentUpper" xml:space="preserve">
+    <value>試薬上限</value>
+  </data>
+  <data name="LID_Label_Remainingwastetubebincapacity" xml:space="preserve">
+    <value>廃棄トレイの残り容量</value>
+  </data>
+  <data name="LID_Label_RemoveNEmpty" xml:space="preserve">
+    <value>2.廃棄トレイを外して空にします。</value>
+  </data>
+  <data name="LID_Label_ReplacetheWaste" xml:space="preserve">
+    <value>3.廃棄トレイを元に戻し、ドアを閉めます。</value>
+  </data>
+  <data name="LID_Label_TapOn" xml:space="preserve">
+    <value>4.をタップして</value>
+  </data>
+  <data name="LID_Label_ResetSpentTubeCapacity" xml:space="preserve">
+    <value>廃棄トレイの残り容量をリセットします。</value>
+  </data>
+  <data name="LID_Label_ResettingWasteTube" xml:space="preserve">
+    <value>注意：廃棄トレイを空にせず容量をリセットすると、廃液トレイの詰まりの原因となることがあります。</value>
+  </data>
+  <data name="LID_Label_SensorStatusState" xml:space="preserve">
+    <value>センサステータスの状態</value>
+  </data>
+  <data name="LID_Label_SerialNumber" xml:space="preserve">
+    <value>シリアルナンバー</value>
+  </data>
+  <data name="LID_Label_ShowParameter" xml:space="preserve">
+    <value>測定項目の表示</value>
+  </data>
+  <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
+    <value>ログイン失敗</value>
+  </data>
+  <data name="LID_Label_Softwareversion" xml:space="preserve">
+    <value>Vi-CELL BLUソフトウェアバージョン</value>
+  </data>
+  <data name="LID_Label_Backendversion" xml:space="preserve">
+    <value>バックエンドソフトウェアバージョン</value>
+  </data>
+  <data name="LID_Label_SpotArea" xml:space="preserve">
+    <value>生細胞スポットエリア</value>
+  </data>
+  <data name="LID_Label_SpotBrightness" xml:space="preserve">
+    <value>生細胞スポットブライトネス</value>
+  </data>
+  <data name="LID_Label_SyringePumpFirmwareVersion" xml:space="preserve">
+    <value>シリンジポンプファームウェアのバージョン</value>
+  </data>
+  <data name="LID_Label_SystemTotalSampleCounts" xml:space="preserve">
+    <value>このシステムで測定した全サンプル</value>
+  </data>
+  <data name="LID_Label_ThetaHome" xml:space="preserve">
+    <value>シータホーム</value>
+  </data>
+  <data name="LID_Label_To" xml:space="preserve">
+    <value>終了日（YYYY/MM/DD）</value>
+  </data>
+  <data name="LID_Label_UIVersion" xml:space="preserve">
+    <value>UIソフトウエアバージョン</value>
+  </data>
+  <data name="LID_Label_ViabilityPercentage" xml:space="preserve">
+    <value>生存率（%）</value>
+  </data>
+  <data name="LID_Label_ViableCellSpotArea" xml:space="preserve">
+    <value>生細胞スポットエリア</value>
+  </data>
+  <data name="LID_Label_ViableCellSpotBrightness" xml:space="preserve">
+    <value>生細胞スポットブライトネス</value>
+  </data>
+  <data name="LID_Label_YYMMDD" xml:space="preserve">
+    <value>（YYYY/MM/DD）</value>
+  </data>
+  <data name="LID_ListOption_General" xml:space="preserve">
+    <value>概略</value>
+  </data>
+  <data name="LID_ListOption_Instrument" xml:space="preserve">
+    <value>装置</value>
+  </data>
+  <data name="LID_ListOption_RunOption" xml:space="preserve">
+    <value>測定オプション</value>
+  </data>
+  <data name="LID_LogsList_AuditLog" xml:space="preserve">
+    <value>監査ログ</value>
+  </data>
+  <data name="LID_LogsList_SampleActivity" xml:space="preserve">
+    <value>サンプルアクティビティログ</value>
+  </data>
+  <data name="LID_LogsList_SystemError" xml:space="preserve">
+    <value>システムエラーログ</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeLanguageSettings" xml:space="preserve">
+    <value>言語設定を変更しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeUserDetails" xml:space="preserve">
+    <value>ユーザーの詳細情報が変更されました。</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteConfirmation" xml:space="preserve">
+    <value>{0}を削除しますか?</value>
+  </data>
+  <data name="LID_MSGBOX_LanguageSettingsSuceesfully" xml:space="preserve">
+    <value>言語設定が更新されました。</value>
+  </data>
+  <data name="LID_MSGBOX_MaximumDiameter" xml:space="preserve">
+    <value>最大直径は最小直径より大きくなければなりません。</value>
+  </data>
+  <data name="LID_MSGBOX_MinimumDiameterLength" xml:space="preserve">
+    <value>最小直径は最大直径より小さくなければなりません。</value>
+  </data>
+  <data name="LID_MSGBOX_PasswordChange" xml:space="preserve">
+    <value>パスワードが変更されました。</value>
+  </data>
+  <data name="LID_MSGBOX_PasswordMismatch" xml:space="preserve">
+    <value>パスワードが一致しません。</value>
+  </data>
+  <data name="LID_MSGBOX_QCAddedSuccess" xml:space="preserve">
+    <value>精度管理が追加されました。</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagementAbort" xml:space="preserve">
+    <value>中止してもいいですか?</value>
+  </data>
+  <data name="LID_MSGBOX_RemoveSelectedUser" xml:space="preserve">
+    <value>ユーザーが削除されました</value>
+  </data>
+  <data name="LID_MSGBOX_RunOptionSuccessful" xml:space="preserve">
+    <value>測定オプション設定が変更されました。</value>
+  </data>
+  <data name="LID_MSGBOX_SecuritySuccessful" xml:space="preserve">
+    <value>セキュリティ設定が変更されました。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectUserToDelete" xml:space="preserve">
+    <value>削除するユーザーを選択して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_SettingHoursStringValidation" xml:space="preserve">
+    <value>数値を入力して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_UserAddition" xml:space="preserve">
+    <value>ユーザーの追加</value>
+  </data>
+  <data name="LID_POPUPHeader_AddBioprocess" xml:space="preserve">
+    <value>バイオプロセスを追加</value>
+  </data>
+  <data name="LID_POPUPHeader_ChangePassword" xml:space="preserve">
+    <value>パスワードの変更</value>
+  </data>
+  <data name="LID_POPUPHeader_Decontaminate" xml:space="preserve">
+    <value>デコンタミネーション...</value>
+  </data>
+  <data name="LID_POPUPHeader_Diagnostics" xml:space="preserve">
+    <value>装置診断</value>
+  </data>
+  <data name="LID_POPUPHeader_ExportFileSetting" xml:space="preserve">
+    <value>ファイルのエクスポート設定</value>
+  </data>
+  <data name="LID_POPUPHeader_ExportToFile" xml:space="preserve">
+    <value>ファイルにエクスポート</value>
+  </data>
+  <data name="LID_POPUPHeader_InstrumentStatus" xml:space="preserve">
+    <value>装置ステータス</value>
+  </data>
+  <data name="LID_POPUPHeader_SystemLock" xml:space="preserve">
+    <value>システムはロックされています</value>
+  </data>
+  <data name="LID_POPUPHeader_MyProfile" xml:space="preserve">
+    <value>マイプロファイル</value>
+  </data>
+  <data name="LID_POPUPHeader_OpenSample" xml:space="preserve">
+    <value>サンプルを開く</value>
+  </data>
+  <data name="LID_POPUPHeader_ReagentStatus" xml:space="preserve">
+    <value>試薬ステータス</value>
+  </data>
+  <data name="LID_POPUPHeader_ReplaceReagentPack" xml:space="preserve">
+    <value>試薬パックを交換</value>
+  </data>
+  <data name="LID_POPUPHeader_SelectCellType" xml:space="preserve">
+    <value>セルタイプを選択</value>
+  </data>
+  <data name="LID_POPUPHeader_SetFocus" xml:space="preserve">
+    <value>フォーカス設定</value>
+  </data>
+  <data name="LID_POPUPHeader_Signature" xml:space="preserve">
+    <value>署名</value>
+  </data>
+  <data name="LID_ProgressIndication_ImageAnalysis" xml:space="preserve">
+    <value>画像を取得中</value>
+  </data>
+  <data name="LID_ProgressIndication_RemoveReagent" xml:space="preserve">
+    <value>試薬の取外し準備中...</value>
+  </data>
+  <data name="LID_QCHeader_AcceptanceLimits" xml:space="preserve">
+    <value>許容範囲</value>
+  </data>
+  <data name="LID_QCHeader_AnalysisDateTime" xml:space="preserve">
+    <value>測定日付/時刻</value>
+  </data>
+  <data name="LID_QCHeader_AssayParameter" xml:space="preserve">
+    <value>アッセイ測定項目</value>
+  </data>
+  <data name="LID_QCHeader_LotNumber" xml:space="preserve">
+    <value>ロット番号</value>
+  </data>
+  <data name="LID_QCHeader_ReAnalysisDateTime" xml:space="preserve">
+    <value>再測定日付/時刻</value>
+  </data>
+  <data name="LID_QCHeader_SlNo" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="LID_Qmanagemnt_QM" xml:space="preserve">
+    <value>サンプルリストの作成</value>
+  </data>
+  <data name="LID_QMgmtHEADER_BPQC" xml:space="preserve">
+    <value>セルタイプ</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Comment" xml:space="preserve">
+    <value>コメント</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Position" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_QMgmtHEADER_SampleId" xml:space="preserve">
+    <value>サンプルID</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Wash" xml:space="preserve">
+    <value>洗浄</value>
+  </data>
+  <data name="LID_RadioButton_CSV" xml:space="preserve">
+    <value>*.csv</value>
+  </data>
+  <data name="LID_RadioButton_DrainReagent" xml:space="preserve">
+    <value>容器内の試薬を排出</value>
+  </data>
+  <data name="LID_RadioButton_PDF" xml:space="preserve">
+    <value>*.pdf</value>
+  </data>
+  <data name="LID_RadioButton_PlainText" xml:space="preserve">
+    <value>*.txt</value>
+  </data>
+  <data name="LID_RadioButton_PurgeLines" xml:space="preserve">
+    <value>試薬容器にラインをパージ</value>
+  </data>
+  <data name="LID_RadioButton_SaveEveryN" xml:space="preserve">
+    <value>N枚毎に画像を保存</value>
+  </data>
+  <data name="LID_ResultHeader_Container" xml:space="preserve">
+    <value>容器</value>
+  </data>
+  <data name="LID_ResultHeader_LOT" xml:space="preserve">
+    <value>ロット</value>
+  </data>
+  <data name="LID_ResultHeader_Reagents" xml:space="preserve">
+    <value>試薬</value>
+  </data>
+  <data name="LID_ResultHeader_UsesTotal" xml:space="preserve">
+    <value>総使用回数</value>
+  </data>
+  <data name="LID_ResultHeader_WorkQueue" xml:space="preserve">
+    <value>サンプルリスト</value>
+  </data>
+  <data name="LID_StatusLabel_UsesRemaining" xml:space="preserve">
+    <value>使用回数</value>
+  </data>
+  <data name="LID_StatusLabel_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="LID_TabItem_CalibrationControl" xml:space="preserve">
+    <value>濃度スロープ</value>
+  </data>
+  <data name="LID_TabItem_Concentration" xml:space="preserve">
+    <value>総細胞数</value>
+  </data>
+  <data name="LID_TabItem_Logs" xml:space="preserve">
+    <value>ログ</value>
+  </data>
+  <data name="LID_TabItem_LowLevel" xml:space="preserve">
+    <value>低レベル</value>
+  </data>
+  <data name="LID_TabItem_ManualControls" xml:space="preserve">
+    <value>マニュアルコントロール</value>
+  </data>
+  <data name="LID_TabItem_MotorReg" xml:space="preserve">
+    <value>モーター位置合わせ</value>
+  </data>
+  <data name="LID_TabItem_Optics" xml:space="preserve">
+    <value>光学系</value>
+  </data>
+  <data name="LID_TabItem_Reports" xml:space="preserve">
+    <value>レポート</value>
+  </data>
+  <data name="LID_TabItem_Results" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="LID_TabItem_Size" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_TabItem_Users" xml:space="preserve">
+    <value>ユーザー</value>
+  </data>
+  <data name="LID_TabItem_Viability" xml:space="preserve">
+    <value>生存率</value>
+  </data>
+  <data name="LID_Title_ViCellBluVersion" xml:space="preserve">
+    <value>Vi-CELL BLU v</value>
+  </data>
+  <data name="LID_UsersLabel_CellType" xml:space="preserve">
+    <value>セルタイプ</value>
+  </data>
+  <data name="LID_UsersLabel_ConfirmPassword" xml:space="preserve">
+    <value>パスワードの確認</value>
+  </data>
+  <data name="LID_UsersLabel_DisplayName" xml:space="preserve">
+    <value>表示名</value>
+  </data>
+  <data name="LID_UsersLabel_NewPassword" xml:space="preserve">
+    <value>新しいパスワード</value>
+  </data>
+  <data name="LID_UsersLabel_OldPassword" xml:space="preserve">
+    <value>古いパスワード</value>
+  </data>
+  <data name="LID_UsersLabel_Role" xml:space="preserve">
+    <value>権限階層</value>
+  </data>
+  <data name="LID_UsersLabel_UserId" xml:space="preserve">
+    <value>ユーザー名</value>
+  </data>
+  <data name="LID_MSGBOX_BPAddedSuccess" xml:space="preserve">
+    <value>バイオプロセスが追加されました。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectBPToDelete" xml:space="preserve">
+    <value>削除するバイオプロセスを選択して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectQCToDelete" xml:space="preserve">
+    <value>削除する精度コントロールを選択して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeSecuritySetting" xml:space="preserve">
+    <value>セキュリティ設定を変更しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_RunOptionSetting" xml:space="preserve">
+    <value>測定オプション設定を変更しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_AddConfirmation" xml:space="preserve">
+    <value>{0}を追加しますか？</value>
+  </data>
+  <data name="LID_Label_AverageCircularity" xml:space="preserve">
+    <value>平均真円度</value>
+  </data>
+  <data name="LID_GraphLabel_CircularityDistribution" xml:space="preserve">
+    <value>真円度の分布</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_Diameter_AxisTitle" xml:space="preserve">
+    <value>平均直径（µm）</value>
+  </data>
+  <data name="LID_GraphLabel_TotalCellConcentration" xml:space="preserve">
+    <value>総細胞濃度 (x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_ViableCellConcentration_Title" xml:space="preserve">
+    <value>生細胞濃度（/mL）</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_ViableCells_Title" xml:space="preserve">
+    <value>生細胞数</value>
+  </data>
+  <data name="LID_MSGBOX_ReplaceReagentProgress" xml:space="preserve">
+    <value>試薬パックを交換中...</value>
+  </data>
+  <data name="LID_Label_ConcentrationSixCont" xml:space="preserve">
+    <value>ボタンをクリックすると濃度スロープ計算を開始します。</value>
+  </data>
+  <data name="LID_Label_ConcentrationFive" xml:space="preserve">
+    <value>上記の指示通りにサンプルがセットされていることを確認して下さい。</value>
+  </data>
+  <data name="LID_Label_ConcentrationFour" xml:space="preserve">
+    <value>10Mビーズのチューブを3本使用します。カロ―セル位置#16から#18にセットして下さい。</value>
+  </data>
+  <data name="LID_Label_ConcentrationOne" xml:space="preserve">
+    <value>上のフィールドにアッセイ値、ロットナンバー、有効期限を入力して下さい。</value>
+  </data>
+  <data name="LID_Label_ConcentrationSix" xml:space="preserve">
+    <value>開始</value>
+  </data>
+  <data name="LID_Label_ConcentrationThree" xml:space="preserve">
+    <value>4Mビーズのチューブを5本使用します。カロ―セル位置#11から#15にセットして下さい。</value>
+  </data>
+  <data name="LID_Label_ConcentrationTwo" xml:space="preserve">
+    <value>2Mビーズのチューブを10本使用します。カロ―セル位置#1から#10にセットして下さい。</value>
+  </data>
+  <data name="LID_Label_Instructions" xml:space="preserve">
+    <value>指示</value>
+  </data>
+  <data name="LID_GridLabel_ExpirationDate" xml:space="preserve">
+    <value>有効期限日</value>
+  </data>
+  <data name="LID_QMgmtHEADER_DetectingFocusPos" xml:space="preserve">
+    <value>フォーカスポジションを検出中</value>
+  </data>
+  <data name="LID_QMgmtHEADER_MovingToLoc" xml:space="preserve">
+    <value>サンプル位置へ移動中</value>
+  </data>
+  <data name="LID_QMgmtHEADER_PrepareingFocusControl" xml:space="preserve">
+    <value>フォーカスコントロールサンプルを調製中</value>
+  </data>
+  <data name="LID_QMgmtHEADER_SettingFocusControl" xml:space="preserve">
+    <value>フォーカスコントロールビーズを設定中</value>
+  </data>
+  <data name="LID_ResultHeader_Total" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="LID_FrameLabel_ImportSuccessful" xml:space="preserve">
+    <value>正常にインポートされました</value>
+  </data>
+  <data name="LID_FrameLabel_SystemBackup" xml:space="preserve">
+    <value>システムバックアップ</value>
+  </data>
+  <data name="LID_FrameLabel_Cleanup" xml:space="preserve">
+    <value>クリーンアップ/エクスポート</value>
+  </data>
+  <data name="LID_MSGBOX_DustReference" xml:space="preserve">
+    <value>空のサンプルチューブまたは空の96ウェルプレートを入れて、をタップします。</value>
+  </data>
+  <data name="LID_FrameLabel_DustRemover" xml:space="preserve">
+    <value>ダストレファレンス処理中...</value>
+  </data>
+  <data name="LID_HELP_CompleteDust" xml:space="preserve">
+    <value>ダストレファレンス処理完了</value>
+  </data>
+  <data name="LID_Label_AcceptNewRef" xml:space="preserve">
+    <value>新しいレファレンス画像を受諾しますか?</value>
+  </data>
+  <data name="LID_Label_Acquiring" xml:space="preserve">
+    <value>画像を取得し処理中</value>
+  </data>
+  <data name="LID_Label_AspiratingBuffer" xml:space="preserve">
+    <value>試薬パックからバッファー溶液を吸引中</value>
+  </data>
+  <data name="LID_Label_DispensingBuffer" xml:space="preserve">
+    <value>フローセルに緩衝液を充填中</value>
+  </data>
+  <data name="LID_POPUPHeader_DustReference" xml:space="preserve">
+    <value>ダストレファレンス</value>
+  </data>
+  <data name="LID_Label_NoteOptics" xml:space="preserve">
+    <value>注意：フローセルの深さの値が変更された場合は、フォーカス設定を再度実行して下さい。</value>
+  </data>
+  <data name="LID_Label_OpticsImage" xml:space="preserve">
+    <value>画像ダストリムーバー処理</value>
+  </data>
+  <data name="LID_Label_GoToPosition" xml:space="preserve">
+    <value>位置に移動</value>
+  </data>
+  <data name="LID_Label_StatusState" xml:space="preserve">
+    <value>ポジション/　値　ステータス</value>
+  </data>
+  <data name="LID_Label_Temperature" xml:space="preserve">
+    <value>温度</value>
+  </data>
+  <data name="LID_Label_Voltage" xml:space="preserve">
+    <value>電圧</value>
+  </data>
+  <data name="LID_Label_Controlboard" xml:space="preserve">
+    <value>コントロールボード</value>
+  </data>
+  <data name="LID_Label_CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="LID_Label_MotorRadius" xml:space="preserve">
+    <value>モーター半径：</value>
+  </data>
+  <data name="LID_Label_Motortheta" xml:space="preserve">
+    <value>モーターシータ：</value>
+  </data>
+  <data name="LID_Label_Opticalcase" xml:space="preserve">
+    <value>光学ケース</value>
+  </data>
+  <data name="LID_Label_Probe" xml:space="preserve">
+    <value>プローブ</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Dispensing_Sample" xml:space="preserve">
+    <value>フローセルにサンプルを充填中</value>
+  </data>
+  <data name="LID_Label_Tube" xml:space="preserve">
+    <value>チューブ</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ExitApp" xml:space="preserve">
+    <value>アプリケーションを終了しますか？</value>
+  </data>
+  <data name="LID_QMgmtHEADER_WaitMins2" xml:space="preserve">
+    <value>残り時間（分）</value>
+  </data>
+  <data name="LID_Label_Initial_Taketime" xml:space="preserve">
+    <value>数分かかります。お待ち下さい。</value>
+  </data>
+  <data name="LID_GraphLabel_SlopeandIntercept" xml:space="preserve">
+    <value>スロープと切片</value>
+  </data>
+  <data name="LID_GraphLabel_Totalcells" xml:space="preserve">
+    <value>細胞数</value>
+  </data>
+  <data name="LID_GraphLabel_Nonviablecellcount" xml:space="preserve">
+    <value>死細胞数</value>
+  </data>
+  <data name="LID_Graph_AdjustConc" xml:space="preserve">
+    <value>調整済み濃度</value>
+  </data>
+  <data name="LID_Graph_AvgDia" xml:space="preserve">
+    <value>平均直径（µm）</value>
+  </data>
+  <data name="LID_Graph_CountPop" xml:space="preserve">
+    <value>細胞数</value>
+  </data>
+  <data name="LID_Graph_LinerAdjSize" xml:space="preserve">
+    <value>調整済みサイズ</value>
+  </data>
+  <data name="LID_Graph_LinerAdjustConc" xml:space="preserve">
+    <value>調整済み濃度</value>
+  </data>
+  <data name="LID_Graph_LinerOrigConc" xml:space="preserve">
+    <value>オリジナル濃度</value>
+  </data>
+  <data name="LID_Graph_LinerOrigSize" xml:space="preserve">
+    <value>オリジナルサイズ</value>
+  </data>
+  <data name="LID_Graph_OrigConc" xml:space="preserve">
+    <value>オリジナル濃度</value>
+  </data>
+  <data name="LID_Graph_Original" xml:space="preserve">
+    <value>オリジナル及び調整済み</value>
+  </data>
+  <data name="LID_Graph_OrigSize" xml:space="preserve">
+    <value>オリジナルサイズ（ミクロン）</value>
+  </data>
+  <data name="LID_MSGBOX_DustRefWarning" xml:space="preserve">
+    <value>ダストレファレンス処理をキャンセルしますか？</value>
+  </data>
+  <data name="LID_MSGBOX_SetFocusWarning" xml:space="preserve">
+    <value>フォーカス設定処理を終了しますか？</value>
+  </data>
+  <data name="LID_GraphLabel_ViaCir" xml:space="preserve">
+    <value>生細胞の真円度分布</value>
+  </data>
+  <data name="LID_MSGBOX_AcoountDisable" xml:space="preserve">
+    <value>ログインできません。やり直して下さい。問題が継続する場合、管理者に連絡して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_ExportSucces" xml:space="preserve">
+    <value>ファイルのエクスポートが完了しました。</value>
+  </data>
+  <data name="LID_MSGBOX_SampleExport" xml:space="preserve">
+    <value>エクスポートするサンプルを選択して下さい。</value>
+  </data>
+  <data name="LID_Label_AverageCellPerImage" xml:space="preserve">
+    <value>画像ごとの平均細胞数</value>
+  </data>
+  <data name="LID_Label_bubbles" xml:space="preserve">
+    <value>気泡数</value>
+  </data>
+  <data name="LID_Label_Circularity" xml:space="preserve">
+    <value>平均真円度</value>
+  </data>
+  <data name="LID_Label_Concentration" xml:space="preserve">
+    <value>濃度（/mL）</value>
+  </data>
+  <data name="LID_Label_Size" xml:space="preserve">
+    <value>平均直径（µm）</value>
+  </data>
+  <data name="LID_Label_Viability" xml:space="preserve">
+    <value>生存率（%）</value>
+  </data>
+  <data name="LID_Label_ViableConcentration" xml:space="preserve">
+    <value>生細胞</value>
+  </data>
+  <data name="LID_MSGBOX_PausingPleaseWait" xml:space="preserve">
+    <value>一時停止中...</value>
+  </data>
+  <data name="LID_ResultHeader_ImageCount" xml:space="preserve">
+    <value>画像#</value>
+  </data>
+  <data name="LID_GraphLabel_Averagebackground" xml:space="preserve">
+    <value>平均バックグランド強度</value>
+  </data>
+  <data name="LID_GraphLabel_Viablecircularity" xml:space="preserve">
+    <value>生細胞の平均真円度</value>
+  </data>
+  <data name="LID_GraphLabel_Viablesize" xml:space="preserve">
+    <value>生細胞の平均直径（µm）</value>
+  </data>
+  <data name="LID_MSGBOX_FLushProgress" xml:space="preserve">
+    <value>フラッシュ実行中。フラッシュをキャンセルしますか?</value>
+  </data>
+  <data name="LID_MSGBOX_NoDataExport" xml:space="preserve">
+    <value>エクスポートするデータがありません。</value>
+  </data>
+  <data name="LID_MSGBOX_PrimePropgress" xml:space="preserve">
+    <value>プライム実行中。プライムをキャンセルしますか?</value>
+  </data>
+  <data name="LID_MSGBOX_SelectCSVPath" xml:space="preserve">
+    <value>csvかxlsまたはtxtファイルタイプを選択して下さい。</value>
+  </data>
+  <data name="LID_Label_wellPos" xml:space="preserve">
+    <value>カローセル/96ウェルプレートの位置</value>
+  </data>
+  <data name="LID_ButtonContent_Repeat" xml:space="preserve">
+    <value>繰り返す</value>
+  </data>
+  <data name="LID_Label_Carousel_Step1" xml:space="preserve">
+    <value>サンプルデッキにカローセルをセットします。チューブがないことを確認して下さい。</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_Manually" xml:space="preserve">
+    <value>手動でサンプルデッキを装置の正面に向かってまっすぐ引きます。  カロ―セルを反時計回りに回転させて</value>
+  </data>
+  <data name="LID_Label_Carousel_Step3" xml:space="preserve">
+    <value>チューブを任意の位置に置き、ドロップダウンメニューを使用してカロ―セルをその位置に移動します。チューブ検知センサーがチューブを認識していることを確認します。プローブ降下ボタンを使用して、プローブを降下させ、位置合わせを確認します。繰り返しボタンを使用して、必要に応じて繰り返します。続行する前に、カロ―セルから全てのチューブを手動で取り除きます。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step1" xml:space="preserve">
+    <value>サンプルデッキに位置合わせツールをセットします。ツールのA1をサンプルデッキのA1に合わせします。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step2" xml:space="preserve">
+    <value>を使用してプローブを移動します。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step2_Manually" xml:space="preserve">
+    <value>サンプルデッキを手動で動して</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step3" xml:space="preserve">
+    <value>を使用してプローブを移動します</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step4" xml:space="preserve">
+    <value>プローブを次のドロップダウンメニューのうち少なくとも2つの位置に下げます。A1、H1、A12、H12、D6、E6、D7またはE7。プローブは中央に配置され、ウェルの側面に触れないようにします。  繰り返しボタンを使用して、必要に応じて繰り返します。</value>
+  </data>
+  <data name="LID_Label_MoveCarouselPositionTo" xml:space="preserve">
+    <value>カローセルを次の位置へ移動：</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_DiscardRunSample" xml:space="preserve">
+    <value>現在実行中のリストを破棄し、新しいサンプル測定を開始しますか?</value>
+  </data>
+  <data name="LID_Label_Initializing" xml:space="preserve">
+    <value>初期化中</value>
+  </data>
+  <data name="LID_GraphLabel_AvgDiameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_GraphLabel_CellClusters" xml:space="preserve">
+    <value>クラスター数</value>
+  </data>
+  <data name="LID_GraphLabel_Image" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="LID_GraphLabel_ImageStat" xml:space="preserve">
+    <value>画像統計</value>
+  </data>
+  <data name="LID_GraphLabel_NonViaConc" xml:space="preserve">
+    <value>死細胞濃度</value>
+  </data>
+  <data name="LID_GraphLabel_NonViaCount" xml:space="preserve">
+    <value>死生細胞数</value>
+  </data>
+  <data name="LID_GraphLabel_Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="LID_GraphLabel_PlotType" xml:space="preserve">
+    <value>プロットタイプ</value>
+  </data>
+  <data name="LID_GraphLabel_ViaConc" xml:space="preserve">
+    <value>生細胞 (x10^6) cells/mL</value>
+  </data>
+  <data name="LID_GraphLabel_ViaCount" xml:space="preserve">
+    <value>生細胞数</value>
+  </data>
+  <data name="LID_GraphLabel_StandardDeviation" xml:space="preserve">
+    <value>標準偏差</value>
+  </data>
+  <data name="LID_MSGBOX_ImportSuccess" xml:space="preserve">
+    <value>ファイルがインポートされた。</value>
+  </data>
+  <data name="LID_Label_InitializeSampleDeck" xml:space="preserve">
+    <value>サンプルデッキ</value>
+  </data>
+  <data name="LID_ButtonContent_Initialize" xml:space="preserve">
+    <value>初期化</value>
+  </data>
+  <data name="LID_MSGBOX_SecurtyOffLogin" xml:space="preserve">
+    <value>サインインできません。管理者に問い合わせて下さい。</value>
+  </data>
+  <data name="LID_HB_Exit" xml:space="preserve">
+    <value>終了</value>
+  </data>
+  <data name="LID_HB_Lock" xml:space="preserve">
+    <value>ロック</value>
+  </data>
+  <data name="LID_RadioButton_NoneReagent" xml:space="preserve">
+    <value>なし</value>
+  </data>
+  <data name="LID_ListOption_ELOMonitor" xml:space="preserve">
+    <value>表示</value>
+  </data>
+  <data name="LID_ListOption_ELOMonitorOff" xml:space="preserve">
+    <value>無操作が4時間続いた後に表示がオフになります</value>
+  </data>
+  <data name="LID_POPUPHeader_SelectTempCellType" xml:space="preserve">
+    <value>テンポラリセルタイプを選択</value>
+  </data>
+  <data name="LID_Label_Led" xml:space="preserve">
+    <value>LED</value>
+  </data>
+  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+    <value>Vi-CELL BLU</value>
+  </data>
+  <data name="LID_Label_AvgDiameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_Label_TotalCells" xml:space="preserve">
+    <value>総細胞数</value>
+  </data>
+  <data name="LID_Label_ViableCells" xml:space="preserve">
+    <value>生細胞数</value>
+  </data>
+  <data name="LID_Label_InstrumentError" xml:space="preserve">
+    <value>装置エラー</value>
+  </data>
+  <data name="LID_GraphLabel_Slope" xml:space="preserve">
+    <value>スロープ</value>
+  </data>
+  <data name="LID_Graph_AvgDiaSI" xml:space="preserve">
+    <value>平均直径（µm）</value>
+  </data>
+  <data name="LID_Label_NoLogsFound" xml:space="preserve">
+    <value>ログが見つかりません。</value>
+  </data>
+  <data name="LID_PopUpHeader_AddQualityControl" xml:space="preserve">
+    <value>精度管理を追加</value>
+  </data>
+  <data name="LID_Concatenate_Nonviable" xml:space="preserve">
+    <value>死細胞</value>
+  </data>
+  <data name="LID_Concatenate_Viable" xml:space="preserve">
+    <value>生細胞</value>
+  </data>
+  <data name="LID_Label_ExportConfiguration" xml:space="preserve">
+    <value>構成をエクスポート</value>
+  </data>
+  <data name="LID_Label_ImportConfiguration" xml:space="preserve">
+    <value>構成をインポート</value>
+  </data>
+  <data name="LID_Label_All" xml:space="preserve">
+    <value>全て</value>
+  </data>
+  <data name="LID_Label_QualityControl" xml:space="preserve">
+    <value>精度管理</value>
+  </data>
+  <data name="LID_GraphLabel_ElapsedTimeDate" xml:space="preserve">
+    <value>経過時間（日）</value>
+  </data>
+  <data name="LID_MSGBOX_CelltypeLimit" xml:space="preserve">
+    <value>セルタイプは{0}以上にならないようにします。</value>
+  </data>
+  <data name="LID_MSGBOX_InvalidArgs" xml:space="preserve">
+    <value>Invalid or missing data field</value>
+  </data>
+  <data name="LID_MSGBOX_Busy" xml:space="preserve">
+    <value>ビジー</value>
+  </data>
+  <data name="LID_MSGBOX_EntryInvalid" xml:space="preserve">
+    <value>無効なエントリー</value>
+  </data>
+  <data name="LID_MSGBOX_EntryNotFound" xml:space="preserve">
+    <value>エントリーが見つかりません。</value>
+  </data>
+  <data name="LID_MSGBOX_Idel" xml:space="preserve">
+    <value>アイドルステータス</value>
+  </data>
+  <data name="LID_MSGBOX_NoneFound" xml:space="preserve">
+    <value>何も見つかりません。</value>
+  </data>
+  <data name="LID_MSGBOX_NotSupported" xml:space="preserve">
+    <value>サポートされていません。</value>
+  </data>
+  <data name="LID_MSGBOX_TimedOut" xml:space="preserve">
+    <value>時間切れ</value>
+  </data>
+  <data name="LID_MSGBOX_ValidationFailed" xml:space="preserve">
+    <value>確認に失敗しました。</value>
+  </data>
+  <data name="LID_Label_InstrumentStatusReport" xml:space="preserve">
+    <value>装置ステータスレポート</value>
+  </data>
+  <data name="LID_FrameLabel_LowLevelControls" xml:space="preserve">
+    <value>低レベルコントロール</value>
+  </data>
+  <data name="LID_MSGBOX_PWDExp" xml:space="preserve">
+    <value>お使いのパスワードは{0}に期限切れになります。期限切れになる前にパスワードを変更して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_SignMsg" xml:space="preserve">
+    <value>結果に署名済み</value>
+  </data>
+  <data name="LID_MSGBOX_AssayRange" xml:space="preserve">
+    <value>アッセイ値は、{0}-{1} {2}の間でなければなりません。</value>
+  </data>
+  <data name="LID_Button_Stop" xml:space="preserve">
+    <value>分析続行を停止</value>
+  </data>
+  <data name="LID_ERRMSGBOX__SecurityMsg" xml:space="preserve">
+    <value>入力したユーザーIDまたはパスワードが無効か、セキュリティを切り替える権限がありません。管理者にお問合せて下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FromDate" xml:space="preserve">
+    <value>開始日を終了日より後にすることはできません。</value>
+  </data>
+  <data name="LID_MSGBOX_Calibration_ExpirationDate" xml:space="preserve">
+    <value>有効期限日は現在の日付より前にすることはできません。</value>
+  </data>
+  <data name="LID_Label_ReportEventType" xml:space="preserve">
+    <value>イベントタイプ</value>
+  </data>
+  <data name="LID_Label_CalibrationType" xml:space="preserve">
+    <value>濃度スロープタイプ</value>
+  </data>
+  <data name="LID_Label_Intercept" xml:space="preserve">
+    <value>切片</value>
+  </data>
+  <data name="LID_Label_NoConsum" xml:space="preserve">
+    <value>消耗品番号</value>
+  </data>
+  <data name="LID_Label_Slop" xml:space="preserve">
+    <value>スロープ</value>
+  </data>
+  <data name="LID_MSGBOX_QualityControl" xml:space="preserve">
+    <value>精度管理</value>
+  </data>
+  <data name="LID_Label_Status" xml:space="preserve">
+    <value>ステータス</value>
+  </data>
+  <data name="LID_MSGBOX_Minutes" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="LID_Label_Consumable" xml:space="preserve">
+    <value>消耗品</value>
+  </data>
+  <data name="LID_MSGBOX_Volume" xml:space="preserve">
+    <value>シリンジの位置</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ReactorNameBlank" xml:space="preserve">
+    <value>リアクター名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_BlankField_With_Double_Quotes" xml:space="preserve">
+    <value>{0}フィールドを入力して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_EnterQualityControlName" xml:space="preserve">
+    <value>精度管理名</value>
+  </data>
+  <data name="LID_Label_BioProcessName" xml:space="preserve">
+    <value>バイオプロセス名</value>
+  </data>
+  <data name="LID_Label_CellSharpnessValueBlank" xml:space="preserve">
+    <value>セルシャープネスを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_CellTypeNameBlank" xml:space="preserve">
+    <value>セルタイプ名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_QualityControl" xml:space="preserve">
+    <value>精度管理</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ChooseADifferent_Name" xml:space="preserve">
+    <value>以前に使用されていた細胞タイプ名です。異なる細胞タイプ名を選択してください。</value>
+  </data>
+  <data name="LID_Label_Move96WellPositionTo" xml:space="preserve">
+    <value>96ウェルプレートを次の位置へ移動：</value>
+  </data>
+  <data name="LID_Report_Last_Check" xml:space="preserve">
+    <value>最終確認日</value>
+  </data>
+  <data name="LID_Report_10M" xml:space="preserve">
+    <value>10M</value>
+  </data>
+  <data name="LID_Report_2M" xml:space="preserve">
+    <value>2M</value>
+  </data>
+  <data name="LID_Report_AnalysisBy" xml:space="preserve">
+    <value>測定者</value>
+  </data>
+  <data name="LID_Report_Control_Board" xml:space="preserve">
+    <value>コントロールボード</value>
+  </data>
+  <data name="LID_Report_DoublingTime" xml:space="preserve">
+    <value>倍加時間（時間）</value>
+  </data>
+  <data name="LID_Report_GrowthRate" xml:space="preserve">
+    <value>増加率（/時）</value>
+  </data>
+  <data name="LID_Report_Intercept" xml:space="preserve">
+    <value>切片</value>
+  </data>
+  <data name="LID_Report_Pos12Volt" xml:space="preserve">
+    <value>+12V</value>
+  </data>
+  <data name="LID_Report_Pos24Volt" xml:space="preserve">
+    <value>+24V</value>
+  </data>
+  <data name="LID_Report_Pos33Volt" xml:space="preserve">
+    <value>+3.3V</value>
+  </data>
+  <data name="LID_Report_Pos5VoltCircuit" xml:space="preserve">
+    <value>+5V回路</value>
+  </data>
+  <data name="LID_Report_Pos5VoltSensor" xml:space="preserve">
+    <value>+5Vセンサー</value>
+  </data>
+  <data name="LID_Report_ReanalysisBy" xml:space="preserve">
+    <value>再測定者</value>
+  </data>
+  <data name="LID_Report_SampleDate" xml:space="preserve">
+    <value>測定日</value>
+  </data>
+  <data name="LID_Report_StatusState" xml:space="preserve">
+    <value>ステータス状態</value>
+  </data>
+  <data name="LID_Report_AnalysisType" xml:space="preserve">
+    <value>測定タイプ</value>
+  </data>
+  <data name="LID_Label_Space" xml:space="preserve">
+    <value>{0}/{1}の空き容量</value>
+  </data>
+  <data name="LID_POPUPHeader_OpenBioprocess" xml:space="preserve">
+    <value>バイオプロセスを開く</value>
+  </data>
+  <data name="LID_POPUPHeader_OpenQc" xml:space="preserve">
+    <value>精度管理を開く</value>
+  </data>
+  <data name="LID_GridLabel_R2" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="LID_Label_BufferSolution" xml:space="preserve">
+    <value>D. バッファー溶液</value>
+  </data>
+  <data name="LID_Label_Cell" xml:space="preserve">
+    <value>H. 細胞</value>
+  </data>
+  <data name="LID_Label_CleaningAgent" xml:space="preserve">
+    <value>B. 洗浄剤</value>
+  </data>
+  <data name="LID_Label_ConditioningSolution" xml:space="preserve">
+    <value>C. 消毒剤</value>
+  </data>
+  <data name="LID_Label_Reagent" xml:space="preserve">
+    <value>E. 試薬2</value>
+  </data>
+  <data name="LID_Label_Reagent1" xml:space="preserve">
+    <value>A. 試薬1</value>
+  </data>
+  <data name="LID_Label_Sample" xml:space="preserve">
+    <value>G. サンプル</value>
+  </data>
+  <data name="LID_Label_Waste" xml:space="preserve">
+    <value>F. 廃液</value>
+  </data>
+  <data name="LID_Report_NoDataFound" xml:space="preserve">
+    <value>データが見つかりません。</value>
+  </data>
+  <data name="LID_Label_Aborting" xml:space="preserve">
+    <value>中止している...</value>
+  </data>
+  <data name="LID_Label_Note" xml:space="preserve">
+    <value>注意：</value>
+  </data>
+  <data name="LID_Label_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="LID_Report_AnalysisVersion" xml:space="preserve">
+    <value>測定バージョン</value>
+  </data>
+  <data name="LID_Report_ImageSize" xml:space="preserve">
+    <value>画像サイズ</value>
+  </data>
+  <data name="LID_Report_carousel" xml:space="preserve">
+    <value>カローセル/96ウェル</value>
+  </data>
+  <data name="LID_Report_NoOfRuns" xml:space="preserve">
+    <value>測定数</value>
+  </data>
+  <data name="LID_Report_RemainingCapacity" xml:space="preserve">
+    <value>廃棄トレイの残り容量</value>
+  </data>
+  <data name="LID_Icon_Signature" xml:space="preserve">
+    <value>署名</value>
+  </data>
+  <data name="LID_Icon_CellType" xml:space="preserve">
+    <value>セルタイプ</value>
+  </data>
+  <data name="LID_Icon_Samples" xml:space="preserve">
+    <value>サンプル？</value>
+  </data>
+  <data name="LID_Icon_AcceptSetFocusSuccessful" xml:space="preserve">
+    <value>フォーカス設定を受け入れます。</value>
+  </data>
+  <data name="LID_Icon_ChangePassword" xml:space="preserve">
+    <value>パスワードの変更</value>
+  </data>
+  <data name="LID_Report_UsesRemaining" xml:space="preserve">
+    <value>使用回数</value>
+  </data>
+  <data name="LID_Report_UsesTotal" xml:space="preserve">
+    <value>総使用数</value>
+  </data>
+  <data name="LID_Result_AverageCellPerImage" xml:space="preserve">
+    <value>画像ごとの平均細胞数</value>
+  </data>
+  <data name="LID_Result_Bubbles" xml:space="preserve">
+    <value>気泡数</value>
+  </data>
+  <data name="LID_Result_CellClusters" xml:space="preserve">
+    <value>クラスター数</value>
+  </data>
+  <data name="LID_Result_Circularity" xml:space="preserve">
+    <value>真円度</value>
+  </data>
+  <data name="LID_Result_Concentration" xml:space="preserve">
+    <value>総細胞濃度 (x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_Result_size" xml:space="preserve">
+    <value>サイズ（µm）</value>
+  </data>
+  <data name="LID_Result_Totalcells" xml:space="preserve">
+    <value>細胞数</value>
+  </data>
+  <data name="LID_Result_Viability" xml:space="preserve">
+    <value>生存率（%）</value>
+  </data>
+  <data name="LID_Result_Viablecircularity" xml:space="preserve">
+    <value>生細胞の真円度</value>
+  </data>
+  <data name="LID_Result_Viablesize" xml:space="preserve">
+    <value>生細胞サイズ（µm）</value>
+  </data>
+  <data name="LID_Result_ViaConc" xml:space="preserve">
+    <value>生細胞 (x10^6) cells/mL</value>
+  </data>
+  <data name="LID_Result_ViaCount" xml:space="preserve">
+    <value>生細胞数</value>
+  </data>
+  <data name="LID_MSGBOX_FileDeleted" xml:space="preserve">
+    <value>ファイル削除完了</value>
+  </data>
+  <data name="LID_MSGBOX_NoDir" xml:space="preserve">
+    <value>ディレクトリは存在していません。</value>
+  </data>
+  <data name="LID_MSGBOX_NoFile" xml:space="preserve">
+    <value>削除するファイルがありません。</value>
+  </data>
+  <data name="LID_GraphResult_ViaSize" xml:space="preserve">
+    <value>生細胞のサイズ分布</value>
+  </data>
+  <data name="LID_Label_DiskSpaceLow" xml:space="preserve">
+    <value>エラー：ディスクの空き容量が足りません。</value>
+  </data>
+  <data name="LID_Icon_ExportInstrumentStatus" xml:space="preserve">
+    <value>装置ステータスのエクスポート</value>
+  </data>
+  <data name="LID_Label_SecondDueTo" xml:space="preserve">
+    <value>秒後にロックされます。</value>
+  </data>
+  <data name="LID_Label_Sensor" xml:space="preserve">
+    <value>センサー</value>
+  </data>
+  <data name="LID_Label_UserDeatils" xml:space="preserve">
+    <value>ユーザーの詳細情報</value>
+  </data>
+  <data name="LID_LogsList_CalibraionLog" xml:space="preserve">
+    <value>濃度スロープの履歴ログ</value>
+  </data>
+  <data name="LID_StatusLabel_AttentionReq" xml:space="preserve">
+    <value>注意喚起</value>
+  </data>
+  <data name="LID_StatusLabel_Fault" xml:space="preserve">
+    <value>不良</value>
+  </data>
+  <data name="LID_StatusBar_MovingProbeSuccessful" xml:space="preserve">
+    <value>プローブを移動しました。</value>
+  </data>
+  <data name="LID_StatusBar_ValvePositionChanged" xml:space="preserve">
+    <value>バルブ位置が変更されました</value>
+  </data>
+  <data name="LID_DataGrid_Header" xml:space="preserve">
+    <value>重大度</value>
+  </data>
+  <data name="LID_DataGrid_Instance" xml:space="preserve">
+    <value>インスタンス</value>
+  </data>
+  <data name="LID_DataGrid_SubSystem" xml:space="preserve">
+    <value>サブシステム</value>
+  </data>
+  <data name="LID_DataGrid_System" xml:space="preserve">
+    <value>システム</value>
+  </data>
+  <data name="LID_StatusBar_CarouselRotatedOnePosition" xml:space="preserve">
+    <value>カロ―セルが1つの位置に回転しました</value>
+  </data>
+  <data name="LID_StatusBar_InitializedSampleDeck" xml:space="preserve">
+    <value>初期化したサンプルデッキ</value>
+  </data>
+  <data name="LID_StatusBar_ModifiedCellType" xml:space="preserve">
+    <value>ユーザー指定のセルタイプが変更されました</value>
+  </data>
+  <data name="LID_StatusBar_MotorRegProcessCan" xml:space="preserve">
+    <value>モーター位置合わせプロセスがキャンセルされました</value>
+  </data>
+  <data name="LID_StatusBar_NewConcentrationSlopeSet" xml:space="preserve">
+    <value>新しい濃度スロープが設定されました</value>
+  </data>
+  <data name="LID_StatusBar_NewSizeSlopeSet" xml:space="preserve">
+    <value>新しいサイズスロープが設定されました</value>
+  </data>
+  <data name="LID_StatusBar_QueueResumed" xml:space="preserve">
+    <value>サンプル測定が再開されました。</value>
+  </data>
+  <data name="LID_StatusBar_RemainingWasteTubeBinCapacit" xml:space="preserve">
+    <value>廃棄トレイの残り容量をリセットしました。</value>
+  </data>
+  <data name="LID_StatusBar_ResultRecordSigned" xml:space="preserve">
+    <value>結果記録が署名されました</value>
+  </data>
+  <data name="LID_StatusBar_SampleReanalyzed" xml:space="preserve">
+    <value>サンプルが再測定されました</value>
+  </data>
+  <data name="LID_StatusBar_SystemSecuritySettingChanged" xml:space="preserve">
+    <value>システムセキュリティ設定が変更されました。</value>
+  </data>
+  <data name="LID_StatusBar_UserSignOut" xml:space="preserve">
+    <value>ユーザーがサインアウトした</value>
+  </data>
+  <data name="LID_StatusBar_WorkQueuePaused" xml:space="preserve">
+    <value>サンプル測定が一時停止中</value>
+  </data>
+  <data name="LID_StatusBar_WorkQueueStart" xml:space="preserve">
+    <value>サンプル測定が開始されました。</value>
+  </data>
+  <data name="LID_StatusBar_WorkQueueStopped" xml:space="preserve">
+    <value>サンプル測定が停止しました。</value>
+  </data>
+  <data name="LID_CreateByOpen_SelectOneSample" xml:space="preserve">
+    <value>サンプルを1つ選択</value>
+  </data>
+  <data name="LID_Label_96Well" xml:space="preserve">
+    <value>96ウェル</value>
+  </data>
+  <data name="LID_Label_96WellPosition" xml:space="preserve">
+    <value>96ウェル位置</value>
+  </data>
+  <data name="LID_Label_CarouselPosition" xml:space="preserve">
+    <value>カロ―セル位置</value>
+  </data>
+  <data name="LID_Label_ResultValue" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="LID_Label_Circuit" xml:space="preserve">
+    <value>回路</value>
+  </data>
+  <data name="LID_Label_BackgroundUniformity" xml:space="preserve">
+    <value>バックグラウンドの均一性</value>
+  </data>
+  <data name="LID_Label_test" xml:space="preserve">
+    <value>テスト</value>
+  </data>
+  <data name="LID_Label_Parameter" xml:space="preserve">
+    <value>測定項目</value>
+  </data>
+  <data name="LID_Label_SystemError" xml:space="preserve">
+    <value>システムエラー</value>
+  </data>
+  <data name="LID_MSGBOX_HardwareNotIntitalized" xml:space="preserve">
+    <value>ハードウェアは初期化されていません。</value>
+  </data>
+  <data name="LID_MSGBOX_StorageFault" xml:space="preserve">
+    <value>保存不良</value>
+  </data>
+  <data name="LID_Label_AspirationCycle" xml:space="preserve">
+    <value>吸引回数</value>
+  </data>
+  <data name="LID_Label_MixingCycle" xml:space="preserve">
+    <value>混合回数</value>
+  </data>
+  <data name="LID_POPUPHeader_SelectCellTypeToReanlyse" xml:space="preserve">
+    <value>再解析に使用するセルタイプを選択して下さい。</value>
+  </data>
+  <data name="LID_Label_LockMsg" xml:space="preserve">
+    <value>システムはロックされました。続行する場合は、認証を行ってください。</value>
+  </data>
+  <data name="LID_StatusBar_AddedCellType" xml:space="preserve">
+    <value>ユーザー指定のセルタイプが追加されました</value>
+  </data>
+  <data name="LID_ConLabel_LastConcentrationSlope" xml:space="preserve">
+    <value>最後の濃度スロープ</value>
+  </data>
+  <data name="LID_ConLabel_SetNewConcentration" xml:space="preserve">
+    <value>新しい濃度を設定</value>
+  </data>
+  <data name="LID_ERRMSGBOX_TheAssayValueIsNotWithinRange" xml:space="preserve">
+    <value>アッセイ値が{0}Mの範囲にありません</value>
+  </data>
+  <data name="LID_MSGBOX_CancelConcentration" xml:space="preserve">
+    <value>現在の濃度スロープ結果をキャンセルしますか？</value>
+  </data>
+  <data name="LID_MSGBOX_ModifyConfirmation" xml:space="preserve">
+    <value>セルタイプ_{0}_の設定を変更しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_SoftwareFault" xml:space="preserve">
+    <value>ソフトウェア不良</value>
+  </data>
+  <data name="LID_MSGBOX_NightCleaning" xml:space="preserve">
+    <value>夜間洗浄進行中</value>
+  </data>
+  <data name="LID_MSGBOX_NightCleaningSkipped" xml:space="preserve">
+    <value>夜間洗浄がスキップされました。</value>
+  </data>
+  <data name="LID_Label_MotorFocus" xml:space="preserve">
+    <value>モーターフォーカス</value>
+  </data>
+  <data name="LID_Label_MotorReagent" xml:space="preserve">
+    <value>モーター試薬</value>
+  </data>
+  <data name="LID_GridLabel_ConExpirationDate" xml:space="preserve">
+    <value>有効期限日（YYYY/MM/DD）</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FailToPerformReg" xml:space="preserve">
+    <value>位置合わせに失敗しました。</value>
+  </data>
+  <data name="LID_StatusBar_PerformCarouselProcess" xml:space="preserve">
+    <value>カロ―セルの位置合わせが完了しました。</value>
+  </data>
+  <data name="LID_StatusBar_PerformPlateProcess" xml:space="preserve">
+    <value>プレートの位置合わせが完了しました。</value>
+  </data>
+  <data name="LID_MSGBOX_MotorCarouselRegError" xml:space="preserve">
+    <value>カロ―セルを取り外すとカロ―セルの位置合わせが停止します。</value>
+  </data>
+  <data name="LID_StatusBar_ServiceUserSignOut" xml:space="preserve">
+    <value>サービスユーザーがサインアウトしました。セキュリティオフ</value>
+  </data>
+  <data name="LID_Label_SampleTube" xml:space="preserve">
+    <value>サンプルチューブ</value>
+  </data>
+  <data name="LID_Label_Firmware_Update_Failed" xml:space="preserve">
+    <value>ファームウェアの更新ができませんでした。</value>
+  </data>
+  <data name="LID_Label_Initialization_Failed" xml:space="preserve">
+    <value>初期化できませんでした。</value>
+  </data>
+  <data name="LID_MSGBOX_UnableToPerform_Night_Clean" xml:space="preserve">
+    <value>夜間洗浄を実行できませんでした。</value>
+  </data>
+  <data name="LID_MSGBOX_MotorPlateRegError" xml:space="preserve">
+    <value>カロ―セルをセットするとプレート位置合わせが停止します。</value>
+  </data>
+  <data name="LID_Label_Days" xml:space="preserve">
+    <value>日</value>
+  </data>
+  <data name="LID_Label_Add" xml:space="preserve">
+    <value>追加</value>
+  </data>
+  <data name="LID_Label_Edit" xml:space="preserve">
+    <value>編集</value>
+  </data>
+  <data name="LID_Label_Graph" xml:space="preserve">
+    <value>グラフ</value>
+  </data>
+  <data name="LID_Label_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="LID_Label_Image" xml:space="preserve">
+    <value>画像</value>
+  </data>
+  <data name="LID_Label_Summary" xml:space="preserve">
+    <value>概要</value>
+  </data>
+  <data name="LID_Label_Overtime" xml:space="preserve">
+    <value>履歴</value>
+  </data>
+  <data name="LID_Label_Queue" xml:space="preserve">
+    <value>リスト</value>
+  </data>
+  <data name="LID_Label_Users" xml:space="preserve">
+    <value>ユーザー</value>
+  </data>
+  <data name="LID_ERRMSGBOX_LoadError" xml:space="preserve">
+    <value>96ウェルの位置を選択し、サンプルリストを作成して下さい。</value>
+  </data>
+  <data name="LID_ReagentStatus_DAspirating" xml:space="preserve">
+    <value>ブリーチの吸引</value>
+  </data>
+  <data name="LID_ReagentStatus_Dcompalted" xml:space="preserve">
+    <value>デコンタミネーション完了</value>
+  </data>
+  <data name="LID_ReagentStatus_DDEeay" xml:space="preserve">
+    <value>デコンタミネーションが遅延しています。</value>
+  </data>
+  <data name="LID_ReagentStatus_DFailed" xml:space="preserve">
+    <value>デコンタミネーションを失敗しました。</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushAir" xml:space="preserve">
+    <value>フラッシングエアー</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushBuffer" xml:space="preserve">
+    <value>フラッシング緩衝液</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushClean" xml:space="preserve">
+    <value>フラッシングクリーナー</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushComplete" xml:space="preserve">
+    <value>フラッシング処理完了</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushConditioningSolution" xml:space="preserve">
+    <value>フラッシング消毒剤</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushFailed" xml:space="preserve">
+    <value>フラッシング処理失敗</value>
+  </data>
+  <data name="LID_ReagentStatus_Lcomplete" xml:space="preserve">
+    <value>ロード完了</value>
+  </data>
+  <data name="LID_ReagentStatus_LContainerLocation" xml:space="preserve">
+    <value>容器位置で待機中</value>
+  </data>
+  <data name="LID_ReagentStatus_LDoorLatch" xml:space="preserve">
+    <value>ドアラッチを待機</value>
+  </data>
+  <data name="LID_ReagentStatus_LDoorLatchFail" xml:space="preserve">
+    <value>ドアラッチタイムアウトの不具合</value>
+  </data>
+  <data name="LID_ReagentStatus_LFludicFail" xml:space="preserve">
+    <value>流体不良</value>
+  </data>
+  <data name="LID_ReagentStatus_LInsertingProbe" xml:space="preserve">
+    <value>プローブの挿入</value>
+  </data>
+  <data name="LID_ReagentStatus_LInvalidContainerFail" xml:space="preserve">
+    <value>指定されていない容器位置</value>
+  </data>
+  <data name="LID_ReagentStatus_LNoReagentFail" xml:space="preserve">
+    <value>試薬が検知されない</value>
+  </data>
+  <data name="LID_ReagentStatus_LNoWasteFail" xml:space="preserve">
+    <value>廃液が検知されません</value>
+  </data>
+  <data name="LID_ReagentStatus_LPrimingFLuid" xml:space="preserve">
+    <value>流路のプライミング</value>
+  </data>
+  <data name="LID_ReagentStatus_LProbeInsertFail" xml:space="preserve">
+    <value>プローブ挿入不良</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentContainers" xml:space="preserve">
+    <value>試薬容器の識別</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentEmptyFail" xml:space="preserve">
+    <value>試薬切れ</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentInvalidFail" xml:space="preserve">
+    <value>試薬無効エラー</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentInsufficientRemainingFail" xml:space="preserve">
+    <value>試薬残数が不十分です</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentSensor" xml:space="preserve">
+    <value>試薬センサーを待機</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentSensorFail" xml:space="preserve">
+    <value>試薬センサー検知不良</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagetnExpired" xml:space="preserve">
+    <value>試薬の期限切れ</value>
+  </data>
+  <data name="LID_ReagentStatus_LSyncReagentData" xml:space="preserve">
+    <value>試薬データの同期</value>
+  </data>
+  <data name="LID_ReagentStatus_LTimeOut" xml:space="preserve">
+    <value>装置タイムアウト不良</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeClean" xml:space="preserve">
+    <value>クリーナー_{0}_のプライム</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeComplete" xml:space="preserve">
+    <value>プライミング処理完了</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeFailed" xml:space="preserve">
+    <value>プライミング処理失敗</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeReagent" xml:space="preserve">
+    <value>試薬{0}のプライミング</value>
+  </data>
+  <data name="LID_ReagentStatus_ULComplete" xml:space="preserve">
+    <value>アンロード完了</value>
+  </data>
+  <data name="LID_ReagentStatus_ULDoorUnlatchFailed" xml:space="preserve">
+    <value>ドアのアンラッチ失敗</value>
+  </data>
+  <data name="LID_ReagentStatus_ULDrainFailed" xml:space="preserve">
+    <value>排水パージ失敗</value>
+  </data>
+  <data name="LID_ReagentStatus_ULDraining" xml:space="preserve">
+    <value>排水位置{0}</value>
+  </data>
+  <data name="LID_ReagentStatus_ULProbeRetractFailed" xml:space="preserve">
+    <value>プローブ格納失敗</value>
+  </data>
+  <data name="LID_ReagentStatus_ULPurging" xml:space="preserve">
+    <value>ポジション_{0}_のパージ</value>
+  </data>
+  <data name="LID_ReagentStatus_ULRetractingProbe" xml:space="preserve">
+    <value>プローブを収納中</value>
+  </data>
+  <data name="LID_ReagentStatus_ULTimeOut" xml:space="preserve">
+    <value>装置タイムアウト不良</value>
+  </data>
+  <data name="LID_ReagentStatus_ULUnlatchingDoor" xml:space="preserve">
+    <value>ドアラッチを外しています。</value>
+  </data>
+  <data name="LID_Label_Decluster_Low" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="LID_Label_LOW" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="LID_Label_WARNING" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="LID_Label_FaultSuggestRestart" xml:space="preserve">
+    <value>故障状態を解決してから装置を再起動してください</value>
+  </data>
+  <data name="LID_GridHeader_StartDate" xml:space="preserve">
+    <value>開始日</value>
+  </data>
+  <data name="LID_GridHeader_StartTime" xml:space="preserve">
+    <value>開始時間</value>
+  </data>
+  <data name="LID_Label_AvgAdjustedConc" xml:space="preserve">
+    <value>平均調整濃度（/mL）</value>
+  </data>
+  <data name="LID_Label_AvgOriginalConc" xml:space="preserve">
+    <value>平均オリジナル濃度（/mL）</value>
+  </data>
+  <data name="LID_Label_AvgTotalCells" xml:space="preserve">
+    <value>平均総細胞数</value>
+  </data>
+  <data name="LID_Label_FastWash" xml:space="preserve">
+    <value>高速洗浄</value>
+  </data>
+  <data name="LID_Label_NoOfTubes" xml:space="preserve">
+    <value>チューブ数</value>
+  </data>
+  <data name="LID_Label_NormalWash" xml:space="preserve">
+    <value>ノーマル洗浄</value>
+  </data>
+  <data name="LID_Label_Validate" xml:space="preserve">
+    <value>確認</value>
+  </data>
+  <data name="LID_Label_FinalImage" xml:space="preserve">
+    <value>最終画像</value>
+  </data>
+  <data name="LID_Label_Brightfield" xml:space="preserve">
+    <value>明視野</value>
+  </data>
+  <data name="LID_Label_ContinueWorking" xml:space="preserve">
+    <value>作業続行</value>
+  </data>
+  <data name="LID_Label_WaitMsg" xml:space="preserve">
+    <value>お待ち下さい。</value>
+  </data>
+  <data name="LID_Label_DrainNote" xml:space="preserve">
+    <value>試薬を廃液として排出するのに長い時間を要することがあります。その後、残使用量がゼロに設定されます。</value>
+  </data>
+  <data name="LID_Label_PausedState" xml:space="preserve">
+    <value>一時停止。再開をタップ。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_NotPermittedAtThisTime" xml:space="preserve">
+    <value>現時点では許可されていない。  メッセージハブで詳細を確認し、再試行してください。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_WrongPWD" xml:space="preserve">
+    <value>入力したパスワード無効です</value>
+  </data>
+  <data name="LID_Label_ConfirmSerialNumber" xml:space="preserve">
+    <value>シリアルナンバーの確認</value>
+  </data>
+  <data name="LID_Label_EnterPassword" xml:space="preserve">
+    <value>パスワードの入力</value>
+  </data>
+  <data name="LID_Label_EnterSerialNumber" xml:space="preserve">
+    <value>シリアルナンバーの入力</value>
+  </data>
+  <data name="LID_Label_SetSerialNumber" xml:space="preserve">
+    <value>シリアルナンバーの設定</value>
+  </data>
+  <data name="LID_MSGBOX_SerialNumberVerification" xml:space="preserve">
+    <value>デバイスはシリアルナンバーを{0}に設定します。</value>
+  </data>
+  <data name="LID_MSGBOX_SetSerialConfirmation" xml:space="preserve">
+    <value>新しいシリアルナンバーを設定しますか？</value>
+  </data>
+  <data name="LID_MSG_SerialNumberMismatch" xml:space="preserve">
+    <value>シリアルナンバーのミスマッチ</value>
+  </data>
+  <data name="LID_StatusBar_SerialNumberChanged" xml:space="preserve">
+    <value>シリアルナンバーの変更成功</value>
+  </data>
+  <data name="LID_ERRMSGBOX_eNotPermittedByUser" xml:space="preserve">
+    <value>許可されていません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CELLTYPE_CLOSE_ERROR" xml:space="preserve">
+    <value>ウィンドウを閉じることができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CHANGE_PASSWORD_ERROR" xml:space="preserve">
+    <value>パスワードの変更失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DEFAULT_LOGIN" xml:space="preserve">
+    <value>初期設定値の設定失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DELETE_USER" xml:space="preserve">
+    <value>ユーザーを削除できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DENIEDACCESS_FOLDER" xml:space="preserve">
+    <value>ユーザーフォルダにアクセスできません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONADDCELLTYPE" xml:space="preserve">
+    <value>セルタイプを追加している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCLEAN" xml:space="preserve">
+    <value>洗浄操作を実行している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCLOSECREATECELLVIEW" xml:space="preserve">
+    <value>細胞表示作成を閉じる時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCREATEBYRUNOPEN" xml:space="preserve">
+    <value>測定開始時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCREATECELLTYPE" xml:space="preserve">
+    <value>セルタイプを作成している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEDITCELLTYPE" xml:space="preserve">
+    <value>セルタイプを編集している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEXPANDGRAPH" xml:space="preserve">
+    <value>グラフを拡張できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEXPANDIMAGE" xml:space="preserve">
+    <value>画像を拡張できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEXPORT" xml:space="preserve">
+    <value>エクスポート失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONFILTER" xml:space="preserve">
+    <value>フィルターができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONREANALYSESAMPLE" xml:space="preserve">
+    <value>サンプルの再測定中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONRUNSAMPLES" xml:space="preserve">
+    <value>サンプルを測定できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONSAMPLEANALYSIS" xml:space="preserve">
+    <value>サンプル分析を処理している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONSELECTION" xml:space="preserve">
+    <value>選択中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONSETDEFAULT" xml:space="preserve">
+    <value>初期設定中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONUPDATECAROUSELSTATUS" xml:space="preserve">
+    <value>サンプルステータスを更新できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONVALIDATIONOPENDIALOG" xml:space="preserve">
+    <value>確認ダイアログを開いている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FAILEDTOSETFOLDER" xml:space="preserve">
+    <value>フォルダの設定失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FAILED_NEW_USER" xml:space="preserve">
+    <value>ユーザーの作成失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGIN_USER_ERROR" xml:space="preserve">
+    <value>ログイン失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_MODIFY_USER" xml:space="preserve">
+    <value>ユーザーの修正失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NOTFOUND_FOLDER" xml:space="preserve">
+    <value>ユーザーフォルダが存在しません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NO_PERMISSION_EDIT_USER" xml:space="preserve">
+    <value>ユーザーにはユーザーを修正する権限がありません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NO_PERMISSION_NEW_USER" xml:space="preserve">
+    <value>ユーザーには新しいユーザーを作成する権限がありません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NO_PERMISSION_ROLE_CHANGE" xml:space="preserve">
+    <value>ユーザーには権限階層を変更する権限がありません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_RESET_PASSWORD_FAIL" xml:space="preserve">
+    <value>パスワードをリセットすることができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ROLE_CHANGE" xml:space="preserve">
+    <value>ユーザーの権限を変更することができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SEARCH_FAILED" xml:space="preserve">
+    <value>ユーザーの検索失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_STOP_USER_LOGIN" xml:space="preserve">
+    <value>ユーザーログインの終了失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SWAP_USER_ERROR" xml:space="preserve">
+    <value>ユーザーのスワップ失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SWITCH_USER" xml:space="preserve">
+    <value>ユーザーを切り替えられません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOCALCULATEDISKSPACE" xml:space="preserve">
+    <value>ディスクスペースを計算できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOHANDLEIMAGE" xml:space="preserve">
+    <value>画像を更新できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOSTARTWORKQUEUE" xml:space="preserve">
+    <value>サンプル測定を開始できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOUPDATESTATUS" xml:space="preserve">
+    <value>サンプル測定のステータスを更新できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USERVALIDATIONFAILS" xml:space="preserve">
+    <value>ユーザーの確認に失敗しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USERVALUE_CHANGE" xml:space="preserve">
+    <value>ユーザー変更に失敗しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USER_ADMIN_ERROR" xml:space="preserve">
+    <value>ユーザーの詳細を変更する権限が拒否されたました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USER_SELECTION_ERROR" xml:space="preserve">
+    <value>ユーザーを取得できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USER_TIMER_ERROR" xml:space="preserve">
+    <value>画面ロックエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_BPQC_FILTER" xml:space="preserve">
+    <value>サンプル画像記録をフィルターできません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_ADD_QUALITY" xml:space="preserve">
+    <value>。精度管理を追加できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_ADD_SIGNATURE" xml:space="preserve">
+    <value>署名の追加失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_BAR_GRAPHACTIVE" xml:space="preserve">
+    <value>グラフ詳細を取得できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_CREATE_QUALITY_CONTROL" xml:space="preserve">
+    <value>精度管理の作成失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_DEFAULT_VALUE" xml:space="preserve">
+    <value>初期設定値を設定できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_DELETE_QUALITY" xml:space="preserve">
+    <value>精度管理の削除失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_DETAILS" xml:space="preserve">
+    <value>精度管理の詳細を切り替えられません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_EXPAND_VIEW" xml:space="preserve">
+    <value>表示を拡張できません</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_EXPORT_DATA" xml:space="preserve">
+    <value>データのエクスポート失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_IMAGE_ACTIVE" xml:space="preserve">
+    <value>画像の有効化失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_LINEGRAPHACTIVE" xml:space="preserve">
+    <value>線グラフエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_SAMPLE_LIST" xml:space="preserve">
+    <value>サンプルリストを取得できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_SELECT_SAMPLE_RECORD" xml:space="preserve">
+    <value>サンプル記録の選択エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_BIOPROCESS_IMAGE" xml:space="preserve">
+    <value>バイオプロセス画像にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_BIOPROCESS_CREATE" xml:space="preserve">
+    <value>バイオプロセスの作成エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CHANNEL_TRAVERSAL" xml:space="preserve">
+    <value>トラバーサルの変更時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DELETE_BIOPROCESS" xml:space="preserve">
+    <value>バイオプロセス詳細情報を削除している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_EXPAND_VIEW" xml:space="preserve">
+    <value>表示を拡大している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_EXPORT_DATA" xml:space="preserve">
+    <value>データのエクスポートエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_GETSAMPLES" xml:space="preserve">
+    <value>サンプルの回収時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_LINE_GRAPH_ACTIVE" xml:space="preserve">
+    <value>線グラフの有効化エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SELECTED_SAMPLERECORD" xml:space="preserve">
+    <value>選択された検体記録にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_GRAPH_DETAILS" xml:space="preserve">
+    <value>グラフ詳細の設定中にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SIGNATURE_SAMPLE" xml:space="preserve">
+    <value>署名されたサンプルにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_WHILE_ADD_EDIT_BIOPROCESS_DETAILS" xml:space="preserve">
+    <value>バイオプロセス詳細情報の追加/編集中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_SWITCH_BPDETAILS" xml:space="preserve">
+    <value>バイオプロセスを切換できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CellTypeBpQcStatusFailed" xml:space="preserve">
+    <value>セルタイプの取得失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CheckStatusFailed" xml:space="preserve">
+    <value>ステータスの取得失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CloseFailed" xml:space="preserve">
+    <value>ウィンドウを閉じることに失敗しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FetchFailed" xml:space="preserve">
+    <value>一般設定の取得失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_GenericParameterFailed" xml:space="preserve">
+    <value>値の設定失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LanguageSelectionFailed" xml:space="preserve">
+    <value>言語の選択失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_RunOptionSaveFailed" xml:space="preserve">
+    <value>設定の保存失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SaveFailed" xml:space="preserve">
+    <value>一般設定の保存失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SaveInstrumentFailed" xml:space="preserve">
+    <value>装置設定の保存失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SecurityChangeFailed" xml:space="preserve">
+    <value>セキュリティ設定の変更失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SecuritySettingsFailed" xml:space="preserve">
+    <value>セキュリティ設定の保存失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SelectSettingsFailed" xml:space="preserve">
+    <value>設定の表示失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SerialNumFailed" xml:space="preserve">
+    <value>シリアルナンバーの設定失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ShowSettingFailed" xml:space="preserve">
+    <value>設定の表示失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_TimeZoneSelectionFailed" xml:space="preserve">
+    <value>タイムゾーンの選択失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_TraversalChangeFailed" xml:space="preserve">
+    <value>選択の変更失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ValidateAccessFailed" xml:space="preserve">
+    <value>ユーザーアクセスの設定失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ValidationFailed" xml:space="preserve">
+    <value>シリアルナンバーの確認失敗</value>
+  </data>
+  <data name="LID_MSGBOX_DecontaminationProgress" xml:space="preserve">
+    <value>デコンタミネーション進行中。デコンタミネーションをキャンセルしますか？</value>
+  </data>
+  <data name="LID_StatusBar_Decontaminate" xml:space="preserve">
+    <value>デコンタミネーション</value>
+  </data>
+  <data name="LID_Label_PdfTitle" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="LID_MSGBOX_InstanceAlreadyRunning" xml:space="preserve">
+    <value>システムは既に測定中</value>
+  </data>
+  <data name="LID_Label_ResultParameters" xml:space="preserve">
+    <value>結果測定項目</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CLEAN" xml:space="preserve">
+    <value>洗浄中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CLEAN_BIN" xml:space="preserve">
+    <value>ビンの洗浄中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DISK_SPACE_CALCULATION" xml:space="preserve">
+    <value>ディスクスペースの計算中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SYSTEM_STATUS" xml:space="preserve">
+    <value>システムステータスの読み込み中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_WINDOW_LOAD" xml:space="preserve">
+    <value>ウィンドウの読み込み中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_EXPORT_BROWSE_FILE" xml:space="preserve">
+    <value>ファイルの場所を特定できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_EXPORT_CLOSE_WINDOW" xml:space="preserve">
+    <value>ウィンドウを閉じることができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_EXPORT_FILE" xml:space="preserve">
+    <value>ファイルのエクスポート失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_File_ERROR" xml:space="preserve">
+    <value>ファイル変換エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_File_Unauthorized" xml:space="preserve">
+    <value>ユーザーにはファイルにアクセスする権限がありません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_MASTER_NAVIGATE_VALIDATEUSER" xml:space="preserve">
+    <value>ユーザー情報にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_MASTER_STATUSBAR" xml:space="preserve">
+    <value>ステータスバーにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_CREATION_MANAGE" xml:space="preserve">
+    <value>セットアップ中にエラーが起きました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPAND_GRAPH" xml:space="preserve">
+    <value>グラフを拡大できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPAND_IMAGE" xml:space="preserve">
+    <value>画像を拡大できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPORT_SAMPLES" xml:space="preserve">
+    <value>サンプル測定結果のエクスポート失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPORT_SAMPLE_DETAILS" xml:space="preserve">
+    <value>サンプルの詳細をエクスポートしている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_FILTER" xml:space="preserve">
+    <value>サンプル記録の選択に失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMAGE_RESULT" xml:space="preserve">
+    <value>画像結果を取得できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMPORT" xml:space="preserve">
+    <value>サンプルのインポート失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMPORT_SAMPLES_DIRECTORY_NOT_FOUND" xml:space="preserve">
+    <value>インポートされたファイルにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMPORT_SAMPLES_PERMISSION" xml:space="preserve">
+    <value>ユーザーにはファイルをインポートする権限がありません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ITEM_COMPLETED" xml:space="preserve">
+    <value>サンプル測定を完了できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ITEM_COMPLETED_UPDATE" xml:space="preserve">
+    <value>サンプル測定を完了できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ITEM_STATUS_UPDATE" xml:space="preserve">
+    <value>サンプルステータスを更新できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_OPERATION" xml:space="preserve">
+    <value>サンプルリストの実行中にエラーが起きました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_RESULT_SAMPLES" xml:space="preserve">
+    <value>サンプルの実行失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ROTATE_RESULT_CROUSEL" xml:space="preserve">
+    <value>カロ―セルの回転時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_RUN_SAMPLES" xml:space="preserve">
+    <value>サンプルの測定失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_UPDATE_SAMPLES" xml:space="preserve">
+    <value>サンプルの更新にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_VALIDATE_IDLE_STATE" xml:space="preserve">
+    <value>リストの確認中にエラーが起きました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UPDATE_DEFAULTVALUE" xml:space="preserve">
+    <value>初期設定のサンプル詳細を更新できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CANCEL_FLUSH_FLOW_CELL" xml:space="preserve">
+    <value>フローセルの洗浄をキャンセルしている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CANCEL_PRIME_REAGENT_LINES" xml:space="preserve">
+    <value>試薬のプライミングをキャンセルしている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_FLUSH_FLOW_CELL" xml:space="preserve">
+    <value>フローセルの洗浄を開始できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_LOAD_COMPLETED" xml:space="preserve">
+    <value>ロードを完了している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_UNLOAD_COMPLETED" xml:space="preserve">
+    <value>アンロードを完了している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_PRIME_REAGENT_LINES" xml:space="preserve">
+    <value>試薬ラインのプライムを開始できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_REFRESH_REAGENT" xml:space="preserve">
+    <value>試薬を更新している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_DEFAULT" xml:space="preserve">
+    <value>初期設定値を設定している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_CLEAN" xml:space="preserve">
+    <value>洗浄できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_CLOSE_WINDOW" xml:space="preserve">
+    <value>ウィンドウを閉じることができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_DECONTAMINATE" xml:space="preserve">
+    <value>デコンタミネーションできません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_GO_TO_REAGENT" xml:space="preserve">
+    <value>試薬ウィンドウを開けません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_REPLACE_REAGENT" xml:space="preserve">
+    <value>試薬を交換できません。</value>
+  </data>
+  <data name="LID_StatusLabelRunReport_MaximumParameter" xml:space="preserve">
+    <value>印刷する測定項目を3つまで選択</value>
+  </data>
+  <data name="LID_Label_FirstAnnotatedImage" xml:space="preserve">
+    <value>最初の注釈付き画像</value>
+  </data>
+  <data name="LID_Label_ReagentParameters" xml:space="preserve">
+    <value>試薬パラメーター </value>
+  </data>
+  <data name="LID_Label_ExpirationDate" xml:space="preserve">
+    <value>有効期限日</value>
+  </data>
+  <data name="LID_eBubbleImage" xml:space="preserve">
+    <value>気泡を含む</value>
+  </data>
+  <data name="LID_eInvalidBackgroundIntensity" xml:space="preserve">
+    <value>不適切なバックグランド強度</value>
+  </data>
+  <data name="LID_ImageProcess_ImageDiscard" xml:space="preserve">
+    <value>画像の破棄理由</value>
+  </data>
+  <data name="LID_BubbleLabel_DiscardedImages" xml:space="preserve">
+    <value>破棄された画像</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FailedToAddDetails" xml:space="preserve">
+    <value>詳細の追加失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SelectionFailed" xml:space="preserve">
+    <value>選択失敗</value>
+  </data>
+  <data name="LID_BubbleLabel_DiscardedMsg" xml:space="preserve">
+    <value>以下の画像が破棄されたため、撮像された{1}枚の画像のうち{0}枚の画像による結果です。</value>
+  </data>
+  <data name="LID_Label_MicroMeter_Unit" xml:space="preserve">
+    <value>（µm）</value>
+  </data>
+  <data name="LID_Label_Percentage_Unit" xml:space="preserve">
+    <value>（%）</value>
+  </data>
+  <data name="LID_Label_ViableConcentrationWithoutUnit" xml:space="preserve">
+    <value>生細胞</value>
+  </data>
+  <data name="LID_Label_ViableSize_WithoutUnit" xml:space="preserve">
+    <value>生細胞の平均直径</value>
+  </data>
+  <data name="LID_Label_TenthPower" xml:space="preserve">
+    <value>(x10^6) cells/mL</value>
+  </data>
+  <data name="LID_ReportLabel_Concentration_WithoutUnit" xml:space="preserve">
+    <value>合計</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DISKSPACE_PERMISSION_ERROR" xml:space="preserve">
+    <value>ユーザーには装置フォルダにアクセスする権限がありません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CAROUSEL_POSITION_COMMAND" xml:space="preserve">
+    <value>カロ―セル位置のコマンド操作にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CHANGE_PROBE_UP_DOWN" xml:space="preserve">
+    <value>プローブの上下を変更している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CLOSING_WINDOW" xml:space="preserve">
+    <value>署名ポップアップを閉じている時にエラーが発生しました</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DUST_REFERENCE_ACCEPT" xml:space="preserve">
+    <value>ダストレファレンスの受け入れエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DUST_REFERENCE_CANCEL" xml:space="preserve">
+    <value>ダストレファレンスのキャンセルエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_GET_WORK_QUEUE_LIST" xml:space="preserve">
+    <value>サンプルリストのリトリーブ中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_SAMPLE_ANALYSIS_OCCURED" xml:space="preserve">
+    <value>サンプル分析中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_WORK_QUEUE_COMPLETED" xml:space="preserve">
+    <value>サンプル測定の完了処理中にエラーが起きました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_WORK_QUEUE_ITEM_COMPLETED" xml:space="preserve">
+    <value>サンプル測定項目の完了処理中にエラーが起きました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_OPEN_REVIEW_SAMPLE" xml:space="preserve">
+    <value>レビューを開いている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_REANALYZE_SAMPLE" xml:space="preserve">
+    <value>サンプルの再測定中にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SELECTED_SAMPLE" xml:space="preserve">
+    <value>サンプルの選択エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SELECT_ITEM" xml:space="preserve">
+    <value>選択されたアイテムにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_DEFAULT_MODEL" xml:space="preserve">
+    <value>初期設定モデル値を設定している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_LOG_ENABLE" xml:space="preserve">
+    <value>ログの設定を有効化している時にエラーが発生しました</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_START_BRIGHT_FIELD_DUST_SUBTRACT" xml:space="preserve">
+    <value>明視野のダスト減算開始時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_UPDATE_CONCENTRATION_DETAILS" xml:space="preserve">
+    <value>濃度詳細を更新している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_VALIDATE_USER" xml:space="preserve">
+    <value>ユーザーを確認している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_WHILE_EXECUTING_SAMPLE" xml:space="preserve">
+    <value>サンプルの実行中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FAULT_ERROR" xml:space="preserve">
+    <value>不具合が発生しました。</value>
+  </data>
+  <data name="LID_GraphLabel_CellConcentrationML" xml:space="preserve">
+    <value>死細胞濃度（/mL）</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PathTooLong" xml:space="preserve">
+    <value>設定したパスが長すぎます。ファイル名を含むパスは、260文字未満である必要があります。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ADMIN_BIOPROCESS_FILE_OPEN" xml:space="preserve">
+    <value>バイオプロセスファイルリストにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ADMIN_BIOPROCESS_PRINT" xml:space="preserve">
+    <value>結果を印刷できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ADMIN_BIOPROCESS_SELECTED_BIOPROCESS" xml:space="preserve">
+    <value>バイオプロセスを選択できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CONCENTRATE_IMAGE_RESULT_QUEUE" xml:space="preserve">
+    <value>カラムヘッダーを更新できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CONCENTRATE_SEARCH_LOG" xml:space="preserve">
+    <value>ログを検索できません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_USER_PROFILE" xml:space="preserve">
+    <value>ユーザープロファイルにエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FLYOUTMENU_SHOW" xml:space="preserve">
+    <value>メニューアイテムにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_IMAGEFULLVIEW_CLICK" xml:space="preserve">
+    <value>画像にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_IMAGEFULLVIEW_IMAGEFILE" xml:space="preserve">
+    <value>画像ファイルパスにエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGS_RETRIEVE_AUDIT_LOG" xml:space="preserve">
+    <value>監査ログが読み込めません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGS_RETRIEVE_INSTR_LOG" xml:space="preserve">
+    <value>装置ログが読み込めません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGS_SAMPLE_ACTIVITY_LOG" xml:space="preserve">
+    <value>サンプルアクティビティログが読み込めません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ON_CELLTYPE_SELECTION" xml:space="preserve">
+    <value>セルタイプ選択の変更操作エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_PROGRESSBAR_RESET_STORYBOARD" xml:space="preserve">
+    <value>進捗をリセットすることができません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_REPORT_SELECTION_CHANGE" xml:space="preserve">
+    <value>ログが読み込めません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SET_CELL_TYPE" xml:space="preserve">
+    <value>セルタイプを設定している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SET_POSITION_VALUE" xml:space="preserve">
+    <value>新しい位置を設定している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SPLASHSCREEN_INITIALIZE_HAWKEYE" xml:space="preserve">
+    <value>初期化失敗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_STORAGE_DELETE_RECORDS" xml:space="preserve">
+    <value>記録の削除失敗</value>
+  </data>
+  <data name="LID_ReportLabel_TotalImages_Analysis" xml:space="preserve">
+    <value>測定用画像</value>
+  </data>
+  <data name="LID_Label_InService_Date" xml:space="preserve">
+    <value>サービス作業日</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_TotalCell_Axis_Title" xml:space="preserve">
+    <value>死細胞数</value>
+  </data>
+  <data name="LID_ReportLabel_Images_Discarded" xml:space="preserve">
+    <value>破棄された画像</value>
+  </data>
+  <data name="LID_ImageProcessingError" xml:space="preserve">
+    <value>画像プロセスエラー</value>
+  </data>
+  <data name="LID_DataGridHeader_AdjustedConcentration" xml:space="preserve">
+    <value>調整済み濃度 (x10^6)/mL</value>
+  </data>
+  <data name="LID_DataGridHeader_AssayValue" xml:space="preserve">
+    <value>アッセイ値 (x10^6)/mL</value>
+  </data>
+  <data name="LID_DataGridHeader_DifferAssayValue" xml:space="preserve">
+    <value>(+/-10%)</value>
+  </data>
+  <data name="LID_DataGridHeader_OriginalConcentration" xml:space="preserve">
+    <value>オリジナル濃度 (x10^6)/mL</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CALL_BACK" xml:space="preserve">
+    <value>内部エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_FREE_UNMANAGED_MEMORY" xml:space="preserve">
+    <value>管理されていないメモリの解放中にエラーが発生しました。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_INVOKE" xml:space="preserve">
+    <value>内部エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_PROXY_INITIALIZE" xml:space="preserve">
+    <value>内部エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_RAISE_INVOKE_EVENT" xml:space="preserve">
+    <value>内部エラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SAVE_IMAGES" xml:space="preserve">
+    <value>画像を保存している時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_StatusBar_ImportFailed" xml:space="preserve">
+    <value>ファイルをインポートできません。セルタイプまたは精度管理名が使用できません。</value>
+  </data>
+  <data name="LID_Label_ElapsedTime" xml:space="preserve">
+    <value>経過時間</value>
+  </data>
+  <data name="LID_Label_ViableConc" xml:space="preserve">
+    <value>生細胞濃度（cells/mL）</value>
+  </data>
+  <data name="LID_Label_AnalysisDate" xml:space="preserve">
+    <value>測定日</value>
+  </data>
+  <data name="LID_MSGBOX_IMPORT_OVERWRITE_96WELL" xml:space="preserve">
+    <value>96ウェルサンプルリスト：新しいリストを開くと、既存のリストが上書きされます。上書きしてもよろしいですか？</value>
+  </data>
+  <data name="LID_MSGBOX_IMPORT_OVERWRITE_CAROUSEL" xml:space="preserve">
+    <value>カロ―セルサンプルリスト：新しいリストを開くと、既存のリストが上書きされます。上書きしてもよろしいですか？</value>
+  </data>
+  <data name="LID_MSGBOX_INVALID_DAT_FILE" xml:space="preserve">
+    <value>ファイルが壊れていて、開くことができません。</value>
+  </data>
+  <data name="LID_Lable_AboutInstument" xml:space="preserve">
+    <value>装置について</value>
+  </data>
+  <data name="LID_Report_InstrumentHealth" xml:space="preserve">
+    <value>装置の状態</value>
+  </data>
+  <data name="LID_Report_NoOfSampleLife" xml:space="preserve">
+    <value>サンプルライフタイム</value>
+  </data>
+  <data name="LID_Label_CameraFirmwareVersion_WithoutColon" xml:space="preserve">
+    <value>カメラファームウェアのバージョン</value>
+  </data>
+  <data name="LID_Label_Dot_Append" xml:space="preserve">
+    <value>。</value>
+  </data>
+  <data name="LID_Label_LastCalibrationDate_WithoutColon" xml:space="preserve">
+    <value>濃度スロープの最終設定日</value>
+  </data>
+  <data name="LID_Report_4M" xml:space="preserve">
+    <value>4M</value>
+  </data>
+  <data name="LID_Label_MotorRadius_WithoutColon" xml:space="preserve">
+    <value>モーター半径</value>
+  </data>
+  <data name="LID_Label_Motortheta_WithoutColon" xml:space="preserve">
+    <value>モーターシータ</value>
+  </data>
+  <data name="LID_MSGBOX_ExitProgressMsg" xml:space="preserve">
+    <value>Vi-CELL BLUアプリケーションの終了</value>
+  </data>
+  <data name="LID_Label_GraphHistorical" xml:space="preserve">
+    <value>グラフ履歴</value>
+  </data>
+  <data name="LID_Label_SampleIdResult" xml:space="preserve">
+    <value>サンプルID結果</value>
+  </data>
+  <data name="LID_MSGBOX_TubeDetected" xml:space="preserve">
+    <value>サンプルデッキの初期化中にチューブが検知されました。全てのチューブをカロ―セルから外してから続行して下さい。</value>
+  </data>
+  <data name="LID_Button_Continue" xml:space="preserve">
+    <value>続行</value>
+  </data>
+  <data name="LID_QCHeader_AnalysisDate" xml:space="preserve">
+    <value>測定日</value>
+  </data>
+  <data name="LID_QCHeader_ReAnalysisDate" xml:space="preserve">
+    <value>再測定日</value>
+  </data>
+  <data name="LID_Icon_ExportSummaryDetails" xml:space="preserve">
+    <value>概要の詳細情報のエクスポート</value>
+  </data>
+  <data name="LID_Result_Concentration_Export" xml:space="preserve">
+    <value>総細胞濃度 (x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_Result_ViaConc_Export" xml:space="preserve">
+    <value>生細胞 (x10^6) cells/mL</value>
+  </data>
+  <data name="LID_Report_Label_Active" xml:space="preserve">
+    <value>アクティブ</value>
+  </data>
+  <data name="LID_Report_Label_InActive" xml:space="preserve">
+    <value>インアクティブ</value>
+  </data>
+  <data name="LID_Report_Label_Unknown" xml:space="preserve">
+    <value>不明</value>
+  </data>
+  <data name="LID_Report_StatusInfo_Header" xml:space="preserve">
+    <value>ステータス表示</value>
+  </data>
+  <data name="LID_Result_MaximumDiameter" xml:space="preserve">
+    <value>最大直径（µm）</value>
+  </data>
+  <data name="LID_Result_MinimumDiameter" xml:space="preserve">
+    <value>最小直径（µm）</value>
+  </data>
+  <data name="LID_Result_SpotArea" xml:space="preserve">
+    <value>生細胞スポットエリア（%）</value>
+  </data>
+  <data name="LID_Result_SpotBrightness" xml:space="preserve">
+    <value>生細胞スポットブライトネス（%）</value>
+  </data>
+  <data name="LID_QCHeader_AcceptanceLimitsPresent" xml:space="preserve">
+    <value>許容範囲（%）</value>
+  </data>
+  <data name="LID_Label_MicroMeter_UnitWithOutBracket" xml:space="preserve">
+    <value>µm</value>
+  </data>
+  <data name="LID_Label_CellParameter" xml:space="preserve">
+    <value>セルタイプの測定項目</value>
+  </data>
+  <data name="LID_MSGBOX_SetTempCellType" xml:space="preserve">
+    <value>テンポラリーセルタイプを設定しました。</value>
+  </data>
+  <data name="LID_MSG_SelectSample" xml:space="preserve">
+    <value>削除するサンプルまたはリストを少なくとも1つ選択して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_MultiSelectionOverWrite" xml:space="preserve">
+    <value>位置{0}を上書きしてもよろしいですか？</value>
+  </data>
+  <data name="LID_MSGBOX_RefineSearch" xml:space="preserve">
+    <value>検索により{0}以上の結果が得られました。検索を絞り込んで下さい。</value>
+  </data>
+  <data name="LID_RadioButtonTab_Copy" xml:space="preserve">
+    <value>コピー</value>
+  </data>
+  <data name="LID_Label_SampleView" xml:space="preserve">
+    <value>サンプル表示</value>
+  </data>
+  <data name="LID_Label_MicronUnit" xml:space="preserve">
+    <value>µm</value>
+  </data>
+  <data name="LID_Label_PercentUnit" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_Manually_posone" xml:space="preserve">
+    <value>位置1</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_Manually_posthirteen" xml:space="preserve">
+    <value>位置13</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_first" xml:space="preserve">
+    <value>はセンターノッチの中央にセットされました。</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_first_one" xml:space="preserve">
+    <value>。カロ―セルを回転しすぎた場合、反時計回りに回転を続けます。時計回りに動かさないで下さい。プローブがボタンの中心に入るようにカローセルを直線的に調整します。</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_two" xml:space="preserve">
+    <value>サンプルデッキを動かしているときカローセルを回転させないように注意して下さい。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step2_AligHole" xml:space="preserve">
+    <value>中心アライメントホール</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step3_AligSlot" xml:space="preserve">
+    <value>行アライメントスロット</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step_Position" xml:space="preserve">
+    <value>はプローブの直下にあります。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step_PositionFSM" xml:space="preserve">
+    <value>はプローブの直下にあります。プローブの位置合わせができない場合、フィールドサービスマニュアルに従って、プローブブラケットを調整して下さい。</value>
+  </data>
+  <data name="LID_Label_Accepted" xml:space="preserve">
+    <value>承認済み</value>
+  </data>
+  <data name="LID_Label_Rejected" xml:space="preserve">
+    <value>拒否済み</value>
+  </data>
+  <data name="LID_Label_DefinedPositions" xml:space="preserve">
+    <value>測定待ち</value>
+  </data>
+  <data name="LID_Label_EmptyPositions" xml:space="preserve">
+    <value>ブランク</value>
+  </data>
+  <data name="LID_Label_RunCompletePositions" xml:space="preserve">
+    <value>測定完了</value>
+  </data>
+  <data name="LID_Status_Completed" xml:space="preserve">
+    <value>完了済み</value>
+  </data>
+  <data name="LID_Status_NotRun" xml:space="preserve">
+    <value>測定なし</value>
+  </data>
+  <data name="LID_Status_Skipped" xml:space="preserve">
+    <value>スキップ済み</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_prev" xml:space="preserve">
+    <value>プローブを使用して</value>
+  </data>
+  <data name="LID_ProgressIndication_FindingTubes" xml:space="preserve">
+    <value>チューブ検出中</value>
+  </data>
+  <data name="LID_Label_Resume" xml:space="preserve">
+    <value>再開</value>
+  </data>
+  <data name="LID_MSGBOX_ABORTEDSAMPLE" xml:space="preserve">
+    <value>サンプル測定は、システムエラーにより中断されました。  詳細については、メッセージハブに進んで下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_PAUSEDSAMPLE" xml:space="preserve">
+    <value>サンプル測定は、システムエラーによる一時停止されました。  詳細については、メッセージハブに進んで下さい。</value>
+  </data>
+  <data name="LID_MSG_ClearDefinedCell" xml:space="preserve">
+    <value>現在入力中の設定を削除しますか?</value>
+  </data>
+  <data name="LID_MSG_NotEnoughReagent" xml:space="preserve">
+    <value>試薬パックにこのキューを完全に処理するための十分なアクティビティがない。試薬がなくなった場合、試薬パックが置換されるまでキューは一時停止される。</value>
+  </data>
+  <data name="LID_MSG_NotEnoughDisposalTraySpace" xml:space="preserve">
+    <value>廃液チューブトレイにこのキューを完全に処理するための十分な容量がない。容量に到達した場合、廃液チューブトレイが空になってカウンターがリセットされるまでキューは一時停止される。</value>
+  </data>
+  <data name="LID_MSGBOX_ResponseTimeOut" xml:space="preserve">
+    <value>フォーカスをリストアする操作が予想される時間内に完了しませんでした。再試行する前に、アプリケーションを再起動して下さい。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_RESTORED_DEFAULT_CAMERA_POSITION" xml:space="preserve">
+    <value>初期設定のカメラ位置にリストアしている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_StatusBar_ResultRecordSaved" xml:space="preserve">
+    <value>結果を保存しました</value>
+  </data>
+  <data name="LID_MSGBOX_SyringeMsg" xml:space="preserve">
+    <value>シリンジ位置は{0}と{1}の間でなければなりません。</value>
+  </data>
+  <data name="LID_MSGBOX_LowLevel_InitializeFail" xml:space="preserve">
+    <value>システムは初期化に失敗しました。  アプリケーションを再起動し、問題が解決しない場合には、IFUを確認するか、Beckman Coulterサービスにお問い合わせ下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_CellType_Validation" xml:space="preserve">
+    <value>リストにシステム内で使用できないか、ミスマッチのセルタイプが含まれるためロードできません。</value>
+  </data>
+  <data name="LID_MSGBOX_QualityControl_Validation" xml:space="preserve">
+    <value>リストに精度管理の情報が含まれているため、ロードできません。</value>
+  </data>
+  <data name="LID_Label_Licenses" xml:space="preserve">
+    <value>リーガル</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_LICENSE_FILE_NOT_FOUND" xml:space="preserve">
+    <value>ライセンスファイルが見つかりません。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_OPEN_FILE" xml:space="preserve">
+    <value>ファイルを開いている時にエラーが発生しました。</value>
+  </data>
+  <data name="LID_Label_About_Declaration" xml:space="preserve">
+    <value>ここに記載されているBeckman Coulter、ロゴマーク、およびBeckman Coulterの製品およびサービスマークは、米国およびその他の国におけるBeckman Coulter, Inc.の商標または登録商標です。</value>
+  </data>
+  <data name="LID_Label_AppendResultExport" xml:space="preserve">
+    <value>結果を追加して次にエクスポート</value>
+  </data>
+  <data name="LID_Label_ExportEachSample" xml:space="preserve">
+    <value>各検体測定結果をCSVの形式で次にエクスポート</value>
+  </data>
+  <data name="LID_TabItem_AdvanceOption" xml:space="preserve">
+    <value>詳細オプション</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_HELP_FILE_NOT_FOUND" xml:space="preserve">
+    <value>ヘルプファイルが見つかりません。</value>
+  </data>
+  <data name="LID_MSGBOX_NightCleanError" xml:space="preserve">
+    <value>洗浄プロセスでエラーが発生しました。</value>
+  </data>
+  <data name="LID_MSGBOX_UnAssigned_CellType_Validation" xml:space="preserve">
+    <value>リストに割り当てられていないセルタイプが含まれているため、ロードできません。</value>
+  </data>
+  <data name="LID_Label_AdvanceFileName" xml:space="preserve">
+    <value>ファイル名</value>
+  </data>
+  <data name="LID_Label_Options" xml:space="preserve">
+    <value>オプション</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_PathError" xml:space="preserve">
+    <value>無効なパス。エクスポートする適切なパスを選択して下さい。</value>
+  </data>
+	<data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
+    <value>エクスポートパスはC:\Instrument\Export\のサブディレクトリに制限されています</value>
+  </data>
+  <data name="LID_AdvanceLabel_CSV" xml:space="preserve">
+    <value>.CSV</value>
+  </data>
+  <data name="LID_Label_ApplyToAllSample" xml:space="preserve">
+    <value>検体設定内にあるすべての既存の検体に適用する</value>
+  </data>
+  <data name="LID_Label_ReagentProbeArm" xml:space="preserve">
+    <value>試薬プローブアーム</value>
+  </data>
+  <data name="LID_StatusBar_ReagentProbeArmMovedSuccessfully" xml:space="preserve">
+    <value>試薬プローブアームが正常に動きました</value>
+  </data>
+  <data name="LID_MSGBOX_Night_Clean_Timeout" xml:space="preserve">
+    <value>夜間洗浄が実行できません。問題が解決しない場合、管理者に連絡して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_AutoFocusCancelMsg" xml:space="preserve">
+    <value>以前のフォーカスポジションがリストアされています。このプロセスには、以前の設定をリストアするまで、最大で{0}秒かかります。</value>
+  </data>
+  <data name="LID_MSGBOX_DustReffCancelMsg" xml:space="preserve">
+    <value>以前のダストレファレンスがリストアされています。このプロセスには、以前の設定をリストアするまで、最大で{0}秒かかります。</value>
+  </data>
+  <data name="LID_MSGBOX_CancelAutoFocusError" xml:space="preserve">
+    <value>フォーカスをリストアする操作が予想される時間内に完了しませんでした。  再試行する前に、アプリケーションを再起動して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_CancelDustError" xml:space="preserve">
+    <value>ダストリファレンスのキャンセル操作が予想される時間内に完了しませんでした。  再試行する前に、アプリケーションを再起動して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteConcentrationSlopeHistory" xml:space="preserve">
+    <value>以前に測定した濃度スロープ履歴を削除して、現在の濃度スロープの設定を保持しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteConcentrationSlopeHistoryACup" xml:space="preserve">
+    <value>以前に測定した濃度スロープ履歴を削除して、現在の濃度スロープの設定を保持しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteAllACupConcentrationSlopeData" xml:space="preserve">
+    <value>全てのA-Cup濃度スロープデータを削除しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_FlowCellDepthRangeMsg" xml:space="preserve">
+    <value>フローセルの深さは{0}と{1}の間になければなりません。</value>
+  </data>
+  <data name="LID_DeafultLoginSample" xml:space="preserve">
+    <value>ログイン　サンプル</value>
+  </data>
+  <data name="LID_Help_AppendResults" xml:space="preserve">
+    <value>'- 結果を追加して次にエクスポート：フォルダパスの参照</value>
+  </data>
+  <data name="LID_Help_CellType" xml:space="preserve">
+    <value>- セルタイプ：セルタイプまたは精度管理を選択</value>
+  </data>
+  <data name="LID_Help_Comments" xml:space="preserve">
+    <value>'- コメント：該当する場合</value>
+  </data>
+  <data name="LID_Help_Dilution" xml:space="preserve">
+    <value>'- 希釈：1、2、3、4、5、10、20から選択</value>
+  </data>
+  <data name="LID_Help_ExportEach" xml:space="preserve">
+    <value>- 各サンプル測定結果を次にエクスポート：フォルダパスの参照</value>
+  </data>
+  <data name="LID_Help_For96WellPlate" xml:space="preserve">
+    <value>8.96ウェルプレートプレートでは、配置の向きを変更することができます。</value>
+  </data>
+  <data name="LID_Help_ForACarouselQueue" xml:space="preserve">
+    <value>7.カロ―セルでは、設定していない位置にチューブがセットされていた場合、</value>
+  </data>
+  <data name="LID_Help_FromLoginSample" xml:space="preserve">
+    <value>3.ログインサンプル項で以下の項目を設定して下さい。</value>
+  </data>
+  <data name="LID_Help_ItTakesSettings" xml:space="preserve">
+    <value>ログインサンプル項の設定を使用し測定を行います。</value>
+  </data>
+  <data name="LID_Help_LoginSample" xml:space="preserve">
+    <value>1.ログインサンプルには設定からの初期設定の選択が含まれています。</value>
+  </data>
+  <data name="LID_Help_NthValue" xml:space="preserve">
+    <value>- Nの値：N枚毎に画像を保存</value>
+  </data>
+  <data name="LID_Help_QueueCreation" xml:space="preserve">
+    <value>ログインサンプルからのリスト作成</value>
+  </data>
+  <data name="LID_Help_QueueIsFormed" xml:space="preserve">
+    <value>は、選択されたチューブ位置に基づいて、グリッド内に形成されます。</value>
+  </data>
+  <data name="LID_Help_SampleID" xml:space="preserve">
+    <value>- サンプルID：任意の値を入力するか、初期設定のままにして下さい。</value>
+  </data>
+  <data name="LID_Help_SelectCarousel" xml:space="preserve">
+    <value>2.カロ―セルまたは96ウェルプレートを選択して、サンプルリストを作成します。</value>
+  </data>
+  <data name="LID_Help_SelectTubePositions" xml:space="preserve">
+    <value>4.カロ―セルまたは96ウェルプレートからチューブ位置を選択します。</value>
+  </data>
+  <data name="LID_Help_StartTheQueue" xml:space="preserve">
+    <value>をクリックすると測定が開始されます。</value>
+  </data>
+  <data name="LID_Help_TapOn" xml:space="preserve">
+    <value>6.開始ボタン</value>
+  </data>
+  <data name="LID_Help_ToGetDifferentSamples" xml:space="preserve">
+    <value>5.異なるサンプルをリストに入力する場合、ステップ3～4を繰り返します。</value>
+  </data>
+  <data name="LID_Help_Wash" xml:space="preserve">
+    <value>- 洗浄：ノーマル（200µL）または高速（170µL）を選択して下さい。</value>
+  </data>
+  <data name="LID_Label_AppendResultTo" xml:space="preserve">
+    <value>結果の追加先</value>
+  </data>
+  <data name="LID_Label_ExportResultTo" xml:space="preserve">
+    <value>結果をCSVの形式で次にエクスポート</value>
+  </data>
+  <data name="LID_StatusBar_With" xml:space="preserve">
+    <value>{1}の{0}が{2}でスキップされました。</value>
+  </data>
+  <data name="LID_MSGBOX_DoesNotContainDefinedSample" xml:space="preserve">
+    <value>サンプルリストに指定されたサンプルが含まれていません。 
+1.OKをクリックするとサンプル設定を続行できます。
+2.キャンセルをクリックするとサンプルの定義をやり直します。</value>
+  </data>
+  <data name="LID_MessageBox_AreYouSureWant" xml:space="preserve">
+    <value>削除しますか？</value>
+  </data>
+  <data name="LID_Label_ExportInProgress" xml:space="preserve">
+    <value>エクスポートが進行中</value>
+  </data>
+  <data name="LID_Label_ExportSampleResults" xml:space="preserve">
+    <value>サンプル測定結果のエクスポート</value>
+  </data>
+  <data name="LID_Label_ExportSampleResultsTo" xml:space="preserve">
+    <value>サンプル測定結果のエクスポート先</value>
+  </data>
+  <data name="LID_Label_KeepEveryNthImageForEachSample" xml:space="preserve">
+    <value>N枚毎に画像を保存   　　N=</value>
+  </data>
+  <data name="LID_Label_ExportCancelInprogress" xml:space="preserve">
+    <value>エクスポートのキャンセルが進行中</value>
+  </data>
+  <data name="LID_MSGBOX_SelectSampleResultToDelete" xml:space="preserve">
+    <value>削除するサンプル測定結果を選択して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectSampleResultToExport" xml:space="preserve">
+    <value>エクスポートするサンプル測定結果を選択して下さい。</value>
+  </data>
+  <data name="LID_Label_RetainOnlyFirstImageAndResult" xml:space="preserve">
+    <value>結果と最初の画像を保存</value>
+  </data>
+  <data name="LID_Label_ExportCompressingInProgress" xml:space="preserve">
+    <value>エクスポートの圧縮が進行中</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_STORAGE_EXPORT_RECORDS" xml:space="preserve">
+    <value>記録のエクスポート失敗</value>
+  </data>
+  <data name="LID_Label_DeleteSampleResults" xml:space="preserve">
+    <value>サンプル測定結果の削除</value>
+  </data>
+  <data name="LID_Label_DeletionInprogress" xml:space="preserve">
+    <value>削除が進行中</value>
+  </data>
+  <data name="LID_Label_EffectiveExpiration" xml:space="preserve">
+    <value>有効期限</value>
+  </data>
+  <data name="LID_MSGBOX_ImportConfigAlertContent" xml:space="preserve">
+    <value>構成ファイルをインポートすると現在のシステム構成が削除され、新しいシステム構成で自動的にアプリケーションが再起動されます。 続行しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_CarouselNotFound" xml:space="preserve">
+    <value>カロ―セルが見つかりません。</value>
+  </data>
+  <data name="LID_MSGBOX_LowDiskSpace" xml:space="preserve">
+    <value>ディスクの空き容量が減少</value>
+  </data>
+  <data name="LID_MSGBOX_PlateNotFound" xml:space="preserve">
+    <value>プレートが見つかりません。</value>
+  </data>
+  <data name="LID_MSGBOX_ReagentError" xml:space="preserve">
+    <value>試薬エラー</value>
+  </data>
+  <data name="LID_MSGBOX_SpentTubeTray" xml:space="preserve">
+    <value>廃棄トレイ</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_CAMERA_LAMP_STATE" xml:space="preserve">
+    <value>カメラランプ状態の設定にエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_FLOWCELL_DEPTH" xml:space="preserve">
+    <value>フローセルの深さの設定にエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Backgroundintensityadjustmentfailure" xml:space="preserve">
+    <value>バックグラウンド強度の調整不良</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Backuprestorefailed" xml:space="preserve">
+    <value>バックアップのリストア失敗</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Communicationerror" xml:space="preserve">
+    <value>通信エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Configurationinvalid" xml:space="preserve">
+    <value>無効な構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Connectionerror" xml:space="preserve">
+    <value>接続エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Ejectfailure" xml:space="preserve">
+    <value>取り出し失敗</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Empty" xml:space="preserve">
+    <value>空</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Expired" xml:space="preserve">
+    <value>期限切れ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Failedvalidation" xml:space="preserve">
+    <value>認証に失敗しました</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Filenotfound" xml:space="preserve">
+    <value>ファイルが見つかりません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwarebootuperror" xml:space="preserve">
+    <value>ファームウェア起動エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwareinterfaceerror" xml:space="preserve">
+    <value>ファームウェアインターフェイスエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwarestatemachineerror" xml:space="preserve">
+    <value>ファームウェア状態マシンエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwareupdateerror" xml:space="preserve">
+    <value>ファームウェア更新エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_GeneralPopulationinvalid" xml:space="preserve">
+    <value>無効なジェネラルポピュレーション</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Hardwareerror" xml:space="preserve">
+    <value>ハードウェアエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_HardwareFault" xml:space="preserve">
+    <value>ハードウェア不良</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Hardwarehealth" xml:space="preserve">
+    <value>ハードウェアの状態</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Holdingcurrentfailure" xml:space="preserve">
+    <value>保持電流エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Homingfailure" xml:space="preserve">
+    <value>ホーミングエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_HostCommunicationerror" xml:space="preserve">
+    <value>ホスト通信エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Imagequality" xml:space="preserve">
+    <value>画像品質</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Initializationerror" xml:space="preserve">
+    <value>初期化エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Initializationfailure" xml:space="preserve">
+    <value>初期化不良</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Invalid" xml:space="preserve">
+    <value>無効</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Invalidfirmwareversion" xml:space="preserve">
+    <value>無効なファームウェアバージョン</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Latcherror" xml:space="preserve">
+    <value>ラッチエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Loadfailed" xml:space="preserve">
+    <value>ロード失敗</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_LogicError" xml:space="preserve">
+    <value>ロジックエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Motordrivererror" xml:space="preserve">
+    <value>モータードライバーエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Nightlycleancycleskipped" xml:space="preserve">
+    <value>夜間洗浄サイクルがスキップされました</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_NoConnection" xml:space="preserve">
+    <value>接続なし</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Noimagecaptured" xml:space="preserve">
+    <value>画像がキャプチャされていません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Nopackfound" xml:space="preserve">
+    <value>パックが見つかりません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Notmet" xml:space="preserve">
+    <value>合致しません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Notpresent" xml:space="preserve">
+    <value>存在しません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Notregistered" xml:space="preserve">
+    <value>位置を合わせられません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Overpressureerror" xml:space="preserve">
+    <value>過圧エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_PopulationOfInterestinvalid" xml:space="preserve">
+    <value>無効なインタレストポピュレーション</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Positioningfailure" xml:space="preserve">
+    <value>位置決め不良</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Powerthreshold" xml:space="preserve">
+    <value>電力閾値</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Primingfailure" xml:space="preserve">
+    <value>プライム不良</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Processingerror" xml:space="preserve">
+    <value>処理エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Readerror" xml:space="preserve">
+    <value>読み取りエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Registrationfailure" xml:space="preserve">
+    <value>位置合わせエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_RFIDerror" xml:space="preserve">
+    <value>RFIDエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Sensorerror" xml:space="preserve">
+    <value>センサーエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_SoftwareFault" xml:space="preserve">
+    <value>ソフトウェア不良</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Storagenearcapacity" xml:space="preserve">
+    <value>ストレージにほとんど空きがありません</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Thermal" xml:space="preserve">
+    <value>熱</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Timeout" xml:space="preserve">
+    <value>タイムアウト</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Tubedetected" xml:space="preserve">
+    <value>チューブが検知されました</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Unknowntype" xml:space="preserve">
+    <value>未知のタイプ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Verificationonread" xml:space="preserve">
+    <value>確認読み取り中</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Writeerror" xml:space="preserve">
+    <value>書き込みエラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Writefailure" xml:space="preserve">
+    <value>書き込み失敗</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_7-Ziputilityinstalled" xml:space="preserve">
+    <value>7-Zipがインストールされました</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Analysis" xml:space="preserve">
+    <value>測定</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Audit" xml:space="preserve">
+    <value>監査</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_AuditLog" xml:space="preserve">
+    <value>監査ログ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Bioprocess" xml:space="preserve">
+    <value>バイオプロセス</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Brightfield" xml:space="preserve">
+    <value>明視野</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Carousel" xml:space="preserve">
+    <value>カローセル</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Carouselpresent" xml:space="preserve">
+    <value>カロ―セルがセットされています</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Carouselregistration" xml:space="preserve">
+    <value>カロ―セルの位置合わせ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_CellType" xml:space="preserve">
+    <value>セルタイプ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_ConcentrationandSizing" xml:space="preserve">
+    <value>濃度及びサイズ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Concentrationconfiguration" xml:space="preserve">
+    <value>濃度構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Configuration(Dynamic)" xml:space="preserve">
+    <value>構成（動的）</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Configuration(Static)" xml:space="preserve">
+    <value>構成（静的）</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DebugImage" xml:space="preserve">
+    <value>画像のデバッグ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Directory" xml:space="preserve">
+    <value>ディレクトリ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DoorLeft" xml:space="preserve">
+    <value>ドア左</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DoorRight" xml:space="preserve">
+    <value>ドア右</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DustImage" xml:space="preserve">
+    <value>ダスト画像</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_ErrorLog" xml:space="preserve">
+    <value>エラーログ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL1" xml:space="preserve">
+    <value>FL 1</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL2" xml:space="preserve">
+    <value>FL 2</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL3" xml:space="preserve">
+    <value>FL 3</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL4" xml:space="preserve">
+    <value>FL 4</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FLRack1" xml:space="preserve">
+    <value>FLラック1</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FLRack2" xml:space="preserve">
+    <value>FLラック2</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Focus" xml:space="preserve">
+    <value>フォーカス</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Focusconfig" xml:space="preserve">
+    <value>フォーカス構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_General" xml:space="preserve">
+    <value>概略</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_InstrumentConfiguration" xml:space="preserve">
+    <value>装置構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_instrumentserialnumber" xml:space="preserve">
+    <value>装置のシリアルナンバー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Mainbay" xml:space="preserve">
+    <value>メインベイ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_MotorControllerConfig" xml:space="preserve">
+    <value>モーターコントローラー構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_MotorInfo" xml:space="preserve">
+    <value>モーター情報</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Plate" xml:space="preserve">
+    <value>プレート</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Platepresent" xml:space="preserve">
+    <value>プレートが検出されました。</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Plateregistration" xml:space="preserve">
+    <value>プレートの位置合わせ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Pumpcontroller" xml:space="preserve">
+    <value>ポンプコントローラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_QualityControl" xml:space="preserve">
+    <value>精度管理</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Radius" xml:space="preserve">
+    <value>半径</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Reagent" xml:space="preserve">
+    <value>試薬</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Reagentdoor" xml:space="preserve">
+    <value>試薬ドア</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_ReagentPack" xml:space="preserve">
+    <value>試薬パック</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Reagentprobe" xml:space="preserve">
+    <value>試薬プローブ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Result" xml:space="preserve">
+    <value>結果</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Sample" xml:space="preserve">
+    <value>サンプル</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_SampleLog" xml:space="preserve">
+    <value>サンプルログ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Sampleprobe" xml:space="preserve">
+    <value>サンプルプローブ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_SignatureDefinitions" xml:space="preserve">
+    <value>署名の定義</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Signatures" xml:space="preserve">
+    <value>署名</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Sizingconfiguration" xml:space="preserve">
+    <value>サイズ構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_SyringeConfig" xml:space="preserve">
+    <value>シリンジ構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Theta" xml:space="preserve">
+    <value>シータ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_UserList" xml:space="preserve">
+    <value>ユーザーリスト</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Valvecontroller" xml:space="preserve">
+    <value>バルブコントローラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Wastetubetraycapacity" xml:space="preserve">
+    <value>廃棄トレイの容量</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Workflowscript" xml:space="preserve">
+    <value>ワークフロースクリプト</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_???" xml:space="preserve">
+    <value>???</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_Error" xml:space="preserve">
+    <value>エラー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_Notification" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Analysis" xml:space="preserve">
+    <value>測定</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Camera" xml:space="preserve">
+    <value>カメラ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_CellCounting" xml:space="preserve">
+    <value>セルカウンティング</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_CellType" xml:space="preserve">
+    <value>セルタイプ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Configuration" xml:space="preserve">
+    <value>構成</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Fluorescentrack" xml:space="preserve">
+    <value>蛍光ラック</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_General" xml:space="preserve">
+    <value>概略</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Integrity" xml:space="preserve">
+    <value>整合性</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_LED" xml:space="preserve">
+    <value>LED</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Motor" xml:space="preserve">
+    <value>モーター</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Photodiode" xml:space="preserve">
+    <value>フォトダイオード</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Precondition" xml:space="preserve">
+    <value>前提条件</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Reagentbayhardware" xml:space="preserve">
+    <value>試薬ベイハードウェア</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Reagentpack" xml:space="preserve">
+    <value>試薬パック</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_RFIDhardware" xml:space="preserve">
+    <value>RFIDハードウェア</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Sampledeck" xml:space="preserve">
+    <value>サンプルデッキ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Storage" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Syringepump" xml:space="preserve">
+    <value>シリンジポンプ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Trigger" xml:space="preserve">
+    <value>トリガー</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_System_ControllerBoard" xml:space="preserve">
+    <value>コントローラボード</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Fluidics" xml:space="preserve">
+    <value>流体</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Imaging" xml:space="preserve">
+    <value>イメージング</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Instrument" xml:space="preserve">
+    <value>装置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Motion" xml:space="preserve">
+    <value>動作</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Reagents" xml:space="preserve">
+    <value>試薬</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Sample" xml:space="preserve">
+    <value>サンプル</value>
+  </data>
+  <data name="LID_ClearSkippedSample" xml:space="preserve">
+    <value>{1}の{0}が{2}でスキップされました。</value>
+  </data>
+  <data name="LID_ReagentStatus_ULPurging_Reagent" xml:space="preserve">
+    <value>試薬ポジション_{0}_をパージ中</value>
+  </data>
+  <data name="LID_ButtonContent_Analyze_Results" xml:space="preserve">
+    <value>測定結果</value>
+  </data>
+  <data name="LID_ButtonContent_ContAnalyze_Results" xml:space="preserve">
+    <value>連続測定結果</value>
+  </data>
+  <data name="LID_StatusBar_BPhasBeenAdded" xml:space="preserve">
+    <value>バイオプロセスが追加されました</value>
+  </data>
+  <data name="LID_StatusBar_BPhasBeenDeleted" xml:space="preserve">
+    <value>バイオプロセスが削除されました</value>
+  </data>
+  <data name="LID_StatusBar_CellhasBeenDeleted" xml:space="preserve">
+    <value>セルタイプが削除されました</value>
+  </data>
+  <data name="LID_StatusBar_ConLoghasBeenCleared" xml:space="preserve">
+    <value>濃度スロープヒストリーログが消去されました</value>
+  </data>
+  <data name="LID_StatusBar_DeCancelled" xml:space="preserve">
+    <value>デコンタミネーションがキャンセルされました。</value>
+  </data>
+  <data name="LID_StatusBar_FlushCancelled" xml:space="preserve">
+    <value>洗浄がキャンセルされました</value>
+  </data>
+  <data name="LID_StatusBar_PasswordhasBeenChanged" xml:space="preserve">
+    <value>パスワードが変更されました</value>
+  </data>
+  <data name="LID_StatusBar_PrimeCancelled" xml:space="preserve">
+    <value>プライムがキャンセルされました</value>
+  </data>
+  <data name="LID_StatusBar_QChasBeenAdded" xml:space="preserve">
+    <value>精度管理が追加されました</value>
+  </data>
+  <data name="LID_StatusBar_QChasBeenDeleted" xml:space="preserve">
+    <value>精度管理が削除されました</value>
+  </data>
+  <data name="LID_StatusBar_SEhasBeenDeleted" xml:space="preserve">
+    <value>システムエラーが削除されました</value>
+  </data>
+  <data name="LID_StatusBar_UserhasBeenAdded" xml:space="preserve">
+    <value>ユーザーが追加されました</value>
+  </data>
+  <data name="LID_StatusBar_UserhasBeenDeleted" xml:space="preserve">
+    <value>ユーザーが削除されました</value>
+  </data>
+  <data name="LID_ErrorContent_BioProcessAlreadyExists" xml:space="preserve">
+    <value>バイオプロセスが既に存在しています。</value>
+  </data>
+  <data name="LID_ErrorContent_QualityControlAlreadyExists" xml:space="preserve">
+    <value>精度管理が既に存在しています。</value>
+  </data>
+  <data name="LID_ErrorContent_SignatureAlreadyExists" xml:space="preserve">
+    <value>署名が既に存在しています。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AlreadyExists" xml:space="preserve">
+    <value>既に存在している。</value>
+  </data>
+  <data name="LID_ButtonContent_AspirateSuccessful" xml:space="preserve">
+    <value>アスピレート完了</value>
+  </data>
+  <data name="LID_ButtonContent_DispenseSuccessful" xml:space="preserve">
+    <value>ディスペンス完了</value>
+  </data>
+  <data name="LID_ButtonContent_ExpelSuccessful" xml:space="preserve">
+    <value>放出完了</value>
+  </data>
+  <data name="LID_ButtonContent_FlushProcessStarted" xml:space="preserve">
+    <value>洗浄処理開始</value>
+  </data>
+  <data name="LID_ButtonContent_LoadSuccessful" xml:space="preserve">
+    <value>ロード完了</value>
+  </data>
+  <data name="LID_ButtonContent_NudgeSuccessful" xml:space="preserve">
+    <value>微調整完了</value>
+  </data>
+  <data name="LID_ButtonContent_PrimeProcessStarted" xml:space="preserve">
+    <value>プライム処理開始</value>
+  </data>
+  <data name="LID_ButtonContent_RestoreFocusSuccessful" xml:space="preserve">
+    <value>フォーカスのリストアを完了しました。</value>
+  </data>
+  <data name="LID_ButtonContent_SetFocusFailed" xml:space="preserve">
+    <value>フォーカスの設定に失敗しました。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AcceptancelimitsBlank" xml:space="preserve">
+    <value>許容範囲を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AssayValueBlank" xml:space="preserve">
+    <value>アッセイ値を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AssayValueFieldBlank" xml:space="preserve">
+    <value>アッセイ値フィールドを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_BioprocessNameBlank" xml:space="preserve">
+    <value>バイオプロセス名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ConfirmPasswordBlank" xml:space="preserve">
+    <value>パスワードの確認を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_DisplayNameBlank" xml:space="preserve">
+    <value>表示名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FailedDustReference" xml:space="preserve">
+    <value>ダストレファレンスに失敗しました</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FieldBlank" xml:space="preserve">
+    <value>フィールドを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FilenameBlank" xml:space="preserve">
+    <value>ファイル名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_InactivityTimeoutBlank" xml:space="preserve">
+    <value>無操作タイムアウトを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_LotNumberBlank" xml:space="preserve">
+    <value>ロット番号を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_LotNumberFieldBlank" xml:space="preserve">
+    <value>ロット番号フィールドを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_MaximumDiameterBlank" xml:space="preserve">
+    <value>最大直径を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_MinimumCircularityBlank" xml:space="preserve">
+    <value>最小真円度を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_MinimumDiameterBlank" xml:space="preserve">
+    <value>最小直径を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_NewPasswordBlank" xml:space="preserve">
+    <value>新しいパスワードを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_NoOfImagesBlank" xml:space="preserve">
+    <value>画像枚数を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_OldPasswordBlank" xml:space="preserve">
+    <value>古いパスワードを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PasswordBlank" xml:space="preserve">
+    <value>パスワードを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PasswordExpiryBlank" xml:space="preserve">
+    <value>パスワードの有効期限を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PathToExportBlank" xml:space="preserve">
+    <value>エクスポートパスを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_QCNameBlank" xml:space="preserve">
+    <value>精度管理名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_SampleIDBlank" xml:space="preserve">
+    <value>サンプルIDを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_SignatureBlank" xml:space="preserve">
+    <value>署名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_UserNameBlank" xml:space="preserve">
+    <value>ユーザー名を入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ViableSpotAreaBlank" xml:space="preserve">
+    <value>生細胞スポットエリアを入力して下さい。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ViableSpotBrightnessBlank" xml:space="preserve">
+    <value>生細胞スポットブライトネスを入力して下さい。</value>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentrationMicrometerUnit" xml:space="preserve">
+    <value>アッセイ値
+（µm）</value>
+    <comment>Multiline string(Unit in second line)</comment>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentrationPerml" xml:space="preserve">
+    <value>アッセイ値
+(x10^6)/mL</value>
+    <comment>Multiline string(Unit in second line)</comment>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentrationPerUnit" xml:space="preserve">
+    <value>アッセイ値
+（%）</value>
+    <comment>Multiline string(Unit in second line)</comment>
+  </data>
+  <data name="LID_GraphLabel_OriginalConcentrationMl" xml:space="preserve">
+    <value>オリジナル濃度（/mL）</value>
+  </data>
+  <data name="LID_Graph_AdjustConcMl" xml:space="preserve">
+    <value>調整済み濃度（/mL）</value>
+  </data>
+  <data name="LID_Icon_CancelSetFocusSuccessful" xml:space="preserve">
+    <value>フォーカス設定をキャンセルしました。</value>
+  </data>
+  <data name="LID_Icon_ExportInstrumentStatusSuccessful" xml:space="preserve">
+    <value>装置ステータスエクスポート完了</value>
+  </data>
+  <data name="LID_Label_BrightfieldSuccessfulBrightfield" xml:space="preserve">
+    <value>明視野設定完了</value>
+  </data>
+  <data name="LID_Label_CellSharpnessLimit" xml:space="preserve">
+    <value>セルシャープネスは、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_CompletedInMins" xml:space="preserve">
+    <value>{0}分で完了しました</value>
+  </data>
+  <data name="LID_Label_CompletedOutOfMins" xml:space="preserve">
+    <value>予想時間{1}分に対して{0}分で完了</value>
+  </data>
+  <data name="LID_Label_CurFocusSuccessful" xml:space="preserve">
+    <value>現在のフォーカス位置の設定が完了しました。</value>
+  </data>
+  <data name="LID_Label_InActivityTimeoutLimit" xml:space="preserve">
+    <value>無操作タイムアウト時間は、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_MaxDiameterRange" xml:space="preserve">
+    <value>最大直径は、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_MicronUnitWithValue" xml:space="preserve">
+    <value>{0} µm</value>
+  </data>
+  <data name="LID_Label_MinDiameterRange" xml:space="preserve">
+    <value>最小直径は、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_MinimumCircularityRange" xml:space="preserve">
+    <value>最小真円度は、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_PassworsExpireLimit" xml:space="preserve">
+    <value>パスワード期限は、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_RemainingwastetubebincapacityColon" xml:space="preserve">
+    <value>廃棄トレイの残りの容量：</value>
+  </data>
+  <data name="LID_Label_SerialNumberColon" xml:space="preserve">
+    <value>シリアルナンバー：</value>
+  </data>
+  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
+    <value>Vi-CELL BLUソフトウェアバージョン：</value>
+  </data>
+  <data name="LID_Label_SpotAreaRange" xml:space="preserve">
+    <value>生細胞スポットエリアは、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_SpotBrightnessRange" xml:space="preserve">
+    <value>生細胞スポットブライトネスは、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_Label_SystemTotalSampleCountsColon" xml:space="preserve">
+    <value>このシステムで測定されたサンプルの合計：</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteImages" xml:space="preserve">
+    <value>画像削除が完了しました。</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteSample" xml:space="preserve">
+    <value>サンプル削除が完了しました。</value>
+  </data>
+  <data name="LID_MSGBOX_FlowCellDepthSuccessful" xml:space="preserve">
+    <value>フローセルの深さ設定を完了しました。</value>
+  </data>
+  <data name="LID_MSGBOX_MinutesLimit" xml:space="preserve">
+    <value>分は、{0}と{1}の間でなければなりません。</value>
+  </data>
+  <data name="LID_MSGBOX_NoOfImagesLimit" xml:space="preserve">
+    <value>保存する画像枚数は、{0}と{1}の間で設定して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_Run96WellPlate" xml:space="preserve">
+    <value>現在のリストを測定するには、サンプルデッキタイプを96ウェルプレートに変更して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_RunCarousel" xml:space="preserve">
+    <value>現在のリストを測定するには、サンプルデッキタイプをカロ―セルに変更して下さい。</value>
+  </data>
+  <data name="LID_MSGBOX_SecondsLimit" xml:space="preserve">
+    <value>秒は、{0}と{1}の間でなければなりません。</value>
+  </data>
+  <data name="LID_MSGBOX_SetSlope" xml:space="preserve">
+    <value>新しいスロープ値を設定しますか？</value>
+  </data>
+  <data name="LID_MSGBOX_SetSlopeFailed" xml:space="preserve">
+    <value>新しい総細胞スロープ値の設定に失敗しました。</value>
+  </data>
+  <data name="LID_MSGBOX_SettingHoursLimit" xml:space="preserve">
+    <value>時間は、{0}と{1}の間でなければなりません。</value>
+  </data>
+  <data name="LID_QCHeader_AcceptanceLimitsRange" xml:space="preserve">
+    <value>許容範囲は、{0}と{1}の間でなければなりません</value>
+  </data>
+  <data name="LID_RadioButtonTab_CopyTempCell" xml:space="preserve">
+    <value>{0} - コピー</value>
+  </data>
+  <data name="LID_ReagentStatus_DdispensingStep" xml:space="preserve">
+    <value>ディスペンス{0}</value>
+  </data>
+  <data name="LID_StatusBar_DecontaminateProcessStarted" xml:space="preserve">
+    <value>デコンタミネーション開始</value>
+  </data>
+  <data name="LID_Label_LowerLimitConc_QCReport" xml:space="preserve">
+    <value>下限値 (x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_Label_LowerLimitPopulation_QCReport" xml:space="preserve">
+    <value>下限値（%）</value>
+  </data>
+  <data name="LID_Label_LowerLimitSize_QCReport" xml:space="preserve">
+    <value>下限値（µm）</value>
+  </data>
+  <data name="LID_Label_UpperLimitConc_QCReport" xml:space="preserve">
+    <value>上限値 (x10^6) 細胞/mL</value>
+  </data>
+  <data name="LID_Label_UpperLimitPopulation_QCReport" xml:space="preserve">
+    <value>上限値（%）</value>
+  </data>
+  <data name="LID_Label_UpperLimitSize_QCReport" xml:space="preserve">
+    <value>上限値（µm）</value>
+  </data>
+  <data name="LID_GraphLabel_GrayLevel" xml:space="preserve">
+    <value>グレーレベル</value>
+  </data>
+  <data name="LID_GraphLabel_Pixel" xml:space="preserve">
+    <value>ピクセル</value>
+  </data>
+  <data name="LID_UserRole_Admin" xml:space="preserve">
+    <value>管理者</value>
+  </data>
+  <data name="LID_UserRole_Advanced" xml:space="preserve">
+    <value>上級</value>
+  </data>
+  <data name="LID_UserRole_Normal" xml:space="preserve">
+    <value>ノーマル</value>
+  </data>
+  <data name="LID_UserRole_Service" xml:space="preserve">
+    <value>サービス</value>
+  </data>
+  <data name="LID_Label_Valve" xml:space="preserve">
+    <value>バルブ</value>
+  </data>
+  <data name="LID_ImageLabel_Annotated" xml:space="preserve">
+    <value>注釈付き</value>
+  </data>
+  <data name="LID_ImageLabel_Binary" xml:space="preserve">
+    <value>バイナリ</value>
+  </data>
+  <data name="LID_ImageLabel_Raw" xml:space="preserve">
+    <value>生</value>
+  </data>
+  <data name="LID_ButtonContent_Administrative_Unlock" xml:space="preserve">
+    <value>管理者のロック解除</value>
+  </data>
+  <data name="LID_ButtonContent_On" xml:space="preserve">
+    <value>オン</value>
+  </data>
+  <data name="LID_ButtonContent_Off" xml:space="preserve">
+    <value>オフ</value>
+  </data>
+  <data name="LID_MsgLabel_Notification" xml:space="preserve">
+    <value>最近の通知</value>
+  </data>
+  <data name="LID_Status_Aspirating" xml:space="preserve">
+    <value>吸引中</value>
+  </data>
+  <data name="LID_Status_Cleaning" xml:space="preserve">
+    <value>清掃中</value>
+  </data>
+  <data name="LID_Status_Completed_POS" xml:space="preserve">
+    <value>Pos #{0}が完了した</value>
+  </data>
+  <data name="LID_Status_Image_Acquiring" xml:space="preserve">
+    <value>取得中</value>
+  </data>
+  <data name="LID_Status_Mixing" xml:space="preserve">
+    <value>混和中</value>
+  </data>
+  <data name="LID_Status_Processing" xml:space="preserve">
+    <value>測定中</value>
+  </data>
+  <data name="LID_Label_High" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="LID_Label_Medium" xml:space="preserve">
+    <value>中間</value>
+  </data>
+  <data name="LID_Label_FastWashType" xml:space="preserve">
+    <value>高速洗浄</value>
+  </data>
+  <data name="LID_Label_FastWashWithUnits" xml:space="preserve">
+    <value>高速（170 µL）</value>
+  </data>
+  <data name="LID_Label_NormalWashType" xml:space="preserve">
+    <value>ノーマル洗浄</value>
+  </data>
+  <data name="LID_Label_NormalWashWithUnits" xml:space="preserve">
+    <value>ノーマル（200 µL）</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_Diameter" xml:space="preserve">
+    <value>直径（µm）</value>
+  </data>
+  <data name="LID_Label_Min_Max_Variation" xml:space="preserve">
+    <value>16 x 16 画像の最小 -最大変動</value>
+  </data>
+  <data name="LID_Label_Image_Coefficient_Variance" xml:space="preserve">
+    <value>128 x 128 画像変動係数</value>
+  </data>
+  <data name="LID_Label_Image_Intensity_Mean" xml:space="preserve">
+    <value>オリジナル画像の平均強度</value>
+  </data>
+  <data name="LID_Report_NoData" xml:space="preserve">
+    <value>データがありません。</value>
+  </data>
+  <data name="LID_DataGridHeader_PercentCV" xml:space="preserve">
+    <value>CV%</value>
+  </data>
+  <data name="LID_Label_ExportEachSamplePDF" xml:space="preserve">
+    <value>さらに各検体をPDFとしてエクスポート</value>
+  </data>
+  <data name="LID_Label_Diameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_ButtonContent_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="LID_Label_CopyCellType" xml:space="preserve">
+    <value>細胞タイプのコピー</value>
+  </data>
+  <data name="LID_Label_CellTypeName" xml:space="preserve">
+    <value>細胞タイプ名：</value>
+  </data>
+  <data name="LID_HELP_LoosenTrypanCap" xml:space="preserve">
+    <value>試薬パックのトリパンブルキャップを4分の1回転緩める。</value>
+  </data>
+  <data name="LID_HELP_CapHasBeenLoosened" xml:space="preserve">
+    <value>キャップが緩んだら、次をタップする</value>
+  </data>
+  <data name="LID_Button_CancelSet" xml:space="preserve">
+    <value>設定キャンセル</value>
+  </data>
+  <data name="LID_CheckBox_UseSequencing" xml:space="preserve">
+    <value>順次付番する</value>
+  </data>
+  <data name="LID_Default_SampleSetName" xml:space="preserve">
+    <value>検体設定({0})</value>
+  </data>
+  <data name="LID_Dialog_ImportNotEnoughWells" xml:space="preserve">
+    <value>利用可能な検体位置より多くの検体がテンプレートにあります。インポートされなかった検体があります。</value>
+  </data>
+  <data name="LID_Dialog_ImportOccupiedWellsMoveThem" xml:space="preserve">
+    <value>テンプレートに現在使用中の検体チューブウェル内で定義された検体があります。この検体を利用可能な検体チューブウェルに設置しますか。</value>
+  </data>
+  <data name="LID_Enum_Aspirating" xml:space="preserve">
+    <value>吸引中</value>
+  </data>
+  <data name="LID_Enum_Complete" xml:space="preserve">
+    <value>完了</value>
+  </data>
+  <data name="LID_Enum_Paused" xml:space="preserve">
+    <value>一時停止</value>
+  </data>
+  <data name="LID_Enum_Pending" xml:space="preserve">
+    <value>待機中</value>
+  </data>
+  <data name="LID_Enum_Running" xml:space="preserve">
+    <value>実行中</value>
+  </data>
+  <data name="LID_Enum_SearchingTubes" xml:space="preserve">
+    <value>チューブを検索しています</value>
+  </data>
+  <data name="LID_Enum_Stopping" xml:space="preserve">
+    <value>停止しています</value>
+  </data>
+  <data name="LID_Error_UnableToPauseAddSamples" xml:space="preserve">
+    <value>作業リストを一時停止できないため、検体を追加できない。</value>
+  </data>
+  <data name="LID_Header_SeqSampleNaming" xml:space="preserve">
+    <value>検体の順次名称付け</value>
+  </data>
+  <data name="LID_Label_AverageDiam_Abbr" xml:space="preserve">
+    <value>平均直径 (µm)</value>
+  </data>
+  <data name="LID_Label_AverageViableDiam_Abbr" xml:space="preserve">
+    <value>生細胞の平均直径</value>
+  </data>
+  <data name="LID_Label_CellType" xml:space="preserve">
+    <value>細胞タイプ</value>
+  </data>
+  <data name="LID_Label_CreateSampleSet" xml:space="preserve">
+    <value>検体設定の作成</value>
+  </data>
+  <data name="LID_Label_Digits" xml:space="preserve">
+    <value>桁数</value>
+  </data>
+  <data name="LID_Label_Filter" xml:space="preserve">
+    <value>フィルタ</value>
+  </data>
+  <data name="LID_Label_IncrementingInt" xml:space="preserve">
+    <value>番号の増加方法</value>
+  </data>
+  <data name="LID_Label_Preview" xml:space="preserve">
+    <value>プレビュー</value>
+  </data>
+  <data name="LID_Label_SampleName" xml:space="preserve">
+    <value>検体名</value>
+  </data>
+  <data name="LID_Label_SampleSetName" xml:space="preserve">
+    <value>検体設定名</value>
+  </data>
+  <data name="LID_Label_SampleSetTableSettings" xml:space="preserve">
+    <value>検体表設定</value>
+  </data>
+  <data name="LID_Label_SampleTemplate" xml:space="preserve">
+    <value>検体テンプレート</value>
+  </data>
+  <data name="LID_Label_SequentialParanth" xml:space="preserve">
+    <value>（順次）</value>
+  </data>
+  <data name="LID_Label_StartAt" xml:space="preserve">
+    <value>開始番号</value>
+  </data>
+  <data name="LID_Label_Tag" xml:space="preserve">
+    <value>タグ</value>
+  </data>
+  <data name="LID_Label_Text" xml:space="preserve">
+    <value>テキスト</value>
+  </data>
+  <data name="LID_MSGBOX_Information" xml:space="preserve">
+    <value>情報</value>
+  </data>
+  <data name="LID_MSGBOX_PWDExpQuestion" xml:space="preserve">
+    <value>お客様のパスワードは{0}に期限切れとなります。期限切れになる前に、パスワードを変更してください。すぐにパスワードを変更しますか。</value>
+  </data>
+  <data name="LID_StatusLabel_Idle" xml:space="preserve">
+    <value>アイドル</value>
+  </data>
+  <data name="LID_StatusLabel_NightlyClean" xml:space="preserve">
+	<value>Nightly Clean</value>
+  </data>
+  <data name="LID_Status_ProcessingImages" xml:space="preserve">
+    <value>画像処理中</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_GET_SYSTEM_STATUS" xml:space="preserve">
+    <value>システムステータス確認中のエラー</value>
+  </data>
+  <data name="LID_OrphanSetName" xml:space="preserve">
+    <value>不明な検体設定</value>
+  </data>
+  <data name="LID_Error_UnableToAddSamples" xml:space="preserve">
+    <value>検体設定を作業リストに追加できませんでした。</value>
+  </data>
+  <data name="LID_MSGBOX_DatabaseError" xml:space="preserve">
+    <value>データベースエラー</value>
+  </data>
+  <data name="LID_Header_FilterSampleSets" xml:space="preserve">
+    <value>検体設定のフィルタ</value>
+  </data>
+  <data name="LID_Label_DateRange" xml:space="preserve">
+    <value>日付の範囲</value>
+  </data>
+  <data name="LID_Label_FromColon" xml:space="preserve">
+    <value>開始日：</value>
+  </data>
+  <data name="LID_Label_SampleFilter" xml:space="preserve">
+    <value>検体フィルタ</value>
+  </data>
+  <data name="LID_Label_SampleSetFilter" xml:space="preserve">
+    <value>検体設定フィルタ</value>
+  </data>
+  <data name="LID_Label_ToColon" xml:space="preserve">
+    <value>終了日：</value>
+  </data>
+  <data name="LID_Message_FilterSampleSetsFailed" xml:space="preserve">
+    <value>検体設定のフィルタ実行中にエラーがありました</value>
+  </data>
+  <data name="LID_Status_Cancelled" xml:space="preserve">
+    <value>キャンセル済み</value>
+  </data>
+  <data name="LID_Label_N_Equals" xml:space="preserve">
+    <value>N=</value>
+  </data>
+  <data name="LID_MessageHub_SaveSampleSetFailed" xml:space="preserve">
+    <value>検体設定テンプレートの保存に失敗しました</value>
+  </data>
+  <data name="LID_MessageHub_SaveSampleSetSuccess" xml:space="preserve">
+    <value>検体設定テンプレートが保存されました</value>
+  </data>
+  <data name="LID_Label_Delete" xml:space="preserve">
+    <value>削除</value>
+  </data>
+  <data name="LID_Label_SampleSetTemplates" xml:space="preserve">
+    <value>検体設定テンプレート</value>
+  </data>
+  <data name="LID_MsgBox_ConfirmDeleteSampleSetTemplate" xml:space="preserve">
+    <value>「{0}」という名前の検体設定テンプレートを本当に削除しますか。</value>
+  </data>
+  <data name="LID_MsgBox_DeleteSampleSetTemplateFailed" xml:space="preserve">
+    <value>検体設定テンプレート「{0}」の削除に失敗しました。</value>
+  </data>
+  <data name="LID_MsgBox_DeleteSampleSetTemplateSuccess" xml:space="preserve">
+    <value>検体設定テンプレート「{0}」が削除されました。</value>
+  </data>
+  <data name="LID_Label_EnhancedSampleWorkflow" xml:space="preserve">
+    <value>拡張検体ワークフロー</value>
+  </data>
+  <data name="LID_ESW_Help_Line_1" xml:space="preserve">
+    <value>1.作業リストの検体テンプレートオプションは、初期設定としてシステム設定を使用して追加されます</value>
+  </data>
+  <data name="LID_ESW_Help_Line_10" xml:space="preserve">
+    <value>-	結果の追加先: 検体の測定結果を自動的にエクスポートする先のフォルダーおよびファイル</value>
+  </data>
+  <data name="LID_ESW_Help_Line_11" xml:space="preserve">
+    <value>2.作業リストを開始する準備ができたら、</value>
+  </data>
+  <data name="LID_ESW_Help_Line_11b" xml:space="preserve">
+    <value>をクリックして、検体設定を作成します。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_12" xml:space="preserve">
+    <value>3.検体設定名が自動的に追加され、ホーム画面のâ€™検体テンプレートから、検体設定â€™テンプレートオプションがコピーされます。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_13" xml:space="preserve">
+    <value>4.左側にあるドロップダウンメニューから、カローセルまたは96ウェルプレートを選択します。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_13_ACup" xml:space="preserve">
+    <value>4.左側にあるドロップダウンメニューから、カローセル、96ウェルプレート、またはオートメーションカップを選択します。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_14" xml:space="preserve">
+    <value>5.検体分析に使用するチューブ位置をクリックします。これにより、ご使用の検体設定が定義されます。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_14_ACup" xml:space="preserve">
+    <value>5.カローセルまたは96ウェルプレートの場合は、サンプル分析に使用するチューブ位置をクリックします。A-Cupの場合は、オートメーションカップのアイコンを選択します。これにより、ご使用のサンプル設定が定義されます。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_15" xml:space="preserve">
+    <value>6.96ウェルプレートの場合は、並び順番（行方向または列方向）は、</value>
+  </data>
+  <data name="LID_ESW_Help_Line_15b" xml:space="preserve">
+    <value>ボタンを使用して切り替えられます。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_16" xml:space="preserve">
+    <value>7.検体設定の定義を終了するには、「追加」ボタンをクリックします。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_17" xml:space="preserve">
+    <value>8.さらに検体設定を追加するか、作業リストを開始した後で追加します。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_17_ACup" xml:space="preserve">
+    <value>8.カローセルの場合、さらにサンプル設定を追加するか、作業リストを開始した後で追加します。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_18" xml:space="preserve">
+    <value>9.作業リストを開始する準備ができたら、</value>
+  </data>
+  <data name="LID_ESW_Help_Line_18b" xml:space="preserve">
+    <value>ボタンをクリックします。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_19" xml:space="preserve">
+    <value>10.カローセルの場合は、検体設定を定義する前に</value>
+  </data>
+  <data name="LID_ESW_Help_Line_19b" xml:space="preserve">
+    <value>をクリック可能です。分析用の作業リスト検体テンプレートのオプションを使用して、検知されたチューブが実行されます。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_2" xml:space="preserve">
+    <value>- 検体名: 検体名フィールドに自動的に追加するのに使用されるテキスト。クリックできます</value>
+  </data>
+  <data name="LID_ESW_Help_Line_20" xml:space="preserve">
+    <value>11.定義:</value>
+  </data>
+  <data name="LID_ESW_Help_Line_21" xml:space="preserve">
+    <value>- 作業リスト： 検体設定の集合</value>
+  </data>
+  <data name="LID_ESW_Help_Line_22" xml:space="preserve">
+    <value>- 検体設定： 分析する検体の集合</value>
+  </data>
+  <data name="LID_ESW_Help_Line_23" xml:space="preserve">
+    <value>- 検体テンプレート：  検体の順次名称付け法を設定するため</value>
+  </data>
+  <data name="LID_ESW_Help_Line_2b" xml:space="preserve">
+    <value>検体を定義する際に使用するデフォルトオプション</value>
+  </data>
+  <data name="LID_ESW_Help_Line_3" xml:space="preserve">
+    <value>- 細胞タイプ：細胞タイプまたは精度管理を選択</value>
+  </data>
+  <data name="LID_ESW_Help_Line_4" xml:space="preserve">
+    <value>- 希釈：1～9999の間のいずれかの希釈</value>
+  </data>
+  <data name="LID_ESW_Help_Line_5_ACup" xml:space="preserve">
+    <value>— 清洗：如果使用旋转架或 96 孔微孔板，选择正常 (200 μL) 或快速 (170 μL)</value>
+  </data>
+  <data name="LID_ESW_Help_Line_5" xml:space="preserve">
+    <value>- 洗浄：通常（200 μL）または高速（170 μL）を選択</value>
+  </data>
+  <data name="LID_ESW_Help_Line_6" xml:space="preserve">
+    <value>- タグ: 検体を検索するのに使用できるテキスト</value>
+  </data>
+  <data name="LID_ESW_Help_Line_7" xml:space="preserve">
+    <value>高度な設定</value>
+  </data>
+  <data name="LID_ESW_Help_Line_8" xml:space="preserve">
+    <value>- N番目の値：画像番号の保存用</value>
+  </data>
+  <data name="LID_ESW_Help_Line_9" xml:space="preserve">
+    <value>- 結果のエクスポート先: 検体測定結果の自動エクスポート先のフォルダー</value>
+  </data>
+  <data name="LID_HB_DetailedReview" xml:space="preserve">
+    <value>詳細のレビュー</value>
+  </data>
+  <data name="LID_MSGBOX_LoadedSampleSetFailed" xml:space="preserve">
+    <value>検体設定テンプレートのロードに失敗しました</value>
+  </data>
+  <data name="LID_MSGBOX_LoadedSampleSetSuccess" xml:space="preserve">
+    <value>検体設定テンプレートがロードされました</value>
+  </data>
+  <data name="LID_Label_DatabaseSaveLoad" xml:space="preserve">
+    <value>データベース保存/ロード</value>
+  </data>
+  <data name="LID_Label_FileSystemSaveLoad" xml:space="preserve">
+    <value>ファイルシステム保存/ロード</value>
+  </data>
+  <data name="LID_Label_SaveLoadSampleSetTemplates" xml:space="preserve">
+    <value>検体設定テンプレートの保存/ロード</value>
+  </data>
+  <data name="LID_Button_AddUser" xml:space="preserve">
+    <value>ユーザーの追加</value>
+  </data>
+  <data name="LID_Enum_SecuritySettings_ActiveDirectory" xml:space="preserve">
+    <value>アクティブディレクトリ</value>
+  </data>
+  <data name="LID_Enum_SecuritySettings_LocalUsers" xml:space="preserve">
+    <value>ローカル（本機のみ）</value>
+  </data>
+  <data name="LID_Enum_SecuritySettings_None" xml:space="preserve">
+    <value>ユーザーアカウントなし</value>
+  </data>
+  <data name="LID_Label_AccountTypeToUser" xml:space="preserve">
+    <value>使用するアカウントタイプ</value>
+  </data>
+  <data name="LID_Label_AutoSignOutAfter" xml:space="preserve">
+    <value>自動サインアウトするまでの分数</value>
+  </data>
+  <data name="LID_Label_Enabled" xml:space="preserve">
+    <value>有効</value>
+  </data>
+  <data name="LID_Label_MinutesLowerCase" xml:space="preserve">
+    <value>分</value>
+  </data>
+  <data name="LID_Label_PasswordChangeColonEvery" xml:space="preserve">
+    <value>パスワード変更：{0}日おき </value>
+  </data>
+  <data name="LID_Label_PasswordChangeRequiredEvery" xml:space="preserve">
+    <value>パスワード期限切れまでの日数</value>
+  </data>
+  <data name="LID_Label_SecuritySettings" xml:space="preserve">
+    <value>セキュリティ設定</value>
+  </data>
+  <data name="LID_Button_ADConfig" xml:space="preserve">
+    <value>AD設定</value>
+  </data>
+  <data name="LID_Label_CreateUser" xml:space="preserve">
+    <value>ユーザーアカウントの作成</value>
+  </data>
+  <data name="LID_Label_EditUser" xml:space="preserve">
+    <value>ユーザーアカウントの編集</value>
+  </data>
+  <data name="LID_Header_ActiveDirectoryConfig" xml:space="preserve">
+    <value>アクティブディレクトリ設定</value>
+  </data>
+  <data name="LID_Label_AdServer" xml:space="preserve">
+    <value>ADサーバー</value>
+  </data>
+  <data name="LID_Label_BaseDn" xml:space="preserve">
+    <value>ベースDN</value>
+  </data>
+  <data name="LID_Label_RoleMapping" xml:space="preserve">
+    <value>ロールマッピング</value>
+  </data>
+  <data name="LID_Watermark_BaseDn" xml:space="preserve">
+    <value>検索するベースDN</value>
+  </data>
+  <data name="LID_Watermark_IpAddressOrHostname" xml:space="preserve">
+    <value>IPアドレスまたはホスト名</value>
+  </data>
+  <data name="LID_Watermark_RoleMap" xml:space="preserve">
+    <value>このロールにマップするADグループのcn</value>
+  </data>
+  <data name="LID_Status_AcquisitionComplete" xml:space="preserve">
+    <value>画像取得完了</value>
+  </data>
+  <data name="LID_Error_FailedToRetrieveActiveDirSettings" xml:space="preserve">
+    <value>アクティブディレクトリ設定のロードに失敗しました</value>
+  </data>
+  <data name="LID_Error_FailedToSaveActiveDirSettings" xml:space="preserve">
+    <value>アクティブディレクトリ設定の保存に失敗しました</value>
+  </data>
+  <data name="LID_Label_Pos" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_Label_ShowColumn" xml:space="preserve">
+    <value>列を表示</value>
+  </data>
+  <data name="LID_Label_Width" xml:space="preserve">
+    <value>幅</value>
+  </data>
+  <data name="LID_Warning_FailedToSaveColumnSetting" xml:space="preserve">
+    <value>列設定の保存に失敗しました。</value>
+  </data>
+  <data name="LID_Label_ConcDisplayDigits" xml:space="preserve">
+    <value>小数点以下の桁数（濃度）</value>
+  </data>
+  <data name="LID_Error_FailedToGetDatabaseConfiguration" xml:space="preserve">
+    <value>データベース構成の取得に失敗しました</value>
+  </data>
+  <data name="LID_Error_FailedToSetDatabaseConfiguration" xml:space="preserve">
+    <value>データベース構成の設定に失敗しました</value>
+  </data>
+  <data name="LID_Label_DatabaseConfiguration" xml:space="preserve">
+    <value>データベース構成</value>
+  </data>
+  <data name="LID_Label_DatabaseConfigurationChanged" xml:space="preserve">
+    <value>データベース構成が変更されました</value>
+  </data>
+  <data name="LID_Label_DatabaseReadPasswordChangeSuccess" xml:space="preserve">
+    <value>データベース読み取りパスワードが設定されました</value>
+  </data>
+  <data name="LID_Label_DatabaseReadPasswordChangeFailure" xml:space="preserve">
+    <value>データベース読み取りパスワードの設定に失敗しました</value>
+  </data>
+  <data name="LID_DatabaseConfig_DbName" xml:space="preserve">
+    <value>データベース名</value>
+  </data>
+  <data name="LID_DatabaseConfig_IpAddress" xml:space="preserve">
+    <value>IPアドレス</value>
+  </data>
+  <data name="LID_DatabaseConfig_Port" xml:space="preserve">
+    <value>ポート</value>
+  </data>
+  <data name="LID_Label_SMTPConfiguration" xml:space="preserve">
+    <value>SMTP構成</value>
+  </data>
+  <data name="LID_Label_SMTPConfig_Server" xml:space="preserve">
+    <value>サーバー</value>
+  </data>
+  <data name="LID_Label_SMTPConfig_Authenticate" xml:space="preserve">
+    <value>認証する</value>
+  </data>
+  <data name="LID_Error_FailedToGetSMTPConfiguration" xml:space="preserve">
+    <value>SMTP構成の取得に失敗しました</value>
+  </data>
+  <data name="LID_Error_FailedToSetSMTPConfiguration" xml:space="preserve">
+    <value>SMTP構成の設定に失敗しました</value>
+  </data>
+  <data name="LID_Label_SMTPConfigurationChanged" xml:space="preserve">
+    <value>SMTP構成が変更されました</value>
+  </data>
+  <data name="LID_Label_Email" xml:space="preserve">
+    <value>電子メール</value>
+  </data>
+  <data name="LID_MSGBOX_Email_Sent" xml:space="preserve">
+    <value>電子メールを送信しました</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SEND_EMAIL_ERROR" xml:space="preserve">
+    <value>電子メールを送信できませんでした</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SEND_EMAIL_ERROR_AUTH" xml:space="preserve">
+    <value>電子メールを送信できませんでした。送信者の認証に失敗しました。</value>
+  </data>
+  <data name="LID_Password_Reset_Email_Body" xml:space="preserve">
+    <value>お使いのVi-CELL BLUパスワードが更新されました。ご不明な点は、管理者までお問い合わせください。</value>
+  </data>
+  <data name="LID_Password_Reset_Email_Subject" xml:space="preserve">
+    <value>パスワードリセット</value>
+  </data>
+  <data name="LID_Label_Can_Use_Fast_Mode" xml:space="preserve">
+    <value>高速洗浄を使用できます</value>
+  </data>
+  <data name="LID_Label_ViableCellsCap" xml:space="preserve">
+    <value>生存細胞数</value>
+  </data>
+  <data name="LID_Status_NotProcessed" xml:space="preserve">
+    <value>未処理</value>
+  </data>
+  <data name="LID_Dialog_DiscardSampleSetChanges" xml:space="preserve">
+    <value>すべての検体設定の変更を破棄しますか。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_InvalidEmailAddress" xml:space="preserve">
+    <value>電子メールアドレスは有効な形式（ユーザ名@企業名.com）にする必要がある。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CIRCLEPANEL_CLICK" xml:space="preserve">
+    <value>サークルパネルをクリックした時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_ACCEPT_SET_FOCUS" xml:space="preserve">
+    <value>フォーカスを確定している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_AUTO_FOCUS_STATE" xml:space="preserve">
+    <value>自動焦点でエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CANCEL_SET_FOCUS" xml:space="preserve">
+    <value>フォーカス設定をキャンセルしている時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CAROUSEL_STATUS_CHANGE" xml:space="preserve">
+    <value>カロ―セル状況の変更中にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DIAGNOSTICS" xml:space="preserve">
+    <value>診断中のエラー</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_AUTO_FOCUS_TIMER_TICK" xml:space="preserve">
+    <value>自動焦点タイマーの処理中にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_SERVICE_LIVE_IMAGE_OCCURRED" xml:space="preserve">
+    <value>ライブ画像の処理中にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_LIVE_IMAGE_ACTIVE" xml:space="preserve">
+    <value>ライブ画像を有効化/無効化している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_MOTOR_REG_STEP_POSITION" xml:space="preserve">
+    <value>モニターの位置合わせの手順でエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_OPTICS_FUNCTION" xml:space="preserve">
+    <value>光学機能でエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_REPETITION_SECTION" xml:space="preserve">
+    <value>繰り返しセクションでエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_FOCUS_STEP_TWO" xml:space="preserve">
+    <value>手順2でフォーカスを設定している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_MANUAL_CONTROL_OPTICS_VALUE" xml:space="preserve">
+    <value>手動光学制御値を設定している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_TEMP_CELL_TYPE" xml:space="preserve">
+    <value>一時細胞タイプを設定している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SKIP_DELAY" xml:space="preserve">
+    <value>フォーカススキップ遅延を設定している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_STOP_LIVE_IMAGE" xml:space="preserve">
+    <value>ライブ画像を停止している時にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SWITCH_TO_MANUAL_CONTROLS_CONTENT" xml:space="preserve">
+    <value>手動コントロールへの切り替え中にエラーが発生した</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_UPDATE_OPTICS_ADJUST" xml:space="preserve">
+    <value>光学調整の更新中にエラーが発生した</value>
+  </data>
+  <data name="LID_Label_CellViabilityAnalyzer" xml:space="preserve">
+    <value>細胞生存率アナライザ</value>
+  </data>
+  <data name="LID_ProgressIndication_FLUSHINGFLUIDLINES" xml:space="preserve">
+    <value>液体ラインのフラッシング</value>
+  </data>
+  <data name="LID_ProgressIndication_DECONTAMINATE" xml:space="preserve">
+    <value>除染</value>
+  </data>
+  <data name="LID_ProgressIndication_PRIMINGFLUIDLINES" xml:space="preserve">
+    <value>液体ラインのプライミング</value>
+  </data>
+  <data name="LID_TextBlock_CurrentLot" xml:space="preserve">
+    <value>現在のロット</value>
+  </data>
+  <data name="LID_Label_AutomationCup" xml:space="preserve">
+    <value>オートメーションカップ</value>
+  </data>
+  <data name="LID_MSGBOX_AutomationNightCleaning" xml:space="preserve">
+    <value>オートメーション夜間洗浄進行中</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactor" xml:space="preserve">
+    <value>濃度補正係数</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AdjustmentFactorBlank" xml:space="preserve">
+    <value>濃度補正係数は空白のままにできません。無効にするには{0}に設定します。</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorRange" xml:space="preserve">
+    <value>濃度補正係数は、{0}と{1}の間である必要があります</value>
+  </data>
+  <data name="LID_Label_AutomationConfiguration" xml:space="preserve">
+    <value>オートメーション構成</value>
+  </data>
+  <data name="LID_StatusBar_AutomationSettingsChanged" xml:space="preserve">
+    <value>オートメーション設定が正常に変更されました</value>
+  </data>
+  <data name="LID_Error_FailedToSetAutomationConfiguration" xml:space="preserve">
+    <value>オートメーション構成の設定に失敗しました</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfo" xml:space="preserve">
+    <value>旧装置の測定結果に合うように特定の細胞タイプを調整することができます。調整範囲は+/- 20%に限定されています。
+値を決定するために次の式を用いることが推奨されます。</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfoFormula_ConcAdjFactor" xml:space="preserve">
+    <value>濃度補正係数</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfoFormula_MeasuredConc" xml:space="preserve">
+    <value>実測濃度</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfoFormula_TargetConc" xml:space="preserve">
+    <value>目標濃度</value>
+  </data>
+  <data name="LID_MSGBOX_DisableAutomationWarning" xml:space="preserve">
+    <value>オートメーションを無効化した場合、再度有効化するにはBeckman Coulterに問い合わせる必要があります。本当にオートメーションを無効化してもよろしいですか？</value>
+  </data>
+  <data name="LID_Label_ACupEnabled" xml:space="preserve">
+    <value>ACup有効</value>
+  </data>
+  <data name="LID_Label_PostgresDatabaseReadPassword" xml:space="preserve">
+    <value>データベース読み取りパスワードの設定</value>
+  </data>
+  <data name="LID_Label_ChoosePassword" xml:space="preserve">
+    <value>パスワードの選択</value>
+  </data>
+  <data name="LID_Label_ConfirmPassword" xml:space="preserve">
+    <value>パスワードの確認</value>
+  </data>
+  <data name="LID_MSGBOX_AutomationLocked" xml:space="preserve">
+    <value>オートメーションのロックが有効になっているため、オートメーションの設定は変更できません。</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeAutomationPort" xml:space="preserve">
+    <value>オートメーションポートを変更すると、接続しているクライアントが切断され、サーバーが再起動されます。本当にオートメーションポートを変更してもよろしいですか？</value>
+  </data>
+  <data name="LID_Label_AutomationLockEngaged" xml:space="preserve">
+    <value>オートメーションロック有効</value>
+  </data>
+  <data name="LID_Default_AutomationCupSampleSetName" xml:space="preserve">
+    <value>オートメーションカップサンプルセット</value>
+  </data>
+  <data name="LID_Enum_AM" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="LID_Enum_Hour24" xml:space="preserve">
+    <value>24時間</value>
+  </data>
+  <data name="LID_Enum_PM" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="LID_GridLabel_ScheduledDataExports" xml:space="preserve">
+    <value>予定されたデータのエクスポート</value>
+  </data>
+  <data name="LID_IP_Port" xml:space="preserve">
+    <value>IPポート</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationFour" xml:space="preserve">
+    <value>18回のキャリブレーションがすべて終了するまでステップ2～3を繰り返します。</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationPlay" xml:space="preserve">
+    <value>サンプルをA-Cupへ移します。処理をするにはOKを選択します</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationThreeCont" xml:space="preserve">
+    <value>左パネルのハイライトされた列のボタンをタップしてビーズを測定します。</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationTwo" xml:space="preserve">
+    <value>ビーズを手動でA-Cupに移します (43 µL +/- 1 µL)。左パネルのハイライトされた列の「総細胞数」は使用するビーズ濃度を示しています。</value>
+  </data>
+  <data name="LID_Label_AdditionalDataFilters" xml:space="preserve">
+    <value>詳細情報のフィルター</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorPercentage" xml:space="preserve">
+    <value>濃度補正係数（%）</value>
+  </data>
+  <data name="LID_Label_AreYouSureYouWantToDelete" xml:space="preserve">
+    <value>「{0}」を削除しますか?</value>
+  </data>
+  <data name="LID_Label_At" xml:space="preserve">
+    <value>時間</value>
+  </data>
+  <data name="LID_Label_AuditLogScheduledExportFileName" xml:space="preserve">
+    <value>エクスポートファイル名（.csv）</value>
+  </data>
+  <data name="LID_Label_ConcentrationNote" xml:space="preserve">
+    <value>注記：感受性の高い調整です。FSMの推奨に従ってサンプルを調製してください</value>
+  </data>
+  <data name="LID_Label_DayOfMonthAt" xml:space="preserve">
+    <value>日目の</value>
+  </data>
+  <data name="LID_Label_EncryptExport" xml:space="preserve">
+    <value>暗号化したエクスポート?</value>
+  </data>
+  <data name="LID_Label_ExportAt" xml:space="preserve">
+    <value>エクスポートの時間</value>
+  </data>
+  <data name="LID_Label_ExportEncryptedInfo" xml:space="preserve">
+    <value>オフライン分析用にエクスポート</value>
+  </data>
+  <data name="LID_Label_ExportFilename" xml:space="preserve">
+    <value>エクスポートファイル名</value>
+  </data>
+  <data name="LID_Label_ExportLogs" xml:space="preserve">
+    <value>エクスポートログ</value>
+  </data>
+  <data name="LID_Label_ExportOn" xml:space="preserve">
+    <value>エクスポート予定</value>
+  </data>
+  <data name="LID_Label_ExportSamples" xml:space="preserve">
+    <value>エクスポートサンプル</value>
+  </data>
+  <data name="LID_Label_ExportTo" xml:space="preserve">
+    <value>エクスポート先</value>
+  </data>
+  <data name="LID_Label_ExportUnencryptedInfo" xml:space="preserve">
+    <value>CSVと非暗号化画像をエクスポート</value>
+  </data>
+  <data name="LID_Label_FromWordOnly" xml:space="preserve">
+    <value>開始日</value>
+  </data>
+  <data name="LID_Label_LastACupCalibrationDate" xml:space="preserve">
+    <value>A-Cupの濃度スロープの最終設定日</value>
+  </data>
+  <data name="LID_Label_LastACupCalibrationDate_WithoutColon" xml:space="preserve">
+    <value>A-Cupの濃度スロープの最終設定日</value>
+  </data>
+  <data name="LID_Label_LogsToExport" xml:space="preserve">
+    <value>エクスポートするログ</value>
+  </data>
+  <data name="LID_Label_New" xml:space="preserve">
+    <value>新規</value>
+  </data>
+  <data name="LID_Label_Notify" xml:space="preserve">
+    <value>注記</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Daily" xml:space="preserve">
+    <value>毎日</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Monthly" xml:space="preserve">
+    <value>毎月</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Once" xml:space="preserve">
+    <value>1回</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Weekly" xml:space="preserve">
+    <value>毎週</value>
+  </data>
+  <data name="LID_Label_Samples" xml:space="preserve">
+    <value>サンプル</value>
+  </data>
+  <data name="LID_Label_ScheduledExportFileName" xml:space="preserve">
+    <value>エクスポートファイル名（.zip）</value>
+  </data>
+  <data name="LID_Label_ScheduledExportName" xml:space="preserve">
+    <value>予定の名前</value>
+  </data>
+  <data name="LID_Label_ScheduledExportRepeats" xml:space="preserve">
+    <value>頻度</value>
+  </data>
+  <data name="LID_Label_ToWordOnly" xml:space="preserve">
+    <value>終了日</value>
+  </data>
+  <data name="LID_Label_Weekday_Friday" xml:space="preserve">
+    <value>金曜日</value>
+  </data>
+  <data name="LID_Label_Weekday_Monday" xml:space="preserve">
+    <value>月曜日</value>
+  </data>
+  <data name="LID_Label_Weekday_Saturday" xml:space="preserve">
+    <value>土曜日</value>
+  </data>
+  <data name="LID_Label_Weekday_Sunday" xml:space="preserve">
+    <value>日曜日</value>
+  </data>
+  <data name="LID_Label_Weekday_Thursday" xml:space="preserve">
+    <value>木曜日</value>
+  </data>
+  <data name="LID_Label_Weekday_Tuesday" xml:space="preserve">
+    <value>火曜日</value>
+  </data>
+  <data name="LID_Label_Weekday_Wednesday" xml:space="preserve">
+    <value>水曜日</value>
+  </data>
+  <data name="LID_LogsList_ScheduledLogExports" xml:space="preserve">
+    <value>予定されたログのエクスポート</value>
+  </data>
+  <data name="LID_MsgBox_DataFilterValuesAreNotValid" xml:space="preserve">
+    <value>データフィルターの値が無効です</value>
+  </data>
+  <data name="LID_MsgBox_FailedToCreateDirectory" xml:space="preserve">
+    <value>ディレクトリ作成に失敗しました</value>
+  </data>
+  <data name="LID_MsgBox_FilenameIsNotValid" xml:space="preserve">
+    <value>ファイル名が無効です</value>
+  </data>
+  <data name="LID_MsgBox_IncludeLogsSelectionIsNotValid" xml:space="preserve">
+    <value>予定されたエクスポートに少なくとも1種類のログを選択する必要があります</value>
+  </data>
+  <data name="LID_MsgBox_RecurrenceRulesAreNotValid" xml:space="preserve">
+    <value>再発ルールが無効です</value>
+  </data>
+  <data name="LID_QCNameSameAsCellTypeName" xml:space="preserve">
+    <value>QCは細胞タイプと同じ名前にはできません</value>
+  </data>
+  <data name="LID_Question_DirectoryNotExistCreateIt" xml:space="preserve">
+    <value>ディレクトリは存在しません。Vi-CELL BLUで作成しますか?</value>
+  </data>
+  <data name="LID_ScheduledExport_Audit_EachExportContainsForDaily" xml:space="preserve">
+    <value>毎回のエクスポートには24時間以内のログが含まれます。</value>
+  </data>
+  <data name="LID_ScheduledExport_Audit_EachExportContainsForMonthly" xml:space="preserve">
+    <value>毎回のエクスポートには1カ月以内のログが含まれます。</value>
+  </data>
+  <data name="LID_ScheduledExport_Audit_EachExportContainsForWeekly" xml:space="preserve">
+    <value>毎回のエクスポートには7日以内のログが含まれます。</value>
+  </data>
+  <data name="LID_ScheduledExport_CommentsNote" xml:space="preserve">
+    <value>任意で予定の説明</value>
+  </data>
+  <data name="LID_ScheduledExport_EachExportContainsForDaily" xml:space="preserve">
+    <value>毎回のエクスポートには24時間以内のサンプルが含まれます。</value>
+  </data>
+  <data name="LID_ScheduledExport_EachExportContainsForMonthly" xml:space="preserve">
+    <value>毎回のエクスポートには1カ月以内のサンプルが含まれます。</value>
+  </data>
+  <data name="LID_ScheduledExport_EachExportContainsForWeekly" xml:space="preserve">
+    <value>毎回のエクスポートには7日以内のサンプルが含まれます。</value>
+  </data>
+  <data name="LID_ScheduledExport_ExportToNote" xml:space="preserve">
+    <value>エクスポート先フォルダのパス</value>
+  </data>
+  <data name="LID_ScheduledExport_IncludeAuditLog" xml:space="preserve">
+    <value>監査ログ</value>
+  </data>
+  <data name="LID_ScheduledExport_IncludeErrorLog" xml:space="preserve">
+    <value>システムエラーログ</value>
+  </data>
+  <data name="LID_ScheduledExport_NotifyNote" xml:space="preserve">
+    <value>エクスポート確認メールの送信先アドレス</value>
+  </data>
+  <data name="LID_ScheduleExport_AddFailed" xml:space="preserve">
+    <value>予定されたエクスポートの追加に失敗しました</value>
+  </data>
+  <data name="LID_ScheduleExport_DeleteFailed" xml:space="preserve">
+    <value>予定されたエクスポートの削除に失敗しました</value>
+  </data>
+  <data name="LID_ScheduleExport_EditFailed" xml:space="preserve">
+    <value>予定されたエクスポートの編集に失敗しました</value>
+  </data>
+  <data name="LID_TabItem_ACupConcSlope" xml:space="preserve">
+    <value>A-Cupの濃度スロープ</value>
+  </data>
+  <data name="LID_CSV_Row_Header" xml:space="preserve">
+    <value>ROW</value>
+  </data>
+  <data name="LID_CSV_Column_Header" xml:space="preserve">
+    <value>COLUMN</value>
+  </data>
+</root>

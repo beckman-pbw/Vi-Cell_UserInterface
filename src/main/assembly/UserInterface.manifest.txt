@@ -1,0 +1,8 @@
+# Generated build properties file, see wiki:Admin20Spec
+application:${application}
+version:${project.version}
+groupId:${project.groupId}
+artifactId:${project.artifactId}
+build-filename:${project.build.finalName}
+url:${project.url}
+package-type:${package.type}

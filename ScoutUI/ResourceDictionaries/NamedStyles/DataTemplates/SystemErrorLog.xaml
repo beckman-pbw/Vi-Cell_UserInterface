@@ -1,0 +1,62 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:ScoutUI.Common.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Common.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/DataGridStyle_LogReports.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/ProgressIndicatorThreeDotsStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="SystemErrorLog">
+        <Grid>
+            <DataGrid Validation.ErrorTemplate="{x:Null}" x:Name="systemLog" ScrollViewer.PanningMode="Both" CanUserDeleteRows="False" 
+                      HorizontalScrollBarVisibility="Visible" VerticalScrollBarVisibility="Auto" ItemsSource="{Binding ErrorLogDomainList, IsAsync=True}"
+                      Style="{StaticResource DataGridStyle_LogReports}">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Width="200" Header="{Binding ResourceKeys[LID_AdminReportsHeader_DateTime], Source={StaticResource ScoutUILanguageResource}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <TextBlock Name="TxtCommonName" HorizontalAlignment="Left" 
+                                               Text="{Binding Timestamp, Converter={StaticResource DateFormatConverter}, ConverterParameter=ShortDate}" />
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="150" Header="{Binding ResourceKeys[LID_UsersLabel_UserId], Source={StaticResource ScoutUILanguageResource}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+									<TextBlock Name="TxtCommonName" HorizontalAlignment="Left" Text="{Binding UserId}" />
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="150" Header="{Binding ResourceKeys[LID_Label_ErrorCode], Source={StaticResource ScoutUILanguageResource}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <TextBlock Name="TxtCommonName" HorizontalAlignment="Left" Text="{Binding ErrorCode}" />
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTemplateColumn Width="*" Header="{Binding ResourceKeys[LID_Label_Description], Source={StaticResource ScoutUILanguageResource}}">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Border BorderThickness="1">
+                                    <TextBlock Name="TxtCommonName" HorizontalAlignment="Left" Text="{Binding Message}" TextWrapping="Wrap" />
+                                </Border>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Border Background="{DynamicResource GenericMediumLight}" CornerRadius="10" Visibility="{Binding IsSystemLogLoaded, Converter={StaticResource InverseVisibilityConverter}}">
+                <controls:LoadingIndicator Style="{StaticResource ProgressIndicatorThreeDotsStyle}" Foreground="{DynamicResource GenericVeryDark}" Height="18" Width="100" />
+            </Border>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

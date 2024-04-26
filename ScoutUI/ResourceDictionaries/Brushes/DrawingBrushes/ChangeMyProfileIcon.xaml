@@ -1,0 +1,178 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DrawingBrush x:Key="ChangeMyProfileIcon" Viewbox="0,0,83.222,132.442" ViewboxUnits="Absolute">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,28.589,61.867" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFEDBA9B">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M257.875,68.75 C257.875,68.75 257.825,74.825 255.575,76.95 255.575,76.95 258.075,80.949995 263.95001,80.949995 269.82502,80.949995 272.07503,80.574997 272.07503,80.574997 272.07503,80.574997 277.20002,78.449998 278.82502,76.574998 278.82502,76.574998 275.57501,71.449999 275.95001,68.95 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="1.00430041615448,0,0,1.00819697350598,-256.674075793801,-69.3135419285364" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,12.896,16.442" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FFD4916B">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M241,38.75 C241,38.75 239.325,40.575 240.075,44.825 240.075,44.825 240.82496,49.200001 244.95085,48.700001 244.95085,48.700001 248.20155,71.074388 267.4557,70.824393 267.4557,70.824393 286.33475,71.199471 289.8355,48.449842 289.8355,48.449842 293.71134,49.19983 294.33648,44.824901 294.33648,44.824901 295.21168,41.699952 294.08643,38.824999 292.96119,35.950046 267.70584,23.325251 267.70584,23.325251 L251.45229,23.825242 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="1.00160688580346,0,0,1.0021214941679,-240.267222237635,-23.3747350087774" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,14.151,0" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF3C3C3C">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M245.375,43.75 L245.375,40.9375 C245.375,40.9375 244.375,37.248844 241.75,38.999155 L241.12012,38.829723 241.35627,24.425802 C241.35627,24.425802 241.87039,12.783695 250.5248,13.888421 250.5248,13.888421 252.75309,6.9203677 260.37952,6.4954757 260.37952,6.4954757 265.60619,5.8153026 270.91889,6.7500733 270.91889,6.7500733 288.22746,8.6193059 293.62579,19.496734 293.62579,19.496734 295.33955,22.640991 295.33955,24.850468 295.33955,24.850468 296.6245,35.472957 295.59626,38.872153 L294.82556,38.957133 C294.82556,38.957133 293.36728,36.868143 292.34134,39.486982 292.31217,39.561447 292.28335,39.639718 292.25492,39.721952 L292.25492,42.611269 289.94134,42.696249 289.68428,40.401792 C289.68428,40.401792 287.62777,35.472957 281.11548,35.727897 L273.23219,35.302997 C273.23219,35.302997 261.66432,33.943319 257.37992,27.739785 257.37992,27.739785 255.58047,35.218017 252.41002,36.917615 252.41002,36.917615 248.63975,39.891912 248.297,42.18637 L248.12562,43.885968 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="0.974343311230876,0,0,0.983272601272405,-234.933773384846,-6.15186918182415" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,0,73.867" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF253C80">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M252.16667,81.5 C252.16667,81.5 234.16634,87.5 231.99967,99.833333 231.99967,99.833333 226.49966,124.16745 227.16633,128.33419 227.16633,128.33419 234.66606,140.33484 268.99994,138.8348 268.99994,138.8348 304.66717,137.83486 310.33393,128.3346 310.33393,128.3346 304.66748,102.66724 302.66744,98.833802 302.66744,98.833802 298.50069,83.375051 281.87536,80.874983 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="0.999980197079469,0,0,0.999972988407017,-227.105777821822,-80.8728001790406" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,22.014,73.867" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M252.125,81.875 L249,92.125 C249,92.125 254,94.125 256.125,93.375 L256,103.62552 268.28084,123.0871 278.375,104.62555 277.75,95.000316 C277.75,95.000316 282.875,94.250298 284.375,92.750262 285.875,91.250226 285.28758,91.721559 285.28758,91.721559 L282.12471,80.749973">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="0.975086345893304,0,0,0.984360590296424,-242.346500127433,-79.037087626135" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource GenericVeryDark}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10"
+                                 StartLineCap="Flat" Thickness="0.9" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,25.099,69.734" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF8989B9">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M255.5,76.75 C255.5,76.75 252.2,78.325 252.2,81.575 252.2,84.825 267.57501,100.57498 267.57501,100.57498 267.57501,100.57498 281.97433,83.002968 281.59534,80.291857 281.59075,80.259041 281.584,80.228401 281.57503,80.199997 280.82503,77.824999 279.44971,76.575 278.94972,76.575 278.94972,76.575 274.19977,80.324995 271.82479,80.699994 271.82479,80.699994 263.82488,81.449994 263.57488,80.949994 263.57488,80.949994 258.69993,81.199994&#xD;&#xA;256.07496,77.699996 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="1.00341143214483,0,0,1.00416730509905,-253.060360124758,-76.894108323484" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,25.098,69.734" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF5255A5">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M255.40781,76.748414 C255.40781,76.748414 251.7,78.116331 252.11667,81.699664 252.11667,81.699664 257.11679,90.366323 260.36703,90.866322 260.36703,90.866322 260.45004,83.449505 263.36681,81.116229 263.36681,81.116229 257.7831,80.282916 255.69976,77.199657 L255.44976,76.616338">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="1.00888293113055,0,0,1.00701862216735,-254.323259835981,-77.1540817839846" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="-1,0,0,1,54.757,69.096" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF5255A5">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M255.2717,76.688398 C255.2717,76.688398 251.7,78.116331 252.11667,81.699664 252.11667,81.699664 257.11679,90.366323 260.36703,90.866322 260.36703,90.866322 260.4581,83.742062 263.37487,81.408786 263.37487,81.408786 257.7831,80.282916 255.69976,77.199657 L255.29438,76.603255">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="0.918790217746752,0,0,0.98071458885289,-231.611261442042,-75.1259309340681" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,40.139,92.242" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M267.625,99.125 L268.79998,138.425">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="1.00001038907068,0,0,0.999999922347136,-267.17778037504,-98.6749923026598" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource GenericVeryDark}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10"
+                                 StartLineCap="Flat" Thickness="0.9" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,36.962,73.867" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="#FF565758">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry
+                                Figures="M271.375,80.75 C271.375,80.75 264.2,81.283333 264.15833,80.908333 264.15833,80.908333 265.10182,85.505901 266.22485,86.801192 266.25816,86.83961 266.29162,86.875123 266.32523,86.907525 266.32523,86.907525 264.49198,94.448941 264.74197,97.407046 L267.70017,100.82385 272.0333,94.949183 C272.0333,94.949183 270.28363,87.532943 269.99197,86.991308 269.99197,86.991308 271.8253,83.366516 271.49196,81.783274 z">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform
+                                        Matrix="1.01270233717113,0,0,1.00503914874242,-267.513753308505,-81.1569112609502" />
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

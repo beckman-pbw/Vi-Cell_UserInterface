@@ -1,0 +1,222 @@
+﻿<UserControl x:Class="ScoutUI.Views.ucCommon.LineGraphForQualityControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:converter="clr-namespace:ScoutUI.Common.Converters"
+             xmlns:visualizationToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             mc:Ignorable="d"
+             x:Name="LineChart">
+    <UserControl.Resources>
+        <ControlTemplate x:Key="ToggleButtonStyle1" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Rectangle x:Name="rgtLineGraph" Fill="LightGreen" Stroke="{DynamicResource GenericVeryDark}" StrokeThickness="1" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="ToggleButton.IsChecked" Value="true">
+                    <Setter TargetName="rgtLineGraph" Property="Fill" Value="Purple" />
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="false">
+                    <Setter TargetName="rgtLineGraph" Property="Fill" Value="LightBlue" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <ControlTemplate x:Key="ToggleButtonStyle2" TargetType="{x:Type ToggleButton}">
+            <Grid>
+                <Rectangle x:Name="rgtLineGraph" Fill="LightGreen" Stroke="{DynamicResource GenericVeryDark}" StrokeThickness="1" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="ToggleButton.IsChecked" Value="true">
+                    <Setter TargetName="rgtLineGraph" Property="Fill" Value="Purple" />
+                </Trigger>
+                <Trigger Property="ToggleButton.IsChecked" Value="false">
+                    <Setter TargetName="rgtLineGraph" Property="Fill" Value="Red" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style x:Key="LegendItemStyle" TargetType="{x:Type chartingToolkit:LegendItem}">
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="Foreground" Value="{DynamicResource GenericVeryLight}"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="chartingToolkit:LegendItem">
+                        <StackPanel Orientation="Horizontal">
+                            <CheckBox VerticalAlignment="Center"
+                                      IsChecked="{Binding RelativeSource={RelativeSource Mode=TemplatedParent}, Path=Owner.Visibility, Mode=TwoWay, Converter={StaticResource VisibilityToBooleanConverter}}" />
+                            <Rectangle VerticalAlignment="Center" Width="16" Height="16" Fill="{Binding Background}"
+                                       Stroke="{Binding BorderBrush}" StrokeThickness="1" Margin="5,0,5,0" />
+                            <visualizationToolkit:Title VerticalAlignment="Center" Content="{TemplateBinding Content}" />
+                        </StackPanel>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LimitLegendItemStyle" TargetType="{x:Type chartingToolkit:LegendItem}">
+            <Setter Property="Width" Value="0" />
+            <Setter Property="Height" Value="0" />
+        </Style>
+        <Style x:Key="DataPointStyle1" TargetType="{x:Type chartingToolkit:LineDataPoint}">
+            <Setter Property="Background" Value="Purple" />
+            <Setter Property="Width" Value="16" />
+            <Setter Property="Height" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="chartingToolkit:LineDataPoint">
+                        <ToggleButton
+                            IsChecked="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsSelected,Mode=TwoWay}"
+                            Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=LineCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=LineCommandParamter}"
+                            x:Name="tglLineGraph" Template="{StaticResource ToggleButtonStyle1}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataPointStyle2" TargetType="{x:Type chartingToolkit:LineDataPoint}">
+            <Setter Property="Background" Value="LightGreen" />
+            <Setter Property="Width" Value="16" />
+            <Setter Property="Height" Value="16" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="chartingToolkit:LineDataPoint">
+                        <ToggleButton
+                            IsChecked="{Binding RelativeSource={RelativeSource Mode=TemplatedParent},Path=IsSelected,Mode=TwoWay}"
+                            Command="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=LineCommand}"
+                            CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=LineCommandParamter}"
+                            x:Name="tglLineGraph" Template="{StaticResource ToggleButtonStyle2}" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+    </UserControl.Resources>
+    <Grid Focusable="False" KeyboardNavigation.IsTabStop="False" KeyboardNavigation.TabNavigation="None">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Viewbox Grid.Row="0">
+            <chartingToolkit:Chart HorizontalAlignment="Left"
+                                   Validation.ErrorTemplate="{x:Null}"
+                                   Name="lineChart"
+                                   BorderBrush="Transparent"
+                                   BorderThickness="0"
+                                   Height="{Binding ActualHeight,ElementName=LineChart}"
+                                   Width="{Binding ActualWidth,ElementName=LineChart}"
+                                   LegendTitle="{Binding ElementName=LineChart, Path=LegendTitle}">
+                <chartingToolkit:Chart.PlotAreaStyle>
+                    <Style TargetType="Grid">
+                        <Setter Property="Background" Value="{DynamicResource GenericVeryLight}" />
+                        <Setter Property="ShowGridLines" Value="True" />
+                    </Style>
+                </chartingToolkit:Chart.PlotAreaStyle>
+
+                <chartingToolkit:Chart.LegendStyle>
+                    <Style TargetType="Control">
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding ElementName=LineChart, Path=IsMultiAxisEnable}" Value="false">
+                                <Setter Property="Width" Value="0" />
+                                <Setter Property="Height" Value="0" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding ElementName=LineChart, Path=IsMultiAxisEnable}" Value="true">
+                                <Setter Property="Width" Value="Auto" />
+                                <Setter Property="Height" Value="Auto" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </chartingToolkit:Chart.LegendStyle>
+
+                <chartingToolkit:Chart.Axes>
+                    <chartingToolkit:LinearAxis Orientation="Y"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            FontSize="18"
+                                            ShowGridLines="{Binding RelativeSource={RelativeSource 
+                                            AncestorType=UserControl}, Path=ShowGridLine}"
+                                            Title="{Binding ElementName=LineChart, Path=YAxisName}" FontStyle="Normal"
+                                            FontWeight="Normal" Foreground="{DynamicResource GenericVeryLight}">
+                        <chartingToolkit:LinearAxis.GridLineStyle>
+                            <Style TargetType="Line">
+                                <Setter Property="Stroke" Value="{DynamicResource GenericMedium}" />
+                                <Setter Property="StrokeThickness" Value="0.1" />
+                            </Style>
+                        </chartingToolkit:LinearAxis.GridLineStyle>
+                    </chartingToolkit:LinearAxis>
+                    <chartingToolkit:CategoryAxis Orientation="X"
+                                              FontSize="18"
+                                              Validation.ErrorTemplate="{x:Null}" Foreground="{DynamicResource GenericVeryLight}"
+                                              ShowGridLines="{Binding RelativeSource={RelativeSource 
+                                              AncestorType=UserControl}, Path=ShowGridLine}"
+                                                  AxisLabelStyle="{StaticResource XAxisStyle}"
+                                              Title="{Binding ElementName=LineChart, Path=XAxisName}"
+                                              FontStyle="Normal" FontWeight="Normal">
+                        <chartingToolkit:CategoryAxis.GridLineStyle>
+                            <Style TargetType="Line">
+                                <Setter Property="Stroke" Value="{DynamicResource GenericMedium}" />
+                                <Setter Property="StrokeThickness" Value="0.1" />
+                            </Style>
+                        </chartingToolkit:CategoryAxis.GridLineStyle>
+                    </chartingToolkit:CategoryAxis>
+                </chartingToolkit:Chart.Axes>
+
+                <chartingToolkit:LineSeries DependentValueBinding="{Binding Path=Value}"
+                                            x:Name="primeLineSeries"
+                                            IndependentValueBinding="{Binding Path=Key}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Title="{Binding ElementName=LineChart, Path=PrimaryLegendName}"
+                                            LegendItemStyle="{StaticResource LegendItemStyle}"
+                                            DataPointStyle="{StaticResource DataPointStyle1}"                                          
+                                            ItemsSource="{Binding SelectedGraph.GraphDetailList,ElementName=LineChart,UpdateSourceTrigger=PropertyChanged}"
+                                            SelectedItem="{Binding SelectedItem ,ElementName=LineChart,Mode=TwoWay}"
+                                            IsSelectionEnabled="True" />
+                <chartingToolkit:LineSeries ItemsSource="{Binding SelectedGraph.MultiGraphDetailList,ElementName=LineChart}"
+                                            SelectedItem="{Binding SelectedItem ,ElementName=LineChart,Mode=TwoWay}"
+                                            Visibility="{Binding RelativeSource={RelativeSource AncestorType=UserControl}, Path=IsMultiAxisEnable,
+                                                     Converter ={StaticResource BooleanToVisibilityConverter}}"
+                                            DependentValueBinding="{Binding Path=Value}"
+                                            Validation.ErrorTemplate="{x:Null}"
+                                            Title="{Binding ElementName=LineChart, Path=SecondaryLegendName}"
+                                            LegendItemStyle="{StaticResource LegendItemStyle}"
+                                            DataPointStyle="{StaticResource DataPointStyle2}"
+                                            IndependentValueBinding="{Binding Path=Key}"
+                                            IsSelectionEnabled="True" />
+                <chartingToolkit:LineSeries Name="lowerLimitLineSeries" DependentValuePath="Value"
+                                        Validation.ErrorTemplate="{x:Null}"
+                                        IndependentValuePath="Key" ItemsSource="{Binding}"
+                                        LegendItemStyle="{StaticResource LimitLegendItemStyle}">
+                    <chartingToolkit:LineSeries.PolylineStyle>
+                        <Style TargetType="Polyline">
+                            <Setter Property="StrokeDashArray" Value="5 5 5" />
+                            <Setter Property="StrokeThickness" Value="2" />
+                        </Style>
+                    </chartingToolkit:LineSeries.PolylineStyle>
+                    <chartingToolkit:LineSeries.DataPointStyle>
+                        <Style TargetType="{x:Type chartingToolkit:LineDataPoint}">
+                            <Setter Property="Background" Value="Red" />
+                            <Setter Property="Template" Value="{x:Null}" />
+                        </Style>
+                    </chartingToolkit:LineSeries.DataPointStyle>
+                </chartingToolkit:LineSeries>
+
+                <chartingToolkit:LineSeries Name="upperLimitLineSeries" DependentValuePath="Value"
+                                        IndependentValuePath="Key" ItemsSource="{Binding}"
+                                        Validation.ErrorTemplate="{x:Null}"
+                                        LegendItemStyle="{StaticResource LimitLegendItemStyle}">
+                    <chartingToolkit:LineSeries.PolylineStyle>
+                        <Style TargetType="Polyline">
+                            <Setter Property="StrokeDashArray" Value="5 5 5" />
+                            <Setter Property="StrokeThickness" Value="2" />
+                        </Style>
+                    </chartingToolkit:LineSeries.PolylineStyle>
+                    <chartingToolkit:LineSeries.DataPointStyle>
+                        <Style TargetType="{x:Type chartingToolkit:LineDataPoint}">
+                            <Setter Property="Background" Value="Red" />
+                            <Setter Property="Template" Value="{x:Null}" />
+                        </Style>
+                    </chartingToolkit:LineSeries.DataPointStyle>
+                </chartingToolkit:LineSeries>
+            </chartingToolkit:Chart>
+        </Viewbox>
+    </Grid>
+</UserControl>

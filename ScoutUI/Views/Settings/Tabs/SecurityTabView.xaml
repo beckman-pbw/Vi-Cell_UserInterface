@@ -1,0 +1,150 @@
+﻿<UserControl x:Class="ScoutUI.Views.Settings.Tabs.SecurityTabView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScoutUI.Views.Settings.Tabs"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d" d:DesignHeight="650" d:DesignWidth="1250">
+    
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding OnLoadedCommand}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" MaxWidth="500"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Column="0" Margin="5" Height="Auto" VerticalAlignment="Top" HorizontalAlignment="Left"
+                  Style="{StaticResource SettingGroupBox}" Width="Auto" MaxWidth="500"
+                  Header="{Binding ResourceKeys[LID_Label_SecuritySettings], Source={StaticResource ScoutUILanguageResource}}">
+            <Grid Height="Auto" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="70"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="1" Grid.Column="0" Text="{Binding SecurityType, Converter={StaticResource SecurityTypeToStringConverter}, FallbackValue=SecurityType}" 
+                           VerticalAlignment="Bottom" Margin="5" TextWrapping="Wrap"/>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="{Binding InactivityTimeoutString, FallbackValue=InactivityTimeout}" VerticalAlignment="Bottom" Margin="5"
+                           Visibility="{Binding IsSecurityTurnedOn, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           TextWrapping="Wrap"/>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="{Binding PasswordChangeString, FallbackValue=PasswordChange}" VerticalAlignment="Bottom" Margin="5"
+                           Visibility="{Binding SecurityIsLocal, Converter={StaticResource BooleanToVisibilityConverter}}"
+                           TextWrapping="Wrap"/>
+
+                <Button Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Style="{StaticResource RoundButtonDashBoardStyle}"
+                        Command="{Binding EditSecuritySettingsCommand}">
+                    <Rectangle Width="30" Height="30" Margin="4" Fill="{StaticResource PencilIcon}"/>
+                </Button>
+            </Grid>
+        </GroupBox>
+
+        <Grid Grid.Column="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Row="0" Orientation="Horizontal"
+                        Visibility="{Binding IsSecurityTurnedOn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Button Style="{StaticResource DefaultButtonStyle}" Command="{Binding AddUserCommand}" Width="Auto"
+                        Visibility="{Binding SecurityIsLocal, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                            <Rectangle Width="30" Height="30" Margin="4" Fill="{StaticResource PlusIcon}"/>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Button_AddUser], Source={StaticResource ScoutUILanguageResource}}" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+                <Button Style="{StaticResource DefaultButtonStyle}" Command="{Binding EditUserCommand}" Width="Auto"
+                        Visibility="{Binding SelectedUser, Converter={StaticResource ObjectToVisibilityConverter}}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                            <Rectangle Width="30" Height="30" Margin="4" Fill="{StaticResource PencilIcon}"/>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_Edit], Source={StaticResource ScoutUILanguageResource}}" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+
+                <Button Style="{StaticResource DefaultButtonStyle}" Command="{Binding DeleteUserCommand}" Width="Auto"
+                        Visibility="{Binding SecurityIsLocal, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        IsEnabled="{Binding SelectedUser, Converter={StaticResource ObjectToBoolConverter}}">
+                    <Button.Content>
+                        <StackPanel Orientation="Horizontal" Margin="10,0,10,0">
+                            <Rectangle Width="30" Height="30" Margin="4" Fill="{StaticResource TrashIcon}"/>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_Delete], Source={StaticResource ScoutUILanguageResource}}" 
+                                       VerticalAlignment="Center"/>
+                        </StackPanel>
+                    </Button.Content>
+                </Button>
+            </StackPanel>
+
+            <DataGrid Grid.Row="1" ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}"
+                      Style="{StaticResource DataGridCommonStyle}" Margin="14,0,0,0" 
+                      ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                      ScrollViewer.PanningMode="Both" Width="Auto" HorizontalAlignment="Stretch"
+                      Visibility="{Binding IsSecurityTurnedOn, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn IsReadOnly="True" Width="100">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_Enabled], Source={StaticResource ScoutUILanguageResource}}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <CheckBox IsChecked="{Binding IsEnabled, Mode=OneWay}" IsEnabled="False" Style="{StaticResource AdminCheckBox}" HorizontalAlignment="Center"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="True" Width="200">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding ResourceKeys[LID_AdminReportsHeader_UserName], Source={StaticResource ScoutUILanguageResource}}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding UserID, Mode=OneWay}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="True" Width="200">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding ResourceKeys[LID_UsersLabel_DisplayName], Source={StaticResource ScoutUILanguageResource}}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding DisplayName, Mode=OneWay}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+
+                    <DataGridTemplateColumn IsReadOnly="True" Width="150">
+                        <DataGridTemplateColumn.Header>
+                            <TextBlock Text="{Binding ResourceKeys[LID_UsersLabel_Role], Source={StaticResource ScoutUILanguageResource}}"/>
+                        </DataGridTemplateColumn.Header>
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding RoleName, Mode=OneWay}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+            
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,159 @@
+<UserControl x:Class="ScoutUI.Views.Admin.UserControls.SettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ScoutUI.Views.Admin.UserControls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:converter="clr-namespace:ScoutUI.Common.Converters"
+             xmlns:Storage="clr-namespace:ScoutUI.Views.Storage.UserControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+             xmlns:settings="clr-namespace:ScoutUI.Views.Settings"
+             xmlns:tabs="clr-namespace:ScoutUI.Views.Settings.Tabs"
+             Background="{StaticResource Main_Background}" FontFamily="Segoe UI"
+             KeyboardNavigation.TabNavigation="Local" Focusable="False" IsTabStop="False"
+             mc:Ignorable="d" d:DesignWidth="1280" d:DesignHeight="740">
+
+    <Grid VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Margin="0,0,0,10">
+
+        <TabControl Style="{StaticResource CommonTabControlStyle}" 
+                    SelectedIndex="{Binding SelectedTabItem}"
+                    SelectionChanged="TabControl_SelectionChanged"
+                    HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+
+            <TabItem VerticalAlignment="Stretch" Foreground="{DynamicResource GenericVeryLight}"
+                     IsSelected="{Binding SelectedTabItem, Converter={StaticResource ParamMatchesBindingConverter}, ConverterParameter=Settings, Mode=OneWay}"
+                     Style="{StaticResource CommonTabItemStyle}" HorizontalAlignment="Stretch" IsTabStop="True" Focusable="True" Uid="tabSettingsSettings">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="30" Height="30" Margin="4">
+                                <Rectangle.Fill>
+                                    <VisualBrush Visual="{StaticResource SettingIcon}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding ResourceKeys[LID_HB_Settings], Source={StaticResource ScoutUILanguageResource}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Grid>
+                    <settings:SettingsTabView DataContext="{Binding SettingsTabViewModel}"/>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tbiSecurity" 
+                     Style="{StaticResource CommonTabItemStyle}"
+                     IsSelected="{Binding SelectedTabItem, Converter={StaticResource ParamMatchesBindingConverter}, ConverterParameter=Security, Mode=OneWay}"
+                     IsEnabled="{Binding IsTabEnable, Mode=TwoWay}"
+                     Visibility="{Binding IsAdminOrServiceUser, Converter={StaticResource BooleanToVisibilityConverter}}"
+                     IsTabStop="True" Focusable="True" Uid="tabSettingsSecurity">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="40" Height="30" Margin="4">
+                                <Rectangle.Fill>
+                                    <VisualBrush Visual="{StaticResource multi_user}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding ResourceKeys[LID_FrameLabel_Security], Source={StaticResource ScoutUILanguageResource}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Grid Visibility="{Binding IsAdminOrServiceUser, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <tabs:SecurityTabView DataContext="{Binding SecurityTabViewModel}" />
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="tbiStorage" VerticalAlignment="Stretch" Foreground="{DynamicResource GenericVeryLight}"
+                     IsSelected="{Binding SelectedTabItem, Converter={StaticResource ParamMatchesBindingConverter}, ConverterParameter=Storage, Mode=OneWay}"
+                     Visibility="{Binding IsAdminOrServiceUser, Converter={StaticResource BooleanToVisibilityConverter}}"
+                     IsTabStop="True" Focusable="True" Uid="tabSettingsStorage"
+                     IsEnabled="{Binding IsTabEnable, Mode=TwoWay}"
+                     Style="{StaticResource CommonTabItemStyle}" HorizontalAlignment="Stretch" >
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="30" Height="30" Margin="4">
+                                <Rectangle.Fill>
+                                    <VisualBrush Visual="{StaticResource storage}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding ResourceKeys[LID_FrameLabel_Storage], Source={StaticResource ScoutUILanguageResource}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Grid Visibility="{Binding IsAdminOrServiceUser, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Storage:StorageTabView DataContext="{Binding StorageTabViewModel}" />
+                </Grid>
+            </TabItem>
+
+            <TabItem VerticalAlignment="Stretch" Foreground="{DynamicResource GenericVeryLight}"
+                     IsSelected="{Binding SelectedTabItem, Converter={StaticResource ParamMatchesBindingConverter}, ConverterParameter=About, Mode=OneWay}"
+                     Style="{StaticResource CommonTabItemStyle}" HorizontalAlignment="Stretch"
+                     IsTabStop="True" Focusable="True" Uid="tabSettingsAbout">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="30" Height="30" Margin="4">
+                                <Rectangle.Fill>
+                                    <VisualBrush Visual="{StaticResource About}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding ResourceKeys[LID_HB_About], Source={StaticResource ScoutUILanguageResource}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Grid Margin="0,10,0,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="60"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="2*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Content="{Binding UiSoftwareVersion, Mode=OneWay}" FontSize="40" 
+                           Style="{StaticResource LabelStyleFontSizeEighteenRegular}" HorizontalAlignment="Center" />
+
+                    <StackPanel Grid.Row="1" Grid.Column="0" HorizontalAlignment="Center" Margin="0,20,0,50">
+                        <Image Source="{StaticResource Beckman-coulterSource}" HorizontalAlignment="Center" Width="350" />
+                        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" FontSize="18" Margin="10,50,0,0" Foreground="{DynamicResource GenericVeryLight}"
+                                   Text="{Binding ResourceKeys[LID_Label_About_Declaration], Source={StaticResource ScoutUILanguageResource}}" />
+                    </StackPanel>
+
+                    <StackPanel Grid.Row="1" Grid.Column="1" Orientation="Vertical" Margin="5,0,25,5" >
+                        <Label Style="{StaticResource Header1Label}" FontSize="24" Height="Auto" 
+                               Content="{Binding ResourceKeys[LID_Label_Licenses], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <WebBrowser commonControls:WebBrowserUtility.BindableSource="{Binding LicensesHtmlPath}"
+                                    Height="550" Visibility="{Binding ShowWebBrowserElement, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    </StackPanel>
+                </Grid>
+            </TabItem>
+
+            <TabItem VerticalAlignment="Stretch" Foreground="{DynamicResource GenericVeryLight}"
+                     IsSelected="{Binding SelectedTabItem, Converter={StaticResource ParamMatchesBindingConverter}, ConverterParameter=Help, Mode=OneWay}"
+                     Style="{StaticResource CommonTabItemStyle}" HorizontalAlignment="Stretch"
+                     IsTabStop="True" Focusable="True" Uid="tabSettingsHelp">
+                <TabItem.HeaderTemplate>
+                    <DataTemplate>
+                        <StackPanel Orientation="Horizontal">
+                            <Rectangle Width="30" Height="30" Margin="4">
+                                <Rectangle.Fill>
+                                    <VisualBrush Visual="{StaticResource Help}" />
+                                </Rectangle.Fill>
+                            </Rectangle>
+                            <TextBlock Text="{Binding ResourceKeys[LID_HB_Help], Source={StaticResource ScoutUILanguageResource}}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </TabItem.HeaderTemplate>
+                <Grid>
+                    <WebBrowser commonControls:WebBrowserUtility.BindableSource="{Binding HelpHtmlPath}"
+                                Margin="25" Visibility="{Binding ShowWebBrowserElement, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                </Grid>
+            </TabItem>
+
+        </TabControl>
+    </Grid>
+
+</UserControl>

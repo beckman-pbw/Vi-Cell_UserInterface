@@ -1,0 +1,800 @@
+<UserControl x:Class="ScoutUI.Views.Service.ConcentrationView" Name="UcConcentration"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib" 
+             xmlns:converters="clr-namespace:ScoutUI.Common.Converters"
+             xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+             xmlns:service="clr-namespace:ScoutUI.Views.Service"
+             mc:Ignorable="d"
+             Focusable="False" IsTabStop="False" KeyboardNavigation.TabNavigation="Local"
+             d:DesignHeight="800" d:DesignWidth="1500">
+    
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="Loaded">
+            <i:InvokeCommandAction Command="{Binding ConcentrationLoadedCommand}" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="310" />
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="945" />
+        </Grid.ColumnDefinitions>
+        
+        <Border Grid.Column="0" BorderBrush="{DynamicResource GenericVeryLight}" BorderThickness="1" CornerRadius="8" Margin="0" />
+
+        <!-- Main Left Pane -->
+        <Grid Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="5" />
+                <RowDefinition Height="310" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="120" />
+                <RowDefinition Height="10" />
+            </Grid.RowDefinitions>
+
+            <controls:ServiceCarouselPlateControl ControlEnable="False" Grid.Row="1" Margin="-30"
+                                                  IsClearing="{Binding Path=DataContext.IsClearingCarousel, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                                                  IsStatusCompleted="{Binding Path=DataContext.IsStatusCompleted, Mode=TwoWay, RelativeSource={RelativeSource AncestorType={x:Type UserControl}}}"
+                                                  MyItemsSource="{Binding ElementName=UcConcentration,Path=DataContext.CarouselSamples,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  ChangesDialogResult="{Binding ElementName=UcConcentration, Path=DataContext.ChangesDialogResultCarouselPlate,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                  PlayItemPosition="{Binding Path=DataContext.PlayItemPosition, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged, RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Grid}, AncestorLevel=2}}"
+                                                  RotateGridCommand="{Binding ElementName=UcConcentration, Path=DataContext.ResultCarouselRotateCommand,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged }"
+                                                  IsRotateButtonEnable="{Binding ElementName=btnPlay, Path=IsActive, Converter={StaticResource InverseBooleanConverter},Mode=TwoWay}" />
+            
+            <!-- Play Stop Eject Button -->
+            <Grid Grid.Row="3" Margin="0,10,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+                    
+                    <Grid Grid.Column="1" IsEnabled="{Binding IsEnablePlayPause}">
+                        <controls:ActiveButton x:Name="btnPlay" Style="{StaticResource RunToggleActiveButton}"
+                                               IsActive="{Binding IsPauseActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               Command="{Binding ExecuteSampleCommand}" CommandParameter="Start" />
+                    </Grid>
+
+                    <Grid Grid.Column="2" IsEnabled="{Binding IsEnablePlayPause}">
+                        <ToggleButton Name="btnStop" Style="{StaticResource StopToggleButton}"
+                                      Command="{Binding ExecuteSampleCommand}" CommandParameter="Stop"
+                                      IsEnabled="{Binding IsStopActive, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Grid>
+
+                    <Button Grid.Column="3" Height="60" Width="60" Style="{StaticResource ExportResultRoundButtonStyle}"
+                            IsEnabled="{Binding IsPauseActive, Converter={StaticResource InverseBooleanConverter}}"
+                            Command="{Binding ExecuteSampleCommand}" CommandParameter="Eject" BorderBrush="Transparent">
+                        <Button.Content>
+                            <Border Background="{StaticResource TakeInIcon}" Margin="0,0,0,3" VerticalAlignment="Center" HorizontalAlignment="Center" Width="43" Height="28" />
+                        </Button.Content>
+                    </Button>
+
+                </Grid>
+
+                <Grid Grid.Row="1">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="30" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="30" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="1" Visibility="{Binding Path=Content, RelativeSource={RelativeSource Self}, Converter={StaticResource EmptyStringToCollapsedConverter}}"
+                           Content="{Binding PlayPauseStatusContent}" Style="{StaticResource PlayPauseStatusLabelStyle}" HorizontalAlignment="Center" />
+                    <Label Grid.Column="2" Grid.ColumnSpan="2" Visibility="{Binding Path=Content, RelativeSource={RelativeSource Self}, Converter={StaticResource EmptyStringToCollapsedConverter}}"
+                           Content="{Binding AbortStatusContent}" Style="{StaticResource PlayPauseStatusLabelStyle}" HorizontalAlignment="Left" />
+                </Grid>
+            </Grid>
+
+            <!-- Progress Bar Status -->
+            <Grid Grid.Row="4" Margin="20,0,0,10" Name="GridProgressStatus"
+                  Visibility="{Binding ElementName=lblStatus, Path=Content, 
+                Converter={StaticResource EmptyStringToCollapsedConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0">
+                    <Label Content="{Binding RunSampleStatus}" x:Name="lblStatus"
+                           Foreground="{StaticResource Label_Foreground}" FontSize="20" />
+
+                    <controls:LoadingIndicator VerticalAlignment="Bottom"
+                                               Style="{StaticResource ProgressIndicatorThreeDotsStyle}"
+                                               Foreground="{StaticResource Level1Background}" Height="18" Width="20"
+                                               Visibility="{Binding IsLoadingIndicatorActive,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Margin="2,5,0,0" KeyboardNavigation.TabNavigation="None">
+                    <controls:SampleProgressBar Width="50"
+                                ProgressStatus="{Binding AspirationBrush,Mode=TwoWay}"
+                                Style="{StaticResource SampleProgress}" />
+                    <controls:SampleProgressBar Width="50" Margin="7,0,0,0"
+                                ProgressStatus="{Binding MixingDyeBrush,Mode=TwoWay}"
+                                Style="{StaticResource SampleProgress}"/>
+                    <controls:SampleProgressBar Width="50" Margin="7,0,0,0"
+                                ProgressStatus="{Binding ImageAnalysisBrush,Mode=TwoWay}"
+                                Style="{StaticResource SampleProgress}"/>
+                    <controls:SampleProgressBar Width="50" Margin="7,0,0,0"
+                                ProgressStatus="{Binding CleaningBrush,Mode=TwoWay}"
+                                Style="{StaticResource SampleProgress}"/>
+                </StackPanel>
+            </Grid>
+
+            <!-- Concentration Values -->
+            <Grid Grid.Row="5" VerticalAlignment="Bottom">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="30" />
+                    <RowDefinition Height="30" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="50" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Style="{StaticResource ReportCommonTextBlockStyle}" TextWrapping="Wrap" FontWeight="Bold" 
+                           Text="{Binding ResourceKeys[LID_ConLabel_LastConcentrationSlope], Source={StaticResource ScoutUILanguageResource}, StringFormat={}{0} :}"/>
+                <Label
+                    Content="{Binding ResourceKeys[LID_Label_Date], Source={StaticResource ScoutUILanguageResource}}"
+                    ContentStringFormat="{}{0} :" Grid.Row="1" Grid.Column="1"
+                    Style="{StaticResource ReportCommonLabelStyle}" />
+
+                <Label
+                    Content="{Binding ResourceKeys[LID_GraphLabel_Slope], Source={StaticResource ScoutUILanguageResource}}"
+                    ContentStringFormat="{}{0} :" Grid.Row="2" Grid.Column="1"
+                    Style="{StaticResource ReportCommonLabelStyle}" />
+
+                <TextBlock Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonTextBlockStyle}"
+                           Text="{Binding LastConcentrationSlopeDate,Mode=TwoWay, Converter={StaticResource DateFormatConverter}}" />
+
+                <Label Grid.Row="2" Grid.Column="2"
+                       Content="{Binding LastConcentrationSlope,Mode=TwoWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
+                       Style="{StaticResource ReportCommonLabelStyle}" />
+
+            </Grid>
+        </Grid>
+        
+        <Border Grid.Column="2" BorderBrush="{DynamicResource GenericVeryLight}" BorderThickness="1" CornerRadius="8" Margin="0" />
+
+        <!-- Main Right Pane -->
+        <Grid Grid.Column="2" Margin="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <!-- Tab/Page/View Selection Panel -->
+            <StackPanel Grid.Row="0" Orientation="Horizontal" Background="Transparent" Margin="0,0,20,0"
+                        HorizontalAlignment="Right" VerticalAlignment="Top">
+
+                <RadioButton x:Name="btnList" Command="{Binding ConcentrationCommand}" CommandParameter="List"
+                             Margin="5,0,5,0" IsChecked="{Binding IsListViewActive,Mode=TwoWay}"
+                             Style="{StaticResource SelectionTabStyle}" IsEnabled="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{StaticResource listSource}" Grid.Column="3" />
+                        <TextBlock Grid.Column="1" Style="{StaticResource TabTextBlockStyle}" 
+                                   Text="{Binding ResourceKeys[LID_Label_Summary], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </Grid>
+                </RadioButton>
+
+                <RadioButton x:Name="btnCamera" Command="{Binding ConcentrationCommand}" CommandParameter="Camera"
+                             Margin="5,0,5,0" IsChecked="{Binding IsImageViewActive,Mode=TwoWay}"
+                             Style="{StaticResource SelectionTabStyle}" IsEnabled="True">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{StaticResource CameraSource}" Grid.Column="3" />
+                        <TextBlock Grid.Column="1" Style="{StaticResource TabTextBlockStyle}" 
+                                   Text="{Binding ResourceKeys[LID_Label_Image], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </Grid>
+                </RadioButton>
+
+                <RadioButton x:Name="btnGraph" Command="{Binding ConcentrationCommand}" CommandParameter="Graph"
+                             Margin="5,0,5,0" IsChecked="{Binding IsGraphViewActive,Mode=TwoWay}"
+                             IsEnabled="True" Style="{StaticResource SelectionTabStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+                        <Image Source="{StaticResource GraphSource}" Grid.Column="3" />
+
+                        <TextBlock Grid.Column="1" Style="{StaticResource TabTextBlockStyle}" 
+                                   Text="{Binding ResourceKeys[LID_Label_Graph], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </Grid>
+                </RadioButton>
+
+                <Separator Style="{StaticResource VerticalSeparatorStyle}" />
+                
+                <RadioButton x:Name="btnOverTime" Command="{Binding ConcentrationCommand}" CommandParameter="OverTime"
+                             Margin="5,0,5,0" IsChecked="{Binding IsOverTimeActive,Mode=TwoWay}"
+                             IsEnabled="True" Style="{StaticResource SelectionTabStyle}">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="0" />
+                            <ColumnDefinition Width="50" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{StaticResource BioprocessSource}" Grid.Column="3" />
+                        <TextBlock Grid.Column="1" Style="{StaticResource TabTextBlockStyle}"
+                                   Text="{Binding ResourceKeys[LID_Label_Overtime], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </Grid>
+                </RadioButton>
+            </StackPanel>
+
+            <!-- Setup Concentration Panel -->
+            <Grid Name="gdCalibrationList" Grid.Row="1" Visibility="{Binding IsListViewActive,Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="130" />
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="230" />
+                    <RowDefinition Height="70" />
+                    <RowDefinition Height="1*" />
+                </Grid.RowDefinitions>
+
+                <Grid Grid.Row="1" Grid.Column="1" IsEnabled="{Binding IsConcentrationCompleted,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" Focusable="False">
+                    
+                    <DataGrid Name="dgCalibrationList" SelectionUnit="FullRow" SelectionMode="Extended" Width="750" 
+                              CanUserDeleteRows="False" CanUserReorderColumns="False" CanUserAddRows="False"
+                              CanUserResizeColumns="False" CanUserResizeRows="False" HorizontalAlignment="Left"
+                              RowValidationErrorTemplate="{x:Null}" Margin="0,10,10,10"
+                              ItemsSource="{Binding ConcentrationList, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}"
+                              MinHeight="198" EnableRowVirtualization="false" EnableColumnVirtualization="false"
+                              HorizontalScrollBarVisibility="Hidden" IsSynchronizedWithCurrentItem="True" Focusable="False"
+                              AutoGenerateColumns="False" Style="{StaticResource DataGridConcentrationStyle}">
+
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="130">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                            Text="{Binding ResourceKeys[LID_TabItem_Concentration], Source={StaticResource ScoutUILanguageResource}}"
+                                            Foreground="{DynamicResource GenericVeryLight}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Label Content="{Binding KnownConcentration,Mode=TwoWay}"
+                                               Background="{Binding Status,Converter={StaticResource PlateStatusConverter}}"
+                                               Style="{StaticResource CalibrationLabelStyle}" Padding="0"
+                                               Margin="1,3,1,1" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="120">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                            Text="{Binding ResourceKeys[LID_GridLabel_NoOfTubes], Source={StaticResource ScoutUILanguageResource}}"
+                                            Foreground="{DynamicResource GenericVeryLight}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Label Content="{Binding NumberOfTubes,Mode=TwoWay}"
+                                               Background="{Binding Status,Converter={StaticResource PlateStatusConverter }}"
+                                               Style="{StaticResource CalibrationLabelStyle}"
+                                               Padding="0" Margin="1,3,1,1" />
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="120">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                            Text="{Binding ResourceKeys[LID_DataGridHeader_AssayValue], Source={StaticResource ScoutUILanguageResource}}"
+                                            Foreground="{StaticResource DataGrid_Header_Foreground}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <ucCommon:AssayValueTextBox
+                                            AssayValueType="{Binding AssayValueType,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                            IsAssayValueCorrect="{Binding IsCorrectAssayValue,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                            AssayValue="{Binding AssayValue, Mode=TwoWay, Converter={StaticResource TrailingPointConverter}, ConverterParameter={x:Static enum:TrailingPoint.Two}, UpdateSourceTrigger=LostFocus}"
+                                            Margin="1,3,1,1" />
+
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="160">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                            Text="{Binding ResourceKeys[LID_QCHeader_LotNumber], Source={StaticResource ScoutUILanguageResource}}"
+                                            Foreground="{StaticResource DataGrid_Header_Foreground}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <TextBox Text="{Binding Lot,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                 helper:ControlValidationHelper.TrimText="True"
+                                                 Style="{StaticResource TextBoxLoginRunStyle}" MaxLength="20"
+                                                 Padding="0" Margin="1,3,1,1" HorizontalAlignment="Stretch" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="220">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                            Text="{Binding ResourceKeys[LID_GridLabel_ExpirationDate], Source={StaticResource ScoutUILanguageResource}}"
+                                            Foreground="{DynamicResource GenericVeryLight}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <DatePicker SelectedDate="{Binding ExpiryDate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Margin="0,-2,0,0"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+                <Grid Grid.Row="2" Grid.Column="1" IsEnabled="{Binding IsConcentrationCompleted, UpdateSourceTrigger=PropertyChanged}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" 
+                           Content="{Binding ResourceKeys[LID_Label_Comments], Source={StaticResource ScoutUILanguageResource}}"/>
+
+                    <TextBox Grid.Column="1" Style="{StaticResource TextBoxLoginRunStyle}"
+                             helper:ControlValidationHelper.TrimText="True" Width="630" Height="30" HorizontalAlignment="Left" 
+                             Text="{Binding ConcentrationComment, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+                </Grid>
+
+                <service:ConcentrationInstructions Grid.Row="3" Grid.Column="1"/>
+
+            </Grid>
+
+            <!-- Image, Graph, and Results DataGrid Panel -->
+            <Grid Name="gdCalibrationImageGraph" Grid.Row="1" Margin="10"
+                  Visibility="{Binding IsImageGraphActive,Converter={StaticResource BooleanToVisibilityConverter},FallbackValue=Hidden}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+
+                <!-- Concentration Results Grids -->
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="90" />
+                    </Grid.RowDefinitions>
+
+                    <!-- Concentration Curve results DataGrid -->
+                    <Grid VerticalAlignment="Top" Margin="0,5,0,0">
+                        <ucCommon:ExpanderInDataGrid x:Name="ucCalibrationExpander"
+                                                     SlopeValue="{Binding CalibrationSlope,Mode=TwoWay}"
+                                                     InterceptValue="{Binding CalibrationIntercept,Mode=TwoWay}"
+                                                     ExpanderColumnHeaderList="{Binding DataGridExpanderColumnConcHeaderList,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     UpdateAdjustedValue="{Binding IsConcentrationUpdateActive,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     IsStatusCompleted="{Binding IsSampleStatusCompleted,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                     SelectedSampleItem="{Binding SelectedConcentrationSampleItem,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    </Grid>
+
+                    <!-- Concentration Main Results and Accept/Cancel/Export buttons Grid -->
+                    <Grid Grid.Row="1" Visibility="{Binding IsCalibrationCompleted,Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                            <ColumnDefinition Width="70" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="70" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                            </Grid.RowDefinitions>
+
+                            <Label Grid.Row="0" Grid.Column="1" Grid.ColumnSpan="2" Foreground="{DynamicResource GenericVeryLight}" 
+                                   Content="{Binding ResourceKeys[LID_ConLabel_SetNewConcentration], Source={StaticResource ScoutUILanguageResource}}"
+                                   ContentStringFormat="{}{0}:" FontSize="16" FontWeight="Bold" Margin="0" />
+                            
+                            <Label Grid.Row="1" Grid.Column="1" ContentStringFormat="{}{0}:" FontSize="16" Margin="0" Foreground="{DynamicResource GenericVeryLight}" 
+                                   Content="{Binding ResourceKeys[LID_GraphLabel_Slope], Source={StaticResource ScoutUILanguageResource}}"/>
+
+                            <TextBlock Grid.Row="2" Grid.Column="1" FontSize="16" Foreground="{DynamicResource GenericVeryLight}" Margin="0">
+                                <Span>
+                                    <Label Content="{Binding ResourceKeys[LID_GridLabel_R2], Source={StaticResource ScoutUILanguageResource}}"
+                                           Foreground="{DynamicResource GenericVeryLight}" />
+                                </Span>
+                                <Span BaselineAlignment="Top" FontSize="12">
+                                    <Label Content="2" Padding="0" Foreground="{DynamicResource GenericVeryLight}" Width="auto" Margin="-5,0,0,0"
+                                           VerticalAlignment="Center" />
+                                </Span>
+                            </TextBlock>
+
+                            <Label Grid.Row="1" Grid.Column="2" Margin="0" FontSize="16" Foreground="{DynamicResource GenericVeryLight}" 
+                                   Content="{Binding CalibrationSlope,Mode=TwoWay,Converter={StaticResource DoubleValueToTwoDecimalValueConverter}}"/>
+
+                            <Label Grid.Row="2" Grid.Column="2" Margin="0" FontSize="16" Foreground="{DynamicResource GenericVeryLight}" 
+                                   Content="{Binding CalibrationR2,Mode=TwoWay,Converter={StaticResource DoubleValueToTwoDecimalValueConverter}}"/>
+                        </Grid>
+
+                        <Button Grid.Column="1" Width="55" Height="55" HorizontalAlignment="Right" Style="{StaticResource RoundButtonDashBoardStyle}"
+                                Command="{Binding UpdateConcentrationCommand}" CommandParameter="Export">
+                            <Rectangle Width="27" Height="27" Margin="4" Fill="{StaticResource ExportIndividualIcon}" />
+                        </Button>
+
+                        <Button Grid.Column="2" Width="55" Height="55" Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Right"
+                                Command="{Binding UpdateConcentrationCommand}" CommandParameter="CancelConcentration">
+                            <Button.Content>
+                                <Image Source="{StaticResource CancelSource}" Height="45" Width="45" />
+                            </Button.Content>
+                        </Button>
+
+                        <Button Grid.Column="3" Width="55" Height="55" Style="{StaticResource RoundButtonDashBoardStyle}"
+                                HorizontalAlignment="Right" Command="{Binding UpdateConcentrationCommand}" CommandParameter="UpdateConcentration">
+                            <Button.Content>
+                                <Image Source="{StaticResource TickSource}" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Grid>
+
+                <!-- Decoration -->
+                <Border Grid.Column="1" CornerRadius="8" Margin="5,5,0,0">
+                    <Border.Background>
+                        <SolidColorBrush Color="{Binding Path=Color, Source={StaticResource Level2Background}}" />
+                    </Border.Background>
+                </Border>
+
+                <!-- Image View for displaying the images taken -->
+                <Grid Grid.Column="1" Name="gdCalibrationImage" Margin="0,5,0,0" Visibility="{Binding IsImageViewActive,Converter={StaticResource BooleanToVisibilityConverter}}" VerticalAlignment="Stretch">
+                    <ucCommon:ImageView IsHorizontalPaginationVisible="True" Margin="5" IsEnabled="False"
+                                        MinWidth="400" MinHeight="550"
+                                        Visibility="{Binding IsImageAvailable, Mode=TwoWay, Converter={StaticResource InverseVisibilityConverter}}"
+                                        ExpandCommand="{Binding ImageExpandCommand}"
+                                        IsPaginationButtonEnable="{Binding IsPaginationButtonEnable, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                        ImageList="{Binding SelectedSampleRecord.SampleImageList, Mode=TwoWay}"
+                                        SelectedImage="{Binding SelectedSampleRecord.SelectedSampleImageRecord,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                        ImageViewPageControlsVisibility="Collapsed" />
+                    <Grid x:Name="noImage" HorizontalAlignment="Center" VerticalAlignment="Center" Grid.Column="1"
+                          Visibility="{Binding IsImageAvailable,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <Border Background="{StaticResource NoImageBrush}" Height="80" Width="80" />
+                    </Grid>
+                </Grid>
+
+                <!-- Graphs for after the Concentration has completed -->
+                <Grid Grid.Column="1" Name="gdCalibrationGraph" Margin="5,5,0,0"
+                      Visibility="{Binding IsGraphViewActive,Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Viewbox HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                        <ucCommon:ScatterGraph
+                            GraphName="{Binding Graph.GraphName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            MinWidth="380" MinHeight="510"
+                            ExpandCommand="{Binding GraphExpandCommand ,UpdateSourceTrigger=PropertyChanged}"
+                            IsMultiAxisEnable="{Binding Graph.IsMultiAxisEnable,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            XAxisName="{Binding Graph.XAxisName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            YAxisName="{Binding Graph.YAxisName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            LegendTitle="{Binding Graph.LegendTitle,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            GraphList="{Binding GraphViewList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            SelectedGraph="{Binding Graph, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                            PrimaryLegendName="{Binding Graph.PrimaryLegendName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            SecondaryLegendName="{Binding Graph.SecondaryLegendName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            PrimaryTrendLegendName="{Binding Graph.PrimaryTrendLegendName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            SecondaryTrendLegendName="{Binding Graph.SecondaryTrendLegendName,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            PrimaryTrendLabel="{Binding Graph.PrimaryTrendLabel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            SecondaryTrendLabel="{Binding Graph.SecondaryTrendLabel,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            PrimaryTrendPoints="{Binding Graph.PrimaryTrendPoints,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            SecondaryTrendPoints="{Binding Graph.SecondaryTrendPoints,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                            IsExpandableView="{Binding Graph.IsExpandableView,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    </Viewbox>
+                </Grid>
+            </Grid>
+
+            <!-- Historical Data Panel -->
+            <Grid Name="gdCalibrationOverTime" Grid.Row="1"
+                  Visibility="{Binding IsOverTimeActive,Converter={StaticResource BooleanToVisibilityConverter},FallbackValue=Hidden}"
+                  MouseRightButtonDown="EatMouseUpEventToPreventCrash" Margin="10">
+				<Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="300" />
+                    <ColumnDefinition Width="1*" />
+                </Grid.ColumnDefinitions>
+                <Grid Margin="10,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="65" />
+                        <RowDefinition Height="70" />
+                        <RowDefinition Height="65" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="1*" />
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0"
+                           Content="{Binding ResourceKeys[LID_Label_FromColon], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource LabelStyleFontSizeEighteen}" VerticalAlignment="Bottom" />
+                    <DatePicker Grid.Row="1" SelectedDate="{Binding ConcentrationFormDate}" VerticalAlignment="Top"/>
+                    
+                    <Label
+                        Content="{Binding ResourceKeys[LID_Label_ToColon], Source={StaticResource ScoutUILanguageResource}}"
+                        Grid.Row="2" Style="{StaticResource LabelStyleFontSizeEighteen}" VerticalAlignment="Bottom" />
+                    <DatePicker Grid.Row="3" SelectedDate="{Binding ConcentrationToDate}" VerticalAlignment="Top"/>
+
+                    <Grid Grid.Column="0" Grid.Row="4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*" />
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="60" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+                        <Button Width="50" Height="50" Grid.Column="1"
+                                Style="{StaticResource RoundButtonDashBoardStyle}"
+                                Command="{Binding SearchLog}"
+                                CommandParameter="CleanConcentration"
+                                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0">
+                            <Button.Content>
+                                <Image Source="{StaticResource CleanSource}" />
+                            </Button.Content>
+                        </Button>
+                        <Button Width="50" Height="50" Grid.Column="2"
+                                Style="{StaticResource RoundButtonDashBoardStyle}"
+                                Command="{Binding SearchLog}"
+                                CommandParameter="SearchConcentration"
+                                HorizontalAlignment="Right" VerticalAlignment="Bottom" Margin="0,0,10,0">
+                            <Button.Content>
+                                <Image Source="{StaticResource TickSource}" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Grid>
+                <Grid Grid.Column="1">
+                    <DataGrid Name="dgCellTypeOverTime"
+                              Margin="10"
+                              Focusable="False"
+                              KeyboardNavigation.TabNavigation="None"
+                              ItemsSource="{Binding ConcentrationOverTimeList}"
+                              Validation.ErrorTemplate="{x:Null}"
+                              HorizontalScrollBarVisibility="Visible"
+                              VerticalScrollBarVisibility="Auto"
+                              ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                              ScrollViewer.CanContentScroll="False"
+                              EnableRowVirtualization="false" EnableColumnVirtualization="false"
+                              CanUserDeleteRows="False"
+                              Style="{StaticResource DataGridOverTimeStyle}">
+                        <DataGrid.Columns>
+                            <DataGridTemplateColumn Width="145">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                                   Text="{Binding ResourceKeys[LID_AdminReportsHeader_DateTime], Source={StaticResource ScoutUILanguageResource}}"
+                                                   />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border BorderThickness="1">
+                                            <TextBlock HorizontalAlignment="Left"
+                                                       Text="{Binding Date ,Converter={StaticResource DateFormatConverter}, ConverterParameter=ShortDate}" />
+
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="130">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                                   Text="{Binding ResourceKeys[LID_UsersLabel_UserId], Source={StaticResource ScoutUILanguageResource}}"
+                                                   />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border BorderThickness="1">
+                                            <TextBlock HorizontalAlignment="Left" Text="{Binding UserId}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="90">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center" TextWrapping="Wrap"
+                                                   Text="{Binding ResourceKeys[LID_Label_Slop], Source={StaticResource ScoutUILanguageResource}}"
+                                                   Foreground="{StaticResource DataGrid_Header_Foreground}" />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border BorderThickness="1">
+                                            <TextBlock HorizontalAlignment="Left"
+                                                       Text="{Binding Slope,Converter={StaticResource DoubleValueToTwoDecimalValueConverter}}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="90">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                                   Text="{Binding ResourceKeys[LID_Label_Intercept], Source={StaticResource ScoutUILanguageResource}}"
+                                                    />
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border BorderThickness="1">
+                                            <TextBlock HorizontalAlignment="Left" Text="{Binding Intercept}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn Width="155">
+                                <DataGridTemplateColumn.HeaderTemplate>
+                                    <DataTemplate>
+                                        <TextBlock TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"  TextWrapping="Wrap"
+                                                   Text="{Binding ResourceKeys[LID_Label_NoConsum], Source={StaticResource ScoutUILanguageResource}}"/>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.HeaderTemplate>
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Border BorderThickness="1">
+                                            <TextBlock HorizontalAlignment="Left" Text="{Binding NumberOfConsumables}" />
+                                        </Border>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                        <DataGrid.RowDetailsTemplate>
+                            <DataTemplate>
+                                <DataGrid Height="Auto"
+                                          Margin="30,0,0,0"
+                                          HorizontalAlignment="Left"
+                                          Width="Auto"
+                                          HorizontalScrollBarVisibility="Visible"
+                                          VerticalScrollBarVisibility="Auto"
+                                          CanUserAddRows="False"
+                                          ScrollViewer.HorizontalScrollBarVisibility="Visible"
+                                          ScrollViewer.CanContentScroll="False"
+                                          IsEnabled="False" IsReadOnly="True"
+                                          EnableRowVirtualization="false" EnableColumnVirtualization="false"
+                                          CanUserDeleteRows="False"
+                                          AutoGenerateColumns="False"
+                                          x:Name="innerGrid"
+                                          SelectionMode="Single"
+                                          ItemsSource="{Binding Consumable,Mode=TwoWay}"
+                                          BorderThickness="0"
+                                          BorderBrush="Transparent" Style="{StaticResource DataGridConOverTimeStyle}">
+
+                                    <DataGrid.Columns>
+                                        <DataGridTemplateColumn Width="150">
+                                            <DataGridTemplateColumn.Header>
+                                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"
+                                                               Text="{Binding ResourceKeys[LID_Label_Consumable], Source={StaticResource ScoutUILanguageResource}}"/>
+                                            </DataGridTemplateColumn.Header>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border HorizontalAlignment="Stretch" Height="38"
+                                                            VerticalAlignment="Stretch" Margin="0" BorderBrush="{StaticResource Border_Dark}"
+                                                            BorderThickness="0">
+                                                        <TextBlock HorizontalAlignment="Center" Height="38"
+                                                                   VerticalAlignment="Center" Text="{Binding Label}" />
+                                                    </Border>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Width="110">
+                                            <DataGridTemplateColumn.Header>
+                                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"
+                                                           Text="{Binding ResourceKeys[LID_DataGridHeader_AssayValue], Source={StaticResource ScoutUILanguageResource}}"/>
+                                            </DataGridTemplateColumn.Header>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border HorizontalAlignment="Stretch" Height="38"
+                                                            VerticalAlignment="Stretch" Margin="0" BorderBrush="{StaticResource Border_Dark}"
+                                                            BorderThickness="0">
+                                                        <TextBlock HorizontalAlignment="Center" Height="38"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding AssayValue,Converter={StaticResource DoubleToPowerSixConverter},ConverterParameter={x:Static enum:TrailingPoint.Two},TargetNullValue={x:Static sys:String.Empty}}" />
+                                                    </Border>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Width="130">
+                                            <DataGridTemplateColumn.Header>
+                                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"
+                                                           Text="{Binding ResourceKeys[LID_QCHeader_LotNumber], Source={StaticResource ScoutUILanguageResource}}"/>
+                                            </DataGridTemplateColumn.Header>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border HorizontalAlignment="Stretch" Height="38"
+                                                            VerticalAlignment="Stretch" Margin="0" BorderBrush="{StaticResource Border_Dark}"
+                                                            BorderThickness="0">
+                                                        <TextBlock HorizontalAlignment="Center" Height="38"
+                                                                   VerticalAlignment="Center" Text="{Binding LotId}" />
+                                                    </Border>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                        <DataGridTemplateColumn Width="160">
+                                            <DataGridTemplateColumn.Header>
+                                                <TextBlock TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap"
+                                                           Text="{Binding ResourceKeys[LID_GridLabel_ExpirationDate], Source={StaticResource ScoutUILanguageResource}}"/>
+                                            </DataGridTemplateColumn.Header>
+                                            <DataGridTemplateColumn.CellTemplate>
+                                                <DataTemplate>
+                                                    <Border HorizontalAlignment="Stretch" Height="38"
+                                                            VerticalAlignment="Stretch" Margin="0" BorderBrush="{StaticResource Border_Dark}"
+                                                            BorderThickness="0">
+                                                        <TextBlock HorizontalAlignment="Center" Height="38"
+                                                                   VerticalAlignment="Center"
+                                                                   Text="{Binding ExpirationDate, Converter={StaticResource DateFormatConverter}}" />
+                                                    </Border>
+                                                </DataTemplate>
+                                            </DataGridTemplateColumn.CellTemplate>
+                                        </DataGridTemplateColumn>
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                            </DataTemplate>
+                        </DataGrid.RowDetailsTemplate>
+
+                    </DataGrid>
+                    <Grid Background="{StaticResource Disabled_Background}" Opacity=".3" MinHeight="550"
+                          Visibility="{Binding IsListAvailable,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}">
+                        <TextBlock Foreground="{StaticResource TextBox_Enabled_Foreground}"
+                                   Text="{Binding ResourceKeys[LID_Label_NoLogsFound], Source={StaticResource ScoutUILanguageResource}}"
+                                   VerticalAlignment="Center" HorizontalAlignment="Center" />
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Grid>
+
+    </Grid>
+</UserControl>

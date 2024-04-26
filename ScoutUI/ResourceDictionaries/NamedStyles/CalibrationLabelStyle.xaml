@@ -1,0 +1,24 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="CalibrationLabelStyle" TargetType="Label">
+        <Setter Property="BorderBrush" Value="{DynamicResource Error_Background}" />
+        <Setter Property="Background" Value="{DynamicResource DataGrid_Data_Background}" />
+        <Setter Property="Margin" Value="2" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Label}">
+                    <Grid>
+                        <Border Name="Border" BorderBrush="#FF231F20" Background="{TemplateBinding Background}" Padding="2" BorderThickness="1" CornerRadius="8" />
+                        <ContentPresenter Name="LabelStyle" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="2" />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

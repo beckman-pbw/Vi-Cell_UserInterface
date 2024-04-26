@@ -1,0 +1,348 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/SolidColorBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BaseTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="PlayPauseStatusLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Width" Value="Auto" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="UserTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="UserTextBlockBoldStyle" TargetType="TextBlock" BasedOn="{StaticResource UserTextBlockStyle}">
+        <Setter Property="FontWeight" Value="Bold" />
+    </Style>
+
+    <Style x:Key="UserTextBlockItalicStyle" TargetType="TextBlock" BasedOn="{StaticResource UserTextBlockStyle}">
+        <Setter Property="FontStyle" Value="Italic" />
+    </Style>
+
+    <Style x:Key="CellTypeLabelStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="170" />
+        <Setter Property="FontWeight" Value="Regular" />
+    </Style>
+
+    <Style x:Key="HelpTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="SemiBold" />
+        <Setter Property="Margin" Value="0,0,0,5"/>
+    </Style>
+
+    <Style x:Key="ButtonBaseStyle" TargetType="Button">
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Padding" Value="5" />
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="FontSize" Value="12" />
+    </Style>
+
+    <Style x:Key="SignInBorderStyle" TargetType="Border">
+        <Setter Property="BorderBrush" Value="{DynamicResource GenericVeryDark}" />
+        <Setter Property="BorderThickness" Value="4" />
+    </Style>
+
+    <Style x:Key="ReviewLabelStyle" TargetType="Label">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="ReviewBoldLabelStyle" TargetType="Label">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="ReviewItemBoldLabelStyle" TargetType="Label">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="ReviewItemBoldTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="MinHeight" Value="30" />
+        <Setter Property="Padding" Value="0,5" />
+    </Style>
+
+    <Style x:Key="ReviewItemLabelStyle" TargetType="Label">
+        <Setter Property="Margin" Value="5,0,0,0" />
+        <Setter Property="FontSize" Value="15" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="SignHeaderLabelStyle" TargetType="Label">
+        <Setter Property="Margin" Value="20,0,0,0" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="FontSize" Value="22" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="HorizontalContentAlignment" Value="Center" />
+        <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PopLabelHeader" TargetType="Label">
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Normal" />
+    </Style>
+
+    <Style x:Key="PopTextBlockHeader" TargetType="TextBlock">
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Margin" Value="10,0,0,0" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontWeight" Value="Normal" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="ServiceLabelLeftStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Margin" Value="0,0,10,0" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="SettingLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="SettingHeadLabel" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+        <Setter Property="HorizontalAlignment" Value="Center" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="SettingsLabelStyle" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="SetFocusLabelStyle" TargetType="{x:Type Label}">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="SetFocusTextStyle" TargetType="{x:Type TextBlock}">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="TextWrapping" Value="WrapWithOverflow" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="LabelHeaderStyle" TargetType="Label">
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="HorizontalAlignment" Value="Left" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="LabelStyleFontSizeEighteen" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="TextBlockStyleFontSizeTwenty" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="LabelStyleFontSizeEighteenRegular" TargetType="Label">
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="ReportRectangleStyle" TargetType="Rectangle">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="HorizontalAlignment" Value="Stretch" />
+        <Setter Property="Height" Value="1" />
+        <Setter Property="Fill" Value="{DynamicResource GenericVeryDark}" />
+    </Style>
+
+    <Style x:Key="ReportCommonLabelStyle" TargetType="Label">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="ReportCommonTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="FontFamily" Value="segoe ui" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="TabTextBlockStyle" TargetType="TextBlock">
+        <Setter Property="HorizontalAlignment" Value="Right" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="FontSize" Value="19" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="FontFamily" Value="Segoe UI" />
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}" />
+    </Style>
+
+    <Style x:Key="SeparatorStyle" TargetType="{x:Type Border}">
+        <Setter Property="Height" Value="Auto" />
+        <Setter Property="BorderBrush" Value="#FFC5C5C5" />
+        <Setter Property="Width" Value="2.5" />
+        <Setter Property="Background" Value="#FF878585" />
+    </Style>
+
+    <Style x:Key="MessageBoxTextBlock" TargetType="TextBlock" BasedOn="{StaticResource BaseTextBlock}" >
+        <Setter Property="FontSize" Value="18" />
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}" />
+        <Setter Property="VerticalAlignment" Value="Top" />
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+    <Style x:Key="Header1Label" TargetType="Label">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="Header2Label" TargetType="Label">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="Header3Label" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource Label_Foreground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="Header1LabelAltColor" TargetType="Label">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="Header2LabelAltColor" TargetType="Label">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+    <Style x:Key="Header3LabelAltColor" TargetType="Label">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="HorizontalAlignment" Value="Left"/>
+        <Setter Property="VerticalAlignment" Value="Center"/>
+    </Style>
+
+    <Style x:Key="Header1TextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="22"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="Header2TextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="20"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="Header3TextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="18"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="Header4TextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="NormalTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+    <Style x:Key="MediumTextBlock" TargetType="TextBlock">
+        <Setter Property="FontSize" Value="16"/>
+        <Setter Property="FontWeight" Value="Normal"/>
+        <Setter Property="Foreground" Value="{StaticResource TextBox_Disabled_Foreground}"/>
+        <Setter Property="TextWrapping" Value="Wrap" />
+    </Style>
+
+</ResourceDictionary>

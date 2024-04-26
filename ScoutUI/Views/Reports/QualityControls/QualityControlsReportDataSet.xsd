@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="QualityControlsReportDataSet" targetNamespace="http://tempuri.org/QualityControlsReportDataSet.xsd" xmlns:mstns="http://tempuri.org/QualityControlsReportDataSet.xsd" xmlns="http://tempuri.org/QualityControlsReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="QualityControlsReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="QualityControlsReportDataSet" msprop:Generator_UserDSName="QualityControlsReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="QualityControlsReportGraphTitlesTable" msprop:Generator_TableClassName="QualityControlsReportGraphTitlesTableDataTable" msprop:Generator_TableVarName="tableQualityControlsReportGraphTitlesTable" msprop:Generator_RowChangedName="QualityControlsReportGraphTitlesTableRowChanged" msprop:Generator_TablePropName="QualityControlsReportGraphTitlesTable" msprop:Generator_RowDeletingName="QualityControlsReportGraphTitlesTableRowDeleting" msprop:Generator_RowChangingName="QualityControlsReportGraphTitlesTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlsReportGraphTitlesTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlsReportGraphTitlesTableRowDeleted" msprop:Generator_RowClassName="QualityControlsReportGraphTitlesTableRow" msprop:Generator_UserTableName="QualityControlsReportGraphTitlesTable" msprop:Generator_RowEvArgName="QualityControlsReportGraphTitlesTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HeaderTitle" msprop:Generator_ColumnVarNameInTable="columnHeaderTitle" msprop:Generator_ColumnPropNameInRow="HeaderTitle" msprop:Generator_ColumnPropNameInTable="HeaderTitleColumn" msprop:Generator_UserColumnName="HeaderTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="XAXisTitle" msprop:Generator_ColumnVarNameInTable="columnXAXisTitle" msprop:Generator_ColumnPropNameInRow="XAXisTitle" msprop:Generator_ColumnPropNameInTable="XAXisTitleColumn" msprop:Generator_UserColumnName="XAXisTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="YAXisTitle" msprop:Generator_ColumnVarNameInTable="columnYAXisTitle" msprop:Generator_ColumnPropNameInRow="YAXisTitle" msprop:Generator_ColumnPropNameInTable="YAXisTitleColumn" msprop:Generator_UserColumnName="YAXisTitle" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportNameTable" msprop:Generator_TableClassName="QualityControlReportNameTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportNameTable" msprop:Generator_TablePropName="QualityControlReportNameTable" msprop:Generator_RowDeletingName="QualityControlReportNameTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportNameTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportNameTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportNameTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportNameTable" msprop:Generator_RowChangedName="QualityControlReportNameTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportNameTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportNameTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ParameterName" msprop:Generator_ColumnVarNameInTable="columnParameterName" msprop:Generator_ColumnPropNameInRow="ParameterName" msprop:Generator_ColumnPropNameInTable="ParameterNameColumn" msprop:Generator_UserColumnName="ParameterName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParameterValue" msprop:Generator_ColumnVarNameInTable="columnParameterValue" msprop:Generator_ColumnPropNameInRow="ParameterValue" msprop:Generator_ColumnPropNameInTable="ParameterValueColumn" msprop:Generator_UserColumnName="ParameterValue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportCellTypeTable" msprop:Generator_TableClassName="QualityControlReportCellTypeTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportCellTypeTable" msprop:Generator_TablePropName="QualityControlReportCellTypeTable" msprop:Generator_RowDeletingName="QualityControlReportCellTypeTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportCellTypeTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportCellTypeTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportCellTypeTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportCellTypeTable" msprop:Generator_RowChangedName="QualityControlReportCellTypeTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportCellTypeTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportCellTypeTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ParameterName" msprop:Generator_ColumnVarNameInTable="columnParameterName" msprop:Generator_ColumnPropNameInRow="ParameterName" msprop:Generator_ColumnPropNameInTable="ParameterNameColumn" msprop:Generator_UserColumnName="ParameterName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParameterValue" msprop:Generator_ColumnVarNameInTable="columnParameterValue" msprop:Generator_ColumnPropNameInRow="ParameterValue" msprop:Generator_ColumnPropNameInTable="ParameterValueColumn" msprop:Generator_UserColumnName="ParameterValue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportCurrentLotTable" msprop:Generator_TableClassName="QualityControlReportCurrentLotTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportCurrentLotTable" msprop:Generator_TablePropName="QualityControlReportCurrentLotTable" msprop:Generator_RowDeletingName="QualityControlReportCurrentLotTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportCurrentLotTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportCurrentLotTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportCurrentLotTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportCurrentLotTable" msprop:Generator_RowChangedName="QualityControlReportCurrentLotTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportCurrentLotTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportCurrentLotTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ParameterName" msprop:Generator_ColumnVarNameInTable="columnParameterName" msprop:Generator_ColumnPropNameInRow="ParameterName" msprop:Generator_ColumnPropNameInTable="ParameterNameColumn" msprop:Generator_UserColumnName="ParameterName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParameterValue" msprop:Generator_ColumnVarNameInTable="columnParameterValue" msprop:Generator_ColumnPropNameInRow="ParameterValue" msprop:Generator_ColumnPropNameInTable="ParameterValueColumn" msprop:Generator_UserColumnName="ParameterValue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportLastCheckTable" msprop:Generator_TableClassName="QualityControlReportLastCheckTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportLastCheckTable" msprop:Generator_TablePropName="QualityControlReportLastCheckTable" msprop:Generator_RowDeletingName="QualityControlReportLastCheckTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportLastCheckTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportLastCheckTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportLastCheckTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportLastCheckTable" msprop:Generator_RowChangedName="QualityControlReportLastCheckTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportLastCheckTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportLastCheckTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ParameterName" msprop:Generator_ColumnVarNameInTable="columnParameterName" msprop:Generator_ColumnPropNameInRow="ParameterName" msprop:Generator_ColumnPropNameInTable="ParameterNameColumn" msprop:Generator_UserColumnName="ParameterName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParameterValue" msprop:Generator_ColumnVarNameInTable="columnParameterValue" msprop:Generator_ColumnPropNameInRow="ParameterValue" msprop:Generator_ColumnPropNameInTable="ParameterValueColumn" msprop:Generator_UserColumnName="ParameterValue" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportMandatoryHeaderDomainTable" msprop:Generator_TableClassName="QualityControlReportMandatoryHeaderDomainTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportMandatoryHeaderDomainTable" msprop:Generator_TablePropName="QualityControlReportMandatoryHeaderDomainTable" msprop:Generator_RowDeletingName="QualityControlReportMandatoryHeaderDomainTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportMandatoryHeaderDomainTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportMandatoryHeaderDomainTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportMandatoryHeaderDomainTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportMandatoryHeaderDomainTable" msprop:Generator_RowChangedName="QualityControlReportMandatoryHeaderDomainTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportMandatoryHeaderDomainTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportMandatoryHeaderDomainTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportTitle" msprop:Generator_ColumnVarNameInTable="columnReportTitle" msprop:Generator_ColumnPropNameInRow="ReportTitle" msprop:Generator_ColumnPropNameInTable="ReportTitleColumn" msprop:Generator_UserColumnName="ReportTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="ReportSubTitle" msprop:Generator_ColumnVarNameInTable="columnReportSubTitle" msprop:Generator_ColumnPropNameInRow="ReportSubTitle" msprop:Generator_ColumnPropNameInTable="ReportSubTitleColumn" msprop:Generator_UserColumnName="ReportSubTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentHeader" msprop:Generator_ColumnVarNameInTable="columnCommentHeader" msprop:Generator_ColumnPropNameInRow="CommentHeader" msprop:Generator_ColumnPropNameInTable="CommentHeaderColumn" msprop:Generator_UserColumnName="CommentHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentData" msprop:Generator_ColumnVarNameInTable="columnCommentData" msprop:Generator_ColumnPropNameInRow="CommentData" msprop:Generator_ColumnPropNameInTable="CommentDataColumn" msprop:Generator_UserColumnName="CommentData" type="xs:string" minOccurs="0" />
+              <xs:element name="DeviceSerialHeader" msprop:Generator_ColumnVarNameInTable="columnDeviceSerialHeader" msprop:Generator_ColumnPropNameInRow="DeviceSerialHeader" msprop:Generator_ColumnPropNameInTable="DeviceSerialHeaderColumn" msprop:Generator_UserColumnName="DeviceSerialHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="DeviceSerialData" msprop:Generator_ColumnVarNameInTable="columnDeviceSerialData" msprop:Generator_ColumnPropNameInRow="DeviceSerialData" msprop:Generator_ColumnPropNameInTable="DeviceSerialDataColumn" msprop:Generator_UserColumnName="DeviceSerialData" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentDateTime" msprop:Generator_ColumnVarNameInTable="columnCurrentDateTime" msprop:Generator_ColumnPropNameInRow="CurrentDateTime" msprop:Generator_ColumnPropNameInTable="CurrentDateTimeColumn" msprop:Generator_UserColumnName="CurrentDateTime" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportTableHeaderTable" msprop:Generator_TableClassName="QualityControlReportTableHeaderTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportTableHeaderTable" msprop:Generator_TablePropName="QualityControlReportTableHeaderTable" msprop:Generator_RowDeletingName="QualityControlReportTableHeaderTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportTableHeaderTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportTableHeaderTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportTableHeaderTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportTableHeaderTable" msprop:Generator_RowChangedName="QualityControlReportTableHeaderTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportTableHeaderTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportTableHeaderTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="LotHeader" msprop:Generator_ColumnVarNameInTable="columnLotHeader" msprop:Generator_ColumnPropNameInRow="LotHeader" msprop:Generator_ColumnPropNameInTable="LotHeaderColumn" msprop:Generator_UserColumnName="LotHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="LastCheckHeader" msprop:Generator_ColumnVarNameInTable="columnLastCheckHeader" msprop:Generator_ColumnPropNameInRow="LastCheckHeader" msprop:Generator_ColumnPropNameInTable="LastCheckHeaderColumn" msprop:Generator_UserColumnName="LastCheckHeader" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportGraphTitlesTable" msprop:Generator_TableClassName="QualityControlReportGraphTitlesTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportGraphTitlesTable" msprop:Generator_TablePropName="QualityControlReportGraphTitlesTable" msprop:Generator_RowDeletingName="QualityControlReportGraphTitlesTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportGraphTitlesTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportGraphTitlesTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportGraphTitlesTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportGraphTitlesTable" msprop:Generator_RowChangedName="QualityControlReportGraphTitlesTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportGraphTitlesTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportGraphTitlesTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="HeaderTitle" msprop:Generator_ColumnVarNameInTable="columnHeaderTitle" msprop:Generator_ColumnPropNameInRow="HeaderTitle" msprop:Generator_ColumnPropNameInTable="HeaderTitleColumn" msprop:Generator_UserColumnName="HeaderTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="XAxisTitle" msprop:Generator_ColumnVarNameInTable="columnXAxisTitle" msprop:Generator_ColumnPropNameInRow="XAxisTitle" msprop:Generator_ColumnPropNameInTable="XAxisTitleColumn" msprop:Generator_UserColumnName="XAxisTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="YAxisTitle" msprop:Generator_ColumnVarNameInTable="columnYAxisTitle" msprop:Generator_ColumnPropNameInRow="YAxisTitle" msprop:Generator_ColumnPropNameInTable="YAxisTitleColumn" msprop:Generator_UserColumnName="YAxisTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="NoDataTitle" msprop:Generator_ColumnVarNameInTable="columnNoDataTitle" msprop:Generator_ColumnPropNameInRow="NoDataTitle" msprop:Generator_ColumnPropNameInTable="NoDataTitleColumn" msprop:Generator_UserColumnName="NoDataTitle" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="QualityControlReportGraphXyAxisTable" msprop:Generator_TableClassName="QualityControlReportGraphXyAxisTableDataTable" msprop:Generator_TableVarName="tableQualityControlReportGraphXyAxisTable" msprop:Generator_TablePropName="QualityControlReportGraphXyAxisTable" msprop:Generator_RowDeletingName="QualityControlReportGraphXyAxisTableRowDeleting" msprop:Generator_RowChangingName="QualityControlReportGraphXyAxisTableRowChanging" msprop:Generator_RowEvHandlerName="QualityControlReportGraphXyAxisTableRowChangeEventHandler" msprop:Generator_RowDeletedName="QualityControlReportGraphXyAxisTableRowDeleted" msprop:Generator_UserTableName="QualityControlReportGraphXyAxisTable" msprop:Generator_RowChangedName="QualityControlReportGraphXyAxisTableRowChanged" msprop:Generator_RowEvArgName="QualityControlReportGraphXyAxisTableRowChangeEvent" msprop:Generator_RowClassName="QualityControlReportGraphXyAxisTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="XValue" msprop:Generator_ColumnVarNameInTable="columnXValue" msprop:Generator_ColumnPropNameInRow="XValue" msprop:Generator_ColumnPropNameInTable="XValueColumn" msprop:Generator_UserColumnName="XValue" type="xs:string" minOccurs="0" />
+              <xs:element name="Y1Value" msprop:Generator_ColumnVarNameInTable="columnY1Value" msprop:Generator_ColumnPropNameInRow="Y1Value" msprop:Generator_ColumnPropNameInTable="Y1ValueColumn" msprop:Generator_UserColumnName="Y1Value" type="xs:string" minOccurs="0" />
+              <xs:element name="Y2Value" msprop:Generator_ColumnVarNameInTable="columnY2Value" msprop:Generator_ColumnPropNameInRow="Y2Value" msprop:Generator_ColumnPropNameInTable="Y2ValueColumn" msprop:Generator_UserColumnName="Y2Value" type="xs:string" minOccurs="0" />
+              <xs:element name="Y3Value" msprop:Generator_ColumnVarNameInTable="columnY3Value" msprop:Generator_ColumnPropNameInRow="Y3Value" msprop:Generator_ColumnPropNameInTable="Y3ValueColumn" msprop:Generator_UserColumnName="Y3Value" type="xs:string" minOccurs="0" />
+              <xs:element name="Y4Value" msprop:Generator_ColumnVarNameInTable="columnY4Value" msprop:Generator_ColumnPropNameInRow="Y4Value" msprop:Generator_ColumnPropNameInTable="Y4ValueColumn" msprop:Generator_UserColumnName="Y4Value" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

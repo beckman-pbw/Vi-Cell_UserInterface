@@ -1,0 +1,175 @@
+﻿<Window x:Class="ScoutUI.Views.ScoutUIMain.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:scoutuimain="clr-namespace:ScoutUI.Views.ScoutUIMain"
+        UseLayoutRounding="True" AllowsTransparency="False"
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+        WindowState="Maximized" WindowStyle="None"  ResizeMode="NoResize"
+        Title="ScoutUIMasterPage" x:Name="MainWindowView"
+        Uid="ScoutXMainWindow"        
+        WindowStartupLocation="CenterScreen" Closing="Window_Closing"
+        FocusManager.FocusedElement="{Binding ElementName=ScoutXMainMenu}">
+
+    <i:Interaction.Triggers>
+        <i:EventTrigger EventName="PreviewMouseDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="PreviewMouseDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseEnter">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseEnter" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="MouseLeftButtonDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="MouseLeftButtonDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="PreviewKeyDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="PreviewKeyDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="TouchDown">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="TouchDown" />
+        </i:EventTrigger>
+        <i:EventTrigger EventName="TouchEnter">
+            <i:InvokeCommandAction Command="{Binding IdleStateCommand}" CommandParameter="TouchEnter" />
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
+
+    <Grid>
+        <controls:AdornerBehaviour Width="{Binding ActualWidth, ElementName=MainWindowView}"
+                                   Height="{Binding ActualHeight, ElementName=MainWindowView}"
+                                   IsAdornerVisible="{Binding IsAdornerVisible, Mode=TwoWay}"
+                                   Background="#FC111111" Focusable="False">
+            <controls:AdornerBehaviour.AdornerContent>
+                <ucCommon:BusyIndicator />
+            </controls:AdornerBehaviour.AdornerContent>
+
+            <Grid>
+                <!-- Grid for Main Content-->
+                <Grid>
+                    <!-- Hamburger Menu -->
+
+                    <!-- Main Grid (Houses ContentControl) -->
+                    <Grid x:Name="MainGridWithContent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <scoutuimain:TitleBar Grid.Row="0" DataContext="{Binding TitleBarVm}"/>
+
+                        <Grid x:Name="MainWindowContentGrid" Grid.Row="1"
+                              Background="{StaticResource Main_Background}">
+                            <ContentControl Name="cntMainContent" Content="{Binding CurrentContent}"
+                                            Focusable="False" IsTabStop="False"/>
+                        </Grid>
+
+                    </Grid>
+
+                    <!-- Night Clean UI -->
+                    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#C4054174"
+                          Visibility="{Binding NightlyCleanStatus, Converter={StaticResource NightlyCleanStatusVisibilityConverter}, FallbackValue=Collapsed}">
+                        <Border BorderBrush="{DynamicResource GenericVeryLight}" BorderThickness="2"
+                                CornerRadius="2" Margin="200" Background="{StaticResource Level1Background}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="10" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="10" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="10" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                                    <TextBlock VerticalAlignment="Center" Foreground="{DynamicResource GenericVeryLight}" FontSize="21.333" 
+                                               Text="{Binding NightlyCleanStatus, Converter={StaticResource NightCleanInProgressMessage}}" />
+                                    <controls:LoadingIndicator Margin="10,10,0,0" Foreground="{DynamicResource GenericVeryLight}" Width="70"
+                                                               Style="{StaticResource ProgressIndicatorThreeDotsStyle}" />
+                                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center"
+                                               Text="{Binding ResourceKeys[LID_Label_WaitMsg], Source={StaticResource ScoutUILanguageResource}}"
+                                               Foreground="{DynamicResource GenericVeryLight}" FontSize="21.333" />
+                                </StackPanel>
+
+                            </Grid>
+
+                        </Border>
+                    </Grid>
+
+                    <!-- Navigation Menu -->
+                    <Grid HorizontalAlignment="Left" x:Name="HamburgerMenu" Margin="0,60,0,0"
+                          Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+                          Visibility="{Binding IsNavigationMenuOpen, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}, FallbackValue=Collapsed}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition x:Name="MenuColumn" Width="Auto" />
+                            <ColumnDefinition x:Name="ShadowColumn" Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <StackPanel Grid.Column="0" Orientation="Vertical" Background="{StaticResource Menu_Background}">
+
+                            <ListView HorizontalAlignment="Left" Height="Auto" VerticalAlignment="Top" 
+                                     Background="{x:Null}" BorderBrush="{x:Null}"
+                                     Uid="ScoutXHamburgerMenu" Name="ScoutXHamburgerMenu" TabIndex="0"
+                                     ItemsSource="{Binding HamburgerItems, Mode=TwoWay}"
+                                     Style="{StaticResource ListViewNoHighlight}"
+                                     ItemContainerStyle="{StaticResource ListViewItemNoHighlight}"
+                                     HorizontalContentAlignment="Left">
+                                <ListView.ItemTemplate>
+                                    <DataTemplate>
+                                        <controls:SelectableButton Style="{StaticResource ButtonMenuListBoxItemStyle}"
+                                                Visibility="{Binding IsItemVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                IsEnabled="{Binding IsItemEnable}"
+                                                Command="{Binding DataContext.MenuItemSelectedCommanded, RelativeSource={RelativeSource AncestorType={x:Type scoutuimain:MainWindow}}}" 
+                                                CommandParameter="{Binding Item}" IsSelected="{Binding IsItemSelected}">
+                                            <controls:SelectableButton.Content>
+                                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Stretch" Width="250">
+                                                    <Path Data="{Binding Image}" Stretch="Uniform" Width="37" Height="28"
+                                                          Fill="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}" />
+                                                    
+                                                    <TextBlock Text="{Binding Path=Title, FallbackValue=Title}" FontFamily="Segoe UI" FontSize="20" 
+                                                               VerticalAlignment="Center" Margin="10,0,0,0"
+                                                               Foreground="{Binding RelativeSource={RelativeSource AncestorType=Button, Mode=FindAncestor}, Path=Foreground}" />
+                                                </StackPanel>
+                                            </controls:SelectableButton.Content>
+                                        </controls:SelectableButton>
+                                    </DataTemplate>
+                                </ListView.ItemTemplate>
+                            </ListView>
+                        </StackPanel>
+
+                        <Border Grid.Column="1" Background="{DynamicResource GenericVeryDark}" Opacity="0.4" 
+                                MouseDown="ShadowMouseDown" Margin="0,0,0,10" />
+                    </Grid>
+                </Grid>
+
+                <!--Grid for Faulted State -->
+                <Grid Background="{StaticResource Error_Background}"
+                      Visibility="{Binding FlashingFaultScreen, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                    <Grid.Triggers>
+                        <EventTrigger RoutedEvent="UserControl.Loaded">
+                            <BeginStoryboard>
+                                <Storyboard>
+                                    <DoubleAnimation Storyboard.TargetProperty="(Grid.Opacity)" From="0.4" To="0.8" AutoReverse="True"
+                                                     BeginTime="0:0:0" Duration="0:0:1" RepeatBehavior="Forever" />
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                    </Grid.Triggers>
+
+                    <i:Interaction.Triggers>
+                        <i:EventTrigger EventName="MouseLeftButtonDown">
+                            <i:InvokeCommandAction Command="{Binding FlashingFaultScreenClickCommand}" CommandParameter="UnusedParameter" />
+                        </i:EventTrigger>
+                    </i:Interaction.Triggers>
+                </Grid>
+            </Grid>
+        </controls:AdornerBehaviour>
+    </Grid>
+</Window>

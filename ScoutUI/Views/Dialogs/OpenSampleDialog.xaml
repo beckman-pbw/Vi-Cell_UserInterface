@@ -1,0 +1,214 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.OpenSampleDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+        xmlns:common="clr-namespace:ScoutUtilities.Common;assembly=ScoutUtilities"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" WindowStyle="None" WindowState="Normal" MinWidth="1200" MaxWidth="1200" WindowStartupLocation="CenterOwner"
+        Title="OpenSampleDialog" d:DesignHeight="710" d:DesignWidth="900">
+    <Grid>
+        <Border BorderBrush="{StaticResource Level1Background}" BorderThickness="2" Background="{StaticResource Main_Background}">
+            <Grid Background="{StaticResource Level3Background}" Width="1200" MinWidth="1200" MaxWidth="1200">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+
+                <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                
+                <Grid Grid.Row="1" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <Grid Grid.Row="0" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="Auto" />
+                        </Grid.RowDefinitions>
+
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190" />
+                                <ColumnDefinition Width="190" />
+                                <ColumnDefinition Width="190" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Label Grid.Column="0" Content="{Binding ResourceKeys[LID_UsersLabel_UserId], Source={StaticResource ScoutUILanguageResource}}"
+                                   Foreground="{DynamicResource GenericVeryLight}" Width="180" FontSize="18" FontFamily="segoe ui" />
+                            <Label Grid.Column="1" Margin="-8,0,0,0" Content="{Binding ResourceKeys[LID_Label_FromColon], Source={StaticResource ScoutUILanguageResource}}"
+                                   Foreground="{DynamicResource GenericVeryLight}" Width="180" FontSize="18" FontFamily="segoe ui" />
+                            <Label Grid.Column="2" Margin="18,0,0,0" Content="{Binding ResourceKeys[LID_Label_ToColon], Source={StaticResource ScoutUILanguageResource}}"
+                                   Foreground="{DynamicResource GenericVeryLight}" Width="180" FontSize="18" FontFamily="segoe ui" />
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="190" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="80" />
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+
+                            <ComboBox Grid.Column="0" Width="180" Height="40" 
+                                      ItemsSource="{Binding UserList}" SelectedItem="{Binding SelectedUser, Mode=TwoWay}" 
+                                      DisplayMemberPath="UserID" IsReadOnly="False" SelectedValue="UserID" 
+                                      ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden"
+                                      Style="{StaticResource CellTypeComboBoxLoginPageStyle}" FontSize="15" FontFamily="segoe ui" />
+
+                            <Grid Grid.Column="1" Height="50">
+                                <DatePicker SelectedDate="{Binding FromDate}" KeyboardNavigation.TabNavigation="Continue"/>
+                            </Grid>
+
+                            <Grid Grid.Column="2" Height="50">
+                                <DatePicker SelectedDate="{Binding ToDate}" KeyboardNavigation.TabNavigation="Continue"/>
+                            </Grid>
+                            
+                            <Button Width="45" Height="45" Grid.Column="3" Style="{StaticResource RoundButtonDashBoardStyle}" Command="{Binding FilterSampleListCommand}"
+                                    Tag="30" HorizontalAlignment="Right">
+                                <Button.Content>
+                                    <Image Source="{StaticResource TickSource}" />
+                                </Button.Content>
+                            </Button>
+
+                            <Button Grid.Column="5" HorizontalAlignment="Right"  Name="btnExportSummaryResult" Margin="0,0,30,0" Style="{StaticResource RoundButtonDashBoardStyle}"
+                                    Command="{Binding ExportSummarySampleCommand}">
+                                <Rectangle Width="30" Height="30" Margin="4" Fill="{StaticResource ExportSummaryIcon}"/>
+                            </Button>
+                        </Grid>
+                    </Grid>
+
+                    <Grid Grid.Row="1" Margin="10,0" Focusable="False">
+                        <DataGrid ItemsSource="{Binding SampleRecordList, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" CanUserResizeColumns="True" x:Name="SampleGrid" MinWidth="1170" MaxWidth="1170" CanUserResizeRows="False"
+                                  SelectedItem="{Binding SelectedSampleRecord, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource DataGridStyle_BPQC}"
+                                  ScrollViewer.HorizontalScrollBarVisibility="Visible" ScrollViewer.VerticalScrollBarVisibility="Visible"
+                                  controls:DataGridTextBoxControl.SelectedItem="{Binding SelectedSampleRecord}" ScrollViewer.PanningMode="Both" VerticalAlignment="Top"
+                                  HorizontalAlignment="Left" Height="465"
+                                  KeyboardNavigation.TabNavigation="Continue">
+                            <DataGrid.Columns>
+                                <DataGridTemplateColumn Width="160" Header="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="3,0,0,0" Focusable="False">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="Auto"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Path Grid.Column="0" x:Name="ArrowDownShape" FocusVisualStyle="{x:Null}"
+                                                      Visibility="{Binding SampleHierarchy, Converter={StaticResource SampleHierarchyToVisibilityConverter}, ConverterParameter=ArrowDown}"
+                                                      Data="M204.81622,255.42564 L212.53117,255.42564 236.3993,224.09454 260.33318,255.00034 267.50017,254.83366 236.27875,214.0289 z"
+                                                      Fill="{StaticResource Level1Background}" Height="10" Width="10" Margin="0,6,5,0" Stretch="Uniform" 
+                                                      Stroke="{StaticResource Level1Background}" StrokeThickness="2" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                                                    <Path.RenderTransform>
+                                                        <RotateTransform Angle="180" />
+                                                    </Path.RenderTransform>
+                                                </Path>
+
+                                                <Path Grid.Column="1" x:Name="ArrowRightShape" FocusVisualStyle="{x:Null}"
+                                                      Visibility="{Binding SampleHierarchy, Converter={StaticResource SampleHierarchyToVisibilityConverter}, ConverterParameter=ArrowRight}"
+                                                      Data="M204.81622,255.42564 L212.53117,255.42564 236.3993,224.09454 260.33318,255.00034 267.50017,254.83366 236.27875,214.0289 z"
+                                                      Fill="{StaticResource Level1Background}" Height="10" Width="10" Margin="17,6,5,0" Stretch="Uniform" 
+                                                      Stroke="{StaticResource Level1Background}" StrokeThickness="2" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                                                    <Path.RenderTransform>
+                                                        <RotateTransform Angle="90" />
+                                                    </Path.RenderTransform>
+                                                </Path>
+
+                                                <TextBlock Text="{Binding SampleIdentifier}" Grid.Column="2" FontSize="16" />
+                                            </Grid>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Width="170" Header="{Binding ResourceKeys[LID_AdminReportsHeader_DateTime], Source={StaticResource ScoutUILanguageResource}}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBox Text="{Binding SelectedResultSummary.RetrieveDate, Converter={StaticResource DateFormatConverter}, ConverterParameter=LongDate}"
+                                                     Margin="3,0,0,0" FontSize="16" Background="Transparent" BorderThickness="0" 
+                                                     IsReadOnly="True" Focusable="True" IsTabStop="True" KeyDown="OnDialogKeyDown"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Width="160" Header="{Binding ResourceKeys[LID_AdminReportsHeader_UserName], Source={StaticResource ScoutUILanguageResource}}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding SelectedResultSummary.UserId}" Margin="3,0,0,0" FontSize="16" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+                                <DataGridTemplateColumn Width="160" Header="{Binding ResourceKeys[LID_UsersLabel_CellType], Source={StaticResource ScoutUILanguageResource}}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding SelectedResultSummary.CellTypeDomain.QCCellTypeForDisplay, Converter={StaticResource CellTypeToTextConverter}}" HorizontalAlignment="Left" Width="Auto" Margin="3,0,0,0" FontSize="16" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+                                <DataGridTemplateColumn Width="160" Header="{Binding ResourceKeys[LID_Label_Viability], Source={StaticResource ScoutUILanguageResource}}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock HorizontalAlignment="Center" FontSize="16" 
+                                                       Text="{Binding SelectedResultSummary.CumulativeResult.Viability, Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                                
+                                <DataGridTemplateColumn Width="180">
+                                    <DataGridTemplateColumn.Header>
+                                        <TextBlock TextWrapping="Wrap" Margin="3,0,0,0"
+                                                   Text="{Binding ResourceKeys[LID_CheckBox_TotalCellConcentration], Source={StaticResource ScoutUILanguageResource}}"/>
+                                    </DataGridTemplateColumn.Header>
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <controls:ConcentrationTextBox x:Name="cumulativeTextBox" IsConcentrationRangeCheck="True" 
+                                                                           HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-3,0,0"
+                                                                           ConcentrationStartRange="{Binding Source={x:Static common:ApplicationConstants.ConcentrationStartRange}, Mode=OneWay}"
+                                                                           ConcentrationEndRange="{Binding Source={x:Static common:ApplicationConstants.ConcentrationEndRange}, Mode=OneWay}"
+                                                                           ConcentrationValue="{Binding SelectedResultSummary.CumulativeResult.ConcentrationML}"  
+                                                                           ConcentrationDetailsType="{Binding }"/>
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+
+                                <DataGridTemplateColumn Width="160" Header="{Binding ResourceKeys[LID_Label_Tag], Source={StaticResource ScoutUILanguageResource}}">
+                                    <DataGridTemplateColumn.CellTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Text="{Binding Tag}" Margin="3,0,0,0" FontSize="16" />
+                                        </DataTemplate>
+                                    </DataGridTemplateColumn.CellTemplate>
+                                </DataGridTemplateColumn>
+                            </DataGrid.Columns>
+                        </DataGrid>
+                    </Grid>
+
+                    <Grid Grid.Row="3">
+                        <Button Width="55" Height="55" Margin="0,0,30,0" Style="{StaticResource RoundButtonDashBoardStyle}" Command="{Binding AcceptCommand}"
+                                Tag="30" HorizontalAlignment="Right" IsDefault="True">
+                            <Button.Content>
+                                <Image Source="{StaticResource TickSource}" />
+                            </Button.Content>
+                        </Button>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</local:Dialog>

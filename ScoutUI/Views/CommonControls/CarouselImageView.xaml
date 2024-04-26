@@ -1,0 +1,10 @@
+﻿<UserControl x:Class="ScoutUI.Views.CellType.UserControls.CarouselImageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls">
+    <Grid>
+
+        <controls:CarouselRunControl ControlEnable="True" Grid.Row="1" Grid.Column="1" HorizontalAlignment="Center"
+                                         VerticalAlignment="Center" />
+    </Grid>
+</UserControl>

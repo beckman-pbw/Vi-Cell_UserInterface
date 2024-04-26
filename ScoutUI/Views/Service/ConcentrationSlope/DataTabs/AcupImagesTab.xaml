@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="ScoutUI.Views.Service.ConcentrationSlope.DataTabs.AcupImagesTab"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScoutUI.Views.Service.ConcentrationSlope.DataTabs"
+             xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Border CornerRadius="8" Margin="5,5,0,0">
+            <Border.Background>
+                <SolidColorBrush Color="{Binding Path=Color, Source={StaticResource Level2Background}}" />
+            </Border.Background>
+        </Border>
+
+        <Grid Name="gdCalibrationImage" Margin="0,5,0,0" 
+              VerticalAlignment="Stretch">
+            <ucCommon:ImageView IsHorizontalPaginationVisible="True" 
+                                Margin="5" 
+                                IsEnabled="False"
+                                MinWidth="400" 
+                                MinHeight="550"
+                                Visibility="{Binding ImagesAreAvailable, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                ExpandCommand="{Binding ImageExpandCommand}"
+                                IsPaginationButtonEnable="{Binding IsPaginationButtonEnable, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                ImageList="{Binding SelectedSampleRecord.SampleImageList, Mode=TwoWay}"
+                                SelectedImage="{Binding SelectedSampleRecord.SelectedSampleImageRecord, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                ImageViewPageControlsVisibility="Collapsed" />
+
+            <Grid x:Name="noImage" HorizontalAlignment="Center" VerticalAlignment="Center"
+                  Visibility="{Binding ImagesAreAvailable, Mode=TwoWay, Converter={StaticResource InverseVisibilityConverter}}">
+                <Border Background="{StaticResource NoImageBrush}" Height="80" Width="80" />
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,245 @@
+<UserControl x:Class="ScoutUI.Views.SettingsPanel.RunOptionSettingsView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:Circle="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:validate="clr-namespace:ScoutUI.Common.Helper"
+             mc:Ignorable="d" x:Name="UcRunOptionSettings"
+             Focusable="False" IsTabStop="False" KeyboardNavigation.TabNavigation="Local"
+             d:DesignHeight="760" d:DesignWidth="940">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*" />
+            <ColumnDefinition Width="1*" />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Grid.Row="0" Grid.Column="0" Style="{StaticResource SettingGroupBox}" 
+                  Header="{Binding ResourceKeys[LID_FrameLabel_DefaultSample], Source={StaticResource ScoutUILanguageResource}}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="35" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="50" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20" />
+                    <ColumnDefinition Width="150" />
+                    <ColumnDefinition Width="5" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="102" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+
+                <Label Content="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}" Grid.Column="1" Grid.Row="1" />
+                
+                <Label Content="{Binding ResourceKeys[LID_UsersLabel_CellType], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}" Grid.Column="1" Grid.Row="9" VerticalContentAlignment="Center" />
+                
+                <Label Content="{Binding ResourceKeys[LID_Label_Dilution], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}" Grid.Column="1" Grid.Row="10" />
+                
+                <Label Grid.Column="1" Grid.Row="11" Content="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}" />
+
+                <Label Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="12" Content="{Binding ResourceKeys[LID_Label_ConcDisplayDigits], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}"  VerticalAlignment="Center"/>
+
+                <Label Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="8" Content="{Binding ResourceKeys[LID_Label_ExportEachSamplePDF], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}" Margin="100,10,0,0"/>
+
+                <Label Grid.Column="1" Grid.Row="2" Grid.ColumnSpan="3"  Style="{StaticResource SettingsLabelStyle}"
+                       Content="{Binding ResourceKeys[LID_RadioButton_SaveEveryN], Source={StaticResource ScoutUILanguageResource},Mode=OneTime}" />
+
+                <Label Grid.ColumnSpan="3" Grid.Column="1" Grid.Row="6" Content="{Binding ResourceKeys[LID_Label_ExportEachSample], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}"  VerticalAlignment="Bottom" />
+
+                <Label Grid.ColumnSpan="3"  Grid.Column="1" Grid.Row="3" Content="{Binding ResourceKeys[LID_Label_AppendResultExport], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource SettingsLabelStyle}" VerticalAlignment="Bottom" />
+
+                <controls:SampleIDTextBox Foreground="{DynamicResource GenericVeryDark}" Grid.Row="1" Grid.Column="3" Grid.ColumnSpan="2" Watermark="Sample ID" MaxLength="50" HorizontalAlignment="Stretch"
+                                          TabIndex="1"
+                                          Height="32" FontSize="18" validate:ControlValidationHelper.TrimText="True" validate:ControlValidationHelper.CharacterValidation="True"
+                                          Text="{Binding DefaultSampleId,UpdateSourceTrigger=PropertyChanged}" Margin="4" Width="Auto" />
+
+                <ComboBox Grid.Row="9" Grid.Column="3" Grid.ColumnSpan="2" x:Name="cmbCellType" Margin="4" 
+                          Height="32" Width="202" HorizontalAlignment="Right" Style="{StaticResource SettingComboBox}"
+                          ItemsSource="{Binding AllCellTypesList}" SelectedItem="{Binding SelectedCellType, Mode=TwoWay}"
+                          TabIndex="9"
+                          DisplayMemberPath="CellTypeName"/>
+
+                <TextBox Grid.Row="10" Grid.Column="3" Height="30" Width="100" MaxLength="4" Margin="0,0,2,0" HorizontalAlignment="Right" 
+                         Text="{Binding Dilution, Mode=OneWay}" validate:ControlValidationHelper.AllowOnlyNumeric="True" 
+                         TabIndex="10" IsEnabled="False"
+                         Style="{StaticResource SettingTextBox}" VerticalAlignment="Center" />
+
+                <ComboBox Grid.Column="3" Grid.Row="11" Grid.ColumnSpan="2" Style="{StaticResource SettingComboBox}" Width="202" HorizontalAlignment="Right"
+                          TabIndex="11"
+                          Margin="4" IsEnabled="{Binding IsFastModeEnabled}" SelectedItem="{Binding SelectedWash,Mode=TwoWay}" ItemsSource="{Binding WashList }" Height="32">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedDescriptionConverter}}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <ComboBox Grid.Column="4" Grid.Row="12" Style="{StaticResource SettingComboBox}" Width="62" HorizontalAlignment="Right" 
+                          TabIndex="12"
+                          Margin="4" SelectedItem="{Binding SelectedDisplayDigits,Mode=TwoWay}" ItemsSource="{Binding DisplayDigitsList }" Height="32">
+                    <ComboBox.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding}" />
+                        </DataTemplate>
+                    </ComboBox.ItemTemplate>
+                </ComboBox>
+
+                <TextBox Grid.Column="4" Grid.Row="2" Width="100" FontSize="18" MaxLength="2" Margin="0,0,2,0" Height="32" HorizontalAlignment="Right"
+                         TabIndex="2"
+                         Text="{Binding NumberOfImages,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" validate:ControlValidationHelper.AllowOnlyNumeric="True"
+                         Style="{StaticResource SettingTextBox}" VerticalAlignment="Center" />
+
+                <Grid Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="7">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox x:Name="ExportCheckBox"  Grid.Column="0" Style="{StaticResource AdminCheckBox}" IsChecked="{Binding IsExportSampleResultActive,Mode=TwoWay}"
+                              TabIndex="6"
+                              HorizontalAlignment="Left" />
+
+                    <TextBox Grid.Column="1" FontSize="18" Height="32" Text="{Binding ExportSampleResultPath,Mode=TwoWay}" Style="{StaticResource SettingTextBox}" IsEnabled="False" />
+                    
+                    <Button Grid.Column="2" Command="{Binding OpenExportFolder}" CommandParameter="ExportPathForEachSample" IsEnabled="{Binding ElementName=ExportCheckBox,Path=IsChecked}" 
+                            TabIndex="7"
+                            Style="{StaticResource RoundButtonDashBoardStyle}" FlowDirection="RightToLeft" Width="40"  Height="40" BorderBrush="#FF9B9B9B">
+                        <Image Source="{StaticResource openSource}" />
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="4">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox x:Name="AppendCheckBox" Grid.Column="0" Style="{StaticResource AdminCheckBox}" IsChecked="{Binding IsAppendSampleResultExportActive,Mode=TwoWay}"
+                              TabIndex="3"
+                              HorizontalAlignment="Left" />
+                    <TextBox Grid.Column="1" FontSize="18" Height="32" Text="{Binding AppendSampleResultPath ,Mode=TwoWay}" Style="{StaticResource SettingTextBox}" IsEnabled="False" />
+                    <Button Grid.Column="2" Command="{Binding OpenExportFolder}" CommandParameter="AppendSampleExport" IsEnabled="{Binding ElementName=AppendCheckBox,Path=IsChecked}"
+                            TabIndex="4"
+                            Style="{StaticResource RoundButtonDashBoardStyle}" BorderBrush="#FF9B9B9B" Width="40"  Height="40">
+                        <Image Source="{StaticResource openSource}" />
+                    </Button>
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="8">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="50" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+
+                    <CheckBox x:Name="AutoExportCheckBox"  Grid.Column="1" Style="{StaticResource AdminCheckBox}"  HorizontalAlignment="Left" 
+                              TabIndex="8"
+                              IsEnabled="{Binding IsExportSampleResultActive}" IsChecked="{Binding IsAutoExportPDFSelected, Mode=TwoWay}"/>
+                </Grid>
+
+                <Grid Grid.Column="1" Grid.ColumnSpan="4" Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="50" />
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Content="{Binding ResourceKeys[LID_Label_AdvanceFileName], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource SettingsLabelStyle}" HorizontalContentAlignment="Right"  Height="32" />
+                    <TextBox Grid.Column="1" FontSize="18" Height="32" Text="{Binding DefaultPathName,Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding ElementName=AppendCheckBox,Path=IsChecked}"
+                             TabIndex="5"
+                             validate:ControlValidationHelper.TrimText="True" validate:ControlValidationHelper.CharacterValidation="True" Style="{StaticResource SettingTextBox}" />
+                    <Label Grid.Column="2" Content=".CSV" Style="{StaticResource SettingsLabelStyle}" HorizontalContentAlignment="Center"  Height="32" />
+                </Grid>
+            </Grid>
+        </GroupBox>
+
+        <GroupBox Grid.Row="0" Grid.Column="1" Style="{StaticResource SettingGroupBox}" 
+                  Header="{Binding ResourceKeys[LID_Label_ShowParameter], Source={StaticResource ScoutUILanguageResource}}" >
+            <Grid Margin="10,5,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="293*" />
+                    <ColumnDefinition Width="120*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Row="1">
+                    <Border Background="{StaticResource Level1Background}" CornerRadius="10" />
+                    <StackPanel Orientation="Horizontal" Margin="15,0,0,0">
+                        <CheckBox IsChecked="{Binding AllSelected}" Command="{Binding AllGenericCheckCommand}" Style="{StaticResource AdminCheckBox}" 
+                                  Foreground="{DynamicResource GenericVeryLight}" Height="30" Margin="10,0,0,0" />
+                        <Label Content="{Binding ResourceKeys[LID_GridListHeader_QueueParameters], Source={StaticResource ScoutUILanguageResource}}"
+                               Margin="20,0,0,0" Foreground="{DynamicResource GenericVeryLight}" FontSize="20" VerticalAlignment="Center" FontWeight="Bold" />
+                    </StackPanel>
+                </Grid>
+
+                <ListBox Name="lb" Style="{StaticResource SettingListBoxStyle}" SelectionMode="Single" ItemsSource="{Binding GenericParameters}"
+                         SelectedItem="{Binding SelectedGenericParameter,Mode=TwoWay}" Grid.Column="0" Height="410" Grid.Row="2" VerticalAlignment="Top">
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <Grid>
+                                <StackPanel Orientation="Horizontal">
+                                    <CheckBox IsChecked="{Binding IsVisible}" IsEnabled="{Binding IsDefault,Mode=TwoWay}" Height="30" Margin="10,0,0,0" 
+                                              Command="{Binding ElementName=lb,Path=DataContext.GenericCheckStatus}" CommandParameter="{Binding }" Style="{StaticResource AdminCheckBox}" />
+                                    <Label Content="{Binding ParameterName}" Margin="20,0,0,0" />
+                                </StackPanel>
+                            </Grid>
+                        </DataTemplate>
+
+                    </ListBox.ItemTemplate>
+                </ListBox>
+
+                <DockPanel Width="60" HorizontalAlignment="Right" Grid.Column="1" Grid.Row="0" Grid.RowSpan="3" Margin="0,0,15,0">
+                    <Grid>
+                        <Button Style="{StaticResource RoundButtonDashBoardStyle}" Margin="0,-120,0,0" Command="{Binding TraversalCommand}"
+                                CommandParameter="Up" IsEnabled="{Binding IsTopDisable}">
+                            <Image Source="{StaticResource Up-ArrowSource}" />
+                        </Button>
+
+                        <Button Style="{StaticResource RoundButtonDashBoardStyle}" Margin="0,120,0,0" Command="{Binding TraversalCommand}" CommandParameter="Down"
+                                IsEnabled="{Binding IsLastDisable}">
+                            <Image Source="{StaticResource down-arrowSource}" />
+                        </Button>
+                    </Grid>
+                </DockPanel>
+            </Grid>
+        </GroupBox>
+
+        <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Name="btnOk" Margin="0,0,20,0" VerticalAlignment="Top" HorizontalAlignment="Right" 
+                Style="{StaticResource RoundButtonDashBoardStyle}" Command="{Binding SaveCommand}">
+            <Image Source="{StaticResource TickSource}" />
+        </Button>
+    </Grid>
+</UserControl>

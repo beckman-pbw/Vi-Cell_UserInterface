@@ -1,0 +1,84 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.ExportSampleResultDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" 
+        Title="ExportSampleResultDialog" 
+        Background="Transparent" ShowInTaskbar="False" WindowStyle="None" Height="280" Width="680">
+
+    <Grid>
+        <Grid Height="280" Width="680" >
+            <Grid.RowDefinitions>
+                <RowDefinition Height="50" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <commonControls:DialogTitleBar Grid.Row="0" Grid.Column="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            <Grid Grid.Row="1" Background="{StaticResource Main_Background}" >
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="65" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="10*" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="15" />
+                    <ColumnDefinition Width="200" />
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="350" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="15" />
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="2" FontSize="18" VerticalAlignment="Center" HorizontalAlignment="Left" TextWrapping="Wrap"
+                       Text="{Binding ResourceKeys[LID_Label_KeepEveryNthImageForEachSample], Source={StaticResource ScoutUILanguageResource}}" />
+
+                <TextBox Grid.Column="3" Grid.Row="1" Width="100" FontSize="18" MaxLength="2" Height="32" HorizontalAlignment="Left" VerticalAlignment="Center"
+                     IsEnabled="{Binding IsExportSampleProcessActive, Converter={StaticResource InverseBooleanConverter}}" 
+                     helper:ControlValidationHelper.TrimText="True" helper:ControlValidationHelper.AllowOnlyNumeric="True"
+                     Text="{Binding NthImage, Mode=TwoWay, TargetNullValue=0}" Style="{StaticResource SettingTextBox}" />
+
+                <Label Grid.Column="1" Grid.Row="2" Content="{Binding ResourceKeys[LID_Label_ExportSampleResultsTo], Source={StaticResource ScoutUILanguageResource}}"
+                   Style="{StaticResource SettingsLabelStyle}" VerticalAlignment="Center"  />
+
+                <TextBox Grid.Column="3" Grid.Row="2" Width="340" FontSize="18" Height="32" 
+                         IsReadOnly="True" 
+                         HorizontalAlignment="Left" VerticalAlignment="Center"
+                     Text="{Binding ExportSampleResultLocation, Mode=TwoWay}" Style="{StaticResource SettingTextBox}" />
+
+                <StackPanel Grid.Column="1" Grid.Row="3" Grid.ColumnSpan="3" Orientation="Vertical" Margin="0,0,0,10"
+                        Visibility="{Binding IsExportSampleProcessActive, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding ExportMessage, FallbackValue=Exporting}" FontSize="18" Width="auto" VerticalAlignment="Bottom" />
+                        <TextBlock Text="{Binding ExportPercentage, FallbackValue=0%}" FontSize="18" Width="auto" VerticalAlignment="Bottom" Margin="20,0,0,0"/>
+                    </StackPanel>
+
+                    <controls:LoadingIndicator Style="{StaticResource ProgressIndicatorThreeDotsStyle}" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryLight}" 
+                                           Margin="0,0,0,2" Height="15" Width="auto" />
+                </StackPanel>
+
+                <Button Grid.Column="4" Grid.Row="2" Command="{Binding SelectExportLocationCommand}" Style="{StaticResource RoundButtonDashBoardStyle}" 
+                    FlowDirection="RightToLeft" BorderBrush="#FF9B9B9B" 
+                        IsEnabled="{Binding IsExportSampleProcessActive, Converter={StaticResource InverseBooleanConverter}}">
+                    <Image Source="{StaticResource openSource}" />
+                </Button>
+
+                <Button Grid.Row="3" Grid.Column="4" VerticalAlignment="Center" HorizontalAlignment="Center" Style="{StaticResource RoundButtonDashBoardStyle}"
+                    Command="{Binding AcceptCommand}" IsDefault="True">
+                    <Image Source="{StaticResource TickSource}"/>
+                </Button>
+
+            </Grid>
+            
+            <Border Grid.Row="1" BorderBrush="{StaticResource Level1Background}" BorderThickness="4" />
+        </Grid>
+    </Grid>
+</local:Dialog>

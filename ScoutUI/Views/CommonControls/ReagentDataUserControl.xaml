@@ -1,0 +1,51 @@
+﻿<UserControl x:Class="ScoutUI.Views.CommonControls.ReagentDataUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="152" d:DesignWidth="410">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="205" />
+            <ColumnDefinition Width="205" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="30" />
+            <RowDefinition Height="32" />
+        </Grid.RowDefinitions>
+
+        <Border Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+        <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+        <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+        <Border Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+
+        <Label Grid.Column="0" Grid.Row="0" Content="{Binding ResourceKeys[LID_Label_PN], Source={StaticResource ScoutUILanguageResource}}" 
+               Foreground="{DynamicResource GenericVeryDark}" FontSize="16" FontWeight="Regular" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <Label Grid.Column="0" Grid.Row="1" Content="{Binding ResourceKeys[LID_ResultHeader_LOT], Source={StaticResource ScoutUILanguageResource}}"
+               Foreground="{DynamicResource GenericVeryDark}" FontSize="16" FontWeight="Regular" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <Label Grid.Column="0" Grid.Row="2" Content="{Binding ResourceKeys[LID_Label_EffectiveExpiration], Source={StaticResource ScoutUILanguageResource}}"
+               Margin="0,0,0,-4" FontSize="16" Foreground="{DynamicResource GenericVeryDark}" FontWeight="Regular" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <Label Grid.Column="0" Grid.Row="3" Content="{Binding ResourceKeys[LID_ResultHeader_UsesTotal], Source={StaticResource ScoutUILanguageResource}}"
+               FontSize="16" Foreground="{DynamicResource GenericVeryDark}" FontWeight="Regular" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <Label Grid.Column="0" Grid.Row="4" Content="{Binding ResourceKeys[LID_StatusLabel_UsesRemaining], Source={StaticResource ScoutUILanguageResource}}"
+               FontSize="16" FontWeight="Regular" Foreground="{DynamicResource GenericVeryDark}" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <Label Grid.Column="1" Grid.Row="0" Content="{Binding PartNumber}" FontSize="16" Foreground="{DynamicResource GenericVeryDark}" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding LotInformation}" FontSize="16" HorizontalAlignment="Left" Width="140" TextTrimming="CharacterEllipsis" Margin="4,0,0,0" FontWeight="ExtraBlack" />
+
+        <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding ExpiryDate, Converter={StaticResource DateFormatConverter}}" FontSize="16" FontWeight="ExtraBlack" Foreground="{DynamicResource GenericVeryDark}" />
+
+        <Label Grid.Column="1" Grid.Row="3" Content="{Binding EventsPossible}" FontSize="16" Foreground="{DynamicResource GenericVeryDark}" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+        <Label Grid.Column="1" Grid.Row="4" Content="{Binding EventsRemaining}" FontSize="16" Foreground="{DynamicResource GenericVeryDark}" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+    </Grid>
+</UserControl>

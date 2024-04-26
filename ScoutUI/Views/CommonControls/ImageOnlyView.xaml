@@ -1,0 +1,40 @@
+﻿<local:BaseImageView x:Class="ScoutUI.Views.CommonControls.ImageOnlyView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScoutUI.Views.CommonControls"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="800">
+
+    <Grid Height="{Binding ActualHeight, ElementName=ImageViewControl }"
+          Width="{Binding ActualWidth , ElementName=ImageViewControl}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5" />
+            <RowDefinition Height="540*" />
+            <RowDefinition Height="5" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5" />
+            <ColumnDefinition Width="540*" />
+            <ColumnDefinition Width="5" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Row="1" Grid.Column="1" Name="GridImageControl">
+            <Viewbox>
+                <Grid>
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"
+                                  Height="600" Width="600" PanningMode="Both" Name="ImageScrollViewer">
+                        <Canvas Name="CanvasImage" ClipToBounds="True" Height="585" Width="585">
+                            <Image Name="BindedImage" Height="585" Width="585" Stretch="UniformToFill"
+                                   RenderOptions.BitmapScalingMode="Fant">
+                            </Image>
+
+                            <Rectangle x:Name="Rectangle" Width="50" Height="50" Stroke="LightGoldenrodYellow"
+                                       Visibility="Collapsed" StrokeThickness="5"/>
+                        </Canvas>
+                    </ScrollViewer>
+                </Grid>
+            </Viewbox>
+        </Grid>
+    </Grid>
+</local:BaseImageView>

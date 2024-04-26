@@ -1,0 +1,54 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+                    xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Common.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/DataTemplates/ResultView.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/DataTemplates/ListResult.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/SettingTextBox.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/ButtonImageProcessStatusStyle.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/ReviewImageTotalCountLabelStyle.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="ReviewResult">
+        <Grid Focusable="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40" />
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            
+            <!-- Header -->
+            <Grid Grid.Row="0" Margin="0,0,0,2" Focusable="False">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="140*" />
+                    <ColumnDefinition Width="205*" />
+                </Grid.ColumnDefinitions>
+
+                <Border Grid.Column="0" Background="{StaticResource Level1Background}" CornerRadius="10" />
+                
+                <Label Grid.Column="0" Name="lblSampleID" Style="{StaticResource ReviewBoldLabelStyle}"
+                       Content="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}" />
+                
+                <TextBox Grid.Column="1" Name="cmbProRun" Margin="5,0,20,1" Style="{StaticResource SettingTextBox}"
+                         Text="{Binding SelectedSampleFromList.SampleIdentifier, PresentationTraceSources.TraceLevel=High}"
+                         VerticalContentAlignment="Center" IsEnabled="False" />
+            </Grid>
+
+            <!-- Image Analysis Results Table -->
+            <commonControls:SampleResultsGrid Grid.Row="1" Margin="0,0,20,0" SelectedSample="{Binding SelectedSampleFromList}" Focusable="False"/>
+            
+            <!-- Analysis Parameters Table -->
+            <ContentControl Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,20,0" Content="{Binding}" ContentTemplate="{StaticResource ListResult}" Focusable="False"/>
+            
+            <Popup Grid.Row="0" Name="PopupBubbleImages" AllowsTransparency="False" IsOpen="{Binding IsBubblePopupOpen, Mode=TwoWay}" Placement="Bottom"
+                   StaysOpen="False" HorizontalAlignment="Left" PlacementTarget="{Binding ElementName=BtnBubble}" Tag="{Binding BubbleStatusViewModel}" Margin="0,10,0,0">
+                <ucCommon:BubbleStatusView  DataContext="{Binding ElementName=PopupBubbleImages, Path=Tag}" />
+            </Popup>
+
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,43 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ColumnWiseBrushIcon.xaml"/>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/RowWiseBrushIcon.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="DataGrid96WellToggleButtonStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="BorderThickness" Value="0" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="ToggleButton">
+                    <Grid>
+                        <ContentPresenter />
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Content">
+            <Setter.Value>
+                <Rectangle Width="25" Height="25"  Fill="{StaticResource ColumnWiseBrushIcon}" />
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Rectangle Width="25" Height="25"  Fill="{StaticResource ColumnWiseBrushIcon}" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsChecked" Value="False">
+                <Setter Property="Content">
+                    <Setter.Value>
+                        <Rectangle Width="25" Height="25"  Fill="{StaticResource RowWiseBrushIcon}" />
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

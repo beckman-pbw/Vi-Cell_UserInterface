@@ -1,0 +1,238 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.InstrumentStatusDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" Title="InstrumentStatusDialog" 
+        Width="963" Height="Auto" WindowStyle="None" AllowsTransparency="True">
+
+    <Border BorderBrush="{StaticResource Level1Background}" BorderThickness="5" >
+        <Grid Background="{StaticResource Main_Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="15" />
+            </Grid.ColumnDefinitions>
+
+            <commonControls:DialogTitleBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Margin="0,0,-1,0"
+                                           Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            <Grid Grid.Row="1" Grid.Column="1" Margin="0,5,0,0">
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="210" />
+                            <RowDefinition Height="100" />
+                        </Grid.RowDefinitions>
+
+                        <GroupBox Grid.Column="0" Header="{Binding ResourceKeys[LID_ListOption_Instrument], Source={StaticResource ScoutUILanguageResource}}"
+                                              Style="{StaticResource InstrumentStatusGroupBoxStyle}" VerticalAlignment="Top" Foreground="{DynamicResource GenericVeryLight}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                    <RowDefinition />
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0" Orientation="Horizontal">
+                                    <Label Name="lblSerialNumber" Content="{Binding ResourceKeys[LID_Label_SerialNumber], Source={StaticResource ScoutUILanguageResource}}"
+                                                       ContentStringFormat="{}{0}:" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                    <Label Name="lblSerialNumberDetails" Content="{Binding SerialNumber, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged }"
+                                                       Foreground="Blue" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="1" Orientation="Horizontal">
+                                    <Label Name="lblSoftwareVersion" Content="{Binding ResourceKeys[LID_Label_Softwareversion], Source={StaticResource ScoutUILanguageResource}}"
+                                                       ContentStringFormat="{}{0}:" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                    <Label Name="lblSoftwareVersionDetails" Foreground="Blue" Content="{Binding ApplicationVersion}"
+                                                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="2" Orientation="Horizontal">
+                                    <Label Content="{Binding ResourceKeys[LID_Label_FirmwareVersion], Source={StaticResource ScoutUILanguageResource}}"
+                                                       ContentStringFormat="{}{0}:" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                    <Label Content="{Binding FirmwareVersion, Mode=TwoWay}"
+                                                       Foreground="Blue" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="3" Orientation="Horizontal">
+                                    <Label Name="lblSystemTotalSampleCounts" Content="{Binding ResourceKeys[LID_Label_SystemTotalSampleCounts], Source={StaticResource ScoutUILanguageResource}}"
+                                                       ContentStringFormat="{}{0}:" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                    <Label Name="lblSystemTotalSampleCountsDetails" Foreground="Blue" Content="{Binding SystemTotalSampleCount, Mode=TwoWay}"
+                                                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                </StackPanel>
+
+                                <StackPanel Grid.Row="4" Orientation="Horizontal">
+                                    <Label Content="{Binding ResourceKeys[LID_Label_wellPos], Source={StaticResource ScoutUILanguageResource}}"
+                                                       ContentStringFormat="{}{0}:" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                    <Label Foreground="Blue" Content="{Binding StagePosition, Mode=TwoWay }" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                </StackPanel>
+
+                            </Grid>
+                        </GroupBox>
+
+                        <Border BorderThickness="2" CornerRadius="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" Margin="10,0" Grid.Row="1"
+                                            BorderBrush="{DynamicResource Level1Background}">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="Auto" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Orientation="Horizontal" VerticalAlignment="Center">
+                                    <Label Name="lblRemainingWasteTube" Content="{Binding ResourceKeys[LID_Label_Remainingwastetubebincapacity], Source={StaticResource ScoutUILanguageResource}}"
+                                                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+                                    <Label Name="lblRemainingWasteTubeDeatils" Content="{Binding RemainingTubeTrayCapacity, Mode=TwoWay}" Foreground="Blue"
+                                                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                </StackPanel>
+
+                                <Button Grid.Column="1" Name="btnClean" Command="{Binding CleanTubesCommand}" Style="{StaticResource RoundButtonDashBoardStyle}"
+                                                    IsEnabled="{Binding IsCleanWasteTubeEnable, Mode=TwoWay}" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                                    <Image Source="{StaticResource CleanSource}" />
+                                </Button>
+                            </Grid>
+                        </Border>
+                    </Grid>
+
+                    <GroupBox Grid.Column="1" Header="{Binding ResourceKeys[LID_FrameLabel_Storage], Source={StaticResource ScoutUILanguageResource}}"
+                                          Style="{StaticResource InstrumentStatusGroupBoxStyle}" VerticalAlignment="Top" Foreground="{DynamicResource GenericVeryLight}">
+                        <Grid>
+                            <Grid Height="250" Width="210">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <StackPanel Grid.Row="0" Margin="5,10,5,0" Orientation="Horizontal" HorizontalAlignment="Stretch" VerticalAlignment="Top">
+                                    <Label Name="lblMemoryDetails" Foreground="{DynamicResource GenericVeryLight}" Content="{Binding DiskFreeSpace}" FontSize="15" FontWeight="Normal" />
+                                </StackPanel>
+
+                                <Grid Grid.Row="1">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10" />
+                                        <ColumnDefinition Width="50" />
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="5" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Viewbox Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top">
+                                        <Viewbox.LayoutTransform>
+                                            <RotateTransform Angle="90" />
+                                        </Viewbox.LayoutTransform>
+                                        <ProgressBar Width="Auto" Name="pgrStorageData" Margin="5" Minimum="0" Maximum="100" HorizontalAlignment="Center"
+                                                                 HorizontalContentAlignment="Center" Style="{StaticResource DiskSpaceProgressBarStyle}" Height="10" Background="{DynamicResource GenericVeryLight}" />
+                                    </Viewbox>
+
+                                    <Grid Grid.Column="2" Margin="0,10,0,0">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="5" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="5" />
+                                        </Grid.RowDefinitions>
+
+                                        <StackPanel Orientation="Vertical" Grid.Row="0">
+
+                                            <CheckBox Name="chkboxOther" Style="{StaticResource InstrumentCheckBoxStyle}" Height="30" Background="#FF6600"
+                                                                  IsHitTestVisible="False" IsEnabled="False" FontSize="18"
+                                                                  Content="{Binding ResourceKeys[LID_CheckBox_Other], Source={StaticResource ScoutUILanguageResource}}" />
+                                            <CheckBox Name="chkboxData" Background="#0000CC" FontSize="18" IsHitTestVisible="False" IsEnabled="False"
+                                                                  Margin="0,15,0,0" Style="{StaticResource InstrumentCheckBoxStyle}" Height="30"
+                                                                  Content="{Binding ResourceKeys[LID_CheckBox_Data], Source={StaticResource ScoutUILanguageResource}}" />
+
+                                        </StackPanel>
+
+                                        <Border BorderThickness="2" CornerRadius="8" HorizontalAlignment="Stretch" VerticalAlignment="Top" Grid.Row="2"
+                                                            Margin="0,10,5,0" BorderBrush="{DynamicResource Level1Background}">
+                                            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+
+                                                <CheckBox Name="chkboxExport" Background="#CC33FF" FontSize="18" IsHitTestVisible="False" IsEnabled="False"
+                                                                      Style="{StaticResource InstrumentCheckBoxStyle}" Height="30"
+                                                                      Content="{Binding ResourceKeys[LID_CheckBox_Export], Source={StaticResource ScoutUILanguageResource}}" />
+
+                                                <Button Command="{Binding CleanExportsCommand}" IsEnabled="{Binding IsSharedClearEnable, Mode=TwoWay}"
+                                                                    HorizontalAlignment="Left" VerticalAlignment="Center" Style="{StaticResource RoundButtonDashBoardStyle}">
+                                                    <Image Source="{StaticResource CleanSource}" />
+                                                </Button>
+
+                                            </StackPanel>
+
+                                        </Border>
+                                    </Grid>
+                                </Grid>
+                            </Grid>
+
+                            <Border Height="250" Width="210" Background="#A8FFFFFF" CornerRadius="10" Visibility="{Binding IsStorageLoaded, Converter={StaticResource InverseVisibilityConverter}}">
+                                <controls:LoadingIndicator Style="{StaticResource ProgressIndicatorThreeDotsStyle}" Foreground="{DynamicResource GenericVeryDark}" Height="18" Width="100" />
+                            </Border>
+
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Column="2" Header="{Binding ResourceKeys[LID_HB_Maintenance], Source={StaticResource ScoutUILanguageResource}}" 
+                                          Style="{StaticResource InstrumentStatusGroupBoxStyle}" VerticalAlignment="Top" Foreground="{DynamicResource GenericVeryLight}">
+                        <Grid Height="Auto" Width="230">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="60" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="40" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="70" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="70" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+
+                            <TextBlock Name="lblLastCalibrationDate" Grid.Row="1" Foreground="{DynamicResource GenericVeryLight}" FontSize="18" Width="180" TextWrapping="Wrap"
+                                                   Text="{Binding ResourceKeys[LID_Label_LastCalibrationDate], Source={StaticResource ScoutUILanguageResource}}" />
+
+                            <TextBlock Name="lblLastCalibrationDateDetails" FontSize="16" Grid.Row="2" VerticalAlignment="Top" Margin="25,-6,0,0" Foreground="Blue"
+                                                   Text="{Binding LastCalibrationDate,Converter={StaticResource DateFormatConverter}, ConverterParameter=ShortDate}" />
+
+                            <TextBlock Name="lblLastACupCalibrationDate" Grid.Row="3" Foreground="{DynamicResource GenericVeryLight}" FontSize="18" Width="180" TextWrapping="Wrap"
+                                       Visibility="{Binding IsACupEnabled,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                       Text="{Binding ResourceKeys[LID_Label_LastACupCalibrationDate], Source={StaticResource ScoutUILanguageResource}}" />
+
+                            <TextBlock Name="lblLastACupCalibrationDateDetails" FontSize="16" Grid.Row="4" VerticalAlignment="Top" Margin="25,5,0,0" Foreground="Blue"
+                                       Visibility="{Binding IsACupEnabled,Converter={StaticResource BooleanToVisibilityConverter}}"
+                                       Text="{Binding LastACupCalibrationDate,Converter={StaticResource DateFormatConverter}, ConverterParameter=ShortDate}" />
+
+                            <Button Content="{Binding ResourceKeys[LID_ButtonContent_DustRef], Source={StaticResource ScoutUILanguageResource}}"
+                                                Style="{StaticResource SignLeftUserButtonStyle}" HorizontalContentAlignment="Left" Foreground="{DynamicResource GenericVeryLight}" Grid.Row="6" Width="185"
+                                                IsEnabled="{Binding EnableCalibrationControl}" Command="{Binding DustCollectionCommand}" />
+
+                            <Button HorizontalContentAlignment="Left" Style="{StaticResource SignLeftUserButtonStyle}" IsEnabled="{Binding EnableCalibrationControl}"
+                                                Command="{Binding SetFocusCommand}" Grid.Row="8" Width="185">
+
+                                <StackPanel>
+                                    <Label Content="{Binding ResourceKeys[LID_ButtonContent_SetFocus], Source={StaticResource ScoutUILanguageResource}}"
+                                                       ContentStringFormat="{}{0}..." FontSize="16" Foreground="{DynamicResource GenericVeryLight}" />
+                                </StackPanel>
+
+                            </Button>
+                        </Grid>
+                    </GroupBox>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Border>
+
+</local:Dialog>

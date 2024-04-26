@@ -1,0 +1,87 @@
+﻿<local:Dialog x:Class="ScoutUI.Views.Dialogs.AddSignatureDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" x:Name="AddSignDialog" Title="Add Signature" WindowStyle="None" 
+        AllowsTransparency="True">
+
+    <Border Style="{StaticResource SignInBorderStyle}" BorderThickness="1" Background="{StaticResource Main_Background}" Width="600" Height="400">
+        <Grid>
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+
+                <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                <Grid Grid.Row="1" Margin="0,20,0,0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="40" />
+                        <ColumnDefinition Width="110" />
+                        <ColumnDefinition Width="5" />
+                        <ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="5" />
+                        <RowDefinition Height="Auto" />
+                        
+                    </Grid.RowDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="1" Content="{Binding ResourceKeys[LID_AdminReportsHeader_UserName], Source={StaticResource ScoutUILanguageResource}}"
+                                   FontSize="18" VerticalAlignment="Center" Foreground="{DynamicResource GenericVeryLight}" />
+
+                    <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding SignatureUserId, Mode=OneWay}" IsEnabled="False" Width="379" Height="50" 
+                                     Style="{StaticResource TextBoxLoginRunStyle}" />
+
+                    <Label Grid.Row="2" Grid.Column="1" Content="{Binding ResourceKeys[LID_Label_Password], Source={StaticResource ScoutUILanguageResource}}"
+                                   FontSize="18" VerticalAlignment="Center" Foreground="{DynamicResource GenericVeryLight}" />
+
+                    <PasswordBox Grid.Row="2" Grid.Column="3" x:Name="txtPassword" Width="379" Height="50" controls:PasswordHandler.Attach="True"
+                             controls:PasswordHandler.Password="{Binding SignaturePassword, Mode=TwoWay}" 
+                             Style="{StaticResource ChangePasswordStyle}" />
+                </Grid>
+
+                <Grid Row="2" HorizontalAlignment="Center">
+                    <ListBox Style="{StaticResource BaseListBoxStyleNoHand}" Height="100" x:Name="lstSignature" BorderThickness="0" VerticalAlignment="Top" 
+                         ItemsSource="{Binding AvailableSignatureTypes}">
+
+                        <ListBox.ItemsPanel>
+                            <ItemsPanelTemplate>
+                                <VirtualizingStackPanel Orientation="Horizontal" />
+                            </ItemsPanelTemplate>
+                        </ListBox.ItemsPanel>
+
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition Height="0" />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+
+                                    <TextBlock Name="txtCreation" Height="40" Grid.Row="0" Foreground="{DynamicResource GenericVeryLight}" TextWrapping="Wrap" MaxWidth="150" TextTrimming="CharacterEllipsis"
+                                                       Text="{Binding SignatureMeaning}" HorizontalAlignment="Center" FontSize="24" />
+
+                                    <Button Width="170" Height="48" Grid.Row="2" FontSize="30" Foreground="{DynamicResource GenericVeryLight}" Content="{Binding SignatureIndicator}" 
+                                                    Style="{StaticResource SignLeftUserButtonStyle}" CommandParameter="{Binding}"
+                                                    Command="{Binding ElementName=AddSignDialog, Path=DataContext.AddSignatureCommand}" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                    </ListBox>
+
+                </Grid>
+            </Grid>
+            <Border Grid.Row="0" BorderBrush="{StaticResource Level1Background}" BorderThickness="4" />
+        </Grid>
+    </Border>
+</local:Dialog>

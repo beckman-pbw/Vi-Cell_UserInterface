@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CommonReportDataSet" targetNamespace="http://tempuri.org/CommonReportDataSet.xsd" xmlns:mstns="http://tempuri.org/CommonReportDataSet.xsd" xmlns="http://tempuri.org/CommonReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CommonReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CommonReportDataSet" msprop:Generator_UserDSName="CommonReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="ReportMandatoryHeaderTemplateTable" msprop:Generator_TableClassName="ReportMandatoryHeaderTemplateTableDataTable" msprop:Generator_TableVarName="tableReportMandatoryHeaderTemplateTable" msprop:Generator_RowChangedName="ReportMandatoryHeaderTemplateTableRowChanged" msprop:Generator_TablePropName="ReportMandatoryHeaderTemplateTable" msprop:Generator_RowDeletingName="ReportMandatoryHeaderTemplateTableRowDeleting" msprop:Generator_RowChangingName="ReportMandatoryHeaderTemplateTableRowChanging" msprop:Generator_RowEvHandlerName="ReportMandatoryHeaderTemplateTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportMandatoryHeaderTemplateTableRowDeleted" msprop:Generator_RowClassName="ReportMandatoryHeaderTemplateTableRow" msprop:Generator_UserTableName="ReportMandatoryHeaderTemplateTable" msprop:Generator_RowEvArgName="ReportMandatoryHeaderTemplateTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ReportTitle" msprop:Generator_ColumnVarNameInTable="columnReportTitle" msprop:Generator_ColumnPropNameInRow="ReportTitle" msprop:Generator_ColumnPropNameInTable="ReportTitleColumn" msprop:Generator_UserColumnName="ReportTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="ReportSubTitle" msprop:Generator_ColumnVarNameInTable="columnReportSubTitle" msprop:Generator_ColumnPropNameInRow="ReportSubTitle" msprop:Generator_ColumnPropNameInTable="ReportSubTitleColumn" msprop:Generator_UserColumnName="ReportSubTitle" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentHeader" msprop:Generator_ColumnVarNameInTable="columnCommentHeader" msprop:Generator_ColumnPropNameInRow="CommentHeader" msprop:Generator_ColumnPropNameInTable="CommentHeaderColumn" msprop:Generator_UserColumnName="CommentHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="CommentData" msprop:Generator_ColumnVarNameInTable="columnCommentData" msprop:Generator_ColumnPropNameInRow="CommentData" msprop:Generator_ColumnPropNameInTable="CommentDataColumn" msprop:Generator_UserColumnName="CommentData" type="xs:string" minOccurs="0" />
+              <xs:element name="DeviceSerialHeader" msprop:Generator_ColumnVarNameInTable="columnDeviceSerialHeader" msprop:Generator_ColumnPropNameInRow="DeviceSerialHeader" msprop:Generator_ColumnPropNameInTable="DeviceSerialHeaderColumn" msprop:Generator_UserColumnName="DeviceSerialHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="DeviceSerialData" msprop:Generator_ColumnVarNameInTable="columnDeviceSerialData" msprop:Generator_ColumnPropNameInRow="DeviceSerialData" msprop:Generator_ColumnPropNameInTable="DeviceSerialDataColumn" msprop:Generator_UserColumnName="DeviceSerialData" type="xs:string" minOccurs="0" />
+              <xs:element name="CurrentDateTime" msprop:Generator_ColumnVarNameInTable="columnCurrentDateTime" msprop:Generator_ColumnPropNameInRow="CurrentDateTime" msprop:Generator_ColumnPropNameInTable="CurrentDateTimeColumn" msprop:Generator_UserColumnName="CurrentDateTime" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReportTableColumnTemplateTable" msprop:Generator_TableClassName="ReportTableColumnTemplateTableDataTable" msprop:Generator_TableVarName="tableReportTableColumnTemplateTable" msprop:Generator_RowChangedName="ReportTableColumnTemplateTableRowChanged" msprop:Generator_TablePropName="ReportTableColumnTemplateTable" msprop:Generator_RowDeletingName="ReportTableColumnTemplateTableRowDeleting" msprop:Generator_RowChangingName="ReportTableColumnTemplateTableRowChanging" msprop:Generator_RowEvHandlerName="ReportTableColumnTemplateTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportTableColumnTemplateTableRowDeleted" msprop:Generator_RowClassName="ReportTableColumnTemplateTableRow" msprop:Generator_UserTableName="ReportTableColumnTemplateTable" msprop:Generator_RowEvArgName="ReportTableColumnTemplateTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ParameterName" msprop:Generator_ColumnVarNameInTable="columnParameterName" msprop:Generator_ColumnPropNameInRow="ParameterName" msprop:Generator_ColumnPropNameInTable="ParameterNameColumn" msprop:Generator_UserColumnName="ParameterName" type="xs:string" minOccurs="0" />
+              <xs:element name="ParameterValue" msprop:Generator_ColumnVarNameInTable="columnParameterValue" msprop:Generator_ColumnPropNameInRow="ParameterValue" msprop:Generator_ColumnPropNameInTable="ParameterValueColumn" msprop:Generator_UserColumnName="ParameterValue" type="xs:string" minOccurs="0" />
+              <xs:element name="ColumnAlignment" msprop:Generator_ColumnVarNameInTable="columnColumnAlignment" msprop:Generator_ColumnPropNameInRow="ColumnAlignment" msprop:Generator_ColumnPropNameInTable="ColumnAlignmentColumn" msprop:Generator_UserColumnName="ColumnAlignment" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReportTableColumnWidthTable" msprop:Generator_TableClassName="ReportTableColumnWidthTableDataTable" msprop:Generator_TableVarName="tableReportTableColumnWidthTable" msprop:Generator_TablePropName="ReportTableColumnWidthTable" msprop:Generator_RowDeletingName="ReportTableColumnWidthTableRowDeleting" msprop:Generator_RowChangingName="ReportTableColumnWidthTableRowChanging" msprop:Generator_RowEvHandlerName="ReportTableColumnWidthTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportTableColumnWidthTableRowDeleted" msprop:Generator_UserTableName="ReportTableColumnWidthTable" msprop:Generator_RowChangedName="ReportTableColumnWidthTableRowChanged" msprop:Generator_RowEvArgName="ReportTableColumnWidthTableRowChangeEvent" msprop:Generator_RowClassName="ReportTableColumnWidthTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TableColumnWidth" msprop:Generator_ColumnVarNameInTable="columnTableColumnWidth" msprop:Generator_ColumnPropNameInRow="TableColumnWidth" msprop:Generator_ColumnPropNameInTable="TableColumnWidthColumn" msprop:Generator_UserColumnName="TableColumnWidth" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="ReportSignatureTemplateTable" msprop:Generator_TableClassName="ReportSignatureTemplateTableDataTable" msprop:Generator_TableVarName="tableReportSignatureTemplateTable" msprop:Generator_RowChangedName="ReportSignatureTemplateTableRowChanged" msprop:Generator_TablePropName="ReportSignatureTemplateTable" msprop:Generator_RowDeletingName="ReportSignatureTemplateTableRowDeleting" msprop:Generator_RowChangingName="ReportSignatureTemplateTableRowChanging" msprop:Generator_RowEvHandlerName="ReportSignatureTemplateTableRowChangeEventHandler" msprop:Generator_RowDeletedName="ReportSignatureTemplateTableRowDeleted" msprop:Generator_RowClassName="ReportSignatureTemplateTableRow" msprop:Generator_UserTableName="ReportSignatureTemplateTable" msprop:Generator_RowEvArgName="ReportSignatureTemplateTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="FirstColumnData" msprop:Generator_ColumnVarNameInTable="columnFirstColumnData" msprop:Generator_ColumnPropNameInRow="FirstColumnData" msprop:Generator_ColumnPropNameInTable="FirstColumnDataColumn" msprop:Generator_UserColumnName="FirstColumnData" type="xs:string" minOccurs="0" />
+              <xs:element name="SecondColumnData" msprop:Generator_ColumnVarNameInTable="columnSecondColumnData" msprop:Generator_ColumnPropNameInRow="SecondColumnData" msprop:Generator_ColumnPropNameInTable="SecondColumnDataColumn" msprop:Generator_UserColumnName="SecondColumnData" type="xs:string" minOccurs="0" />
+              <xs:element name="ThirdColumnData" msprop:Generator_ColumnVarNameInTable="columnThirdColumnData" msprop:Generator_ColumnPropNameInRow="ThirdColumnData" msprop:Generator_ColumnPropNameInTable="ThirdColumnDataColumn" msprop:Generator_UserColumnName="ThirdColumnData" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

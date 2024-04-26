@@ -1,0 +1,67 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.EmptySampleTubesDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" Height="800" Width="1280"
+        Title="EmptySampleTubesDialog" WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+
+    <Border BorderBrush="{StaticResource Level1Background}" BorderThickness="5,5,5,5" Width="710" Height="285">
+        <Grid Background="{StaticResource Main_Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="13" />
+                <RowDefinition Height="33" />
+                <RowDefinition Height="33" />
+                <RowDefinition Height="33" />
+                <RowDefinition Height="33" />
+                <RowDefinition Height="13" />
+                <RowDefinition Height="33" />
+                <RowDefinition Height="33" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="20" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="65" />
+            </Grid.ColumnDefinitions>
+
+            <commonControls:DialogTitleBar Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="4" 
+                                               Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            <Label Content="{Binding ResourceKeys[LID_Label_OpenTheWaste], Source={StaticResource ScoutUILanguageResource}}"
+                       Grid.Row="2" Grid.Column="2" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+            <Label Content="{Binding ResourceKeys[LID_Label_RemoveNEmpty], Source={StaticResource ScoutUILanguageResource}}"
+                       Grid.Row="3" Grid.Column="2" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+            <Label Content="{Binding ResourceKeys[LID_Label_ReplacetheWaste], Source={StaticResource ScoutUILanguageResource}}"
+                       Grid.Row="4" Grid.Column="2" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+            <StackPanel Grid.Row="5" Grid.Column="2" Grid.ColumnSpan="2" Orientation="Horizontal" >
+                <Label Content="{Binding ResourceKeys[LID_Label_TapOn], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+                <Button IsEnabled="False" Tag="Pseudo" Margin="2,0" HorizontalAlignment="Left" VerticalAlignment="Center"
+                            Style="{StaticResource RoundButtonDashBoardStyle}" Width="25" Height="25">
+                    <Image Source="{StaticResource CleanSource}" />
+                </Button>
+
+                <Label Content="{Binding ResourceKeys[LID_Label_ResetSpentTubeCapacity], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource LabelStyleFontSizeEighteenRegular}"/>
+            </StackPanel>
+
+            <TextBlock Name="ResettingWasteTube" TextWrapping="WrapWithOverflow" Grid.Row="7" Grid.Column="1" Grid.RowSpan="2" Grid.ColumnSpan="3" Foreground="Red"
+                    Width="550" Margin="0" FontSize="18" Text="{Binding ResourceKeys[LID_Label_ResettingWasteTube], Source={StaticResource ScoutUILanguageResource}}"
+                    Style="{StaticResource BaseTextBlock}" />
+
+            <Button Name="btnClean" Command="{Binding AcceptCommand}" CommandParameter="{Binding ElementName=EmptyUsedSampleTubeWindow}"
+                        Margin="0,0,10,5" Grid.Column="3" Grid.Row="7" Grid.RowSpan="2" HorizontalAlignment="Right" VerticalAlignment="Center"
+                        Style="{StaticResource RoundButtonDashBoardStyle}">
+                <Image Source="{StaticResource CleanSource}" />
+            </Button>
+
+        </Grid>
+    </Border>
+
+</local:Dialog>

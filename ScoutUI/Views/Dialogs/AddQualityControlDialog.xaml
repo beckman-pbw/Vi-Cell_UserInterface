@@ -1,0 +1,150 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.AddCellTypeDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+        xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" Title="AddCellTypeDialog" Height="320" Width="1280"
+        WindowStyle="None" WindowState="Normal">
+
+    <Border BorderThickness="2" BorderBrush="{StaticResource TitleBar_Background}">
+        <Grid Background="{StaticResource Main_Background}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="150" />
+                <ColumnDefinition Width="180" />
+                <ColumnDefinition Width="250" />
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="110" />
+                <ColumnDefinition Width="206" />
+                <ColumnDefinition Width="130" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="28" />
+                <RowDefinition Height="60" />
+                <RowDefinition Height="5" />
+                <RowDefinition Height="50" />
+                <RowDefinition Height="50*" />
+            </Grid.RowDefinitions>
+
+            <commonControls:DialogTitleBar Grid.Row="0" Grid.ColumnSpan="10" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            <Grid Grid.Row="2" Grid.Column="1">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <Label Content="{Binding ResourceKeys[LID_BPHeader_Name], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource PopLabelHeader}" VerticalContentAlignment="Center" Margin="5,0,0,0"  />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="2">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <Label Content="{Binding ResourceKeys[LID_UsersLabel_CellType], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource PopLabelHeader}" VerticalContentAlignment="Center" Margin="5,0,0,0" />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="3">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <Label Content="{Binding ResourceKeys[LID_QCHeader_AssayParameter], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource PopLabelHeader}" VerticalContentAlignment="Center" Margin="5,0,0,0"  />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="4">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <TextBlock TextAlignment="Center" Text="{Binding ResourceKeys[LID_QCHeader_LotNumber], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource PopTextBlockHeader}" Width="100" Margin="5,0,0,0" />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="5">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <TextBlock TextAlignment="Center" Text="{Binding DynamicAssayHeader}" Style="{StaticResource PopTextBlockHeader}" Margin="5,0,0,0" Width="105"  />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="6">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <TextBlock Text="{Binding ResourceKeys[LID_QCHeader_AcceptanceLimitsPresent], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource PopTextBlockHeader}" Width="100" Margin="5,0,0,0"  />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="7">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <TextBlock TextAlignment="Center" Text="{Binding ResourceKeys[LID_GridLabel_ExpirationDate], Source={StaticResource ScoutUILanguageResource}}"
+                           Style="{StaticResource PopTextBlockHeader}" Width="200" Margin="5,0,0,0"   />
+            </Grid>
+
+            <Grid Grid.Row="2" Grid.Column="8">
+                <Rectangle Fill="{StaticResource Level1Background}" Margin="2,0" RadiusX="5" RadiusY="5" />
+                <Label Content="{Binding ResourceKeys[LID_QMgmtHEADER_Comment], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource PopLabelHeader}" VerticalContentAlignment="Center" Margin="5,0,0,0"  />
+            </Grid>
+
+            <TextBox Grid.Row="4" Grid.Column="1" Margin="2,0" helper:ControlValidationHelper.CharacterValidation="True" Style="{StaticResource TextBoxLoginRunStyle}"
+                     helper:ControlValidationHelper.TrimText="True" Height="40" MaxLength="50" Name="TextQualityControlName" Text="{Binding QualityControl.QcName, Mode=TwoWay}" />
+
+            <ComboBox Grid.Row="4" x:Name="cmbCellType" Grid.Column="2" Margin="2,0" FlowDirection="LeftToRight"
+                      ItemsSource="{Binding AllCellTypesList}" SelectedItem="{Binding SelectedCellType, Mode=TwoWay}" Height="40" DisplayMemberPath="CellTypeName" 
+                      SelectedValuePath="CellTypeName" Style="{StaticResource ComboBoxLoginPageStyle}" />
+
+            <ComboBox Name="AssayParameterCbBox"  Grid.Row="4" Grid.Column="3" Margin="2,0" FlowDirection="LeftToRight" Style="{StaticResource ComboBoxLoginPageStyle}" 
+                      ItemsSource="{Binding AssayParameterList}" SelectedItem="{Binding SelectedAssayParameter}" Height="40" SelectedIndex="0">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedDescriptionConverter}}" />
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+
+            <TextBox Grid.Row="4" Grid.Column="4" MaxLength="20" Height="40" Name="TextLotNumber" helper:ControlValidationHelper.TrimText="True" Margin="2,0" 
+                     FlowDirection="LeftToRight" Text="{Binding QualityControl.LotInformation, Mode=TwoWay}" Style="{StaticResource TextBoxLoginRunStyle}" />
+            
+            <TextBox Grid.Row="4" Grid.Column="5" Margin="2,0" MaxLength="5" Height="40" Name="txtAssayNumber" FlowDirection="LeftToRight" 
+                     helper:ControlValidationHelper.AllowOnlyDouble="True" >
+                <TextBox.Style>
+                    <Style TargetType="TextBox" BasedOn="{StaticResource TextBoxLoginRunStyle}">
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding SelectedAssayParameter, Mode=TwoWay}" Value="ap_Concentration">
+                                <Setter Property="Text" Value="{Binding QualityControl.AssayValue, Mode=TwoWay, Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two},TargetNullValue={x:Static sys:String.Empty}}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding SelectedAssayParameter, Mode=TwoWay}" Value="ap_PopulationPercentage">
+                                <Setter Property="Text" Value="{Binding QualityControl.AssayValue, Mode=TwoWay, Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One},TargetNullValue={x:Static sys:String.Empty}}" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding SelectedAssayParameter, Mode=TwoWay}" Value="ap_Size">
+                                <Setter Property="Text" Value="{Binding QualityControl.AssayValue, Mode=TwoWay, Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two},TargetNullValue={x:Static sys:String.Empty}}" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+
+            <TextBox Grid.Row="4" Grid.Column="6" FlowDirection="LeftToRight" MaxLength="3" Height="40" helper:ControlValidationHelper.AllowOnlyNumeric="True"
+                     Text="{Binding QualityControl.AcceptanceLimit, Mode=TwoWay, TargetNullValue={x:Static sys:String.Empty}}" Tag="10"
+                     Style="{StaticResource QcTextBoxAcceptanceLimitsStyle}" Margin="2,0" />
+            
+            <Grid Grid.Row="4" Grid.Column="7" Height="55">
+                <DatePicker SelectedDate="{Binding QualityControl.ExpirationDate}" VerticalAlignment="Top"
+                            Margin="5,0,0,0" KeyboardNavigation.TabNavigation="Continue"/>
+            </Grid>
+
+            <TextBox Grid.Row="4" Grid.Column="8" FlowDirection="LeftToRight" Height="40" helper:ControlValidationHelper.TrimText="True"
+                     Text="{Binding QualityControl.CommentText, Mode=TwoWay}" Style="{StaticResource TextBoxLoginRunStyle}" Margin="2,0" MaxLength="100"/>
+
+            <StackPanel Grid.Row="5" Grid.Column="8" HorizontalAlignment="Right" Orientation="Horizontal" Margin="0,20,0,0">
+                <Button Command="{Binding AcceptCommand}" Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Right" >
+                    <Image Source="{StaticResource TickSource}" />
+                </Button>
+
+                <Button Command="{Binding CancelCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                    <Path x:Name="ExpandPath" Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="19" Height="19" Data="{StaticResource PathCloseIcon}" />
+                </Button>
+            </StackPanel>
+
+        </Grid>
+    </Border>
+
+</local:Dialog>

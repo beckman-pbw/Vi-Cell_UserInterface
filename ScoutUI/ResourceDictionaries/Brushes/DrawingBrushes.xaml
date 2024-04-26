@@ -1,0 +1,21 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ArrowDownIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/CarouselRowWiseBrushIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ChangePasswordIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ChangeMyProfileIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ColumnWiseBrushIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ExportSummaryIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/ExportIndividualIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/HardwareCoverIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/LockScreenBrush.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/NoImageBrush.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/PdfIconBrush.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/RotateArrowIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/RowWiseBrushIcon.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/StatusBarMessageBrush.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/StatusBarMessageIcons.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/DrawingBrushes/TakeInIcon.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+</ResourceDictionary>

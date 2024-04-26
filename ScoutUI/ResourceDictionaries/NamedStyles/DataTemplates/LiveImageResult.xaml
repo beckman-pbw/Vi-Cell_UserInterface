@@ -1,0 +1,158 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Common.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/BorderStyle.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/SimpleStyles.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="LiveImageResult">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="200" />
+                <ColumnDefinition Width="130" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="35" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <Border Background="{StaticResource Level1Background}" Grid.ColumnSpan="2" Width="340" CornerRadius="10" />
+            <Label
+                Content="{Binding ResourceKeys[LID_Label_Parameter], Source={StaticResource ScoutUILanguageResource}}"
+                Style="{StaticResource ReviewBoldLabelStyle}" Grid.Row="0" Grid.Column="0" />
+            <Label
+                Content="{Binding ResourceKeys[LID_TabItem_Results], Source={StaticResource ScoutUILanguageResource}}"
+                Style="{StaticResource ReviewBoldLabelStyle}" Width="auto"
+                Grid.Row="0" Grid.Column="1"
+                HorizontalAlignment="Center" />
+            <ScrollViewer Grid.Row="1" Grid.ColumnSpan="2">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="160*" />
+                        <ColumnDefinition Width="80*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="0" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Border Background="{DynamicResource GenericVeryLight}" Grid.Column="0" Grid.Row="1" CornerRadius="10" Grid.ColumnSpan="2"
+                            Grid.RowSpan="14" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="5" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="6" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="7" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="8" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="9" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="10" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="11" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="12" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="13" Grid.ColumnSpan="2" />
+                    <Border Style="{StaticResource BorderStyle}" Grid.Column="0" Grid.Row="14" Grid.ColumnSpan="2" />
+                    <!--Primary  -->
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="1"            
+                       FontWeight="Bold"
+                       TextWrapping="Wrap"
+                       Text="{Binding ResourceKeys[LID_Result_Totalcells], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="2"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_RunResultsReport_Graph_ViableCells_Title], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="3"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_CheckBox_TotalCellConcentration], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}"
+                       FontWeight="Bold"
+                       TextWrapping="Wrap" 
+                       Grid.Column="0" Grid.Row="4"
+                       Text="{Binding ResourceKeys[LID_Result_ViaConc], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="5"
+                       TextWrapping="Wrap" 
+                       FontWeight="Bold"
+                       Text="{Binding ResourceKeys[LID_Result_Viability], Source={StaticResource ScoutUILanguageResource}}" />
+                    <!--secondary-->
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="6"
+                       TextWrapping="Wrap"
+                       Text="{Binding ResourceKeys[LID_Label_Size], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="7"
+                       TextWrapping="Wrap"
+                       Text="{Binding ResourceKeys[LID_GraphLabel_Viablesize], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="8"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_Label_AverageCircularity], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="9"
+                       Text="{Binding ResourceKeys[LID_GraphLabel_Viablecircularity], Source={StaticResource ScoutUILanguageResource}}" />
+                    <!--tertiary -->
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="11"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_Result_AverageCellPerImage], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}"  Grid.Column="0" Grid.Row="12"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_GraphLabel_Averagebackground], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="13"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_Result_Bubbles], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBlock Style="{StaticResource ReviewItemBoldTextBlockStyle}" Grid.Column="0" Grid.Row="14"
+                       TextWrapping="Wrap" 
+                       Text="{Binding ResourceKeys[LID_Result_CellClusters], Source={StaticResource ScoutUILanguageResource}}" />
+
+
+                    <!--Primary  -->
+                    <Label Style="{StaticResource ReviewItemBoldLabelStyle}" Grid.Column="1" Grid.Row="1"
+                           Content="{Binding SampleImageDomain.ResultPerImage.TotalCells, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemBoldLabelStyle}" Grid.Column="1" Grid.Row="2"
+                           Content="{Binding SampleImageDomain.ResultPerImage.ViableCells, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemBoldLabelStyle}" Grid.Column="1" Grid.Row="3"
+                           Content="{Binding SampleImageDomain.ResultPerImage.ConcentrationML,Converter={StaticResource ViableConcentrationConverter},ConverterParameter=1000000,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemBoldLabelStyle}" Grid.Column="1" Grid.Row="4"
+                           Content="{Binding SampleImageDomain.ResultPerImage.ViableConcentration,Converter={StaticResource ViableConcentrationConverter},ConverterParameter=1000000,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemBoldLabelStyle}" Grid.Column="1" Grid.Row="5"
+                           ContentStringFormat="{StaticResource SingleTrailing}"
+                           Content="{Binding SampleImageDomain.ResultPerImage.Viability}" />
+                    <!-- secondary-->
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="6"
+                           ContentStringFormat="{StaticResource DoubleTrailing}"
+                           Content="{Binding SampleImageDomain.ResultPerImage.Size,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="7"
+                           ContentStringFormat="{StaticResource DoubleTrailing}"
+                           Content="{Binding SampleImageDomain.ResultPerImage.ViableSize,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="8"
+                           ContentStringFormat="{StaticResource DoubleTrailing}"
+                           Content="{Binding SampleImageDomain.ResultPerImage.Circularity,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="9"
+                           ContentStringFormat="{StaticResource DoubleTrailing}"
+                           Content="{Binding SampleImageDomain.ResultPerImage.ViableCircularity,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <!--tertiary -->
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="11"
+                           Content="{Binding SampleImageDomain.ResultPerImage.AverageCellsPerImage,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="12"
+                           Content="{Binding SampleImageDomain.ResultPerImage.AvgBackground,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="13"
+                           Content="{Binding SampleImageDomain.ResultPerImage.Bubble,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" />
+                    <Label Style="{StaticResource ReviewItemLabelStyle}" Grid.Column="1" Grid.Row="14"
+                           Content="{Binding SampleImageDomain.ResultPerImage.ClusterCount,Mode=TwoWay}" />
+                    <Border BorderBrush="{DynamicResource GenericVeryDark}" BorderThickness=".6,0,0,0" Grid.Column="1" Grid.RowSpan="15" />
+                    <Border BorderBrush="{DynamicResource GenericVeryDark}" BorderThickness=".6,0,0,0" Grid.Column="2" Grid.RowSpan="15" />
+                </Grid>
+            </ScrollViewer>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,0 +1,116 @@
+﻿<UserControl x:Class="ScoutUI.Views.Reports.UserControls.ReportsPanelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:admin="clr-namespace:ScoutUI.Views.Admin.UserControls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             mc:Ignorable="d"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+             Background="{StaticResource Main_Background}"
+             d:DesignWidth="1280" d:DesignHeight="740"
+             x:Name="UcReportView"
+             FontFamily="Segoe UI">
+
+    <controls:AdornerBehaviour Width="{Binding ActualWidth,ElementName=UcReportView}"
+                               Height="{Binding ActualHeight,ElementName=UcReportView}"
+                               IsAdornerVisible="{Binding IsProgressIndicationVisible ,Mode=TwoWay}"
+                               Background="#FC111111" 
+                               Focusable="False" IsTabStop="False">
+
+        <controls:AdornerBehaviour.AdornerContent>
+            <ucCommon:BusyIndicator />
+        </controls:AdornerBehaviour.AdornerContent>
+
+        <Grid Margin="10" Focusable="False">
+            <TabControl Style="{StaticResource CommonTabControlStyle}" SelectedIndex="{Binding SelectedTabItem}" 
+                        Focusable="False" IsTabStop="False">
+
+                <TabItem Name="tbiReportsResults" Style="{StaticResource CommonTabItemStyle}" 
+                         Foreground="{DynamicResource GenericVeryLight}" 
+                         Focusable="True" IsTabStop="True" TabIndex="1" >
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Name="tbiStackPanelReportsResults" Orientation="Horizontal" >
+                                <Rectangle Width="30" Height="30" Margin="4">
+                                    <Rectangle.Fill>
+                                        <VisualBrush Visual="{StaticResource result}" />
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock Text="{Binding ResourceKeys[LID_TabItem_Results], Source={StaticResource ScoutUILanguageResource}}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+                    
+                    <Grid Margin="10" Focusable="False" KeyboardNavigation.IsTabStop="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <commonControls:CommonListBox x:Name="reportTypeListBox" Grid.Column="0" 
+                                ItemList="{Binding ReportNameList}" 
+                                SelectedItem="{Binding ResultViewModel.SelectedResult, Mode=TwoWay}"
+                                Focusable="False" IsTabStop="False"/>
+
+                        <Border Grid.Column="2" BorderBrush="{DynamicResource GenericVeryLight}" 
+                                BorderThickness="1" CornerRadius="8" Focusable="False" 
+                                KeyboardNavigation.IsTabStop="False"/>
+
+                        <Grid Grid.Column="2" Focusable="False" KeyboardNavigation.IsTabStop="False">
+                            <ContentControl 
+                                Content="{Binding ResultViewModel.ReportsResultsContentControl}" 
+                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5" 
+                                Focusable="False" IsTabStop="False"/>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+
+                <TabItem Name="tbiReportsLogs" Style="{StaticResource CommonTabItemStyle}"
+                         Visibility="{Binding IsLogAccessible,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}"
+                         Foreground="{DynamicResource GenericVeryLight}" 
+                         Focusable="True" IsTabStop="True" TabIndex="2" >
+                    <TabItem.HeaderTemplate>
+                        <DataTemplate>
+                            <StackPanel Name="tbiStackPanelReportsLogs" Orientation="Horizontal" >
+                                <Rectangle Width="30" Height="30" Margin="4">
+                                    <Rectangle.Fill>
+                                        <VisualBrush Visual="{StaticResource logs}" />
+                                    </Rectangle.Fill>
+                                </Rectangle>
+                                <TextBlock Text="{Binding ResourceKeys[LID_TabItem_Logs], Source={StaticResource ScoutUILanguageResource}}" />
+                            </StackPanel>
+                        </DataTemplate>
+                    </TabItem.HeaderTemplate>
+
+                    <Grid Focusable="False" KeyboardNavigation.IsTabStop="False">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+                        
+                        <commonControls:CommonListBox x:Name="logsListBox" Grid.Column="0" 
+                                    ItemList="{Binding LogsNameList}" 
+                                    SelectedItem="{Binding LogViewModel.SelectedLog,Mode=TwoWay}"
+                                    Focusable="False" IsTabStop="False"/>
+
+                        <Border Grid.Column="2" BorderBrush="{DynamicResource GenericVeryLight}" 
+                                BorderThickness="1" CornerRadius="8"
+                                Focusable="False" KeyboardNavigation.IsTabStop="False"/>
+
+                        <Grid Grid.Column="2" Focusable="False" KeyboardNavigation.IsTabStop="False">
+                            <ContentControl Content="{Binding LogViewModel.LogContentControl}" 
+                                            HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                            Margin="5" Focusable="False" IsTabStop="False"/>
+                        </Grid>
+                    </Grid>
+                </TabItem>
+            </TabControl>
+        </Grid>
+    </controls:AdornerBehaviour>
+</UserControl>
+    

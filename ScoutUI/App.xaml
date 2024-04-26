@@ -1,0 +1,125 @@
+﻿<Application x:Class="ScoutUI.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:vm="clr-namespace:ScoutViewModels.ViewModels;assembly=ScoutViewModels"
+             xmlns:viewAdmin="clr-namespace:ScoutUI.Views.Admin.UserControls"
+             xmlns:viewCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:vmCommon="clr-namespace:ScoutViewModels.ViewModels.Common;assembly=ScoutViewModels"
+             xmlns:vmReport="clr-namespace:ScoutViewModels.ViewModels.Reports;assembly=ScoutViewModels"
+             xmlns:viewReport="clr-namespace:ScoutUI.Views.Reports.UserControls"
+             xmlns:viewQualityControls="clr-namespace:ScoutUI.Views.QualityControl.UserControls"
+             xmlns:vmQualityControls="clr-namespace:ScoutViewModels.ViewModels.QualityControl;assembly=ScoutViewModels"
+             xmlns:viewService="clr-namespace:ScoutUI.Views.Service"
+             xmlns:vmService="clr-namespace:ScoutViewModels.ViewModels.Service;assembly=ScoutViewModels"
+             xmlns:viewSettings="clr-namespace:ScoutUI.Views.Settings"
+             xmlns:viewReports="clr-namespace:ScoutUI.Views.Admin.Reports"
+             xmlns:vmReports="clr-namespace:ScoutViewModels.ViewModels.Reports;assembly=ScoutViewModels"
+             xmlns:vmCellType="clr-namespace:ScoutViewModels.ViewModels.CellTypes;assembly=ScoutViewModels"
+             xmlns:settingsPanelView="clr-namespace:ScoutUI.Views.SettingsPanel"
+             xmlns:home="clr-namespace:ScoutViewModels.ViewModels.Home;assembly=ScoutViewModels"
+             xmlns:viewHome="clr-namespace:ScoutUI.Views._1___Home"
+             xmlns:vmSettings="clr-namespace:ScoutViewModels.ViewModels.Tabs;assembly=ScoutViewModels"
+             xmlns:settingsPanel="clr-namespace:ScoutViewModels.ViewModels.Tabs.SettingsPanel;assembly=ScoutViewModels"
+             xmlns:reports="clr-namespace:ScoutUI.Views.Reports"
+             xmlns:reportViewModels="clr-namespace:ScoutViewModels.ViewModels.Reports.ReportViewModels;assembly=ScoutViewModels"
+             xmlns:concentrationSlope="clr-namespace:ScoutUI.Views.Service.ConcentrationSlope"
+             xmlns:vmService1="clr-namespace:ScoutViewModels.ViewModels.Service.ConcentrationSlope;assembly=ScoutViewModels"
+             ShutdownMode="OnExplicitShutdown">
+
+    <Application.Resources>
+
+        <ResourceDictionary>
+
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/ResourceDictionaries/ResourceLibrary.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type vm:SignInViewModel}">
+                <viewAdmin:SignInView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmCellType:CellTypeViewModel}">
+                <viewAdmin:CellTypeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type home:HomeViewModel}">
+                <viewHome:HomeView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vm:SettingsViewModel}">
+                <viewAdmin:SettingsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmCellType:CreateCellViewModel}">
+                <viewAdmin:CreateCellView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmService:ServiceViewModel}">
+                <viewService:ServiceMainView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmService:ConcentrationViewModel}">
+                <viewService:ConcentrationView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmService1:AcupConcentrationSlopeViewModel}">
+                <concentrationSlope:AcupConcentrationSlope/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmService:ManualControlsOpticsViewModel}">
+                <viewService:ManualControlsOpticsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmService:LowLevelViewModel}">
+                <viewService:LowLevelView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmService:MotorRegistrationViewModel}">
+                <viewService:MotorRegistrationView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmQualityControls:QualityControlViewModel}">
+                <viewQualityControls:QualityControlView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmSettings:SettingsTabViewModel}">
+                <viewSettings:SettingsTabView />
+            </DataTemplate>
+            
+            <DataTemplate DataType="{x:Type settingsPanel:LanguageSettingsViewModel}">
+                <settingsPanelView:LanguageSettingsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type settingsPanel:InstrumentSettingsViewModel}">
+                <settingsPanelView:InstrumentSettingsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type settingsPanel:RunOptionSettingsViewModel}">
+                <settingsPanelView:RunOptionSettingsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type settingsPanel:SignatureSettingsViewModel}">
+                <settingsPanelView:SignatureSettingsView />
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type vmCommon:CompleteSampleViewModel}">
+                <viewCommon:CompleteSampleView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReports:CompletedRunSummaryResultViewModel}">
+                <viewReports:Completed_Run_Summary_ResultView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReports:ResultsRunResultsViewModel}">
+                <viewReports:ResultsRunResultsView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReports:ResultsQualityControlViewModel}">
+                <viewReports:ResultsQualityControlUserControlView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReports:CellTypesResultsReportViewModel}">
+                <viewReports:CellTypeResultsReportView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReports:InstrumentStatusResultViewModel}">
+                <viewReports:InstrumentStatusResultView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReport:ReportsPanelViewModel}">
+                <viewReport:ReportsPanelView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReport:LogPanelViewModel}">
+                <reports:LogsPanelView />
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type reportViewModels:ScheduledExportsViewModel}">
+                <reports:ScheduledExportsView/>
+            </DataTemplate>
+            <DataTemplate DataType="{x:Type vmReport:AuditLogScheduledExportsViewModel}">
+                <reports:ScheduledExportsView/>
+            </DataTemplate>
+
+        </ResourceDictionary>
+
+    </Application.Resources>
+
+</Application>

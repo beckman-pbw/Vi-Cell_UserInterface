@@ -1,0 +1,48 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+                    xmlns:controls="clr-namespace:ScoutUI.Common.Controls">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/SolidColorBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="SampleProgress" TargetType="{x:Type controls:SampleProgressBar}">
+        <Setter Property="Background" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:SampleProgressBar }">
+                    <Grid>
+                        <Border Name="brdBack" VerticalAlignment="Center" BorderThickness="0" BorderBrush="Transparent" Height="18" Width="55" />
+                    </Grid>
+
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ProgressStatus" Value="{x:Static enum:SampleProgressStatus.IsInActive}">
+                            <Setter TargetName="brdBack" Property="Background" Value="Transparent" />
+                        </Trigger>
+
+                        <Trigger Property="ProgressStatus" Value="{x:Static enum:SampleProgressStatus.IsActive}">
+                            <Setter TargetName="brdBack" Property="Background" Value="{StaticResource Level1Background}" />
+                        </Trigger>
+
+                        <Trigger Property="ProgressStatus" Value="{x:Static enum:SampleProgressStatus.IsRunning}">
+                            <Setter TargetName="brdBack" Property="Background">
+                                <Setter.Value>
+                                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                                        <GradientStop Color="{StaticResource Level1BackgroundColor}" Offset="0" />
+                                        <GradientStop Color="{StaticResource DefaultBackgroundColor}" Offset="1" />
+                                    </LinearGradientBrush>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+
+                        <Trigger Property="ProgressStatus" Value="{x:Static enum:SampleProgressStatus.IsReady}">
+                            <Setter TargetName="brdBack" Property="Background" Value="{StaticResource Label_Foreground}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

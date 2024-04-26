@@ -1,0 +1,196 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.SampleResultsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        mc:Ignorable="d" WindowStyle="None" Background="Transparent" x:Name="SampleResultsDialogName"
+        Title="SampleResultsDialog" Height="760" Width="1250">
+
+    <Grid>
+        <controls:AdornerBehaviour Width="{Binding ActualWidth, ElementName=SampleResultsDialogName}"
+                                   Height="{Binding ActualHeight, ElementName=SampleResultsDialogName}"
+                                   IsAdornerVisible="{Binding IsLoadingIconVisible, Mode=TwoWay}"
+                                   Background="#FC111111" FontFamily="Segoe UI">
+
+            <controls:AdornerBehaviour.AdornerContent>
+                <ucCommon:BusyIndicator />
+            </controls:AdornerBehaviour.AdornerContent>
+
+            <Grid Background="{StaticResource Level3Background}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                <Grid Name="gdReview" Grid.Row="1" Background="Transparent">
+                    <Grid Background="Transparent">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="80" />
+                            <RowDefinition Height="10" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="10" />
+                        </Grid.RowDefinitions>
+
+                        <!-- Subtitle Bar -->
+                        <Grid Grid.Row="0" Margin="10,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="373"/>
+                                <ColumnDefinition Width="Auto"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <TextBlock FocusVisualStyle="{x:Null}" Text="{Binding ResourceKeys[LID_HB_DetailedReview], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource QueueHeaderTextBlock}" />
+
+                            <Button Style="{StaticResource RoundButtonDashBoardStyle}" Grid.Column="2" CommandParameter="Save"
+                            Visibility="{Binding IsTempReanalyzeSuccess, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                            HorizontalAlignment="Center" Command="{Binding SaveResultCommand}">
+                                <Image Source="{StaticResource SaveSource}" />
+                            </Button>
+
+                            <StackPanel Grid.Column="3" Margin="0,0,20,0" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Right">
+                                <Button Command="{Binding SelectDisplayPaneCommand}" CommandParameter="ImageSelected" 
+                                Style="{StaticResource RoundButtonDashBoardStyle}">
+                                    <Image Source="{StaticResource Picture-iconSource}" Width="32" Height="32" Margin="4"/>
+                                </Button>
+
+                                <Button Command="{Binding SelectDisplayPaneCommand}" CommandParameter="GraphSelected" 
+                                Style="{StaticResource RoundButtonDashBoardStyle}">
+                                    <Image Source="{StaticResource GraphSource}"/>
+                                </Button>
+
+                                <Separator Style="{DynamicResource VerticalSeparatorStyle}" />
+
+                                <Button Name="btnHands" Command="{Binding ReanalyzeSampleCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                                    <Image Source="{StaticResource CellSource}" />
+                                </Button>
+
+                                <Button Name="btnExportSample" Command="{Binding ExportSelectedSampleCommand}" 
+                                Style="{StaticResource RoundButtonDashBoardStyle}">
+                                    <Rectangle Width="27" Height="27" Margin="4" Fill="{StaticResource ExportIndividualIcon}" />
+                                </Button>
+
+                                <Button Command="{Binding SignatureCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                                    <Image Source="{StaticResource SignatureSource}" />
+                                </Button>
+
+                                <ComboBox x:Name="SignatureComboBox" HorizontalAlignment="Center" Background="Transparent"
+                                  Visibility="{Binding ElementName=SignatureComboBox, Path=ItemsSource, Converter={StaticResource CountToInverseVisibility}}"
+                                  VerticalAlignment="Center" ItemsSource="{Binding SampleRecord.SelectedResultSummary.SignatureList}"
+                                  SelectedItem="{Binding SampleRecord.SelectedResultSummary.SelectedSignature, Mode=TwoWay}"
+                                  ItemTemplate="{StaticResource cmbTemplate}" Height="70" Width="200" Style="{StaticResource SignatureComboBox}" />
+                            </StackPanel>
+                        </Grid>
+
+                        <!-- Sample Content Section -->
+                        <Grid Grid.Row="2" Margin="20,0,20,10" VerticalAlignment="Top">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="450*" />
+                                <ColumnDefinition Width="5" />
+                                <ColumnDefinition Width="680*" />
+                            </Grid.ColumnDefinitions>
+
+                            <!-- Results Pane -->
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="40" />
+                                    <RowDefinition Height="3*" />
+                                    <RowDefinition Height="1*" />
+                                </Grid.RowDefinitions>
+
+                                <!-- Header -->
+                                <Grid Grid.Row="0" Margin="0,0,0,2">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="140*" />
+                                        <ColumnDefinition Width="205*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <Border Grid.Column="0" Background="{StaticResource Level1Background}" CornerRadius="10" />
+
+                                    <Label Grid.Column="0" Name="lblSampleID" Style="{StaticResource ReviewBoldLabelStyle}"
+                                   Content="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}" />
+
+                                    <TextBox Grid.Column="1" Name="cmbProRun" Margin="5,0,20,1" Style="{StaticResource SettingTextBox}"
+                                     Text="{Binding SampleRecord.SampleIdentifier, PresentationTraceSources.TraceLevel=High}"
+                                     VerticalContentAlignment="Center" IsEnabled="False" />
+                                </Grid>
+
+                                <!-- Image Analysis Results Table -->
+                                <commonControls:SampleResultsGrid Grid.Row="1" Margin="0,0,20,0" SelectedSample="{Binding SampleRecord}"/>
+
+                                <!-- Analysis Parameters Table -->
+                                <ContentControl Grid.Row="2" Grid.Column="0" VerticalAlignment="Bottom" Margin="0,0,20,0" Content="{Binding}" 
+                                        ContentTemplate="{StaticResource ListResult}"/>
+
+                                <Popup Grid.Row="0" Name="PopupBubbleImages" AllowsTransparency="False" IsOpen="{Binding IsBubblePopupOpen, Mode=TwoWay}" 
+                               Placement="Bottom" StaysOpen="False" HorizontalAlignment="Left" PlacementTarget="{Binding ElementName=BtnBubble}" 
+                               Tag="{Binding BubbleStatusViewModel}" Margin="0,10,0,0">
+                                    <ucCommon:BubbleStatusView  DataContext="{Binding ElementName=PopupBubbleImages, Path=Tag}" />
+                                </Popup>
+
+                            </Grid>
+
+                            <!-- Image/Graph Pane -->
+                            <Grid Grid.Column="2">
+                                <Border CornerRadius="8">
+                                    <Border.Background>
+                                        <SolidColorBrush Color="{Binding Path=Color, Source={StaticResource Level2Background}}" />
+                                    </Border.Background>
+                                </Border>
+
+                                <Grid Visibility="{Binding DisplayPane, Converter={StaticResource DisplayPaneToVisibilityConverter}, ConverterParameter=Image}"
+                              Width="{Binding ElementName=ImageGrid, Path=ActualHeight}" x:Name="ImageGrid">
+
+                                    <ucCommon:ImageView IsHorizontalPaginationVisible="True" DataContext="{Binding}"
+                                                MinWidth="450" MinHeight="510"
+                                                HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                                                HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                                                AnnotatedDetails="{Binding AnnotatedBlobDetails}"
+                                                PopupEnable="{Binding EnableBlobPopup, Mode=TwoWay}"
+                                                AdjustState="{Binding AdjustState, Mode=TwoWay}"
+                                                ExpandCommand="{Binding ImageExpandCommand}"
+                                                PlaySlideShowCommand="{Binding PlaySlideShowCommand}"
+                                                PauseSlideShowCommand="{Binding PauseSlideShowCommand}"
+                                                SelectedImageType="{Binding SelectedImageType, Mode=TwoWay}"
+                                                ImageIndexList="{Binding SampleRecord.ImageIndexList}"
+                                                ImageList="{Binding SampleRecord.SampleImageList, Mode=TwoWay}"
+                                                IsPaginationButtonEnable="{Binding SampleRecord.IsSampleCompleted, UpdateSourceTrigger=PropertyChanged}"
+                                                SelectedImage="{Binding SampleRecord.SelectedSampleImageRecord, UpdateSourceTrigger=PropertyChanged}"
+                                                SelectedImageIndex="{Binding SelectedImageIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
+                                                SelectedRightClickImageType="{Binding ImageViewType, Mode=TwoWay}"/>
+                                </Grid>
+
+                                <Grid HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="GridNoImageBrush"
+                              Visibility="{Binding SampleRecord.ImageIndexList, Converter={StaticResource CountToVisibility}}">
+                                    <Border Background="{StaticResource NoImageBrush}" Height="80" Width="80" />
+                                </Grid>
+
+                                <Grid Visibility="{Binding DisplayPane, Converter={StaticResource DisplayPaneToVisibilityConverter}, ConverterParameter=Graph}" 
+                              VerticalAlignment="Top" Margin="0,0,0,10">
+
+                                    <ucCommon:BarGraph GraphList="{Binding GraphViewList}" 
+                                               SelectedGraph="{Binding Graph, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                               GraphName="{Binding Graph.GraphName, Mode=TwoWay}" Margin="10,0,0,0" 
+                                               HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" MinWidth="720" 
+                                               ExpandCommand="{Binding GraphExpandCommand}" 
+                                               IsMultiAxisEnable="{Binding Graph.IsMultiAxisEnable, Mode=TwoWay}"
+                                               XAxisName="{Binding Graph.XAxisName, Mode=TwoWay}" 
+                                               YAxisName="{Binding Graph.YAxisName, Mode=TwoWay}"
+                                               LegendTitle="{Binding Graph.LegendTitle, Mode=TwoWay}" 
+                                               PrimaryLegendName="{Binding Graph.PrimaryLegendName, Mode=TwoWay}"/>
+                                </Grid>
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </controls:AdornerBehaviour>
+    </Grid>
+</local:Dialog>

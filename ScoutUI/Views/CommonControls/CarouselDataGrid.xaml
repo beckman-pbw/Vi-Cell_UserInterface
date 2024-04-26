@@ -1,0 +1,148 @@
+﻿<UserControl x:Class="ScoutUI.Views.CommonControls.CarouselDataGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+             xmlns:dialogs="clr-namespace:ScoutUI.Views.Dialogs"
+             mc:Ignorable="d" d:DesignHeight="450" d:DesignWidth="900"
+             Focusable="False" IsTabStop="False">
+    <Grid Focusable="False" KeyboardNavigation.IsTabStop="False">
+        <DataGrid ItemsSource="{Binding DataContext, RelativeSource={RelativeSource Self}}" 
+                  EnableRowVirtualization="False" VerticalScrollBarVisibility="Auto"
+                  HorizontalScrollBarVisibility="Auto" Style="{StaticResource DataGridStyle_BPQC}"
+                  Focusable="False" IsTabStop="False">
+
+            <DataGrid.RowStyle>
+                <Style TargetType="{x:Type DataGridRow}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding IsChecked}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding IsEnabled}" Value="False">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </DataGrid.RowStyle>
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="50" IsReadOnly="True">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_Pos], Source={StaticResource ScoutUILanguageResource}}" 
+                                       HorizontalAlignment="Left" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Sample.SamplePosition}" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="150" IsReadOnly="False">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Margin="5,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Sample.SampleName, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Background="Transparent" BorderThickness="0" VerticalAlignment="Center"
+                                     helper:ControlValidationHelper.TrimText="True" helper:ControlValidationHelper.CharacterValidation="True"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="185" IsReadOnly="False">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_CellType], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Margin="5,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ucCommon:CellTypeBpQcComboBox Width="185" Height="30" Foreground="{DynamicResource GenericVeryDark}" ComboStyleType="Default"
+                                                           HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="16" Margin="1,0,0,0"
+                                                           SelectedCellTypeQualityControlGroupItem="{Binding Sample.QcOrCellType, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                           CellTypeBpQcCollection="{Binding Sample.QcAndCellTypes, UpdateSourceTrigger=PropertyChanged}"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="70" IsReadOnly="False">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_Dilution], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Margin="5,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Sample.Dilution, Mode=OneWay}"
+                                     helper:ControlValidationHelper.AllowOnlyNumeric="True" VerticalAlignment="Center"
+                                     Background="Transparent" BorderThickness="0" IsEnabled="False"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="100" IsReadOnly="False">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Margin="5,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <ComboBox ItemsSource="{Binding Sample.WashTypes, Converter={StaticResource EnumToDisplayWashListValueConverter}}" 
+                                      SelectedItem="{Binding Sample.WashType, Converter={StaticResource EnumToDisplayWashValueConverter}, UpdateSourceTrigger=PropertyChanged}"
+                                      IsEnabled="{Binding Path=Sample.IsFastModeEnabled}"
+                                      Style="{StaticResource LargeTextComboBox}" Height="30"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="140" IsReadOnly="False">
+                    <DataGridTemplateColumn.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Label_Tag], Source={StaticResource ScoutUILanguageResource}}" 
+                                       Margin="5,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.HeaderTemplate>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBox Text="{Binding Sample.SampleTag, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                     Background="Transparent" BorderThickness="0" VerticalAlignment="Center"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="40" IsReadOnly="True" >
+                    <DataGridTemplateColumn.Header>
+                        <Button Style="{StaticResource RoundButtonDashBoardStyle}" IsEnabled="False"
+                                Width="30" Height="30" Margin="0,0,0,4">
+                            <Rectangle Width="22" Height="22" Fill="{StaticResource SettingsCog}"/>
+                        </Button>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button Style="{StaticResource RoundButtonDashBoardStyle}" IsEnabled="True"
+                                    Command="{Binding DataContext.SampleAdvancedSettingsCommand, RelativeSource={RelativeSource AncestorType={x:Type dialogs:CreateSampleSetDialog}}}" 
+                                    CommandParameter="{Binding Sample}"
+                                    Width="30" Height="30" Margin="0,0,0,4">
+                                <Rectangle Width="22" Height="22" Fill="{StaticResource SettingsCog}"/>
+                            </Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,106 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+    <ProjectGuid>{D7BF8987-F021-48F5-A5A9-A7D9857D7448}</ProjectGuid>
+    <TargetFramework>net48</TargetFramework>
+    <AssemblyTitle>ScoutServicesTests</AssemblyTitle>
+    <Product>ScoutServicesTests</Product>
+    <Copyright>Copyright ©  2020</Copyright>
+    <OutputPath>bin\$(Configuration)</OutputPath>
+	<OutputType>Library</OutputType>
+	<AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+	<GenerateBindingRedirectsOutputType>false</GenerateBindingRedirectsOutputType>
+	  <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+	  <AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+	  <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+    <DebugType>full</DebugType>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+    <DebugType>pdbonly</DebugType>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+		xcopy /Y "$(SolutionDir)packages\nunit\3.13.0\lib\net45\nunit.framework.dll" "$(SolutionDir)packages\nunitlite\3.13.0\tools\net45\"
+		xcopy /Y "$(SolutionDir)packages\nunitlite\3.13.0\lib\net45\nunitlite.dll" "$(SolutionDir)packages\nunitlite\3.13.0\tools\net45\"
+		xcopy /Y "$(SolutionDir)target\dependencies\Hawkeye\*.dll" $(TargetDir)
+		xcopy /Y "$(SolutionDir)target\dependencies\lib\CellCounting_x64.dll" $(TargetDir)
+	</PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent />
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <PlatformTarget>x64</PlatformTarget>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Castle.Core" Version="4.4.1" />
+    <PackageReference Include="Grpc" Version="2.46.6" />
+    <PackageReference Include="Grpc.Core" Version="2.46.6" />
+    <PackageReference Include="Grpc.Core.Api" Version="2.46.6" />
+    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
+    <PackageReference Include="Ninject.Extensions.Factory" Version="3.3.3" />
+    <PackageReference Include="Ninject.Extensions.Logging" Version="3.3.0" />
+    <PackageReference Include="Ninject.Extensions.Logging.Log4net" Version="3.3.0" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit.ConsoleRunner" Version="3.12.0" />
+    <PackageReference Include="System.Memory" Version="4.5.4" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.5.0" />
+    <PackageReference Include="System.Reactive" Version="4.4.1" />
+    <PackageReference Include="System.Reactive.Core" Version="4.4.1" />
+    <PackageReference Include="System.Reactive.Interfaces" Version="4.4.1" />
+    <PackageReference Include="System.Threading.Tasks.Extensions" Version="4.5.4" />
+    <PackageReference Include="System.ValueTuple" Version="4.5.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="GrpcClient">
+      <HintPath>..\target\dependencies\lib\GrpcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="Moq">
+      <HintPath>..\target\dependencies\moq4-4.14.8-SNAPSHOT\Moq.dll</HintPath>
+    </Reference>
+    <Reference Include="netstandard" />
+    <Reference Include="Protos">
+      <HintPath>..\target\dependencies\lib\Protos.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Remove="obj\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+    <Compile Remove="obj\x64\Release\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\HawkeyeCoreAPI\HawkeyeCoreAPI.csproj" />
+    <ProjectReference Include="..\ScoutModels\ScoutModels.csproj" />
+    <ProjectReference Include="..\ScoutOpcUa\ScoutOpcUa.csproj" />
+    <ProjectReference Include="..\ScoutServices\ScoutServices.csproj" />
+    <ProjectReference Include="..\ScoutUtilities\ScoutUtilities.csproj" />
+    <ProjectReference Include="..\TestSupport\TestSupport.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="HawkeyeCore.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="TestResources\ViCellBLU.Server.Config.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>

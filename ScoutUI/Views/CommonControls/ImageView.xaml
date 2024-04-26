@@ -1,0 +1,439 @@
+<commonControls:BaseImageView x:Class="ScoutUI.Views.ucCommon.ImageView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:ScoutUI.Views.ucCommon"
+             x:Name="ImageViewControl" Focusable="False"
+             xmlns:converter="clr-namespace:ScoutUI.Common.Converters"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:visualizationToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:primitives="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls">
+
+    <UserControl.Resources>
+        <!--Outer menu items-->
+        <Style x:Key="MenuItemStyle" TargetType="{x:Type MenuItem}">
+            <Setter Property="Background"
+                    Value="Transparent" />
+            <Setter Property="Foreground"
+                    Value="{DynamicResource GenericVeryDark}" />
+            <Style.Triggers>
+                <Trigger Property="IsHighlighted"
+                         Value="True">
+                    <Setter Property="Background"
+                            Value="{DynamicResource GenericVeryDark}" />
+                </Trigger>
+                <Trigger Property="IsEnabled"
+                         Value="False">
+                    <Setter Property="Foreground"
+                            Value="{DynamicResource GenericVeryDark}" />
+                </Trigger>
+                <Trigger Property="IsMouseOver"
+                         Value="true">
+                    <Setter Property="Background"
+                            Value="{DynamicResource GenericVeryDark}" />
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        <!-- Outer menu -->
+        <Style TargetType="{x:Type ContextMenu}">
+            <Setter Property="OverridesDefaultStyle"
+                    Value="True" />
+            <Setter Property="SnapsToDevicePixels"
+                    Value="True" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ContextMenu}">
+
+                        <Border BorderThickness="1"
+                                x:Name="Border" BorderBrush="{DynamicResource GenericVeryDark}"
+                                Background="Transparent">
+                            <StackPanel ClipToBounds="True"
+                                        Orientation="Vertical"
+                                        IsItemsHost="True" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="true">
+                                <Setter TargetName="Border"
+                                        Property="Background"
+                                        Value="{DynamicResource GenericVeryLight}" />
+                                <Setter
+                                    Property="Foreground"
+                                    Value="{DynamicResource GenericVeryLight}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <!--SubmenuItem-->
+        <ControlTemplate x:Key="SubmenuItemTemplateKey"
+                         TargetType="{x:Type MenuItem}">
+            <Border Name="Border">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20"
+                                          SharedSizeGroup="Icon" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="Auto"
+                                          SharedSizeGroup="Shortcut" />
+                        <ColumnDefinition Width="13" />
+                    </Grid.ColumnDefinitions>
+                    <ContentPresenter Name="Icon"
+                                      Margin="6,0,6,0"
+                                      VerticalAlignment="Center"
+                                      ContentSource="Icon" />
+                    <ContentPresenter Name="HeaderHost"
+                                      Grid.Column="1"
+                                      ContentSource="Header"
+                                      RecognizesAccessKey="True" />
+                    <TextBlock x:Name="InputGestureText"
+                               Grid.Column="2"
+                               Text="{TemplateBinding InputGestureText}"
+                               Margin="5,2,0,2"
+                               DockPanel.Dock="Right" />
+                </Grid>
+            </Border>
+            <ControlTemplate.Triggers>
+
+                <Trigger Property="IsChecked"
+                         Value="true">
+                    <Setter TargetName="Icon"
+                            Property="Visibility"
+                            Value="Visible" />
+                </Trigger>
+                <Trigger Property="IsCheckable"
+                         Value="true">
+                    <Setter TargetName="Icon"
+                            Property="Visibility"
+                            Value="Visible" />
+                </Trigger>
+                <Trigger Property="IsHighlighted"
+                         Value="true">
+                    <Setter TargetName="Border"
+                            Property="Background"
+                            Value="{x:Null}" />
+                </Trigger>
+                <Trigger Property="IsEnabled"
+                         Value="false">
+                    <Setter Property="Foreground"
+                            Value="#0f3c5a" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ContextMenu  x:Key="SharedContextMenu" x:Shared="true">
+            <MenuItem Name="Histogram" Template="{DynamicResource SubmenuItemTemplateKey}"
+                                              Click="MenuItem_OnClick" Style="{StaticResource MenuItemStyle}">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Name="CheckMarkGreyLevelHistogram"
+                                                      Width="8"
+                                                      Height="8"
+                                                      Visibility="Hidden"
+                                                      SnapsToDevicePixels="False"
+                                                      Stroke="{x:Null}"
+                                                      StrokeThickness="2"
+                                                      Data="M122.666,260.33355 C122.666,260.33355 124.333,298.33333 159.99966,297.66667 195.66633,297 196.66633,260 196.66633,260 196.66633,260 196.33267,223.33308 160.33283,222.66641 124.33299,221.99974 122.666,260.33355 122.666,260.33355 z"
+                                                      Stretch="Fill" Fill="{DynamicResource GenericVeryDark}" />
+                        <Label Margin="5,0,0,0"
+                                                       Content="{Binding ResourceKeys[LID_ContextMenu_GreyLevelHistogram], Source={StaticResource ScoutUILanguageResource}}" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Name="ImageActualSize" 
+                                              Template="{DynamicResource SubmenuItemTemplateKey}"
+                                              Click="MenuItem_OnClick" Style="{StaticResource MenuItemStyle}">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Name="CheckMarkActualSize"
+                                                    Width="8"
+                                                    Height="8"
+                                                    Visibility="Hidden"
+                                                    SnapsToDevicePixels="False"
+                                                    Stroke="{x:Null}"
+                                                    StrokeThickness="2"
+                                                    Data="M122.666,260.33355 C122.666,260.33355 124.333,298.33333 159.99966,297.66667 195.66633,297 196.66633,260 196.66633,260 196.66633,260 196.33267,223.33308 160.33283,222.66641 124.33299,221.99974 122.666,260.33355 122.666,260.33355 z"
+                                                    Stretch="Fill" Fill="{DynamicResource GenericVeryDark}" />
+                        <Label Margin="5,0,0,0"
+                                                       Content="{Binding ResourceKeys[LID_ContextMenu_ImageActualSize], Source={StaticResource ScoutUILanguageResource}}" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+            <MenuItem Name="ImageFitSize" 
+                                              Click="MenuItem_OnClick"
+                                              Template="{DynamicResource SubmenuItemTemplateKey}"
+                                              Style="{StaticResource MenuItemStyle}">
+                <MenuItem.Header>
+                    <StackPanel Orientation="Horizontal">
+                        <Path Name="CheckMarkFitToWindow"
+                                                    Width="8"
+                                                    Height="8"
+                                                    Visibility="Hidden"
+                                                    SnapsToDevicePixels="False"
+                                                    Stroke="{x:Null}"
+                                                    StrokeThickness="2"
+                                                    Data="M122.666,260.33355 C122.666,260.33355 124.333,298.33333 159.99966,297.66667 195.66633,297 196.66633,260 196.66633,260 196.66633,260 196.33267,223.33308 160.33283,222.66641 124.33299,221.99974 122.666,260.33355 122.666,260.33355 z"
+                                                    Stretch="Fill" Fill="{DynamicResource GenericVeryDark}" />
+                        <Label Margin="5,0,0,0"
+                                                       Content="{Binding ResourceKeys[LID_ContextMenu_ImageFitToWindow], Source={StaticResource ScoutUILanguageResource}}" />
+                    </StackPanel>
+                </MenuItem.Header>
+            </MenuItem>
+        </ContextMenu>
+    </UserControl.Resources>
+
+    <Grid Height="{Binding ActualHeight, ElementName=ImageViewControl }"
+          Width="{Binding ActualWidth , ElementName=ImageViewControl}" Focusable="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="540*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="20" />
+            <ColumnDefinition Width="540*" />
+            <ColumnDefinition Width="20" />
+        </Grid.ColumnDefinitions>
+
+        <Grid Name="GridChartControl" Grid.Column="1" Grid.Row="1" Focusable="False"
+              Visibility="{Binding ElementName=ImageViewControl,Path=IsChartControlVisible,Converter={StaticResource BooleanToVisibilityConverter}}">
+            <chartingToolkit:Chart x:Name="chartHisto" Background="Transparent" BorderThickness="0"
+                                   ContextMenu="{DynamicResource SharedContextMenu}">
+
+                <chartingToolkit:Chart.Template>
+                    <ControlTemplate TargetType="chartingToolkit:Chart">
+                        <Border Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" Padding="{TemplateBinding Padding}">
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+
+                                <visualizationToolkit:Title Content="{TemplateBinding Title}"
+                                                            Style="{TemplateBinding TitleStyle}" />
+
+                                <!-- Use a nested Grid to avoid possible clipping behavior resulting from ColumnSpan+Width=Auto -->
+                                <Grid Grid.Row="1" Margin="0,15,0,15">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="Auto" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <visualizationToolkit:Legend x:Name="Legend"
+                                                                 TitleStyle="{TemplateBinding TitleStyle}"
+                                                                 Style="{TemplateBinding LegendStyle}" Grid.Column="1" />
+                                    <primitives:EdgePanel Grid.Column="0" x:Name="ChartArea"
+                                                          Style="{TemplateBinding ChartAreaStyle}">
+                                        <Grid Canvas.ZIndex="-1" Style="{TemplateBinding PlotAreaStyle}" />
+                                        <Border Canvas.ZIndex="10" BorderBrush="{DynamicResource GenericVeryDark}" BorderThickness="2" />
+                                    </primitives:EdgePanel>
+                                </Grid>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </chartingToolkit:Chart.Template>
+                <chartingToolkit:Chart.PlotAreaStyle>
+                    <Style TargetType="Grid">
+                        <Setter Property="Background" Value="Transparent" />
+                    </Style>
+                </chartingToolkit:Chart.PlotAreaStyle>
+                <chartingToolkit:Chart.LegendStyle>
+                    <Style TargetType="visualizationToolkit:Legend">
+                        <Setter Property="Width" Value="0" />
+                    </Style>
+                </chartingToolkit:Chart.LegendStyle>
+                <chartingToolkit:Chart.Series>
+                    <chartingToolkit:LineSeries DependentValuePath="Pixel" IndependentValuePath="GrayLevel"
+                                                Title="Example" x:Name="lineChart">
+                        <chartingToolkit:LineSeries.LegendItemStyle>
+                            <Style TargetType="chartingToolkit:LegendItem">
+                                <Setter Property="Visibility" Value="Collapsed" />
+                                <Setter Property="Width" Value="0" />
+                                <Setter Property="Height" Value="0" />
+                                <Setter Property="Background" Value="Transparent" />
+                                <Setter Property="BorderBrush" Value="Transparent" />
+                                <Setter Property="BorderThickness" Value="0" />
+                            </Style>
+                        </chartingToolkit:LineSeries.LegendItemStyle>
+
+                        <chartingToolkit:LineSeries.DependentRangeAxis>
+                            <chartingToolkit:LinearAxis Orientation="Y" FontStyle="Normal" Minimum="0"
+                                                        ShowGridLines="True" Foreground="{DynamicResource GenericVeryLight}">
+                                <chartingToolkit:LinearAxis.Title>
+                                    <TextBlock Text="{Binding ResourceKeys[LID_GraphLabel_Pixel], Source={StaticResource ScoutUILanguageResource}}" FontStyle="Normal" />
+                                </chartingToolkit:LinearAxis.Title>
+                                <chartingToolkit:LinearAxis.GridLineStyle>
+                                    <Style TargetType="Line">
+                                        <Setter Property="Stroke" Value="#FF646464" />
+                                        <Setter Property="StrokeDashArray" Value="2,4" />
+                                    </Style>
+                                </chartingToolkit:LinearAxis.GridLineStyle>
+                            </chartingToolkit:LinearAxis>
+                        </chartingToolkit:LineSeries.DependentRangeAxis>
+                        <chartingToolkit:LineSeries.IndependentAxis>
+                            <chartingToolkit:LinearAxis Orientation="X" Minimum="0" FontStyle="Normal"
+                                                        ShowGridLines="True" Foreground="{DynamicResource GenericVeryLight}">
+                                <chartingToolkit:LinearAxis.Title>
+                                    <TextBlock Text="{Binding ResourceKeys[LID_GraphLabel_GrayLevel], Source={StaticResource ScoutUILanguageResource}}" FontStyle="Normal" />
+                                </chartingToolkit:LinearAxis.Title>
+                                <chartingToolkit:LinearAxis.GridLineStyle>
+                                    <Style TargetType="Line">
+                                        <Setter Property="Stroke" Value="#FF646464" />
+                                        <Setter Property="StrokeDashArray" Value="2,4" />
+                                    </Style>
+                                </chartingToolkit:LinearAxis.GridLineStyle>
+                            </chartingToolkit:LinearAxis>
+                        </chartingToolkit:LineSeries.IndependentAxis>
+                        <chartingToolkit:LineSeries.DataPointStyle>
+                            <Style TargetType="chartingToolkit:LineDataPoint">
+                                <Setter Property="Opacity" Value="0" />
+                                <Setter Property="Background" Value="{StaticResource Main_Background}" />
+                            </Style>
+                        </chartingToolkit:LineSeries.DataPointStyle>
+                    </chartingToolkit:LineSeries>
+                </chartingToolkit:Chart.Series>
+            </chartingToolkit:Chart>
+        </Grid>
+        <Grid Grid.Column="1" Grid.Row="1" Name="GridImageControl" Focusable="False">
+            <Viewbox Focusable="False">
+                <Grid Focusable="False">
+                    <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Hidden"
+                                  ScrollChanged="ImageScrollViewer_OnScrollChanged"
+                                  Height="600" Width="600"
+                                  PanningMode="Both"
+                                  Name="ImageScrollViewer">
+                        <Canvas Name="CanvasImage" ClipToBounds="True"
+                            Height="585" Width="585" Focusable="False">
+                            <Image Name="BindedImage" Focusable="False"
+                                   MouseLeave="OnLostFocus"
+                                   Height="585" Width="585"
+                                   Stretch="UniformToFill"
+                                   RenderOptions.BitmapScalingMode="Fant"
+                                   ContextMenu="{DynamicResource SharedContextMenu}">
+                                
+                                <Image.InputBindings>
+                                    <MouseBinding Command="{Binding Path=OnTapImageCommand, ElementName=ImageViewControl}"
+                                                  MouseAction="LeftClick" />
+                                </Image.InputBindings>
+                            </Image>
+                            <Popup x:Name="AnnotatedPopup" 
+                                   StaysOpen="True"
+                                   AllowsTransparency="False"
+                                   Focusable="True"
+                                   Placement="Relative"
+                                   PlacementTarget="{Binding ElementName=BindedImage}">
+                                <ListView Background="LightGoldenrodYellow"
+                                          BorderBrush="{DynamicResource GenericVeryDark}"
+                                          BorderThickness="1"
+                                          ItemsSource="{Binding Path=AnnotatedDetails,ElementName=ImageViewControl}">
+                                    <ListView.ItemContainerStyle>
+                                        <Style TargetType="{x:Type ListViewItem}">
+                                            <Setter Property="Focusable" Value="False"/>
+                                        </Style>
+                                    </ListView.ItemContainerStyle>
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid Margin="0">
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="275"/>
+                                                    <ColumnDefinition Width="10"/>
+                                                    <ColumnDefinition/>
+                                                    <ColumnDefinition Width="10"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" Style="{StaticResource ReviewItemLabelStyle}"  HorizontalAlignment="Left" FontSize="18" Padding="0" Margin="0" BorderThickness="0" Content="{Binding Key}"/>
+                                                <Label Grid.Column="2" Style="{StaticResource ReviewItemLabelStyle}"  HorizontalAlignment="Left" FontSize="18" Padding="0" Margin="0" BorderThickness="0" Content="{Binding Value}"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Popup>
+                            <Rectangle x:Name="Rectangle"
+                                       Width="50"
+                                       Height="50"
+                                       Stroke="LightGoldenrodYellow"
+                                       Visibility="Collapsed"
+                                       StrokeThickness="5"/>
+                        </Canvas>
+                    </ScrollViewer>
+                    <Label Name="LblBubble"  Background="Yellow" FontSize="20" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0" />
+                </Grid>
+            </Viewbox>
+        </Grid>
+        <Viewbox Grid.Row="3" Grid.Column="1" x:Name="viewBox" Width="420">
+
+            <Grid x:Name="GridHorizontalControls" Height="60" HorizontalAlignment="Left"
+                  Visibility="{Binding ElementName=ImageViewControl,Path=ImageViewPageControlsVisibility}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="60" />
+                    <ColumnDefinition Width="Auto" />
+                    <ColumnDefinition Width="60" />
+                </Grid.ColumnDefinitions>
+                
+                <Grid Grid.Column="0" IsEnabled="{Binding ElementName=ImageViewControl, Path=IsPaginationButtonEnable}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <ComboBox x:Name="ComboBoxImageType" Grid.Column="0" VerticalContentAlignment="Center"
+                              Visibility="{Binding Path=IsImageTypeAvailable,ElementName=ImageViewControl,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}"
+                              IsEnabled="{Binding Path=IsImageTypeEnable,ElementName=ImageViewControl,Mode=TwoWay}"
+                              Style="{StaticResource CellTypeComboBoxLoginPageStyle}"
+                              SelectedItem="{Binding Path=SelectedImageType,ElementName=ImageViewControl,Mode=TwoWay}"
+                              FontSize="18"
+                              HorizontalAlignment="Left" Width="120" Height="48" >
+                        <ComboBox.ItemTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Converter={StaticResource EnumToLocalizedDescriptionConverter}}" />
+                            </DataTemplate>
+                        </ComboBox.ItemTemplate>
+                    </ComboBox>
+
+                    <local:HorizontalPaginationView x:Name="UcHorizontalPaginationView"
+                                                      ImageIndexList="{Binding Path=ImageIndexList,ElementName=ImageViewControl}"
+                                                      SelectedImageIndex="{Binding Path=SelectedImageIndex,Mode=TwoWay,ElementName=ImageViewControl,UpdateSourceTrigger=PropertyChanged}"
+                                                      CommandParamNext="Right"
+                                                      CommandParamPrevious="Left"
+                                                      TraversalCommand="{Binding Path=ImageTraversalCommand,ElementName=ImageViewControl}"
+                                                      TotalImageCount="{Binding ElementName=ImageViewControl,Path=TotalImageCount }"
+                                                      HorizontalAlignment="Center" Grid.Column="1" />
+                </Grid>
+                
+                <Button Name="BtnImageFitToWindow" Grid.Column="1" Click="BtnImageFitToWindow_OnClick"
+                        Height="42" Width="42"
+                        HorizontalAlignment="Center"
+                        Style="{StaticResource RoundButtonDashBoardStyle}">
+                    <Image Source="{StaticResource Back-arrowSource}" />
+                </Button>
+
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" Margin="0,0,80,0"
+                            x:Name="SlideShowControlsStackPanel" 
+                            Visibility="{Binding Path=ShowSlideShowButtons, ElementName=ImageViewControl, Converter={StaticResource BooleanToVisibilityConverter}}">
+                    <Button Style="{StaticResource RoundButtonDashBoardStyle}"
+                            Command="{Binding Path=PlaySlideShowCommand, ElementName=ImageViewControl}">
+                        <Image Source="{StaticResource PlaySource}" Margin="4,0,0,0"/>
+                    </Button>
+                    <Button Style="{StaticResource RoundButtonDashBoardStyle}" Margin="20,0,0,0"
+                            Command="{Binding Path=PauseSlideShowCommand, ElementName=ImageViewControl}">
+                        <Image Source="{StaticResource PauseSource}" Height="40" Width="40"/>
+                    </Button>
+                </StackPanel>
+                
+                <Button Name="BtnExpand"
+                        IsEnabled="{Binding ElementName=ImageViewControl,Path=IsPaginationButtonEnable}"
+                        Command="{Binding Path=ExpandCommand,ElementName=ImageViewControl}"
+                        Height="42" Width="42"
+                        Margin="0,0,15,0"
+                        Grid.Row="0" HorizontalAlignment="Right" Grid.Column="3"
+                        Style="{StaticResource RoundButtonDashBoardStyle}">
+                    <Image Source="{StaticResource Expand-newSource}" />
+                </Button>
+
+                
+            </Grid>
+        </Viewbox>
+    </Grid>
+</commonControls:BaseImageView>

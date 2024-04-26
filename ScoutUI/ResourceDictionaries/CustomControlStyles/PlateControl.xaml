@@ -1,0 +1,166 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:customControls="clr-namespace:ScoutUI.Common.Controls">
+
+    <Style TargetType="{x:Type customControls:PlateControl}">
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type customControls:PlateControl}" x:Name="PlateTemplate">
+                    <Viewbox Margin="10">
+                        <Grid>
+                            <!-- Well Plate Background -->
+                            <Rectangle Height="465" Width="645" Stroke="{DynamicResource Level3Background}" StrokeThickness="3" Margin="50,50,0,0" 
+                                       Fill="{DynamicResource Level4Background}" />
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="50"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="50"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+
+                                <!-- Select All Wells Button -->
+                                <ToggleButton Grid.Row="0" Grid.Column="0" DataContext="{Binding SelectAllHeaderButton}"
+                                    Command="{Binding DataContext.OnAllButtonClicked, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}"
+                                    IsChecked="{Binding DataContext.AllWellsChecked, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}" 
+                                    IsEnabled="{Binding DataContext.AllWellsButtonEnabled, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}">
+                                    <ToggleButton.Template>
+                                        <ControlTemplate>
+                                            <Grid>
+                                                <Ellipse x:Name="EllipseCircle" StrokeThickness="3" Width="50" 
+                                                         Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                                                         Fill="{Binding FillColor}" Stroke="{Binding StrokeColor}"/>
+                                                <Path Data="M10.5,37.75 L37.75,37.5 38,10.5 M0.5,27.75 L27.75,27.5 28,0.5" 
+                                                      Fill="Transparent" HorizontalAlignment="Right" Margin="0,0,6,6" 
+                                                      StrokeThickness="3" Stretch="Fill" Stroke="{DynamicResource GenericVeryLight}" 
+                                                      VerticalAlignment="Bottom" Height="20" Width="20"/>
+                                                <TextBlock Text="{Binding}" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                                           FontWeight="Bold" FontSize="22"/>
+                                            </Grid>
+                                        </ControlTemplate>
+                                    </ToggleButton.Template>
+                                </ToggleButton>
+
+                                <!-- Well Row Headers -->
+                                <ItemsControl Grid.Row="1" Grid.Column="0" Height="450" Width="50" Focusable="False" IsTabStop="False"
+                                              ItemsSource="{Binding SampleGridRowHeaderButtons, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}">
+
+                                    <!-- Controls the layout of the Buttons-->
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <customControls:ItemListPanelControl Padding="0" NumberOfItems="8" VerticalLayout="True"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <ToggleButton Command="{Binding DataContext.OnHeaderClicked, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}"
+                                                      CommandParameter="{Binding DataContext, RelativeSource={RelativeSource Self}}"
+                                                      IsChecked="{Binding DataContext.IsChecked}" IsEnabled="{Binding DataContext.IsEnabled}">
+                                                <ToggleButton.Template>
+                                                    <ControlTemplate>
+                                                        <Grid>
+                                                            <Grid.ColumnDefinitions>
+                                                                <ColumnDefinition Width="*"/>
+                                                                <ColumnDefinition Width="15"/>
+                                                            </Grid.ColumnDefinitions>
+
+                                                            <Ellipse Grid.Column="0" Grid.ColumnSpan="2" x:Name="EllipseCircle" StrokeThickness="3" Width="50" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                                                                 Fill="{Binding DataContext.FillColor, RelativeSource={RelativeSource Self}}" 
+                                                                 Stroke="{Binding DataContext.StrokeColor, RelativeSource={RelativeSource Self}}"/>
+                                                            <TextBlock Grid.Column="0" Text="{Binding DataContext, RelativeSource={RelativeSource Self}}" Foreground="{DynamicResource Label_Foreground}"
+                                                                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="22"/>
+                                                            <Path Grid.Column="1" Data="M76.25,27.5 L96.5,44.75 75.5,63" Fill="Transparent" HorizontalAlignment="Center" 
+                                                                  StrokeThickness="3" Stretch="Fill" Stroke="{DynamicResource GenericVeryLight}" 
+                                                                  VerticalAlignment="Center" Height="25" />
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </ToggleButton.Template>
+                                            </ToggleButton>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <!-- Well Column Headers -->
+                                <ItemsControl Grid.Row="0" Grid.Column="1" Height="50" Width="630" Focusable="False" IsTabStop="False"
+                                    ItemsSource="{Binding SampleGridColumnHeaderButtons, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}">
+
+                                    <!-- Controls the layout of the Buttons-->
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <customControls:ItemListPanelControl Padding="0" NumberOfItems="12" VerticalLayout="False"/>
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <ToggleButton Command="{Binding DataContext.OnHeaderClicked, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}"
+                                                      CommandParameter="{Binding DataContext, RelativeSource={RelativeSource Self}}"
+                                                      IsChecked="{Binding DataContext.IsChecked}" IsEnabled="{Binding DataContext.IsEnabled}">
+                                                <ToggleButton.Template>
+                                                    <ControlTemplate>
+                                                        <Grid>
+                                                            <Grid.RowDefinitions>
+                                                                <RowDefinition Height="*"/>
+                                                                <RowDefinition Height="15"/>
+                                                            </Grid.RowDefinitions>
+                                                            <Ellipse Grid.Row="0" Grid.RowSpan="2" x:Name="EllipseCircle" StrokeThickness="3" Width="50" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                                                                 Fill="{Binding DataContext.FillColor, RelativeSource={RelativeSource Self}}" 
+                                                                 Stroke="{Binding DataContext.StrokeColor, RelativeSource={RelativeSource Self}}"/>
+                                                            <TextBlock Grid.Row="0" Text="{Binding DataContext, RelativeSource={RelativeSource Self}}" Foreground="{DynamicResource Label_Foreground}"
+                                                                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="Bold" FontSize="22"/>
+                                                            <Path Grid.Row="1" Data="M51.5,99.25 L70.75,119.5 88,98.75" Fill="Transparent" HorizontalAlignment="Center" 
+                                                                  StrokeThickness="3" Stretch="Fill" Stroke="{DynamicResource GenericVeryLight}" 
+                                                                  VerticalAlignment="Center" Width="25" />
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </ToggleButton.Template>
+                                            </ToggleButton>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+
+                                <!-- Sample Well Buttons -->
+                                <ItemsControl Grid.Row="1" Grid.Column="1" Height="450" Width="630" Focusable="False" IsTabStop="False"
+                                              ItemsSource="{Binding ItemsSource, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}" >
+
+                                    <!-- Controls the layout of the Sample Well Buttons-->
+                                    <ItemsControl.ItemsPanel>
+                                        <ItemsPanelTemplate>
+                                            <customControls:ItemGridPanelControl Padding="0" />
+                                        </ItemsPanelTemplate>
+                                    </ItemsControl.ItemsPanel>
+
+                                    <!-- Each Sample Well Button-->
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <ToggleButton Command="{Binding DataContext.OnClicked, RelativeSource={RelativeSource AncestorType={x:Type customControls:PlateControl}}}"
+                                                          CommandParameter="{Binding DataContext, RelativeSource={RelativeSource Self}}"
+                                                          IsChecked="{Binding DataContext.IsChecked}" IsEnabled="{Binding DataContext.IsEnabled}">
+                                                <ToggleButton.Template>
+                                                    <ControlTemplate>
+                                                        <Grid>
+                                                            <Ellipse x:Name="EllipseCircle" StrokeThickness="3" Width="50" Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}"
+                                                                     Fill="{Binding DataContext.FillColor, RelativeSource={RelativeSource Self}}" 
+                                                                     Stroke="{Binding DataContext.StrokeColor, RelativeSource={RelativeSource Self}}"/>
+                                                            <TextBlock Text="{Binding DataContext, RelativeSource={RelativeSource Self}}" Margin="2,0,2,2"
+                                                                       HorizontalAlignment="Center" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="22"/>
+                                                        </Grid>
+                                                    </ControlTemplate>
+                                                </ToggleButton.Template>
+                                            </ToggleButton>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </Grid>
+                    </Viewbox>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,30 @@
+﻿<UserControl x:Class="ScoutUI.Views.CommonControls.CommonListBox"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+             x:Name="ListControl">
+
+    <Border CornerRadius="10" Background="{DynamicResource GenericVeryLight}" Width="280">
+        <ListView Name="ListViewControl" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.PanningMode="Both" helper:ControlValidationHelper.ControlScroll="True" SelectionMode="Single"
+                  ItemsSource="{Binding Path=ItemList, ElementName=ListControl}" SelectedItem="{Binding Path=SelectedItem, ElementName=ListControl}"
+                  ItemContainerStyle="{StaticResource CommonListBoxItemStyle}" 
+                  Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{DynamicResource GenericVeryLight}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock FontSize="18" x:Name="lblContent" Width="250" Foreground="{DynamicResource GenericVeryDark}" TextTrimming="CharacterEllipsis" Text="{Binding ListItemLabel}"/>
+
+                    <DataTemplate.Triggers>
+                        <DataTrigger Binding="{Binding IsEnabled}" Value="false">
+                            <Setter TargetName="lblContent" Property="Foreground" Value="{DynamicResource GenericMedium}" />
+                        </DataTrigger>
+
+                        <DataTrigger Binding="{Binding IsUserDefineCellType}" Value="false">
+                            <Setter TargetName="lblContent" Property="Foreground" Value="{DynamicResource GenericMedium}" />
+                        </DataTrigger>
+                    </DataTemplate.Triggers>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </Border>
+</UserControl>

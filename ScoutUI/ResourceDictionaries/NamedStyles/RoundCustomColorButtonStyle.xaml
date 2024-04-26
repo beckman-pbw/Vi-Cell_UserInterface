@@ -1,0 +1,50 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/SolidColorBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="RoundCustomColorButtonStyle" TargetType="Button">
+        <Setter Property="Foreground" Value="{StaticResource Button_Enabled_Foreground}" />
+        <Setter Property="Background" Value="{StaticResource Button_Enabled_Background}" />
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Width" Value="80" />
+        <Setter Property="Margin" Value="5" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+
+                    <Border Name="StrokeBorder" Background="{TemplateBinding BorderBrush}" CornerRadius="20">
+                        <Border Name="brdBack" Tag="{TemplateBinding Tag}" Background="{TemplateBinding Background}" 
+                                BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="0" CornerRadius="20"
+                                Height="46" Width="76" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                Margin="1,0,0,0">
+                            <ContentPresenter Name="IconName" HorizontalAlignment="Center" RecognizesAccessKey="True" 
+                                              VerticalAlignment="Center">
+                                <ContentPresenter.RenderTransform>
+                                    <TransformGroup>
+                                        <TranslateTransform x:Name="Position" />
+                                    </TransformGroup>
+                                </ContentPresenter.RenderTransform>
+                            </ContentPresenter>
+                        </Border>
+                    </Border>
+                    
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter TargetName="brdBack" Property="Background" Value="{StaticResource Button_Disabled_Background}" />
+                            <Setter Property="Background" Value="{StaticResource Button_Disabled_Background}" />
+                        </Trigger>
+
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter TargetName="brdBack" Property="Opacity" Value="0.5" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

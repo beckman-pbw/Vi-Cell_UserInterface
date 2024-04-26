@@ -1,0 +1,70 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DrawingBrush x:Key="ColumnWiseBrushIcon" Viewbox="0,0,28.25,28.75" ViewboxUnits="Absolute">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <GeometryDrawing Brush="{DynamicResource SampleWell_UsedInCurrentSet_Color}" Geometry="M8.5,4.25 C8.5,6.5972102 6.5972102,8.5 4.25,8.5 C1.9027898,8.5 0,6.5972102 0,4.25 C0,1.9027898 1.9027898,0 4.25,0 C6.5972102,0 8.5,1.9027898 8.5,4.25 z"/>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,0,10.25"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource SampleWell_UsedInCurrentSet_Color}" Geometry="M8.5,4.25 C8.5,6.5972102 6.5972102,8.5 4.25,8.5 C1.9027898,8.5 0,6.5972102 0,4.25 C0,1.9027898 1.9027898,0 4.25,0 C6.5972102,0 8.5,1.9027898 8.5,4.25 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,0,20.25"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource SampleWell_UsedInCurrentSet_Color}" Geometry="M8.5,4.25 C8.5,6.5972102 6.5972102,8.5 4.25,8.5 C1.9027898,8.5 0,6.5972102 0,4.25 C0,1.9027898 1.9027898,0 4.25,0 C6.5972102,0 8.5,1.9027898 8.5,4.25 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,9.75,0"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource SampleWell_Available_Color}" Geometry="M8.5,4.25 C8.5,6.5972102 6.5972102,8.5 4.25,8.5 C1.9027898,8.5 0,6.5972102 0,4.25 C0,1.9027898 1.9027898,0 4.25,0 C6.5972102,0 8.5,1.9027898 8.5,4.25 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,19.75,0"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource SampleWell_Available_Color}" Geometry="M8.5,4.25 C8.5,6.5972102 6.5972102,8.5 4.25,8.5 C1.9027898,8.5 0,6.5972102 0,4.25 C0,1.9027898 1.9027898,0 4.25,0 C6.5972102,0 8.5,1.9027898 8.5,4.25 z"/>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,10.334,22.583"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M175.75,253 L179.00037,256.2042 182.25075,252.83331">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="0.846056526137647,0,0,0.692400771340885,-148.194434468691,-174.561980933757"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource SampleWell_Available_Color}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="0.999864562689357,-0.0164577118099768,0.0164577118099768,0.999864562689357,12.8835064467132,11.5112454400712"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing>
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M178.58333,241.75 L178.33366,254.91667">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="1.00134457890233,0,0,1.00002493014761,-178.07344762254,-241.256026863184"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource SampleWell_Available_Color}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="1"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

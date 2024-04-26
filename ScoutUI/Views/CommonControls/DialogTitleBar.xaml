@@ -1,0 +1,55 @@
+<UserControl x:Class="ScoutUI.Views.CommonControls.DialogTitleBar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" d:DesignHeight="100" d:DesignWidth="800">
+    <Grid Background="{StaticResource Level1Background}">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="30" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Border HorizontalAlignment="Left" Grid.Column="1" Width="40" Height="40" Panel.ZIndex="201" 
+                Visibility="{Binding DialogIconPath, Converter={StaticResource StringToVisibilityConverter}}">
+            
+            <Border.Style>
+                <Style TargetType="Border">
+                    <!-- Set the default values here -->
+                    <Setter Property="CornerRadius" Value="1000" />
+                    <Setter Property="Background" Value="#D8E9D7" />
+                    <!-- Set the condition values here -->
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding DialogIconIsSquare}" Value="True">
+                            <Setter Property="CornerRadius" Value="0" />
+                            <Setter Property="Background" Value="{x:Null}" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Border.Style>
+
+            <Image Source="{Binding DialogIconPath}" Width="40" Height="40" />
+        </Border>
+
+        <Border HorizontalAlignment="Left" Grid.Column="1" Width="40" Height="40" Panel.ZIndex="201"
+                Visibility="{Binding DialogIconDrawBrush, Converter={StaticResource ObjectToVisibilityConverter}}">
+            <Rectangle Width="40" Height="40" Fill="{Binding DialogIconDrawBrush}"/>
+        </Border>
+
+        <Label Grid.Column="2" Content="{Binding DialogTitle, FallbackValue=DialogTitle}" Style="{StaticResource PopLabelHeader}" />
+
+        <StackPanel Grid.Column="3" HorizontalAlignment="Right" VerticalAlignment="Center" Width="Auto" Height="Auto" Orientation="Horizontal" Margin="0,0,10,0">
+            <Label Content="{Binding ExtraTitleBarText, FallbackValue=ExtraText}" Style="{StaticResource PopLabelHeader}"
+                   Visibility="{Binding ExtraTitleBarText, Converter={StaticResource StringToVisibilityConverter}}" Margin="0,0,25,0"/>
+
+            <Button Width="{Binding CloseButtonWidth, FallbackValue=50}" Height="{Binding CloseButtonHeight, FallbackValue=50}"
+                    Command="{Binding CancelCommand}" Background="{x:Null}" Style="{StaticResource AdminRoundButton}">
+                <Image Source="{StaticResource close_1Source}" Height="{Binding CloseButtonHeight, FallbackValue=50}" Width="{Binding CloseButtonWidth, FallbackValue=50}"/>
+            </Button>
+        </StackPanel>
+        
+    </Grid>
+</UserControl>

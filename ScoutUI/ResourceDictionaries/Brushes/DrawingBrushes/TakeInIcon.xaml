@@ -1,0 +1,17 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DrawingBrush x:Key="TakeInIcon" Stretch="Uniform">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup.Children>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}"
+                                     Geometry="F1 M 0.125,36.75L 36.75,1.52588e-005L 73.375,36.5L 0.125,36.75 Z " />
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}"
+                                     Geometry="M 0,43.5L 72.625,43.375L 73,61.75L 0.125,61.75L 0,43.5 Z " />
+                </DrawingGroup.Children>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

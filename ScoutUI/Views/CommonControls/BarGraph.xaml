@@ -1,0 +1,246 @@
+<UserControl x:Class="ScoutUI.Views.ucCommon.BarGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:visualizationToolkit="clr-namespace:System.Windows.Controls.DataVisualization;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             xmlns:chartPrimitive="clr-namespace:System.Windows.Controls.DataVisualization.Charting.Primitives;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             HorizontalAlignment="Stretch"
+             VerticalAlignment="Stretch"
+             xmlns:converter="clr-namespace:ScoutUI.Common.Converters"
+             Name="BarChart"
+             mc:Ignorable="d">
+    <Grid HorizontalAlignment="Center" Focusable="False">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="1" VerticalAlignment="Top" Margin="0,0,5,0" Focusable="False">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <ComboBox Name="cmbGraphItem" Grid.Column="0"
+                      Height="40"
+                      IsSynchronizedWithCurrentItem="True"
+                      Style="{StaticResource ComboBoxLoginPageStyle}"
+                      HorizontalAlignment="Center"
+                      Margin="10,0,0,0"
+                      Width="300"
+                      ScrollViewer.VerticalScrollBarVisibility="Auto"
+                      Visibility="{Binding ElementName=BarChart, Path=IsSetFocusEnable,Converter={StaticResource InverseVisibilityConverter}}"
+                      ItemsSource="{Binding ElementName=BarChart, Path=GraphList}" DisplayMemberPath="GraphName"
+                      SelectedValue="{Binding ElementName=BarChart,Path=SelectedGraph,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Button Name="btnExpand" Command="{Binding Path=ExpandCommand,ElementName=BarChart}"
+                    Style="{StaticResource RoundButtonDashBoardStyle}"
+                    Height="40" Width="40"
+                    Grid.Column="1"
+                    HorizontalAlignment="Right"
+                    VerticalAlignment="Top">
+                <Image Source="{StaticResource Expand-newSource}" />
+            </Button>
+        </Grid>
+        <Viewbox Grid.Row="0" Focusable="False">
+            <Grid x:Name="BarGraphGrid" Width="{Binding ActualWidth, ElementName=BarChart}"
+                  Validation.ErrorTemplate="{x:Null}" Focusable="False"
+                  Height="{Binding ActualHeight, ElementName=BarChart}">
+                <Grid.Resources>
+                    <Style x:Key="LegendItemStyle" TargetType="{x:Type chartingToolkit:LegendItem}">
+                        <Setter Property="IsTabStop" Value="False" />
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="chartingToolkit:LegendItem">
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Width="20" Height="20"
+                                                   Fill="{Binding Background}" Stroke="{Binding BorderBrush}"
+                                                   StrokeThickness="1" Margin="5,0,5,0" />
+                                        <visualizationToolkit:Title FontSize="18"
+                                                                    Content="{TemplateBinding Content}" />
+                                    </StackPanel>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </Grid.Resources>
+                <chartingToolkit:Chart HorizontalAlignment="Left" Name="barChart" Focusable="False"
+                                       Validation.ErrorTemplate="{x:Null}"
+                                       Height="{Binding ActualHeight,ElementName=BarChart}"
+                                       Width="{Binding ActualWidth,ElementName=BarChart}"
+                                       Foreground="{DynamicResource GenericVeryLight}">
+                    <chartingToolkit:Chart.Template>
+                        <ControlTemplate TargetType="chartingToolkit:Chart">
+                            <Grid Focusable="False">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="Auto" />
+                                    <RowDefinition Height="*" />
+                                    <RowDefinition Height="15" />
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="10"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="10"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid x:Name="OptionGrid" Grid.Row="0" Grid.Column="1" Focusable="False"
+                                      Visibility="{Binding ElementName=BarChart, Path=IsExpandView,Converter={StaticResource BooleanToVisibilityConverter}}">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20"/>
+                                        <ColumnDefinition Width="350"/>
+                                        <ColumnDefinition Width="30"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Grid Grid.Column="1" Focusable="False">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="45"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <ComboBox Height="40"
+                                                  IsSynchronizedWithCurrentItem="True"
+                                                  Style="{StaticResource ComboBoxLoginPageStyle}"
+                                                  HorizontalAlignment="Center"
+                                                  Margin="15,0,0,0"
+                                                  Width="310"
+                                                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                                                  Foreground="{DynamicResource GenericVeryDark}"                                                 
+                                                  ItemsSource="{Binding ElementName=BarChart, Path=GraphList}" DisplayMemberPath="GraphName"
+                                                  SelectedValue="{Binding ElementName=BarChart,Path=SelectedGraph,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                                        <visualizationToolkit:Legend Grid.Row="1" x:Name="Legend" 
+                                                                     Margin="6,0,0,0"
+                                                                     HorizontalAlignment="Left">
+                                            <visualizationToolkit:Legend.Style>
+                                                <Style TargetType="visualizationToolkit:Legend">
+                                                    <Setter Property="BorderThickness" Value="0" />
+                                                    <Setter Property="BorderBrush" Value="Transparent" />
+                                                    <Style.Triggers>
+                                                        <DataTrigger
+                                                            Binding="{Binding ElementName=BarChart, Path=IsExpandableMultiAxis}"
+                                                            Value="false">
+                                                            <Setter Property="Width" Value="0" />
+                                                            <Setter Property="Height" Value="0" />
+                                                        </DataTrigger>
+                                                        <DataTrigger
+                                                            Binding="{Binding ElementName=BarChart, Path=IsExpandableMultiAxis}"
+                                                            Value="true">
+                                                            <Setter Property="Width" Value="Auto" />
+                                                            <Setter Property="Height" Value="Auto" />
+                                                        </DataTrigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </visualizationToolkit:Legend.Style>
+                                        </visualizationToolkit:Legend>
+                                    </Grid>
+                                    <visualizationToolkit:Legend x:Name="Legend2"
+                                                                 Margin="0,3,0,0"
+                                                                 Background="{DynamicResource GenericVeryLight}"
+                                                                 Grid.Column="3"
+                                                                 ItemsSource="{Binding ElementName=BarChart, Path=LegendItem, Mode=TwoWay}"
+                                                                 Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left">
+                                        <visualizationToolkit:Legend.Header>
+                                            <TextBlock FontSize="16" Foreground="{DynamicResource GenericVeryDark}"
+                                                       FontWeight="Bold"
+                                                       Text="{Binding ElementName=BarChart, Path=LegendTitle}"/>
+                                        </visualizationToolkit:Legend.Header>
+                                        <visualizationToolkit:Legend.ItemTemplate>
+                                            <DataTemplate>
+                                                <Grid Margin="-6" Focusable="False">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition Height="32"/>
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition Width="250"/>
+                                                        <ColumnDefinition/>
+                                                    </Grid.ColumnDefinitions>
+                                                    <Label FontSize="15" Grid.Column="0" Content="{Binding Key}"/>
+                                                    <Label FontSize="15" Grid.Column="1" Content="{Binding Value}"/>
+                                                </Grid>
+                                            </DataTemplate>
+                                        </visualizationToolkit:Legend.ItemTemplate>
+                                        <visualizationToolkit:Legend.Style>
+                                            <Style TargetType="visualizationToolkit:Legend">
+                                                <Setter Property="HorizontalContentAlignment" Value="Left" />
+                                                <Setter Property="FontSize" Value="14" />
+                                                <Style.Triggers>
+                                                    <DataTrigger
+                                                            Binding="{Binding ElementName=BarChart, Path=IsExpandableSubRangeStat}"
+                                                            Value="false">
+                                                        <Setter Property="Width" Value="0" />
+                                                        <Setter Property="Height" Value="0" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                            Binding="{Binding ElementName=BarChart, Path=IsExpandableSubRangeStat}"
+                                                            Value="true">
+                                                        <Setter Property="Width" Value="480" />
+                                                        <Setter Property="Height" Value="180" />
+                                                    </DataTrigger>
+                                                    <DataTrigger
+                                                            Binding="{Binding ElementName=BarChart, Path=IsSetFocusEnable}"
+                                                            Value="true">
+                                                        <Setter Property="Width" Value="0" />
+                                                        <Setter Property="Height" Value="0" />
+                                                    </DataTrigger>
+                                                </Style.Triggers>
+                                            </Style>
+                                        </visualizationToolkit:Legend.Style>
+                                    </visualizationToolkit:Legend>
+                                </Grid>
+                                <visualizationToolkit:Title Content="{TemplateBinding Title}"
+                                                            FontSize="18"
+                                                            Grid.Row="1"
+                                                            Grid.Column="1"
+                                                            Style="{TemplateBinding TitleStyle}" />
+                                <Grid Grid.Row="2" Grid.Column="1" x:Name="ChartGridArea" Focusable="False">
+                                    <chartPrimitive:EdgePanel x:Name="ChartArea"
+                                                              Style="{TemplateBinding ChartAreaStyle}">
+                                        <Grid Style="{TemplateBinding PlotAreaStyle}" Panel.ZIndex="-1" />
+                                        <Border BorderBrush="#FF919191" BorderThickness="1" Panel.ZIndex="10" />
+                                    </chartPrimitive:EdgePanel>
+                                </Grid>
+                            </Grid>
+                        </ControlTemplate>
+                    </chartingToolkit:Chart.Template>
+                    <chartingToolkit:Chart.Axes>
+                        <chartingToolkit:LinearAxis x:Name="yAxis" Orientation="Y"
+                                                    ShowGridLines="True"
+                                                    Validation.ErrorTemplate="{x:Null}"
+                                                    FontSize="18"
+                                                    Title="{Binding ElementName=BarChart, Path=YAxisName}"
+                                                    FontStyle="Normal"  Foreground="{DynamicResource GenericVeryLight}" FontWeight="Normal"
+                                                    Minimum="0">
+                            <chartingToolkit:LinearAxis.GridLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Stroke" Value="{DynamicResource GenericMedium}" />
+                                    <Setter Property="StrokeThickness" Value="0.1" />
+                                </Style>
+                            </chartingToolkit:LinearAxis.GridLineStyle>
+                        </chartingToolkit:LinearAxis>
+                        <chartingToolkit:LinearAxis x:Name="xAxis" Orientation="X"
+                                                    ShowGridLines="True"
+                                                    FontSize="18"
+                                                    AxisLabelStyle="{StaticResource XAxisStyle}"
+                                                    Validation.ErrorTemplate="{x:Null}"
+                                                    Title="{Binding ElementName=BarChart, Path=XAxisName}"
+                                                    FontStyle="Normal"  Foreground="{DynamicResource GenericVeryLight}" FontWeight="Normal">
+                            <chartingToolkit:LinearAxis.GridLineStyle>
+                                <Style TargetType="Line">
+                                    <Setter Property="Stroke" Value="{DynamicResource GenericMedium}" />
+                                    <Setter Property="StrokeThickness" Value="0.1" />
+                                </Style>
+                            </chartingToolkit:LinearAxis.GridLineStyle>
+                        </chartingToolkit:LinearAxis>
+                    </chartingToolkit:Chart.Axes>
+                    <chartingToolkit:ColumnSeries Name="BarGraphColumnSeries"
+                                                  ItemsSource="{Binding ElementName=BarChart, Path=SelectedGraph.PrimaryGraphDetailList}"
+                                                  DependentValueBinding="{Binding Path=Value}"
+                                                  IndependentValueBinding="{Binding Path=Key}"
+                                                  Title="{Binding ElementName=BarChart, Path=PrimaryLegendName}"
+                                                  LegendItemStyle="{StaticResource LegendItemStyle}"
+                                                  TouchEnter="OnTouchEnter"
+                                                  MouseEnter="OnMouseEnter">
+                    </chartingToolkit:ColumnSeries>
+                </chartingToolkit:Chart>
+            </Grid>
+        </Viewbox>
+    </Grid>
+</UserControl>

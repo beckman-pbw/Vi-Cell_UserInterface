@@ -1,0 +1,19 @@
+<project>
+  <skin>
+    <groupId>org.apache.maven.skins</groupId>
+    <artifactId>maven-fluido-skin</artifactId>
+    <version>1.3.0</version>
+  </skin>
+  <body>
+    <menu name="Overview">
+      <item name="Release Notes" href="README.html"/>
+      <item name="Changes not in v1.0" href="DifferencesFrom1.0.html"/>
+      <item name="Integration Testing" href="integration-testing.html"/>
+      <item name="Build Requirements" href="build_requirements.html"/>
+      <item name="Change log" href="changelog.html"/>
+      <item name="Project info" href="project-info.html"/>
+      <item name="Manual testing procedures" href="ui-manual-testing.html"/>
+      <item name="Field lengths" href="field_lengths.html"/>
+    </menu>
+  </body>
+</project>

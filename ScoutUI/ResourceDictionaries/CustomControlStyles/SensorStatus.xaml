@@ -1,0 +1,52 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:controls="clr-namespace:ScoutUI.Common.Controls">
+
+    <Style x:Key="SensorStatus" TargetType="{x:Type controls:ActiveButton}">
+        <Setter Property="Foreground" Value="Red" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="Width" Value="35" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type controls:ActiveButton }">
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Top">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="34" />
+                        </Grid.RowDefinitions>
+                        <Path Name="brdBack" Grid.Row="0" Stretch="Fill" Height="19" Width="19"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsActive" Value="True">
+                            <Setter TargetName="brdBack" Property="Data">
+                                <Setter.Value>
+                                    <PathGeometry
+                                        Figures="m 311.69642 701.29787 c -8.66351 -3.8831 -12.27756 -9.4658 -15.03276 -23.2214 -5.38159 -26.86815 -16.9357 -48.98287 -37.16979 -71.14348 -30.1447 -33.01484 -44.37236 -75.11478 -39.78478 -117.72398 5.65425 -52.51632 36.24301 -96.4355 83.07668 -119.28106 73.85108 -36.0247 163.04132 -5.88597 199.82405 67.52355 10.58388 21.12286 15.04647 40.48768 15.12318 65.625 0.12585 41.23826 -12.43976 73.29343 -41.15998 105 -17.88642 19.74629 -28.80011 39.69899 -34.3352 62.77257 -4.31225 17.9761 -4.93911 19.6663 -9.01576 24.3094 -7.00999 7.9839 -6.50909 7.9232 -64.92299 7.8691 -41.4892 -0.038 -53.65891 -0.4103 -56.60265 -1.7297 z M 82.174368 515.72356 c -4.274915 -4.27491 -4.852941 -5.56009 -4.852941 -10.78996 0 -7.81645 3.549543 -13.50529 10.049297 -16.10597 7.36053 -2.9451 65.040876 -2.9451 72.401406 0 7.16436 2.86661 10.53339 8.77098 9.73656 17.06378 -0.51586 5.36871 -1.34636 7.07487 -5.133 10.54505 l -4.51755 4.14004 -36.41542 0 -36.415411 0 -4.852941 -4.85294 z m 492.165652 2.24257 c -10.52835 -8.28159 -8.8536 -24.38335 3.0307 -29.1385 7.36053 -2.9451 65.04088 -2.9451 72.4014 0 6.49977 2.60068 10.0493 8.28952 10.0493 16.10597 0 5.22987 -0.57802 6.51505 -4.85293 10.78996 l -4.85295 4.85294 -36.22848 0 c -34.84634 0 -36.3551 -0.0996 -39.54704 -2.61037 z M 205.32147 364.47229 c -7.98685 -5.90482 -45.21712 -44.23332 -46.66319 -48.03967 -5.66623 -14.91466 9.51179 -28.90285 23.41272 -21.57735 1.85649 0.97834 13.8523 12.36897 26.65737 25.3125 26.20114 26.48449 27.1129 28.04183 22.50979 38.44792 -4.41632 9.98385 -16.60777 12.73885 -25.91669 5.8566 z m 305.6667 0.77183 c -5.26057 -3.5451 -8.03087 -10.3503 -6.83963 -16.80143 0.74202 -4.0184 4.43308 -8.32889 24.21168 -28.27492 12.83492 -12.94353 24.85514 -24.33416 26.71163 -25.3125 13.61237 -7.17343 28.95602 6.96592 23.41517 21.57735 -1.53966 4.06013 -43.86118 47.20357 -48.91602 49.866 -5.18549 2.73125 -13.68048 2.2492 -18.58283 -1.0545 z M 360.27981 303.17893 c -8.01285 -4.88601 -7.95839 -4.58788 -7.95839 -43.56764 0 -38.90568 0.34308 -40.9588 7.45909 -44.63863 4.69691 -2.42887 12.88491 -2.42887 17.58183 0 7.11875 3.68125 7.45908 5.72296 7.45908 44.74819 0 34.12635 -0.10225 35.64858 -2.61037 38.83705 -5.52705 7.02651 -14.78668 8.97756 -21.93124 4.62103 z"
+                                        FillRule="NonZero" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="brdBack" Property="Fill" Value="white" />
+                            <Setter TargetName="brdBack" Property="Height" Value="30" />
+                            <Setter TargetName="brdBack" Property="Width" Value="32" />
+                            <Setter TargetName="brdBack" Property="Margin" Value="0,0,0,0" />
+                        </Trigger>
+                        <Trigger Property="IsActive" Value="False">
+                            <Setter TargetName="brdBack" Property="Data">
+                                <Setter.Value>
+                                    <PathGeometry
+                                        Figures="m 302.41072 629.08292 c -11.5803 -2.91925 -17.11139 -9.596 -19.86297 -23.97716 -5.28146 -27.6037 -16.31161 -48.73215 -38.09913 -72.9796 -11.36753 -12.65098 -18.86868 -23.83994 -25.81938 -38.51301 -22.49681 -47.49123 -17.3956 -106.1668 12.96975 -149.18184 31.17149 -44.157 82.0428 -67.68083 136.10361 -62.93679 92.88009 8.15057 155.18375 97.9548 130.9032 188.68333 -5.8843 21.9877 -18.46708 44.49245 -34.87031 62.36675 -20.84437 22.71372 -32.02639 44.02901 -37.60319 71.67967 -2.57318 12.75823 -5.37258 17.52281 -12.89287 21.94365 l -5.82871 3.42644 -50.625 0.21695 c -27.84375 0.11925 -52.3125 -0.20846 -54.375 -0.72839 z"
+                                        FillRule="NonZero" />
+                                </Setter.Value>
+                            </Setter>
+                            <Setter TargetName="brdBack" Property="Fill" Value="{DynamicResource GenericVeryDark}" />
+                            <Setter TargetName="brdBack" Property="Height" Value="21" />
+                            <Setter TargetName="brdBack" Property="Width" Value="16" />
+                            <Setter TargetName="brdBack" Property="Margin" Value="1,7,0,0" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Background" Value="{x:Null}" />
+    </Style>
+
+</ResourceDictionary>

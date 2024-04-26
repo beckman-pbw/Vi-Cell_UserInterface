@@ -1,0 +1,58 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DrawingBrush x:Key="PdfIconBrush" Viewbox="0,0,82,77.625" ViewboxUnits="Absolute">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,21.5,0"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}">
+                        <GeometryDrawing.Geometry>
+                            <PathGeometry Figures="M79.75,49.5 L79.75,27 117.25,27 137,47.25 137,101.5 79.5,101.625 79.5,85">
+                                <PathGeometry.Transform>
+                                    <MatrixTransform Matrix="1,0,0,1,-78,-25.5"/>
+                                </PathGeometry.Transform>
+                            </PathGeometry>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource GenericVeryDark}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="3"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,0,22.75"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}">
+                        <GeometryDrawing.Geometry>
+                            <RectangleGeometry RadiusY="0" RadiusX="0" Rect="1.5,1.5,68.75,35"/>
+                        </GeometryDrawing.Geometry>
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource GenericVeryDark}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10" StartLineCap="Flat" Thickness="3"/>
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.ClipGeometry>
+                        <RectangleGeometry Rect="0,0,65.75,39.833"/>
+                    </DrawingGroup.ClipGeometry>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,2.75,18.417"/>
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryDark}">
+                        <GeometryDrawing.Geometry>
+                            <GeometryGroup FillRule="Nonzero">
+                                <PathGeometry Figures="M10.539375,15.998749 L10.539375,22.983124 12.52375,22.983124 C15.21125,22.983124 16.555,21.806042 16.555,19.451874 16.555,17.149792 15.21125,15.998749 12.52375,15.998749 L10.539375,15.998749 z M5.4925003,12.123749 L13.39875,12.123749 C19.044582,12.123749 21.8675,14.503958 21.8675,19.264374 21.8675,21.514374 21.057604,23.334686 19.437813,24.725311 17.81802,26.115936 15.653958,26.811249 12.945625,26.811249 L10.539375,26.811249 10.539375,34.529999 5.4925003,34.529999 5.4925003,12.123749 z" FillRule="Nonzero"/>
+                                <PathGeometry Figures="M30.187374,16.233124 L30.187374,30.436249 32.687374,30.436249 C34.874874,30.436249 36.591019,29.779999 37.835812,28.467499 39.080605,27.154999 39.702999,25.368542 39.702999,23.108124 39.702999,20.972708 39.085812,19.29302 37.851437,18.069061 36.617062,16.845104 34.885292,16.233124 32.656124,16.233124 L30.187374,16.233124 z M25.140499,12.123749 L33.077999,12.123749 C41.036331,12.123749 45.015499,15.764374 45.015499,23.045624 45.015499,26.535208 43.929562,29.321667 41.757687,31.404999 39.585812,33.488331 36.692581,34.529999 33.077999,34.529999 L25.140499,34.529999 25.140499,12.123749 z" FillRule="Nonzero"/>
+                                <PathGeometry Figures="M48.724499,12.123749 L61.677624,12.123749 61.677624,16.233124 53.771374,16.233124 53.771374,21.733124 61.036999,21.733124 61.036999,25.826874 53.771374,25.826874 53.771374,34.529999 48.724499,34.529999 48.724499,12.123749 z" FillRule="Nonzero"/>
+                            </GeometryGroup>
+                        </GeometryDrawing.Geometry>
+                    </GeometryDrawing>
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

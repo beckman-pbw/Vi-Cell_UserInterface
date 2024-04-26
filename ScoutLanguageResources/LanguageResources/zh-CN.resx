@@ -1,0 +1,4892 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="LID_ERRMSGBOX_HardwareFault" xml:space="preserve">
+    <value>硬件故障</value>
+  </data>
+  <data name="LID_AdminReportsHeader_DateTime" xml:space="preserve">
+    <value>日期时间</value>
+  </data>
+  <data name="LID_AdminReportsHeader_UserName" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="LID_BPHeader_Name" xml:space="preserve">
+    <value>名称</value>
+  </data>
+  <data name="LID_BPHeader_Reactor" xml:space="preserve">
+    <value>反应器</value>
+  </data>
+  <data name="LID_ButtonContent_Analyze" xml:space="preserve">
+    <value>分析</value>
+  </data>
+  <data name="LID_ButtonContent_Aspirate" xml:space="preserve">
+    <value>吸入</value>
+  </data>
+  <data name="LID_ButtonContent_Cancel" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="LID_ButtonContent_ContAnalyze" xml:space="preserve">
+    <value>连续分析</value>
+  </data>
+  <data name="LID_ButtonContent_Dispense" xml:space="preserve">
+    <value>分注</value>
+  </data>
+  <data name="LID_ButtonContent_DustRef" xml:space="preserve">
+    <value>背景物对照...</value>
+  </data>
+  <data name="LID_ButtonContent_Expel" xml:space="preserve">
+    <value>排出</value>
+  </data>
+  <data name="LID_ButtonContent_Flush" xml:space="preserve">
+    <value>冲洗</value>
+  </data>
+  <data name="LID_ButtonContent_Go" xml:space="preserve">
+    <value>登录</value>
+  </data>
+  <data name="LID_ButtonContent_Load" xml:space="preserve">
+    <value>加载</value>
+  </data>
+  <data name="LID_ButtonContent_No" xml:space="preserve">
+    <value>否</value>
+  </data>
+  <data name="LID_ButtonContent_Nudge" xml:space="preserve">
+    <value>微移</value>
+  </data>
+  <data name="LID_ButtonContent_OK" xml:space="preserve">
+    <value>确定</value>
+  </data>
+  <data name="LID_ButtonContent_Prime" xml:space="preserve">
+    <value>灌注</value>
+  </data>
+  <data name="LID_ButtonContent_Reagent" xml:space="preserve">
+    <value>试剂</value>
+  </data>
+  <data name="LID_ButtonContent_ReplaceReagentPack" xml:space="preserve">
+    <value>更换试剂盒...</value>
+  </data>
+  <data name="LID_ButtonContent_RestoreFocus" xml:space="preserve">
+    <value>焦点恢复</value>
+  </data>
+  <data name="LID_ButtonContent_Sample" xml:space="preserve">
+    <value>样品</value>
+  </data>
+  <data name="LID_ButtonContent_SetFocus" xml:space="preserve">
+    <value>焦点设置</value>
+  </data>
+  <data name="LID_ButtonContent_Syringe" xml:space="preserve">
+    <value>注射器</value>
+  </data>
+  <data name="LID_ButtonContent_Valve" xml:space="preserve">
+    <value>电磁阀</value>
+  </data>
+  <data name="LID_ButtonContent_Yes" xml:space="preserve">
+    <value>是</value>
+  </data>
+  <data name="LID_CheckBox_AnalysisParameters" xml:space="preserve">
+    <value>参数分析</value>
+  </data>
+  <data name="LID_CheckBox_AverageDiameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_CheckBox_BackgroundCircularity" xml:space="preserve">
+    <value>背景圆度值</value>
+  </data>
+  <data name="LID_CheckBox_CameraImage" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="LID_CheckBox_CircularityDistribution" xml:space="preserve">
+    <value>圆度分布</value>
+  </data>
+  <data name="LID_CheckBox_ClusterSizeDistribution" xml:space="preserve">
+    <value>团聚分布</value>
+  </data>
+  <data name="LID_CheckBox_Data" xml:space="preserve">
+    <value>数据</value>
+  </data>
+  <data name="LID_CheckBox_DeviceSerialNumber" xml:space="preserve">
+    <value>序列号</value>
+  </data>
+  <data name="LID_CheckBox_Export" xml:space="preserve">
+    <value>导出</value>
+  </data>
+  <data name="LID_CheckBox_Graphs" xml:space="preserve">
+    <value>图表</value>
+  </data>
+  <data name="LID_CheckBox_Other" xml:space="preserve">
+    <value>其他</value>
+  </data>
+  <data name="LID_CheckBox_Reagentcontainer" xml:space="preserve">
+    <value>试剂盒</value>
+  </data>
+  <data name="LID_CheckBox_ReticleImage" xml:space="preserve">
+    <value>标线图像</value>
+  </data>
+  <data name="LID_CheckBox_Signatures" xml:space="preserve">
+    <value>签名</value>
+  </data>
+  <data name="LID_CheckBox_TotalCellConcentration" xml:space="preserve">
+    <value>总细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_CheckBox_NonviableCellConcentration" xml:space="preserve">
+    <value>死细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_CheckBox_TotalCount" xml:space="preserve">
+    <value>总细胞数</value>
+  </data>
+  <data name="LID_CheckBox_ViableCells" xml:space="preserve">
+    <value>活细胞数</value>
+  </data>
+  <data name="LID_CheckBox_ViableCellType" xml:space="preserve">
+    <value>活细胞分布</value>
+  </data>
+  <data name="LID_ContextMenu_GreyLevelHistogram" xml:space="preserve">
+    <value>灰度直方图</value>
+  </data>
+  <data name="LID_ContextMenu_ImageActualSize" xml:space="preserve">
+    <value>图像实际尺寸</value>
+  </data>
+  <data name="LID_ContextMenu_ImageFitToWindow" xml:space="preserve">
+    <value>全幅图像</value>
+  </data>
+  <data name="LID_ERRMSGBOX_DisplayNameRange" xml:space="preserve">
+    <value>显示名称不得超过 15 个字符。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ImportingConfigration" xml:space="preserve">
+    <value>导入配置文件将删除此仪器上的现有配置，导入前请先创建备份。是否继续？</value>
+  </data>
+  <data name="LID_ERRMSGBOX_InvalidUserId" xml:space="preserve">
+    <value>用户名或密码错误</value>
+  </data>
+  <data name="LID_ERRMSGBOX_OldPwdSameNw" xml:space="preserve">
+    <value>新密码不得与旧密码相同。请选择不同的密码</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PasswordRange" xml:space="preserve">
+    <value>密码未满足最低要求。密码必须满足： 
+1.长度最小为 10 位 
+2.至少有 1 个小写字符 
+3.至少有 1 个大写字符 
+4.至少有 1 个数字 
+5.至少有 1 个特殊字符</value>
+  </data>
+  <data name="LID_ERRMSGBOX_UserIdAlreadyExist" xml:space="preserve">
+    <value>用户名或显示名称已存在。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_UserIdRange" xml:space="preserve">
+    <value>用户名必须少于 100 个字符。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_WrongOldPassword" xml:space="preserve">
+    <value>密码错误</value>
+  </data>
+  <data name="LID_FrameLabel_DefaultSample" xml:space="preserve">
+    <value>默认设置</value>
+  </data>
+  <data name="LID_FrameLabel_GraphOptions" xml:space="preserve">
+    <value>图表选项</value>
+  </data>
+  <data name="LID_FrameLabel_Language" xml:space="preserve">
+    <value>语言</value>
+  </data>
+  <data name="LID_FrameLabel_PrintOptions" xml:space="preserve">
+    <value>打印选项</value>
+  </data>
+  <data name="LID_FrameLabel_RunResultReport" xml:space="preserve">
+    <value>测量结果报告</value>
+  </data>
+  <data name="LID_FrameLabel_Security" xml:space="preserve">
+    <value>安全性</value>
+  </data>
+  <data name="LID_FrameLabel_ShowResult" xml:space="preserve">
+    <value>显示的参数</value>
+  </data>
+  <data name="LID_FrameLabel_Storage" xml:space="preserve">
+    <value>存储空间</value>
+  </data>
+  <data name="LID_GraphLabel_AdjustSize" xml:space="preserve">
+    <value>调节后大小</value>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentration" xml:space="preserve">
+    <value>测定值</value>
+  </data>
+  <data name="LID_GraphLabel_Count" xml:space="preserve">
+    <value>计数</value>
+  </data>
+  <data name="LID_GraphLabel_ElapsedTime" xml:space="preserve">
+    <value>运行时间（小时）</value>
+  </data>
+  <data name="LID_GraphLabel_InFoucs" xml:space="preserve">
+    <value>最大焦点计数</value>
+  </data>
+  <data name="LID_GraphLabel_Mean" xml:space="preserve">
+    <value>均值</value>
+  </data>
+  <data name="LID_GraphLabel_Mode" xml:space="preserve">
+    <value>峰值</value>
+  </data>
+  <data name="LID_GraphLabel_OriginalConcentration" xml:space="preserve">
+    <value>原始浓度</value>
+  </data>
+  <data name="LID_GraphLabel_OriginalSize" xml:space="preserve">
+    <value>原始大小</value>
+  </data>
+  <data name="LID_GraphLabel_Range" xml:space="preserve">
+    <value>范围</value>
+  </data>
+  <data name="LID_GraphLabel_SizeDistribution" xml:space="preserve">
+    <value>粒度分布</value>
+  </data>
+  <data name="LID_GraphLabel_SubrangeStatics" xml:space="preserve">
+    <value>子范围统计</value>
+  </data>
+  <data name="LID_GridHeader_ActiveInavtive" xml:space="preserve">
+    <value>启用/不启用</value>
+  </data>
+  <data name="LID_GridLabel_CellTypes" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_GridLabel_CompletedRunSummary" xml:space="preserve">
+    <value>已完成测量摘要</value>
+  </data>
+  <data name="LID_GridLabel_NoOfTubes" xml:space="preserve">
+    <value>样品管</value>
+  </data>
+  <data name="LID_GridLabel_QualityControl" xml:space="preserve">
+    <value>质量控制</value>
+  </data>
+  <data name="LID_GridLabel_RunResult" xml:space="preserve">
+    <value>测量结果</value>
+  </data>
+  <data name="LID_GridListHeader_QueueParameters" xml:space="preserve">
+    <value>队列参数</value>
+  </data>
+  <data name="LID_HB_About" xml:space="preserve">
+    <value>关于</value>
+  </data>
+  <data name="LID_HB_Admin" xml:space="preserve">
+    <value>管理员</value>
+  </data>
+  <data name="LID_HB_Bioprocess" xml:space="preserve">
+    <value>生物过程</value>
+  </data>
+  <data name="LID_HB_Help" xml:space="preserve">
+    <value>帮助</value>
+  </data>
+  <data name="LID_HB_Home" xml:space="preserve">
+    <value>首页</value>
+  </data>
+  <data name="LID_HB_Maintenance" xml:space="preserve">
+    <value>维护</value>
+  </data>
+  <data name="LID_HB_SystemLock" xml:space="preserve">
+    <value>系统锁定</value>
+  </data>
+  <data name="LID_HB_QualityControl" xml:space="preserve">
+    <value>质量控制</value>
+  </data>
+  <data name="LID_HB_Review" xml:space="preserve">
+    <value>复查</value>
+  </data>
+  <data name="LID_HB_Settings" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="LID_HB_Signout" xml:space="preserve">
+    <value>注销</value>
+  </data>
+  <data name="LID_HELP_AcceptNewFocus" xml:space="preserve">
+    <value>是否接受新的焦点位置？</value>
+  </data>
+  <data name="LID_HELP_Cleaning" xml:space="preserve">
+    <value>正在清洗</value>
+  </data>
+  <data name="LID_HELP_CloseReagent" xml:space="preserve">
+    <value>关闭试剂门并点击下一个</value>
+  </data>
+  <data name="LID_HELP_DecontaminateCup" xml:space="preserve">
+    <value>使用0.5%的次氯酸钠溶液清洗废管托盘和可能接触到样品的仪器外部部件</value>
+  </data>
+  <data name="LID_HELP_EmptyPostion" xml:space="preserve">
+    <value>清空旋转架中的所有位置</value>
+  </data>
+  <data name="LID_HELP_EmptyWasteTube" xml:space="preserve">
+    <value>清空废管托盘</value>
+  </data>
+  <data name="LID_HELP_Export" xml:space="preserve">
+    <value>导出目的地</value>
+  </data>
+  <data name="LID_HELP_PlaceCup" xml:space="preserve">
+    <value>将焦点质控微球加到样本管中，放到旋转架的任一空位处或将质控微球加到96孔板的A1位置。</value>
+  </data>
+  <data name="LID_HELP_PlaceTheBleach" xml:space="preserve">
+    <value>将漂白剂放到旋转架的任一空位处或96孔板的A1位置</value>
+  </data>
+  <data name="LID_HELP_PrePareSolution" xml:space="preserve">
+    <value>制备0.3mL的0.5%次氯酸钠溶液（通过混合1份5%家用漂白剂与9份水来制备）</value>
+  </data>
+  <data name="LID_HELP_ReagentLoad" xml:space="preserve">
+    <value>检测到的试剂信息显示如下。确认并点击下一个。</value>
+  </data>
+  <data name="LID_HELP_ReaplaceReagent" xml:space="preserve">
+    <value>试剂盒已更换</value>
+  </data>
+  <data name="LID_HELP_RemoveReagent" xml:space="preserve">
+    <value>打开门，取出旧试剂盒并插入新试剂盒。</value>
+  </data>
+  <data name="LID_HELP_SelectReagent" xml:space="preserve">
+    <value>选择要排空或清除的试剂</value>
+  </data>
+  <data name="LID_HELP_Step" xml:space="preserve">
+    <value>步骤</value>
+  </data>
+  <data name="LID_Label_AppType" xml:space="preserve">
+    <value>分析类型</value>
+  </data>
+  <data name="LID_Label_BioProcessReport" xml:space="preserve">
+    <value>生物过程报告</value>
+  </data>
+  <data name="LID_Label_CameraLamp" xml:space="preserve">
+    <value>明场LED</value>
+  </data>
+  <data name="LID_Label_CameraLampIntensity" xml:space="preserve">
+    <value>相机灯强度</value>
+  </data>
+  <data name="LID_Label_Caption" xml:space="preserve">
+    <value>标题</value>
+  </data>
+  <data name="LID_Label_Carousel" xml:space="preserve">
+    <value>旋转架</value>
+  </data>
+  <data name="LID_Label_Carousel96Well" xml:space="preserve">
+    <value>旋转架/96孔板</value>
+  </data>
+  <data name="LID_Label_CellBrightness" xml:space="preserve">
+    <value>细胞亮度</value>
+  </data>
+  <data name="LID_Label_CellSharpness" xml:space="preserve">
+    <value>细胞清晰度</value>
+  </data>
+  <data name="LID_Label_CellTypeRemoved" xml:space="preserve">
+    <value>已删除</value>
+  </data>
+  <data name="LID_Label_CellTypeReport" xml:space="preserve">
+    <value>细胞类型报告</value>
+  </data>
+  <data name="LID_Label_ChoosePath" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_Label_Comments" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="LID_Label_CompletedRun" xml:space="preserve">
+    <value>测量结果报告</value>
+  </data>
+  <data name="LID_Label_CopyRight" xml:space="preserve">
+    <value>版权 ©{0} Beckman Coulter Life Sciences.保留所有权利。</value>
+  </data>
+  <data name="LID_Label_CurFocus" xml:space="preserve">
+    <value>当前焦点位置</value>
+  </data>
+  <data name="LID_Label_Date" xml:space="preserve">
+    <value>日期</value>
+  </data>
+  <data name="LID_Label_DeclusterDegree" xml:space="preserve">
+    <value>团聚度</value>
+  </data>
+  <data name="LID_Label_Dilution" xml:space="preserve">
+    <value>稀释</value>
+  </data>
+  <data name="LID_Label_Disable" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="LID_Label_ErrorCode" xml:space="preserve">
+    <value>错误代码</value>
+  </data>
+  <data name="LID_Label_FileName" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="LID_Label_FirmwareVersion" xml:space="preserve">
+    <value>固件版本</value>
+  </data>
+  <data name="LID_Label_FLowCellDepth" xml:space="preserve">
+    <value>流动池深度(mm)</value>
+  </data>
+  <data name="LID_Label_FocusHome" xml:space="preserve">
+    <value>焦点复位</value>
+  </data>
+  <data name="LID_Label_From" xml:space="preserve">
+    <value>开始 (YYYY/MM/DD)</value>
+  </data>
+  <data name="LID_Label_Imageanalysissoftwareversion" xml:space="preserve">
+    <value>图像分析软件版本</value>
+  </data>
+  <data name="LID_Label_Images" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="LID_Label_InActivityTimeout" xml:space="preserve">
+    <value>闲置超时</value>
+  </data>
+  <data name="LID_Label_Indicator" xml:space="preserve">
+    <value>缩写</value>
+  </data>
+  <data name="LID_Label_InFocus" xml:space="preserve">
+    <value>焦点计数</value>
+  </data>
+  <data name="LID_Label_UpdatingFirmware" xml:space="preserve">
+    <value>正在更新固件</value>
+  </data>
+  <data name="LID_Label_LastCalibrationDate" xml:space="preserve">
+    <value>上一次浓度斜率日期：</value>
+  </data>
+  <data name="LID_Label_SystemLockDescription" xml:space="preserve">
+    <value>系统当前已锁定。仅限于管理员级别和服务使用者按下面的按钮申请解锁。</value>
+  </data>
+  <data name="LID_Label_LiveImage" xml:space="preserve">
+    <value>实时图像：</value>
+  </data>
+  <data name="LID_Label_MaxDiameter" xml:space="preserve">
+    <value>最大直径</value>
+  </data>
+  <data name="LID_Label_Description" xml:space="preserve">
+    <value>描述</value>
+  </data>
+  <data name="LID_Label_MergeFile" xml:space="preserve">
+    <value>与现有 excel 文件合并</value>
+  </data>
+  <data name="LID_Label_MinCircularity" xml:space="preserve">
+    <value>最小圆度</value>
+  </data>
+  <data name="LID_Label_MinDiameter" xml:space="preserve">
+    <value>最小直径</value>
+  </data>
+  <data name="LID_Label_MinimumCircularity" xml:space="preserve">
+    <value>最小圆度</value>
+  </data>
+  <data name="LID_Label_MotorStatusState" xml:space="preserve">
+    <value>电动机状态</value>
+  </data>
+  <data name="LID_Label_NewRecommended" xml:space="preserve">
+    <value>建议位置</value>
+  </data>
+  <data name="LID_Label_OpenTheWaste" xml:space="preserve">
+    <value>1.打开废管托盘门。</value>
+  </data>
+  <data name="LID_Label_Password" xml:space="preserve">
+    <value>密码</value>
+  </data>
+  <data name="LID_Label_PassworsExpire" xml:space="preserve">
+    <value>密码到期</value>
+  </data>
+  <data name="LID_Label_PN" xml:space="preserve">
+    <value>货号</value>
+  </data>
+  <data name="LID_Label_Position" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_Label_PreviosRecommended" xml:space="preserve">
+    <value>先前位置</value>
+  </data>
+  <data name="LID_Label_PrintTitle" xml:space="preserve">
+    <value>打印标题</value>
+  </data>
+  <data name="LID_Label_ProbeHome" xml:space="preserve">
+    <value>进样针复位</value>
+  </data>
+  <data name="LID_Label_QualityControlReport" xml:space="preserve">
+    <value>质量控制报告</value>
+  </data>
+  <data name="LID_Label_RadiusHome" xml:space="preserve">
+    <value>半径复位</value>
+  </data>
+  <data name="LID_Label_ReagentDoor" xml:space="preserve">
+    <value>试剂门</value>
+  </data>
+  <data name="LID_Label_ReagentLower" xml:space="preserve">
+    <value>试剂下限</value>
+  </data>
+  <data name="LID_Label_ReagentPack" xml:space="preserve">
+    <value>试剂盒</value>
+  </data>
+  <data name="LID_Label_ReagentUpper" xml:space="preserve">
+    <value>试剂上限</value>
+  </data>
+  <data name="LID_Label_Remainingwastetubebincapacity" xml:space="preserve">
+    <value>废管托盘剩余容量</value>
+  </data>
+  <data name="LID_Label_RemoveNEmpty" xml:space="preserve">
+    <value>2.移出并清空废管托盘。</value>
+  </data>
+  <data name="LID_Label_ReplacetheWaste" xml:space="preserve">
+    <value>3.更换废管托盘并将门关闭。</value>
+  </data>
+  <data name="LID_Label_TapOn" xml:space="preserve">
+    <value>4.点击</value>
+  </data>
+  <data name="LID_Label_ResetSpentTubeCapacity" xml:space="preserve">
+    <value>重置“废管托盘剩余容量”。</value>
+  </data>
+  <data name="LID_Label_ResettingWasteTube" xml:space="preserve">
+    <value>注释：重置“废管托盘的剩余容量”但未清空托盘会导致废管托盘中出现阻塞。</value>
+  </data>
+  <data name="LID_Label_SensorStatusState" xml:space="preserve">
+    <value>传感器状态</value>
+  </data>
+  <data name="LID_Label_SerialNumber" xml:space="preserve">
+    <value>序列号</value>
+  </data>
+  <data name="LID_Label_ShowParameter" xml:space="preserve">
+    <value>显示参数</value>
+  </data>
+  <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
+    <value>无提示登录失败</value>
+  </data>
+  <data name="LID_Label_Softwareversion" xml:space="preserve">
+    <value>Vi-CELL BLU 软件版本</value>
+  </data>
+  <data name="LID_Label_Backendversion" xml:space="preserve">
+    <value>后端软件版本</value>
+  </data>
+  <data name="LID_Label_SpotArea" xml:space="preserve">
+    <value>活细胞斑点面积</value>
+  </data>
+  <data name="LID_Label_SpotBrightness" xml:space="preserve">
+    <value>活细胞斑点亮度</value>
+  </data>
+  <data name="LID_Label_SyringePumpFirmwareVersion" xml:space="preserve">
+    <value>注射泵固件版本</value>
+  </data>
+  <data name="LID_Label_SystemTotalSampleCounts" xml:space="preserve">
+    <value>系统运行的样品数</value>
+  </data>
+  <data name="LID_Label_ThetaHome" xml:space="preserve">
+    <value>θ 复位</value>
+  </data>
+  <data name="LID_Label_To" xml:space="preserve">
+    <value>结束 (YYYY/MM/DD)</value>
+  </data>
+  <data name="LID_Label_UIVersion" xml:space="preserve">
+    <value>UI 软件版本</value>
+  </data>
+  <data name="LID_Label_ViabilityPercentage" xml:space="preserve">
+    <value>存活率 (%)</value>
+  </data>
+  <data name="LID_Label_ViableCellSpotArea" xml:space="preserve">
+    <value>活细胞斑点面积</value>
+  </data>
+  <data name="LID_Label_ViableCellSpotBrightness" xml:space="preserve">
+    <value>活细胞斑点亮度</value>
+  </data>
+  <data name="LID_Label_YYMMDD" xml:space="preserve">
+    <value>(YYYY/MM/DD)</value>
+  </data>
+  <data name="LID_ListOption_General" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="LID_ListOption_Instrument" xml:space="preserve">
+    <value>仪器</value>
+  </data>
+  <data name="LID_ListOption_RunOption" xml:space="preserve">
+    <value>运行选项</value>
+  </data>
+  <data name="LID_LogsList_AuditLog" xml:space="preserve">
+    <value>审计日志</value>
+  </data>
+  <data name="LID_LogsList_SampleActivity" xml:space="preserve">
+    <value>样品活动日志</value>
+  </data>
+  <data name="LID_LogsList_SystemError" xml:space="preserve">
+    <value>系统错误日志</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeLanguageSettings" xml:space="preserve">
+    <value>确定要更改语言设置？</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeUserDetails" xml:space="preserve">
+    <value>用户详细信息已更改</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteConfirmation" xml:space="preserve">
+    <value>确定要删除{0}？</value>
+  </data>
+  <data name="LID_MSGBOX_LanguageSettingsSuceesfully" xml:space="preserve">
+    <value>语言设置已更新</value>
+  </data>
+  <data name="LID_MSGBOX_MaximumDiameter" xml:space="preserve">
+    <value>最大直径必须大于最小直径</value>
+  </data>
+  <data name="LID_MSGBOX_MinimumDiameterLength" xml:space="preserve">
+    <value>最小直径必须小于最大直径</value>
+  </data>
+  <data name="LID_MSGBOX_PasswordChange" xml:space="preserve">
+    <value>密码已更改</value>
+  </data>
+  <data name="LID_MSGBOX_PasswordMismatch" xml:space="preserve">
+    <value>密码不匹配</value>
+  </data>
+  <data name="LID_MSGBOX_QCAddedSuccess" xml:space="preserve">
+    <value>质量控制已添加</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagementAbort" xml:space="preserve">
+    <value>确定要中止？</value>
+  </data>
+  <data name="LID_MSGBOX_RemoveSelectedUser" xml:space="preserve">
+    <value>用户已删除</value>
+  </data>
+  <data name="LID_MSGBOX_RunOptionSuccessful" xml:space="preserve">
+    <value>运行选项设置已更改。</value>
+  </data>
+  <data name="LID_MSGBOX_SecuritySuccessful" xml:space="preserve">
+    <value>安全设置已更改。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectUserToDelete" xml:space="preserve">
+    <value>请选择要删除的用户。</value>
+  </data>
+  <data name="LID_MSGBOX_SettingHoursStringValidation" xml:space="preserve">
+    <value>请输入数值。</value>
+  </data>
+  <data name="LID_MSGBOX_UserAddition" xml:space="preserve">
+    <value>用户已添加。</value>
+  </data>
+  <data name="LID_POPUPHeader_AddBioprocess" xml:space="preserve">
+    <value>添加生物过程</value>
+  </data>
+  <data name="LID_POPUPHeader_ChangePassword" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="LID_POPUPHeader_Decontaminate" xml:space="preserve">
+    <value>去污...</value>
+  </data>
+  <data name="LID_POPUPHeader_Diagnostics" xml:space="preserve">
+    <value>诊断</value>
+  </data>
+  <data name="LID_POPUPHeader_ExportFileSetting" xml:space="preserve">
+    <value>文件导出设置</value>
+  </data>
+  <data name="LID_POPUPHeader_ExportToFile" xml:space="preserve">
+    <value>导出到文件</value>
+  </data>
+  <data name="LID_POPUPHeader_InstrumentStatus" xml:space="preserve">
+    <value>仪器状态</value>
+  </data>
+  <data name="LID_POPUPHeader_SystemLock" xml:space="preserve">
+    <value>系统被锁定</value>
+  </data>
+  <data name="LID_POPUPHeader_MyProfile" xml:space="preserve">
+    <value>用户信息</value>
+  </data>
+  <data name="LID_POPUPHeader_OpenSample" xml:space="preserve">
+    <value>打开样品</value>
+  </data>
+  <data name="LID_POPUPHeader_ReagentStatus" xml:space="preserve">
+    <value>试剂状态</value>
+  </data>
+  <data name="LID_POPUPHeader_ReplaceReagentPack" xml:space="preserve">
+    <value>更换试剂盒</value>
+  </data>
+  <data name="LID_POPUPHeader_SelectCellType" xml:space="preserve">
+    <value>选择细胞类型</value>
+  </data>
+  <data name="LID_POPUPHeader_SetFocus" xml:space="preserve">
+    <value>焦点设置</value>
+  </data>
+  <data name="LID_POPUPHeader_Signature" xml:space="preserve">
+    <value>签名</value>
+  </data>
+  <data name="LID_ProgressIndication_ImageAnalysis" xml:space="preserve">
+    <value>正在采集图像</value>
+  </data>
+  <data name="LID_ProgressIndication_RemoveReagent" xml:space="preserve">
+    <value>正在准备移除试剂...</value>
+  </data>
+  <data name="LID_QCHeader_AcceptanceLimits" xml:space="preserve">
+    <value>允许范围</value>
+  </data>
+  <data name="LID_QCHeader_AnalysisDateTime" xml:space="preserve">
+    <value>分析日期/时间</value>
+  </data>
+  <data name="LID_QCHeader_AssayParameter" xml:space="preserve">
+    <value>分析参数</value>
+  </data>
+  <data name="LID_QCHeader_LotNumber" xml:space="preserve">
+    <value>批号</value>
+  </data>
+  <data name="LID_QCHeader_ReAnalysisDateTime" xml:space="preserve">
+    <value>重新分析日期/时间</value>
+  </data>
+  <data name="LID_QCHeader_SlNo" xml:space="preserve">
+    <value>#</value>
+  </data>
+  <data name="LID_Qmanagemnt_QM" xml:space="preserve">
+    <value>创建队列</value>
+  </data>
+  <data name="LID_QMgmtHEADER_BPQC" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Comment" xml:space="preserve">
+    <value>备注</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Position" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_QMgmtHEADER_SampleId" xml:space="preserve">
+    <value>样品ID</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Wash" xml:space="preserve">
+    <value>清洗</value>
+  </data>
+  <data name="LID_RadioButton_CSV" xml:space="preserve">
+    <value>*.csv</value>
+  </data>
+  <data name="LID_RadioButton_DrainReagent" xml:space="preserve">
+    <value>将试剂排入废液</value>
+  </data>
+  <data name="LID_RadioButton_PDF" xml:space="preserve">
+    <value>*.pdf</value>
+  </data>
+  <data name="LID_RadioButton_PlainText" xml:space="preserve">
+    <value>*.txt</value>
+  </data>
+  <data name="LID_RadioButton_PurgeLines" xml:space="preserve">
+    <value>排空连接至试剂盒的管路</value>
+  </data>
+  <data name="LID_RadioButton_SaveEveryN" xml:space="preserve">
+    <value>每N张图像，保存第1张</value>
+  </data>
+  <data name="LID_ResultHeader_Container" xml:space="preserve">
+    <value>容器</value>
+  </data>
+  <data name="LID_ResultHeader_LOT" xml:space="preserve">
+    <value>批次</value>
+  </data>
+  <data name="LID_ResultHeader_Reagents" xml:space="preserve">
+    <value>试剂</value>
+  </data>
+  <data name="LID_ResultHeader_UsesTotal" xml:space="preserve">
+    <value>总使用量</value>
+  </data>
+  <data name="LID_ResultHeader_WorkQueue" xml:space="preserve">
+    <value>工作队列</value>
+  </data>
+  <data name="LID_StatusLabel_UsesRemaining" xml:space="preserve">
+    <value>剩余使用量</value>
+  </data>
+  <data name="LID_StatusLabel_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="LID_TabItem_CalibrationControl" xml:space="preserve">
+    <value>浓度斜率</value>
+  </data>
+  <data name="LID_TabItem_Concentration" xml:space="preserve">
+    <value>细胞总数</value>
+  </data>
+  <data name="LID_TabItem_Logs" xml:space="preserve">
+    <value>日志</value>
+  </data>
+  <data name="LID_TabItem_LowLevel" xml:space="preserve">
+    <value>低值</value>
+  </data>
+  <data name="LID_TabItem_ManualControls" xml:space="preserve">
+    <value>手动质控</value>
+  </data>
+  <data name="LID_TabItem_MotorReg" xml:space="preserve">
+    <value>电动机配准</value>
+  </data>
+  <data name="LID_TabItem_Optics" xml:space="preserve">
+    <value>光学器件</value>
+  </data>
+  <data name="LID_TabItem_Reports" xml:space="preserve">
+    <value>报告</value>
+  </data>
+  <data name="LID_TabItem_Results" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="LID_TabItem_Size" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_TabItem_Users" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="LID_TabItem_Viability" xml:space="preserve">
+    <value>存活率</value>
+  </data>
+  <data name="LID_Title_ViCellBluVersion" xml:space="preserve">
+    <value>Vi-CELL BLU v</value>
+  </data>
+  <data name="LID_UsersLabel_CellType" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_UsersLabel_ConfirmPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="LID_UsersLabel_DisplayName" xml:space="preserve">
+    <value>显示名称</value>
+  </data>
+  <data name="LID_UsersLabel_NewPassword" xml:space="preserve">
+    <value>新密码</value>
+  </data>
+  <data name="LID_UsersLabel_OldPassword" xml:space="preserve">
+    <value>旧密码</value>
+  </data>
+  <data name="LID_UsersLabel_Role" xml:space="preserve">
+    <value>权限</value>
+  </data>
+  <data name="LID_UsersLabel_UserId" xml:space="preserve">
+    <value>用户名</value>
+  </data>
+  <data name="LID_MSGBOX_BPAddedSuccess" xml:space="preserve">
+    <value>生物过程已添加</value>
+  </data>
+  <data name="LID_MSGBOX_SelectBPToDelete" xml:space="preserve">
+    <value>请选择要删除的生物过程。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectQCToDelete" xml:space="preserve">
+    <value>请选择要删除的质量控制。</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeSecuritySetting" xml:space="preserve">
+    <value>确定要更改安全设置？</value>
+  </data>
+  <data name="LID_MSGBOX_RunOptionSetting" xml:space="preserve">
+    <value>确定要更改运行选项设置？</value>
+  </data>
+  <data name="LID_MSGBOX_AddConfirmation" xml:space="preserve">
+    <value>确定要添加{0}？</value>
+  </data>
+  <data name="LID_Label_AverageCircularity" xml:space="preserve">
+    <value>平均圆度</value>
+  </data>
+  <data name="LID_GraphLabel_CircularityDistribution" xml:space="preserve">
+    <value>圆度分布</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_Diameter_AxisTitle" xml:space="preserve">
+    <value>平均直径 (µm)</value>
+  </data>
+  <data name="LID_GraphLabel_TotalCellConcentration" xml:space="preserve">
+    <value>总细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_ViableCellConcentration_Title" xml:space="preserve">
+    <value>活细胞浓度 (/mL)</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_ViableCells_Title" xml:space="preserve">
+    <value>活细胞数</value>
+  </data>
+  <data name="LID_MSGBOX_ReplaceReagentProgress" xml:space="preserve">
+    <value>正在更换试剂盒...</value>
+  </data>
+  <data name="LID_Label_ConcentrationSixCont" xml:space="preserve">
+    <value>开始计算浓度斜率</value>
+  </data>
+  <data name="LID_Label_ConcentrationFive" xml:space="preserve">
+    <value>确认样品按照以上说明操作</value>
+  </data>
+  <data name="LID_Label_ConcentrationFour" xml:space="preserve">
+    <value>将10M质控微球加入到3个样品管中，并将其放入#16至#18位置</value>
+  </data>
+  <data name="LID_Label_ConcentrationOne" xml:space="preserve">
+    <value>在以上字段输入分析值、批号和有效期</value>
+  </data>
+  <data name="LID_Label_ConcentrationSix" xml:space="preserve">
+    <value>点击</value>
+  </data>
+  <data name="LID_Label_ConcentrationThree" xml:space="preserve">
+    <value>将4M质控微球加入到5个样品管中，并将其放入#11至#15位置</value>
+  </data>
+  <data name="LID_Label_ConcentrationTwo" xml:space="preserve">
+    <value>将2M质控微球加入到10个样品管中，并将其放入#1至#10位置</value>
+  </data>
+  <data name="LID_Label_Instructions" xml:space="preserve">
+    <value>说明</value>
+  </data>
+  <data name="LID_GridLabel_ExpirationDate" xml:space="preserve">
+    <value>有效期</value>
+  </data>
+  <data name="LID_QMgmtHEADER_DetectingFocusPos" xml:space="preserve">
+    <value>检测焦点位置</value>
+  </data>
+  <data name="LID_QMgmtHEADER_MovingToLoc" xml:space="preserve">
+    <value>移动至样品位置</value>
+  </data>
+  <data name="LID_QMgmtHEADER_PrepareingFocusControl" xml:space="preserve">
+    <value>制备焦点质控品</value>
+  </data>
+  <data name="LID_QMgmtHEADER_SettingFocusControl" xml:space="preserve">
+    <value>测定焦点质控品</value>
+  </data>
+  <data name="LID_ResultHeader_Total" xml:space="preserve">
+    <value>总计</value>
+  </data>
+  <data name="LID_FrameLabel_ImportSuccessful" xml:space="preserve">
+    <value>导入成功</value>
+  </data>
+  <data name="LID_FrameLabel_SystemBackup" xml:space="preserve">
+    <value>系统备份</value>
+  </data>
+  <data name="LID_FrameLabel_Cleanup" xml:space="preserve">
+    <value>清理/导出</value>
+  </data>
+  <data name="LID_MSGBOX_DustReference" xml:space="preserve">
+    <value>插入空的样品管或空的96孔板，然后点击</value>
+  </data>
+  <data name="LID_FrameLabel_DustRemover" xml:space="preserve">
+    <value>正在进行背景物对照处理...</value>
+  </data>
+  <data name="LID_HELP_CompleteDust" xml:space="preserve">
+    <value>背景物对照处理已完成</value>
+  </data>
+  <data name="LID_Label_AcceptNewRef" xml:space="preserve">
+    <value>接受新的对照图像？</value>
+  </data>
+  <data name="LID_Label_Acquiring" xml:space="preserve">
+    <value>采集和处理图像</value>
+  </data>
+  <data name="LID_Label_AspiratingBuffer" xml:space="preserve">
+    <value>从试剂盒吸取缓冲溶液</value>
+  </data>
+  <data name="LID_Label_DispensingBuffer" xml:space="preserve">
+    <value>缓冲溶液吸入流动池</value>
+  </data>
+  <data name="LID_POPUPHeader_DustReference" xml:space="preserve">
+    <value>背景物对照</value>
+  </data>
+  <data name="LID_Label_NoteOptics" xml:space="preserve">
+    <value>注释：如果"流动池深度"值更改，请重新执行“焦点设置…”项</value>
+  </data>
+  <data name="LID_Label_OpticsImage" xml:space="preserve">
+    <value>图像背景物去除处理</value>
+  </data>
+  <data name="LID_Label_GoToPosition" xml:space="preserve">
+    <value>转到位置</value>
+  </data>
+  <data name="LID_Label_StatusState" xml:space="preserve">
+    <value>位置/值状态</value>
+  </data>
+  <data name="LID_Label_Temperature" xml:space="preserve">
+    <value>温度</value>
+  </data>
+  <data name="LID_Label_Voltage" xml:space="preserve">
+    <value>电压</value>
+  </data>
+  <data name="LID_Label_Controlboard" xml:space="preserve">
+    <value>控制板</value>
+  </data>
+  <data name="LID_Label_CPU" xml:space="preserve">
+    <value>CPU</value>
+  </data>
+  <data name="LID_Label_MotorRadius" xml:space="preserve">
+    <value>电动机半径：</value>
+  </data>
+  <data name="LID_Label_Motortheta" xml:space="preserve">
+    <value>电动机 θ：</value>
+  </data>
+  <data name="LID_Label_Opticalcase" xml:space="preserve">
+    <value>光学器件盒</value>
+  </data>
+  <data name="LID_Label_Probe" xml:space="preserve">
+    <value>进样针</value>
+  </data>
+  <data name="LID_QMgmtHEADER_Dispensing_Sample" xml:space="preserve">
+    <value>样品吸入流动池</value>
+  </data>
+  <data name="LID_Label_Tube" xml:space="preserve">
+    <value>样品管</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ExitApp" xml:space="preserve">
+    <value>确定要退出应用吗？</value>
+  </data>
+  <data name="LID_QMgmtHEADER_WaitMins2" xml:space="preserve">
+    <value>剩余时间</value>
+  </data>
+  <data name="LID_Label_Initial_Taketime" xml:space="preserve">
+    <value>这需要几分钟时间。请稍候。</value>
+  </data>
+  <data name="LID_GraphLabel_SlopeandIntercept" xml:space="preserve">
+    <value>斜率和截距</value>
+  </data>
+  <data name="LID_GraphLabel_Totalcells" xml:space="preserve">
+    <value>细胞数</value>
+  </data>
+  <data name="LID_GraphLabel_Nonviablecellcount" xml:space="preserve">
+    <value>死细胞数</value>
+  </data>
+  <data name="LID_Graph_AdjustConc" xml:space="preserve">
+    <value>调节后浓度</value>
+  </data>
+  <data name="LID_Graph_AvgDia" xml:space="preserve">
+    <value>平均直径 (µm)</value>
+  </data>
+  <data name="LID_Graph_CountPop" xml:space="preserve">
+    <value>细胞数</value>
+  </data>
+  <data name="LID_Graph_LinerAdjSize" xml:space="preserve">
+    <value>调节后大小</value>
+  </data>
+  <data name="LID_Graph_LinerAdjustConc" xml:space="preserve">
+    <value>调节后浓度</value>
+  </data>
+  <data name="LID_Graph_LinerOrigConc" xml:space="preserve">
+    <value>原始浓度</value>
+  </data>
+  <data name="LID_Graph_LinerOrigSize" xml:space="preserve">
+    <value>原始大小</value>
+  </data>
+  <data name="LID_Graph_OrigConc" xml:space="preserve">
+    <value>原始浓度</value>
+  </data>
+  <data name="LID_Graph_Original" xml:space="preserve">
+    <value>原始和调节后</value>
+  </data>
+  <data name="LID_Graph_OrigSize" xml:space="preserve">
+    <value>原始大小（微米）</value>
+  </data>
+  <data name="LID_MSGBOX_DustRefWarning" xml:space="preserve">
+    <value>确定要取消背景物对照处理？</value>
+  </data>
+  <data name="LID_MSGBOX_SetFocusWarning" xml:space="preserve">
+    <value>确定要关闭焦点设置处理？</value>
+  </data>
+  <data name="LID_GraphLabel_ViaCir" xml:space="preserve">
+    <value>活细胞圆度分布</value>
+  </data>
+  <data name="LID_MSGBOX_AcoountDisable" xml:space="preserve">
+    <value>登录未成功。请再试一次。如果问题仍然存在，请联系您的管理员。</value>
+  </data>
+  <data name="LID_MSGBOX_ExportSucces" xml:space="preserve">
+    <value>成功导出到文件</value>
+  </data>
+  <data name="LID_MSGBOX_SampleExport" xml:space="preserve">
+    <value>请选择要导出的样品。</value>
+  </data>
+  <data name="LID_Label_AverageCellPerImage" xml:space="preserve">
+    <value>每张图像上的平均细胞数</value>
+  </data>
+  <data name="LID_Label_bubbles" xml:space="preserve">
+    <value>气泡数</value>
+  </data>
+  <data name="LID_Label_Circularity" xml:space="preserve">
+    <value>平均圆度</value>
+  </data>
+  <data name="LID_Label_Concentration" xml:space="preserve">
+    <value>浓度 (/mL)</value>
+  </data>
+  <data name="LID_Label_Size" xml:space="preserve">
+    <value>平均直径 (µm)</value>
+  </data>
+  <data name="LID_Label_Viability" xml:space="preserve">
+    <value>存活率 (%)</value>
+  </data>
+  <data name="LID_Label_ViableConcentration" xml:space="preserve">
+    <value>活性</value>
+  </data>
+  <data name="LID_MSGBOX_PausingPleaseWait" xml:space="preserve">
+    <value>暂停中...</value>
+  </data>
+  <data name="LID_ResultHeader_ImageCount" xml:space="preserve">
+    <value>图像编号</value>
+  </data>
+  <data name="LID_GraphLabel_Averagebackground" xml:space="preserve">
+    <value>背景平均亮度</value>
+  </data>
+  <data name="LID_GraphLabel_Viablecircularity" xml:space="preserve">
+    <value>活细胞平均圆度</value>
+  </data>
+  <data name="LID_GraphLabel_Viablesize" xml:space="preserve">
+    <value>活细胞平均直径(µm)</value>
+  </data>
+  <data name="LID_MSGBOX_FLushProgress" xml:space="preserve">
+    <value>正在冲洗，确定要取消吗？</value>
+  </data>
+  <data name="LID_MSGBOX_NoDataExport" xml:space="preserve">
+    <value>无可导出的数据</value>
+  </data>
+  <data name="LID_MSGBOX_PrimePropgress" xml:space="preserve">
+    <value>正在进行灌注，确定要取消吗？</value>
+  </data>
+  <data name="LID_MSGBOX_SelectCSVPath" xml:space="preserve">
+    <value>请选择 csv 或 xls 或 txt 文件类型</value>
+  </data>
+  <data name="LID_Label_wellPos" xml:space="preserve">
+    <value>旋转架/96孔板位置</value>
+  </data>
+  <data name="LID_ButtonContent_Repeat" xml:space="preserve">
+    <value>重复</value>
+  </data>
+  <data name="LID_Label_Carousel_Step1" xml:space="preserve">
+    <value>将旋转架置于样品架台面上，确保旋转架内没有样品管。</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_Manually" xml:space="preserve">
+    <value>手动拉出样品架台至仪器前方。  逆时针转动旋转架，使得</value>
+  </data>
+  <data name="LID_Label_Carousel_Step3" xml:space="preserve">
+    <value>将一样品管放入任一位置，然后使用下拉菜单将旋转架移动至该位置，确认样品管检测传感器通过此样品管的存在而被激活。使用下放进样针按钮放下进样针以核实配准情况，根据需要使用重复按钮重复。在继续之前，手动清除旋转架上的所有样品管。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step1" xml:space="preserve">
+    <value>将配准工具置于样品架台面上。将工具中的 A1 与样品架台面上的 A1 对齐。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step2" xml:space="preserve">
+    <value>使用以下按钮移动进样针：</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step2_Manually" xml:space="preserve">
+    <value>，并手动移动样品架台面，使得</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step3" xml:space="preserve">
+    <value>使用以下按钮移动进样针：</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step4" xml:space="preserve">
+    <value>将进样针降低到以下至少两个下拉菜单位置：A1、H1、A12、H12、D6、E6、D7 或 E7。进样针应当位于中心并不得与孔板接触。根据需要使用重复按钮进行重复。</value>
+  </data>
+  <data name="LID_Label_MoveCarouselPositionTo" xml:space="preserve">
+    <value>将旋转架位置移动至</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_DiscardRunSample" xml:space="preserve">
+    <value>要放弃当前正在运行的队列并启动新队列？</value>
+  </data>
+  <data name="LID_Label_Initializing" xml:space="preserve">
+    <value>正在启动</value>
+  </data>
+  <data name="LID_GraphLabel_AvgDiameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_GraphLabel_CellClusters" xml:space="preserve">
+    <value>团聚数</value>
+  </data>
+  <data name="LID_GraphLabel_Image" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="LID_GraphLabel_ImageStat" xml:space="preserve">
+    <value>图像统计</value>
+  </data>
+  <data name="LID_GraphLabel_NonViaConc" xml:space="preserve">
+    <value>死细胞浓度</value>
+  </data>
+  <data name="LID_GraphLabel_NonViaCount" xml:space="preserve">
+    <value>死细胞数</value>
+  </data>
+  <data name="LID_GraphLabel_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="LID_GraphLabel_PlotType" xml:space="preserve">
+    <value>图类型</value>
+  </data>
+  <data name="LID_GraphLabel_ViaConc" xml:space="preserve">
+    <value>活细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_GraphLabel_ViaCount" xml:space="preserve">
+    <value>活细胞数</value>
+  </data>
+  <data name="LID_GraphLabel_StandardDeviation" xml:space="preserve">
+    <value>标准差</value>
+  </data>
+  <data name="LID_MSGBOX_ImportSuccess" xml:space="preserve">
+    <value>文件已导入</value>
+  </data>
+  <data name="LID_Label_InitializeSampleDeck" xml:space="preserve">
+    <value>样品架台面</value>
+  </data>
+  <data name="LID_ButtonContent_Initialize" xml:space="preserve">
+    <value>启动</value>
+  </data>
+  <data name="LID_MSGBOX_SecurtyOffLogin" xml:space="preserve">
+    <value>无法登录。请联系管理员获取帮助。</value>
+  </data>
+  <data name="LID_HB_Exit" xml:space="preserve">
+    <value>退出</value>
+  </data>
+  <data name="LID_HB_Lock" xml:space="preserve">
+    <value>锁定</value>
+  </data>
+  <data name="LID_RadioButton_NoneReagent" xml:space="preserve">
+    <value>无</value>
+  </data>
+  <data name="LID_ListOption_ELOMonitor" xml:space="preserve">
+    <value>显示</value>
+  </data>
+  <data name="LID_ListOption_ELOMonitorOff" xml:space="preserve">
+    <value>4 小时无操作后将关闭显示</value>
+  </data>
+  <data name="LID_POPUPHeader_SelectTempCellType" xml:space="preserve">
+    <value>选择临时细胞类型</value>
+  </data>
+  <data name="LID_Label_Led" xml:space="preserve">
+    <value>LED</value>
+  </data>
+  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+    <value>Vi-CELL BLU</value>
+  </data>
+  <data name="LID_Label_AvgDiameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_Label_TotalCells" xml:space="preserve">
+    <value>细胞总数</value>
+  </data>
+  <data name="LID_Label_ViableCells" xml:space="preserve">
+    <value>活细胞</value>
+  </data>
+  <data name="LID_Label_InstrumentError" xml:space="preserve">
+    <value>仪器错误</value>
+  </data>
+  <data name="LID_GraphLabel_Slope" xml:space="preserve">
+    <value>斜率</value>
+  </data>
+  <data name="LID_Graph_AvgDiaSI" xml:space="preserve">
+    <value>平均直径 (µm)</value>
+  </data>
+  <data name="LID_Label_NoLogsFound" xml:space="preserve">
+    <value>未找到日志</value>
+  </data>
+  <data name="LID_PopUpHeader_AddQualityControl" xml:space="preserve">
+    <value>添加质量控制</value>
+  </data>
+  <data name="LID_Concatenate_Nonviable" xml:space="preserve">
+    <value>无活性</value>
+  </data>
+  <data name="LID_Concatenate_Viable" xml:space="preserve">
+    <value>活性</value>
+  </data>
+  <data name="LID_Label_ExportConfiguration" xml:space="preserve">
+    <value>导出配置</value>
+  </data>
+  <data name="LID_Label_ImportConfiguration" xml:space="preserve">
+    <value>导入配置</value>
+  </data>
+  <data name="LID_Label_All" xml:space="preserve">
+    <value>全部</value>
+  </data>
+  <data name="LID_Label_QualityControl" xml:space="preserve">
+    <value>质量控制</value>
+  </data>
+  <data name="LID_GraphLabel_ElapsedTimeDate" xml:space="preserve">
+    <value>运行时间（天）</value>
+  </data>
+  <data name="LID_MSGBOX_CelltypeLimit" xml:space="preserve">
+    <value>细胞类型数不得多于 {0}</value>
+  </data>
+  <data name="LID_MSGBOX_InvalidArgs" xml:space="preserve">
+    <value>Invalid or missing data field</value>
+  </data>
+  <data name="LID_MSGBOX_Busy" xml:space="preserve">
+    <value>繁忙</value>
+  </data>
+  <data name="LID_MSGBOX_EntryInvalid" xml:space="preserve">
+    <value>无效输入</value>
+  </data>
+  <data name="LID_MSGBOX_EntryNotFound" xml:space="preserve">
+    <value>未找到输入值</value>
+  </data>
+  <data name="LID_MSGBOX_Idel" xml:space="preserve">
+    <value>闲置状态</value>
+  </data>
+  <data name="LID_MSGBOX_NoneFound" xml:space="preserve">
+    <value>未找到</value>
+  </data>
+  <data name="LID_MSGBOX_NotSupported" xml:space="preserve">
+    <value>不支持</value>
+  </data>
+  <data name="LID_MSGBOX_TimedOut" xml:space="preserve">
+    <value>超时。</value>
+  </data>
+  <data name="LID_MSGBOX_ValidationFailed" xml:space="preserve">
+    <value>验证失败。</value>
+  </data>
+  <data name="LID_Label_InstrumentStatusReport" xml:space="preserve">
+    <value>仪器状态报告</value>
+  </data>
+  <data name="LID_FrameLabel_LowLevelControls" xml:space="preserve">
+    <value>低水平质控品</value>
+  </data>
+  <data name="LID_MSGBOX_PWDExp" xml:space="preserve">
+    <value>您的密码将于 {0} 过期。请在过期前更改您的密码</value>
+  </data>
+  <data name="LID_ERRMSGBOX_SignMsg" xml:space="preserve">
+    <value>结果已签署</value>
+  </data>
+  <data name="LID_MSGBOX_AssayRange" xml:space="preserve">
+    <value>分析值必须介于 {0} 和 {1} {2} 之间</value>
+  </data>
+  <data name="LID_Button_Stop" xml:space="preserve">
+    <value>停止连续分析</value>
+  </data>
+  <data name="LID_ERRMSGBOX__SecurityMsg" xml:space="preserve">
+    <value>您输入的用户编号或密码无效，或者您无权打开此权限，请寻求管理员帮助。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FromDate" xml:space="preserve">
+    <value>开始日期不得晚于结束日期。</value>
+  </data>
+  <data name="LID_MSGBOX_Calibration_ExpirationDate" xml:space="preserve">
+    <value>失效日期不得早于当前日期。</value>
+  </data>
+  <data name="LID_Label_ReportEventType" xml:space="preserve">
+    <value>事件类型</value>
+  </data>
+  <data name="LID_Label_CalibrationType" xml:space="preserve">
+    <value>浓度斜率类型</value>
+  </data>
+  <data name="LID_Label_Intercept" xml:space="preserve">
+    <value>截距</value>
+  </data>
+  <data name="LID_Label_NoConsum" xml:space="preserve">
+    <value>质控品数</value>
+  </data>
+  <data name="LID_Label_Slop" xml:space="preserve">
+    <value>斜率</value>
+  </data>
+  <data name="LID_MSGBOX_QualityControl" xml:space="preserve">
+    <value>质量控制</value>
+  </data>
+  <data name="LID_Label_Status" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="LID_MSGBOX_Minutes" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="LID_Label_Consumable" xml:space="preserve">
+    <value>消耗品</value>
+  </data>
+  <data name="LID_MSGBOX_Volume" xml:space="preserve">
+    <value>注射器位置</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ReactorNameBlank" xml:space="preserve">
+    <value>反应器名称不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_BlankField_With_Double_Quotes" xml:space="preserve">
+    <value>{0}字段不能为空。</value>
+  </data>
+  <data name="LID_MSGBOX_EnterQualityControlName" xml:space="preserve">
+    <value>质量控制名称</value>
+  </data>
+  <data name="LID_Label_BioProcessName" xml:space="preserve">
+    <value>生物过程名称</value>
+  </data>
+  <data name="LID_Label_CellSharpnessValueBlank" xml:space="preserve">
+    <value>细胞清晰度值不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_CellTypeNameBlank" xml:space="preserve">
+    <value>细胞类型名称不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_QualityControl" xml:space="preserve">
+    <value>质量控制。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ChooseADifferent_Name" xml:space="preserve">
+    <value>细胞类型名称之前已使用。请选择其他细胞类型名称。</value>
+  </data>
+  <data name="LID_Label_Move96WellPositionTo" xml:space="preserve">
+    <value>将96孔板位置移动到</value>
+  </data>
+  <data name="LID_Report_Last_Check" xml:space="preserve">
+    <value>上一次检查</value>
+  </data>
+  <data name="LID_Report_10M" xml:space="preserve">
+    <value>10M</value>
+  </data>
+  <data name="LID_Report_2M" xml:space="preserve">
+    <value>2M</value>
+  </data>
+  <data name="LID_Report_AnalysisBy" xml:space="preserve">
+    <value>分析人员</value>
+  </data>
+  <data name="LID_Report_Control_Board" xml:space="preserve">
+    <value>控制板</value>
+  </data>
+  <data name="LID_Report_DoublingTime" xml:space="preserve">
+    <value>倍增时间（小时）</value>
+  </data>
+  <data name="LID_Report_GrowthRate" xml:space="preserve">
+    <value>生长速率（/小时）</value>
+  </data>
+  <data name="LID_Report_Intercept" xml:space="preserve">
+    <value>截距</value>
+  </data>
+  <data name="LID_Report_Pos12Volt" xml:space="preserve">
+    <value>+12 V</value>
+  </data>
+  <data name="LID_Report_Pos24Volt" xml:space="preserve">
+    <value>+24 V</value>
+  </data>
+  <data name="LID_Report_Pos33Volt" xml:space="preserve">
+    <value>+3.3 V</value>
+  </data>
+  <data name="LID_Report_Pos5VoltCircuit" xml:space="preserve">
+    <value>+5 V 电路</value>
+  </data>
+  <data name="LID_Report_Pos5VoltSensor" xml:space="preserve">
+    <value>+5 V 传感器</value>
+  </data>
+  <data name="LID_Report_ReanalysisBy" xml:space="preserve">
+    <value>重新分析人员</value>
+  </data>
+  <data name="LID_Report_SampleDate" xml:space="preserve">
+    <value>样品日期</value>
+  </data>
+  <data name="LID_Report_StatusState" xml:space="preserve">
+    <value>状态</value>
+  </data>
+  <data name="LID_Report_AnalysisType" xml:space="preserve">
+    <value>分析类型</value>
+  </data>
+  <data name="LID_Label_Space" xml:space="preserve">
+    <value>{0} 可用，共 {1}</value>
+  </data>
+  <data name="LID_POPUPHeader_OpenBioprocess" xml:space="preserve">
+    <value>打开生物过程</value>
+  </data>
+  <data name="LID_POPUPHeader_OpenQc" xml:space="preserve">
+    <value>打开质量控制</value>
+  </data>
+  <data name="LID_GridLabel_R2" xml:space="preserve">
+    <value>R</value>
+  </data>
+  <data name="LID_Label_BufferSolution" xml:space="preserve">
+    <value>D. 缓冲溶液</value>
+  </data>
+  <data name="LID_Label_Cell" xml:space="preserve">
+    <value>H. 细胞</value>
+  </data>
+  <data name="LID_Label_CleaningAgent" xml:space="preserve">
+    <value>B. 清洗液</value>
+  </data>
+  <data name="LID_Label_ConditioningSolution" xml:space="preserve">
+    <value>C. 消毒剂</value>
+  </data>
+  <data name="LID_Label_Reagent" xml:space="preserve">
+    <value>E. 试剂2</value>
+  </data>
+  <data name="LID_Label_Reagent1" xml:space="preserve">
+    <value>A. 试剂1</value>
+  </data>
+  <data name="LID_Label_Sample" xml:space="preserve">
+    <value>G. 样品</value>
+  </data>
+  <data name="LID_Label_Waste" xml:space="preserve">
+    <value>F. 废液</value>
+  </data>
+  <data name="LID_Report_NoDataFound" xml:space="preserve">
+    <value>未找到数据</value>
+  </data>
+  <data name="LID_Label_Aborting" xml:space="preserve">
+    <value>正在中止...</value>
+  </data>
+  <data name="LID_Label_Note" xml:space="preserve">
+    <value>注释：</value>
+  </data>
+  <data name="LID_Label_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="LID_Report_AnalysisVersion" xml:space="preserve">
+    <value>分析版本</value>
+  </data>
+  <data name="LID_Report_ImageSize" xml:space="preserve">
+    <value>图像尺寸</value>
+  </data>
+  <data name="LID_Report_carousel" xml:space="preserve">
+    <value>旋转架/96孔板</value>
+  </data>
+  <data name="LID_Report_NoOfRuns" xml:space="preserve">
+    <value>分析次数</value>
+  </data>
+  <data name="LID_Report_RemainingCapacity" xml:space="preserve">
+    <value>废管托盘剩余容量</value>
+  </data>
+  <data name="LID_Icon_Signature" xml:space="preserve">
+    <value>电子签名</value>
+  </data>
+  <data name="LID_Icon_CellType" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_Icon_Samples" xml:space="preserve">
+    <value>样品？</value>
+  </data>
+  <data name="LID_Icon_AcceptSetFocusSuccessful" xml:space="preserve">
+    <value>成功接受焦点设置</value>
+  </data>
+  <data name="LID_Icon_ChangePassword" xml:space="preserve">
+    <value>更改密码</value>
+  </data>
+  <data name="LID_Report_UsesRemaining" xml:space="preserve">
+    <value>剩余使用量</value>
+  </data>
+  <data name="LID_Report_UsesTotal" xml:space="preserve">
+    <value>总计使用量</value>
+  </data>
+  <data name="LID_Result_AverageCellPerImage" xml:space="preserve">
+    <value>每张图像上的平均细胞数</value>
+  </data>
+  <data name="LID_Result_Bubbles" xml:space="preserve">
+    <value>气泡数</value>
+  </data>
+  <data name="LID_Result_CellClusters" xml:space="preserve">
+    <value>团聚数</value>
+  </data>
+  <data name="LID_Result_Circularity" xml:space="preserve">
+    <value>圆度</value>
+  </data>
+  <data name="LID_Result_Concentration" xml:space="preserve">
+    <value>总细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_Result_size" xml:space="preserve">
+    <value>大小 (µm)</value>
+  </data>
+  <data name="LID_Result_Totalcells" xml:space="preserve">
+    <value>细胞数</value>
+  </data>
+  <data name="LID_Result_Viability" xml:space="preserve">
+    <value>存活率 (%)</value>
+  </data>
+  <data name="LID_Result_Viablecircularity" xml:space="preserve">
+    <value>活细胞圆度</value>
+  </data>
+  <data name="LID_Result_Viablesize" xml:space="preserve">
+    <value>活细胞大小 (µm)</value>
+  </data>
+  <data name="LID_Result_ViaConc" xml:space="preserve">
+    <value>活细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_Result_ViaCount" xml:space="preserve">
+    <value>活细胞</value>
+  </data>
+  <data name="LID_MSGBOX_FileDeleted" xml:space="preserve">
+    <value>文件删除成功</value>
+  </data>
+  <data name="LID_MSGBOX_NoDir" xml:space="preserve">
+    <value>目录不存在</value>
+  </data>
+  <data name="LID_MSGBOX_NoFile" xml:space="preserve">
+    <value>没有要删除的文件</value>
+  </data>
+  <data name="LID_GraphResult_ViaSize" xml:space="preserve">
+    <value>活细胞粒度分布</value>
+  </data>
+  <data name="LID_Label_DiskSpaceLow" xml:space="preserve">
+    <value>错误：磁盘空间不足</value>
+  </data>
+  <data name="LID_Icon_ExportInstrumentStatus" xml:space="preserve">
+    <value>导出仪器状态</value>
+  </data>
+  <data name="LID_Label_SecondDueTo" xml:space="preserve">
+    <value>秒（无操作状态下）</value>
+  </data>
+  <data name="LID_Label_Sensor" xml:space="preserve">
+    <value>传感器</value>
+  </data>
+  <data name="LID_Label_UserDeatils" xml:space="preserve">
+    <value>用户详细信息</value>
+  </data>
+  <data name="LID_LogsList_CalibraionLog" xml:space="preserve">
+    <value>浓度斜率历史日志</value>
+  </data>
+  <data name="LID_StatusLabel_AttentionReq" xml:space="preserve">
+    <value>需要注意</value>
+  </data>
+  <data name="LID_StatusLabel_Fault" xml:space="preserve">
+    <value>故障</value>
+  </data>
+  <data name="LID_StatusBar_MovingProbeSuccessful" xml:space="preserve">
+    <value>成功移动进样针</value>
+  </data>
+  <data name="LID_StatusBar_ValvePositionChanged" xml:space="preserve">
+    <value>电磁阀位置已更改</value>
+  </data>
+  <data name="LID_DataGrid_Header" xml:space="preserve">
+    <value>严重性</value>
+  </data>
+  <data name="LID_DataGrid_Instance" xml:space="preserve">
+    <value>情况</value>
+  </data>
+  <data name="LID_DataGrid_SubSystem" xml:space="preserve">
+    <value>子系统</value>
+  </data>
+  <data name="LID_DataGrid_System" xml:space="preserve">
+    <value>系统</value>
+  </data>
+  <data name="LID_StatusBar_CarouselRotatedOnePosition" xml:space="preserve">
+    <value>旋转架已转到一个位置</value>
+  </data>
+  <data name="LID_StatusBar_InitializedSampleDeck" xml:space="preserve">
+    <value>已启动样品架台面</value>
+  </data>
+  <data name="LID_StatusBar_ModifiedCellType" xml:space="preserve">
+    <value>用户定义的细胞类型已修改</value>
+  </data>
+  <data name="LID_StatusBar_MotorRegProcessCan" xml:space="preserve">
+    <value>电动机配准处理已取消</value>
+  </data>
+  <data name="LID_StatusBar_NewConcentrationSlopeSet" xml:space="preserve">
+    <value>新的浓度斜率已设定</value>
+  </data>
+  <data name="LID_StatusBar_NewSizeSlopeSet" xml:space="preserve">
+    <value>新的尺寸斜率已设定</value>
+  </data>
+  <data name="LID_StatusBar_QueueResumed" xml:space="preserve">
+    <value>队列已恢复</value>
+  </data>
+  <data name="LID_StatusBar_RemainingWasteTubeBinCapacit" xml:space="preserve">
+    <value>已重置已用试管托盘的剩余容量</value>
+  </data>
+  <data name="LID_StatusBar_ResultRecordSigned" xml:space="preserve">
+    <value>结果记录已签署</value>
+  </data>
+  <data name="LID_StatusBar_SampleReanalyzed" xml:space="preserve">
+    <value>样品已重新分析</value>
+  </data>
+  <data name="LID_StatusBar_SystemSecuritySettingChanged" xml:space="preserve">
+    <value>系统安全设置已更改</value>
+  </data>
+  <data name="LID_StatusBar_UserSignOut" xml:space="preserve">
+    <value>用户注销</value>
+  </data>
+  <data name="LID_StatusBar_WorkQueuePaused" xml:space="preserve">
+    <value>工作队列暂停</value>
+  </data>
+  <data name="LID_StatusBar_WorkQueueStart" xml:space="preserve">
+    <value>工作队列启动</value>
+  </data>
+  <data name="LID_StatusBar_WorkQueueStopped" xml:space="preserve">
+    <value>工作队列停止</value>
+  </data>
+  <data name="LID_CreateByOpen_SelectOneSample" xml:space="preserve">
+    <value>选择一个样品</value>
+  </data>
+  <data name="LID_Label_96Well" xml:space="preserve">
+    <value>96 孔板</value>
+  </data>
+  <data name="LID_Label_96WellPosition" xml:space="preserve">
+    <value>96 孔板位置</value>
+  </data>
+  <data name="LID_Label_CarouselPosition" xml:space="preserve">
+    <value>旋转架位置</value>
+  </data>
+  <data name="LID_Label_ResultValue" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="LID_Label_Circuit" xml:space="preserve">
+    <value>电路</value>
+  </data>
+  <data name="LID_Label_BackgroundUniformity" xml:space="preserve">
+    <value>背景一致性</value>
+  </data>
+  <data name="LID_Label_test" xml:space="preserve">
+    <value>测试</value>
+  </data>
+  <data name="LID_Label_Parameter" xml:space="preserve">
+    <value>参数</value>
+  </data>
+  <data name="LID_Label_SystemError" xml:space="preserve">
+    <value>系统错误</value>
+  </data>
+  <data name="LID_MSGBOX_HardwareNotIntitalized" xml:space="preserve">
+    <value>硬件未启动</value>
+  </data>
+  <data name="LID_MSGBOX_StorageFault" xml:space="preserve">
+    <value>存储故障</value>
+  </data>
+  <data name="LID_Label_AspirationCycle" xml:space="preserve">
+    <value>吸样循环</value>
+  </data>
+  <data name="LID_Label_MixingCycle" xml:space="preserve">
+    <value>混合循环</value>
+  </data>
+  <data name="LID_POPUPHeader_SelectCellTypeToReanlyse" xml:space="preserve">
+    <value>选择细胞类型以便重新分析</value>
+  </data>
+  <data name="LID_Label_LockMsg" xml:space="preserve">
+    <value>系统已锁定。   请进行身份验证以便继续。</value>
+  </data>
+  <data name="LID_StatusBar_AddedCellType" xml:space="preserve">
+    <value>用户定义的细胞类型已添加</value>
+  </data>
+  <data name="LID_ConLabel_LastConcentrationSlope" xml:space="preserve">
+    <value>上一个浓度斜率</value>
+  </data>
+  <data name="LID_ConLabel_SetNewConcentration" xml:space="preserve">
+    <value>设置新浓度</value>
+  </data>
+  <data name="LID_ERRMSGBOX_TheAssayValueIsNotWithinRange" xml:space="preserve">
+    <value>分析值未在 {0}M 范围内。</value>
+  </data>
+  <data name="LID_MSGBOX_CancelConcentration" xml:space="preserve">
+    <value>确定要取消当前的浓度斜率结果？</value>
+  </data>
+  <data name="LID_MSGBOX_ModifyConfirmation" xml:space="preserve">
+    <value>确定要修改用户定义的细胞类型 {0}？</value>
+  </data>
+  <data name="LID_MSGBOX_SoftwareFault" xml:space="preserve">
+    <value>软件故障</value>
+  </data>
+  <data name="LID_MSGBOX_NightCleaning" xml:space="preserve">
+    <value>正在进行夜间清洗</value>
+  </data>
+  <data name="LID_MSGBOX_NightCleaningSkipped" xml:space="preserve">
+    <value>夜间清洗已跳过</value>
+  </data>
+  <data name="LID_Label_MotorFocus" xml:space="preserve">
+    <value>电动机焦点</value>
+  </data>
+  <data name="LID_Label_MotorReagent" xml:space="preserve">
+    <value>电动机试剂</value>
+  </data>
+  <data name="LID_GridLabel_ConExpirationDate" xml:space="preserve">
+    <value>失效日期 (YYYY/MM/DD)</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FailToPerformReg" xml:space="preserve">
+    <value>未能执行配准。</value>
+  </data>
+  <data name="LID_StatusBar_PerformCarouselProcess" xml:space="preserve">
+    <value>已成功执行旋转架配准处理</value>
+  </data>
+  <data name="LID_StatusBar_PerformPlateProcess" xml:space="preserve">
+    <value>已成功执行托盘配准处理</value>
+  </data>
+  <data name="LID_MSGBOX_MotorCarouselRegError" xml:space="preserve">
+    <value>移去旋转架会导致旋转架配准停止</value>
+  </data>
+  <data name="LID_StatusBar_ServiceUserSignOut" xml:space="preserve">
+    <value>服务用户注销。安全功能已关闭</value>
+  </data>
+  <data name="LID_Label_SampleTube" xml:space="preserve">
+    <value>样品管</value>
+  </data>
+  <data name="LID_Label_Firmware_Update_Failed" xml:space="preserve">
+    <value>固件更新失败</value>
+  </data>
+  <data name="LID_Label_Initialization_Failed" xml:space="preserve">
+    <value>初始化失败</value>
+  </data>
+  <data name="LID_MSGBOX_UnableToPerform_Night_Clean" xml:space="preserve">
+    <value>无法执行夜间清洗</value>
+  </data>
+  <data name="LID_MSGBOX_MotorPlateRegError" xml:space="preserve">
+    <value>放置旋转架会导致托盘配准停止</value>
+  </data>
+  <data name="LID_Label_Days" xml:space="preserve">
+    <value>天</value>
+  </data>
+  <data name="LID_Label_Add" xml:space="preserve">
+    <value>添加</value>
+  </data>
+  <data name="LID_Label_Edit" xml:space="preserve">
+    <value>编辑</value>
+  </data>
+  <data name="LID_Label_Graph" xml:space="preserve">
+    <value>图表</value>
+  </data>
+  <data name="LID_Label_Create" xml:space="preserve">
+    <value>Create</value>
+  </data>
+  <data name="LID_Label_Image" xml:space="preserve">
+    <value>图像</value>
+  </data>
+  <data name="LID_Label_Summary" xml:space="preserve">
+    <value>测试结果</value>
+  </data>
+  <data name="LID_Label_Overtime" xml:space="preserve">
+    <value>历史</value>
+  </data>
+  <data name="LID_Label_Queue" xml:space="preserve">
+    <value>队列</value>
+  </data>
+  <data name="LID_Label_Users" xml:space="preserve">
+    <value>用户</value>
+  </data>
+  <data name="LID_ERRMSGBOX_LoadError" xml:space="preserve">
+    <value>请选择 96 孔板位置以创建样品队列。</value>
+  </data>
+  <data name="LID_ReagentStatus_DAspirating" xml:space="preserve">
+    <value>正在吸取漂白剂</value>
+  </data>
+  <data name="LID_ReagentStatus_Dcompalted" xml:space="preserve">
+    <value>去污已完成</value>
+  </data>
+  <data name="LID_ReagentStatus_DDEeay" xml:space="preserve">
+    <value>去污延迟</value>
+  </data>
+  <data name="LID_ReagentStatus_DFailed" xml:space="preserve">
+    <value>去污失败</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushAir" xml:space="preserve">
+    <value>空气冲洗</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushBuffer" xml:space="preserve">
+    <value>缓冲液冲洗</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushClean" xml:space="preserve">
+    <value>清洁剂冲洗</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushComplete" xml:space="preserve">
+    <value>冲洗处理已完成</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushConditioningSolution" xml:space="preserve">
+    <value>消毒剂冲洗</value>
+  </data>
+  <data name="LID_ReagentStatus_FlushFailed" xml:space="preserve">
+    <value>冲洗处理失败</value>
+  </data>
+  <data name="LID_ReagentStatus_Lcomplete" xml:space="preserve">
+    <value>装载完成</value>
+  </data>
+  <data name="LID_ReagentStatus_LContainerLocation" xml:space="preserve">
+    <value>正在等待容器位置</value>
+  </data>
+  <data name="LID_ReagentStatus_LDoorLatch" xml:space="preserve">
+    <value>正在等待门闩</value>
+  </data>
+  <data name="LID_ReagentStatus_LDoorLatchFail" xml:space="preserve">
+    <value>门闩超时失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LFludicFail" xml:space="preserve">
+    <value>流体失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LInsertingProbe" xml:space="preserve">
+    <value>正在插入进样针</value>
+  </data>
+  <data name="LID_ReagentStatus_LInvalidContainerFail" xml:space="preserve">
+    <value>无效容器位置失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LNoReagentFail" xml:space="preserve">
+    <value>未发现试剂失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LNoWasteFail" xml:space="preserve">
+    <value>未发现废液失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LPrimingFLuid" xml:space="preserve">
+    <value>正在灌注流体管路</value>
+  </data>
+  <data name="LID_ReagentStatus_LProbeInsertFail" xml:space="preserve">
+    <value>进样针插入失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentContainers" xml:space="preserve">
+    <value>正在识别试剂容器</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentEmptyFail" xml:space="preserve">
+    <value>试剂清空失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentInvalidFail" xml:space="preserve">
+    <value>试剂无效失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentInsufficientRemainingFail" xml:space="preserve">
+    <value>剩余试剂数量不足</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentSensor" xml:space="preserve">
+    <value>正在等待试剂传感器</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagentSensorFail" xml:space="preserve">
+    <value>试剂传感器检测失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LReagetnExpired" xml:space="preserve">
+    <value>试剂已过期失败</value>
+  </data>
+  <data name="LID_ReagentStatus_LSyncReagentData" xml:space="preserve">
+    <value>正在同步试剂数据</value>
+  </data>
+  <data name="LID_ReagentStatus_LTimeOut" xml:space="preserve">
+    <value>仪器超时失败</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeClean" xml:space="preserve">
+    <value>正在灌注清洁剂 {0}</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeComplete" xml:space="preserve">
+    <value>灌注处理已完成</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeFailed" xml:space="preserve">
+    <value>灌注处理失败</value>
+  </data>
+  <data name="LID_ReagentStatus_PrimeReagent" xml:space="preserve">
+    <value>正在灌注试剂 {0}</value>
+  </data>
+  <data name="LID_ReagentStatus_ULComplete" xml:space="preserve">
+    <value>卸载完成</value>
+  </data>
+  <data name="LID_ReagentStatus_ULDoorUnlatchFailed" xml:space="preserve">
+    <value>门闩打开失败</value>
+  </data>
+  <data name="LID_ReagentStatus_ULDrainFailed" xml:space="preserve">
+    <value>排水净化失败</value>
+  </data>
+  <data name="LID_ReagentStatus_ULDraining" xml:space="preserve">
+    <value>正在排空位置 {0}</value>
+  </data>
+  <data name="LID_ReagentStatus_ULProbeRetractFailed" xml:space="preserve">
+    <value>进样针缩回失败</value>
+  </data>
+  <data name="LID_ReagentStatus_ULPurging" xml:space="preserve">
+    <value>正在净化位置 {0}</value>
+  </data>
+  <data name="LID_ReagentStatus_ULRetractingProbe" xml:space="preserve">
+    <value>正在缩回进样针</value>
+  </data>
+  <data name="LID_ReagentStatus_ULTimeOut" xml:space="preserve">
+    <value>仪器超时失败</value>
+  </data>
+  <data name="LID_ReagentStatus_ULUnlatchingDoor" xml:space="preserve">
+    <value>正在打开门闩</value>
+  </data>
+  <data name="LID_Label_Decluster_Low" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="LID_Label_LOW" xml:space="preserve">
+    <value>低</value>
+  </data>
+  <data name="LID_Label_WARNING" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="LID_Label_FaultSuggestRestart" xml:space="preserve">
+    <value>排除故障情况后重启仪器</value>
+  </data>
+  <data name="LID_GridHeader_StartDate" xml:space="preserve">
+    <value>开始日期</value>
+  </data>
+  <data name="LID_GridHeader_StartTime" xml:space="preserve">
+    <value>开始时间</value>
+  </data>
+  <data name="LID_Label_AvgAdjustedConc" xml:space="preserve">
+    <value>调节后的平均浓度 (/mL)</value>
+  </data>
+  <data name="LID_Label_AvgOriginalConc" xml:space="preserve">
+    <value>平均原始浓度 (/mL)</value>
+  </data>
+  <data name="LID_Label_AvgTotalCells" xml:space="preserve">
+    <value>平均细胞总数</value>
+  </data>
+  <data name="LID_Label_FastWash" xml:space="preserve">
+    <value>快速清洗</value>
+  </data>
+  <data name="LID_Label_NoOfTubes" xml:space="preserve">
+    <value>样品管数量</value>
+  </data>
+  <data name="LID_Label_NormalWash" xml:space="preserve">
+    <value>正常清洗</value>
+  </data>
+  <data name="LID_Label_Validate" xml:space="preserve">
+    <value>确认</value>
+  </data>
+  <data name="LID_Label_FinalImage" xml:space="preserve">
+    <value>最终图像</value>
+  </data>
+  <data name="LID_Label_Brightfield" xml:space="preserve">
+    <value>明场</value>
+  </data>
+  <data name="LID_Label_ContinueWorking" xml:space="preserve">
+    <value>继续工作</value>
+  </data>
+  <data name="LID_Label_WaitMsg" xml:space="preserve">
+    <value>请稍候</value>
+  </data>
+  <data name="LID_Label_DrainNote" xml:space="preserve">
+    <value>将试剂排入废液可能会花费较长时间，并且会将剩余使用量归零。</value>
+  </data>
+  <data name="LID_Label_PausedState" xml:space="preserve">
+    <value>已暂停，点击恢复。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_NotPermittedAtThisTime" xml:space="preserve">
+    <value>此时未获批准。  请查看讯息中心了解详情并重试。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_WrongPWD" xml:space="preserve">
+    <value>您输入的密码无效。</value>
+  </data>
+  <data name="LID_Label_ConfirmSerialNumber" xml:space="preserve">
+    <value>确认序列号</value>
+  </data>
+  <data name="LID_Label_EnterPassword" xml:space="preserve">
+    <value>输入密码</value>
+  </data>
+  <data name="LID_Label_EnterSerialNumber" xml:space="preserve">
+    <value>输入序列号</value>
+  </data>
+  <data name="LID_Label_SetSerialNumber" xml:space="preserve">
+    <value>设置序列号</value>
+  </data>
+  <data name="LID_MSGBOX_SerialNumberVerification" xml:space="preserve">
+    <value>设备会将序列号设置为 {0}</value>
+  </data>
+  <data name="LID_MSGBOX_SetSerialConfirmation" xml:space="preserve">
+    <value>确定要设置新的序列号？</value>
+  </data>
+  <data name="LID_MSG_SerialNumberMismatch" xml:space="preserve">
+    <value>序列号不匹配</value>
+  </data>
+  <data name="LID_StatusBar_SerialNumberChanged" xml:space="preserve">
+    <value>序列号更改成功</value>
+  </data>
+  <data name="LID_ERRMSGBOX_eNotPermittedByUser" xml:space="preserve">
+    <value>未经用户批准</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CELLTYPE_CLOSE_ERROR" xml:space="preserve">
+    <value>无法关闭视窗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CHANGE_PASSWORD_ERROR" xml:space="preserve">
+    <value>未能更改密码</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DEFAULT_LOGIN" xml:space="preserve">
+    <value>未能设置默认值</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DELETE_USER" xml:space="preserve">
+    <value>无法删除用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DENIEDACCESS_FOLDER" xml:space="preserve">
+    <value>无法访问用户文件夹</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONADDCELLTYPE" xml:space="preserve">
+    <value>添加细胞类型时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCLEAN" xml:space="preserve">
+    <value>执行清洗措施时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCLOSECREATECELLVIEW" xml:space="preserve">
+    <value>关闭创建细胞视图时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCREATEBYRUNOPEN" xml:space="preserve">
+    <value>通过运行打开创建出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONCREATECELLTYPE" xml:space="preserve">
+    <value>创建细胞类型出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEDITCELLTYPE" xml:space="preserve">
+    <value>编辑细胞类型时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEXPANDGRAPH" xml:space="preserve">
+    <value>无法展开图表</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEXPANDIMAGE" xml:space="preserve">
+    <value>无法展开图像</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONEXPORT" xml:space="preserve">
+    <value>未能导出</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONFILTER" xml:space="preserve">
+    <value>无法筛选</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONREANALYSESAMPLE" xml:space="preserve">
+    <value>重新分析样品出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONRUNSAMPLES" xml:space="preserve">
+    <value>无法运行测试</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONSAMPLEANALYSIS" xml:space="preserve">
+    <value>处理样品分析时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONSELECTION" xml:space="preserve">
+    <value>选择时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONSETDEFAULT" xml:space="preserve">
+    <value>默认设置出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONUPDATECAROUSELSTATUS" xml:space="preserve">
+    <value>无法更新样品状态</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERRORONVALIDATIONOPENDIALOG" xml:space="preserve">
+    <value>打开确认对话时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FAILEDTOSETFOLDER" xml:space="preserve">
+    <value>未能设置文件夹</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FAILED_NEW_USER" xml:space="preserve">
+    <value>未能创建用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGIN_USER_ERROR" xml:space="preserve">
+    <value>未能登录</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_MODIFY_USER" xml:space="preserve">
+    <value>未能修改用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NOTFOUND_FOLDER" xml:space="preserve">
+    <value>用户文件夹不存在</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NO_PERMISSION_EDIT_USER" xml:space="preserve">
+    <value>用户无权修改用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NO_PERMISSION_NEW_USER" xml:space="preserve">
+    <value>用户无权创建新用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_NO_PERMISSION_ROLE_CHANGE" xml:space="preserve">
+    <value>用户无权更改角色</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_RESET_PASSWORD_FAIL" xml:space="preserve">
+    <value>无法重置密码</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ROLE_CHANGE" xml:space="preserve">
+    <value>无法为用户更改角色</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SEARCH_FAILED" xml:space="preserve">
+    <value>未能搜索用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_STOP_USER_LOGIN" xml:space="preserve">
+    <value>未能结束用户登录</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SWAP_USER_ERROR" xml:space="preserve">
+    <value>未能交换用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SWITCH_USER" xml:space="preserve">
+    <value>无法切换用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOCALCULATEDISKSPACE" xml:space="preserve">
+    <value>无法计算磁盘空间</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOHANDLEIMAGE" xml:space="preserve">
+    <value>无法更新图像</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOSTARTWORKQUEUE" xml:space="preserve">
+    <value>无法启动工作队列</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLETOUPDATESTATUS" xml:space="preserve">
+    <value>无法更新工作队列状态</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USERVALIDATIONFAILS" xml:space="preserve">
+    <value>用户确认失败</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USERVALUE_CHANGE" xml:space="preserve">
+    <value>未能更改用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USER_ADMIN_ERROR" xml:space="preserve">
+    <value>没有权限更改用户详细信息</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USER_SELECTION_ERROR" xml:space="preserve">
+    <value>无法获取用户</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_USER_TIMER_ERROR" xml:space="preserve">
+    <value>屏幕锁定错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_BPQC_FILTER" xml:space="preserve">
+    <value>无法筛选样品图像记录</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_ADD_QUALITY" xml:space="preserve">
+    <value>无法添加质量控制</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_ADD_SIGNATURE" xml:space="preserve">
+    <value>未能添加签名</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_BAR_GRAPHACTIVE" xml:space="preserve">
+    <value>无法获取图表详细信息</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_CREATE_QUALITY_CONTROL" xml:space="preserve">
+    <value>未能创建质量控制</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_DEFAULT_VALUE" xml:space="preserve">
+    <value>无法设置默认值</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_DELETE_QUALITY" xml:space="preserve">
+    <value>未能删除质量控制</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_DETAILS" xml:space="preserve">
+    <value>无法切换质量控制详细信息</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_EXPAND_VIEW" xml:space="preserve">
+    <value>无法展开视图</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_EXPORT_DATA" xml:space="preserve">
+    <value>未能导出数据</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_IMAGE_ACTIVE" xml:space="preserve">
+    <value>未能激活图像</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_LINEGRAPHACTIVE" xml:space="preserve">
+    <value>管路图表出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_SAMPLE_LIST" xml:space="preserve">
+    <value>无法获取样品列表</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QC_SELECT_SAMPLE_RECORD" xml:space="preserve">
+    <value>样品记录选择出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_BIOPROCESS_IMAGE" xml:space="preserve">
+    <value>生物过程图像出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_BIOPROCESS_CREATE" xml:space="preserve">
+    <value>创建生物过程出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CHANNEL_TRAVERSAL" xml:space="preserve">
+    <value>更改转盘出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DELETE_BIOPROCESS" xml:space="preserve">
+    <value>删除生物过程详细信息时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_EXPAND_VIEW" xml:space="preserve">
+    <value>展开视图时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_EXPORT_DATA" xml:space="preserve">
+    <value>导出数据出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_GETSAMPLES" xml:space="preserve">
+    <value>检索样品时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_LINE_GRAPH_ACTIVE" xml:space="preserve">
+    <value>管路图表激活出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SELECTED_SAMPLERECORD" xml:space="preserve">
+    <value>所选的样品记录出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_GRAPH_DETAILS" xml:space="preserve">
+    <value>设置图表详细信息时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SIGNATURE_SAMPLE" xml:space="preserve">
+    <value>样品签名出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_WHILE_ADD_EDIT_BIOPROCESS_DETAILS" xml:space="preserve">
+    <value>添加/编辑生物过程详细信息时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_SWITCH_BPDETAILS" xml:space="preserve">
+    <value>无法切换到生物过程</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CellTypeBpQcStatusFailed" xml:space="preserve">
+    <value>未能获取细胞类型</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CheckStatusFailed" xml:space="preserve">
+    <value>未能获取状态</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CloseFailed" xml:space="preserve">
+    <value>未能关闭视窗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FetchFailed" xml:space="preserve">
+    <value>未能获取常规设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_GenericParameterFailed" xml:space="preserve">
+    <value>未能设置值</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LanguageSelectionFailed" xml:space="preserve">
+    <value>未能选择语言</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_RunOptionSaveFailed" xml:space="preserve">
+    <value>未能保存设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SaveFailed" xml:space="preserve">
+    <value>未能保存常规设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SaveInstrumentFailed" xml:space="preserve">
+    <value>未能保存仪器设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SecurityChangeFailed" xml:space="preserve">
+    <value>未能更改安全设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SecuritySettingsFailed" xml:space="preserve">
+    <value>未能保存安全设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SelectSettingsFailed" xml:space="preserve">
+    <value>未能显示设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SerialNumFailed" xml:space="preserve">
+    <value>未能设置序列号</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ShowSettingFailed" xml:space="preserve">
+    <value>未能显示设置</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_TimeZoneSelectionFailed" xml:space="preserve">
+    <value>未能选择时区</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_TraversalChangeFailed" xml:space="preserve">
+    <value>未能更改选择</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ValidateAccessFailed" xml:space="preserve">
+    <value>未能设置用户访问权限</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ValidationFailed" xml:space="preserve">
+    <value>未能确认序列号</value>
+  </data>
+  <data name="LID_MSGBOX_DecontaminationProgress" xml:space="preserve">
+    <value>正在去污，确定要取消？</value>
+  </data>
+  <data name="LID_StatusBar_Decontaminate" xml:space="preserve">
+    <value>去污</value>
+  </data>
+  <data name="LID_Label_PdfTitle" xml:space="preserve">
+    <value>PDF</value>
+  </data>
+  <data name="LID_MSGBOX_InstanceAlreadyRunning" xml:space="preserve">
+    <value>系统已在运行！</value>
+  </data>
+  <data name="LID_Label_ResultParameters" xml:space="preserve">
+    <value>结果参数</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CLEAN" xml:space="preserve">
+    <value>清洗时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CLEAN_BIN" xml:space="preserve">
+    <value>清洗容器时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DISK_SPACE_CALCULATION" xml:space="preserve">
+    <value>计算磁盘空间时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SYSTEM_STATUS" xml:space="preserve">
+    <value>加载系统状态时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_WINDOW_LOAD" xml:space="preserve">
+    <value>加载视窗时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_EXPORT_BROWSE_FILE" xml:space="preserve">
+    <value>无法定位文件</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_EXPORT_CLOSE_WINDOW" xml:space="preserve">
+    <value>无法关闭视窗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_EXPORT_FILE" xml:space="preserve">
+    <value>未能导出文件。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_File_ERROR" xml:space="preserve">
+    <value>文件转换出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_File_Unauthorized" xml:space="preserve">
+    <value>用户无权访问文件</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_MASTER_NAVIGATE_VALIDATEUSER" xml:space="preserve">
+    <value>用户信息出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_MASTER_STATUSBAR" xml:space="preserve">
+    <value>状态栏出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_CREATION_MANAGE" xml:space="preserve">
+    <value>队列设置出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPAND_GRAPH" xml:space="preserve">
+    <value>无法展开图表</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPAND_IMAGE" xml:space="preserve">
+    <value>无法展开图像</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPORT_SAMPLES" xml:space="preserve">
+    <value>未能导出样品结果</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_EXPORT_SAMPLE_DETAILS" xml:space="preserve">
+    <value>导出样品详细信息出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_FILTER" xml:space="preserve">
+    <value>未能选择样品记录</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMAGE_RESULT" xml:space="preserve">
+    <value>无法获取图像结果</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMPORT" xml:space="preserve">
+    <value>未能导入样品</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMPORT_SAMPLES_DIRECTORY_NOT_FOUND" xml:space="preserve">
+    <value>已导入的文件出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_IMPORT_SAMPLES_PERMISSION" xml:space="preserve">
+    <value>用户无权导入文件</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ITEM_COMPLETED" xml:space="preserve">
+    <value>无法完成样品测量</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ITEM_COMPLETED_UPDATE" xml:space="preserve">
+    <value>无法完成样品测量</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ITEM_STATUS_UPDATE" xml:space="preserve">
+    <value>无法更新样品状态</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_OPERATION" xml:space="preserve">
+    <value>执行队列出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_RESULT_SAMPLES" xml:space="preserve">
+    <value>未能执行样品</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_ROTATE_RESULT_CROUSEL" xml:space="preserve">
+    <value>转动结果旋转架出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_RUN_SAMPLES" xml:space="preserve">
+    <value>未能测量样品</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_UPDATE_SAMPLES" xml:space="preserve">
+    <value>样品更新出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_QUEUE_VALIDATE_IDLE_STATE" xml:space="preserve">
+    <value>队列确认出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UPDATE_DEFAULTVALUE" xml:space="preserve">
+    <value>无法更新默认设置详细信息</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CANCEL_FLUSH_FLOW_CELL" xml:space="preserve">
+    <value>取消冲洗流动池时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CANCEL_PRIME_REAGENT_LINES" xml:space="preserve">
+    <value>取消灌注试剂时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_FLUSH_FLOW_CELL" xml:space="preserve">
+    <value>无法启动流动池冲洗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_LOAD_COMPLETED" xml:space="preserve">
+    <value>处理加载完成时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_UNLOAD_COMPLETED" xml:space="preserve">
+    <value>处理卸载完成时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_PRIME_REAGENT_LINES" xml:space="preserve">
+    <value>无法启动灌注试剂管路</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_REFRESH_REAGENT" xml:space="preserve">
+    <value>刷新试剂时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_DEFAULT" xml:space="preserve">
+    <value>设置默认值时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_CLEAN" xml:space="preserve">
+    <value>无法清洗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_CLOSE_WINDOW" xml:space="preserve">
+    <value>无法关闭视窗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_DECONTAMINATE" xml:space="preserve">
+    <value>无法去污</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_GO_TO_REAGENT" xml:space="preserve">
+    <value>无法打开试剂视窗</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_UNABLE_TO_REPLACE_REAGENT" xml:space="preserve">
+    <value>无法更换试剂</value>
+  </data>
+  <data name="LID_StatusLabelRunReport_MaximumParameter" xml:space="preserve">
+    <value>请选择最多 3 个参数以进行打印</value>
+  </data>
+  <data name="LID_Label_FirstAnnotatedImage" xml:space="preserve">
+    <value>第 1 张带注释的图像</value>
+  </data>
+  <data name="LID_Label_ReagentParameters" xml:space="preserve">
+    <value>试剂参数</value>
+  </data>
+  <data name="LID_Label_ExpirationDate" xml:space="preserve">
+    <value>有效期</value>
+  </data>
+  <data name="LID_eBubbleImage" xml:space="preserve">
+    <value>包含气泡</value>
+  </data>
+  <data name="LID_eInvalidBackgroundIntensity" xml:space="preserve">
+    <value>无效的背景亮度</value>
+  </data>
+  <data name="LID_ImageProcess_ImageDiscard" xml:space="preserve">
+    <value>图像弃用，由于</value>
+  </data>
+  <data name="LID_BubbleLabel_DiscardedImages" xml:space="preserve">
+    <value>已弃用的图像</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FailedToAddDetails" xml:space="preserve">
+    <value>未能添加详细信息</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SelectionFailed" xml:space="preserve">
+    <value>未能进行选择</value>
+  </data>
+  <data name="LID_BubbleLabel_DiscardedMsg" xml:space="preserve">
+    <value>由于以下图像弃用，最终结果从 {0} 张图像中得出（共捕获 {1} 张图像）</value>
+  </data>
+  <data name="LID_Label_MicroMeter_Unit" xml:space="preserve">
+    <value>(µm)</value>
+  </data>
+  <data name="LID_Label_Percentage_Unit" xml:space="preserve">
+    <value>(%)</value>
+  </data>
+  <data name="LID_Label_ViableConcentrationWithoutUnit" xml:space="preserve">
+    <value>活性</value>
+  </data>
+  <data name="LID_Label_ViableSize_WithoutUnit" xml:space="preserve">
+    <value>活细胞平均直径</value>
+  </data>
+  <data name="LID_Label_TenthPower" xml:space="preserve">
+    <value>(x10^6) 细胞/mL</value>
+  </data>
+  <data name="LID_ReportLabel_Concentration_WithoutUnit" xml:space="preserve">
+    <value>总数</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_DISKSPACE_PERMISSION_ERROR" xml:space="preserve">
+    <value>用户无权访问仪器文件夹</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CAROUSEL_POSITION_COMMAND" xml:space="preserve">
+    <value>旋转架位置命令操作出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CHANGE_PROBE_UP_DOWN" xml:space="preserve">
+    <value>调整进样针上下位置时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CLOSING_WINDOW" xml:space="preserve">
+    <value>关闭签名弹出窗口出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DUST_REFERENCE_ACCEPT" xml:space="preserve">
+    <value>背景物对照接受出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DUST_REFERENCE_CANCEL" xml:space="preserve">
+    <value>背景物对照取消出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_GET_WORK_QUEUE_LIST" xml:space="preserve">
+    <value>检索工作队列列表出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_SAMPLE_ANALYSIS_OCCURED" xml:space="preserve">
+    <value>进行样品分析时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_WORK_QUEUE_COMPLETED" xml:space="preserve">
+    <value>处理工作队列已完成事件时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_WORK_QUEUE_ITEM_COMPLETED" xml:space="preserve">
+    <value>处理工作队列项目已完成事件时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_OPEN_REVIEW_SAMPLE" xml:space="preserve">
+    <value>打开复查样品时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_REANALYZE_SAMPLE" xml:space="preserve">
+    <value>重新分析样品时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SELECTED_SAMPLE" xml:space="preserve">
+    <value>选择样品出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SELECT_ITEM" xml:space="preserve">
+    <value>所选的项目出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_DEFAULT_MODEL" xml:space="preserve">
+    <value>设置默认型号值时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_LOG_ENABLE" xml:space="preserve">
+    <value>启用日志时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_START_BRIGHT_FIELD_DUST_SUBTRACT" xml:space="preserve">
+    <value>启动明场背景物去除出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_UPDATE_CONCENTRATION_DETAILS" xml:space="preserve">
+    <value>更新浓度详细信息时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_VALIDATE_USER" xml:space="preserve">
+    <value>确认用户时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_WHILE_EXECUTING_SAMPLE" xml:space="preserve">
+    <value>执行样品时发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FAULT_ERROR" xml:space="preserve">
+    <value>发生故障错误</value>
+  </data>
+  <data name="LID_GraphLabel_CellConcentrationML" xml:space="preserve">
+    <value>死细胞浓度 (/mL)</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PathTooLong" xml:space="preserve">
+    <value>指定的路径过长。合格文件名全长必须小于 260 个字符。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ADMIN_BIOPROCESS_FILE_OPEN" xml:space="preserve">
+    <value>生物过程文件列表出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ADMIN_BIOPROCESS_PRINT" xml:space="preserve">
+    <value>无法打印结果</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ADMIN_BIOPROCESS_SELECTED_BIOPROCESS" xml:space="preserve">
+    <value>无法选择生物过程</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CONCENTRATE_IMAGE_RESULT_QUEUE" xml:space="preserve">
+    <value>无法更新列标题</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CONCENTRATE_SEARCH_LOG" xml:space="preserve">
+    <value>无法搜索日志</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_USER_PROFILE" xml:space="preserve">
+    <value>用户配置文件发生错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_FLYOUTMENU_SHOW" xml:space="preserve">
+    <value>菜单项出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_IMAGEFULLVIEW_CLICK" xml:space="preserve">
+    <value>图像出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_IMAGEFULLVIEW_IMAGEFILE" xml:space="preserve">
+    <value>图像文件路径出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGS_RETRIEVE_AUDIT_LOG" xml:space="preserve">
+    <value>无法加载审计日志</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGS_RETRIEVE_INSTR_LOG" xml:space="preserve">
+    <value>无法加载仪器日志</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_LOGS_SAMPLE_ACTIVITY_LOG" xml:space="preserve">
+    <value>无法加载样品活动日志</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ON_CELLTYPE_SELECTION" xml:space="preserve">
+    <value>细胞类型选择更改操作出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_PROGRESSBAR_RESET_STORYBOARD" xml:space="preserve">
+    <value>无法重置进度</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_REPORT_SELECTION_CHANGE" xml:space="preserve">
+    <value>无法加载日志</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SET_CELL_TYPE" xml:space="preserve">
+    <value>设置细胞类型出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SET_POSITION_VALUE" xml:space="preserve">
+    <value>设置新位置出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SPLASHSCREEN_INITIALIZE_HAWKEYE" xml:space="preserve">
+    <value>未能启动</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_STORAGE_DELETE_RECORDS" xml:space="preserve">
+    <value>未能删除记录</value>
+  </data>
+  <data name="LID_ReportLabel_TotalImages_Analysis" xml:space="preserve">
+    <value>用于分析的图像</value>
+  </data>
+  <data name="LID_Label_InService_Date" xml:space="preserve">
+    <value>使用日期</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_TotalCell_Axis_Title" xml:space="preserve">
+    <value>死细胞数</value>
+  </data>
+  <data name="LID_ReportLabel_Images_Discarded" xml:space="preserve">
+    <value>图像已弃用</value>
+  </data>
+  <data name="LID_ImageProcessingError" xml:space="preserve">
+    <value>图像处理错误</value>
+  </data>
+  <data name="LID_DataGridHeader_AdjustedConcentration" xml:space="preserve">
+    <value>调节后的浓度 (x10^6)/mL</value>
+  </data>
+  <data name="LID_DataGridHeader_AssayValue" xml:space="preserve">
+    <value>分析值 (x10^6)/mL</value>
+  </data>
+  <data name="LID_DataGridHeader_DifferAssayValue" xml:space="preserve">
+    <value>(+/-10%)</value>
+  </data>
+  <data name="LID_DataGridHeader_OriginalConcentration" xml:space="preserve">
+    <value>原始浓度 (x10^6)/mL</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CALL_BACK" xml:space="preserve">
+    <value>内部错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_FREE_UNMANAGED_MEMORY" xml:space="preserve">
+    <value>释放未管理的内存出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_INVOKE" xml:space="preserve">
+    <value>内部错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_PROXY_INITIALIZE" xml:space="preserve">
+    <value>内部错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_RAISE_INVOKE_EVENT" xml:space="preserve">
+    <value>内部错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SAVE_IMAGES" xml:space="preserve">
+    <value>保存图像时发生错误</value>
+  </data>
+  <data name="LID_StatusBar_ImportFailed" xml:space="preserve">
+    <value>无法导入文件。细胞类型或质量控制名称不可用。</value>
+  </data>
+  <data name="LID_Label_ElapsedTime" xml:space="preserve">
+    <value>运行时间</value>
+  </data>
+  <data name="LID_Label_ViableConc" xml:space="preserve">
+    <value>活细胞浓度 (细胞/mL)</value>
+  </data>
+  <data name="LID_Label_AnalysisDate" xml:space="preserve">
+    <value>分析日期</value>
+  </data>
+  <data name="LID_MSGBOX_IMPORT_OVERWRITE_96WELL" xml:space="preserve">
+    <value>96孔板队列：打开新队列将覆盖现有队列，确定要覆盖吗？</value>
+  </data>
+  <data name="LID_MSGBOX_IMPORT_OVERWRITE_CAROUSEL" xml:space="preserve">
+    <value>旋转架队列：打开新队列将覆盖现有队列，确定要覆盖吗？</value>
+  </data>
+  <data name="LID_MSGBOX_INVALID_DAT_FILE" xml:space="preserve">
+    <value>文件已损坏，无法打开</value>
+  </data>
+  <data name="LID_Lable_AboutInstument" xml:space="preserve">
+    <value>关于仪器</value>
+  </data>
+  <data name="LID_Report_InstrumentHealth" xml:space="preserve">
+    <value>仪器状况</value>
+  </data>
+  <data name="LID_Report_NoOfSampleLife" xml:space="preserve">
+    <value>样品数量使用期限</value>
+  </data>
+  <data name="LID_Label_CameraFirmwareVersion_WithoutColon" xml:space="preserve">
+    <value>相机固件版本</value>
+  </data>
+  <data name="LID_Label_Dot_Append" xml:space="preserve">
+    <value>。</value>
+  </data>
+  <data name="LID_Label_LastCalibrationDate_WithoutColon" xml:space="preserve">
+    <value>上一次浓度斜率日期</value>
+  </data>
+  <data name="LID_Report_4M" xml:space="preserve">
+    <value>4M</value>
+  </data>
+  <data name="LID_Label_MotorRadius_WithoutColon" xml:space="preserve">
+    <value>电动机半径</value>
+  </data>
+  <data name="LID_Label_Motortheta_WithoutColon" xml:space="preserve">
+    <value>电动机 θ</value>
+  </data>
+  <data name="LID_MSGBOX_ExitProgressMsg" xml:space="preserve">
+    <value>正在退出 Vi-CELL BLU 应用</value>
+  </data>
+  <data name="LID_Label_GraphHistorical" xml:space="preserve">
+    <value>图表历史</value>
+  </data>
+  <data name="LID_Label_SampleIdResult" xml:space="preserve">
+    <value>样品ID结果</value>
+  </data>
+  <data name="LID_MSGBOX_TubeDetected" xml:space="preserve">
+    <value>启动样品架台面时检测到样品管，从旋转架中移除所有样品管并继续。</value>
+  </data>
+  <data name="LID_Button_Continue" xml:space="preserve">
+    <value>继续</value>
+  </data>
+  <data name="LID_QCHeader_AnalysisDate" xml:space="preserve">
+    <value>分析日期</value>
+  </data>
+  <data name="LID_QCHeader_ReAnalysisDate" xml:space="preserve">
+    <value>重新分析日期</value>
+  </data>
+  <data name="LID_Icon_ExportSummaryDetails" xml:space="preserve">
+    <value>导出测量详细信息</value>
+  </data>
+  <data name="LID_Result_Concentration_Export" xml:space="preserve">
+    <value>总细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_Result_ViaConc_Export" xml:space="preserve">
+    <value>活细胞浓度(x10^6)/mL</value>
+  </data>
+  <data name="LID_Report_Label_Active" xml:space="preserve">
+    <value>启用</value>
+  </data>
+  <data name="LID_Report_Label_InActive" xml:space="preserve">
+    <value>不启用</value>
+  </data>
+  <data name="LID_Report_Label_Unknown" xml:space="preserve">
+    <value>未知</value>
+  </data>
+  <data name="LID_Report_StatusInfo_Header" xml:space="preserve">
+    <value>状态指示信息</value>
+  </data>
+  <data name="LID_Result_MaximumDiameter" xml:space="preserve">
+    <value>最大直径 (µm)</value>
+  </data>
+  <data name="LID_Result_MinimumDiameter" xml:space="preserve">
+    <value>最小直径 (µm)</value>
+  </data>
+  <data name="LID_Result_SpotArea" xml:space="preserve">
+    <value>活细胞斑点面积 (%)</value>
+  </data>
+  <data name="LID_Result_SpotBrightness" xml:space="preserve">
+    <value>活细胞斑点亮度 (%)</value>
+  </data>
+  <data name="LID_QCHeader_AcceptanceLimitsPresent" xml:space="preserve">
+    <value>可接受限度 (%)</value>
+  </data>
+  <data name="LID_Label_MicroMeter_UnitWithOutBracket" xml:space="preserve">
+    <value>µm</value>
+  </data>
+  <data name="LID_Label_CellParameter" xml:space="preserve">
+    <value>细胞类型参数</value>
+  </data>
+  <data name="LID_MSGBOX_SetTempCellType" xml:space="preserve">
+    <value>成功设定临时细胞类型</value>
+  </data>
+  <data name="LID_MSG_SelectSample" xml:space="preserve">
+    <value>请选择至少一个样品或工作队列以进行删除</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_MultiSelectionOverWrite" xml:space="preserve">
+    <value>确定要覆盖位置 {0} 吗？</value>
+  </data>
+  <data name="LID_MSGBOX_RefineSearch" xml:space="preserve">
+    <value>您的搜索结果超过{0}条，请进一步细化您的搜索条件。</value>
+  </data>
+  <data name="LID_RadioButtonTab_Copy" xml:space="preserve">
+    <value>复制</value>
+  </data>
+  <data name="LID_Label_SampleView" xml:space="preserve">
+    <value>样品视图</value>
+  </data>
+  <data name="LID_Label_MicronUnit" xml:space="preserve">
+    <value>µm</value>
+  </data>
+  <data name="LID_Label_PercentUnit" xml:space="preserve">
+    <value>%</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_Manually_posone" xml:space="preserve">
+    <value>位置 1</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_Manually_posthirteen" xml:space="preserve">
+    <value>位置 13</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_first" xml:space="preserve">
+    <value>以中心凹槽为中心</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_first_one" xml:space="preserve">
+    <value>。如果旋转架转过头，请继续逆时针旋转，不得通过顺时针移动进行纠正。线性调节旋转架，使得进样针进入以下位置的中心：</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_two" xml:space="preserve">
+    <value>按钮。请注意在移动样品架台面时不得转动旋转架。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step2_AligHole" xml:space="preserve">
+    <value>中心对齐孔</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step3_AligSlot" xml:space="preserve">
+    <value>行对齐槽</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step_Position" xml:space="preserve">
+    <value>刚好低于进样针。</value>
+  </data>
+  <data name="LID_Label_GridCarousel_Step_PositionFSM" xml:space="preserve">
+    <value>刚好低于进样针。如果进样针无法对齐，请按照现场维修手册调节进样针支架。</value>
+  </data>
+  <data name="LID_Label_Accepted" xml:space="preserve">
+    <value>接受</value>
+  </data>
+  <data name="LID_Label_Rejected" xml:space="preserve">
+    <value>拒绝</value>
+  </data>
+  <data name="LID_Label_DefinedPositions" xml:space="preserve">
+    <value>样品位置</value>
+  </data>
+  <data name="LID_Label_EmptyPositions" xml:space="preserve">
+    <value>空位置</value>
+  </data>
+  <data name="LID_Label_RunCompletePositions" xml:space="preserve">
+    <value>测量后位置</value>
+  </data>
+  <data name="LID_Status_Completed" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="LID_Status_NotRun" xml:space="preserve">
+    <value>未运行</value>
+  </data>
+  <data name="LID_Status_Skipped" xml:space="preserve">
+    <value>跳过</value>
+  </data>
+  <data name="LID_Label_Carousel_Step2_position_prev" xml:space="preserve">
+    <value>方法是使用进样针</value>
+  </data>
+  <data name="LID_ProgressIndication_FindingTubes" xml:space="preserve">
+    <value>寻找样品管</value>
+  </data>
+  <data name="LID_Label_Resume" xml:space="preserve">
+    <value>恢复</value>
+  </data>
+  <data name="LID_MSGBOX_ABORTEDSAMPLE" xml:space="preserve">
+    <value>工作队列由于系统错误而中止，转到讯息中心了解更多详细信息。</value>
+  </data>
+  <data name="LID_MSGBOX_PAUSEDSAMPLE" xml:space="preserve">
+    <value>工作队列由于系统错误而暂停，转到讯息中心了解更多详细信息。</value>
+  </data>
+  <data name="LID_MSG_ClearDefinedCell" xml:space="preserve">
+    <value>确定要删除所有样品登录信息？</value>
+  </data>
+  <data name="LID_MSG_NotEnoughReagent" xml:space="preserve">
+    <value>试剂盒不具备足够的活性以完全处理此队列。当其用尽时，在更换试剂盒之前，该队列将暂停。</value>
+  </data>
+  <data name="LID_MSG_NotEnoughDisposalTraySpace" xml:space="preserve">
+    <value>废液试管托盘不具备足够的容量以完全处理此队列。当达到容量限度时，在清空废液试管托盘并重置计数器之前，该队列将暂停。</value>
+  </data>
+  <data name="LID_MSGBOX_ResponseTimeOut" xml:space="preserve">
+    <value>恢复焦点操作无法在预期时间内完成，请重启应用后再试一次。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_RESTORED_DEFAULT_CAMERA_POSITION" xml:space="preserve">
+    <value>恢复相机默认位置时发生错误</value>
+  </data>
+  <data name="LID_StatusBar_ResultRecordSaved" xml:space="preserve">
+    <value>结果保存成功</value>
+  </data>
+  <data name="LID_MSGBOX_SyringeMsg" xml:space="preserve">
+    <value>吸样针位置必须介于 {0} 和 {1} 之间</value>
+  </data>
+  <data name="LID_MSGBOX_LowLevel_InitializeFail" xml:space="preserve">
+    <value>系统启动失败，请重新启动应用，如果问题仍然存在，请复查使用说明或致电Beckman Coulter服务人员。</value>
+  </data>
+  <data name="LID_MSGBOX_CellType_Validation" xml:space="preserve">
+    <value>队列包含系统中不可用或不匹配的细胞类型，无法加载。</value>
+  </data>
+  <data name="LID_MSGBOX_QualityControl_Validation" xml:space="preserve">
+    <value>队列包含质量控制详细信息，无法加载</value>
+  </data>
+  <data name="LID_Label_Licenses" xml:space="preserve">
+    <value>合法</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_LICENSE_FILE_NOT_FOUND" xml:space="preserve">
+    <value>许可证文件未找到</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_OPEN_FILE" xml:space="preserve">
+    <value>打开文件时发生错误</value>
+  </data>
+  <data name="LID_Label_About_Declaration" xml:space="preserve">
+    <value>Beckman Coulter、标志以及文中提及的 Beckman Coulter 产品和服务标记均是 Beckman Coulter, Inc. 在美国和其他国家/地区的商标或注册商标。</value>
+  </data>
+  <data name="LID_Label_AppendResultExport" xml:space="preserve">
+    <value>添加结果并导出至</value>
+  </data>
+  <data name="LID_Label_ExportEachSample" xml:space="preserve">
+    <value>将每一个样品结果 CSV 导出至</value>
+  </data>
+  <data name="LID_TabItem_AdvanceOption" xml:space="preserve">
+    <value>高级选项</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_HELP_FILE_NOT_FOUND" xml:space="preserve">
+    <value>帮助文件未找到</value>
+  </data>
+  <data name="LID_MSGBOX_NightCleanError" xml:space="preserve">
+    <value>清洗处理遇到错误</value>
+  </data>
+  <data name="LID_MSGBOX_UnAssigned_CellType_Validation" xml:space="preserve">
+    <value>队列包含未指定的细胞类型，无法加载</value>
+  </data>
+  <data name="LID_Label_AdvanceFileName" xml:space="preserve">
+    <value>文件名</value>
+  </data>
+  <data name="LID_Label_Options" xml:space="preserve">
+    <value>选项</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_PathError" xml:space="preserve">
+    <value>无效路径，请选择正确的路径并导出</value>
+  </data>
+	<data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
+    <value>导出路径限于 C:\Instrument\Export\ 的子目录</value>
+  </data>
+  <data name="LID_AdvanceLabel_CSV" xml:space="preserve">
+    <value>.CSV</value>
+  </data>
+  <data name="LID_Label_ApplyToAllSample" xml:space="preserve">
+    <value>应用于样本集中所有样本</value>
+  </data>
+  <data name="LID_Label_ReagentProbeArm" xml:space="preserve">
+    <value>试剂进样针臂</value>
+  </data>
+  <data name="LID_StatusBar_ReagentProbeArmMovedSuccessfully" xml:space="preserve">
+    <value>试剂进样针臂移动成功</value>
+  </data>
+  <data name="LID_MSGBOX_Night_Clean_Timeout" xml:space="preserve">
+    <value>无法执行夜间清洗。如果问题仍然存在，请联系管理员。</value>
+  </data>
+  <data name="LID_MSGBOX_AutoFocusCancelMsg" xml:space="preserve">
+    <value>正在恢复上一个焦点位置。本次处理最多需要 {0} 秒以恢复上一个设置。</value>
+  </data>
+  <data name="LID_MSGBOX_DustReffCancelMsg" xml:space="preserve">
+    <value>正在恢复上一个背景物对照，本次处理最多需要 {0} 秒以恢复上一个设置。</value>
+  </data>
+  <data name="LID_MSGBOX_CancelAutoFocusError" xml:space="preserve">
+    <value>恢复焦点操作无法在预期时间内完成，请重启应用后再试一次。</value>
+  </data>
+  <data name="LID_MSGBOX_CancelDustError" xml:space="preserve">
+    <value>背景物对照取消操作无法在预期时间内完成，请重启应用后再试一次。</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteConcentrationSlopeHistory" xml:space="preserve">
+    <value>确定要删除上一次运行的浓度斜率历史记录，并保留当前设置的浓度斜率？</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteConcentrationSlopeHistoryACup" xml:space="preserve">
+    <value>确定要删除上一次运行的浓度斜率历史记录，并保留当前设置的浓度斜率？</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteAllACupConcentrationSlopeData" xml:space="preserve">
+    <value>删除所有A-Cup浓度斜率数据</value>
+  </data>
+  <data name="LID_MSGBOX_FlowCellDepthRangeMsg" xml:space="preserve">
+    <value>流动池深度必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_DeafultLoginSample" xml:space="preserve">
+    <value>登录样品信息</value>
+  </data>
+  <data name="LID_Help_AppendResults" xml:space="preserve">
+    <value>- 添加结果并导出至：浏览文件夹路径</value>
+  </data>
+  <data name="LID_Help_CellType" xml:space="preserve">
+    <value>'- 细胞类型：选择细胞类型或质量控制</value>
+  </data>
+  <data name="LID_Help_Comments" xml:space="preserve">
+    <value>- 备注：如有</value>
+  </data>
+  <data name="LID_Help_Dilution" xml:space="preserve">
+    <value>- 稀释：请从 1、2、3、4、5、10、20 中选择稀释倍数</value>
+  </data>
+  <data name="LID_Help_ExportEach" xml:space="preserve">
+    <value>- 将样品结果导出至：浏览文件夹路径</value>
+  </data>
+  <data name="LID_Help_For96WellPlate" xml:space="preserve">
+    <value>8.对于96孔板，执行方向可以更改，请通过</value>
+  </data>
+  <data name="LID_Help_ForACarouselQueue" xml:space="preserve">
+    <value>7.对于旋转架队列，如果测量时在未定义的位置上发现了样品管，</value>
+  </data>
+  <data name="LID_Help_FromLoginSample" xml:space="preserve">
+    <value>3.从以下选择登录样品信息</value>
+  </data>
+  <data name="LID_Help_ItTakesSettings" xml:space="preserve">
+    <value>则会采用登录样品中的设置并处理样品</value>
+  </data>
+  <data name="LID_Help_LoginSample" xml:space="preserve">
+    <value>1.登录样品信息时包含设置中的默认选择</value>
+  </data>
+  <data name="LID_Help_NthValue" xml:space="preserve">
+    <value>- 第 N 个值：要保存的图像数量</value>
+  </data>
+  <data name="LID_Help_QueueCreation" xml:space="preserve">
+    <value>登录样品信息创建测量队列</value>
+  </data>
+  <data name="LID_Help_QueueIsFormed" xml:space="preserve">
+    <value>基于所选的样品管的位置在网格中形成。</value>
+  </data>
+  <data name="LID_Help_SampleID" xml:space="preserve">
+    <value>- 样品ID：输入任意值或使用默认值</value>
+  </data>
+  <data name="LID_Help_SelectCarousel" xml:space="preserve">
+    <value>2.选择旋转架或 96 孔板以创建队列</value>
+  </data>
+  <data name="LID_Help_SelectTubePositions" xml:space="preserve">
+    <value>4.从旋转架或 96 孔板中选择样品管位置。队列</value>
+  </data>
+  <data name="LID_Help_StartTheQueue" xml:space="preserve">
+    <value>按钮启动队列</value>
+  </data>
+  <data name="LID_Help_TapOn" xml:space="preserve">
+    <value>6.点击</value>
+  </data>
+  <data name="LID_Help_ToGetDifferentSamples" xml:space="preserve">
+    <value>5.如要设定队列中的其他样品，请重复步骤 3-4</value>
+  </data>
+  <data name="LID_Help_Wash" xml:space="preserve">
+    <value>- 测量模式：选择常规 (200 µL) 或快速 (170 µL)</value>
+  </data>
+  <data name="LID_Label_AppendResultTo" xml:space="preserve">
+    <value>结果添加至</value>
+  </data>
+  <data name="LID_Label_ExportResultTo" xml:space="preserve">
+    <value>将结果 CSV 导出至</value>
+  </data>
+  <data name="LID_StatusBar_With" xml:space="preserve">
+    <value>{0}（含{1}）在 {2} 处跳过</value>
+  </data>
+  <data name="LID_MSGBOX_DoesNotContainDefinedSample" xml:space="preserve">
+    <value>队列未包含已登录的样品。 
+1.点击确定继续上述样品设置 
+2.点击取消登录样品信息</value>
+  </data>
+  <data name="LID_MessageBox_AreYouSureWant" xml:space="preserve">
+    <value>确定要删除</value>
+  </data>
+  <data name="LID_Label_ExportInProgress" xml:space="preserve">
+    <value>正在导出</value>
+  </data>
+  <data name="LID_Label_ExportSampleResults" xml:space="preserve">
+    <value>导出样品结果</value>
+  </data>
+  <data name="LID_Label_ExportSampleResultsTo" xml:space="preserve">
+    <value>将样品结果导出至</value>
+  </data>
+  <data name="LID_Label_KeepEveryNthImageForEachSample" xml:space="preserve">
+    <value>每N张图像，保存第1张。  N=</value>
+  </data>
+  <data name="LID_Label_ExportCancelInprogress" xml:space="preserve">
+    <value>正在取消导出</value>
+  </data>
+  <data name="LID_MSGBOX_SelectSampleResultToDelete" xml:space="preserve">
+    <value>请选择要删除的样品结果。</value>
+  </data>
+  <data name="LID_MSGBOX_SelectSampleResultToExport" xml:space="preserve">
+    <value>请选择要导出的样品结果</value>
+  </data>
+  <data name="LID_Label_RetainOnlyFirstImageAndResult" xml:space="preserve">
+    <value>保留测试结果和第一张图片</value>
+  </data>
+  <data name="LID_Label_ExportCompressingInProgress" xml:space="preserve">
+    <value>正在压缩导出</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_STORAGE_EXPORT_RECORDS" xml:space="preserve">
+    <value>未能导出记录</value>
+  </data>
+  <data name="LID_Label_DeleteSampleResults" xml:space="preserve">
+    <value>删除样品结果</value>
+  </data>
+  <data name="LID_Label_DeletionInprogress" xml:space="preserve">
+    <value>正在删除</value>
+  </data>
+  <data name="LID_Label_EffectiveExpiration" xml:space="preserve">
+    <value>有效期</value>
+  </data>
+  <data name="LID_MSGBOX_ImportConfigAlertContent" xml:space="preserve">
+    <value>导入配置文件会删除当前的系统配置，替换为新的系统配置并自动重启应用。 是否继续？</value>
+  </data>
+  <data name="LID_MSGBOX_CarouselNotFound" xml:space="preserve">
+    <value>未找到旋转架</value>
+  </data>
+  <data name="LID_MSGBOX_LowDiskSpace" xml:space="preserve">
+    <value>磁盘空间不足</value>
+  </data>
+  <data name="LID_MSGBOX_PlateNotFound" xml:space="preserve">
+    <value>未找到托盘</value>
+  </data>
+  <data name="LID_MSGBOX_ReagentError" xml:space="preserve">
+    <value>试剂错误</value>
+  </data>
+  <data name="LID_MSGBOX_SpentTubeTray" xml:space="preserve">
+    <value>废管托盘</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_CAMERA_LAMP_STATE" xml:space="preserve">
+    <value>相机灯状态设置错误</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_FLOWCELL_DEPTH" xml:space="preserve">
+    <value>流动池深度设置错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Backgroundintensityadjustmentfailure" xml:space="preserve">
+    <value>背景亮度调节失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Backuprestorefailed" xml:space="preserve">
+    <value>备份恢复失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Communicationerror" xml:space="preserve">
+    <value>通讯错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Configurationinvalid" xml:space="preserve">
+    <value>配置无效</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Connectionerror" xml:space="preserve">
+    <value>连接错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Ejectfailure" xml:space="preserve">
+    <value>弹出失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Empty" xml:space="preserve">
+    <value>空</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Expired" xml:space="preserve">
+    <value>过期</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Failedvalidation" xml:space="preserve">
+    <value>确认失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Filenotfound" xml:space="preserve">
+    <value>文件未找到</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwarebootuperror" xml:space="preserve">
+    <value>固件启动错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwareinterfaceerror" xml:space="preserve">
+    <value>固件接口错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwarestatemachineerror" xml:space="preserve">
+    <value>固件状态机错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Firmwareupdateerror" xml:space="preserve">
+    <value>固件更新错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_GeneralPopulationinvalid" xml:space="preserve">
+    <value>常规细胞群无效</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Hardwareerror" xml:space="preserve">
+    <value>硬件错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_HardwareFault" xml:space="preserve">
+    <value>硬件故障</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Hardwarehealth" xml:space="preserve">
+    <value>硬件状况</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Holdingcurrentfailure" xml:space="preserve">
+    <value>保留当前失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Homingfailure" xml:space="preserve">
+    <value>归位失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_HostCommunicationerror" xml:space="preserve">
+    <value>主计算机通讯错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Imagequality" xml:space="preserve">
+    <value>图像质量</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Initializationerror" xml:space="preserve">
+    <value>初始化错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Initializationfailure" xml:space="preserve">
+    <value>初始化失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Invalid" xml:space="preserve">
+    <value>无效</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Invalidfirmwareversion" xml:space="preserve">
+    <value>无效固件版本</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Latcherror" xml:space="preserve">
+    <value>门闩错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Loadfailed" xml:space="preserve">
+    <value>加载失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_LogicError" xml:space="preserve">
+    <value>逻辑错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Motordrivererror" xml:space="preserve">
+    <value>电动机驱动器错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Nightlycleancycleskipped" xml:space="preserve">
+    <value>夜间清洗循环已跳过</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_NoConnection" xml:space="preserve">
+    <value>未连接</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Noimagecaptured" xml:space="preserve">
+    <value>未捕获图像</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Nopackfound" xml:space="preserve">
+    <value>未找到试剂盒</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Notmet" xml:space="preserve">
+    <value>未满足</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Notpresent" xml:space="preserve">
+    <value>未出现</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Notregistered" xml:space="preserve">
+    <value>未配准</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Overpressureerror" xml:space="preserve">
+    <value>压力过大错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_PopulationOfInterestinvalid" xml:space="preserve">
+    <value>有益细胞群无效</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Positioningfailure" xml:space="preserve">
+    <value>定位失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Powerthreshold" xml:space="preserve">
+    <value>电源阈值</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Primingfailure" xml:space="preserve">
+    <value>灌注失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Processingerror" xml:space="preserve">
+    <value>处理错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Readerror" xml:space="preserve">
+    <value>读取错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Registrationfailure" xml:space="preserve">
+    <value>配准失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_RFIDerror" xml:space="preserve">
+    <value>RFID 错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Sensorerror" xml:space="preserve">
+    <value>传感器错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_SoftwareFault" xml:space="preserve">
+    <value>软件故障</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Storagenearcapacity" xml:space="preserve">
+    <value>存储空间不足</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Thermal" xml:space="preserve">
+    <value>热量</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Timeout" xml:space="preserve">
+    <value>超时</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Tubedetected" xml:space="preserve">
+    <value>检测到样品管</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Unknowntype" xml:space="preserve">
+    <value>未知类型</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Verificationonread" xml:space="preserve">
+    <value>读取验证</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Writeerror" xml:space="preserve">
+    <value>写入错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_Writefailure" xml:space="preserve">
+    <value>写入失败</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_7-Ziputilityinstalled" xml:space="preserve">
+    <value>7-Zip 实用工具</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Analysis" xml:space="preserve">
+    <value>分析</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Audit" xml:space="preserve">
+    <value>审计</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_AuditLog" xml:space="preserve">
+    <value>审计日志</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Bioprocess" xml:space="preserve">
+    <value>生物过程</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Brightfield" xml:space="preserve">
+    <value>明场</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Carousel" xml:space="preserve">
+    <value>旋转架</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Carouselpresent" xml:space="preserve">
+    <value>旋转架出现</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Carouselregistration" xml:space="preserve">
+    <value>旋转架配准</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_CellType" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_ConcentrationandSizing" xml:space="preserve">
+    <value>浓度与大小确定</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Concentrationconfiguration" xml:space="preserve">
+    <value>浓度配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Configuration(Dynamic)" xml:space="preserve">
+    <value>配置（动态）</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Configuration(Static)" xml:space="preserve">
+    <value>配置（静态）</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DebugImage" xml:space="preserve">
+    <value>调试图像</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Directory" xml:space="preserve">
+    <value>目录</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DoorLeft" xml:space="preserve">
+    <value>左门</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DoorRight" xml:space="preserve">
+    <value>右门</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_DustImage" xml:space="preserve">
+    <value>背景物图像</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_ErrorLog" xml:space="preserve">
+    <value>错误日志</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL1" xml:space="preserve">
+    <value>FL 1</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL2" xml:space="preserve">
+    <value>FL 2</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL3" xml:space="preserve">
+    <value>FL 3</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FL4" xml:space="preserve">
+    <value>FL 4</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FLRack1" xml:space="preserve">
+    <value>FL 试管架 1</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_FLRack2" xml:space="preserve">
+    <value>FL 试管架 2</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Focus" xml:space="preserve">
+    <value>焦点</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Focusconfig" xml:space="preserve">
+    <value>焦点配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_General" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_InstrumentConfiguration" xml:space="preserve">
+    <value>仪器配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_instrumentserialnumber" xml:space="preserve">
+    <value>仪器序列号</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Mainbay" xml:space="preserve">
+    <value>主仓</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_MotorControllerConfig" xml:space="preserve">
+    <value>电动机控制器配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_MotorInfo" xml:space="preserve">
+    <value>电动机信息</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Plate" xml:space="preserve">
+    <value>托盘</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Platepresent" xml:space="preserve">
+    <value>托盘出现</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Plateregistration" xml:space="preserve">
+    <value>托盘配准</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Pumpcontroller" xml:space="preserve">
+    <value>泵控制器</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_QualityControl" xml:space="preserve">
+    <value>质量控制</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Radius" xml:space="preserve">
+    <value>半径</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Reagent" xml:space="preserve">
+    <value>试剂</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Reagentdoor" xml:space="preserve">
+    <value>试剂门</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_ReagentPack" xml:space="preserve">
+    <value>试剂盒</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Reagentprobe" xml:space="preserve">
+    <value>试剂进样针</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Result" xml:space="preserve">
+    <value>结果</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Sample" xml:space="preserve">
+    <value>样品</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_SampleLog" xml:space="preserve">
+    <value>样品日志</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Sampleprobe" xml:space="preserve">
+    <value>进样针</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_SignatureDefinitions" xml:space="preserve">
+    <value>签名定义</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Signatures" xml:space="preserve">
+    <value>签名</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Sizingconfiguration" xml:space="preserve">
+    <value>大小配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_SyringeConfig" xml:space="preserve">
+    <value>注射器配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Theta" xml:space="preserve">
+    <value>θ</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_UserList" xml:space="preserve">
+    <value>用户列表</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Valvecontroller" xml:space="preserve">
+    <value>电磁阀控制器</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Wastetubetraycapacity" xml:space="preserve">
+    <value>废管托盘容量</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Instance_Workflowscript" xml:space="preserve">
+    <value>工作流脚本</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_???" xml:space="preserve">
+    <value>???</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_Error" xml:space="preserve">
+    <value>错误</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_Notification" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Severity_Warning" xml:space="preserve">
+    <value>警告</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Analysis" xml:space="preserve">
+    <value>分析</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Camera" xml:space="preserve">
+    <value>相机</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_CellCounting" xml:space="preserve">
+    <value>细胞计数</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_CellType" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Configuration" xml:space="preserve">
+    <value>配置</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Fluorescentrack" xml:space="preserve">
+    <value>荧光架</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_General" xml:space="preserve">
+    <value>常规</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Integrity" xml:space="preserve">
+    <value>完整性</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_LED" xml:space="preserve">
+    <value>LED</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Motor" xml:space="preserve">
+    <value>电动机</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Photodiode" xml:space="preserve">
+    <value>光电二极管</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Precondition" xml:space="preserve">
+    <value>准备</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Reagentbayhardware" xml:space="preserve">
+    <value>试剂仓硬件</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Reagentpack" xml:space="preserve">
+    <value>试剂盒</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_RFIDhardware" xml:space="preserve">
+    <value>RFID 硬件</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Sampledeck" xml:space="preserve">
+    <value>样品架台面</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Storage" xml:space="preserve">
+    <value>存储空间</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Syringepump" xml:space="preserve">
+    <value>注射泵</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Subsystem_Trigger" xml:space="preserve">
+    <value>引发</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_" xml:space="preserve">
+    <value />
+  </data>
+  <data name="LID_API_SystemErrorCode_System_ControllerBoard" xml:space="preserve">
+    <value>控制器板</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Fluidics" xml:space="preserve">
+    <value>流体</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Imaging" xml:space="preserve">
+    <value>成像</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Instrument" xml:space="preserve">
+    <value>仪器</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Motion" xml:space="preserve">
+    <value>移动</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Reagents" xml:space="preserve">
+    <value>试剂</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_System_Sample" xml:space="preserve">
+    <value>样品</value>
+  </data>
+  <data name="LID_ClearSkippedSample" xml:space="preserve">
+    <value>{0}（含{1}）在 {2} 跳过</value>
+  </data>
+  <data name="LID_ReagentStatus_ULPurging_Reagent" xml:space="preserve">
+    <value>正在净化试剂位置 {0}</value>
+  </data>
+  <data name="LID_ButtonContent_Analyze_Results" xml:space="preserve">
+    <value>分析结果</value>
+  </data>
+  <data name="LID_ButtonContent_ContAnalyze_Results" xml:space="preserve">
+    <value>连续分析结果</value>
+  </data>
+  <data name="LID_StatusBar_BPhasBeenAdded" xml:space="preserve">
+    <value>生物过程已添加</value>
+  </data>
+  <data name="LID_StatusBar_BPhasBeenDeleted" xml:space="preserve">
+    <value>生物过程已删除</value>
+  </data>
+  <data name="LID_StatusBar_CellhasBeenDeleted" xml:space="preserve">
+    <value>细胞类型已删除</value>
+  </data>
+  <data name="LID_StatusBar_ConLoghasBeenCleared" xml:space="preserve">
+    <value>浓度斜率历史日志已清除</value>
+  </data>
+  <data name="LID_StatusBar_DeCancelled" xml:space="preserve">
+    <value>去污已取消</value>
+  </data>
+  <data name="LID_StatusBar_FlushCancelled" xml:space="preserve">
+    <value>冲洗已取消</value>
+  </data>
+  <data name="LID_StatusBar_PasswordhasBeenChanged" xml:space="preserve">
+    <value>密码已更改</value>
+  </data>
+  <data name="LID_StatusBar_PrimeCancelled" xml:space="preserve">
+    <value>灌注已取消</value>
+  </data>
+  <data name="LID_StatusBar_QChasBeenAdded" xml:space="preserve">
+    <value>质量控制已添加</value>
+  </data>
+  <data name="LID_StatusBar_QChasBeenDeleted" xml:space="preserve">
+    <value>质量控制已删除</value>
+  </data>
+  <data name="LID_StatusBar_SEhasBeenDeleted" xml:space="preserve">
+    <value>系统错误已删除</value>
+  </data>
+  <data name="LID_StatusBar_UserhasBeenAdded" xml:space="preserve">
+    <value>用户已添加</value>
+  </data>
+  <data name="LID_StatusBar_UserhasBeenDeleted" xml:space="preserve">
+    <value>用户已删除</value>
+  </data>
+  <data name="LID_ErrorContent_BioProcessAlreadyExists" xml:space="preserve">
+    <value>生物过程已存在。</value>
+  </data>
+  <data name="LID_ErrorContent_QualityControlAlreadyExists" xml:space="preserve">
+    <value>质量控制已存在。</value>
+  </data>
+  <data name="LID_ErrorContent_SignatureAlreadyExists" xml:space="preserve">
+    <value>签名已存在。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AlreadyExists" xml:space="preserve">
+    <value>已存在。</value>
+  </data>
+  <data name="LID_ButtonContent_AspirateSuccessful" xml:space="preserve">
+    <value>吸入成功</value>
+  </data>
+  <data name="LID_ButtonContent_DispenseSuccessful" xml:space="preserve">
+    <value>注入成功</value>
+  </data>
+  <data name="LID_ButtonContent_ExpelSuccessful" xml:space="preserve">
+    <value>排出成功</value>
+  </data>
+  <data name="LID_ButtonContent_FlushProcessStarted" xml:space="preserve">
+    <value>冲洗处理已启动</value>
+  </data>
+  <data name="LID_ButtonContent_LoadSuccessful" xml:space="preserve">
+    <value>加载成功</value>
+  </data>
+  <data name="LID_ButtonContent_NudgeSuccessful" xml:space="preserve">
+    <value>微移成功</value>
+  </data>
+  <data name="LID_ButtonContent_PrimeProcessStarted" xml:space="preserve">
+    <value>灌注处理已启动</value>
+  </data>
+  <data name="LID_ButtonContent_RestoreFocusSuccessful" xml:space="preserve">
+    <value>焦点恢复成功</value>
+  </data>
+  <data name="LID_ButtonContent_SetFocusFailed" xml:space="preserve">
+    <value>焦点设置失败。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AcceptancelimitsBlank" xml:space="preserve">
+    <value>可接受限制不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AssayValueBlank" xml:space="preserve">
+    <value>分析值不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AssayValueFieldBlank" xml:space="preserve">
+    <value>分析值字段不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_BioprocessNameBlank" xml:space="preserve">
+    <value>生物过程名称不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ConfirmPasswordBlank" xml:space="preserve">
+    <value>确认密码不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_DisplayNameBlank" xml:space="preserve">
+    <value>显示名称不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FailedDustReference" xml:space="preserve">
+    <value>背景物对照失败。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FieldBlank" xml:space="preserve">
+    <value>字段不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_FilenameBlank" xml:space="preserve">
+    <value>文件名不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_InactivityTimeoutBlank" xml:space="preserve">
+    <value>闲置超时不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_LotNumberBlank" xml:space="preserve">
+    <value>批号不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_LotNumberFieldBlank" xml:space="preserve">
+    <value>批号字段不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_MaximumDiameterBlank" xml:space="preserve">
+    <value>最大直径不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_MinimumCircularityBlank" xml:space="preserve">
+    <value>最小圆度不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_MinimumDiameterBlank" xml:space="preserve">
+    <value>最小直径不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_NewPasswordBlank" xml:space="preserve">
+    <value>新密码不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_NoOfImagesBlank" xml:space="preserve">
+    <value>图像数量不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_OldPasswordBlank" xml:space="preserve">
+    <value>旧密码不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PasswordBlank" xml:space="preserve">
+    <value>密码不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PasswordExpiryBlank" xml:space="preserve">
+    <value>密码有效期不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_PathToExportBlank" xml:space="preserve">
+    <value>导出路径不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_QCNameBlank" xml:space="preserve">
+    <value>质量控制名称不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_SampleIDBlank" xml:space="preserve">
+    <value>样品ID不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_SignatureBlank" xml:space="preserve">
+    <value>签名不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_UserNameBlank" xml:space="preserve">
+    <value>用户名称不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ViableSpotAreaBlank" xml:space="preserve">
+    <value>活细胞斑点面积不能为空。</value>
+  </data>
+  <data name="LID_ERRMSGBOX_ViableSpotBrightnessBlank" xml:space="preserve">
+    <value>活细胞斑点亮度不能为空。</value>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentrationMicrometerUnit" xml:space="preserve">
+    <value>分析值
+(µm)</value>
+    <comment>Multiline string(Unit in second line)</comment>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentrationPerml" xml:space="preserve">
+    <value>分析值
+(x10^6)/mL</value>
+    <comment>Multiline string(Unit in second line)</comment>
+  </data>
+  <data name="LID_GraphLabel_AssayConcentrationPerUnit" xml:space="preserve">
+    <value>分析值
+(%)</value>
+    <comment>Multiline string(Unit in second line)</comment>
+  </data>
+  <data name="LID_GraphLabel_OriginalConcentrationMl" xml:space="preserve">
+    <value>原始浓度 (/mL)</value>
+  </data>
+  <data name="LID_Graph_AdjustConcMl" xml:space="preserve">
+    <value>调节后浓度 (/mL)</value>
+  </data>
+  <data name="LID_Icon_CancelSetFocusSuccessful" xml:space="preserve">
+    <value>取消焦点设置成功</value>
+  </data>
+  <data name="LID_Icon_ExportInstrumentStatusSuccessful" xml:space="preserve">
+    <value>导出仪器状态成功</value>
+  </data>
+  <data name="LID_Label_BrightfieldSuccessfulBrightfield" xml:space="preserve">
+    <value>明场成功</value>
+  </data>
+  <data name="LID_Label_CellSharpnessLimit" xml:space="preserve">
+    <value>细胞清晰度必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_CompletedInMins" xml:space="preserve">
+    <value>已在 {0} 分钟内完成</value>
+  </data>
+  <data name="LID_Label_CompletedOutOfMins" xml:space="preserve">
+    <value>预计 {1} 分钟完成，实际 {0} 分钟完成</value>
+  </data>
+  <data name="LID_Label_CurFocusSuccessful" xml:space="preserve">
+    <value>当前焦点位置成功</value>
+  </data>
+  <data name="LID_Label_InActivityTimeoutLimit" xml:space="preserve">
+    <value>闲置超时必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_MaxDiameterRange" xml:space="preserve">
+    <value>最大直径必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_MicronUnitWithValue" xml:space="preserve">
+    <value>{0} µm</value>
+  </data>
+  <data name="LID_Label_MinDiameterRange" xml:space="preserve">
+    <value>最小直径必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_MinimumCircularityRange" xml:space="preserve">
+    <value>最小圆度必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_PassworsExpireLimit" xml:space="preserve">
+    <value>密码有效期必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_RemainingwastetubebincapacityColon" xml:space="preserve">
+    <value>废管托盘剩余容量：</value>
+  </data>
+  <data name="LID_Label_SerialNumberColon" xml:space="preserve">
+    <value>序列号：</value>
+  </data>
+  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
+    <value>Vi-CELL BLU 软件版本：</value>
+  </data>
+  <data name="LID_Label_SpotAreaRange" xml:space="preserve">
+    <value>活细胞斑点面积必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_SpotBrightnessRange" xml:space="preserve">
+    <value>活细胞斑点亮度必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_SystemTotalSampleCountsColon" xml:space="preserve">
+    <value>此系统上运行的样品总数：</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteImages" xml:space="preserve">
+    <value>图像删除成功。</value>
+  </data>
+  <data name="LID_MSGBOX_DeleteSample" xml:space="preserve">
+    <value>样品删除成功。</value>
+  </data>
+  <data name="LID_MSGBOX_FlowCellDepthSuccessful" xml:space="preserve">
+    <value>流动池深度成功</value>
+  </data>
+  <data name="LID_MSGBOX_MinutesLimit" xml:space="preserve">
+    <value>分钟数必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_MSGBOX_NoOfImagesLimit" xml:space="preserve">
+    <value>图像数量必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_Run96WellPlate" xml:space="preserve">
+    <value>如要运行当前队列，请将样品架台面类型更改为 96 孔板</value>
+  </data>
+  <data name="LID_MSGBOX_QueueManagement_RunCarousel" xml:space="preserve">
+    <value>如要运行当前队列，请将样品架台面类型更改为旋转架</value>
+  </data>
+  <data name="LID_MSGBOX_SecondsLimit" xml:space="preserve">
+    <value>秒数必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_MSGBOX_SetSlope" xml:space="preserve">
+    <value>确定要设置新斜率值？</value>
+  </data>
+  <data name="LID_MSGBOX_SetSlopeFailed" xml:space="preserve">
+    <value>未能设置新的总细胞斜率值</value>
+  </data>
+  <data name="LID_MSGBOX_SettingHoursLimit" xml:space="preserve">
+    <value>小时数必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_QCHeader_AcceptanceLimitsRange" xml:space="preserve">
+    <value>可接受限制必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_RadioButtonTab_CopyTempCell" xml:space="preserve">
+    <value>{0} - 拷贝</value>
+  </data>
+  <data name="LID_ReagentStatus_DdispensingStep" xml:space="preserve">
+    <value>正在倒入{0}</value>
+  </data>
+  <data name="LID_StatusBar_DecontaminateProcessStarted" xml:space="preserve">
+    <value>去污处理已启动</value>
+  </data>
+  <data name="LID_Label_LowerLimitConc_QCReport" xml:space="preserve">
+    <value>下限(x10^6)细胞/mL</value>
+  </data>
+  <data name="LID_Label_LowerLimitPopulation_QCReport" xml:space="preserve">
+    <value>下限(%)</value>
+  </data>
+  <data name="LID_Label_LowerLimitSize_QCReport" xml:space="preserve">
+    <value>下限(µm)</value>
+  </data>
+  <data name="LID_Label_UpperLimitConc_QCReport" xml:space="preserve">
+    <value>上限(x10^6)细胞/mL</value>
+  </data>
+  <data name="LID_Label_UpperLimitPopulation_QCReport" xml:space="preserve">
+    <value>上限(%)</value>
+  </data>
+  <data name="LID_Label_UpperLimitSize_QCReport" xml:space="preserve">
+    <value>上限(µm)</value>
+  </data>
+  <data name="LID_GraphLabel_GrayLevel" xml:space="preserve">
+    <value>灰度</value>
+  </data>
+  <data name="LID_GraphLabel_Pixel" xml:space="preserve">
+    <value>像素</value>
+  </data>
+  <data name="LID_UserRole_Admin" xml:space="preserve">
+    <value>管理员</value>
+  </data>
+  <data name="LID_UserRole_Advanced" xml:space="preserve">
+    <value>高级</value>
+  </data>
+  <data name="LID_UserRole_Normal" xml:space="preserve">
+    <value>正常</value>
+  </data>
+  <data name="LID_UserRole_Service" xml:space="preserve">
+    <value>服务</value>
+  </data>
+  <data name="LID_Label_Valve" xml:space="preserve">
+    <value>阀</value>
+  </data>
+  <data name="LID_ImageLabel_Annotated" xml:space="preserve">
+    <value>注释</value>
+  </data>
+  <data name="LID_ImageLabel_Binary" xml:space="preserve">
+    <value>二进制</value>
+  </data>
+  <data name="LID_ImageLabel_Raw" xml:space="preserve">
+    <value>原始</value>
+  </data>
+  <data name="LID_ButtonContent_Administrative_Unlock" xml:space="preserve">
+    <value>管理解锁</value>
+  </data>
+  <data name="LID_ButtonContent_On" xml:space="preserve">
+    <value>打开</value>
+  </data>
+  <data name="LID_ButtonContent_Off" xml:space="preserve">
+    <value>关闭</value>
+  </data>
+  <data name="LID_MsgLabel_Notification" xml:space="preserve">
+    <value>最近通知</value>
+  </data>
+  <data name="LID_Status_Aspirating" xml:space="preserve">
+    <value>正在吸样</value>
+  </data>
+  <data name="LID_Status_Cleaning" xml:space="preserve">
+    <value>清洗</value>
+  </data>
+  <data name="LID_Status_Completed_POS" xml:space="preserve">
+    <value>位置 #{0} 已完成</value>
+  </data>
+  <data name="LID_Status_Image_Acquiring" xml:space="preserve">
+    <value>正在采集</value>
+  </data>
+  <data name="LID_Status_Mixing" xml:space="preserve">
+    <value>正在混合</value>
+  </data>
+  <data name="LID_Status_Processing" xml:space="preserve">
+    <value>正在处理</value>
+  </data>
+  <data name="LID_Label_High" xml:space="preserve">
+    <value>高</value>
+  </data>
+  <data name="LID_Label_Medium" xml:space="preserve">
+    <value>中</value>
+  </data>
+  <data name="LID_Label_FastWashType" xml:space="preserve">
+    <value>快速清洗</value>
+  </data>
+  <data name="LID_Label_FastWashWithUnits" xml:space="preserve">
+    <value>快速 (170 µL)</value>
+  </data>
+  <data name="LID_Label_NormalWashType" xml:space="preserve">
+    <value>正常清洗</value>
+  </data>
+  <data name="LID_Label_NormalWashWithUnits" xml:space="preserve">
+    <value>正常 (200 µL)</value>
+  </data>
+  <data name="LID_RunResultsReport_Graph_Diameter" xml:space="preserve">
+    <value>直径 (µm)</value>
+  </data>
+  <data name="LID_Label_Min_Max_Variation" xml:space="preserve">
+    <value>16 x 16图像极差</value>
+  </data>
+  <data name="LID_Label_Image_Coefficient_Variance" xml:space="preserve">
+    <value>128 x 128图像变异系数</value>
+  </data>
+  <data name="LID_Label_Image_Intensity_Mean" xml:space="preserve">
+    <value>原始图像强度平均值</value>
+  </data>
+  <data name="LID_Report_NoData" xml:space="preserve">
+    <value>无有效数据</value>
+  </data>
+  <data name="LID_DataGridHeader_PercentCV" xml:space="preserve">
+    <value>CV%</value>
+  </data>
+  <data name="LID_Label_ExportEachSamplePDF" xml:space="preserve">
+    <value>另将每个样品导出为 PDF</value>
+  </data>
+  <data name="LID_Label_Diameter" xml:space="preserve">
+    <value>平均直径</value>
+  </data>
+  <data name="LID_ButtonContent_Save" xml:space="preserve">
+    <value>保存</value>
+  </data>
+  <data name="LID_Label_CopyCellType" xml:space="preserve">
+    <value>复制细胞类型</value>
+  </data>
+  <data name="LID_Label_CellTypeName" xml:space="preserve">
+    <value>细胞类型名称：</value>
+  </data>
+  <data name="LID_HELP_LoosenTrypanCap" xml:space="preserve">
+    <value>将试剂盒中的台盼蓝瓶盖拧松 1/4 圈。</value>
+  </data>
+  <data name="LID_HELP_CapHasBeenLoosened" xml:space="preserve">
+    <value>拧松瓶盖后轻触下一个</value>
+  </data>
+  <data name="LID_Button_CancelSet" xml:space="preserve">
+    <value>取消集</value>
+  </data>
+  <data name="LID_CheckBox_UseSequencing" xml:space="preserve">
+    <value>使用排序</value>
+  </data>
+  <data name="LID_Default_SampleSetName" xml:space="preserve">
+    <value>样本集 ({0})</value>
+  </data>
+  <data name="LID_Dialog_ImportNotEnoughWells" xml:space="preserve">
+    <value>模板的样本超过样本位置可用数量。部分样本未被导入。</value>
+  </data>
+  <data name="LID_Dialog_ImportOccupiedWellsMoveThem" xml:space="preserve">
+    <value>模板存在当前使用的样本试管孔中定义的样本。您是否想将样本放置于可用的样本试管孔中？</value>
+  </data>
+  <data name="LID_Enum_Aspirating" xml:space="preserve">
+    <value>正在吸样</value>
+  </data>
+  <data name="LID_Enum_Complete" xml:space="preserve">
+    <value>完成</value>
+  </data>
+  <data name="LID_Enum_Paused" xml:space="preserve">
+    <value>暂停</value>
+  </data>
+  <data name="LID_Enum_Pending" xml:space="preserve">
+    <value>待定</value>
+  </data>
+  <data name="LID_Enum_Running" xml:space="preserve">
+    <value>运行</value>
+  </data>
+  <data name="LID_Enum_SearchingTubes" xml:space="preserve">
+    <value>搜索试管……</value>
+  </data>
+  <data name="LID_Enum_Stopping" xml:space="preserve">
+    <value>正在停止</value>
+  </data>
+  <data name="LID_Error_UnableToPauseAddSamples" xml:space="preserve">
+    <value>无法暂停工作清单并添加样本。</value>
+  </data>
+  <data name="LID_Header_SeqSampleNaming" xml:space="preserve">
+    <value>顺序命名样本</value>
+  </data>
+  <data name="LID_Label_AverageDiam_Abbr" xml:space="preserve">
+    <value>平均直径 (µm)</value>
+  </data>
+  <data name="LID_Label_AverageViableDiam_Abbr" xml:space="preserve">
+    <value>平均活细胞直径</value>
+  </data>
+  <data name="LID_Label_CellType" xml:space="preserve">
+    <value>细胞类型</value>
+  </data>
+  <data name="LID_Label_CreateSampleSet" xml:space="preserve">
+    <value>创建样本集</value>
+  </data>
+  <data name="LID_Label_Digits" xml:space="preserve">
+    <value>数位</value>
+  </data>
+  <data name="LID_Label_Filter" xml:space="preserve">
+    <value>筛选</value>
+  </data>
+  <data name="LID_Label_IncrementingInt" xml:space="preserve">
+    <value>递增整数</value>
+  </data>
+  <data name="LID_Label_Preview" xml:space="preserve">
+    <value>预览</value>
+  </data>
+  <data name="LID_Label_SampleName" xml:space="preserve">
+    <value>样本名称</value>
+  </data>
+  <data name="LID_Label_SampleSetName" xml:space="preserve">
+    <value>样本名称集</value>
+  </data>
+  <data name="LID_Label_SampleSetTableSettings" xml:space="preserve">
+    <value>样本表设置</value>
+  </data>
+  <data name="LID_Label_SampleTemplate" xml:space="preserve">
+    <value>采样模板</value>
+  </data>
+  <data name="LID_Label_SequentialParanth" xml:space="preserve">
+    <value>（顺序）</value>
+  </data>
+  <data name="LID_Label_StartAt" xml:space="preserve">
+    <value>开始于</value>
+  </data>
+  <data name="LID_Label_Tag" xml:space="preserve">
+    <value>标记</value>
+  </data>
+  <data name="LID_Label_Text" xml:space="preserve">
+    <value>文本</value>
+  </data>
+  <data name="LID_MSGBOX_Information" xml:space="preserve">
+    <value>信息</value>
+  </data>
+  <data name="LID_MSGBOX_PWDExpQuestion" xml:space="preserve">
+    <value>您的密码将在 {0} 到期。请在过期前更换密码。是否要现在更改密码？</value>
+  </data>
+  <data name="LID_StatusLabel_Idle" xml:space="preserve">
+    <value>闲置</value>
+  </data>
+  <data name="LID_StatusLabel_NightlyClean" xml:space="preserve">
+	<value>Nightly Clean</value>
+  </data>
+  <data name="LID_Status_ProcessingImages" xml:space="preserve">
+    <value>图像处理中</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_GET_SYSTEM_STATUS" xml:space="preserve">
+    <value>检查系统状态时发生错误</value>
+  </data>
+  <data name="LID_OrphanSetName" xml:space="preserve">
+    <value>孤立样本集</value>
+  </data>
+  <data name="LID_Error_UnableToAddSamples" xml:space="preserve">
+    <value>未能将样本集添加至工作清单。</value>
+  </data>
+  <data name="LID_MSGBOX_DatabaseError" xml:space="preserve">
+    <value>数据库错误</value>
+  </data>
+  <data name="LID_Header_FilterSampleSets" xml:space="preserve">
+    <value>筛选样本集</value>
+  </data>
+  <data name="LID_Label_DateRange" xml:space="preserve">
+    <value>日期范围</value>
+  </data>
+  <data name="LID_Label_FromColon" xml:space="preserve">
+    <value>从：</value>
+  </data>
+  <data name="LID_Label_SampleFilter" xml:space="preserve">
+    <value>样本筛选</value>
+  </data>
+  <data name="LID_Label_SampleSetFilter" xml:space="preserve">
+    <value>样本集筛选</value>
+  </data>
+  <data name="LID_Label_ToColon" xml:space="preserve">
+    <value>到：</value>
+  </data>
+  <data name="LID_Message_FilterSampleSetsFailed" xml:space="preserve">
+    <value>筛选样本集时发生错误</value>
+  </data>
+  <data name="LID_Status_Cancelled" xml:space="preserve">
+    <value>取消</value>
+  </data>
+  <data name="LID_Label_N_Equals" xml:space="preserve">
+    <value>N=</value>
+  </data>
+  <data name="LID_MessageHub_SaveSampleSetFailed" xml:space="preserve">
+    <value>未能保存样本集模板</value>
+  </data>
+  <data name="LID_MessageHub_SaveSampleSetSuccess" xml:space="preserve">
+    <value>已保存样本集模板</value>
+  </data>
+  <data name="LID_Label_Delete" xml:space="preserve">
+    <value>删除</value>
+  </data>
+  <data name="LID_Label_SampleSetTemplates" xml:space="preserve">
+    <value>样本集模板</value>
+  </data>
+  <data name="LID_MsgBox_ConfirmDeleteSampleSetTemplate" xml:space="preserve">
+    <value>您确定要删除名为“{0}”的样本集模板吗？</value>
+  </data>
+  <data name="LID_MsgBox_DeleteSampleSetTemplateFailed" xml:space="preserve">
+    <value>未能删除样本集模板“{0}”。</value>
+  </data>
+  <data name="LID_MsgBox_DeleteSampleSetTemplateSuccess" xml:space="preserve">
+    <value>已删除样本集模板“{0}”。</value>
+  </data>
+  <data name="LID_Label_EnhancedSampleWorkflow" xml:space="preserve">
+    <value>已强化样本工作流</value>
+  </data>
+  <data name="LID_ESW_Help_Line_1" xml:space="preserve">
+    <value>1.工作清单样本模板选项最初使用系设置填充</value>
+  </data>
+  <data name="LID_ESW_Help_Line_10" xml:space="preserve">
+    <value>— 将结果附加至用于放置导出样本结果的文件夹和文件</value>
+  </data>
+  <data name="LID_ESW_Help_Line_11" xml:space="preserve">
+    <value>2.单击</value>
+  </data>
+  <data name="LID_ESW_Help_Line_11b" xml:space="preserve">
+    <value>主页左上方的按钮以创建样本集。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_12" xml:space="preserve">
+    <value>3.将自动填充样本集名称，且样本集的模板选项将从主页的样本模板中拷贝。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_13" xml:space="preserve">
+    <value>4.在左侧下拉菜单中选择旋转架或 96 孔微孔板。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_13_ACup" xml:space="preserve">
+    <value>4.在左侧下拉列表中选择旋转架、96 孔微孔板或自动化样本杯。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_14" xml:space="preserve">
+    <value>5.单击用来进行样本分析的试管位置。这将定义您的样本集。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_14_ACup" xml:space="preserve">
+    <value>5.对于旋转架或96 孔微孔板，点击您将进行样本分析的试管位置。对于自动化样本杯，选择自动化样本杯图标。这将定义您的样本集。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_15" xml:space="preserve">
+    <value>6.对于 96 孔微孔板，排序依据（根据行或根据列）可通过</value>
+  </data>
+  <data name="LID_ESW_Help_Line_15b" xml:space="preserve">
+    <value>按钮进行切换。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_16" xml:space="preserve">
+    <value>7.当您要完成样本集定义时，请单击“添加”按钮。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_17" xml:space="preserve">
+    <value>8.现在或开始执行工作清单后添加更多样本集。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_17_ACup" xml:space="preserve">
+    <value>8.对于旋转支架，现在添加更多样本集或在开始工作清单后添加。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_18" xml:space="preserve">
+    <value>9.当可以</value>
+  </data>
+  <data name="LID_ESW_Help_Line_18b" xml:space="preserve">
+    <value>开始执行工作清单时，请单击按钮。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_19" xml:space="preserve">
+    <value>10.对于旋转架，您可在</value>
+  </data>
+  <data name="LID_ESW_Help_Line_19b" xml:space="preserve">
+    <value>定义任何样本集之前单击。检测到的试管将使用工作清单样本模板选项进入执行流程。</value>
+  </data>
+  <data name="LID_ESW_Help_Line_2" xml:space="preserve">
+    <value>— 样本名称：用于自动填充样本集名称区域的文本。您可单击</value>
+  </data>
+  <data name="LID_ESW_Help_Line_20" xml:space="preserve">
+    <value>11.定义：</value>
+  </data>
+  <data name="LID_ESW_Help_Line_21" xml:space="preserve">
+    <value>— 工作清单：样本集的集合</value>
+  </data>
+  <data name="LID_ESW_Help_Line_22" xml:space="preserve">
+    <value>— 样本集：用于分析的样本集合</value>
+  </data>
+  <data name="LID_ESW_Help_Line_23" xml:space="preserve">
+    <value>— 样本模板：定义样本时用于配置样本命名顺序规则的</value>
+  </data>
+  <data name="LID_ESW_Help_Line_2b" xml:space="preserve">
+    <value>默认选项</value>
+  </data>
+  <data name="LID_ESW_Help_Line_3" xml:space="preserve">
+    <value>— 细胞类型：用于选择细胞类型或质控品</value>
+  </data>
+  <data name="LID_ESW_Help_Line_4" xml:space="preserve">
+    <value>— 稀释：在 1 到 9,999 间的任何稀释</value>
+  </data>
+  <data name="LID_ESW_Help_Line_5_ACup" xml:space="preserve">
+    <value>— 清洗：如果使用旋转架或 96 孔微孔板，选择正常 (200 μL) 或快速 (170 μL)</value>
+  </data>
+  <data name="LID_ESW_Help_Line_5" xml:space="preserve">
+    <value>— 清洗：选择正常清洗 (200 μL) 或 快速清洗 (170 μL)</value>
+  </data>
+  <data name="LID_ESW_Help_Line_6" xml:space="preserve">
+    <value>— 标记：用于搜索样本的文本</value>
+  </data>
+  <data name="LID_ESW_Help_Line_7" xml:space="preserve">
+    <value>高级设置</value>
+  </data>
+  <data name="LID_ESW_Help_Line_8" xml:space="preserve">
+    <value>— 第 N 个值：要保存图像数量</value>
+  </data>
+  <data name="LID_ESW_Help_Line_9" xml:space="preserve">
+    <value>— 将结果导出至：用于放置自动导出样本结果的文件夹</value>
+  </data>
+  <data name="LID_HB_DetailedReview" xml:space="preserve">
+    <value>详情审查</value>
+  </data>
+  <data name="LID_MSGBOX_LoadedSampleSetFailed" xml:space="preserve">
+    <value>未能加载样本集模板</value>
+  </data>
+  <data name="LID_MSGBOX_LoadedSampleSetSuccess" xml:space="preserve">
+    <value>已加载样本集模板</value>
+  </data>
+  <data name="LID_Label_DatabaseSaveLoad" xml:space="preserve">
+    <value>数据库保存/加载</value>
+  </data>
+  <data name="LID_Label_FileSystemSaveLoad" xml:space="preserve">
+    <value>文件系统保存/加载</value>
+  </data>
+  <data name="LID_Label_SaveLoadSampleSetTemplates" xml:space="preserve">
+    <value>保存/加载样本集模板</value>
+  </data>
+  <data name="LID_Button_AddUser" xml:space="preserve">
+    <value>添加用户</value>
+  </data>
+  <data name="LID_Enum_SecuritySettings_ActiveDirectory" xml:space="preserve">
+    <value>激活目录</value>
+  </data>
+  <data name="LID_Enum_SecuritySettings_LocalUsers" xml:space="preserve">
+    <value>本地（仅在此仪器上）</value>
+  </data>
+  <data name="LID_Enum_SecuritySettings_None" xml:space="preserve">
+    <value>无用户帐户</value>
+  </data>
+  <data name="LID_Label_AccountTypeToUser" xml:space="preserve">
+    <value>使用的帐户类型</value>
+  </data>
+  <data name="LID_Label_AutoSignOutAfter" xml:space="preserve">
+    <value>自动注销时间</value>
+  </data>
+  <data name="LID_Label_Enabled" xml:space="preserve">
+    <value>已启用</value>
+  </data>
+  <data name="LID_Label_MinutesLowerCase" xml:space="preserve">
+    <value>分钟</value>
+  </data>
+  <data name="LID_Label_PasswordChangeColonEvery" xml:space="preserve">
+    <value>更换密码：每 {0} 天</value>
+  </data>
+  <data name="LID_Label_PasswordChangeRequiredEvery" xml:space="preserve">
+    <value>密码到期日</value>
+  </data>
+  <data name="LID_Label_SecuritySettings" xml:space="preserve">
+    <value>安全设置</value>
+  </data>
+  <data name="LID_Button_ADConfig" xml:space="preserve">
+    <value>配置 AD……</value>
+  </data>
+  <data name="LID_Label_CreateUser" xml:space="preserve">
+    <value>创建用户帐户</value>
+  </data>
+  <data name="LID_Label_EditUser" xml:space="preserve">
+    <value>编辑用户帐户</value>
+  </data>
+  <data name="LID_Header_ActiveDirectoryConfig" xml:space="preserve">
+    <value>激活目录配置</value>
+  </data>
+  <data name="LID_Label_AdServer" xml:space="preserve">
+    <value>AD 服务器</value>
+  </data>
+  <data name="LID_Label_BaseDn" xml:space="preserve">
+    <value>基础 DN</value>
+  </data>
+  <data name="LID_Label_RoleMapping" xml:space="preserve">
+    <value>角色映射</value>
+  </data>
+  <data name="LID_Watermark_BaseDn" xml:space="preserve">
+    <value>要搜索的基础 DN</value>
+  </data>
+  <data name="LID_Watermark_IpAddressOrHostname" xml:space="preserve">
+    <value>IP 地址或主机名</value>
+  </data>
+  <data name="LID_Watermark_RoleMap" xml:space="preserve">
+    <value>映射到此角色的 AD 组的 cn</value>
+  </data>
+  <data name="LID_Status_AcquisitionComplete" xml:space="preserve">
+    <value>图像采集完成</value>
+  </data>
+  <data name="LID_Error_FailedToRetrieveActiveDirSettings" xml:space="preserve">
+    <value>未能加载激活目录设置</value>
+  </data>
+  <data name="LID_Error_FailedToSaveActiveDirSettings" xml:space="preserve">
+    <value>未能保存激活目录设置</value>
+  </data>
+  <data name="LID_Label_Pos" xml:space="preserve">
+    <value>位置</value>
+  </data>
+  <data name="LID_Label_ShowColumn" xml:space="preserve">
+    <value>显示列</value>
+  </data>
+  <data name="LID_Label_Width" xml:space="preserve">
+    <value>宽度</value>
+  </data>
+  <data name="LID_Warning_FailedToSaveColumnSetting" xml:space="preserve">
+    <value>未能保存列设置。</value>
+  </data>
+  <data name="LID_Label_ConcDisplayDigits" xml:space="preserve">
+    <value>小数位数（配置）</value>
+  </data>
+  <data name="LID_Error_FailedToGetDatabaseConfiguration" xml:space="preserve">
+    <value>未能获取数据库配置</value>
+  </data>
+  <data name="LID_Error_FailedToSetDatabaseConfiguration" xml:space="preserve">
+    <value>未能设置数据库配置</value>
+  </data>
+  <data name="LID_Label_DatabaseConfiguration" xml:space="preserve">
+    <value>数据库配置</value>
+  </data>
+  <data name="LID_Label_DatabaseConfigurationChanged" xml:space="preserve">
+    <value>数据库配置已更改</value>
+  </data>
+  <data name="LID_Label_DatabaseReadPasswordChangeSuccess" xml:space="preserve">
+    <value>已设置数据库读取密码</value>
+  </data>
+  <data name="LID_Label_DatabaseReadPasswordChangeFailure" xml:space="preserve">
+    <value>数据库读取密码设置失败</value>
+  </data>
+  <data name="LID_DatabaseConfig_DbName" xml:space="preserve">
+    <value>数据库名称</value>
+  </data>
+  <data name="LID_DatabaseConfig_IpAddress" xml:space="preserve">
+    <value>IP 地址</value>
+  </data>
+  <data name="LID_DatabaseConfig_Port" xml:space="preserve">
+    <value>端口</value>
+  </data>
+  <data name="LID_Label_SMTPConfiguration" xml:space="preserve">
+    <value>SMTP 配置</value>
+  </data>
+  <data name="LID_Label_SMTPConfig_Server" xml:space="preserve">
+    <value>服务器</value>
+  </data>
+  <data name="LID_Label_SMTPConfig_Authenticate" xml:space="preserve">
+    <value>身份验证</value>
+  </data>
+  <data name="LID_Error_FailedToGetSMTPConfiguration" xml:space="preserve">
+    <value>未能获取 SMTP 配置</value>
+  </data>
+  <data name="LID_Error_FailedToSetSMTPConfiguration" xml:space="preserve">
+    <value>未能设置 SMTP 配置</value>
+  </data>
+  <data name="LID_Label_SMTPConfigurationChanged" xml:space="preserve">
+    <value>SMTP 配置已更改</value>
+  </data>
+  <data name="LID_Label_Email" xml:space="preserve">
+    <value>电子邮件</value>
+  </data>
+  <data name="LID_MSGBOX_Email_Sent" xml:space="preserve">
+    <value>邮件已发送</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SEND_EMAIL_ERROR" xml:space="preserve">
+    <value>邮件发送失败</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_SEND_EMAIL_ERROR_AUTH" xml:space="preserve">
+    <value>邮件发送失败。发件人身份验证失败。</value>
+  </data>
+  <data name="LID_Password_Reset_Email_Body" xml:space="preserve">
+    <value>您的 Vi-CELL BLU 已更新。如果您有任何问题，请联系管理员。</value>
+  </data>
+  <data name="LID_Password_Reset_Email_Subject" xml:space="preserve">
+    <value>密码重置</value>
+  </data>
+  <data name="LID_Label_Can_Use_Fast_Mode" xml:space="preserve">
+    <value>用户可使用快速清洗</value>
+  </data>
+  <data name="LID_Label_ViableCellsCap" xml:space="preserve">
+    <value>活细胞</value>
+  </data>
+  <data name="LID_Status_NotProcessed" xml:space="preserve">
+    <value>未处理</value>
+  </data>
+  <data name="LID_Dialog_DiscardSampleSetChanges" xml:space="preserve">
+    <value>您是否要放弃所有样本集更改？</value>
+  </data>
+  <data name="LID_ERRMSGBOX_InvalidEmailAddress" xml:space="preserve">
+    <value>电子邮件地址有效格式应为：用户名@某公司.com。</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_CIRCLEPANEL_CLICK" xml:space="preserve">
+    <value>点击圆形面板时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_ACCEPT_SET_FOCUS" xml:space="preserve">
+    <value>接受设置焦点时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_AUTO_FOCUS_STATE" xml:space="preserve">
+    <value>自动焦点出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CANCEL_SET_FOCUS" xml:space="preserve">
+    <value>取消设置焦点时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_CAROUSEL_STATUS_CHANGE" xml:space="preserve">
+    <value>更改转盘状态时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_DIAGNOSTICS" xml:space="preserve">
+    <value>诊断中出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_AUTO_FOCUS_TIMER_TICK" xml:space="preserve">
+    <value>处理自动焦点计时器时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_HANDLE_SERVICE_LIVE_IMAGE_OCCURRED" xml:space="preserve">
+    <value>处理活动图像时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_LIVE_IMAGE_ACTIVE" xml:space="preserve">
+    <value>激活/禁用活动图像时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_MOTOR_REG_STEP_POSITION" xml:space="preserve">
+    <value>电击定位步骤中出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_OPTICS_FUNCTION" xml:space="preserve">
+    <value>光学功能出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_REPETITION_SECTION" xml:space="preserve">
+    <value>重复部分出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_FOCUS_STEP_TWO" xml:space="preserve">
+    <value>步骤 2 中设置焦点时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_MANUAL_CONTROL_OPTICS_VALUE" xml:space="preserve">
+    <value>设置手动光学控制值时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SET_TEMP_CELL_TYPE" xml:space="preserve">
+    <value>设置临时细胞类型时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SKIP_DELAY" xml:space="preserve">
+    <value>设置跳过焦点延迟时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_STOP_LIVE_IMAGE" xml:space="preserve">
+    <value>停止活动图像时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_SWITCH_TO_MANUAL_CONTROLS_CONTENT" xml:space="preserve">
+    <value>转至手动控制时出错</value>
+  </data>
+  <data name="LID_EXCEPTIONMSG_ERROR_ON_UPDATE_OPTICS_ADJUST" xml:space="preserve">
+    <value>更新光学调整时出错</value>
+  </data>
+  <data name="LID_Label_CellViabilityAnalyzer" xml:space="preserve">
+    <value>细胞活力分析仪</value>
+  </data>
+  <data name="LID_ProgressIndication_FLUSHINGFLUIDLINES" xml:space="preserve">
+    <value>正在冲洗流体管路</value>
+  </data>
+  <data name="LID_ProgressIndication_DECONTAMINATE" xml:space="preserve">
+    <value>去污</value>
+  </data>
+  <data name="LID_ProgressIndication_PRIMINGFLUIDLINES" xml:space="preserve">
+    <value>正在灌注流体管路</value>
+  </data>
+  <data name="LID_TextBlock_CurrentLot" xml:space="preserve">
+    <value>当前批次</value>
+  </data>
+  <data name="LID_Label_AutomationCup" xml:space="preserve">
+    <value>自动化样本杯</value>
+  </data>
+  <data name="LID_MSGBOX_AutomationNightCleaning" xml:space="preserve">
+    <value>正在进行自动化夜间清洗</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactor" xml:space="preserve">
+    <value>浓度调整因子</value>
+  </data>
+  <data name="LID_ERRMSGBOX_AdjustmentFactorBlank" xml:space="preserve">
+    <value>浓度调整因子不能为空。设置为 {0} 禁用。</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorRange" xml:space="preserve">
+    <value>浓度调整因子必须介于 {0} 到 {1} 之间</value>
+  </data>
+  <data name="LID_Label_AutomationConfiguration" xml:space="preserve">
+    <value>自动化配置</value>
+  </data>
+  <data name="LID_StatusBar_AutomationSettingsChanged" xml:space="preserve">
+    <value>自动化设置更改成功</value>
+  </data>
+  <data name="LID_Error_FailedToSetAutomationConfiguration" xml:space="preserve">
+    <value>自动化配置设置失败</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfo" xml:space="preserve">
+    <value>允许调整特定细胞类型以匹配旧有仪器结果。调整范围限定在 +/- 20%。
+建议使用以下公式确定数值。</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfoFormula_ConcAdjFactor" xml:space="preserve">
+    <value>浓度调整因子</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfoFormula_MeasuredConc" xml:space="preserve">
+    <value>实测浓度值</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorInfoFormula_TargetConc" xml:space="preserve">
+    <value>目标浓度值</value>
+  </data>
+  <data name="LID_MSGBOX_DisableAutomationWarning" xml:space="preserve">
+    <value>如果您禁用自动化，您需要联系 Beckman Coulter 重新启用。确定要禁用自动化吗？</value>
+  </data>
+  <data name="LID_Label_ACupEnabled" xml:space="preserve">
+    <value>已启用自动化样本杯</value>
+  </data>
+  <data name="LID_Label_PostgresDatabaseReadPassword" xml:space="preserve">
+    <value>设置数据库读取密码</value>
+  </data>
+  <data name="LID_Label_ChoosePassword" xml:space="preserve">
+    <value>选择密码</value>
+  </data>
+  <data name="LID_Label_ConfirmPassword" xml:space="preserve">
+    <value>确认密码</value>
+  </data>
+  <data name="LID_MSGBOX_AutomationLocked" xml:space="preserve">
+    <value>无法更改自动化设置，由于自动化已被锁定。</value>
+  </data>
+  <data name="LID_MSGBOX_ChangeAutomationPort" xml:space="preserve">
+    <value>如果您更改自动化端口，任何已连接的客户都将断连，服务器将被重启。确定要更改自动化端口吗？</value>
+  </data>
+  <data name="LID_Label_AutomationLockEngaged" xml:space="preserve">
+    <value>自动化锁定已启动</value>
+  </data>
+  <data name="LID_Default_AutomationCupSampleSetName" xml:space="preserve">
+    <value>自动化样本杯样本集</value>
+  </data>
+  <data name="LID_Enum_AM" xml:space="preserve">
+    <value>AM</value>
+  </data>
+  <data name="LID_Enum_Hour24" xml:space="preserve">
+    <value>24 小时</value>
+  </data>
+  <data name="LID_Enum_PM" xml:space="preserve">
+    <value>PM</value>
+  </data>
+  <data name="LID_GridLabel_ScheduledDataExports" xml:space="preserve">
+    <value>预订的数据导出</value>
+  </data>
+  <data name="LID_IP_Port" xml:space="preserve">
+    <value>IP 端口</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationFour" xml:space="preserve">
+    <value>重复步骤 2 - 3 直到所有的 18 份标准品完成。</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationPlay" xml:space="preserve">
+    <value>将样本移至自动化样本杯。选择确定进行处理</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationThreeCont" xml:space="preserve">
+    <value>左侧窗格高亮显示的一排用来执行微珠。</value>
+  </data>
+  <data name="LID_Label_ACupConcentrationTwo" xml:space="preserve">
+    <value>手动将微球移至自动化样本杯 (43 µL +/- 1 µL)。左侧窗格高亮显示的一排“总细胞”表示使用的微珠浓度。</value>
+  </data>
+  <data name="LID_Label_AdditionalDataFilters" xml:space="preserve">
+    <value>其他数据筛选</value>
+  </data>
+  <data name="LID_Label_AdjustmentFactorPercentage" xml:space="preserve">
+    <value>浓度调整因子 (%)</value>
+  </data>
+  <data name="LID_Label_AreYouSureYouWantToDelete" xml:space="preserve">
+    <value>确定要删除“{0}”吗？</value>
+  </data>
+  <data name="LID_Label_At" xml:space="preserve">
+    <value>在</value>
+  </data>
+  <data name="LID_Label_AuditLogScheduledExportFileName" xml:space="preserve">
+    <value>导出文件名 (.csv)</value>
+  </data>
+  <data name="LID_Label_ConcentrationNote" xml:space="preserve">
+    <value>说明：灵敏度调节。根据 FSM 建议准备样本</value>
+  </data>
+  <data name="LID_Label_DayOfMonthAt" xml:space="preserve">
+    <value>日月，于</value>
+  </data>
+  <data name="LID_Label_EncryptExport" xml:space="preserve">
+    <value>加密导出？</value>
+  </data>
+  <data name="LID_Label_ExportAt" xml:space="preserve">
+    <value>导出时间</value>
+  </data>
+  <data name="LID_Label_ExportEncryptedInfo" xml:space="preserve">
+    <value>导出以供线下分析</value>
+  </data>
+  <data name="LID_Label_ExportFilename" xml:space="preserve">
+    <value>导出文件名</value>
+  </data>
+  <data name="LID_Label_ExportLogs" xml:space="preserve">
+    <value>导出日志</value>
+  </data>
+  <data name="LID_Label_ExportOn" xml:space="preserve">
+    <value>导出日期</value>
+  </data>
+  <data name="LID_Label_ExportSamples" xml:space="preserve">
+    <value>导出样本</value>
+  </data>
+  <data name="LID_Label_ExportTo" xml:space="preserve">
+    <value>导出至</value>
+  </data>
+  <data name="LID_Label_ExportUnencryptedInfo" xml:space="preserve">
+    <value>导出 CSV 和不加密图像</value>
+  </data>
+  <data name="LID_Label_FromWordOnly" xml:space="preserve">
+    <value>从</value>
+  </data>
+  <data name="LID_Label_LastACupCalibrationDate" xml:space="preserve">
+    <value>上一个自动化样本杯浓度斜率日期:</value>
+  </data>
+  <data name="LID_Label_LastACupCalibrationDate_WithoutColon" xml:space="preserve">
+    <value>上一个自动化样本杯浓度斜率日期</value>
+  </data>
+  <data name="LID_Label_LogsToExport" xml:space="preserve">
+    <value>导出的日志</value>
+  </data>
+  <data name="LID_Label_New" xml:space="preserve">
+    <value>新建</value>
+  </data>
+  <data name="LID_Label_Notify" xml:space="preserve">
+    <value>通知</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Daily" xml:space="preserve">
+    <value>每日</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Monthly" xml:space="preserve">
+    <value>每月</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Once" xml:space="preserve">
+    <value>一次</value>
+  </data>
+  <data name="LID_Label_RecurrenceFreq_Weekly" xml:space="preserve">
+    <value>每周</value>
+  </data>
+  <data name="LID_Label_Samples" xml:space="preserve">
+    <value>样本</value>
+  </data>
+  <data name="LID_Label_ScheduledExportFileName" xml:space="preserve">
+    <value>导出文件名 (.zip)</value>
+  </data>
+  <data name="LID_Label_ScheduledExportName" xml:space="preserve">
+    <value>预订名称</value>
+  </data>
+  <data name="LID_Label_ScheduledExportRepeats" xml:space="preserve">
+    <value>重复</value>
+  </data>
+  <data name="LID_Label_ToWordOnly" xml:space="preserve">
+    <value>至</value>
+  </data>
+  <data name="LID_Label_Weekday_Friday" xml:space="preserve">
+    <value>星期五</value>
+  </data>
+  <data name="LID_Label_Weekday_Monday" xml:space="preserve">
+    <value>星期一</value>
+  </data>
+  <data name="LID_Label_Weekday_Saturday" xml:space="preserve">
+    <value>星期六</value>
+  </data>
+  <data name="LID_Label_Weekday_Sunday" xml:space="preserve">
+    <value>星期日</value>
+  </data>
+  <data name="LID_Label_Weekday_Thursday" xml:space="preserve">
+    <value>星期四</value>
+  </data>
+  <data name="LID_Label_Weekday_Tuesday" xml:space="preserve">
+    <value>星期二</value>
+  </data>
+  <data name="LID_Label_Weekday_Wednesday" xml:space="preserve">
+    <value>星期三</value>
+  </data>
+  <data name="LID_LogsList_ScheduledLogExports" xml:space="preserve">
+    <value>预订的日志导出</value>
+  </data>
+  <data name="LID_MsgBox_DataFilterValuesAreNotValid" xml:space="preserve">
+    <value>数据筛选器值无效</value>
+  </data>
+  <data name="LID_MsgBox_FailedToCreateDirectory" xml:space="preserve">
+    <value>创建字典失败</value>
+  </data>
+  <data name="LID_MsgBox_FilenameIsNotValid" xml:space="preserve">
+    <value>文件名无效</value>
+  </data>
+  <data name="LID_MsgBox_IncludeLogsSelectionIsNotValid" xml:space="preserve">
+    <value>您需选择至少一种类型的日志以预订导出</value>
+  </data>
+  <data name="LID_MsgBox_RecurrenceRulesAreNotValid" xml:space="preserve">
+    <value>递归规则无效</value>
+  </data>
+  <data name="LID_QCNameSameAsCellTypeName" xml:space="preserve">
+    <value>QC 与 CellType 名称不可相同</value>
+  </data>
+  <data name="LID_Question_DirectoryNotExistCreateIt" xml:space="preserve">
+    <value>字典不存在。要使 Vi-CELL BLU 尝试创建吗？</value>
+  </data>
+  <data name="LID_ScheduledExport_Audit_EachExportContainsForDaily" xml:space="preserve">
+    <value>每份导出数据会包含过去 24 小时的日志。</value>
+  </data>
+  <data name="LID_ScheduledExport_Audit_EachExportContainsForMonthly" xml:space="preserve">
+    <value>每份导出数据会包含过去一个月的日志。</value>
+  </data>
+  <data name="LID_ScheduledExport_Audit_EachExportContainsForWeekly" xml:space="preserve">
+    <value>每份导出数据会包含过去 7 天的日志。</value>
+  </data>
+  <data name="LID_ScheduledExport_CommentsNote" xml:space="preserve">
+    <value>可选的时间表说明</value>
+  </data>
+  <data name="LID_ScheduledExport_EachExportContainsForDaily" xml:space="preserve">
+    <value>每份导出数据会包含过去 24 小时的样本。</value>
+  </data>
+  <data name="LID_ScheduledExport_EachExportContainsForMonthly" xml:space="preserve">
+    <value>每份导出数据会包含过去一个月的样本。</value>
+  </data>
+  <data name="LID_ScheduledExport_EachExportContainsForWeekly" xml:space="preserve">
+    <value>每份导出数据会包含过去 7 天的样本。</value>
+  </data>
+  <data name="LID_ScheduledExport_ExportToNote" xml:space="preserve">
+    <value>目标文件夹路径</value>
+  </data>
+  <data name="LID_ScheduledExport_IncludeAuditLog" xml:space="preserve">
+    <value>审计日志</value>
+  </data>
+  <data name="LID_ScheduledExport_IncludeErrorLog" xml:space="preserve">
+    <value>系统错误日志</value>
+  </data>
+  <data name="LID_ScheduledExport_NotifyNote" xml:space="preserve">
+    <value>发送导出确认的电子邮箱地址</value>
+  </data>
+  <data name="LID_ScheduleExport_AddFailed" xml:space="preserve">
+    <value>添加预订导出失败</value>
+  </data>
+  <data name="LID_ScheduleExport_DeleteFailed" xml:space="preserve">
+    <value>删除预订导出失败</value>
+  </data>
+  <data name="LID_ScheduleExport_EditFailed" xml:space="preserve">
+    <value>编辑预订导出失败</value>
+  </data>
+  <data name="LID_TabItem_ACupConcSlope" xml:space="preserve">
+    <value>自动化样本杯浓度斜率</value>
+  </data>
+  <data name="LID_CSV_Row_Header" xml:space="preserve">
+    <value>ROW</value>
+  </data>
+  <data name="LID_CSV_Column_Header" xml:space="preserve">
+    <value>COLUMN</value>
+  </data>
+</root>

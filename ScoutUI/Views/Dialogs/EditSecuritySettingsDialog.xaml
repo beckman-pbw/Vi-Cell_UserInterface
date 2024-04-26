@@ -1,0 +1,114 @@
+﻿<local:Dialog x:Class="ScoutUI.Views.Dialogs.EditSecuritySettingsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+        WindowStyle="None"
+        mc:Ignorable="d" Title="EditSecuritySettingsDialog" Height="400" Width="600"
+        Background="{StaticResource Level1Background}">
+
+    <Grid Background="{StaticResource Level1Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <Grid Grid.Row="1" Background="{StaticResource Main_Background}" Margin="2" VerticalAlignment="Stretch">
+            <Grid Margin="10" VerticalAlignment="Stretch">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" MinHeight="30"/>
+                    <RowDefinition Height="Auto" MinHeight="30"/>
+                    <RowDefinition Height="Auto" MinHeight="30"/>
+                    <RowDefinition Height="*" MinHeight="30"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource NormalTextBlock}" Margin="0,10,0,10"
+                       Text="{Binding ResourceKeys[LID_Label_AccountTypeToUser], Source={StaticResource ScoutUILanguageResource}}"/>
+
+                <DataGrid Grid.Row="0" Grid.Column="1" Margin="40,0,0,10" x:Name="SecurityTypes" ItemsSource="{Binding SecurityTypes}"
+                          AutoGenerateColumns="False" SelectionMode="Single" Background="{StaticResource Main_Background}"
+                          RowBackground="{StaticResource Main_Background}" AlternatingRowBackground="{StaticResource Main_Background}"
+                          CanUserResizeColumns="False" CanUserResizeRows="False" CanUserReorderColumns="False" CanUserSortColumns="False" CanUserAddRows="False"
+                          CanUserDeleteRows="False" GridLinesVisibility="None" HeadersVisibility="None" IsTabStop="False" BorderThickness="0">
+                    <DataGrid.Resources>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="{DynamicResource AppBackgroundColor}"/>
+                        <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="{DynamicResource AppBackgroundColor}" />
+                        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" Color="{DynamicResource AppBackgroundColor}" />
+                    </DataGrid.Resources>
+                    <DataGrid.Columns>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <RadioButton Content="{Binding Name}"
+                                                 Style="{StaticResource SettingRadioButton}" Margin="5"
+                                                 GroupName="SecurityTypesGroup" Foreground="{DynamicResource GenericVeryLight}"
+                                                 Background="{StaticResource Main_Background}" Click="ButtonBase_OnClick"
+                                                 IsChecked="{Binding IsChecked}"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                        <DataGridTemplateColumn>
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Button Command="{Binding ActiveDirConfigCommand}" Style="{StaticResource DefaultButtonStyle}"
+                                            Width="Auto"
+                                            Visibility="{Binding ShowButton, Converter={StaticResource BooleanToVisibilityConverter}}">
+                                        <Button.Content>
+                                            <TextBlock Text="{Binding ResourceKeys[LID_Button_ADConfig], Source={StaticResource ScoutUILanguageResource}}"
+                                                       Margin="10,0,10,0"/>
+                                        </Button.Content>
+                                    </Button>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </DataGridTemplateColumn>
+                    </DataGrid.Columns>
+                 </DataGrid>
+
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="5"/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="70"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Style="{StaticResource NormalTextBlock}" VerticalAlignment="Center"
+                               Text="{Binding ResourceKeys[LID_Label_AutoSignOutAfter], Source={StaticResource ScoutUILanguageResource}}"/>
+
+                    <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding InactivityTimeout, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingTextBox}" Width="50"
+                             Margin="5,0,5,0" MaxLength="2" helper:ControlValidationHelper.AllowOnlyNumeric="True"
+                             IsEnabled="{Binding ShowAutoSignOut}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Style="{StaticResource NormalTextBlock}" VerticalAlignment="Center"
+                               Text="{Binding ResourceKeys[LID_Label_PasswordChangeRequiredEvery], Source={StaticResource ScoutUILanguageResource}}"/>
+
+                    <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding PasswordExpiry, UpdateSourceTrigger=PropertyChanged}" Style="{StaticResource SettingTextBox}" Width="50"
+                             Margin="5,0,5,0" MaxLength="2" helper:ControlValidationHelper.AllowOnlyNumeric="True"
+                             IsEnabled="{Binding ShowPasswordExpiry}"/>
+
+                </Grid>
+
+                <StackPanel Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="0,10,0,10" HorizontalAlignment="Center"
+                            VerticalAlignment="Bottom">
+                    <Button Content="{Binding ResourceKeys[LID_ButtonContent_OK], Source={StaticResource ScoutUILanguageResource}}"
+                            Command="{Binding AcceptCommand}" Style="{StaticResource DefaultButtonStyle}"
+                            Visibility="{Binding ShowActiveDirButton, Converter={StaticResource InverseVisibilityConverter}}"/>
+                    <Button Content="{Binding ResourceKeys[LID_ButtonContent_Cancel], Source={StaticResource ScoutUILanguageResource}}"
+                            Command="{Binding CancelCommand}" Style="{StaticResource DefaultButtonStyle}"/>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</local:Dialog>

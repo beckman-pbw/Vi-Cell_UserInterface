@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Users>
+  <User UserId="DefaultSettings" CreationDate="01/01/0001 00:00:00">
+    <HardwareSettingsDomain>
+      <IsMonitorOn>False</IsMonitorOn>
+      <SerialNumber></SerialNumber>
+      <FirmwareVersion></FirmwareVersion>
+      <SyringePumpFWVersion></SyringePumpFWVersion>
+      <CameraFirmwareVersion></CameraFirmwareVersion>
+      <ImageAnalysisSoftwareVersion></ImageAnalysisSoftwareVersion>
+      <CurrentPrinter></CurrentPrinter>
+      <SelectedPort></SelectedPort>
+      <BaudeRate></BaudeRate>
+      <DeviceName></DeviceName>
+    </HardwareSettingsDomain>
+    <GeneralSettings>
+      <SelectedLanguage>American English</SelectedLanguage>
+      <CurrentDate>01/01/0001 00:00:00</CurrentDate>
+      <CurrentTime>HH:MM:SS</CurrentTime>
+      <SelectedTimeZone>India Standard Time</SelectedTimeZone>
+      <IsDayLightSavings>False</IsDayLightSavings>
+      <LanguageID>eEnglishUS</LanguageID>
+    </GeneralSettings>
+    <SecuritySettingsDomain>
+      <IsSecurityON>True</IsSecurityON>
+      <InActivityTimeOutMins>15</InActivityTimeOutMins>
+      <PasswordExpiryDays>60</PasswordExpiryDays>
+      <CurrentDateTime></CurrentDateTime>
+      <Signatures>
+        <Signature>
+          <SignatureMeaning>Creation</SignatureMeaning>
+          <SignatureIndicator>CRE</SignatureIndicator>
+          <CurrentDate></CurrentDate>
+          <UserId></UserId>
+        </Signature>
+        <Signature>
+          <SignatureMeaning>Review</SignatureMeaning>
+          <SignatureIndicator>REV</SignatureIndicator>
+          <CurrentDate></CurrentDate>
+          <UserId></UserId>
+        </Signature>
+        <Signature>
+          <SignatureMeaning>Approval</SignatureMeaning>
+          <SignatureIndicator>APR</SignatureIndicator>
+          <CurrentDate></CurrentDate>
+          <UserId></UserId>
+        </Signature>
+      </Signatures>
+    </SecuritySettingsDomain>
+    <RunOptionSettings>
+      <DefaultSampleId>Sample</DefaultSampleId>
+      <DefaultDilution>1</DefaultDilution>
+      <DefaultWash>0</DefaultWash>
+      <DefaultBPQC>0</DefaultBPQC>
+      <NumberOfImages>1</NumberOfImages>
+      <IsExportSampleResultActive>False</IsExportSampleResultActive>
+      <IsAppendSampleResultExportActive>False</IsAppendSampleResultExportActive>
+      <ExportSampleResultPath>..\Export</ExportSampleResultPath>
+      <AppendSampleResultPath>..\Export</AppendSampleResultPath>
+      <IsAutoExportPDFSelected>False</IsAutoExportPDFSelected>
+      <DefaultFileName>Summary</DefaultFileName>
+    </RunOptionSettings>
+    <GenericParameters>
+      <GenericParametersList>
+        <GenericParametersDomain>
+          <IsDefault>False</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Cell Type</ParameterName>
+          <Order>1</Order>
+          <ParameterID>eCellType</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Dilution</ParameterName>
+          <Order>2</Order>
+          <ParameterID>eDilution</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Wash</ParameterName>
+          <Order>3</Order>
+          <ParameterID>eWash</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Comment</ParameterName>
+          <Order>4</Order>
+          <ParameterID>eComment</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Analysis Date/Time</ParameterName>
+          <Order>5</Order>
+          <ParameterID>eAnalysisDateTime</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Reanalysis Date/Time</ParameterName>
+          <Order>6</Order>
+          <ParameterID>eReanalysisDateTime</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Analysis By</ParameterName>
+          <Order>7</Order>
+          <ParameterID>eAnalysisBy</ParameterID>
+        </GenericParametersDomain>
+        <GenericParametersDomain>
+          <IsDefault>True</IsDefault>
+          <IsVisible>True</IsVisible>
+          <ParameterName>Reanalysis By</ParameterName>
+          <Order>8</Order>
+          <ParameterID>eReanalysisBy</ParameterID>
+        </GenericParametersDomain>
+      </GenericParametersList>
+    </GenericParameters>
+    <PrintOptionsDomain>
+      <PrintAnalysisParameter>True</PrintAnalysisParameter>
+      <PrintSignatures>True</PrintSignatures>
+      <PrintSizeDistributionPlot>True</PrintSizeDistributionPlot>
+      <PrintViableCellSizeDistributionPlot>True</PrintViableCellSizeDistributionPlot>
+      <PrintCircularityDistributionPlot>True</PrintCircularityDistributionPlot>
+      <PrintViableCellCircularityDistributionPlot>True</PrintViableCellCircularityDistributionPlot>
+      <PrintClusterSizeDistributionPlot>True</PrintClusterSizeDistributionPlot>
+      <PrintViabilityPlot>True</PrintViabilityPlot>
+      <PrintTotalCountPlot>True</PrintTotalCountPlot>
+      <PrintViableCellPlot>True</PrintViableCellPlot>
+      <PrintTotalCellConcentrationPlot>True</PrintTotalCellConcentrationPlot>
+      <PrintViableCellConcentrationPlot>True</PrintViableCellConcentrationPlot>
+      <PrintAverageDiameterPlot>True</PrintAverageDiameterPlot>
+      <PrintAverageCircularityPlot>True</PrintAverageCircularityPlot>
+      <PrintBackgroundIntensityPlot>True</PrintBackgroundIntensityPlot>
+    </PrintOptionsDomain>
+  </User>
+</Users>

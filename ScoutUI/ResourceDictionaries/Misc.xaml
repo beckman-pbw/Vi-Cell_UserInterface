@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:system="clr-namespace:System;assembly=mscorlib"
+                    xmlns:common="clr-namespace:ScoutModels.Common;assembly=ScoutModels">
+
+    <common:ApplicationLanguage x:Key="ScoutUILanguageResource" />
+
+    <AlternationConverter x:Key="BackgroundConverter">
+        <SolidColorBrush Color="#19f39611" />
+        <SolidColorBrush Color="#19000000" />
+    </AlternationConverter>
+
+    <BorderGapMaskConverter x:Key="BorderGapMaskConverter" />
+
+    <BitmapImage x:Key="DefaultImage" UriSource="pack://application:,,,/ViCellBLU_UI;component/Images/Empty.png" />
+
+    <Thickness x:Key="OutlineBorderThickness">0</Thickness>
+
+    <system:String x:Key="CustomDateFormat">{0:yyyy/MM/dd}</system:String>
+    <system:String x:Key="CustomShortDateTimeFormat">{0:yyyy/MM/dd HH:mm}</system:String>
+    <system:String x:Key="CustomLongDateTimeFormat">{0:yyyy/MM/dd HH:mm:ss}</system:String>
+    <system:String x:Key="SingleTrailing">{0:F1}</system:String>
+    <system:String x:Key="DoubleTrailing">{0:F2}</system:String>
+    <system:String x:Key="TripleTrailing">{0:F3}</system:String>
+    <system:String x:Key="TemperatureSingleTrailing">{0:F1} &#186; C</system:String>
+    <system:String x:Key="VoltageDoubleTrailing">{0:F2} V</system:String>
+    <system:Double x:Key="ProgressBarMinHeight">6</system:Double>
+
+</ResourceDictionary>

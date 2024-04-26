@@ -1,0 +1,20 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/SettingCheckBox.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ReportCheckBoxStyle" TargetType="{x:Type CheckBox}" BasedOn="{StaticResource SettingCheckBox}">
+        <Setter Property="Width" Value="35"/>
+        <Setter Property="Background" Value="{DynamicResource CheckBoxItem_Enabled_Background}"/>
+        <Setter Property="Foreground" Value="{DynamicResource CheckBoxItem_Enabled_Foreground}"/>
+        <Style.Triggers>
+            <DataTrigger Binding="{Binding IsEnabled, Mode=TwoWay}" Value="False">
+                <Setter Property="Background" Value="{DynamicResource CheckBoxItem_Disabled_Background}"/>
+                <Setter Property="Foreground" Value="{DynamicResource CheckBoxItem_Disabled_Foreground}"/>
+            </DataTrigger>
+        </Style.Triggers>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,240 @@
+﻿<local:Dialog x:Class="ScoutUI.Views.Dialogs.ScheduledExportAuditLogsAddEditDialog"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+             xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+             xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:System="clr-namespace:System;assembly=mscorlib"
+             xmlns:enums="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+             mc:Ignorable="d" WindowStyle="None" Height="Auto" Width="800"
+             SizeToContent="Height"
+             d:DesignHeight="800" d:DesignWidth="800"
+             Background="{StaticResource Level1Background}">
+
+    <local:Dialog.Resources>
+        <ObjectDataProvider x:Key="DataFromRecurrenceFrequencyEnum" MethodName="GetValues"
+                            ObjectType="{x:Type System:Enum}">
+            <ObjectDataProvider.MethodParameters>
+                <x:Type TypeName="enums:RecurrenceFrequency"/>
+            </ObjectDataProvider.MethodParameters>
+        </ObjectDataProvider>
+    </local:Dialog.Resources>
+
+    <Grid Background="{StaticResource Main_Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <Grid Grid.Row="1" Grid.Column="0" Background="Transparent" VerticalAlignment="Stretch" Margin="0,10,0,0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="2" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5" />
+                <ColumnDefinition Width="160" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Grid.Row="1" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_ScheduledExportName], Source={StaticResource ScoutUILanguageResource}}"/>
+            <TextBlock Grid.Row="2" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}" 
+                       Text="{Binding ResourceKeys[LID_Label_Comments], Source={StaticResource ScoutUILanguageResource}}"/>
+            <TextBlock Grid.Row="3" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}" 
+                       Text="{Binding ResourceKeys[LID_Label_ExportTo], Source={StaticResource ScoutUILanguageResource}}"/>
+            <TextBlock Grid.Row="4" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_ExportFilename], Source={StaticResource ScoutUILanguageResource}}"/>
+            <TextBlock Grid.Row="5" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_LogsToExport], Source={StaticResource ScoutUILanguageResource}}"/>
+            <TextBlock Grid.Row="6" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_Notify], Source={StaticResource ScoutUILanguageResource}}"/>
+            <TextBlock Grid.Row="7" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_ScheduledExportRepeats], Source={StaticResource ScoutUILanguageResource}}"/>
+
+            <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_ExportOn], Source={StaticResource ScoutUILanguageResource}}" 
+                       Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=!Daily}"/>
+            <TextBlock Grid.Row="8" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_ExportAt], Source={StaticResource ScoutUILanguageResource}}" 
+                       Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Daily}"/>
+
+            <TextBlock Grid.Row="9" Grid.Column="1" Style="{StaticResource UserTextBlockStyle}"
+                       Text="{Binding ResourceKeys[LID_Label_ExportLogs], Source={StaticResource ScoutUILanguageResource}}" 
+                       Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Once}"/>
+
+            <Grid Grid.Row="1" Grid.Column="2" Margin="0,0,0,5">
+                <TextBox Grid.Row="0" Grid.Column="0" Style="{StaticResource TextBoxLoginRunStyle}" 
+                         Text="{Binding ScheduledExport.Name, UpdateSourceTrigger=PropertyChanged}" 
+                         helper:ControlValidationHelper.TrimText="True" Width="400" Margin="5,0,0,0"
+                         HorizontalAlignment="Left"/>
+                <CheckBox Grid.Row="0" Grid.Column="0" IsChecked="{Binding ScheduledExport.IsEnabled}" 
+                          Content="{Binding ResourceKeys[LID_Label_Enabled], Source={StaticResource ScoutUILanguageResource}}"
+                          Style="{StaticResource AdminCheckBox}" 
+                          Margin="30,0,10,0" IsEnabled="True"
+                          HorizontalAlignment="Right"/>
+            </Grid>
+
+            <controls:WatermarkedTextBox Grid.Row="2" Grid.Column="2" 
+                                Text="{Binding ScheduledExport.Comments, UpdateSourceTrigger=PropertyChanged}" 
+                                Watermark="{Binding ResourceKeys[LID_ScheduledExport_CommentsNote], Source={StaticResource ScoutUILanguageResource}}"/>
+
+            <StackPanel Grid.Row="3" Grid.Column="2" Orientation="Horizontal">
+                <controls:WatermarkedTextBox 
+                    Text="{Binding ScheduledExport.DestinationFolder, UpdateSourceTrigger=PropertyChanged}"
+                    Watermark="{Binding ResourceKeys[LID_ScheduledExport_ExportToNote], Source={StaticResource ScoutUILanguageResource}}"
+                    Width="550" Height="42" IsReadOnly="True"/>
+                <Button Command="{Binding SelectExportDirectoryCommand}"
+                        BorderBrush="{StaticResource Border_Gray}" 
+                        Style="{StaticResource RoundButtonDashBoardStyle}" 
+                        Margin="10,5,0,5">
+                    <Image Source="{StaticResource openSource}" />
+                </Button>
+            </StackPanel>
+
+            <TextBox Grid.Row="4" Grid.Column="2" Style="{StaticResource TextBoxLoginRunStyle}"
+                     helper:ControlValidationHelper.TrimText="True"
+                     helper:ControlValidationHelper.CharacterValidation="True"
+                     Text="{Binding ScheduledExport.FilenameTemplate, UpdateSourceTrigger=PropertyChanged}" Margin="5"/>
+
+            <StackPanel Grid.Row="5" Grid.Column="2" Orientation="Vertical">
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding ScheduledExport.IncludeAuditLog}" 
+                              Margin="5" IsEnabled="True"
+                              Style="{StaticResource ScheduledExportCheckBox}" HorizontalAlignment="Left"/>
+                    <TextBlock Style="{StaticResource UserTextBlockStyle}" Margin="5,0,0,0"
+                               Text="{Binding ResourceKeys[LID_ScheduledExport_IncludeAuditLog], Source={StaticResource ScoutUILanguageResource}}"/>
+                </StackPanel>
+                
+                <StackPanel Orientation="Horizontal">
+                    <CheckBox IsChecked="{Binding ScheduledExport.IncludeErrorLog}" 
+                              Margin="5" IsEnabled="True"
+                              Style="{StaticResource ScheduledExportCheckBox}" HorizontalAlignment="Left"/>
+                    <TextBlock Style="{StaticResource UserTextBlockStyle}" Margin="5,0,0,0"
+                               Text="{Binding ResourceKeys[LID_ScheduledExport_IncludeErrorLog], Source={StaticResource ScoutUILanguageResource}}"/>
+                </StackPanel>
+            </StackPanel>
+            
+            <controls:WatermarkedTextBox Grid.Row="6" Grid.Column="2"
+                     Text="{Binding ScheduledExport.NotificationEmail, UpdateSourceTrigger=PropertyChanged}"
+                     Watermark="{Binding ResourceKeys[LID_ScheduledExport_NotifyNote], Source={StaticResource ScoutUILanguageResource}}"/>
+            <ComboBox Grid.Row="7" Grid.Column="2" Style="{StaticResource SettingComboBox}" 
+                      Width="200" HorizontalAlignment="Left" Margin="5,5,0,0"
+                      x:Name="RecurrenceRuleComboBox"
+                      ItemsSource="{Binding Source={StaticResource DataFromRecurrenceFrequencyEnum}, Converter={StaticResource RecurrenceFrequencyToStringConverter}}" 
+                      SelectedItem="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency, Converter={StaticResource RecurrenceFrequencyToStringConverter}}"/>
+
+            <!-- Only shown when RecurrenceFrequency is Once -->
+            <commonControls:TimePickerUserControl Grid.Row="8" Grid.Column="2" Height="Auto" ShowDatePicker="True"
+                                                  ClockFormat="{Binding ScheduledExport.RecurrenceRule.SelectedClockFormat, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  HourSelected="{Binding ScheduledExport.RecurrenceRule.Hour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  MinuteSelected="{Binding ScheduledExport.RecurrenceRule.Minutes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  DatePickerDateSelected="{Binding ScheduledExport.RecurrenceRule.ExportOnDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Once}" />
+
+            <Grid Grid.Row="9" Grid.Column="2" 
+                  Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Once}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Grid.Column="0" Style="{StaticResource UserTextBlockStyle}"
+                           Text="{Binding ResourceKeys[LID_Label_FromWordOnly], Source={StaticResource ScoutUILanguageResource}}" Margin="10"/>
+                <DatePicker Grid.Column="1" HorizontalAlignment="Left"
+                            SelectedDate="{Binding ScheduledExport.DataFilterCriteria.FromDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            Margin="5,5,0,0" KeyboardNavigation.TabNavigation="Continue" Width="200"/>
+                <TextBlock Grid.Column="2" Style="{StaticResource UserTextBlockStyle}"
+                           Text="{Binding ResourceKeys[LID_Label_ToWordOnly], Source={StaticResource ScoutUILanguageResource}}" Margin="10"/>
+                <DatePicker Grid.Column="3" HorizontalAlignment="Left"
+                            SelectedDate="{Binding ScheduledExport.DataFilterCriteria.ToDate, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                            Margin="5,5,0,0" KeyboardNavigation.TabNavigation="Continue" Width="200"/>
+            </Grid>
+
+            <!-- Only shown when RecurrenceFrequency is Daily -->
+            <commonControls:TimePickerUserControl Grid.Row="8" Grid.Column="2" Height="Auto" Margin="5,0,0,0"
+                                                  ClockFormat="{Binding ScheduledExport.RecurrenceRule.SelectedClockFormat, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  HourSelected="{Binding ScheduledExport.RecurrenceRule.Hour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  MinuteSelected="{Binding ScheduledExport.RecurrenceRule.Minutes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Daily}" />
+
+            <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource UserTextBlockItalicStyle}" Margin="15,0,0,0"
+                       Text="{Binding ResourceKeys[LID_ScheduledExport_Audit_EachExportContainsForDaily], Source={StaticResource ScoutUILanguageResource}}" 
+                       Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Daily}"/>
+
+            <!-- Only shown when RecurrenceFrequency is Weekly -->
+            <commonControls:TimePickerUserControl Grid.Row="8" Grid.Column="2" Height="Auto" ShowDayOfWeekPicker="True"
+                                                  ClockFormat="{Binding ScheduledExport.RecurrenceRule.SelectedClockFormat, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  HourSelected="{Binding ScheduledExport.RecurrenceRule.Hour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  MinuteSelected="{Binding ScheduledExport.RecurrenceRule.Minutes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  WeekdaySelected="{Binding ScheduledExport.RecurrenceRule.Weekday, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Weekly}" />
+
+            <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource UserTextBlockItalicStyle}" Margin="15,0,0,0"
+                       Text="{Binding ResourceKeys[LID_ScheduledExport_Audit_EachExportContainsForWeekly], Source={StaticResource ScoutUILanguageResource}}" 
+                       Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Weekly}"/>
+
+            <!-- Only shown when RecurrenceFrequency is Monthly -->
+            <commonControls:TimePickerUserControl Grid.Row="8" Grid.Column="2" Height="Auto" ShowDayOfMonthPicker="True" Margin="5,0,0,0"
+                                                  ClockFormat="{Binding ScheduledExport.RecurrenceRule.SelectedClockFormat, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  HourSelected="{Binding ScheduledExport.RecurrenceRule.Hour, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  MinuteSelected="{Binding ScheduledExport.RecurrenceRule.Minutes, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  DayOfMonthSelected="{Binding ScheduledExport.RecurrenceRule.DayOfTheMonth, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"
+                                                  Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Monthly}" />
+
+            <TextBlock Grid.Row="9" Grid.Column="2" Style="{StaticResource UserTextBlockItalicStyle}" Margin="15,0,0,0"
+                       Text="{Binding ResourceKeys[LID_ScheduledExport_Audit_EachExportContainsForMonthly], Source={StaticResource ScoutUILanguageResource}}" 
+                       Visibility="{Binding ScheduledExport.RecurrenceRule.RecurrenceFrequency,
+                                    Converter={StaticResource RecurrenceFrequencyToVisibilityConverter},
+                                    ConverterParameter=Monthly}"/>
+
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Style="{StaticResource DefaultButtonStyle}" VerticalAlignment="Center" 
+                    Command="{Binding AcceptCommand}"
+                    Content="{Binding ResourceKeys[LID_ButtonContent_Save], Source={StaticResource ScoutUILanguageResource}}" />
+            <Button Style="{StaticResource DefaultButtonStyle}" VerticalAlignment="Center" 
+                    Command="{Binding CancelCommand}"
+                    Content="{Binding ResourceKeys[LID_ButtonContent_Cancel], Source={StaticResource ScoutUILanguageResource}}" />
+        </StackPanel>
+    </Grid>
+</local:Dialog>

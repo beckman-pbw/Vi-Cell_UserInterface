@@ -1,0 +1,250 @@
+<UserControl x:Class="ScoutUI.Views._1___Home.SampleSetControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             xmlns:common="clr-namespace:ScoutUI.Common"
+             xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+             mc:Ignorable="d" x:Name="SampleSetUserControl" d:DesignWidth="1250"
+             KeyboardNavigation.TabNavigation="Local" Focusable="False" IsTabStop="False">
+    <Border BorderThickness="1" CornerRadius="5" BorderBrush="{DynamicResource GenericVeryDark}" Margin="15,5,15,5"
+            Background="{StaticResource Level4Background}" 
+            Visibility="{Binding IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}">
+        <Expander Background="{StaticResource Level4Background}" IsExpanded="{Binding IsExpanded}"
+                  Expanded="Expander_OnExpanded" IsEnabled="{Binding IsExpanderEnabled}">
+            <Expander.Header>
+                <Grid Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Expander}}}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="1*"/>
+                        <ColumnDefinition Width="50"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Column="0" Text="{Binding DateTimeStarted, Converter={StaticResource DateFormatConverter}, 
+                                ConverterParameter=DateOnly, Mode=OneWay}" 
+                               Style="{StaticResource BaseTextBlock}" FontWeight="Bold" Background="Transparent" />
+                    <TextBlock Grid.Column="1" Text="{Binding CreatedByUser, FallbackValue=User Name, Mode=OneWay}" 
+                               Style="{StaticResource BaseTextBlock}" FontWeight="Bold" Background="Transparent"/>
+                    <TextBlock Grid.Column="3" Text="{Binding SampleSetName, FallbackValue=Set Name, Mode=OneWay}" 
+                               Style="{StaticResource BaseTextBlock}" FontWeight="Bold" Background="Transparent"
+                               TextTrimming="WordEllipsis"/>
+                    <TextBlock Grid.Column="5" Text="{Binding SampleSetStatus, FallbackValue=Status, Mode=OneWay, Converter={StaticResource SampleSetStatusConverter}}" FontWeight="Bold" 
+                               Style="{StaticResource BaseTextBlock}" Margin="0,0,30,0" HorizontalAlignment="Right" Background="Transparent"/>
+                </Grid>
+            </Expander.Header>
+
+            <Grid Background="{StaticResource Level4Background}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="346*"/>
+                    <ColumnDefinition Width="253*"/>
+                    <ColumnDefinition Width="599*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="0" Grid.Column="0" Orientation="Horizontal" Grid.ColumnSpan="2">
+                    <Button Command="{Binding ShowSampleResultsCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Image Source="{StaticResource Picture-iconSource}" Height="32" Width="32"/>
+                    </Button>
+                    <Button Command="{Binding ExportSelectedSampleCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Rectangle Width="27" Height="27" Margin="4" Fill="{StaticResource ExportIndividualIcon}" />
+                    </Button>
+                    <Button Command="{Binding ExportSampleSetCommand}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Rectangle Width="27" Height="27" Margin="4" Fill="{StaticResource ExportSummaryIcon}" />
+                    </Button>
+                    <Button Command="{Binding SignSelectedSample}" Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Image Source="{StaticResource SignatureSource}" />
+                    </Button>
+                    <ComboBox x:Name="SignatureComboBox" HorizontalAlignment="Center" Background="Transparent" VerticalAlignment="Center" 
+                              ItemTemplate="{StaticResource cmbTemplate}" Height="40" Width="200" Style="{StaticResource SignatureComboBox}"
+                              ItemsSource="{Binding SelectedSample.SampleRecord.SelectedResultSummary.SignatureList}"
+                              SelectedItem="{Binding SelectedSample.SampleRecord.SelectedResultSummary.SelectedSignature,Mode=TwoWay}"
+                              Visibility="{Binding ElementName=SignatureComboBox, Path=ItemsSource, Converter={StaticResource CountToInverseVisibility}}"/>
+                </StackPanel>
+
+                <StackPanel Grid.Row="0" Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right">
+                    <Button Command="{Binding OpenDataColumnsSettingsCommand}" Margin="0,0,25,0"
+                            Uid="btnOpenDataColumnsSettingsCommand"
+                            Style="{StaticResource RoundButtonDashBoardStyle}">
+                        <Rectangle Width="30" Height="30" Fill="{StaticResource SettingsCog}" />
+                    </Button>
+                    <ToggleButton Command="{Binding ShowRunningImagesCommand}" Click="ShowRunningImagesToggleButton_OnClick"
+                                  IsChecked="{Binding RunningImagesAreDisplayed}"
+                                  Visibility="{Binding ShowImagesToggleButton, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                  Style="{StaticResource CircleToggleButtonStyle}" x:Name="ShowRunningImagesToggleButton">
+                        <Rectangle Width="27" Height="27" Margin="4" Fill="{StaticResource ImagesIcon}" />
+                    </ToggleButton>
+                </StackPanel>
+
+                <controls:DataGridExtended Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Margin="5,5,5,10" x:Name="SampleSetDataGrid"
+                          DataContext="{Binding}" ItemsSource="{Binding Samples}" SelectedItem="{Binding SelectedSample}"
+                          Style="{StaticResource SampleSetDataGridStyle}" HorizontalAlignment="Left" VerticalAlignment="Top"
+                          CanUserResizeColumns="True"
+                          HorizontalScrollBarVisibility="{Binding RunningImagesAreDisplayed, Converter={StaticResource BooleanToVisibilityConverter}}">
+
+                    <DataGrid.Resources>
+                        <common:BindingProxy x:Key="Proxy" Data="{Binding}"/>
+                    </DataGrid.Resources>
+
+                    <DataGrid.Columns>
+                        <controls:DataGridTemplateColumnExtended Header="{Binding ResourceKeys[LID_Label_Status], Source={StaticResource ScoutUILanguageResource}}"
+                                                BindingName="SampleStatusColor"
+                                                Width="{Binding Data.ColumnSettings[SampleStatus].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"
+                                                Visibility="{Binding Data.ColumnSettings[SampleStatus].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Name="SampleName" Text="{Binding SampleStatus, Mode=OneWay, Converter={StaticResource SampleStatusToStringConverter}}"
+                                               TextWrapping="Wrap" Height="Auto"/>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </controls:DataGridTemplateColumnExtended>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Label_Pos], Source={StaticResource ScoutUILanguageResource}}" 
+                                            Binding="{Binding SamplePosition, FallbackValue=0, Mode=OneWay}" IsReadOnly="True" BindingName="SamplePosition"
+                                            Width="{Binding Data.ColumnSettings[SamplePosition].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"
+                                            Visibility="{Binding Data.ColumnSettings[SamplePosition].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+                        <controls:DataGridTemplateColumnExtended Header="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}"
+                                                BindingName="SampleID"
+                                                Width="{Binding Data.ColumnSettings[SampleID].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"
+                                                Visibility="{Binding Data.ColumnSettings[SampleID].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}">
+                            <DataGridTemplateColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="*"/>
+                                        </Grid.ColumnDefinitions>
+                                        <Path Grid.Column="0" x:Name="ArrowDownShape" FocusVisualStyle="{x:Null}"
+                                              Visibility="{Binding SampleHierarchy, Converter={StaticResource SampleHierarchyToVisibilityConverter}, ConverterParameter=ArrowDown}"
+                                              Data="M204.81622,255.42564 L212.53117,255.42564 236.3993,224.09454 260.33318,255.00034 267.50017,254.83366 236.27875,214.0289 z"
+                                              Fill="{StaticResource Level1Background}" Height="10" Width="10" Margin="0,6,5,0" Stretch="Uniform" 
+                                              Stroke="{StaticResource Level1Background}" StrokeThickness="2" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                                            <Path.RenderTransform>
+                                                <RotateTransform Angle="180" />
+                                            </Path.RenderTransform>
+                                        </Path>
+
+                                        <Path Grid.Column="1" x:Name="ArrowRightShape" FocusVisualStyle="{x:Null}"
+                                              Visibility="{Binding SampleHierarchy, Converter={StaticResource SampleHierarchyToVisibilityConverter}, ConverterParameter=ArrowRight}"
+                                              Data="M204.81622,255.42564 L212.53117,255.42564 236.3993,224.09454 260.33318,255.00034 267.50017,254.83366 236.27875,214.0289 z"
+                                              Fill="{StaticResource Level1Background}" Height="10" Width="10" Margin="17,6,5,0" Stretch="Uniform" 
+                                              Stroke="{StaticResource Level1Background}" StrokeThickness="2" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                                            <Path.RenderTransform>
+                                                <RotateTransform Angle="90" />
+                                            </Path.RenderTransform>
+                                        </Path>
+
+                                        <TextBlock Name="SampleName" Grid.Column="2" Text="{Binding SampleName, Mode=OneWay}"
+                                                   TextWrapping="Wrap" Height="Auto"/>
+                                    </Grid>
+                                </DataTemplate>
+                            </DataGridTemplateColumn.CellTemplate>
+                        </controls:DataGridTemplateColumnExtended>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Result_Concentration_Export], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="ConcentrationAsStr" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[TotalConcentration].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding ConcentrationAsStr, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[TotalConcentration].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Result_ViaConc_Export], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="ViableConcentrationAsStr" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[ViableConcentration].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding ViableConcentrationAsStr, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[ViableConcentration].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Result_Viability], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="TotalViabilityAsStr" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[TotalViability].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding TotalViabilityAsStr, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[TotalViability].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Label_TotalCells], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="TotalCells" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[TotalCells].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding TotalCells, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[TotalCells].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Label_AverageDiam_Abbr], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="AvgDiamAsStr" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[AverageDiameter].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding AvgDiamAsStr, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[AverageDiameter].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Label_CellType], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="CellTypeQcName" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[CellTypeQcName].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding CellTypeQcName, Mode=OneWay, Converter={StaticResource CellTypeToTextConverter}}" 
+                                                             Width="{Binding Data.ColumnSettings[CellTypeQcName].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Label_Dilution], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="Dilution" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[Dilution].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding Dilution, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[Dilution].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="WashType" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[WashType].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding WashType, Converter={StaticResource EnumToDisplayWashValueConverter}}" 
+                                                             Width="{Binding Data.ColumnSettings[WashType].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+                        
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_Label_Tag], Source={StaticResource ScoutUILanguageResource}}" 
+                                                             BindingName="SampleTag" IsReadOnly="True"
+                                                             Visibility="{Binding Data.ColumnSettings[SampleTag].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
+                                                             Binding="{Binding SampleTag, Mode=OneWay}" 
+                                                             Width="{Binding Data.ColumnSettings[SampleTag].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
+                    </DataGrid.Columns>
+                </controls:DataGridExtended>
+
+                <Grid Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Right" Margin="5"
+                      Visibility="{Binding RunningImagesAreDisplayed, Converter={StaticResource BooleanToVisibilityConverter}}"
+                      Width="520" x:Name="SampleSetImageGrid">
+
+                    <Border Background="{StaticResource Level2Background}" CornerRadius="8">
+                        <StackPanel Orientation="Vertical">
+                            <Label Style="{StaticResource Header3Label}" Content="{Binding ImageViewModel.CurrentImageLabel}"
+                                   HorizontalAlignment="Center" Height="Auto"/>
+
+                            <commonControls:ImageOnlyView Margin="0,-20,0,0" DataContext="{Binding}" Width="500" Height="420"
+                                                HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                                                HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                                                AdjustState="{Binding ImageViewModel.AdjustState, Mode=TwoWay}"
+                                                SelectedImageType="{Binding ImageViewModel.SelectedImageType, Mode=TwoWay}"
+                                                ImageIndexList="{Binding ImageViewModel.SelectedSampleFromList.ImageIndexList}"
+                                                ImageList="{Binding ImageViewModel.SelectedSampleFromList.SampleImageList, Mode=TwoWay}"
+                                                SelectedImage="{Binding ImageViewModel.SelectedSampleFromList.SelectedSampleImageRecord, UpdateSourceTrigger=PropertyChanged}"
+                                                SelectedImageIndex="{Binding ImageViewModel.SelectedImageIndex, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
+                        </StackPanel>
+                    </Border>
+
+                    <Grid HorizontalAlignment="Center" VerticalAlignment="Center" x:Name="GridNoImageBrush"
+                          Visibility="{Binding ImageViewModel.SelectedSampleFromList.ImageIndexList, Converter={StaticResource CountToVisibility}}">
+                        <Border Background="{StaticResource NoImageBrush}" Height="80" Width="80" />
+                    </Grid>
+                </Grid>
+
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" HorizontalAlignment="Center" VerticalAlignment="Center"
+                        Visibility="{Binding ShowCancelButton, Converter={StaticResource BooleanToVisibilityConverter}}"
+                        Style="{StaticResource DefaultButtonStyle}" Margin="5" Height="35" Width="Auto" Command="{Binding CancelSet}">
+                    <Button.Content>
+                        <TextBlock Text="{Binding ResourceKeys[LID_Button_CancelSet], Source={StaticResource ScoutUILanguageResource}}"
+                                   Width="Auto" Margin="10,0,10,0"/>
+                    </Button.Content>
+                </Button>
+
+            </Grid>
+        </Expander>
+    </Border>
+</UserControl>

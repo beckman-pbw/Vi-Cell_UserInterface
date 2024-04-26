@@ -1,0 +1,590 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.ReplaceReagentPackDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        mc:Ignorable="d" Title="ReplaceReagentPackDialog" Height="800" Width="1280"
+        WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
+
+    <Border BorderBrush="{StaticResource Level1Background}" BorderThickness="5,5,5,5" Height="641" Width="960">
+        <Grid Background="{StaticResource Main_Background}">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="45" />
+                <RowDefinition Height="20" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+
+            <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+<!--
+            <Grid Grid.Row="2" Visibility="{Binding IsStepOneEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="20" />
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="0" />
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="60" />
+                    <RowDefinition Height="200" />
+                    <RowDefinition Height="65" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="68" />
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="2" Orientation="Horizontal"
+                        Visibility="{Binding ReagentReplaceOption, Converter={StaticResource EnumToVisibilityConverter}, ConverterParameter={x:Static enum:ReagentReplaceOption.IsDrain}}">
+                    <Label Content="{Binding ResourceKeys[LID_Label_Note], Source={StaticResource ScoutUILanguageResource}}" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+                    <TextBlock Text="{Binding ResourceKeys[LID_Label_DrainNote], Source={StaticResource ScoutUILanguageResource}}" Style="{StaticResource TextBlockStyleFontSizeTwenty}"
+                           Width="500" Margin="10,5,0,0" TextWrapping="Wrap" />
+                </StackPanel>
+
+                <Label Name="lblReplaceReagentStep1" Grid.Row="0" Grid.Column="1" Content="{Binding ResourceKeys[LID_HELP_Step], Source={StaticResource ScoutUILanguageResource}}"
+                   ContentStringFormat="{}{0} 1:" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+                <Label Name="lblSelectReagent" Grid.Row="0" Grid.Column="2" Content="{Binding ResourceKeys[LID_HELP_SelectReagent], Source={StaticResource ScoutUILanguageResource}}"
+                   Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+                <Label Name="lblReagentContainer" Grid.Row="2" Grid.Column="2" Margin="10,0,0,0" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" 
+                   Content="{Binding ResourceKeys[LID_CheckBox_Reagentcontainer], Source={StaticResource ScoutUILanguageResource}}" />
+
+                <StackPanel Grid.Row="4" Grid.Column="2" Orientation="Horizontal">
+                    <Label Name="lblPN1234" Content="{Binding ResourceKeys[LID_Label_PN], Source={StaticResource ScoutUILanguageResource}}" ContentStringFormat="{}{0} #" 
+                       Margin="10,0,0,0" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+                    <Label Content="{Binding PartNumber, Mode=OneWay}" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <RadioButton x:Name="rbNone" IsHitTestVisible="{Binding IsProgressActivate, Mode=TwoWay}"
+                         IsChecked="{Binding ReagentReplaceOption, Converter={StaticResource EnumBooleanConverter}, ConverterParameter={x:Static enum:ReagentReplaceOption.IsNone}}"
+                         Foreground="{DynamicResource GenericVeryLight}" Content="{Binding ResourceKeys[LID_RadioButton_NoneReagent], Source={StaticResource ScoutUILanguageResource}}"
+                         Style="{StaticResource ReagentRadioButtonStyle}" Grid.Row="6" Grid.Column="2" Margin="15,0,0,0" />
+                <RadioButton x:Name="rbPurge" Style="{StaticResource ReagentRadioButtonStyle}" IsHitTestVisible="{Binding IsProgressActivate, Mode=TwoWay}" Foreground="{DynamicResource GenericVeryLight}"
+                         IsChecked="{Binding ReagentReplaceOption, Converter={StaticResource EnumBooleanConverter}, ConverterParameter={x:Static enum:ReagentReplaceOption.IsPurge}}"
+                         Content="{Binding ResourceKeys[LID_RadioButton_PurgeLines], Source={StaticResource ScoutUILanguageResource}}" Margin="15,0,0,0" Grid.Row="8" Grid.Column="2" />
+
+                <Grid Grid.Row="13" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="33" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="602" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button Name="btnForward" Style="{StaticResource RoundButtonDashBoardStyle}" Command="{Binding StepOneForwardCommand}" 
+                        Margin="0,-15,0,0" Grid.Row="0" Grid.Column="5" Grid.RowSpan="2">
+                        <Image Source="{StaticResource NextSource}" />
+                    </Button>
+
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsStepTwoEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="303" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Name="lblStep2" Content="{Binding ResourceKeys[LID_HELP_Step], Source={StaticResource ScoutUILanguageResource}}" ContentStringFormat="{}{0} 2:"
+                   Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+                    <BulletDecorator Margin="0,12,0,0">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="10" Width="10" Fill="{DynamicResource GenericVeryDark}" HorizontalAlignment="Center" />
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+
+                    <Label Content="{Binding ResourceKeys[LID_HELP_LoosenTrypanCap], Source={StaticResource ScoutUILanguageResource}}" 
+                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="261" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+
+                    <Image Name="imgLoosenTrypanCap" Source="{StaticResource Reagent-TrypanSource}" Grid.Column="0" Grid.ColumnSpan="2" Margin="65,-15,0,-10" Width="514" Height="330"/>
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Margin="20,20,0,0">
+                    <BulletDecorator Margin="0,12,0,0">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="10" Width="10" Fill="{DynamicResource GenericVeryDark}" HorizontalAlignment="Center" />
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+                    <Label Name="lblBulletCapLoosenedReagentStatus" Content="{Binding ResourceKeys[LID_HELP_CapHasBeenLoosened], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="38" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="602" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <controls:CustomProgressBar x:Name="pgrInstrumentDrain" Foreground="{DynamicResource Level1Background}" Height="20" Width="601"
+                                            Visibility="{Binding IsProgressActivate, Converter={StaticResource InverseVisibilityConverter}}"
+                                            Grid.Row="0" Grid.Column="1" Margin="0,10,0,0" HorizontalAlignment="Left" />
+
+                    <Label Name="lblInstrumentdrainingpack" Visibility="{Binding IsProgressActivate, Converter={StaticResource InverseVisibilityConverter}}"
+                       Content="{Binding Status, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                    <Button Grid.Column="5" Grid.RowSpan="2" Name="btnForward2" Command="{Binding StepTwoForwardCommand}" 
+                        Style="{StaticResource RoundButtonDashBoardStyle}" Grid.Row="0" Margin="0,-15,0,0" >
+                        <Image Source="{StaticResource NextSource}" />
+                    </Button>
+
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsStepThreeEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="33" />
+                    <RowDefinition Height="32" />
+                    <RowDefinition Height="303" />
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="35" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+
+                <Label Name="lblStep3" Content="{Binding ResourceKeys[LID_HELP_Step], Source={StaticResource ScoutUILanguageResource}}" ContentStringFormat="{}{0} 3:"
+                   Grid.Row="0" Grid.Column="1" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+                    <BulletDecorator Margin="0,12,0,0">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="10" Width="10" Fill="{DynamicResource GenericVeryDark}" HorizontalAlignment="Center" />
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+                    <Label Content="{Binding ResourceKeys[LID_HELP_RemoveReagent], Source={StaticResource ScoutUILanguageResource}}" 
+                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <Grid Grid.Row="2" Grid.Column="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="261" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="auto" />
+                    </Grid.ColumnDefinitions>
+                    <Image Name="imgReagent" Source="{StaticResource Reagent_ImageSource}" Grid.Column="1" />
+                    <Image Name="imgArrow" Source="{StaticResource ArrowSource}" Height="162" Grid.Column="2" />
+                </Grid>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="3" Grid.Column="2" Margin="20,20,0,0">
+                    <BulletDecorator Margin="0,12,0,0">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="10" Width="10" Fill="{DynamicResource GenericVeryDark}" HorizontalAlignment="Center" />
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+
+                    <Label Name="lblBulletClosereagentStatus" Content="{Binding ResourceKeys[LID_HELP_CloseReagent], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <Grid Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="38" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="602" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <controls:CustomProgressBar x:Name="pgrAnalyzingReagents" Foreground="{DynamicResource Level1Background}" Height="20" Width="601"
+                                            Visibility="{Binding IsProgressActivate, Converter={StaticResource InverseVisibilityConverter}}"
+                                            Grid.Row="0" Grid.Column="1" Margin="0,10,0,0" HorizontalAlignment="Left" />
+
+
+                    <Label Name="lblAnalyzingReagentStep3" Visibility="{Binding IsProgressActivate, Converter={StaticResource InverseVisibilityConverter}}"
+                       Content="{Binding Status, Mode=TwoWay}" Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" Foreground="{DynamicResource GenericVeryLight}" />
+
+                    <Button Grid.Row="0" Grid.Column="5" Grid.RowSpan="2" Name="btnForward3" Command="{Binding StepThreeForwardCommand}" 
+                        Style="{StaticResource RoundButtonDashBoardStyle}" Margin="0,-15,0,0" >
+                        <Image Source="{StaticResource NextSource}" />
+                    </Button>
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsStepFourEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="1" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="150*" />
+                    <RowDefinition Height="50" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="25" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="50*" />
+                    <ColumnDefinition Width="100*" />
+                </Grid.ColumnDefinitions>
+
+                <Grid Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="70" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Name="lblReplaceReagentStep4" Grid.Column="1" Grid.Row="0" Content="{Binding ResourceKeys[LID_HELP_Step], Source={StaticResource ScoutUILanguageResource}}"
+                       ContentStringFormat="{}{0} 4:" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+                    <Label Name="lblReplaceReagentStep4Description" Grid.Column="2" Grid.Row="0" Style="{StaticResource LabelStyleFontSizeEighteenRegular}"
+                       Content="{Binding ResourceKeys[LID_HELP_ReagentLoad], Source={StaticResource ScoutUILanguageResource}}" />
+                </Grid>
+
+                <Grid Grid.Column="0" Grid.Row="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="320" />
+                        <RowDefinition Height="44" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="66" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="1" VerticalAlignment="Top">
+                        <Label Name="lblUsesRemaining" Foreground="{DynamicResource GenericVeryLight}" FontSize="20" FontWeight="Bold"
+                           Content="{Binding ResourceKeys[LID_StatusLabel_UsesRemaining], Source={StaticResource ScoutUILanguageResource}}" ContentStringFormat="{}{0} :" />
+                        <Label Name="lblEventsRemaining" Content="{Binding EventsRemaining, Mode=OneWay}" Foreground="{DynamicResource GenericVeryLight}" FontSize="20" FontWeight="Bold" />
+                    </StackPanel>
+
+                    <Grid Grid.Row="2" Grid.Column="1">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="160" />
+                            <ColumnDefinition Width="16" />
+                            <ColumnDefinition Width="30" />
+                            <ColumnDefinition Width="*" />
+                        </Grid.ColumnDefinitions>
+
+                        <Image Source="{StaticResource Reagent_ImageSource}" Height="290" Grid.Column="0" />
+                        <ProgressBar Name="pgrEventRemaining" Minimum="0" Maximum="100" Orientation="Vertical" Grid.Column="1" Value="{Binding ProgressIndicator, Mode=OneWay}"
+                                 Height="265" Style="{StaticResource VerticalProgressBarStyle}" />
+                    </Grid>
+                </Grid>
+
+                <Border BorderThickness="1.5" BorderBrush="{DynamicResource GenericVeryDark}" Width="450" Height="330" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="84,0,0,0"
+                    Grid.Row="2" Grid.Column="1" Grid.RowSpan="2" >
+                    <Grid Width="450" HorizontalAlignment="Left" ScrollViewer.VerticalScrollBarVisibility="Visible">
+
+                        <ListBox Style="{StaticResource BaseListBoxStyle}" Background="{DynamicResource GenericVeryLight}" x:Name="lstReagent" ItemsSource="{Binding ReagentContainers, Mode=OneWay}"
+                             ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+                            <ListBox.ItemsPanel>
+                                <ItemsPanelTemplate>
+                                    <WrapPanel IsItemsHost="True" />
+                                </ItemsPanelTemplate>
+                            </ListBox.ItemsPanel>
+
+                            <ListBox.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid Margin="0" ShowGridLines="False">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="15" />
+                                            <ColumnDefinition Width="205" />
+                                            <ColumnDefinition Width="15" />
+                                            <ColumnDefinition Width="205" />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="32" />
+                                            <RowDefinition Height="30" />
+                                            <RowDefinition Height="*" />
+                                        </Grid.RowDefinitions>
+
+                                        <Border Grid.Row="0" Grid.ColumnSpan="4" Style="{StaticResource DottedBorderStyle}" />
+                                        <Border Grid.Row="1" Grid.ColumnSpan="4" Style="{StaticResource DottedBorderStyle}" />
+                                        <Border Grid.Row="2" Grid.ColumnSpan="4" Style="{StaticResource DottedBorderStyle}" />
+                                        <Border Grid.Row="3" Grid.ColumnSpan="4" Style="{StaticResource DottedBorderStyle}" />
+                                        <Border Grid.Row="4" Grid.ColumnSpan="4" Style="{StaticResource DottedBorderStyle}" />
+                                        <Border Grid.Row="5" Grid.ColumnSpan="4" Style="{StaticResource DottedBorderStyle}" />
+
+                                        <Border Grid.Column="1" Margin="0,0,0,0" Grid.RowSpan="10" BorderBrush="{DynamicResource GenericVeryDark}" BorderThickness="1" HorizontalAlignment="Right">
+                                            <Border.LayoutTransform>
+                                                <TransformGroup>
+                                                    <TransformGroup.Children>
+                                                        <TransformCollection>
+                                                            <RotateTransform Angle="90" />
+                                                        </TransformCollection>
+                                                    </TransformGroup.Children>
+                                                </TransformGroup>
+                                            </Border.LayoutTransform>
+                                        </Border>
+
+                                        <Border Grid.Column="1" Margin="0,0,0,0" Grid.RowSpan="10" BorderBrush="{DynamicResource GenericVeryDark}" BorderThickness="1" HorizontalAlignment="Right">
+                                            <Border.LayoutTransform>
+                                                <TransformGroup>
+                                                    <TransformGroup.Children>
+                                                        <TransformCollection>
+                                                            <RotateTransform Angle="90" />
+                                                        </TransformCollection>
+                                                    </TransformGroup.Children>
+                                                </TransformGroup>
+                                            </Border.LayoutTransform>
+                                        </Border>
+
+                                        <Label Content="{Binding ResourceKeys[LID_Label_PN], Source={StaticResource ScoutUILanguageResource}}" Grid.Row="0" Grid.Column="1" 
+                                           FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" Foreground="{DynamicResource GenericVeryDark}" />
+                                        <Label Content="{Binding ResourceKeys[LID_ResultHeader_LOT], Source={StaticResource ScoutUILanguageResource}}" Grid.Row="1" Grid.Column="1" 
+                                           Foreground="{DynamicResource GenericVeryDark}" FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                                        <Label Content="{Binding ResourceKeys[LID_GridLabel_ExpirationDate], Source={StaticResource ScoutUILanguageResource}}" Grid.Row="2" Grid.Column="1" 
+                                           Foreground="{DynamicResource GenericVeryDark}" FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" Margin="0,0,0,-4" />
+                                        <Label Content="{Binding ResourceKeys[LID_ResultHeader_UsesTotal], Source={StaticResource ScoutUILanguageResource}}" Grid.Row="3" Grid.Column="1" 
+                                           FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" Foreground="{DynamicResource GenericVeryDark}" />
+
+                                        <Label Content="{Binding ResourceKeys[LID_StatusLabel_UsesRemaining], Source={StaticResource ScoutUILanguageResource}}" Grid.Row="4" Grid.Column="1" 
+                                           FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" Foreground="{DynamicResource GenericVeryDark}" />
+                                        <Label Content="{Binding ResourceKeys[LID_ResultHeader_Reagents], Source={StaticResource ScoutUILanguageResource}}" Grid.Row="5" Grid.Column="1" 
+                                           Margin="0,0,0,-4" Foreground="{DynamicResource GenericVeryDark}" FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+                                        <Label Content="{Binding PartNumber}" Foreground="{DynamicResource GenericVeryDark}" FontSize="16" FontWeight="ExtraBlack" Grid.Row="0" Grid.Column="3" 
+                                           Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+
+                                        <TextBlock Text="{Binding LotInformation}" Width="160" FontSize="16" TextTrimming="CharacterEllipsis" Margin="3,0,0,0" FontWeight="ExtraBlack"
+                                               Grid.Row="1" Grid.Column="3" HorizontalAlignment="Left" />
+                                        <TextBlock FontSize="16" Text="{Binding ExpiryDate, Converter={StaticResource DateFormatConverter}}" FontWeight="ExtraBlack"
+                                               Grid.Row="2" Grid.Column="3" Foreground="{DynamicResource GenericVeryDark}" />
+                                        <Label FontSize="16" Content="{Binding EventsPossible}" Style="{StaticResource LabelStyleFontSizeEighteen}" Foreground="{DynamicResource GenericVeryDark}" 
+                                           Grid.Row="3" Grid.Column="3" />
+                                        <Label FontSize="16" Content="{Binding EventsRemaining}" Style="{StaticResource LabelStyleFontSizeEighteen}" Foreground="{DynamicResource GenericVeryDark}" 
+                                           Grid.Row="4" Grid.Column="3" />
+                                        <Label FontSize="16" Content="{Binding ContainerName}" Style="{StaticResource LabelStyleFontSizeEighteen}" Foreground="{DynamicResource GenericVeryDark}" 
+                                           Grid.Row="5" Grid.Column="3" />
+
+                                        <TreeView Grid.Row="6" Grid.Column="1" ItemsSource="{Binding ReagentNames}" Width="533" Name="tvReagent" 
+                                              IsEnabled="{Binding ElementName=lstReagent, Path=DataContext.IsServiceEnable, Mode=TwoWay}"
+                                              Background="Transparent" Grid.ColumnSpan="3" BorderThickness="0"
+                                              ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden">
+                                            <TreeView.ItemContainerStyle>
+                                                <Style TargetType="TreeViewItem">
+                                                    <Setter Property="Focusable" Value="False" />
+                                                    <Setter Property="IsExpanded" Value="False" />
+                                                    <Setter Property="Background" Value="{DynamicResource GenericVeryLight}" />
+                                                    <Style.Triggers>
+                                                        <Trigger Property="IsEnabled" Value="True">
+                                                            <Setter Property="Background" Value="{DynamicResource GenericVeryLight}" />
+                                                        </Trigger>
+                                                        <Trigger Property="IsEnabled" Value="False">
+                                                            <Setter Property="Background" Value="{DynamicResource GenericVeryLight}" />
+                                                        </Trigger>
+                                                    </Style.Triggers>
+                                                </Style>
+                                            </TreeView.ItemContainerStyle>
+
+                                            <TreeView.ItemTemplate>
+                                                <HierarchicalDataTemplate ItemsSource="{Binding Value}">
+                                                    <Grid Width="450">
+                                                        <Grid.ColumnDefinitions>
+                                                            <ColumnDefinition Width="220" />
+                                                            <ColumnDefinition Width="220" />
+                                                        </Grid.ColumnDefinitions>
+
+                                                        <Border Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-53,0,0,0" />
+                                                        <Label Content="{Binding ResourceKeys[LID_ButtonContent_Reagent], Source={StaticResource ScoutUILanguageResource}}"
+                                                           Grid.Column="0" Grid.Row="0" Foreground="{DynamicResource GenericVeryDark}" FontSize="16" Style="{StaticResource LabelStyleFontSizeEighteen}" 
+                                                           FontWeight="Regular" />
+                                                        <Label Content="{Binding Key}" FontWeight="Bold" Grid.Column="1" Grid.Row="0" FontSize="16" />
+                                                    </Grid>
+
+                                                    <HierarchicalDataTemplate.ItemTemplate>
+                                                        <DataTemplate>
+                                                            <Grid>
+                                                                <Grid.ColumnDefinitions>
+                                                                    <ColumnDefinition Width="205" />
+                                                                    <ColumnDefinition Width="205" />
+                                                                </Grid.ColumnDefinitions>
+                                                                <Grid.RowDefinitions>
+                                                                    <RowDefinition Height="30" />
+                                                                    <RowDefinition Height="30" />
+                                                                    <RowDefinition Height="30" />
+                                                                    <RowDefinition Height="30" />
+                                                                    <RowDefinition Height="32" />
+                                                                </Grid.RowDefinitions>
+
+                                                                <Border Grid.Row="0" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+                                                                <Border Grid.Row="1" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+                                                                <Border Grid.Row="2" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+                                                                <Border Grid.Row="3" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+                                                                <Border Grid.Row="4" Grid.ColumnSpan="2" Style="{StaticResource DottedBorderStyle}" Margin="-50,0,0,0" />
+
+                                                                <Label FontSize="16" Content="{Binding ResourceKeys[LID_Label_PN], Source={StaticResource ScoutUILanguageResource}}"
+                                                                   Grid.Column="0" Grid.Row="0" Foreground="{DynamicResource GenericVeryDark}" Style="{StaticResource LabelStyleFontSizeEighteen}"
+                                                                   FontWeight="Regular" />
+                                                                <Label FontSize="16" Content="{Binding ResourceKeys[LID_ResultHeader_LOT], Source={StaticResource ScoutUILanguageResource}}"
+                                                                   Grid.Column="0" Grid.Row="1" Style="{StaticResource LabelStyleFontSizeEighteen}" FontWeight="Regular"
+                                                                   Foreground="{DynamicResource GenericVeryDark}" />
+                                                                <Label FontSize="16" FontWeight="Regular" Foreground="{DynamicResource GenericVeryDark}" 
+                                                                   Content="{Binding ResourceKeys[LID_GridLabel_ExpirationDate], Source={StaticResource ScoutUILanguageResource}}"
+                                                                   Margin="0,0,0,-4" Grid.Column="0" Grid.Row="2" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+                                                                <Label FontSize="16" FontWeight="Regular" Foreground="{DynamicResource GenericVeryDark}" 
+                                                                   Content="{Binding ResourceKeys[LID_ResultHeader_UsesTotal], Source={StaticResource ScoutUILanguageResource}}"
+                                                                   Grid.Column="0" Grid.Row="3" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+                                                                <Label FontSize="16" Foreground="{DynamicResource GenericVeryDark}" FontWeight="Regular" 
+                                                                   Content="{Binding ResourceKeys[LID_StatusLabel_UsesRemaining], Source={StaticResource ScoutUILanguageResource}}"
+                                                                   Grid.Column="0" Grid.Row="4" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+                                                                <Label FontSize="16" Content="{Binding PartNumber}" Grid.Column="1" Grid.Row="0"
+                                                                   Style="{StaticResource LabelStyleFontSizeEighteen}" Foreground="{DynamicResource GenericVeryDark}" />
+
+                                                                <TextBlock Text="{Binding LotInformation}" HorizontalAlignment="Left" Width="140" FontSize="16"
+                                                                       TextTrimming="CharacterEllipsis" Margin="4,0,0,0" FontWeight="ExtraBlack" Grid.Column="1" Grid.Row="1" />
+                                                                <TextBlock FontSize="16" Text="{Binding ExpiryDate, Converter={StaticResource DateFormatConverter}}"
+                                                                       Grid.Column="1" Grid.Row="2" FontWeight="ExtraBlack" Foreground="{DynamicResource GenericVeryDark}" />
+
+                                                                <Label FontSize="16" Content="{Binding EventsPossible}" Grid.Column="1" Grid.Row="3" 
+                                                                   Style="{StaticResource LabelStyleFontSizeEighteen}" Foreground="{DynamicResource GenericVeryDark}" />
+                                                                <Label FontSize="16" Content="{Binding EventsRemaining}" Grid.Column="1" Grid.Row="4"
+                                                                   Style="{StaticResource LabelStyleFontSizeEighteen}" Foreground="{DynamicResource GenericVeryDark}" />
+                                                            </Grid>
+
+                                                        </DataTemplate>
+
+                                                    </HierarchicalDataTemplate.ItemTemplate>
+                                                </HierarchicalDataTemplate>
+                                            </TreeView.ItemTemplate>
+                                        </TreeView>
+                                    </Grid>
+                                </DataTemplate>
+                            </ListBox.ItemTemplate>
+                        </ListBox>
+                    </Grid>
+                </Border>
+
+                <Grid Grid.Row="4" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                        <RowDefinition Height="38" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="81" />
+                        <ColumnDefinition Width="602" />
+                        <ColumnDefinition Width="52" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="44" />
+                        <ColumnDefinition Width="65" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <controls:CustomProgressBar x:Name="pgrProbsLoading" Foreground="{DynamicResource Level1Background}" Height="20" Width="601"
+                                            Visibility="{Binding IsProgressActivate, Converter={StaticResource InverseVisibilityConverter}}"
+                                            Grid.Row="0" Grid.Column="1" Margin="0,10,0,0" HorizontalAlignment="Left" />
+
+
+                    <Label Name="lblInstrumentLoading" Grid.Row="1" Grid.Column="1" Style="{StaticResource LabelStyleFontSizeEighteenRegular}"
+                       Visibility="{Binding IsProgressActivate, Converter={StaticResource InverseVisibilityConverter}}"
+                       Content="{Binding  ResourceKeys[LID_ProgressIndication_InstrumentLoadinProbes], Source={StaticResource ScoutUILanguageResource}}" />
+
+                    <Button Name="btnForward4" Command="{Binding StepFourForwardCommand}" Style="{StaticResource RoundButtonDashBoardStyle}" Margin="0,-15,0,0" 
+                        Grid.Row="0" Grid.Column="5" Grid.RowSpan="2">
+                        <Image Source="{StaticResource NextSource}" />
+                    </Button>
+                </Grid>
+
+            </Grid>
+
+            <Grid Grid.Row="2" Visibility="{Binding IsStepFiveEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="38" />
+                    <RowDefinition Height="53" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="100" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="70" />
+                    <ColumnDefinition Width="80" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="130" />
+                </Grid.ColumnDefinitions>
+
+                <Label Name="lblReplaceReagentStep5" Grid.Row="0" Grid.Column="1" Content="{Binding ResourceKeys[LID_HELP_Step], Source={StaticResource ScoutUILanguageResource}}"
+                   ContentStringFormat="{}{0} 5:" Style="{StaticResource LabelStyleFontSizeEighteen}" />
+
+                <StackPanel Orientation="Horizontal" Grid.Row="0" Grid.Column="2">
+                    <BulletDecorator Margin="0,12,0,0">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="10" Width="10" Fill="{DynamicResource GenericVeryDark}" HorizontalAlignment="Center" />
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+
+                    <Label Name="lblReplaceReagentStep5Description" Content="{Binding ResourceKeys[LID_HELP_ReaplaceReagent], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <StackPanel Orientation="Horizontal" Grid.Row="1" Grid.Column="2">
+                    <BulletDecorator Margin="0,12,0,0">
+                        <BulletDecorator.Bullet>
+                            <Ellipse Height="10" Width="10" Fill="{DynamicResource GenericVeryDark}" HorizontalAlignment="Center" />
+                        </BulletDecorator.Bullet>
+                    </BulletDecorator>
+
+                    <Label Name="lblReplaceReagentStep5DescriptionLine2" Content="{Binding ResourceKeys[LID_HELP_EmptyWasteTube], Source={StaticResource ScoutUILanguageResource}}"
+                       Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
+                </StackPanel>
+
+                <Button Name="btnOk" Grid.Row="3" Grid.Column="3" Command="{Binding AcceptCommand}" Style="{StaticResource RoundButtonDashBoardStyle}" Width="55" Height="55">
+                    <Image Source="{StaticResource TickSource}" />
+                </Button>
+            </Grid>
+-->
+
+        </Grid>
+    </Border>
+
+</local:Dialog>

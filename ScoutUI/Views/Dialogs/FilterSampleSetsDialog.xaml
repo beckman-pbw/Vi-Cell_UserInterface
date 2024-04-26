@@ -1,0 +1,172 @@
+﻿<local:Dialog x:Class="ScoutUI.Views.Dialogs.FilterSampleSetsDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        xmlns:ucCommon="clr-namespace:ScoutUI.Views.ucCommon"
+        xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
+        mc:Ignorable="d" Title="FilterSampleSetsDialog" WindowStyle="None"
+        d:DesignHeight="580" d:DesignWidth="550" Width="700"
+        Background="{StaticResource Level1Background}">
+
+    <Grid Margin="4" Background="{StaticResource Main_Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <commonControls:DialogTitleBar Grid.Row="0" Margin="0"
+                                       Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <Grid Grid.Row="1" Margin="10">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <ComboBox Grid.Row="0" Style="{StaticResource ComboBoxLoginPageStyle}" VerticalAlignment="Top" Margin="0,0,0,10"
+                      ItemsSource="{Binding FilterByItems, Converter={StaticResource FilterItemToStringConverter}}" 
+                      SelectedItem="{Binding FilteringItem, Converter={StaticResource FilterItemToStringConverter}, Mode=TwoWay}" />
+
+            <GroupBox Grid.Row="1" Style="{StaticResource InstrumentStatusGroupBoxStyle}" HorizontalAlignment="Stretch"
+                      Header="{Binding ResourceKeys[LID_Label_SampleFilter], Source={StaticResource ScoutUILanguageResource}}" 
+                      Visibility="{Binding FilteringItem, 
+                        Converter={StaticResource FilterItemParamToVisibilityConverter}, 
+                        ConverterParameter=eSample, FallbackValue=Visible}">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_AdminReportsHeader_UserName], Source={StaticResource ScoutUILanguageResource}}" />
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="0,10,0,0" Height="40" Style="{StaticResource ComboBoxLoginPageStyle}"
+                              ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_Label_DateRange], Source={StaticResource ScoutUILanguageResource}}" />
+                    <Grid Grid.Row="1" Grid.Column="1" Height="Auto" Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource Header3Label}"
+                               Content="{Binding ResourceKeys[LID_Label_FromColon], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding FromDate}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource Header3Label}"
+                               Content="{Binding ResourceKeys[LID_Label_ToColon], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding ToDate}"/>
+                    </Grid>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Height="40" Margin="0,10,0,0" Style="{StaticResource SettingTextBox}"
+                             Text="{Binding SearchString}" helper:ControlValidationHelper.TrimText="True" 
+                             helper:ControlValidationHelper.CharacterValidation="True"/>
+
+                    <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_Label_Tag], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBox Grid.Row="3" Grid.Column="1" Height="40" Margin="0,10,0,0" Style="{StaticResource SettingTextBox}"
+                             Text="{Binding TagSearchString}"/>
+
+                    <TextBlock Grid.Row="4" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_Label_CellType], Source={StaticResource ScoutUILanguageResource}}" />
+
+                    <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal" Margin="0,10,0,10">
+                        <CheckBox Style="{StaticResource ReportCheckBoxStyle}" 
+                                  IsChecked="{Binding IsAllSelected, Mode=TwoWay}" HorizontalAlignment="Left" />
+
+                        <Label Margin="0,0,0,0" Style="{StaticResource Header2Label}" 
+                               Content="{Binding ResourceKeys[LID_Label_All], Source={StaticResource ScoutUILanguageResource}}" />
+                    </StackPanel>
+
+                    <Border Grid.Row="4" Grid.Column="1" Height="40" Width="190" Style="{StaticResource DisablableBorderStyle}"
+                            HorizontalAlignment="Right" Margin="0,10,0,0"
+                            Visibility="{Binding IsAllSelected, Converter={StaticResource InverseVisibilityConverter}}"
+                            IsEnabled="{Binding Path=IsEnabled, RelativeSource={RelativeSource AncestorType={x:Type commonControls:SampleTemplateUserControl}}}">
+                        <ucCommon:CellTypeBpQcComboBox Height="30" Width="185" Foreground="{DynamicResource GenericVeryDark}" Background="{DynamicResource TextBox_Enabled_Background}"
+                                                   ComboStyleType="Default"  HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                                   IsEnabled="True" FontSize="16" Margin="1,0,0,0"
+                                                   SelectedCellTypeQualityControlGroupItem="{Binding SelectedCellTypeOrQualityControlGroup, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                                                   CellTypeBpQcCollection="{Binding CellTypesAndQualityControls, UpdateSourceTrigger=PropertyChanged}"/>
+                    </Border>
+                </Grid>
+            </GroupBox>
+
+            <GroupBox Grid.Row="1" Style="{StaticResource InstrumentStatusGroupBoxStyle}" HorizontalAlignment="Stretch"
+                      Header="{Binding ResourceKeys[LID_Label_SampleSetFilter], Source={StaticResource ScoutUILanguageResource}}"
+                      Visibility="{Binding FilteringItem, 
+                        Converter={StaticResource FilterItemParamToVisibilityConverter}, 
+                        ConverterParameter=eSampleSet, FallbackValue=Collapsed}">
+                <Grid Margin="10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="220"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_AdminReportsHeader_UserName], Source={StaticResource ScoutUILanguageResource}}" />
+                    <ComboBox Grid.Row="0" Grid.Column="1" Margin="0,10,0,0" Height="40" Style="{StaticResource ComboBoxLoginPageStyle}"
+                              ItemsSource="{Binding Users}" SelectedItem="{Binding SelectedUser}"/>
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_Label_DateRange], Source={StaticResource ScoutUILanguageResource}}" />
+
+                    <Grid Grid.Row="1" Grid.Column="1" Height="Auto" Margin="0,10,0,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="70"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="0" Style="{StaticResource Header3Label}"
+                               Content="{Binding ResourceKeys[LID_Label_FromColon], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <DatePicker Grid.Row="0" Grid.Column="1" SelectedDate="{Binding FromDate}"/>
+
+                        <Label Grid.Row="1" Grid.Column="0" Style="{StaticResource Header3Label}"
+                               Content="{Binding ResourceKeys[LID_Label_ToColon], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <DatePicker Grid.Row="1" Grid.Column="1" SelectedDate="{Binding ToDate}"/>
+                    </Grid>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,10,0,0" Style="{StaticResource Header2TextBlock}" Foreground="{StaticResource Label_Foreground}"
+                               Text="{Binding ResourceKeys[LID_Label_SampleSetName], Source={StaticResource ScoutUILanguageResource}}" />
+                    <TextBox Grid.Row="2" Grid.Column="1" Height="40" Margin="0,10,0,0" Style="{StaticResource SettingTextBox}"
+                             Text="{Binding SearchString}" helper:ControlValidationHelper.TrimText="True" helper:ControlValidationHelper.CharacterValidation="True"/>
+                </Grid>
+            </GroupBox>
+        </Grid>
+
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Style="{StaticResource DefaultButtonStyle}" VerticalAlignment="Center" Command="{Binding AcceptCommand}"
+                    Content="{Binding ResourceKeys[LID_Label_Filter], Source={StaticResource ScoutUILanguageResource}}" />
+        </StackPanel>
+    </Grid>
+</local:Dialog>

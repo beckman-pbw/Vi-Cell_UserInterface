@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="ScoutUI.Views.CommonControls.ConcentrationGraph"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:chartingToolkit="clr-namespace:System.Windows.Controls.DataVisualization.Charting;assembly=System.Windows.Controls.DataVisualization.Toolkit"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <chartingToolkit:Chart 
+                Name="ConcentrationGraphChart" 
+                BorderThickness="0"
+                Background="Transparent"
+                Foreground="{DynamicResource Button_Enabled_Foreground}" 
+                PlotAreaStyle="{DynamicResource WhiteGridBackground}"
+                LegendStyle="{DynamicResource NoLegend}">
+
+            <chartingToolkit:Chart.Axes>
+
+                <chartingToolkit:LinearAxis 
+                        Title="{Binding XAxisName}" 
+                        Orientation="X"
+                        ShowGridLines="True"
+                        FontStyle="Normal"
+                        FontWeight="Normal"
+                        FontSize="16"
+                        GridLineStyle="{DynamicResource GridLineStyle}"/>
+
+                <chartingToolkit:LinearAxis 
+                        Title="{Binding YAxisName}" 
+                        Orientation="Y"
+                        ShowGridLines="True"
+                        FontStyle="Normal"
+                        FontWeight="Normal"
+                        FontSize="16"
+                        GridLineStyle="{DynamicResource GridLineStyle}"/>
+
+            </chartingToolkit:Chart.Axes>
+
+            <chartingToolkit:Chart.Series>
+
+                <chartingToolkit:ScatterSeries
+                        Title="{Binding PrimaryLegendName}" 
+                        ItemsSource="{Binding GraphDetailList}"
+                        IndependentValueBinding="{Binding Key}"
+                        DependentValueBinding="{Binding Value}"
+                        DataPointStyle="{DynamicResource PrimaryCustomDataPointStyle}"/>
+
+                <chartingToolkit:ScatterSeries
+                        Title="{Binding SecondaryLegendName}"
+                        ItemsSource="{Binding MultiGraphDetailList}"
+                        IndependentValueBinding="{Binding Key}"
+                        DependentValueBinding="{Binding Value}"
+                        DataPointStyle="{DynamicResource SecondaryCustomDataPointStyle}"
+                        Visibility="{Binding IsMultiAxisEnable, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            </chartingToolkit:Chart.Series>
+        </chartingToolkit:Chart>
+    </Grid>
+</UserControl>

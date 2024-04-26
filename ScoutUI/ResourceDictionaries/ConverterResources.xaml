@@ -1,0 +1,94 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:converters="clr-namespace:ScoutUI.Common.Converters">
+
+    <converters:VisibilityToBooleanConverter x:Key="VisibilityToBooleanConverter" />
+
+    <converters:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter" />
+    <converters:BooleanToInverseVisibilityConverter x:Key="BooleanToInverseVisibilityConverter" />
+    <converters:BooleanToVisibilityWithHiddenConverter x:Key="BooleanToVisibilityWithHiddenConverter" />
+    <converters:InverseVisibilityConverter x:Key="InverseVisibilityConverter" />
+    <converters:StringToVisibilityConverter x:Key="StringToVisibilityConverter" />
+    <converters:ObjectToVisibilityConverter x:Key="ObjectToVisibilityConverter" />
+    <converters:ObjectToBoolConverter x:Key="ObjectToBoolConverter" />
+    <converters:CountToVisibility x:Key="CountToVisibility" />
+    <converters:CountToInverseVisibility x:Key="CountToInverseVisibility" />
+    <converters:CountToInverseBoolean x:Key="CountToInverseBoolean" />
+    <converters:DisplayPaneToVisibilityConverter x:Key="DisplayPaneToVisibilityConverter" />
+    <converters:SampleSetStatusConverter x:Key="SampleSetStatusConverter" />
+    <converters:SampleStatusToStringConverter x:Key="SampleStatusToStringConverter" />
+
+    <converters:WindowsStateConverter x:Key="WindowsStateConverter" />
+    <converters:IconConverter x:Key="IconConverter" />
+    <converters:TrailingPointConverter x:Key="TrailingPointConverter" />
+
+    <converters:InverseBooleanConverter x:Key="InverseBooleanConverter" />
+    <converters:BooleanToWidthConverter x:Key="booleanToWidthConverter" />
+    <converters:SampleMultiValueConverter x:Key="MultiValueConverter" />
+    <converters:BooleanToOpacityConverter x:Key="BooleanToOpacityConverter" />
+
+    <converters:SampleHierarchyToVisibilityConverter x:Key="SampleHierarchyToVisibilityConverter" />
+    <converters:EnumToLocalizedDescriptionConverter x:Key="EnumToLocalizedDescriptionConverter" />
+    <converters:EnumToDisplayWashListValueConverter x:Key="EnumToDisplayWashListValueConverter"/>
+    <converters:EnumToDisplayWashValueConverter x:Key="EnumToDisplayWashValueConverter"/>
+    <converters:EnumBooleanConverter x:Key="EnumBooleanConverter" />
+    <converters:EnumToVisibility x:Key="EnumToVisibilityConverter" />
+    <converters:EnumToInverseVisibility x:Key="EnumToInverseVisibilityConverter" />
+    <converters:EnumValveToBackgroundConverter x:Key="enumToBackgroundConverter" />
+    <converters:EnumValveToFontWeightConverter x:Key="enumToFontWeightConverter" />
+    <converters:SubstrateConverter x:Key="SubstrateConverter" />
+    <converters:SeqNamingTypeConverter x:Key="SeqNamingTypeConverter" />
+    <converters:SeqNamingToVisibilityConverter x:Key="SeqNamingToVisibilityConverter" />
+    <converters:RecurrenceFrequencyToStringConverter x:Key="RecurrenceFrequencyToStringConverter" />
+    <converters:RecurrenceFrequencyToVisibilityConverter x:Key="RecurrenceFrequencyToVisibilityConverter" />
+    <converters:ClockFormatToStringConverter x:Key="ClockFormatToStringConverter" />
+    <converters:WeekdayEnumToStringConverter x:Key="WeekdayEnumToStringConverter" />
+
+    <converters:ViableConcentrationConverter x:Key="ViableConcentrationConverter"/>
+    <converters:ListBoxItemToRowNumberConverter x:Key="ListBoxItemToRowNumber" />
+    <converters:ExecutionStatusToImageConverter x:Key="ExecutionStatusToImage" />
+    <converters:PlateStatusToGridColorConverter x:Key="PlateStatusGridConverter" />
+    <converters:ExecutionStatusToBooleanConverter x:Key="ExecutionStatusToBooleanConverter" />
+
+    <converters:EmptyListToBoolean x:Key="emptyListToBoolean" />
+    <converters:TooltipConverter x:Key="tooltipConverter"/>
+    <converters:ImageProcessedStatusToBackgroundConverter x:Key="ImageProcessedStatus" />
+    <converters:ViableConcentrationConverter x:Key="viableConcentrationConverter"/>
+    <converters:MessageTypeToBackgroundColor x:Key="MessageTypeToBackgroundColor" />
+    <converters:DateFormatConverter x:Key="DateFormatConverter"/>
+
+    <converters:EmptyStringToCollapsedConverter x:Key="EmptyStringToCollapsedConverter"/>
+    <converters:SampleStatusToVisibilityConverter x:Key="SampleStatusToVisibilityConverter"/>
+    <converters:SelectedStringEqualsParamToVisibilityConverter x:Key="SelectedStringEqualsParamToVisibilityConverter"/>
+    <converters:FilterItemParamToVisibilityConverter x:Key="FilterItemParamToVisibilityConverter"/>
+    <converters:FilterItemToStringConverter x:Key="FilterItemToStringConverter"/>
+    <converters:ExpanderToBooleanConverter x:Key="ExpanderToBooleanConverter" />
+    <converters:BooleanToForegroundColor x:Key="booleanToForegroundColor" />
+
+    <converters:PlateStatusToColorConverter x:Key="PlateStatusConverter" />
+    <converters:CarouselDataTemplateSelector x:Key="CarouselDataTemplateSelector" />
+    <converters:CellTypeToggleableByIndexConverter  x:Key="cellTypeToggleableByIndexConverter" />
+
+    <converters:DoubleToPowerSixConverter x:Key="DoubleToPowerSixConverter" />
+    <converters:DoubleValueToTwoDecimalValueConverter x:Key="DoubleValueToTwoDecimalValueConverter" />
+
+    <converters:SensorStatusToBooleanConverter x:Key="SensorStatusToBooleanConverter" />
+    <converters:SensorStatusToVisibilityConverter x:Key="SensorStatusToVisibilityConverter" />
+    <converters:SensorStatusInActiveToVisibilityConverter x:Key="SensorStatusInActiveToVisibilityConverter" />
+
+    <converters:MultipleBooleanAndConverter x:Key="MultipleBooleanAndConverter" />
+    <converters:MultipleBooleanAndToVisibilityConverter x:Key="MultipleBooleanAndToVisibilityConverter" />
+    <converters:ParamMatchesBindingConverter x:Key="ParamMatchesBindingConverter" />
+    <converters:SecurityTypeToStringConverter x:Key="SecurityTypeToStringConverter" />
+
+    <converters:NightCleanInProgressMessage x:Key="NightCleanInProgressMessage" />
+    <converters:NightlyCleanStatusVisibilityConverter x:Key="NightlyCleanStatusVisibilityConverter" />
+
+    <converters:CellTypeViewSelectedConverter x:Key="CellTypeViewSelectedConverter" />
+    <converters:SameNumberToVisibilityConverter x:Key="SameNumberToVisibilityConverter" />
+
+    <converters:SilentAdminToWidthConverter x:Key="SilentAdminToWidthConverter" />
+
+    <converters:CellTypeToTextConverter x:Key="CellTypeToTextConverter" />
+
+</ResourceDictionary>

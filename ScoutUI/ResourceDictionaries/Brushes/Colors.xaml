@@ -1,0 +1,60 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+    
+    <!-- ViCellBlu Default Theme -->
+    <Color x:Key="AppBackgroundColor">#FF35A8FD</Color>
+    <Color x:Key="DefaultBackgroundColor">#FFFFFFFF</Color>
+    <Color x:Key="TitleBarBackgroundColor">#FF054174</Color>
+    <Color x:Key="DialogBoxBackgroundColor">#FF0B77C7</Color>
+    <Color x:Key="Level1BackgroundColor">#FF054174</Color>
+    <Color x:Key="Level2BackgroundColor">#FF145489</Color>
+    <Color x:Key="Level3BackgroundColor">#FF2B76C5</Color>
+    <Color x:Key="Level4BackgroundColor">#FF91C7F5</Color>
+
+    <Color x:Key="MenuBackgroundColor">#FF000B23</Color>
+    <Color x:Key="MenuForegroundColor">#FF2296CD</Color>
+    <Color x:Key="MenuDisabledBackgroundColor">#FF000B23</Color>
+    <Color x:Key="MenuDisabledForegroundColor">#FFD3D3D3</Color>
+    <Color x:Key="MenuSelectedBackgroundColor">#FF707070</Color>
+    <Color x:Key="MenuSelectedForegroundColor">#FFFFFFFF</Color>
+
+    <Color x:Key="DefaultTextColor">#FFFFFFFF</Color>
+    <Color x:Key="AlternateTextColor">#FF000000</Color>
+
+    <Color x:Key="ScrollBarThumbColor">#FF0062AA</Color>
+    <Color x:Key="AccentColor1">#FF023528</Color>
+
+    <Color x:Key="GenericDisabled">#FFD3D3D3</Color>
+    <Color x:Key="GenericSelected">#FFD3D3D3</Color>
+    <Color x:Key="AlternativeSelected">#FF707070</Color>
+
+    <Color x:Key="EnabledCheckColor">#FF000000</Color>
+    <Color x:Key="EnabledButtonColor">#FF00567E</Color>
+    <Color x:Key="DisabledButtonColor">#FF808080</Color>
+    <Color x:Key="DataGridHeaderColor">#FF054174</Color>
+
+    <Color x:Key="DisabledBorderLightColor">#FFAAAAAA</Color>
+    <Color x:Key="BorderDarkColor">#FF000000</Color>
+    <Color x:Key="BorderMediumColor">#FFDDDDDD</Color>
+    <Color x:Key="BorderLightColor">#FFFFFFFF</Color>
+
+    <Color x:Key="ErrorRed">#FFFF3333</Color>
+    <Color x:Key="WarningYellow">#FFF6EB1F</Color>
+    <Color x:Key="InfoYellow">#FFFAFAD2</Color>
+    <Color x:Key="WarningOrange">#FFE67300</Color>
+    <Color x:Key="ProcessRunning">#FF339933</Color>
+    <Color x:Key="ProgressColorA">#CC119EDA</Color>
+    <Color x:Key="ProgressColorB">#1FFFFFFF</Color>
+    <Color x:Key="ReagentBgColor">#FFD7EAD7</Color>
+
+    <Color x:Key="ValveColorColor">#FF669900</Color>
+    <Color x:Key="LowLevelBackgroundColor">#FF5DC09C</Color>
+
+    <!-- Used for the hundreds of places that simply reference "Black", "White", etc. -->
+    <Color x:Key="GenericVeryDarkColor">#FF000000</Color>
+    <Color x:Key="GenericVeryLightColor">#FFFFFFFF</Color>
+    <Color x:Key="GenericMediumColor">Gray</Color>
+    <Color x:Key="GenericMediumLightColor">LightGray</Color>
+    <Color x:Key="GenericMediumDarkColor">DarkGray</Color>
+
+</ResourceDictionary>

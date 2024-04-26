@@ -1,0 +1,444 @@
+﻿<UserControl x:Class="ScoutUI.Views.ucCommon.ExpanderInDataGrid" Name="UcExpandDataGrid"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:ScoutUI.Views.ucCommon"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:common="clr-namespace:ScoutUtilities.Common;assembly=ScoutUtilities"
+             mc:Ignorable="d">
+
+    <UserControl.Resources>
+        <PathGeometry x:Key="PathWrong"
+                      Figures="M74,189.66667 L96.5,213.83301 148.16667,161.16594 199.16611,213.16666 222.83227,188.49949 172.16619,137.16512 222.83261,83.830132 199.16634,60.829956 148.16647,111.83131 96.833274,60.496949 73.500001,84.497427 123.8332,137.16514 73.833332,188.4995" />
+        <PathGeometry x:Key="PathRight"
+                      Figures="M64,222.33333 L128,278.66699 C128,278.66699 142.33333,291.33325 153.33333,277.33333 L259.66739,141.00057 C259.66739,141.00057 265.19532,135.46184 257.15421,130.09095 L237.72177,117.67038 C237.72177,117.67038 229.01055,115.65663 224.98999,119.6848 L136.20259,232.80938 95.326876,197.5629 C95.326876,197.5629 88.290893,192.52769 79.914723,197.89858 L63.49743,212.66854 C63.49743,212.66854 60.482009,217.56386 64,222.33333 z" />
+        <ControlTemplate x:Key="ExpanderToggleButton" TargetType="ToggleButton">
+            <Border
+                Name="Border"
+                CornerRadius="0,0,0,0"
+                Background="{StaticResource Border_Light}"
+                BorderBrush="Transparent"
+                BorderThickness="0">
+                <Path
+                    Name="Arrow"
+                    Stretch="Fill"
+                    Width="10" Height="10"
+                    Fill="{StaticResource Border_Dark}"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center"
+                    Data="M457.33333,436.33333 L458.16701,492.50034 487.48874,465.16701 z" />
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="true">
+                    <Setter TargetName="Arrow" Property="Data"
+                            Value="M444,833.66667 L479.5,791.83302 480.16667,832.4997 z" />
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+        <Style TargetType="Expander">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Expander">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*" />
+                                <RowDefinition Name="ContentRow" Height="0" />
+                            </Grid.RowDefinitions>
+                            <Border Name="Border" Grid.Row="0" Background="{StaticResource Level3Background}"
+                                    BorderBrush="Transparent"
+                                    BorderThickness="0"
+                                    CornerRadius="2,2,0,0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="20" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <ToggleButton Name="tbExpander"
+                                                  IsChecked="{Binding Path=IsExpanded,Mode=TwoWay,
+                                        RelativeSource={RelativeSource TemplatedParent}}"
+                                                  OverridesDefaultStyle="True"
+                                                  Template="{StaticResource ExpanderToggleButton}"
+                                                  Background="{DynamicResource GenericMedium}" IsEnabled="True" />
+                                    <ContentPresenter
+                                        Grid.Column="1"
+                                        Margin="0"
+                                        ContentSource="Header"
+                                        RecognizesAccessKey="True" />
+                                </Grid>
+                            </Border>
+                            <Border
+                                Name="Content"
+                                Grid.Row="1"
+                                Background="{StaticResource Level3Background}"
+                                BorderBrush="Transparent"
+                                BorderThickness="0"
+                                CornerRadius="0,0,2,2">
+                                <ContentPresenter />
+                            </Border>
+                        </Grid>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsExpanded" Value="True">
+                                <Setter TargetName="ContentRow" Property="Height"
+                                        Value="Auto" />
+                            </Trigger>
+                            <Trigger Property="IsExpanded" Value="False">
+                                <Setter TargetName="ContentRow" Property="Height" Value="0" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="DataGridColumnHeaderStyle" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="Background" Value="{StaticResource DataGrid_Header_Background}" />
+            <Setter Property="Foreground" Value="{StaticResource DataGrid_Header_Foreground}" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="BorderThickness" Value="0,0,1,0" />
+            <Setter Property="BorderBrush" Value="#FFC1C1C1" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="HorizontalAlignment" Value="Stretch" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+        </Style>
+        <Style TargetType="DataGridCell" BasedOn="{StaticResource {x:Type DataGridCell}}">
+            <Setter Property="Padding" Value="4,4,4,3" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontWeight" Value="Normal" />
+            <Setter Property="Focusable" Value="False"/>
+            <Setter Property="FocusVisualStyle">
+                <Setter.Value>
+                    <Style TargetType="Control">
+                        <Setter Property="BorderBrush" Value="Transparent" />
+                    </Style>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="ConcentrationSeparatorStyle" TargetType="{x:Type Separator}">
+            <Setter Property="Background" Value="{StaticResource Border_Dark}" />
+            <Setter Property="Margin" Value="0,2,0,2" />
+            <Setter Property="Focusable" Value="false" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Separator}">
+                        <Border
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
+                            Height="1"
+                            SnapsToDevicePixels="true" />
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="{DynamicResource GenericVeryDark}" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Padding" Value="4,4,4,3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border BorderBrush="{StaticResource Border_Dark}"
+                                BorderThickness="0,0,1,0"
+                                Background="Transparent"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="true"
+                                CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Foreground" Value="{StaticResource Border_Dark}" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <Style x:Key="HeaderAdjustedLabelStyle" TargetType="Label">
+            <Setter Property="Foreground" Value="{StaticResource TextBox_Enabled_Foreground}" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Stretch" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Padding" Value="4,4,4,3" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Label}">
+                        <Border BorderBrush="{StaticResource Border_Dark}"
+                                BorderThickness="0,0,1,0"
+                                Background="Transparent"
+                                Padding="{TemplateBinding Padding}"
+                                SnapsToDevicePixels="true"
+                                CornerRadius="0">
+                            <ContentPresenter HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                              RecognizesAccessKey="True"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
+    <Grid>
+        <DataGrid Width="465" IsEnabled="True" VerticalAlignment="Top" GridLinesVisibility="Vertical"
+                  ScrollViewer.CanContentScroll="False"
+
+                  ScrollViewer.VerticalScrollBarVisibility="Auto"
+                  ScrollViewer.HorizontalScrollBarVisibility="Hidden"
+                  HorizontalScrollBarVisibility="Hidden"
+                  CanUserAddRows="False" CanUserReorderColumns="False" CanUserResizeColumns="False"
+                  CanUserSortColumns="False"
+                  CanUserDeleteRows="False"
+                  HorizontalAlignment="Stretch" VerticalContentAlignment="Stretch"
+
+                  Name="lvUsers"
+                  SelectedItem="{Binding SelectedSampleItem, RelativeSource={RelativeSource AncestorType={x:Type local:ExpanderInDataGrid}},Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                  ItemsSource="{Binding ExpanderColumnHeaderList, RelativeSource={RelativeSource AncestorType={x:Type local:ExpanderInDataGrid}}}"
+                  AutoGenerateColumns="False" Background="{x:Null}" BorderThickness="2" BorderBrush="{x:Null}">
+            <DataGrid.RowHeaderStyle>
+                <Style TargetType="{x:Type DataGridRowHeader}">
+                    <Setter Property="Background" Value="{StaticResource DataGrid_Data_Background}" />
+                    <Setter Property="FontSize" Value="12" />
+                </Style>
+            </DataGrid.RowHeaderStyle>
+            <DataGrid.ColumnHeaderStyle>
+                <Style TargetType="{x:Type DataGridColumnHeader}">
+                    <Setter Property="SeparatorVisibility" Value="Visible" />
+                    <Setter Property="SeparatorBrush" Value="{StaticResource DataGrid_Header_Foreground}" />
+                    <Setter Property="FontSize" Value="15" />
+                    <Setter Property="FontWeight" Value="Normal" />
+                    <Setter Property="HorizontalAlignment" Value="Stretch" />
+                </Style>
+            </DataGrid.ColumnHeaderStyle>
+            <DataGrid.RowStyle>
+                <Style TargetType="DataGridRow">
+                    <Setter Property="Focusable" Value="False"/>
+                    <Setter Property="Height" Value="36" />
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="{x:Type DataGridRow}">
+                                <Border x:Name="DGR_Border" BorderBrush="{TemplateBinding BorderBrush}"
+                                        BorderThickness="{TemplateBinding BorderThickness}" Focusable="False"
+                                        Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                                    <SelectiveScrollingGrid Focusable="False">
+                                        <SelectiveScrollingGrid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
+                                        </SelectiveScrollingGrid.ColumnDefinitions>
+                                        <SelectiveScrollingGrid.RowDefinitions>
+                                            <RowDefinition Height="*" />
+                                            <RowDefinition Height="Auto" />
+                                            <RowDefinition Height="Auto" />
+                                        </SelectiveScrollingGrid.RowDefinitions>
+                                        <DataGridCellsPresenter Grid.Column="1"
+                                                                ItemsPanel="{TemplateBinding ItemsPanel}" Focusable="False"
+                                                                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                        <DataGridDetailsPresenter Grid.Column="1" Grid.Row="1" Focusable="False"
+                                                                  SelectiveScrollingGrid.SelectiveScrollingOrientation="{Binding AreRowDetailsFrozen, ConverterParameter={x:Static SelectiveScrollingOrientation.Vertical}, Converter={x:Static DataGrid.RowDetailsScrollingConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}"
+                                                                  Visibility="{TemplateBinding DetailsVisibility}" />
+                                        <DataGridRowHeader Grid.Row="0" Grid.RowSpan="2" Grid.Column="0"
+                                                           SelectiveScrollingGrid.SelectiveScrollingOrientation="Vertical"
+                                                           Visibility="{Binding HeadersVisibility, ConverterParameter={x:Static DataGridHeadersVisibility.Row}, Converter={x:Static DataGrid.HeadersVisibilityConverter}, RelativeSource={RelativeSource AncestorType={x:Type DataGrid}}}" />
+                                        <Path Grid.Row="2" Grid.ColumnSpan="2" Grid.Column="0"
+                                              Data="M0,0.5 L1,0.5" Margin="0,-2,0,0"
+                                              Stretch="Fill" Stroke="{StaticResource Border_Dark}" StrokeThickness="1"
+                                              StrokeDashArray="1" />
+                                    </SelectiveScrollingGrid>
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Style>
+            </DataGrid.RowStyle>
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="110" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                    <DataGridTemplateColumn.Header>
+                        <Border Focusable="False">
+                            <TextBlock TextAlignment="Center"
+                                       Text="{Binding ResourceKeys[LID_DataGridHeader_AssayValue], Source={StaticResource ScoutUILanguageResource}}"
+                                       Width="100"
+                                       VerticalAlignment="Center" TextWrapping="Wrap" />
+                        </Border>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Focusable="False"/>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="70" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                    <DataGridTemplateColumn.Header>
+                            <Border>
+                            <TextBlock Text="{Binding ResourceKeys[LID_Result_Totalcells], Source={StaticResource ScoutUILanguageResource}}"
+                                       TextAlignment="Center" Width="70"
+                                       VerticalAlignment="Center" TextWrapping="Wrap" />
+                            </Border>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding TotCount}" Height="30" HorizontalAlignment="Center"
+                                       TextAlignment="Center">
+                                <TextBlock.Style>
+                                    <Style TargetType="TextBlock">
+                                        <Style.Triggers>
+                                            <Trigger Property="Text" Value="0">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </Trigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </TextBlock.Style>
+
+                            </TextBlock>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="110" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                    <DataGridTemplateColumn.Header>
+                        <Border>
+                            <TextBlock Text="{Binding ResourceKeys[LID_DataGridHeader_OriginalConcentration], Source={StaticResource ScoutUILanguageResource}}"
+                                       TextAlignment="Center"
+                                       Width="110" TextWrapping="Wrap" />
+                        </Border>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <controls:ConcentrationTextBox ConcentrationDetailsType="{Binding DilutionFactor}"
+                                ConcentrationValue="{Binding Original,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                Background="Transparent" ConcentrationStartRange="50000"
+                                ConcentrationEndRange="15000000" IsConcentrationRangeCheck="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="110" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                    <DataGridTemplateColumn.Header>
+                        <Border>
+                            <TextBlock Text="{Binding ResourceKeys[LID_DataGridHeader_AdjustedConcentration], Source={StaticResource ScoutUILanguageResource}}"
+                                       TextAlignment="Center"
+                                       Width="110" TextWrapping="Wrap" />
+                        </Border>
+                    </DataGridTemplateColumn.Header>
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <controls:ConcentrationTextBox ConcentrationDetailsType="{Binding DilutionFactor}" 
+                                ConcentrationValue="{Binding Adjusted,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                Background="Transparent" ConcentrationStartRange="50000"
+                                ConcentrationEndRange="15000000" IsConcentrationRangeCheck="True" />
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="60" HeaderStyle="{StaticResource DataGridColumnHeaderStyle}">
+                    <DataGridTemplateColumn.Header>
+                        <Border>
+                            <StackPanel>
+                                <TextBlock Text ="{Binding ResourceKeys[LID_DataGridHeader_PercentCV], Source={StaticResource ScoutUILanguageResource}}" 
+                                       TextAlignment="Center" Width="60" TextWrapping="Wrap"/>
+                            </StackPanel>
+                        </Border>
+                    </DataGridTemplateColumn.Header>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.GroupStyle>
+                <GroupStyle>
+                    <GroupStyle.ContainerStyle>
+                        <Style TargetType="{x:Type GroupItem}">
+                            <Setter Property="Template">
+                                <Setter.Value>
+                                    <ControlTemplate TargetType="{x:Type GroupItem}">
+                                        <Expander IsExpanded="True" BorderThickness="0">
+                                            <Expander.Header>
+                                                <StackPanel Height="36" Background="{StaticResource DataGrid_Data_Background}" Width="auto">
+                                                    <StackPanel Orientation="Horizontal" DataContext="{Binding Items}"
+                                                                Background="Transparent" Height="32">
+                                                        <Grid Width="90">
+                                                            <controls:ConcentrationTextBox Height="35" Width="90"
+                                                                                                Foreground="{StaticResource TextBox_Enabled_Foreground}"
+                                                                                                FontWeight="Bold"
+                                                                                                Background="{StaticResource TextBox_Enabled_Background}"
+                                                                                                ConcentrationValue="{Binding AssayValue}"
+                                                                                                IsConcentrationRangeCheck="False" />
+                                                            <Border BorderBrush="{StaticResource Border_Dark}" BorderThickness="0,0,1,0" />
+                                                        </Grid>
+                                                        <Border Width="70" BorderThickness="0,0,1,0"
+                                                                BorderBrush="{StaticResource Border_Dark}">
+                                                            <TextBlock FontWeight="Bold" HorizontalAlignment="Center"
+                                                                       TextAlignment="Center"
+                                                                       VerticalAlignment="Center" FontSize="16"
+                                                                       Text="{Binding AvgTotCount}">
+                                                                <TextBlock.Style>
+                                                                    <Style TargetType="TextBlock">
+                                                                        <Style.Triggers>
+                                                                            <Trigger Property="Text" Value="0">
+                                                                                <Setter Property="Visibility"
+                                                                                        Value="Collapsed" />
+                                                                            </Trigger>
+                                                                        </Style.Triggers>
+                                                                    </Style>
+                                                                </TextBlock.Style>
+                                                            </TextBlock>
+                                                        </Border>
+                                                        <Grid Width="110">
+                                                            <controls:ConcentrationTextBox FontWeight="Bold"
+                                                                                                Background="{StaticResource TextBox_Enabled_Background}"
+                                                                                                ConcentrationStartRange="{Binding Source={x:Static common:ApplicationConstants.ConcentrationStartRange}, Mode=OneWay}"
+                                                                                                ConcentrationEndRange="{Binding Source={x:Static common:ApplicationConstants.ConcentrationEndRange},Mode=OneWay}"
+                                                                                                IsConcentrationRangeCheck="True"
+                                                                                                ConcentrationValue="{Binding AvgOriginal,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                                                                Margin="0,5,0,0" />
+                                                            <Border BorderBrush="{DynamicResource GenericVeryDark}" BorderThickness="0,0,1,0" />
+                                                        </Grid>
+                                                        <Grid Width="110">
+                                                            <controls:ConcentrationTextBox FontWeight="Bold"
+                                                                                                Background="{StaticResource TextBox_Enabled_Background}"
+                                                                                                ConcentrationStartRange="{Binding Source={x:Static common:ApplicationConstants.ConcentrationStartRange}, Mode=OneWay}"
+                                                                                                ConcentrationEndRange="{Binding Source={x:Static common:ApplicationConstants.ConcentrationEndRange},Mode=OneWay}"
+                                                                                                IsConcentrationRangeCheck="True"
+                                                                                                ConcentrationValue="{Binding AvgAdjusted,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                                                                                Margin="0,5,0,0" />
+                                                            <Border BorderBrush="{StaticResource Border_Dark}" BorderThickness="0,0,1,0" />
+                                                        </Grid>
+                                                        <TextBlock FontWeight="Bold" Width="60"
+                                                                       TextAlignment="Center"
+                                                                       VerticalAlignment="Center" FontSize="16"
+                                                                       Text="{Binding PercentCV, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
+                                                            <TextBlock.Style>
+                                                                <Style TargetType="TextBlock">
+                                                                    <Style.Triggers>
+                                                                        <Trigger Property="Text" Value="0">
+                                                                            <Setter Property="Visibility"
+                                                                                        Value="Collapsed" />
+                                                                        </Trigger>
+                                                                    </Style.Triggers>
+                                                                </Style>
+                                                            </TextBlock.Style>
+                                                        </TextBlock>
+                                                    </StackPanel>
+                                                    <Separator Margin="-40,0,0,0" Width="465"
+                                                               Style="{StaticResource ConcentrationSeparatorStyle}" />
+                                                </StackPanel>
+                                            </Expander.Header>
+                                            <Expander.Content>
+                                                <ItemsPresenter />
+                                            </Expander.Content>
+                                        </Expander>
+                                    </ControlTemplate>
+                                </Setter.Value>
+                            </Setter>
+                        </Style>
+                    </GroupStyle.ContainerStyle>
+                </GroupStyle>
+            </DataGrid.GroupStyle>
+        </DataGrid>
+    </Grid>
+</UserControl>

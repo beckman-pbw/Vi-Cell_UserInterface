@@ -1,0 +1,28 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/ConverterResources.xaml" />
+        <ResourceDictionary Source="/ResourceDictionaries/NamedStyles/SignatureLabel.xaml" />
+    </ResourceDictionary.MergedDictionaries>
+
+    <DataTemplate x:Key="cmbTemplate">
+        <Grid Background="Transparent">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="60" />
+                <ColumnDefinition Width="15" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Content="{Binding Signature.SignatureIndicator}" Style="{StaticResource SignatureLabel}"
+                   VerticalAlignment="Center"
+                   HorizontalAlignment="Center" />
+            <StackPanel Orientation="Vertical" Grid.Column="2" Margin="0,-3,0,0">
+                <TextBlock Text="{Binding SigningUser}" FontSize="16" />
+                <TextBlock Text="{Binding SignedDate, Converter={StaticResource DateFormatConverter}}" FontSize="15" Margin="0,-2,0,0" />
+                <TextBlock Text="{Binding SignedDate, StringFormat='{}{0:HH:mm:ss}'}" FontSize="15" Margin="0,-2,0,0" />
+            </StackPanel>
+
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

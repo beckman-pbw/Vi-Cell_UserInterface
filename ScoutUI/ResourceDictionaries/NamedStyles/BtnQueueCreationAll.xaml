@@ -1,0 +1,29 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/SolidColorBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="BtnQueueCreationAll" TargetType="Button">
+        <Setter Property="Width" Value="40"  />
+        <Setter Property="Height" Value="40"  />
+        <Setter Property="Background" Value="{DynamicResource TitleBar_Background}" />
+        <Setter Property="Foreground" Value="{DynamicResource GenericVeryLight}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Button">
+                    <Grid>
+
+                        <Border Name="brdBack" Grid.ColumnSpan="2" Tag="{TemplateBinding Tag}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}"
+                                BorderThickness="0" CornerRadius="50">
+                        </Border>
+                        <Path  Data="M10.5,37.75 L37.75,37.5 38,10.5 M0.5,27.75 L27.75,27.5 28,0.5" Fill="Transparent" HorizontalAlignment="Right" Margin="0,0,6,6" 
+                               StrokeThickness="3" Stretch="Fill" Stroke="{DynamicResource GenericVeryLight}" VerticalAlignment="Bottom" Height="20" Width="20"/>
+                    </Grid>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

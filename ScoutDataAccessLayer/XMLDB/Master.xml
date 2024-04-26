@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<MasterData>
+  <Languages>
+    <Language>
+      <LanguageID>eEnglishUS</LanguageID>
+      <LanguageName>American English</LanguageName>
+      <LanguageCulture>en-US</LanguageCulture>
+      <IsActive>False</IsActive>
+    </Language>
+    <Language>
+      <LanguageID>eFrench</LanguageID>
+      <LanguageName>French</LanguageName>
+      <LanguageCulture>fr-FR</LanguageCulture>
+      <IsActive>False</IsActive>
+    </Language>
+    <Language>
+      <LanguageID>eJapanese</LanguageID>
+      <LanguageName>Japanese</LanguageName>
+      <LanguageCulture>ja-JP</LanguageCulture>
+      <IsActive>False</IsActive>
+    </Language>
+    <Language>
+      <LanguageID>eGerman</LanguageID>
+      <LanguageName>German</LanguageName>
+      <LanguageCulture>de-DE</LanguageCulture>
+      <IsActive>False</IsActive>
+    </Language>
+    <Language>
+      <LanguageID>eChinese</LanguageID>
+      <LanguageName>Chinese (Simplified)</LanguageName>
+      <LanguageCulture>zh-CN</LanguageCulture>
+      <IsActive>False</IsActive>
+    </Language>
+    <Language>
+      <LanguageID>eSpanish</LanguageID>
+      <LanguageName>Spanish</LanguageName>
+      <LanguageCulture>es-ES</LanguageCulture>
+      <IsActive>False</IsActive>
+    </Language>
+  </Languages>
+  <Reactors>
+    <Reactor>sdfsdfsd</Reactor>
+    <Reactor>BCI REacter</Reactor>
+  </Reactors>
+</MasterData>

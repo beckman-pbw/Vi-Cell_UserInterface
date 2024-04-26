@@ -1,0 +1,115 @@
+<local:Dialog x:Class="ScoutUI.Views.Dialogs.InfoDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
+        WindowStyle="None" Background="{StaticResource Question_Background}"
+        mc:Ignorable="d" Title="InfoDialog" d:DesignHeight="650" d:DesignWidth="650"
+        MaxHeight="600" MaxWidth="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <commonControls:DialogTitleBar Grid.Row="0"
+                                           Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        <ScrollViewer Grid.Row="1" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled">
+            <Grid Margin="5,5,20,5">
+                <WrapPanel Orientation="Vertical" Margin="10">
+                    <WrapPanel Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_1], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <Border Background="{StaticResource Main_Background}" CornerRadius="8" Height="30" Width="40"
+                                    BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                            <Path Margin="5,0" HorizontalAlignment="Center" Stretch="Fill" Height="20" Width="20" Fill="{StaticResource TextBox_Enabled_Foreground}" Data="M 184.45623 564.07311 c -2.90546 -2.56711 -3.51157 -4.98484 -6.94698 -27.71062 -2.0701 -13.69397 -3.90341 -25.01383 -4.07403 -25.15524 -0.17061 -0.14143 -5.5488 -2.33919 -11.95151 -4.88393 l -11.6413 -4.62681 -19.27696 14.46955 c -24.82281 18.63235 -23.55168 18.54159 -40.716141 2.90705 -13.60886 -12.39586 -30.17993 -30.55582 -33.20119 -36.38462 -1.01835 -1.96468 -1.53261 -4.84287 -1.14281 -6.39599 0.38981 -1.55311 7.1744 -11.09323 15.07688 -21.20024 l 14.36813 -18.37639 -3.54203 -7.10263 c -1.94811 -3.90644 -4.5446 -9.7745 -5.76997 -13.04013 -1.22537 -3.26562 -2.85466 -5.9423 -3.62063 -5.94817 -0.76597 -0.006 -12.08018 -1.69935 -25.14268 -3.76327 -19.85335 -3.13691 -24.108899 -4.18331 -25.937499 -6.37781 -1.95913 -2.35115 -2.1875 -5.99632 -2.1875 -34.91702 0 -31.72409 0.0495 -32.34703 2.8125 -35.43189 2.54153 -2.83754 5.218319 -3.51386 27.783439 -7.0198 13.73402 -2.13386 25.01222 -3.98658 25.06268 -4.11714 0.58615 -1.51686 7.41555 -18.55186 8.43015 -21.02789 1.23599 -3.0163 0.63108 -4.2141 -7.25962 -14.375 -4.73437 -6.09647 -11.29662 -14.34226 -14.58277 -18.32396 -7.21533 -8.74251 -8.14122 -11.77395 -5.28801 -17.31342 2.78016 -5.39764 35.68147 -38.85119 42.93523 -43.65589 3.044261 -2.01643 7.082991 -3.66624 8.974961 -3.66624 3.56349 0 4.39365 0.5638 28.25487 19.18933 l 13.99842 10.92686 5.00629 -2.55401 c 2.75345 -1.40472 8.08887 -3.70737 11.85649 -5.11702 l 6.8502 -2.56298 0.82221 -7.12859 c 1.3835 -11.99504 4.21576 -30.78738 5.64322 -37.44341 2.38968 -11.14265 1.639 -10.93518 39.56421 -10.93518 l 33.102 0 2.70533 3.14513 c 2.21424 2.57421 3.35869 7.59086 6.30472 27.6365 l 3.59942 24.49137 8.27452 3.38619 c 17.15766 7.02144 13.54008 7.89106 35.38513 -8.50614 15.27367 -11.46462 20.1967 -14.52805 23.34708 -14.52805 3.31255 0 6.28193 2.10231 17.44222 12.34906 13.17206 12.09384 25.79383 25.61599 31.24039 33.4689 3.85287 5.55513 3.42093 9.33903 -1.85764 16.27379 -2.52579 3.31829 -9.05274 11.81878 -14.50433 18.88998 l -9.91197 12.85671 4.50433 10.48507 c 2.47739 5.76679 4.51295 10.95002 4.52348 11.51828 0.0596 3.2157 4.01636 4.37487 26.89833 7.8801 21.00632 3.21791 25.30383 4.23734 27.14502 6.43914 1.96148 2.34563 2.1875 6.01001 2.1875 35.46397 0 29.428 -0.22775 33.1275 -2.1875 35.53215 -1.86706 2.29091 -5.75814 3.23025 -26.5625 6.41241 -27.26815 4.17083 -27.494 4.2238 -27.51525 6.45372 -0.009 0.88095 -1.97061 6.08092 -4.36048 11.55548 l -4.34522 9.95377 3.2074 4.62827 c 1.76406 2.54555 8.50752 11.26125 14.98547 19.36821 8.32947 10.4241 11.77808 15.72909 11.77808 18.11822 0 4.37472 -6.53739 12.59468 -24.18128 30.40502 -16.71348 16.87114 -23.42626 21.94775 -29.02143 21.94775 -4.23549 0 -4.27434 -0.026 -30.23082 -20.1805 -11.6506 -9.04641 -12.4697 -9.46554 -15.37387 -7.86676 -1.68717 0.92881 -7.05934 3.16325 -11.93814 4.96542 l -8.87052 3.27668 -1.61503 14.59009 c -2.48877 22.4835 -5.6955 36.69091 -8.86525 39.27757 -2.39901 1.9577 -6.07284 2.1875 -34.97242 2.1875 -31.71132 0 -32.34904 -0.0506 -35.47502 -2.8125 z m 61.76558 -122.57387 c 5.14074 -1.82097 13.17457 -5.92625 17.85299 -9.12287 27.1971 -18.58295 40.48147 -50.37221 34.13621 -81.68735 -10.58909 -52.2593 -66.13413 -79.91232 -114.13791 -56.82343 -7.37424 3.54686 -11.94369 7.00352 -20.30593 15.3609 -17.12887 17.11891 -24.0581 33.34237 -24.09296 56.40912 -0.0302 19.97691 5.85338 36.4624 18.24291 51.11576 11.31682 13.3846 25.09241 22.19462 42.16478 26.96597 11.02981 3.08258 34.33901 1.96203 46.13991 -2.2181 z M 439.67256 309.28135 c -11.11312 -6.41409 -19.67255 -12.14186 -19.67255 -13.16444 0 -2.85091 4.72371 -16.19542 10.66585 -30.13111 l 5.44715 -12.77483 -4.3065 -7.15163 c -2.36857 -3.93342 -4.3065 -7.56615 -4.3065 -8.07275 0 -0.50659 -3.23437 -1.28952 -7.1875 -1.7398 -15.57125 -1.7737 -32.38694 -4.69524 -36.25 -6.29805 l -4.0625 -1.68557 0 -23.1448 c 0 -20.76971 0.22448 -23.26322 2.1875 -24.29882 3.20366 -1.6901 14.00941 -3.7424 30.2858 -5.7521 7.89156 -0.97439 14.52564 -2.30366 14.7424 -2.95394 0.21676 -0.65029 2.2865 -4.32496 4.59943 -8.16595 l 4.20532 -6.98364 -6.08231 -14.35223 c -3.34526 -7.89374 -7.00895 -17.53979 -8.1415 -21.43566 -1.96428 -6.75685 -1.95231 -7.18359 0.25957 -9.25663 2.6297 -2.46462 37.48592 -22.533792 39.13678 -22.533792 1.50095 0 11.3163 11.053272 21.57281 24.293602 l 8.65168 11.1686 9.37516 0.0814 9.37516 0.0814 6.60425 -8.77474 c 9.20045 -12.22417 21.95951 -26.850262 23.42281 -26.850262 0.67253 0 10.18505 5.118699 21.13895 11.374892 14.26224 8.1457 19.91619 12.02088 19.91619 13.6504 0 2.92544 -6.15702 20.29955 -11.67321 32.9399 l -4.29421 9.84019 2.77992 4.09645 c 1.52896 2.25306 3.49168 5.81476 4.36159 7.9149 1.36112 3.28603 2.39167 3.91952 7.39127 4.54338 15.23608 1.90122 36.72488 5.70727 38.95177 6.89905 2.33992 1.25229 2.48287 2.66134 2.48287 24.4736 l 0 23.1448 -4.0625 1.68557 c -3.86306 1.60281 -20.67875 4.52435 -36.25 6.29805 -4.19145 0.47743 -7.19926 1.43253 -7.21574 2.29127 -0.0155 0.8099 -1.90355 4.48446 -4.19561 8.16569 l -4.16739 6.69314 5.2889 12.05686 c 6.48132 14.77519 11.2205 29.27495 10.32348 31.58525 -0.6743 1.73665 -38.15691 23.59661 -40.4604 23.59661 -1.91664 0 -10.52054 -9.38301 -21.03289 -22.9375 l -9.54911 -12.3125 -9.30315 0 -9.30315 0 -7.7485 10.28305 c -9.36405 12.42703 -20.80858 24.96695 -22.78603 24.96695 -0.79355 0 -10.29546 -5.10942 -21.11536 -11.35426 z m 74.37456 -66.44114 c 12.18269 -4.25381 22.06629 -15.34025 25.44969 -28.54694 3.66081 -14.28955 -0.43439 -27.1273 -12.09825 -37.92598 -15.91585 -14.73527 -37.20636 -14.9702 -52.94689 -0.58425 -17.47662 15.97265 -18.3275 40.97673 -1.95166 57.35257 11.19065 11.19065 26.82939 14.84355 41.54711 9.7046 Z"/>
+                        </Border>
+                    </WrapPanel>
+
+                    <WrapPanel Margin="20,10,0,0" Orientation="Vertical">
+                        <WrapPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_2], Source={StaticResource ScoutUILanguageResource}}"/>
+                            <Border Background="{StaticResource Main_Background}" CornerRadius="8" Height="30" Width="40"
+                                BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                                <Path Margin="5,0" HorizontalAlignment="Center" Stretch="Fill" Height="20" Width="20" Fill="{StaticResource Border_Light}" Data="M61.77 401l17.5-20.15a19.92 19.92 0 0 0 5.07-14.19v-3.31C84.34 356 80.5 352 73 352H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8h22.83a157.41 157.41 0 0 0-11 12.31l-5.61 7c-4 5.07-5.25 10.13-2.8 14.88l1.05 1.93c3 5.76 6.29 7.88 12.25 7.88h4.73c10.33 0 15.94 2.44 15.94 9.09 0 4.72-4.2 8.22-14.36 8.22a41.54 41.54 0 0 1-15.47-3.12c-6.49-3.88-11.74-3.5-15.6 3.12l-5.59 9.31c-3.72 6.13-3.19 11.72 2.63 15.94 7.71 4.69 20.38 9.44 37 9.44 34.16 0 48.5-22.75 48.5-44.12-.03-14.38-9.12-29.76-28.73-34.88zM496 224H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zM16 160h64a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H64V40a8 8 0 0 0-8-8H32a8 8 0 0 0-7.14 4.42l-8 16A8 8 0 0 0 24 64h8v64H16a8 8 0 0 0-8 8v16a8 8 0 0 0 8 8zm-3.91 160H80a8 8 0 0 0 8-8v-16a8 8 0 0 0-8-8H41.32c3.29-10.29 48.34-18.68 48.34-56.44 0-29.06-25-39.56-44.47-39.56-21.36 0-33.8 10-40.46 18.75-4.37 5.59-3 10.84 2.8 15.37l8.58 6.88c5.61 4.56 11 2.47 16.12-2.44a13.44 13.44 0 0 1 9.46-3.84c3.33 0 9.28 1.56 9.28 8.75C51 248.19 0 257.31 0 304.59v4C0 316 5.08 320 12.09 320z"/>
+                            </Border>
+                            <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_2b], Source={StaticResource ScoutUILanguageResource}}"
+                                   TextWrapping="Wrap"/>
+                        </WrapPanel>
+                        <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_3], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_4], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_5_ACup], Source={StaticResource ScoutUILanguageResource}}"
+                                   Visibility="{Binding IsACupEnabled,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                        <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_5], Source={StaticResource ScoutUILanguageResource}}"
+                                   Visibility="{Binding IsACupEnabled,Mode=TwoWay,Converter={StaticResource InverseVisibilityConverter}}"/>
+                        <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_6], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <WrapPanel Orientation="Horizontal" Margin="0,10,0,0">
+                            <Border Background="{StaticResource Main_Background}" CornerRadius="8" Height="30" Width="40"
+                                    BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                                <Path Margin="5,0" HorizontalAlignment="Center" Stretch="Fill" Height="20" Width="20" Fill="{StaticResource Border_Light}" Data="M487.4 315.7l-42.6-24.6c4.3-23.2 4.3-47 0-70.2l42.6-24.6c4.9-2.8 7.1-8.6 5.5-14-11.1-35.6-30-67.8-54.7-94.6-3.8-4.1-10-5.1-14.8-2.3L380.8 110c-17.9-15.4-38.5-27.3-60.8-35.1V25.8c0-5.6-3.9-10.5-9.4-11.7-36.7-8.2-74.3-7.8-109.2 0-5.5 1.2-9.4 6.1-9.4 11.7V75c-22.2 7.9-42.8 19.8-60.8 35.1L88.7 85.5c-4.9-2.8-11-1.9-14.8 2.3-24.7 26.7-43.6 58.9-54.7 94.6-1.7 5.4.6 11.2 5.5 14L67.3 221c-4.3 23.2-4.3 47 0 70.2l-42.6 24.6c-4.9 2.8-7.1 8.6-5.5 14 11.1 35.6 30 67.8 54.7 94.6 3.8 4.1 10 5.1 14.8 2.3l42.6-24.6c17.9 15.4 38.5 27.3 60.8 35.1v49.2c0 5.6 3.9 10.5 9.4 11.7 36.7 8.2 74.3 7.8 109.2 0 5.5-1.2 9.4-6.1 9.4-11.7v-49.2c22.2-7.9 42.8-19.8 60.8-35.1l42.6 24.6c4.9 2.8 11 1.9 14.8-2.3 24.7-26.7 43.6-58.9 54.7-94.6 1.5-5.5-.7-11.3-5.6-14.1zM256 336c-44.1 0-80-35.9-80-80s35.9-80 80-80 80 35.9 80 80-35.9 80-80 80z"/>
+                            </Border>
+                            <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_7], Source={StaticResource ScoutUILanguageResource}}"/>
+                        </WrapPanel>
+                        <WrapPanel Orientation="Vertical" Margin="20,10,0,0">
+                            <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_8], Source={StaticResource ScoutUILanguageResource}}"/>
+                            <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_9], Source={StaticResource ScoutUILanguageResource}}"/>
+                            <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_10], Source={StaticResource ScoutUILanguageResource}}"/>
+                        </WrapPanel>
+
+                    </WrapPanel>
+
+                    <WrapPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_11], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <Border Background="{StaticResource Main_Background}" CornerRadius="8" Height="30" Width="40"
+                                    BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                            <Path Margin="5,0" HorizontalAlignment="Center" Stretch="Fill" Height="20" Width="20" Fill="{StaticResource Border_Light}" Data="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_11b], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </WrapPanel>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_12], Source={StaticResource ScoutUILanguageResource}}"/>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_13_ACup], Source={StaticResource ScoutUILanguageResource}}"
+                               Visibility="{Binding IsACupEnabled,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_13], Source={StaticResource ScoutUILanguageResource}}"
+                               Visibility="{Binding IsACupEnabled,Mode=TwoWay,Converter={StaticResource InverseVisibilityConverter}}"/>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_14], Source={StaticResource ScoutUILanguageResource}}"/>
+                    <WrapPanel Margin="0,10,0,0" Orientation="Horizontal">
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_15], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <Border Background="{StaticResource Main_Background}" CornerRadius="8" Height="30" Width="40"
+                                    BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                            <Rectangle Width="15" Height="15" Margin="0" Fill="{StaticResource RowWiseBrushIcon}" VerticalAlignment="Center" />
+                        </Border>
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_15b], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </WrapPanel>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_16], Source={StaticResource ScoutUILanguageResource}}"/>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_17_ACup], Source={StaticResource ScoutUILanguageResource}}"
+                               Visibility="{Binding IsACupEnabled,Mode=TwoWay,Converter={StaticResource BooleanToVisibilityConverter}}"/>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_17], Source={StaticResource ScoutUILanguageResource}}"
+                               Visibility="{Binding IsACupEnabled,Mode=TwoWay,Converter={StaticResource InverseVisibilityConverter}}"/>
+                    <WrapPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_18], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <Border Background="{StaticResource Button_Play_Background}" CornerRadius="8" Height="30" Width="40"
+                                    BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                            <Image Source="{StaticResource PlaySource}"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_18b], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </WrapPanel>
+                    <WrapPanel Orientation="Horizontal" Margin="0,10,0,0">
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_19], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <Border Background="{StaticResource Button_Play_Background}" CornerRadius="8" Height="30" Width="40"
+                                    BorderBrush="{StaticResource Border_Light}" BorderThickness="1">
+                            <Image Source="{StaticResource PlaySource}"/>
+                        </Border>
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_19b], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </WrapPanel>
+                    <TextBlock Margin="0,10,0,0" Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_20], Source={StaticResource ScoutUILanguageResource}}"/>
+                    <WrapPanel Orientation="Vertical" Margin="20,10,0,0">
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_21], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_22], Source={StaticResource ScoutUILanguageResource}}"/>
+                        <TextBlock Style="{StaticResource NormalTextBlock}" FontWeight="DemiBold" Text="{Binding ResourceKeys[LID_ESW_Help_Line_23], Source={StaticResource ScoutUILanguageResource}}"/>
+                    </WrapPanel>
+                </WrapPanel>
+            </Grid>
+        </ScrollViewer>
+    </Grid>
+</local:Dialog>

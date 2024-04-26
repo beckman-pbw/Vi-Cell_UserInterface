@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29418.71
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenerateResourceLibrary", "GenerateResourceLibrary\GenerateResourceLibrary.csproj", "{2A5CF2F3-B2C3-44DC-B7B9-5A02EB39C5FF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2A5CF2F3-B2C3-44DC-B7B9-5A02EB39C5FF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A5CF2F3-B2C3-44DC-B7B9-5A02EB39C5FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A5CF2F3-B2C3-44DC-B7B9-5A02EB39C5FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A5CF2F3-B2C3-44DC-B7B9-5A02EB39C5FF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7A3A3237-FB09-4D2B-BD14-DCF0F9A90C5D}
+	EndGlobalSection
+EndGlobal

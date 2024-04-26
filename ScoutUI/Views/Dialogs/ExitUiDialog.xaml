@@ -1,0 +1,36 @@
+﻿<local:Dialog x:Class="ScoutUI.Views.Dialogs.ExitUiDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+        Height="{x:Static SystemParameters.PrimaryScreenHeight}"
+        Width="{x:Static SystemParameters.PrimaryScreenWidth}"
+        mc:Ignorable="d" Title="ExitUiDialog" WindowStyle="None" WindowState="Normal">
+
+    <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Background="#C4054174">
+        <Border BorderBrush="{DynamicResource GenericVeryLight}" BorderThickness="2" CornerRadius="2" Margin="200" Background="{StaticResource Level1Background}">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="40" />
+                    <RowDefinition Height="10" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="10" />
+                </Grid.ColumnDefinitions>
+
+                <StackPanel Grid.Column="1" Grid.Row="1" HorizontalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock VerticalAlignment="Center" Text="{Binding ExitAndNightCleanMessage, Mode=OneWay}" Foreground="{DynamicResource GenericVeryLight}" FontSize="21.333" />
+                    <controls:LoadingIndicator Margin="10,10,0,0" Style="{StaticResource ProgressIndicatorThreeDotsStyle}" Foreground="{DynamicResource GenericVeryLight}" Width="70" />
+                    <TextBlock HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="{DynamicResource GenericVeryLight}" FontSize="21.333"
+                               Text="{Binding ResourceKeys[LID_Label_WaitMsg], Source={StaticResource ScoutUILanguageResource}}" />
+                </StackPanel>
+            </Grid>
+        </Border>
+    </Grid>
+</local:Dialog>

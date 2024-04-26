@@ -1,0 +1,38 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+
+    <IsPackable>false</IsPackable>
+
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="10.1.1" />
+    <PackageReference Include="Moq" Version="4.16.0" />
+    <PackageReference Include="Ninject" Version="3.3.4" />
+    <PackageReference Include="NUnit" Version="3.13.1" />
+    <PackageReference Include="NUnit3TestAdapter" Version="3.17.0" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ScoutOpcUa\ScoutOpcUa.csproj" />
+    <ProjectReference Include="..\ScoutUI\ScoutUI.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="GrpcClient">
+      <HintPath>..\target\dependencies\lib\GrpcClient.dll</HintPath>
+    </Reference>
+    <Reference Include="GrpcServer">
+      <HintPath>..\target\dependencies\lib\GrpcServer.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="Protos">
+      <HintPath>..\target\dependencies\lib\Protos.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

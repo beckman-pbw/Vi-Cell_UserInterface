@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <DrawingBrush x:Key="NoImageBrush" Viewbox="0,0,141,141.5" ViewboxUnits="Absolute">
+        <DrawingBrush.Drawing>
+            <DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,12.167,35.75" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Geometry="M4,4 L113.5,65">
+                        <GeometryDrawing.Pen>
+                            <Pen Brush="{DynamicResource GenericVeryLight}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10"
+                                 StartLineCap="Flat" Thickness="8" />
+                        </GeometryDrawing.Pen>
+                    </GeometryDrawing>
+                </DrawingGroup>
+                <GeometryDrawing
+                    Geometry="M137,70.75 C137,107.61501 107.22694,137.5 70.5,137.5 33.773064,137.5 4,107.61501 4,70.75 4,33.884993 33.773064,4 70.5,4 107.22694,4 137,33.884993 137,70.75 z">
+                    <GeometryDrawing.Pen>
+                        <Pen Brush="{DynamicResource GenericVeryLight}" DashCap="Flat" EndLineCap="Flat" LineJoin="Miter" MiterLimit="10"
+                             StartLineCap="Flat" Thickness="8" />
+                    </GeometryDrawing.Pen>
+                </GeometryDrawing>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,24.667,56.25" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}"
+                                     Geometry="M0,0 L0.12643885,43.2225 C0.12643885,43.2225 1.5172662,51 9.230036,51 L84.081835,50.8725 C84.081835,50.8725 85.978417,50.6175 87.875,48.8325 L59.932014,33.0225 C59.932014,33.0225 49.522324,44.146487 36.119806,37.133987 36.119806,37.133987 22.337972,28.718987 26.131137,15.968987 z" />
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,51.834,31.333" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}"
+                                     Geometry="M0.33829889,16.14891 L1.3706634E-05,9.0097059 C1.3706634E-05,9.0097059 0.67693929,2.0401314 7.6190064,0.34032622 L28.10538,6.1997002E-06 C28.10538,6.1997002E-06 36.23277,2.3800843 36.5714,7.9894699 L36.5714,15.298661 56.549884,15.638624 C56.549884,15.638624 63.661383,16.998476 64.000013,24.307677 L63.830348,51.334002 35.893845,36.035654 C35.893845,36.035654 33.015534,24.817107 15.745696,24.817107 z" />
+                </DrawingGroup>
+                <DrawingGroup>
+                    <DrawingGroup.Transform>
+                        <MatrixTransform Matrix="1,0,0,1,60.167,76" />
+                    </DrawingGroup.Transform>
+                    <GeometryDrawing Brush="{DynamicResource GenericVeryLight}" Geometry="M0,0 C0,0 0,13.731201 15.332986,8.7211667 z" />
+                </DrawingGroup>
+            </DrawingGroup>
+        </DrawingBrush.Drawing>
+    </DrawingBrush>
+
+</ResourceDictionary>

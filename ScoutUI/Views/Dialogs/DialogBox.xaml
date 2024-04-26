@@ -1,0 +1,76 @@
+﻿<local:Dialog x:Class="ScoutUI.Views.Dialogs.DialogBox"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
+        xmlns:commoncontrols="clr-namespace:ScoutUI.Views.CommonControls"
+        xmlns:controls="clr-namespace:WpfMath.Controls;assembly=WpfMath"
+        mc:Ignorable="d" d:DesignHeight="300" d:DesignWidth="500"
+        Title="DialogBox" FontFamily="Segoe UI"
+        MinWidth="575" MaxWidth="1000" MinHeight="250"
+        ResizeMode="NoResize" AllowsTransparency="True" WindowState="Normal"
+        WindowStyle="None" Background="{StaticResource Level1Background}">
+
+    <Grid Margin="3" Background="{StaticResource Main_Background}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="10" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="70" />
+        </Grid.RowDefinitions>
+
+        <commoncontrols:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        <StackPanel Grid.Row="2" Margin="20,0,20,0" Orientation="Horizontal" Width="525">
+            <Image Margin="0,0,10,0" Stretch="Uniform" MaxHeight="25" VerticalAlignment="Top" HorizontalAlignment="Left"
+                   Source="{Binding Icon, Converter={StaticResource IconConverter}}"
+                   Visibility="{Binding ShowMessageIcon, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <TextBlock HorizontalAlignment="Left" Text="{Binding Message, FallbackValue=MessageText}"
+                       VerticalAlignment="Top" TextWrapping="Wrap" FontSize="18" Width="525" />
+        </StackPanel>
+
+        <StackPanel Grid.Row="3" Visibility="{Binding ShowMathFormula, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Margin="10,10,10,0">
+            <Grid Background="{StaticResource GenericVeryLight}" Width="Auto" HorizontalAlignment="Center">
+                <controls:FormulaControl Formula="{Binding MathFormula}" Margin="10"/>
+            </Grid>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Visibility="{Binding ShowTextEntry, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Margin="0,10,0,0">
+            <TextBox HorizontalAlignment="Stretch" Style="{StaticResource TextBoxAssayValueStyle}"
+                     Width="525" Height="40" Text="{Binding TextEntry, UpdateSourceTrigger=PropertyChanged}"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="4" Orientation="Horizontal" Visibility="{Binding ShowCheckBox, Converter={StaticResource BooleanToVisibilityConverter}}"
+                    Margin="0,0,0,0">
+            <CheckBox 
+                      Margin="20,0,0,0"
+                      Style="{StaticResource AdminCheckBox}"
+                      IsChecked="{Binding DeleteAllACupData, Mode=TwoWay}" />
+            <TextBlock Text="{Binding ResourceKeys[LID_MSGBOX_DeleteAllACupConcentrationSlopeData], Source={StaticResource ScoutUILanguageResource}}"
+                       Margin="5,0,0,0"
+                       TextWrapping="Wrap" 
+                       FontSize="18" 
+                       VerticalAlignment="Center"
+                       Width="495"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="5" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+
+            <Button Command="{Binding AcceptCommand}" Style="{StaticResource DefaultButtonStyle}" 
+                    Content="{Binding AcceptButtonText, FallbackValue=Yes}" IsDefault="True"
+                    TouchDown="Button_TouchDown"
+                    Visibility="{Binding ShowAcceptButton, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+            <Button Command="{Binding DeclineCommand}" Style="{StaticResource DefaultButtonStyle}"
+                    Content="{Binding DeclineButtonText, FallbackValue=No}"
+                    TouchDown="Button_TouchDown"
+                    Visibility="{Binding ShowDeclineButton, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+
+        </StackPanel>
+    </Grid>
+</local:Dialog>

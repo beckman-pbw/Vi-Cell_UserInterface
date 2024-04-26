@@ -1,0 +1,1170 @@
+<UserControl x:Class="ScoutUI.Views.Service.LowLevelView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
+             xmlns:validate="clr-namespace:ScoutUI.Common.Helper"
+             xmlns:service="clr-namespace:ScoutUI.Views.Service"
+             xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+             Focusable="False" IsTabStop="False" KeyboardNavigation.TabNavigation="Local"
+             xmlns:converter="clr-namespace:ScoutUI.Common.Converters">
+    <Grid Focusable="False">
+        <Border Style="{StaticResource BaseBorderStyle}" Focusable="False"/>
+        <Grid Margin="5" Focusable="False">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="260" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0" Margin="0,10,0,0" Focusable="False">
+                <Grid.ColumnDefinitions>
+<!--                    <ColumnDefinition Width="230" /> -->
+                    <ColumnDefinition Width="230" />
+                    <ColumnDefinition Width="270" />
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="270" />
+                </Grid.ColumnDefinitions>
+<!--
+                <GroupBox Grid.Column="0" Name="grpSensorStatusState" Focusable="False"
+                Header="{Binding ResourceKeys[LID_Label_SensorStatusState], Source={StaticResource ScoutUILanguageResource}}"
+                          Style="{StaticResource ServiceGroupBox}" HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
+                    <Grid Focusable="False">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="80" />
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Row="0" Grid.Column="1" Name="lblCarousel"
+                               Content="{Binding ResourceKeys[LID_Label_Carousel], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" ContentStringFormat="{}{0} :" Padding="0" />
+                        <Label Grid.Row="1" Grid.Column="1" Name="lblCup" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" ContentStringFormat="{}{0} :" Padding="0"
+                               Content="{Binding ResourceKeys[LID_Label_Tube], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblReagentDoor"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                               Content="{Binding ResourceKeys[LID_Label_ReagentDoor], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblReagentPack"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                               Content="{Binding ResourceKeys[LID_Label_ReagentPack], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+
+                        <controls:SensorButton x:Name="rbCarousel" Grid.Row="0" Grid.Column="2"
+                                                    Style="{StaticResource HardwareSensorStatus}"
+                                                    Focusable="False"
+                                                    SensorStatus="{Binding CarouselDetect}" />
+                        <controls:SensorButton Grid.Row="1" Grid.Column="2"
+                                                    Style="{StaticResource HardwareSensorStatus}"
+                                                    Focusable="False"
+                                                    SensorStatus="{Binding TubeDetect}" />
+                        <controls:SensorButton Grid.Row="2" Grid.Column="2"
+                                                    Style="{StaticResource HardwareSensorStatus}"
+                                                    Focusable="False"
+                                                    SensorStatus="{Binding ReagentDoor}" />
+                        <controls:SensorButton Grid.Row="3" Grid.Column="2"
+                                                    Style="{StaticResource HardwareSensorStatus}"
+                                                    Focusable="False"
+                                                    SensorStatus="{Binding ReagentPack}" />
+                    </Grid>
+                </GroupBox>
+-->
+                <GroupBox Grid.Column="0" Name="grpMotorStatusState"
+                          Header="{Binding ResourceKeys[LID_Label_MotorStatusState], Source={StaticResource ScoutUILanguageResource}}"
+                          Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
+                          HorizontalAlignment="Stretch"
+                          Focusable="False"
+                          VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
+                    <Grid Focusable="False">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="5" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="130" />
+                            <ColumnDefinition Width="70" />
+                        </Grid.ColumnDefinitions>
+
+	                    <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblFocushome" HorizontalAlignment="Right"
+	                           VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+	                           Content="{Binding ResourceKeys[LID_Label_FocusHome], Source={StaticResource ScoutUILanguageResource}}"
+	                           Style="{StaticResource ReportCommonLabelStyle}" />
+<!--
+                        <Label Grid.Row="1" Grid.Column="1" Name="lblRadiushome" HorizontalAlignment="Right"
+	                           VerticalAlignment="Bottom" ContentStringFormat="{}{0} :" Padding="0"
+	                           Content="{Binding ResourceKeys[LID_Label_RadiusHome], Source={StaticResource ScoutUILanguageResource}}"
+	                           Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblThetahome" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                               Content="{Binding ResourceKeys[LID_Label_ThetaHome], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblProbehome" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                               Content="{Binding ResourceKeys[LID_Label_ProbeHome], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="4" Grid.Column="1" Padding="0" Name="lblReagentUpper"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                               Content="{Binding ResourceKeys[LID_Label_ReagentUpper], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="5" Grid.Column="1" Padding="0" Name="lblReagentlower"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                               Content="{Binding ResourceKeys[LID_Label_ReagentLower], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+-->
+	                    <controls:SensorButton Grid.Row="0" Grid.Column="2"
+	                                           Focusable="False"
+	                                           Style="{StaticResource HardwareSensorStatus}" Height="30"
+	                                           SensorStatus="{Binding FocusHome,Mode=OneWay}" />
+<!--
+                        <controls:SensorButton Grid.Row="1" Grid.Column="2"
+	                                           Focusable="False"
+	                                           Style="{StaticResource HardwareSensorStatus}" Height="30"
+	                                           SensorStatus="{Binding RadiusHome,Mode=OneWay}" />
+                        <controls:SensorButton Grid.Row="2" Grid.Column="2"
+                                                Focusable="False"
+                                                Style="{StaticResource HardwareSensorStatus}" Height="30"
+                                                SensorStatus="{Binding ThetaHome,Mode=OneWay}" />
+                        <controls:SensorButton Grid.Row="3" Grid.Column="2"
+                                                Focusable="False"
+                                                Style="{StaticResource HardwareSensorStatus}" Height="30"
+                                                SensorStatus="{Binding ProbeHome,Mode=OneWay}" />
+                        <controls:SensorButton Grid.Row="4" Grid.Column="2"
+                                               Focusable="False"
+                                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                                               SensorStatus="{Binding ReagentUpper,Mode=OneWay}" />
+                        <controls:SensorButton Grid.Row="5" Grid.Column="2"
+                                               Focusable="False"
+                                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                                               SensorStatus="{Binding ReagentLower}" />
+-->
+                    </Grid>
+                </GroupBox>
+                <GroupBox Grid.Column="1" Name="grpStatusState"
+                          Header="{Binding ResourceKeys[LID_Label_StatusState], Source={StaticResource ScoutUILanguageResource}}"
+                          Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
+                          HorizontalAlignment="Stretch"
+                          Focusable="False"
+                          VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="*" />
+
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="150" />
+                            <ColumnDefinition Width="100" />
+                        </Grid.ColumnDefinitions>
+
+	                    <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblCameraLamp"
+	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
+	                           Content="{Binding ResourceKeys[LID_Label_CameraLamp], Source={StaticResource ScoutUILanguageResource}}"
+	                           ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+	                    <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblSyringePosition"
+	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
+	                           Content="{Binding ResourceKeys[LID_ButtonContent_Syringe], Source={StaticResource ScoutUILanguageResource}}"
+	                           ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+	                    <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblValvePosition"
+	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
+	                           Content="{Binding ResourceKeys[LID_ButtonContent_Valve], Source={StaticResource ScoutUILanguageResource}}"
+	                           ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+<!--
+                        <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblMotorRadius"
+	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
+	                           Content="{Binding ResourceKeys[LID_Label_MotorRadius], Source={StaticResource ScoutUILanguageResource}}"
+	                           Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblMotortheta"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_Motortheta], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="4" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_MotorFocus], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="5" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_MotorReagent], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+-->
+
+	                    <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+	                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+	                           Padding="5,0,0,0"
+	                           Content="{Binding BrightFieldLED,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}" />
+	                    <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+	                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+	                           Padding="5,0,0,0"
+	                           Content="{Binding SyringePosition,Mode=OneWay}" />
+	                    <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+	                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
+	                           Foreground="{DynamicResource GenericVeryDark}"
+	                           Content="{Binding ValvePosition,Mode=OneWay}" />
+<!--
+                        <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+	                           HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+	                           Padding="5,0,0,0"
+	                           Content="{Binding MotorRadiusPosition,Mode=OneWay}" />
+                        <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+                               Padding="5,0,0,0"
+                               Content="{Binding MotorThetaPosition,Mode=OneWay}" />
+                        <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+                               Padding="5,0,0,0"
+                               Content="{Binding MotorFocusPosition,Mode=OneWay}" />
+                        <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+                               Padding="5,0,0,0"
+                               Content="{Binding MotorReagentPosition,Mode=OneWay}" />
+-->
+                    </Grid>
+                </GroupBox>
+                <GroupBox Grid.Column="2" Name="grpVoltage"
+                          Header="{Binding ResourceKeys[LID_Label_Voltage], Source={StaticResource ScoutUILanguageResource}}"
+                          Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="35" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="10" />
+                            <ColumnDefinition Width="110" />
+                            <ColumnDefinition Width="130" />
+                        </Grid.ColumnDefinitions>
+
+                        <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblThreePointThree"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Report_Pos33Volt], Source={StaticResource ScoutUILanguageResource}}" 
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Padding="0"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_Sensor], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="+5V {0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Padding="0"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_Circuit], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="+5V {0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblTwelveVolt"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="+12V :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="4" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Content="+24V :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                               Padding="5,0,0,0"
+                               Content="{Binding Voltage3_3V ,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
+                               ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+                        <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+                               Padding="5,0,0,0"
+                               Content="{Binding Voltage5vSensor,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
+                               ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+                        <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+                               Padding="5,0,0,0"
+                               Content="{Binding Voltage5vCircuit,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
+                               ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+                        <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" Foreground="{DynamicResource GenericVeryDark}" VerticalAlignment="Bottom"
+                               Padding="5,0,0,0"
+                               Content="{Binding Voltage12v,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
+                               ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+                        <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               HorizontalAlignment="Left" Foreground="{DynamicResource GenericVeryDark}" VerticalAlignment="Bottom"
+                               Padding="5,0,0,0"
+                               Content="{Binding Voltage24v,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
+                               ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+                    </Grid>
+                </GroupBox>
+                <Grid Grid.Column="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <GroupBox Grid.Row="0" Name="grpTemperature"
+                              Header="{Binding ResourceKeys[LID_Label_Temperature], Source={StaticResource ScoutUILanguageResource}}"
+                              Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
+                              HorizontalAlignment="Stretch"
+                              VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="140" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblControlboard"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_Controlboard], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
+                            <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblCPU" HorizontalAlignment="Right"
+                                   VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_CPU], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
+                            <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblOpticalCase"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_Opticalcase], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
+
+                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                                   Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   Padding="5,0,0,0"
+                                   Content="{Binding TemperatureControlBoard,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}"
+                                   ContentStringFormat="{StaticResource TemperatureSingleTrailing}" />
+                            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                                   Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
+                                   Padding="5,0,0,0"
+                                   Content="{Binding TemperatureCPU,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}"
+                                   ContentStringFormat="{StaticResource TemperatureSingleTrailing}" />
+
+                            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                                   Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Top"
+                                   Margin="0,0,0,0"
+                                   Content="{Binding TemperatureOpticalCase,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}"
+                                   ContentStringFormat="{StaticResource TemperatureSingleTrailing}" />
+
+                        </Grid>
+                    </GroupBox>
+
+<!--
+                    <GroupBox Grid.Row="1"
+                              Header="{Binding ResourceKeys[LID_Label_StatusState], Source={StaticResource ScoutUILanguageResource}}"
+                              Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
+                              HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="16"
+                              Foreground="{DynamicResource GenericVeryLight}">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="30" />
+                                <RowDefinition Height="*" />
+
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="140" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblCarouselor96wellposition"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                   ContentStringFormat="{}{0} :">
+                                <Label.Style>
+                                    <Style BasedOn="{StaticResource ReportCommonLabelStyle }" TargetType="Label">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                                <Setter Property="Content"
+                                                        Value="{Binding ResourceKeys[LID_Label_CarouselPosition], Source={StaticResource ScoutUILanguageResource}}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                                <Setter Property="Content"
+                                                        Value="{Binding ResourceKeys[LID_Label_96WellPosition], Source={StaticResource ScoutUILanguageResource}}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
+                                                <Setter Property="Content"
+                                                        Value="{Binding ResourceKeys[LID_Label_CarouselPosition], Source={StaticResource ScoutUILanguageResource}}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+
+                            </Label>
+                            <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblValvePosition"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                   Content="{Binding ResourceKeys[LID_ButtonContent_Valve], Source={StaticResource ScoutUILanguageResource}}"
+                                   ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                            <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblProbePosition"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_Probe], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
+
+                            <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
+                                   Foreground="{DynamicResource GenericVeryDark}"
+                                   Content="{Binding StagePositionString,Mode=OneWay}" />
+                            <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
+                                   Foreground="{DynamicResource GenericVeryDark}"
+                                   Content="{Binding ValvePosition,Mode=OneWay}" />
+
+                            <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                                   HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
+                                   Foreground="{DynamicResource GenericVeryDark}"
+                                   Content="{Binding MotorProbePosition, Mode=OneWay}" />
+                        </Grid>
+                    </GroupBox>
+-->
+                </Grid>
+            </Grid>
+            <Grid Grid.Row="1">                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="10" />
+                    <ColumnDefinition Width="745" />
+                    <ColumnDefinition Width="250" />
+                    <ColumnDefinition Width="250" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="1" HorizontalAlignment="Stretch" Margin="0,15">
+                    <Border Style="{StaticResource BaseBorderStyle}" />
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="5" />
+                            <ColumnDefinition Width="180" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="270" />
+                            <ColumnDefinition Width="10" />
+                        </Grid.ColumnDefinitions>
+
+                        <Grid Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                                <RowDefinition Height="1*" />
+                            </Grid.RowDefinitions>
+                            <Label Grid.Row="0" Name="lblReagent1"
+                                   Content="{Binding ResourceKeys[LID_Label_Reagent1], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource LabelHeaderStyle}" Foreground="{DynamicResource GenericVeryLight}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveA}}" />
+                            <Label Grid.Row="1" Name="lblCleaningAgent"
+                                   Content="{Binding ResourceKeys[LID_Label_CleaningAgent], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveB}}" />
+                            <Label Grid.Row="2" Name="lblConditioningSolution"
+                                   Content="{Binding ResourceKeys[LID_Label_ConditioningSolution], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveC}}" />
+                            <Label Grid.Row="3" Name="lblBufferSolution"
+                                   Content="{Binding ResourceKeys[LID_Label_BufferSolution], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveD}}" />
+                            <Label Grid.Row="4" Name="lblReagent2"
+                                   Content="{Binding ResourceKeys[LID_Label_Reagent], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveE}}" />
+                            <Label Grid.Row="5" Name="lblWaste"
+                                   Content="{Binding ResourceKeys[LID_Label_Waste], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveF}}" />
+                            <Label Grid.Row="6" Name="lblSample"
+                                   Content="{Binding ResourceKeys[LID_Label_Sample], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveG}}" />
+                            <Label Grid.Row="7" Name="lblCell"
+                                   Content="{Binding ResourceKeys[LID_Label_Cell], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}"
+                                   FontWeight="{Binding ValvePosition,Converter={StaticResource enumToFontWeightConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveH}}" />
+                        </Grid>
+                        <Grid Grid.Column="2" IsEnabled="{Binding IsRepetitionRunning,Mode=TwoWay}">
+                            <controls:CirclePanel Width="200" Height="200" HorizontalAlignment="Left">
+                                <Grid Name="ValveE">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveE}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveE}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="5" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}" CommandParameter="{x:Static enum:ValvePosition.ValveE }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="E" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5" Margin="10,-10,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-178.043" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{x:Static enum:ValvePosition.ValveE }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="180" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+
+                                </Grid>
+                                <Grid Name="ValveD">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveD}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveD}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="4" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveD }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="D" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="27" RenderTransformOrigin="0.5,0.5" Margin="10,-10,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-132.049" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveD }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="135" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+
+                                </Grid>
+                                <Grid Name="ValveC">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveC}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveC}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="3" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveC }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Stroke="#92a316" Fill="#92a316" HorizontalAlignment="Left" Height="28.437"
+                                        Stretch="Fill" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="C" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-99.419" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveC }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="90" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+                                </Grid>
+                                <Grid Name="ValveB">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveB}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveB}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="2" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveB }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="B" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5" Margin="10,-10,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-42.231" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveB }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="45" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+                                </Grid>
+                                <Grid Name="ValveA">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveA}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveA}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="1" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveA }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="A" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5" Margin="10,-20,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-1.626" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{x:Static enum:ValvePosition.ValveA }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="0" />
+                                    </Grid.RenderTransform>
+
+                                </Grid>
+                                <Grid Name="ValveH">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveH}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveH}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="8" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveH }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="H" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5" Margin="10,-10,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-137.054" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveH }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="315" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+                                </Grid>
+                                <Grid Name="ValveG">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveG}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveG}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="7" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveG }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="G" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5" Margin="30,-10,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-268.61" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveG }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="270" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+                                </Grid>
+                                <Grid Name="ValveF">
+                                    <Path
+                                        Data="M89.375,82.125 L53.125,46.5 C53.125,46.5 82.625,12.625 137.5,12.125 L137.625,62 C137.625,62 111.3363,61.904614 89.375,82.125 z"
+                                        Fill="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveF}}"
+                                        Stroke="{Binding ValvePosition,Converter={StaticResource enumToBackgroundConverter}, ConverterParameter={x:Static enum:ValvePosition.ValveF}}"
+                                        Focusable="True" KeyboardNavigation.TabIndex="6" KeyboardNavigation.AcceptsReturn="True"
+                                        HorizontalAlignment="Left" Stretch="Fill" VerticalAlignment="Top">
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveF }" />
+                                            </i:EventTrigger>
+                                            <service:SelectionEventTrigger EventName="KeyDown"/>
+                                        </i:Interaction.Triggers>
+                                    </Path>
+                                    <Path
+                                        Data="M96.9375,89.875 C96.9375,89.875 113.062,72.625 137.7495,72.875 L137.6245,62.437995 C137.6245,62.437995 111.187,62.249996 89.249501,82.499999 z"
+                                        Fill="#92a316" HorizontalAlignment="Left" Height="28.437" Stretch="Fill"
+                                        Stroke="#92a316" Margin="37,49.671,0,6.891" />
+                                    <Path Data="M107.25,76.125 L119.375,70.75 117.875,83.75 z" Fill="#00ff00"
+                                          HorizontalAlignment="Left" Stretch="Fill" Stroke="#00ff00"
+                                          VerticalAlignment="Top" Margin="54.431,59.25,0,0" Opacity=".5" />
+                                    <Label Content="F" Foreground="{DynamicResource GenericVeryLight}" FontSize="23" FontWeight="Bold" Height="35"
+                                           Width="25" RenderTransformOrigin="0.5,0.5" Margin="20,-0,1,1">
+                                        <Label.RenderTransform>
+                                            <TransformGroup>
+                                                <ScaleTransform />
+                                                <SkewTransform />
+                                                <RotateTransform Angle="-227.965" />
+                                                <TranslateTransform />
+                                            </TransformGroup>
+                                        </Label.RenderTransform>
+                                        <i:Interaction.Triggers>
+                                            <i:EventTrigger EventName="MouseLeftButtonDown">
+                                                <i:InvokeCommandAction Command="{Binding ValveSelectionCommand}"
+                                                                       CommandParameter="{ x:Static enum:ValvePosition.ValveF }" />
+                                            </i:EventTrigger>
+                                        </i:Interaction.Triggers>
+                                    </Label>
+                                    <Grid.RenderTransform>
+                                        <RotateTransform Angle="225" CenterX="75" CenterY="45" />
+                                    </Grid.RenderTransform>
+                                </Grid>
+                            </controls:CirclePanel>
+                        </Grid>
+                        <Grid Grid.Column="2" IsEnabled="{Binding IsRepetitionRunning,Mode=TwoWay}">
+                            <Label Content="{Binding ResourceKeys[LID_Label_Valve], Source={StaticResource ScoutUILanguageResource}}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"
+                                   FontWeight="Bold" FontSize="25" Margin="0,0,12,0" />
+                        </Grid>
+                        <Grid Grid.Column="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="10" />
+                                <RowDefinition Height="35" />
+                                <RowDefinition Height="55" />
+                                <RowDefinition Height="35" />
+                                <RowDefinition Height="55" />
+                                <RowDefinition Height="55" />
+                                <RowDefinition Height="*" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="10" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+<!--
+                            <Label Name="lblProbe"
+                                   Content="{Binding ResourceKeys[LID_Label_Probe], Source={StaticResource ScoutUILanguageResource}}"
+                                   Padding="0"
+                                   ContentStringFormat="{}{0} :"
+                                   HorizontalAlignment="Left" Grid.Row="1" Grid.Column="1"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
+-->
+                            <Grid Grid.Row="2" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+<!--
+                                <Button Name="btnUp" Grid.Column="0" Height="38" Width="38"
+                                        Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Left"
+                                        Command="{Binding ProbUpDownCommand}"
+                                        CommandParameter="Top"
+                                        Focusable="True" TabIndex="9"
+                                        IsEnabled="{Binding IsProbeBtnEnabled}">
+                                    <Path x:Name="ArrowUpWithLine" Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="19" Height="19"
+                                          Data="{StaticResource ArrowUpWithLine}" />
+                                </Button>
+                                <Button Name="btnArrowUp" Grid.Column="1" Height="38" Width="38"
+                                        Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Left"
+                                        Command="{Binding ProbUpDownCommand}"
+                                        CommandParameter="StepUp"
+                                        Focusable="True" TabIndex="10"
+                                        IsEnabled="{Binding IsProbeBtnEnabled}">
+                                    <Path x:Name="ArrowUp" Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="17" Height="16"
+                                          Data="{StaticResource ArrowUp}" />
+                                </Button>
+                                <Button Name="btnArrowDown" Height="38" Grid.Column="2" Width="38"
+                                        Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Left"
+                                        Command="{Binding ProbUpDownCommand}" CommandParameter="StepDown"
+                                        Focusable="True" TabIndex="11"
+                                        IsEnabled="{Binding IsProbeBtnEnabled}">
+                                    <Path x:Name="ArrowDown" Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="17" Height="16"
+                                          Data="{StaticResource ArrowDown}" />
+                                </Button>
+                                <Button Name="btnArrowDownWithLine" Grid.Column="3" Height="38" Width="38"
+                                        Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Left"
+                                        Command="{Binding ProbUpDownCommand}" CommandParameter="Bottom"
+                                        Focusable="True" TabIndex="12"
+                                        IsEnabled="{Binding IsProbeBtnEnabled}">
+                                    <Path x:Name="ArrowDownWithLine" Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="19" Height="19"
+                                          Data="{StaticResource ArrowDownWithLine}" />
+                                </Button>
+-->
+                            </Grid>
+                            <Label Name="lblVolume" Padding="0"
+                                   Content="{Binding ResourceKeys[LID_MSGBOX_Volume], Source={StaticResource ScoutUILanguageResource}}"
+                                   ContentStringFormat="{}{0} :"
+                                   Grid.Row="3" Grid.Column="1" HorizontalAlignment="Left"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
+                            <StackPanel Grid.Row="4" Grid.Column="1" Orientation="Horizontal">
+                                <TextBox Width="90"
+                                         Validation.ErrorTemplate="{x:Null}"
+                                         Text="{Binding ProbeValue, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"
+                                         MaxLength="4" Foreground="{DynamicResource GenericVeryDark}"
+                                         validate:ControlValidationHelper.AllowOnlyNumeric="True"
+                                         Style="{StaticResource TextBoxLoginRunStyle}" HorizontalAlignment="Right"
+                                         Focusable="True" TabIndex="13"
+                                         VerticalAlignment="Top" />
+                            </StackPanel>
+                            <Grid Grid.Row="5" Grid.Column="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" Name="btnAspirate" Command="{Binding RepetitionSectionCommand}"
+                                        CommandParameter="Aspirate" IsEnabled="{Binding IsAspirateActive,Mode=TwoWay}"
+                                        Width="100" Focusable="True" TabIndex="14"
+                                        Content="{Binding ResourceKeys[LID_ButtonContent_Aspirate], Source={StaticResource ScoutUILanguageResource}}"
+                                        Style="{StaticResource LowLevelButtonStyle}" HorizontalAlignment="Left" />
+                                <Button Grid.Column="1" Name="btnDispense" Command="{Binding RepetitionSectionCommand}"
+                                        CommandParameter="Dispense" IsEnabled="{Binding IsDispenseActive,Mode=TwoWay}"
+                                        Width="100"  Focusable="True" TabIndex="15"
+                                        Content="{Binding ResourceKeys[LID_ButtonContent_Dispense], Source={StaticResource ScoutUILanguageResource}}"
+                                        Style="{StaticResource LowLevelButtonStyle}" HorizontalAlignment="Right" />
+                            </Grid>
+                        </Grid>
+                    </Grid>
+                </Grid>
+<!--
+                <GroupBox Grid.Column="2" Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}">
+                    <GroupBox.Header>
+                        <TextBlock HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                                   FontSize="16" Foreground="{DynamicResource GenericVeryLight}" TextWrapping="WrapWithOverflow"
+                          Text="{Binding ResourceKeys[LID_Label_ReagentProbeArm], Source={StaticResource ScoutUILanguageResource}}" >
+                        </TextBlock>
+                    </GroupBox.Header>
+                    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,48,0,0">
+                        <Button Height="38" Width="38"
+                                Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Left"
+                                Focusable="True" TabIndex="16"
+                                Command="{Binding ReagentArmMoveCommand}" CommandParameter="Up">
+                            <Path Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="19" Height="19"
+                                  Data="{StaticResource ArrowUpWithLine}" />
+                        </Button>
+                        <Button Height="38" Width="38" Margin="20,0,0,0"
+                                Style="{StaticResource RoundButtonDashBoardStyle}" HorizontalAlignment="Left"
+                                Focusable="True" TabIndex="17"
+                                Command="{Binding ReagentArmMoveCommand}" CommandParameter="Down">
+                            <Path Fill="{DynamicResource GenericVeryLight}" Stretch="Fill" Width="19" Height="19"
+                                  Data="{StaticResource ArrowDownWithLine}" />
+                        </Button>
+                    </StackPanel>
+                </GroupBox>
+-->
+<!--
+                <GroupBox Grid.Column="3" 
+                    Header="{Binding ResourceKeys[LID_Label_InitializeSampleDeck], Source={StaticResource ScoutUILanguageResource}}"
+                          Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
+                          HorizontalAlignment="Stretch"
+                          VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="50" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+	                    <Button Grid.Row="0" Command="{Binding RepetitionSectionCommand}" Width="100"
+	                            IsEnabled="{Binding IsRepetitionRunning,Mode=TwoWay}"
+	                            HorizontalAlignment="Left" Margin="20,0,0,0"
+	                            CommandParameter="Initialize"
+	                            Content="{Binding ResourceKeys[LID_ButtonContent_Initialize], Source={StaticResource ScoutUILanguageResource}}"
+	                            Focusable="True" TabIndex="18"
+	                            Style="{StaticResource LowLevelButtonStyle}" />
+
+                        <Grid Grid.Row="1">
+	                        <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="60*" />
+                            </Grid.ColumnDefinitions>
+
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                     Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                     Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                     Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Label FontSize="16" Foreground="{DynamicResource GenericVeryLight}" HorizontalAlignment="Right"
+                                   VerticalAlignment="Center" FontWeight="Normal" ContentStringFormat="{}{0} :">
+                                <Label.Style>
+                                    <Style BasedOn="{StaticResource ReportCommonLabelStyle }" TargetType="Label">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                                <Setter Property="Content"
+                                                        Value="{Binding ResourceKeys[LID_Label_Carousel], Source={StaticResource ScoutUILanguageResource}}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
+                                                <Setter Property="Content"
+                                                        Value="{Binding ResourceKeys[LID_Label_Carousel], Source={StaticResource ScoutUILanguageResource}}" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                                <Setter Property="Content"
+                                                        Value="{Binding ResourceKeys[LID_Label_96Well], Source={StaticResource ScoutUILanguageResource}}" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+                            </Label>
+
+                            <ComboBox Name="sampleRowPosition" Grid.Column="1" Height="30" HorizontalAlignment="Left"
+                                      ItemsSource="{Binding GridColumnPositionList}" DisplayMemberPath="Value"
+                                      SelectedValuePath="Key"
+                                      SelectedItem="{Binding Path= SelectedColumnPosition,Mode=TwoWay}">
+                                <ComboBox.Style>
+                                    <Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                                <Setter Property="Width" Value="0" />
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                                <Setter Property="Width" Value="55" />
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                            </ComboBox>
+
+                            <ComboBox Name="sampleColumnPosition" Grid.Column="2" Width="55" Height="30" HorizontalAlignment="Left"
+                                      ItemsSource="{Binding GridRowPositionList}" DisplayMemberPath="Value"
+                                      SelectedItem="{Binding Path= SelectedGridRowPosition,Mode=TwoWay}">
+                                <ComboBox.Style>
+                                    <Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+
+                            </ComboBox>
+                            <ComboBox Name="CarouselColumnPosition" Grid.Column="2" Width="55" Height="30" HorizontalAlignment="Left"
+                                      ItemsSource="{Binding PositionList}" DisplayMemberPath="Value"
+                                      TabIndex="19"
+                                      SelectedItem="{Binding Path= SelectedPosition,Mode=TwoWay}">
+                                <ComboBox.Style>
+                                    <Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                         Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                            </ComboBox>                  
+
+                        </Grid>
+                        <Grid Grid.Row="2">
+
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                     Value="{x:Static enum:eSensorStatus.ssStateActive}">
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                     Value="{x:Static enum:eSensorStatus.ssStateInactive}">
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                                     Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Label Grid.Column="1"
+                                   Content="{Binding ResourceKeys[LID_Label_GoToPosition], Source={StaticResource ScoutUILanguageResource}}"
+                                   ContentStringFormat="{}{0} :" HorizontalAlignment="Right" VerticalAlignment="Center"
+                                   FontWeight="Normal" Foreground="{DynamicResource GenericVeryLight}" />
+                            <Button Grid.Column="2" Height="35" Width="35"
+                                    Style="{StaticResource RoundButtonDashBoardStyle}"
+                                    Focusable="True" TabIndex="20"
+                                    Command="{Binding CarouselPositionCommand}" VerticalAlignment="Center">
+                                <Image Source="{StaticResource NextSource}" />
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+-->
+            </Grid>
+        </Grid>
+    </Grid>
+</UserControl>

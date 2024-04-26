@@ -1,0 +1,54 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+	<PropertyGroup>
+		<Platform Condition=" '$(Platform)' == '' ">x64</Platform>
+		<ProjectGuid>{14911C20-34AC-4C8D-854E-9F5E81BDF9DA}</ProjectGuid>
+		<TargetFramework>net48</TargetFramework>
+		<AssemblyTitle>TestSupport</AssemblyTitle>
+		<Product>TestSupport</Product>
+		<Copyright>Copyright ©  2020</Copyright>
+		<OutputPath>bin\$(Configuration)</OutputPath>
+		<OutputType>Library</OutputType>
+		<AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+		<GenerateBindingRedirectsOutputType>true</GenerateBindingRedirectsOutputType>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+		<AppendRuntimeIdentifierToOutputPath>false</AppendRuntimeIdentifierToOutputPath>
+		<NoWarn>NU1605</NoWarn>
+		<Platforms>AnyCPU;x64</Platforms>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x64' ">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x64' ">
+		<DebugType>pdbonly</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+	  <DefineConstants>DEBUG;TRACE</DefineConstants>
+	  <PlatformTarget>x64</PlatformTarget>
+	</PropertyGroup>
+	<ItemGroup>
+		<PackageReference Include="Moq" Version="4.16.0" />
+		<PackageReference Include="NUnit" Version="3.13.1" />
+        <PackageReference Include="Ninject.Extensions.Logging" Version="3.3.0" />
+		<PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.5.2" />
+	</ItemGroup>
+	<ItemGroup>
+		<Reference Include="GrpcClient">
+		  <HintPath>..\target\dependencies\lib\GrpcClient.dll</HintPath>
+		</Reference>
+		<Reference Include="Microsoft.CSharp" />
+		<Reference Include="System.Net.Http" />
+		<Reference Include="WindowsBase" />
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Remove="obj\x64\Debug\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+		<Compile Remove="obj\x64\Release\.NETFramework,Version=v4.8.AssemblyAttributes.cs" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\ScoutOpcUa\ScoutOpcUa.csproj" />
+		<ProjectReference Include="..\ScoutViewModels\ScoutViewModels.csproj" />
+	</ItemGroup>
+</Project>

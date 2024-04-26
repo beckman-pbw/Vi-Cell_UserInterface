@@ -1,0 +1,39 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/ResourceDictionaries/Brushes/SolidColorBrushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="ServiceTabItemStyle" TargetType="TabItem">
+        <Setter Property="FontSize" Value="24" />
+        <Setter Property="FontWeight" Value="Regular" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TabItem">
+                    <Grid Cursor="Hand" Height="74" Margin="5,2,0,0">
+                        <Border Name="container" Background="{StaticResource Level3Background}" Width="168" Margin="5,2,0,5" Padding="0" BorderThickness="0" CornerRadius="8" />
+                        <TextBlock TextWrapping="Wrap" Width="168" Height="auto" TextAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding Header}" Padding="15,0,0,0" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsSelected" Value="True">
+                            <Setter Property="FontSize" Value="24" />
+                            <Setter Property="FontWeight" Value="Bold" />
+                            <Setter TargetName="container" Property="Opacity" Value=".7" />
+                            <Setter Property="Background" Value="{StaticResource Level3Background}" />
+                            <Setter TargetName="container" Property="Margin" Value="5,2,0,0" />
+                            <Setter TargetName="container" Property="CornerRadius" Value="8,8,0,0" />
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True" />
+                                <Condition Property="IsSelected" Value="False" />
+                            </MultiTrigger.Conditions>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

@@ -1,0 +1,64 @@
+﻿<UserControl x:Class="ScoutUI.Views.ucCommon.CompleteSampleView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Name="CompleteSampleViewControl" Height="570">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="550" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10" />
+            <ColumnDefinition Width="550" />
+            <ColumnDefinition Width="10" />
+        </Grid.ColumnDefinitions>
+
+        <DataGrid x:Name="dgCompleteSample" ItemsSource="{Binding }" Style="{StaticResource DataGridStyle}"
+                  SelectionUnit="FullRow" SelectionMode="Single"
+                  CanUserAddRows="False" MaxHeight="540"
+                  EnableRowVirtualization="false" EnableColumnVirtualization="false"
+                  AutoGenerateColumns="False" Grid.Column="1" Grid.Row="1">
+
+            <DataGrid.Columns>
+                <DataGridTemplateColumn Width="100"
+                                        Header="{Binding ResourceKeys[LID_QMgmtHEADER_SampleId], Source={StaticResource ScoutUILanguageResource}}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate />
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="90"
+                                        Header="{Binding ResourceKeys[LID_UsersLabel_CellType], Source={StaticResource ScoutUILanguageResource}}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate />
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="90"
+                                        Header="{Binding ResourceKeys[LID_GraphLabel_Count], Source={StaticResource ScoutUILanguageResource}}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate />
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+
+                <DataGridTemplateColumn Width="110"
+                                        Header="{Binding ResourceKeys[LID_Label_ViabilityPercentage], Source={StaticResource ScoutUILanguageResource}}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate />
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+                <DataGridTemplateColumn Width="130"
+                                        Header="{Binding ResourceKeys[LID_CheckBox_ViableCells], Source={StaticResource ScoutUILanguageResource}}">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate />
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+            <DataGrid.Effect>
+                <DropShadowEffect Opacity=".2" ShadowDepth="10" />
+            </DataGrid.Effect>
+        </DataGrid>
+    </Grid>
+</UserControl>

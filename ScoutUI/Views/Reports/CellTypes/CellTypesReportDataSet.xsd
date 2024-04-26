@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="CellTypesReportDataSet" targetNamespace="http://tempuri.org/CellTypesReportDataSet.xsd" xmlns:mstns="http://tempuri.org/CellTypesReportDataSet.xsd" xmlns="http://tempuri.org/CellTypesReportDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="CellTypesReportDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="CellTypesReportDataSet" msprop:Generator_UserDSName="CellTypesReportDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="CellTypesReportTable" msprop:Generator_TableClassName="CellTypesReportTableDataTable" msprop:Generator_TableVarName="tableCellTypesReportTable" msprop:Generator_TablePropName="CellTypesReportTable" msprop:Generator_RowDeletingName="CellTypesReportTableRowDeleting" msprop:Generator_RowChangingName="CellTypesReportTableRowChanging" msprop:Generator_RowEvHandlerName="CellTypesReportTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CellTypesReportTableRowDeleted" msprop:Generator_UserTableName="CellTypesReportTable" msprop:Generator_RowChangedName="CellTypesReportTableRowChanged" msprop:Generator_RowEvArgName="CellTypesReportTableRowChangeEvent" msprop:Generator_RowClassName="CellTypesReportTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CellType" msprop:Generator_ColumnVarNameInTable="columnCellType" msprop:Generator_ColumnPropNameInRow="CellType" msprop:Generator_ColumnPropNameInTable="CellTypeColumn" msprop:Generator_UserColumnName="CellType" type="xs:string" minOccurs="0" />
+              <xs:element name="MinDia" msprop:Generator_ColumnVarNameInTable="columnMinDia" msprop:Generator_ColumnPropNameInRow="MinDia" msprop:Generator_ColumnPropNameInTable="MinDiaColumn" msprop:Generator_UserColumnName="MinDia" type="xs:string" minOccurs="0" />
+              <xs:element name="MaxDia" msprop:Generator_ColumnVarNameInTable="columnMaxDia" msprop:Generator_ColumnPropNameInRow="MaxDia" msprop:Generator_ColumnPropNameInTable="MaxDiaColumn" msprop:Generator_UserColumnName="MaxDia" type="xs:string" minOccurs="0" />
+              <xs:element name="Images" msprop:Generator_ColumnVarNameInTable="columnImages" msprop:Generator_ColumnPropNameInRow="Images" msprop:Generator_ColumnPropNameInTable="ImagesColumn" msprop:Generator_UserColumnName="Images" type="xs:string" minOccurs="0" />
+              <xs:element name="CellSharp" msprop:Generator_ColumnVarNameInTable="columnCellSharp" msprop:Generator_ColumnPropNameInRow="CellSharp" msprop:Generator_ColumnPropNameInTable="CellSharpColumn" msprop:Generator_UserColumnName="CellSharp" type="xs:string" minOccurs="0" />
+              <xs:element name="MinCircularity" msprop:Generator_ColumnVarNameInTable="columnMinCircularity" msprop:Generator_ColumnPropNameInRow="MinCircularity" msprop:Generator_ColumnPropNameInTable="MinCircularityColumn" msprop:Generator_UserColumnName="MinCircularity" type="xs:string" minOccurs="0" />
+              <xs:element name="AppTypes" msprop:Generator_ColumnVarNameInTable="columnAppTypes" msprop:Generator_ColumnPropNameInRow="AppTypes" msprop:Generator_ColumnPropNameInTable="AppTypesColumn" msprop:Generator_UserColumnName="AppTypes" type="xs:string" minOccurs="0" />
+              <xs:element name="DeclusterDegree" msprop:Generator_ColumnVarNameInTable="columnDeclusterDegree" msprop:Generator_ColumnPropNameInRow="DeclusterDegree" msprop:Generator_ColumnPropNameInTable="DeclusterDegreeColumn" msprop:Generator_UserColumnName="DeclusterDegree" type="xs:string" minOccurs="0" />
+              <xs:element name="SpotBrightness" msprop:Generator_ColumnVarNameInTable="columnSpotBrightness" msprop:Generator_ColumnPropNameInRow="SpotBrightness" msprop:Generator_ColumnPropNameInTable="SpotBrightnessColumn" msprop:Generator_UserColumnName="SpotBrightness" type="xs:string" minOccurs="0" />
+              <xs:element name="SpotArea" msprop:Generator_ColumnVarNameInTable="columnSpotArea" msprop:Generator_ColumnPropNameInRow="SpotArea" msprop:Generator_ColumnPropNameInTable="SpotAreaColumn" msprop:Generator_UserColumnName="SpotArea" type="xs:string" minOccurs="0" />
+              <xs:element name="Comments" msprop:Generator_ColumnVarNameInTable="columnComments" msprop:Generator_ColumnPropNameInRow="Comments" msprop:Generator_ColumnPropNameInTable="CommentsColumn" msprop:Generator_UserColumnName="Comments" type="xs:string" minOccurs="0" />
+              <xs:element name="AspirationCycles" msprop:Generator_ColumnVarNameInTable="columnAspirationCycles" msprop:Generator_ColumnPropNameInRow="AspirationCycles" msprop:Generator_ColumnPropNameInTable="AspirationCyclesColumn" msprop:Generator_UserColumnName="AspirationCycles" type="xs:string" minOccurs="0" />
+              <xs:element name="MixingCycles" msprop:Generator_ColumnVarNameInTable="columnMixingCycles" msprop:Generator_ColumnPropNameInRow="MixingCycles" msprop:Generator_ColumnPropNameInTable="MixingCyclesColumn" msprop:Generator_UserColumnName="MixingCycles" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="AnalysisTypeDataTable" msprop:Generator_TableClassName="AnalysisTypeDataTableDataTable" msprop:Generator_TableVarName="tableAnalysisTypeDataTable" msprop:Generator_RowChangedName="AnalysisTypeDataTableRowChanged" msprop:Generator_TablePropName="AnalysisTypeDataTable" msprop:Generator_RowDeletingName="AnalysisTypeDataTableRowDeleting" msprop:Generator_RowChangingName="AnalysisTypeDataTableRowChanging" msprop:Generator_RowEvHandlerName="AnalysisTypeDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="AnalysisTypeDataTableRowDeleted" msprop:Generator_RowClassName="AnalysisTypeDataTableRow" msprop:Generator_UserTableName="AnalysisTypeDataTable" msprop:Generator_RowEvArgName="AnalysisTypeDataTableRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="CellType" msprop:Generator_ColumnVarNameInTable="columnCellType" msprop:Generator_ColumnPropNameInRow="CellType" msprop:Generator_ColumnPropNameInTable="CellTypeColumn" msprop:Generator_UserColumnName="CellType" type="xs:string" minOccurs="0" />
+              <xs:element name="AnalysisType" msprop:Generator_ColumnVarNameInTable="columnAnalysisType" msprop:Generator_ColumnPropNameInRow="AnalysisType" msprop:Generator_ColumnPropNameInTable="AnalysisTypeColumn" msprop:Generator_UserColumnName="AnalysisType" type="xs:string" minOccurs="0" />
+              <xs:element name="ViableSportBrightness" msprop:Generator_ColumnVarNameInTable="columnViableSportBrightness" msprop:Generator_ColumnPropNameInRow="ViableSportBrightness" msprop:Generator_ColumnPropNameInTable="ViableSportBrightnessColumn" msprop:Generator_UserColumnName="ViableSportBrightness" type="xs:string" minOccurs="0" />
+              <xs:element name="ViableSportArea" msprop:Generator_ColumnVarNameInTable="columnViableSportArea" msprop:Generator_ColumnPropNameInRow="ViableSportArea" msprop:Generator_ColumnPropNameInTable="ViableSportAreaColumn" msprop:Generator_UserColumnName="ViableSportArea" type="xs:string" minOccurs="0" />
+              <xs:element name="MixingCycles" msprop:Generator_ColumnVarNameInTable="columnMixingCycles" msprop:Generator_ColumnPropNameInRow="MixingCycles" msprop:Generator_ColumnPropNameInTable="MixingCyclesColumn" msprop:Generator_UserColumnName="MixingCycles" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="CellTypeCommonInfoDataTable" msprop:Generator_TableClassName="CellTypeCommonInfoDataTableDataTable" msprop:Generator_TableVarName="tableCellTypeCommonInfoDataTable" msprop:Generator_TablePropName="CellTypeCommonInfoDataTable" msprop:Generator_RowDeletingName="CellTypeCommonInfoDataTableRowDeleting" msprop:Generator_RowChangingName="CellTypeCommonInfoDataTableRowChanging" msprop:Generator_RowEvHandlerName="CellTypeCommonInfoDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="CellTypeCommonInfoDataTableRowDeleted" msprop:Generator_UserTableName="CellTypeCommonInfoDataTable" msprop:Generator_RowChangedName="CellTypeCommonInfoDataTableRowChanged" msprop:Generator_RowEvArgName="CellTypeCommonInfoDataTableRowChangeEvent" msprop:Generator_RowClassName="CellTypeCommonInfoDataTableRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserHeader" msprop:Generator_ColumnVarNameInTable="columnUserHeader" msprop:Generator_ColumnPropNameInRow="UserHeader" msprop:Generator_ColumnPropNameInTable="UserHeaderColumn" msprop:Generator_UserColumnName="UserHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="UserName" msprop:Generator_ColumnVarNameInTable="columnUserName" msprop:Generator_ColumnPropNameInRow="UserName" msprop:Generator_ColumnPropNameInTable="UserNameColumn" msprop:Generator_UserColumnName="UserName" type="xs:string" minOccurs="0" />
+              <xs:element name="AnalysisHeader" msprop:Generator_ColumnVarNameInTable="columnAnalysisHeader" msprop:Generator_ColumnPropNameInRow="AnalysisHeader" msprop:Generator_ColumnPropNameInTable="AnalysisHeaderColumn" msprop:Generator_UserColumnName="AnalysisHeader" type="xs:string" minOccurs="0" />
+              <xs:element name="AnalysisType" msprop:Generator_ColumnVarNameInTable="columnAnalysisType" msprop:Generator_ColumnPropNameInRow="AnalysisType" msprop:Generator_ColumnPropNameInTable="AnalysisTypeColumn" msprop:Generator_UserColumnName="AnalysisType" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,4 @@
+{
+  "PollingIntervalMS": "5000",
+  "servers": [ "\\Instrument\\OPCUaServer\\ViCellOpcUaServer.exe" ]
+}

@@ -1,0 +1,87 @@
+<UserControl x:Class="ScoutUI.Views.Admin.UserControls.SignInView" Name="SignView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="740" d:DesignWidth="1280">
+    <UserControl.Resources>
+        <DataTemplate x:Key="DataTemplateUserList">
+            <TextBlock HorizontalAlignment="Left" Width="150" TextTrimming="CharacterEllipsis" Text="{Binding UserID}" />
+        </DataTemplate>
+    </UserControl.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="60"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1.5*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Image Source="{StaticResource SignInViewImageSource}" Width="800"/>
+
+            </Grid>
+            <Grid Grid.Column="1">
+                <StackPanel Margin="-80,50,0,0" HorizontalAlignment="Center">
+                    <Label Content="{Binding ResourceKeys[LID_Title_ViCellBlu], Source={StaticResource ScoutUILanguageResource}}"
+                               Foreground="{StaticResource Label_Foreground}" FontSize="28" HorizontalAlignment="Center"
+                               FontFamily ="Montserrat Extra" FontWeight="Bold"/>
+                    <Label Content="{Binding ResourceKeys[LID_Label_CellViabilityAnalyzer], Source={StaticResource ScoutUILanguageResource}}"
+                               Foreground="{StaticResource Label_Foreground}" FontSize="14" HorizontalAlignment="Center"
+                               FontFamily ="Montserrat Extra"/>
+                </StackPanel>
+
+                <Grid Margin="-80,-150,0,0"
+                      x:Name="GridSignIn"
+                      Height="340" Width="420" Panel.ZIndex="201">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*" />
+                        <ColumnDefinition Width="1*" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="40" />
+                        <RowDefinition Height="10" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="60" />
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="60" />
+                    </Grid.RowDefinitions>
+                    <TextBox x:Name="txtUserId"
+                             Grid.Row="2"
+                             Grid.ColumnSpan="2"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"
+                             Style="{StaticResource UserIdBox}"
+                             Margin="0,0,0,5" Width="404" Height="50"
+                             IsReadOnly="{Binding UsernameIsLocked, Mode=OneWay, UpdateSourceTrigger=PropertyChanged}" />
+                    <PasswordBox Name="pwdLoginPassword" Grid.Row="4" Grid.ColumnSpan="2" Margin="0,0,0,5"
+                                 controls:PasswordHandler.Attach="True"
+                                 controls:PasswordHandler.Password="{Binding Password,Mode=TwoWay}"
+                                 Style="{StaticResource PasswordLoginRunStyle}">
+                        <PasswordBox.InputBindings>
+                            <KeyBinding Key="Return" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=pwdLoginPassword}" />
+                        </PasswordBox.InputBindings>
+                    </PasswordBox>
+                    <Button Name="btnLogin" Grid.Row="6" Grid.Column="1" Command="{Binding LoginCommand}"
+                            Content="{Binding ResourceKeys[LID_ButtonContent_Go], Source={StaticResource ScoutUILanguageResource}}"
+                            Style="{StaticResource SignRightUserButtonStyle}" IsDefault="True"
+                            CommandParameter="{Binding ElementName=pwdLoginPassword}" />
+                </Grid>
+            </Grid>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Rectangle Grid.ColumnSpan="4" Fill="Orange" Visibility="{Binding IsSystemLocked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+            <TextBlock 
+                Grid.Column="0"
+                Text="{Binding ResourceKeys[LID_Label_AutomationLockEngaged], Source={StaticResource ScoutUILanguageResource}}" 
+                FontSize="36" 
+                FontWeight="Bold" 
+                HorizontalAlignment="Center"
+                Visibility="{Binding IsSystemLocked, Converter={StaticResource BooleanToVisibilityConverter}}"/>
+        </Grid>
+    </Grid>
+</UserControl>
