@@ -959,28 +959,28 @@
 						</configuration>
 					</execution>
 
-					<!-- <execution> -->
-						<!-- <id>compile-Scout</id> -->
-						<!-- <phase>compile</phase> -->
-						<!-- <goals> -->
-							<!-- <goal>exec</goal> -->
-						<!-- </goals> -->
-						<!-- <configuration> -->
-							<!-- <workingDirectory>${project.basedir}</workingDirectory> -->
-							<!-- <executable>${visualstudio.devenv}</executable> -->
-							<!-- <arguments> -->
-								<!-- <argument>ScoutUI.sln</argument> -->
-								<!-- <argument>/p:OutDir=${project.build.directory}\Release\</argument> -->
-								<!-- <argument>/t:rebuild</argument> -->
-								<!-- <argument>/p:Platform=x64</argument> -->
-								<!-- <argument>/p:Configuration=Release</argument> -->
-								<!-- <argument>/restore</argument> -->
-							<!-- </arguments> -->
-							<!-- <successCodes> -->
-								<!-- <successCode>0</successCode> -->
-							<!-- </successCodes> -->
-						<!-- </configuration> -->
-					<!-- </execution> -->
+					<execution>
+						<id>compile-Scout</id>
+						<phase>compile</phase>
+						<goals>
+							<goal>exec</goal>
+						</goals>
+						<configuration>
+							<workingDirectory>${project.basedir}</workingDirectory>
+							<executable>${visualstudio.devenv}</executable>
+							<arguments>
+								<argument>ScoutUI.sln</argument>
+								<argument>/p:OutDir=${project.build.directory}\Release\</argument>
+								<argument>/t:rebuild</argument>
+								<argument>/p:Platform=x64</argument>
+								<argument>/p:Configuration=Release</argument>
+								<argument>/restore</argument>
+							</arguments>
+							<successCodes>
+								<successCode>0</successCode>
+							</successCodes>
+						</configuration>
+					</execution>
 
 					<execution>
 						<id>unit-tests</id>
