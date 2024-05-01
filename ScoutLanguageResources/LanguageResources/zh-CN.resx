@@ -3029,7 +3029,7 @@
   <data name="LID_MSGBOX_QueueManagement_PathError" xml:space="preserve">
     <value>无效路径，请选择正确的路径并导出</value>
   </data>
-	<data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
+  <data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
     <value>导出路径限于 C:\Instrument\Export\ 的子目录</value>
   </data>
   <data name="LID_AdvanceLabel_CSV" xml:space="preserve">
@@ -4190,7 +4190,7 @@
     <value>闲置</value>
   </data>
   <data name="LID_StatusLabel_NightlyClean" xml:space="preserve">
-	<value>Nightly Clean</value>
+    <value>Nightly Clean</value>
   </data>
   <data name="LID_Status_ProcessingImages" xml:space="preserve">
     <value>图像处理中</value>
@@ -4888,5 +4888,17 @@
   </data>
   <data name="LID_CSV_Column_Header" xml:space="preserve">
     <value>COLUMN</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Allied" xml:space="preserve">
+    <value>Beckman 照明 + Allied Vision 相机</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Basler" xml:space="preserve">
+    <value>Beckman 照明 + Basler 相机</value>
+  </data>
+  <data name="LID_Label_Optics_Omicron_Basler" xml:space="preserve">
+    <value>Omicron 照明 + Basler 相机</value>
+  </data>
+  <data name="LID_Label_Optics_Override" xml:space="preserve">
+    <value>光学配置覆盖</value>
   </data>
 </root>

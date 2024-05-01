@@ -3024,7 +3024,7 @@
   <data name="LID_MSGBOX_QueueManagement_PathError" xml:space="preserve">
     <value>無効なパス。エクスポートする適切なパスを選択して下さい。</value>
   </data>
-	<data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
+  <data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
     <value>エクスポートパスはC:\Instrument\Export\のサブディレクトリに制限されています</value>
   </data>
   <data name="LID_AdvanceLabel_CSV" xml:space="preserve">
@@ -4185,7 +4185,7 @@
     <value>アイドル</value>
   </data>
   <data name="LID_StatusLabel_NightlyClean" xml:space="preserve">
-	<value>Nightly Clean</value>
+    <value>Nightly Clean</value>
   </data>
   <data name="LID_Status_ProcessingImages" xml:space="preserve">
     <value>画像処理中</value>
@@ -4883,5 +4883,17 @@
   </data>
   <data name="LID_CSV_Column_Header" xml:space="preserve">
     <value>COLUMN</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Allied" xml:space="preserve">
+    <value>Beckmanイルミネーション + Allied Visionカメラ</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Basler" xml:space="preserve">
+    <value>Beckmanイルミネーション + Baslerカメラ</value>
+  </data>
+  <data name="LID_Label_Optics_Omicron_Basler" xml:space="preserve">
+    <value>Omicronイルミネーション + Baslerカメラ</value>
+  </data>
+  <data name="LID_Label_Optics_Override" xml:space="preserve">
+    <value>光学設定の上書き</value>
   </data>
 </root>

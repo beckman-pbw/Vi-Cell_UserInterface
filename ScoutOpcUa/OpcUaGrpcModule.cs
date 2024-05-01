@@ -400,7 +400,8 @@ namespace GrpcServer
                                        ? string.Empty
                                        : src.CellTypeQcName
                            }
-                           : null));
+                           : null))
+               .ForMember(dest => dest.WashType, opt => opt.MapFrom(src => src.WashType));
         }
 
         private static void MapSampleConfigToSampleEswDomain(IMapperConfigurationExpression cfg)
@@ -430,7 +431,9 @@ namespace GrpcServer
                                : string.Empty))
 
                .ForMember(dest => dest.IsQualityControl, opt =>
-                   opt.MapFrom(src => src.QualityControl != null && !string.IsNullOrEmpty(src.QualityControl.QualityControlName)));
+                   opt.MapFrom(src => src.QualityControl != null && !string.IsNullOrEmpty(src.QualityControl.QualityControlName)))
+
+               .ForMember(dest => dest.WashType, opt => opt.MapFrom(src => src.WashType));
         }
 
         private static void MapSampleSetConfigToSampleSetDomain(IMapperConfigurationExpression cfg)

@@ -3029,7 +3029,7 @@
   <data name="LID_MSGBOX_QueueManagement_PathError" xml:space="preserve">
     <value>Chemin d'accès incorrect. Veuillez choisir un chemin d'accès correct pour l'export</value>
   </data>
-	<data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
+  <data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
     <value>Chemin d'exportation limité à un sous-répertoire de C:\Instrument\Export\</value>
   </data>
   <data name="LID_AdvanceLabel_CSV" xml:space="preserve">
@@ -4188,7 +4188,7 @@
     <value>En veille</value>
   </data>
   <data name="LID_StatusLabel_NightlyClean" xml:space="preserve">
-	<value>Nightly Clean</value>
+    <value>Nightly Clean</value>
   </data>
   <data name="LID_Status_ProcessingImages" xml:space="preserve">
     <value>Traitement des images</value>
@@ -4617,7 +4617,7 @@
     <value>Facteur d’ajust. de la concent.</value>
   </data>
   <data name="LID_Label_AdjustmentFactorPercentage" xml:space="preserve">
-    <value>Concentration Adjustment Factor (%)</value>
+    <value>Facteur d'ajustement de la concentration (%)</value>
   </data>
   <data name="LID_ERRMSGBOX_AdjustmentFactorBlank" xml:space="preserve">
     <value>Fact. d’ajust. de la concent. à renseigner. Régler sur {0} pour désact.</value>
@@ -4889,5 +4889,17 @@ Formule suivante recommandée pour trouver la valeur cherchée.</value>
   </data>
   <data name="LID_CSV_Column_Header" xml:space="preserve">
     <value>COLUMN</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Allied" xml:space="preserve">
+    <value>Éclairage Beckman + Caméra Allied Vision</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Basler" xml:space="preserve">
+    <value>Éclairage Beckman + Caméra Basler</value>
+  </data>
+  <data name="LID_Label_Optics_Omicron_Basler" xml:space="preserve">
+    <value>Éclairage Omicron + Caméra Basler</value>
+  </data>
+  <data name="LID_Label_Optics_Override" xml:space="preserve">
+    <value>Dépassement de la configuration optique</value>
   </data>
 </root>

@@ -3029,7 +3029,7 @@
   <data name="LID_MSGBOX_QueueManagement_PathError" xml:space="preserve">
     <value>Ruta no válida. Por favor, elija ruta adecuada exp</value>
   </data>
-	<data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
+  <data name="LID_MSGBOX_ExportPathError" xml:space="preserve">
     <value>Ruta de exportación limitada a un subdirectorio de C:\Instrument\Export\</value>
   </data>
   <data name="LID_AdvanceLabel_CSV" xml:space="preserve">
@@ -4190,7 +4190,7 @@
     <value>Inactivo</value>
   </data>
   <data name="LID_StatusLabel_NightlyClean" xml:space="preserve">
-	<value>Nightly Clean</value>
+    <value>Nightly Clean</value>
   </data>
   <data name="LID_Status_ProcessingImages" xml:space="preserve">
     <value>Procesando imágenes</value>

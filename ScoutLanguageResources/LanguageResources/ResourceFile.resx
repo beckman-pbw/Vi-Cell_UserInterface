@@ -3320,11 +3320,11 @@ Do you want to continue?</value>
   <data name="LID_API_SystemErrorCode_Failure_GeneralPopulationinvalid" xml:space="preserve">
     <value>General Population invalid</value>
   </data>
-  <data name="LID_API_SystemErrorCode_Failure_HardwareFault" xml:space="preserve">
-    <value>Hardware Fault</value>
-  </data>
   <data name="LID_API_SystemErrorCode_Failure_Hardwareerror" xml:space="preserve">
     <value>Hardware error</value>
+  </data>
+  <data name="LID_API_SystemErrorCode_Failure_HardwareFault" xml:space="preserve">
+    <value>Hardware Fault</value>
   </data>
   <data name="LID_API_SystemErrorCode_Failure_Hardwarehealth" xml:space="preserve">
     <value>Hardware health</value>
@@ -3377,8 +3377,8 @@ Do you want to continue?</value>
   <data name="LID_API_SystemErrorCode_Failure_LogicError" xml:space="preserve">
     <value>Logic Error</value>
   </data>
-  <data name="LID_API_SystemErrorCode_Failure_Logicerror" xml:space="preserve">
-    <value>Logic error</value>
+  <data name="LID_API_SystemErrorCode_Failure_LogicError" xml:space="preserve">
+    <value>Logic Error</value>
   </data>
   <data name="LID_API_SystemErrorCode_Failure_Motordrivererror" xml:space="preserve">
     <value>Motor driver error</value>
