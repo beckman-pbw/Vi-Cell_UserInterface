@@ -112,6 +112,17 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
             }
         }
 
+        public bool IsOpticsAlliedChecked
+        {
+            get { return GetProperty<bool>(); }
+            set
+            {
+                if(value == true)
+                    SetDesiredOpticsSelection(OpticalHardwareConfig.BECKMAN_ALLIED);
+                SetProperty(value);
+            }
+        }
+
         private void SetDesiredOpticsSelection(OpticalHardwareConfig type)
         {
             _desiredOpticsSelection = type;

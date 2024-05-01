@@ -75,9 +75,8 @@ namespace ExportManager
 
             _orExportOffline = new OrExportOffline(this, OrExportOffline.kORTHO_ID_MASK, _ldExport);
             _orUserExportCsv = new OrExportCsv(this, OrExportCsv.kORTHO_ID_MASK);
-            _orUserExportCsv.ExportDelayMs = kUSER_CSV_EXPORT_DELAY; // Slow down the export until auto-export details uses this too
-            
             _orSchedExportCsv = new OrExportCsv(this, OrExportCsv.kORTHO_ID_MASK + 1);
+            _orUserExportCsv.ExportDelayMs = kUSER_CSV_EXPORT_DELAY; // Slow down the export until auto-export details uses this too
 
             _orSchedExportLogs = new OrExportLogs(this, OrExportLogs.kORTHO_ID_MASK, _ldDelete);
             _orDeleteRecords = new OrDeleteRecords(this, OrDeleteRecords.kORTHO_ID_MASK, _ldDelete);
@@ -293,7 +292,7 @@ namespace ExportManager
                 : base(PrivateEvIds.iOfflineDone, orthoId, status, outFile, details) { }
         }
 
-		// **********************************************************************
+        // **********************************************************************
         internal class OfflineExportStatusIndEv : BPrivateEvent
         {
             public enum ReqStatus : UInt32

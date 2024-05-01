@@ -34,7 +34,7 @@ namespace ScoutModels
             _subscribedToCleanFluidicsStatus = false;
         }
 
-		protected override void DisposeUnmanaged()
+        protected override void DisposeUnmanaged()
         {
             UnsubscribeFromFlowCellDecontaminateStatus();
             UnsubscribeFromFlowCellFlushStatus();
@@ -61,7 +61,7 @@ namespace ScoutModels
         public event EventHandler<ApiEventArgs<eFlushFlowCellState>> CleanFluidicsStateChanged;
         public event EventHandler<ApiEventArgs<ePurgeReagentLinesState>> PurgeReagentStateChanged;
 
-		private bool _subscribedToReagentUnloadStatus;
+        private bool _subscribedToReagentUnloadStatus;
         private bool _subscribedToReagentUnloadComplete;
         private bool _subscribedToReagentLoadStatus;
         private bool _subscribedToReagentLoadComplete;
@@ -71,8 +71,7 @@ namespace ScoutModels
         private bool _subscribedToCleanFluidicsStatus;
         private bool _subscribedToPurgeReagentLines;
 
-
-		public string PartNumber
+        public string PartNumber
         {
             get { return GetProperty<string>(); }
             set { SetProperty(value); }
@@ -169,10 +168,10 @@ namespace ScoutModels
 	        if (e.Arg1 == ePurgeReagentLinesState.dprl_Completed || e.Arg1 == ePurgeReagentLinesState.dprl_Failed)
 	        {
 		        UnsubscribeFromPurgeReagentLines();
-	        }
+            }
         }
 
-		private void HandleLoadCompleted(object sender, ApiEventArgs<ReagentLoadSequence> e)
+        private void HandleLoadCompleted(object sender, ApiEventArgs<ReagentLoadSequence> e)
         {
             LoadCompleted?.Invoke(this, e);
             // Is unsubscribe appropriate?
@@ -686,7 +685,7 @@ namespace ScoutModels
             return hawkeyeError;
         }
 
-        [MustUseReturnValue("Use HawkeyeError")]
+        [MustUseReturnValue("Use HawkeyeError")] 
         public virtual HawkeyeError CancelDecontaminateFlowCell()
         {
             var hawkeyeError = HawkeyeCoreAPI.Reagent.CancelDecontaminateFlowCellAPI();
@@ -717,8 +716,8 @@ namespace ScoutModels
 	        {
 		        SubscribeToFlowCellDecontaminateStatus();
 		        var apiCommand = new StartDecontaminateFlowCell();
-		        return apiCommand.Invoke();
-	        }
+            return apiCommand.Invoke();
+        }
 	        catch (Exception)
 	        {
 		        UnsubscribeFromFlowCellDecontaminateStatus();
@@ -726,39 +725,39 @@ namespace ScoutModels
 	        }
         }
 
-        [MustUseReturnValue("Use HawkeyeError")]
+        [MustUseReturnValue("Use HawkeyeError")] 
         public HawkeyeError StartFlushFlowCell()
         {
-	        try
-	        {
-		        SubscribeToFlowCellFlushStatus();
-		        var apiCommand = new StartFlushFlowCell();
-		        return apiCommand.Invoke();
-	        }
-	        catch (Exception)
-	        {
-		        UnsubscribeFromFlowCellFlushStatus();
-		        throw;
-	        }
+            try
+            {
+                SubscribeToFlowCellFlushStatus();
+                var apiCommand = new StartFlushFlowCell();
+                return apiCommand.Invoke();
+            }
+            catch (Exception)
+            {
+                UnsubscribeFromFlowCellFlushStatus();
+                throw;
+            }
         }
 
         [MustUseReturnValue("Use HawkeyeError")]
         public HawkeyeError StartPrimeReagentLines()
         {
-	        try
-	        {
+            try
+            {
 		        SubscribeToPrimeReagentLines();
 		        var apiCommand = new StartPrimeReagentLines();
-		        return apiCommand.Invoke();
-	        }
-			catch (Exception)
-	        {
+                return apiCommand.Invoke();
+            }
+            catch (Exception)
+            {
 		        UnsubscribeFromPrimeReagentLines();
-		        throw;
-	        }
+                throw;
+            }
         }
 
-		[MustUseReturnValue("Use HawkeyeError")]
+        [MustUseReturnValue("Use HawkeyeError")]
         public HawkeyeError StartCleanFluidics()
         {
 	        try
@@ -771,7 +770,7 @@ namespace ScoutModels
 	        {
 		        UnsubscribeFromFlowCellFlushStatus();
 		        throw;
-	        }
+    	    }
         }
 
         [MustUseReturnValue("Use HawkeyeError")]
@@ -792,5 +791,5 @@ namespace ScoutModels
 
 	#endregion
 
-	}
+    }
 }

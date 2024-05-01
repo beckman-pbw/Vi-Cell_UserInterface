@@ -105,7 +105,7 @@ namespace ScoutDomains
             }
         }
 
-		public bool NotExpired => DateTime.Compare(ExpirationDate.Date, DateTime.Now.Date) != -1;
+        public bool NotExpired => DateTime.Compare(ExpirationDate.Date, DateTime.Now.Date) != -1;
 
         #endregion
 

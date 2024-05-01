@@ -451,7 +451,7 @@ namespace ExportManager
                                 {
                                     _currentRequest.ProgressCB(HawkeyeError.eNotPermittedAtThisTime, new uuidDLL(), 100);
                                 }
-                                ErrorThis("ST_CollectMetadata: Private. pExportOffline_Status: " + stev.Status.ToString() + " ^iReset");
+                                ErrorThis("ST_WaitForStartOk Private pExportOffline_Status: " + stev.Status.ToString() + " ^iReset");
                                 Owner.PostInternalEvent((uint)PrivateEvIds.iReset);
                                 return null;
                             }

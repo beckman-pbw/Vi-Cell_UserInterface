@@ -52,7 +52,7 @@ namespace GrpcServer
         private readonly IAutomationSettingsService _automationSettingsService;
         private readonly IMaintenanceService _maintenanceService;
 
-		private bool _carouselIsInstalled;
+        private bool _carouselIsInstalled;
 
         public ScoutOpcUaGrpcService(GrpcClientManager clientManager, ILogger logger, ILockManager lockManager,
             ISampleResultsManager sampleResultsManager, ISampleProcessingService sampleProcessingService,
@@ -82,6 +82,7 @@ namespace GrpcServer
 	#region OPC Methods
 
         [RequiresAutomationLock(LockRequirements.RequiresUnlocked)]
+        [InstrumentState(new[] { SystemStatus.Idle, SystemStatus.Stopped })]
         public override Task<VcbResultRequestLock> RequestLock(RequestRequestLock request, ServerCallContext context)
         {
             _logger.Info($"Received request: {nameof(RequestLock)}");
@@ -118,6 +119,16 @@ namespace GrpcServer
 
         [MustOwnLock]
         [RequiresAutomationLock]
+        [InstrumentState(new[]
+        { 
+            // don't allow during Pausing, or Paused states
+            SystemStatus.Idle,
+            SystemStatus.ProcessingSample,
+            SystemStatus.Stopping,
+            SystemStatus.Stopped,
+            SystemStatus.Faulted,
+            SystemStatus.SearchingTube
+        })]
         public override Task<VcbResultReleaseLock> ReleaseLock(RequestReleaseLock request, ServerCallContext context)
         {
             _logger.Info($"Received request: {nameof(ReleaseLock)}");
@@ -923,7 +934,7 @@ namespace GrpcServer
 
 	#region OPC Event Subscriptions
 
-		private static GrpcClient _myClient = null;
+        private static GrpcClient _myClient = null;
 
         public override Task SubscribeLockState(RegistrationRequest request, IServerStreamWriter<LockStateChangedEvent> responseStream, ServerCallContext context)
         {

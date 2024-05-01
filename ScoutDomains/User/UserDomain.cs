@@ -42,7 +42,9 @@ namespace ScoutDomains.Analysis
         public List<AnalysisDomain> AssignedApplicationTypes { get; set; }
         public string Comments { get; set; }
         public string Email { get; set; }
-        private bool IsImmuneToPasswordExpiration => RoleID.Equals(UserPermissionLevel.eService) || UserID.Equals(ApplicationConstants.SilentAdmin);
+        //// Leave for future reference or use
+        //private bool IsImmuneToPasswordExpiration => RoleID.Equals(UserPermissionLevel.eService) || UserID.Equals(ApplicationConstants.SilentAdmin) || UserID.Equals(ApplicationConstants.AutomationClient) || UserID.Equals(ApplicationConstants.ServiceAdmin);
+        private bool IsImmuneToPasswordExpiration => RoleID.Equals(UserPermissionLevel.eService) || UserID.Equals(ApplicationConstants.SilentAdmin) || UserID.Equals(ApplicationConstants.AutomationClient);
         public bool IsChangePasswordEnable => !string.IsNullOrWhiteSpace(NewPassword) || !string.IsNullOrWhiteSpace(OldPassword) || !string.IsNullOrEmpty(ConfirmPassword);
 
         public UInt32 DisplayDigits { get; set; } = 2;

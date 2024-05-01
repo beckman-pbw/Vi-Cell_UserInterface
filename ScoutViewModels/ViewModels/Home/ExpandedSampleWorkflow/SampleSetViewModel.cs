@@ -570,7 +570,10 @@ namespace ScoutViewModels.ViewModels.ExpandedSampleWorkflow
             return IsSecurityTurnedOn &&
                    SelectedSample != null &&
                    SelectedSample.SampleStatus == SampleStatus.Completed &&
-                   !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceUser);
+                   !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceUser) &&
+                   //// Leave for future reference or use
+                   //!LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceAdmin) &&
+                   !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.AutomationClient);
         }
 
         private void PerformSignSample()

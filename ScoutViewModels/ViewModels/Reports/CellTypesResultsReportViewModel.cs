@@ -229,6 +229,15 @@ namespace ScoutViewModels.ViewModels.Reports
                     UserList.Add(new UserDomain { UserID = ApplicationConstants.SilentAdmin });
                     SelectedUser = UserList.FirstOrDefault(a => a.UserID.Equals(ApplicationConstants.SilentAdmin));
                     break;
+                case ApplicationConstants.AutomationClient:
+                    UserList.Add(new UserDomain { UserID = ApplicationConstants.AutomationClient });
+                    SelectedUser = UserList.FirstOrDefault(a => a.UserID.Equals(ApplicationConstants.AutomationClient));
+                    break;
+                //// Leave for future reference or use
+                //case ApplicationConstants.ServiceAdmin:
+                //    UserList.Add(new UserDomain { UserID = ApplicationConstants.ServiceAdmin });
+                //    SelectedUser = UserList.FirstOrDefault(a => a.UserID.Equals(ApplicationConstants.ServiceAdmin));
+                //    break;
                 default:
                     SelectedUser = UserList.FirstOrDefault(a => a.UserID.Equals(LoggedInUser.CurrentUserId));
                     break;

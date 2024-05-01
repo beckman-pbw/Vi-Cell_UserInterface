@@ -679,7 +679,7 @@ namespace ScoutModels
             var systemResourceKey = string.Empty;
             var subsystemResourceKey = string.Empty;
             var instanceResourceKey = string.Empty;
-            var failureModeResourceKey = string.Empty; 
+            var failureModeResourceKey = string.Empty;
             var cellHealthErrorCodeKey = string.Empty;
 
             _errorLogService.SystemErrorCodeToExpandedResourceStringsAPI(

@@ -582,7 +582,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
         {
             try
             {
-				_userCancelled = true;
+                _userCancelled = true;
                 var setFocusCancel = _setFocusModel.svc_CameraAutoFocus_FocusAcceptance(eAutofocusCompletion.afc_Cancel);
                 if (setFocusCancel.Equals(HawkeyeError.eSuccess))
                 {

@@ -24,9 +24,9 @@ namespace ScoutModels.Interfaces
         IObservable <ErrorStatusType> SubscribeErrorStatusCallback();
         void PublishErrorStatusCallback(ErrorStatusType status);
 
-		IObservable<List<CellTypeDomain>> SubscribeToCellTypesCallback();
+        IObservable<List<CellTypeDomain>> SubscribeToCellTypesCallback();
 
-		IObservable<Int32> SubscribeReagentUseRemainingCallback();
+        IObservable<Int32> SubscribeReagentUseRemainingCallback();
         void PublishReagentUseRemainingCallback(Int32 reagentUseRemaining);
 
         IObservable<Int32> SubscribeWasteTubeCapacityCallback();

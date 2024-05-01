@@ -556,6 +556,9 @@ namespace ScoutViewModels.ViewModels.Dialogs
         {
             return IsSecurityTurnedOn &&
                    !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceUser) &&
+                   //// Leave for future reference or use
+                   //!LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceAdmin) &&
+                   !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.AutomationClient) &&
                    !IsTempReanalyzeSuccess;
         }
 

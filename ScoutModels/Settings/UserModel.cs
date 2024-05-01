@@ -109,6 +109,14 @@ namespace ScoutModels.Admin
                 case ApplicationConstants.SilentAdmin:
                     userList.Add(new UserDomain { UserID = ApplicationConstants.SilentAdmin });
                     break;
+                case ApplicationConstants.AutomationClient:
+                    userList.Add(new UserDomain { UserID = ApplicationConstants.AutomationClient });
+                    break;
+                //// Leave for future reference or use
+                //case ApplicationConstants.ServiceAdmin:
+                //    userList.Add(new UserDomain { UserID = ApplicationConstants.ServiceAdmin });
+                //    break;
+
             }
 
             return userList;

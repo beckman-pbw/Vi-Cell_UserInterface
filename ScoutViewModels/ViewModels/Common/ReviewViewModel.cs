@@ -615,7 +615,10 @@ namespace ScoutViewModels.ViewModels.Common
                 var signatureList = ReviewModel.RetrieveSignatureDefinitions();
                 if (signatureList.Any())
                 {
-                    IsSignatureEnable = !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceUser);
+                    IsSignatureEnable = !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceUser) &&
+                                        //// Leave for future reference or use
+                                        //!LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceAdmin) &&
+                                        !LoggedInUser.CurrentUserId.Equals(ApplicationConstants.AutomationClient);
                 }
             }
         }

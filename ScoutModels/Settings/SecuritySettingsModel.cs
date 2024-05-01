@@ -105,8 +105,9 @@ namespace ScoutModels
                 return false;
             }
 
-            if (Convert.ToInt32(value) >= ApplicationConstants.MinimumPasswordExpirationDays &&
-                Convert.ToInt32(value) <= ApplicationConstants.MaximumPasswordExpirationDays)
+            if ((Convert.ToInt32(value) >= ApplicationConstants.MinimumPasswordExpirationDays && 
+			     Convert.ToInt32(value) <= ApplicationConstants.MaximumPasswordExpirationDays) ||
+                (Convert.ToInt32(value) == ApplicationConstants.NoPasswordExpiration))
             {
                 return true;
             }
@@ -175,7 +176,10 @@ namespace ScoutModels
         {
             ushort days;
             HawkeyeCoreAPI.User.GetUserPasswordExpirationAPI(out days);
-            Log.Debug("GetUserPasswordExpiration:: days: " + days);
+            if (days == ApplicationConstants.NoPasswordExpiration)
+                Log.Debug("GetUserPasswordExpiration:: No expiration");
+            else
+                Log.Debug("GetUserPasswordExpiration:: days: " + days);
             return days;
         }
      
@@ -208,7 +212,15 @@ namespace ScoutModels
         [MustUseReturnValue("Use HawkeyeError")]
         public static HawkeyeError SetUserPasswordExpiration(UInt16 days)
         {
-            Log.Debug("SetUserPasswordExpiration:: days: " + days);
+            if (days == ApplicationConstants.NoPasswordExpiration)
+            {
+                // System is set to no password expiration
+                Log.Debug("SetUserPasswordExpiration:: No expiration");
+            }
+            else
+            {
+                Log.Debug("SetUserPasswordExpiration:: days: " + days);
+            }
             var hawkeyeError = HawkeyeCoreAPI.User.SetUserPasswordExpirationAPI(days);
             Log.Debug("SetUserPasswordExpiration:: hawkeyeError : " + hawkeyeError);
             return hawkeyeError;

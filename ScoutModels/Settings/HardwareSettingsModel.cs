@@ -80,6 +80,7 @@ namespace ScoutModels.Settings
         [MustUseReturnValue("Use HawkeyeError")]
         public HawkeyeError SetSystemSerialNumber(string serialNumber, string servicePassword)
         {
+            Log.Debug("SetSystemSerialNumber:: serial #: " + serialNumber);
             var hawkeyeError = HawkeyeCoreAPI.Service.SetSystemSerialNumberAPI(serialNumber, servicePassword);
             Misc.LogOnHawkeyeError("SetSystemSerialNumber", hawkeyeError);
             return hawkeyeError;

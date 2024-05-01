@@ -21,14 +21,15 @@ namespace ScoutModels.Common
             // languages (Chinese, Japanese) don't have concept of upper and lower case letters, so don't check for it
             // "\p{Lo}: a letter or ideograph that does not have lowercase and uppercase variants."
             bool noUpperLowerCase = Regex.IsMatch(newPassword, @"[\p{Lo}]");
-
-            bool longEnough = newPassword.Length >= ApplicationConstants.MinimumPasswordLength;
+            //// Leave for future reference or use
+            //bool lengthOK = newPassword.Length >= ApplicationConstants.MinimumPasswordLength && newPassword.Length <= ApplicationConstants.MaximumPasswordLength;         // not yet enforcing maximum password length for user password changes
+            bool lengthOK = newPassword.Length >= ApplicationConstants.MinimumPasswordLength;
             bool hasUpperCase = noUpperLowerCase || newPassword.Any(char.IsUpper);
             bool hasLowerCase = noUpperLowerCase || newPassword.Any(char.IsLower);
             bool hasDigit = newPassword.Any(char.IsDigit);
             bool hasSpecialChar = Regex.IsMatch(newPassword, @"[^\p{L}\p{N}]");
 
-            bool isValid = longEnough && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
+            bool isValid = lengthOK && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar;
             if (!isValid)
             {
                 DialogEventBus.DialogBoxOk(null, LanguageResourceHelper.Get("LID_ERRMSGBOX_PasswordRange"));
@@ -78,12 +79,16 @@ namespace ScoutModels.Common
             // languages (Chinese, Japanese) don't have concept of upper and lower case letters, so don't check for it
             // "\p{Lo}: a letter or ideograph that does not have lowercase and uppercase variants."
             var noUpperLowerCase = Regex.IsMatch(newPassword, @"[\p{Lo}]");
-            var containsSpecialChar = Regex.IsMatch(newPassword, @"[^\p{L}\p{N}]");
+            //// Leave for future reference or use
+            //var lengthOK = newPassword.Length >= ApplicationConstants.MinimumPasswordLength && newPassword.Length <= ApplicationConstants.MaximumPasswordLength;          // not yet enforcing maximum password length for user password changes
+            var lengthOK = newPassword.Length >= ApplicationConstants.MinimumPasswordLength;
+            var hasSpecialChar = Regex.IsMatch(newPassword, @"[^\p{L}\p{N}]");
             var hasUpperCase = noUpperLowerCase || newPassword.Any(char.IsUpper);
             var hasLowerCase = noUpperLowerCase || newPassword.Any(char.IsLower);
-            
-            var isValid = (newPassword.Length >= ApplicationConstants.MinimumPasswordLength && hasUpperCase && hasLowerCase && newPassword.Any(char.IsDigit) && containsSpecialChar);
-            
+            var hasDigit = newPassword.Any(char.IsDigit);
+
+            var isValid = (lengthOK && hasUpperCase && hasLowerCase && hasDigit && hasSpecialChar);
+
             if (!isValid)
             {
                 DialogEventBus.DialogBoxOk(null, LanguageResourceHelper.Get("LID_ERRMSGBOX_PasswordRange"));

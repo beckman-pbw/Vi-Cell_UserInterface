@@ -39,7 +39,22 @@ namespace ScoutModels
             hawkeyeResult = UserModel.LoginUser(username, password);
             if (hawkeyeResult == HawkeyeError.eSuccess)
             {
-                CheckAndHandlePasswordExpiration();
+                // don't check password length for users with automatically generated passwords
+                //// leave for future reference or use
+                //if (LoggedInUser.CurrentUser.RoleID.Equals(UserPermissionLevel.eService) || LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceAdmin))
+                if (LoggedInUser.CurrentUser.RoleID.Equals(UserPermissionLevel.eService))
+                    return LoginResult.NormalLoginSuccess;
+
+                if (!Validation.IsStrongPassword(password))
+                {
+                    var success = DialogEventBus.ChangePasswordDialog(this, new ChangePasswordEventArgs(LoggedInUser.CurrentUserId, ImageHelper.GetUserIconPath(LoggedInUser.CurrentUser), true)) == true;
+                    if (!success) return LoginResult.NormalLoginFailed;
+                }
+                else
+				{
+                    CheckAndHandlePasswordExpiration();
+				}
+				
                 return LoginResult.NormalLoginSuccess;
             }
             else
@@ -75,7 +90,7 @@ namespace ScoutModels
 
         public LoginResult UnlockWithAdmin(string displayedUsername, string currentUsername, string password, out HawkeyeError hawkeyeError)
         {
-            hawkeyeError = SettingsModel.AdministrativeUserEnable(displayedUsername, password, currentUsername);
+            hawkeyeError = SettingsModel.AdministrativeUserUnlock(displayedUsername, password, currentUsername);
             if (hawkeyeError.Equals(HawkeyeError.eSuccess))
                 return LoginResult.AdminUnlockSuccess;
             return LoginResult.AdminUnlockFailed;
@@ -93,9 +108,13 @@ namespace ScoutModels
             }
 
             var isSilentAdmin = LoggedInUser.CurrentUserId?.Equals(ApplicationConstants.SilentAdmin) == true;
-            if (LoggedInUser.CurrentUser.RoleID.Equals(UserPermissionLevel.eService) || isSilentAdmin)
+            var isAutomationUser = LoggedInUser.CurrentUserId?.Equals(ApplicationConstants.AutomationClient) == true;
+            //// leave for future reference or use
+            //var isServiceAdmin = LoggedInUser.CurrentUserId?.Equals(ApplicationConstants.ServiceAdmin) == true;
+            //if (LoggedInUser.CurrentUser.RoleID.Equals(UserPermissionLevel.eService) || isSilentAdmin || isAutomationUser || isServiceAdmin)
+            if (LoggedInUser.CurrentUser.RoleID.Equals(UserPermissionLevel.eService) || isSilentAdmin || isAutomationUser)
             {
-                return; // Either service or silent admin user is logged in
+                return; // service user, silent admin user, or automation user is logged in
             }
 
             if (UserModel.IsPasswordExpired(LoggedInUser.CurrentUserId))

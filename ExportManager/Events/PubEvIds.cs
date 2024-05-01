@@ -21,10 +21,10 @@ namespace ExportManager
         ExportMgr_CancelCsv,
         //
         ExportMgr_StartLogs,
-		//
+        //
 		ExportMgr_StartLogDataExport,
 		//
-		ScheduledExportChanged,
+        ScheduledExportChanged,
         //
         SampleDataMgr_Delete,
         SampleDataMgr_CancelDelete,

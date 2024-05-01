@@ -38,7 +38,12 @@
         public const string SilentAdmin = "Cydem";
         
         public const string ServiceUser = "bci_service";
-        
+
+        //// Leave for future reference or use
+        //public const string ServiceAdmin = "bci_admin";
+
+        public const string AutomationClient = "bci_automation";
+
         public const string ConcSlope2M = "ConcSlope_2M";
         
         public const string ConcSlope4M = "ConcSlope_4M";
@@ -135,8 +140,13 @@
         public const int MaximumInactivityTimeoutMins = 60;
 
         public const int MinimumPasswordExpirationDays = 1;
+        public const int MaximumPasswordExpirationDays = 365;
+        public const int NoPasswordExpiration = 0;
 
-        public const int MaximumPasswordExpirationDays = 60;
+        public const int MinimumPasswordLength = 10;
+        public const int MaximumPasswordLength = 32;
+
+        public const int IncorrectPasswordEnteredMax = 5;
 
         public const int MinimumNumberOfNthImages = 0;
 
@@ -190,10 +200,6 @@
         public const int ConcentrationEndRange = 15000000;
 
         public const string ForceRestartKey = "SystemRestart";
-
-        public const int MinimumPasswordLength = 10;
-
-        public const int IncorrectPasswordEnteredMax = 5;
 
         public const string ImageViewRightClickMenuHistogram = "Histogram";
         public const string ImageViewRightClickMenuImageActualSize = "ImageActualSize";

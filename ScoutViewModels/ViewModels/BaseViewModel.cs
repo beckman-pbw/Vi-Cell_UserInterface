@@ -97,13 +97,23 @@ namespace ScoutViewModels.ViewModels
             }
         }
 
+        public bool IsAutomationUser
+        {
+            get { return GetProperty<bool>(); }
+            set
+            {
+                SetProperty(value);
+                NotifyPropertyChanged(nameof(IsAdminOrServiceUser));
+            }
+        }
+
         public bool IsAdvancedUser
         {
             get { return GetProperty<bool>(); }
             set { SetProperty(value); }
         }
 
-        public bool IsAdminOrServiceUser => IsAdminUser || IsServiceUser;
+        public bool IsAdminOrServiceUser => IsAdminUser || IsServiceUser || IsAutomationUser;
 
         public XmlLanguage CurrentLanguageXml // Used by the DatePicker
         {

@@ -37,6 +37,25 @@ namespace ScoutOpcUaTests
             }
         }
 
+        [TestCase(SystemStatus.ProcessingSample)]
+        [TestCase(SystemStatus.Pausing)]
+        [TestCase(SystemStatus.Paused)]
+        [TestCase(SystemStatus.Stopping)]
+        [TestCase(SystemStatus.Faulted)]
+        [TestCase(SystemStatus.SearchingTube)]
+        public void AutomationLock_FailureWhenInvalidState(SystemStatus status)
+        {
+            try
+            {
+                Init(LockStateEnum.Unlocked, UserPermissionLevel.eAdministrator, status);
+                GrpcClient.SendRequestRequestLock(new RequestRequestLock());
+                Assert.Fail($"Request was supposed to throw an RpcException ( ._.)");
+            }
+            catch (Exception e)
+            {
+                HandleShouldFailException(e);
+            }
+        }
 
         #endregion
 
@@ -59,6 +78,22 @@ namespace ScoutOpcUaTests
             catch (Exception e)
             {
                 Assert.Fail(e.Message);
+            }
+        }
+
+        [TestCase(SystemStatus.Pausing)]
+        [TestCase(SystemStatus.Paused)]
+        public void AutomationUnlock_FailureWhenInValidState(SystemStatus status)
+        {
+            try
+            {
+                Init(LockStateEnum.Locked, UserPermissionLevel.eAdministrator, status);
+                GrpcClient.SendRequestReleaseLock(new RequestReleaseLock());
+                Assert.Fail($"Request was supposed to throw an RpcException ( ._.)");
+            }
+            catch (Exception e)
+            {
+                HandleShouldFailException(e);
             }
         }
 

@@ -126,10 +126,10 @@ namespace ScoutModels.Settings
         }
 
         [MustUseReturnValue("Use HawkeyeError")]
-        public static HawkeyeError AdministrativeUserEnable(string administrator_account, string administrator_password, string user_account)
+        public static HawkeyeError AdministrativeUserUnlock(string administrator_account, string administrator_password, string user_account)
         {
-            var hawkeyeError = HawkeyeCoreAPI.User.AdministrativeUserEnableAPI(administrator_account, administrator_password, user_account);
-            Log.Debug("AdministrativeUserEnable:: hawkeyeError: " + hawkeyeError);
+            var hawkeyeError = HawkeyeCoreAPI.User.AdministrativeUserUnlockAPI(administrator_account, administrator_password, user_account);
+            Log.Debug("AdministrativeUserUnlock:: hawkeyeError: " + hawkeyeError);
             return hawkeyeError;
 
         }

@@ -217,6 +217,20 @@ namespace ScoutOpcUaTests
         }
 
         [Test]
+        public void SampleEswDomainToSampleResult_ImagesForAnalysis()
+        {
+            var sampleDomain = new SampleEswDomain();
+            sampleDomain.SampleRecord = new ScoutDomains.SampleRecordDomain();
+            sampleDomain.SampleRecord.SelectedResultSummary = new ScoutDomains.RunResult.ResultSummaryDomain();
+            sampleDomain.SampleRecord.ImageSetIds = new uuidDLL [] { new uuidDLL() };
+            var map = Mapper.Map<SampleResult>(sampleDomain);
+
+            Assert.IsNotNull(map);
+            Assert.AreEqual(1, map.ImagesForAnalysis);
+            Assert.AreEqual(sampleDomain.SampleRecord.ImageSetIds.Length, map.ImagesForAnalysis);
+        }
+
+        [Test]
         public void SampleEswDomainToSampleResult_QualityControlName()
         {
             var sampleDomain = new SampleEswDomain();

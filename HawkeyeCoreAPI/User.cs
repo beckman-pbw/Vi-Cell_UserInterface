@@ -86,7 +86,7 @@ namespace HawkeyeCoreAPI
 
         [DllImport("HawkeyeCore.dll")]
         [MustUseReturnValue("Use HawkeyeError")]
-        static extern HawkeyeError AdministrativeUserEnable(string administrator_account, string administrator_password, string user_account); //working
+        static extern HawkeyeError AdministrativeUserUnlock(string administrator_account, string administrator_password, string user_account); //working
                                                                                                                                                /// <summary>
         [DllImport("HawkeyeCore.dll")]
         [MustUseReturnValue("Use HawkeyeError")]
@@ -239,9 +239,9 @@ namespace HawkeyeCoreAPI
         }
 
         [MustUseReturnValue("Use HawkeyeError")]
-        public static HawkeyeError AdministrativeUserEnableAPI(string administrator_account, string administrator_password, string user_account) 
+        public static HawkeyeError AdministrativeUserUnlockAPI(string administrator_account, string administrator_password, string user_account) 
         {
-            return AdministrativeUserEnable(administrator_account, administrator_password, user_account);
+            return AdministrativeUserUnlock(administrator_account, administrator_password, user_account);
         }
 
         [MustUseReturnValue("Use HawkeyeError")]

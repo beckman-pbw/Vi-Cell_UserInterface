@@ -580,7 +580,7 @@ namespace ScoutModels.Home.QueueManagement
 	            SequenceNumber = (uint)imageSequence,
                 ImageID = wqi.Location.Column,
                 ResultPerImage = imageResult.MarshalToBasicResultDomain()
-			};
+            };
 
             if (sampleRecordDomain.SampleIdentifier.Equals(wqi.Label))
             {

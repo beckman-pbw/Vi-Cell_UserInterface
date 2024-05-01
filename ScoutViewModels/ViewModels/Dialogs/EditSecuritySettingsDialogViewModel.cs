@@ -209,8 +209,8 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         private bool IsPasswordExpiryValid()
         {
-            return PasswordExpiry >= ApplicationConstants.MinimumPasswordExpirationDays
-                    && PasswordExpiry <= ApplicationConstants.MaximumPasswordExpirationDays;
+            return ((PasswordExpiry >= ApplicationConstants.MinimumPasswordExpirationDays && PasswordExpiry <= ApplicationConstants.MaximumPasswordExpirationDays) ||
+                    (PasswordExpiry == ApplicationConstants.NoPasswordExpiration));
         }
 
         /// <summary>
@@ -377,14 +377,14 @@ namespace ScoutViewModels.ViewModels.Dialogs
         {
             if (_originalPasswordExpiry == PasswordExpiry) return true;
 
-            var passwordExpireStatue = SecuritySettingsModel.SetUserPasswordExpiration((ushort)PasswordExpiry);
-            if (passwordExpireStatue.Equals(HawkeyeError.eSuccess))
+            var passwordExpireStatus = SecuritySettingsModel.SetUserPasswordExpiration((ushort)PasswordExpiry);
+            if (passwordExpireStatus.Equals(HawkeyeError.eSuccess))
             {
                 return true;
             }
             else
             {
-                ApiHawkeyeMsgHelper.ErrorInvalid(passwordExpireStatue, LanguageResourceHelper.Get("LID_Label_PassworsExpire"));
+                ApiHawkeyeMsgHelper.ErrorInvalid(passwordExpireStatus, LanguageResourceHelper.Get("LID_Label_PassworsExpire"));
                 return false;
             }
         }
