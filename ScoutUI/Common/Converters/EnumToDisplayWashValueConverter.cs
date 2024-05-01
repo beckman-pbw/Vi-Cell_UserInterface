@@ -16,9 +16,9 @@ namespace ScoutUI.Common.Converters
             switch (wash)
             {
                 case SamplePostWash.NormalWash:
-                    return LanguageResourceHelper.Get("LID_Label_NormalWashWithUnits");
+                    return LanguageResourceHelper.Get("LID_Label_NormalWorkflowWithUnits");
                 case SamplePostWash.FastWash:
-                    return LanguageResourceHelper.Get("LID_Label_FastWashWithUnits");
+                    return LanguageResourceHelper.Get("LID_Label_LCDWorkflowWithUnits");
                 default:
                     return null;
             }
@@ -28,11 +28,11 @@ namespace ScoutUI.Common.Converters
         {
             if (value == null)
                 return null;
-            if (LanguageResourceHelper.Get("LID_Label_NormalWashWithUnits") == value.ToString())
+            if (LanguageResourceHelper.Get("LID_Label_NormalWorkflowWithUnits") == value.ToString())
             {
                 return SamplePostWash.NormalWash;
             }
-            if(LanguageResourceHelper.Get("LID_Label_FastWashWithUnits") == value.ToString())
+            if(LanguageResourceHelper.Get("LID_Label_LCDWorkflowWithUnits") == value.ToString())
             {
                 return SamplePostWash.FastWash;
             }

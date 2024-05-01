@@ -685,7 +685,15 @@ namespace ScoutModels
             return hawkeyeError;
         }
 
-        [MustUseReturnValue("Use HawkeyeError")] 
+        [MustUseReturnValue("Use HawkeyeError")]
+        public HawkeyeError CancelCleanSequence()
+        {
+            var hawkeyeError = HawkeyeCoreAPI.Reagent.CancelCleanSequenceAPI();
+            Log.Debug($"{nameof(CancelCleanSequence)}:: hawkeyeError:" + hawkeyeError);
+            return hawkeyeError;
+        }
+
+        [MustUseReturnValue("Use HawkeyeError")]
         public virtual HawkeyeError CancelDecontaminateFlowCell()
         {
             var hawkeyeError = HawkeyeCoreAPI.Reagent.CancelDecontaminateFlowCellAPI();

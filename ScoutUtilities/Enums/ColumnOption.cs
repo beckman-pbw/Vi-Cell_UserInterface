@@ -56,7 +56,7 @@ namespace ScoutUtilities.Enums
                     return LanguageResourceHelper.Get("LID_Label_Dilution");
 
                 case ColumnOption.WashType:
-                    return LanguageResourceHelper.Get("LID_QMgmtHEADER_Wash");
+                    return LanguageResourceHelper.Get("LID_QMgmtHEADER_Workflow");
 
                 case ColumnOption.SampleTag:
                     return LanguageResourceHelper.Get("LID_Label_Tag");
@@ -99,7 +99,7 @@ namespace ScoutUtilities.Enums
             if (colOptionLocalStr == LanguageResourceHelper.Get("LID_Label_Dilution"))
                 return ColumnOption.Dilution;
 
-            if (colOptionLocalStr == LanguageResourceHelper.Get("LID_QMgmtHEADER_Wash"))
+            if (colOptionLocalStr == LanguageResourceHelper.Get("LID_QMgmtHEADER_Workflow"))
                 return ColumnOption.WashType;
 
             if (colOptionLocalStr == LanguageResourceHelper.Get("LID_Label_Tag"))

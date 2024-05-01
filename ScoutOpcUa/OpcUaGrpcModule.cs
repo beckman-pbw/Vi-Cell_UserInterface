@@ -324,7 +324,7 @@ namespace GrpcServer
                         : String.Empty
                     ))
                 .ForMember(dest => dest.Dilution, opt => opt.MapFrom(src => int.Parse(src.SampleRecord.DilutionName)))
-                .ForMember(dest => dest.WashType, opt => opt.MapFrom(src => src.SampleRecord.WashName))
+                .ForMember(dest => dest.WorkflowType, opt => opt.MapFrom(src => src.SampleRecord.WashName))
                 .ForMember(dest => dest.Tag, opt => opt.MapFrom(src => src.SampleRecord.Tag))
                 .ForMember(dest => dest.Position, opt => opt.MapFrom(src => src.SamplePosition));
         }
@@ -401,7 +401,7 @@ namespace GrpcServer
                                        : src.CellTypeQcName
                            }
                            : null))
-               .ForMember(dest => dest.WashType, opt => opt.MapFrom(src => src.WashType));
+               .ForMember(dest => dest.WorkflowType, opt => opt.MapFrom(src => src.WashType));
         }
 
         private static void MapSampleConfigToSampleEswDomain(IMapperConfigurationExpression cfg)
@@ -433,7 +433,7 @@ namespace GrpcServer
                .ForMember(dest => dest.IsQualityControl, opt =>
                    opt.MapFrom(src => src.QualityControl != null && !string.IsNullOrEmpty(src.QualityControl.QualityControlName)))
 
-               .ForMember(dest => dest.WashType, opt => opt.MapFrom(src => src.WashType));
+               .ForMember(dest => dest.WashType, opt => opt.MapFrom(src => src.WorkflowType));
         }
 
         private static void MapSampleSetConfigToSampleSetDomain(IMapperConfigurationExpression cfg)

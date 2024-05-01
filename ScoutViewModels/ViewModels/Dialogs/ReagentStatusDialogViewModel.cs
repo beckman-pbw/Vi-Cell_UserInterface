@@ -20,7 +20,8 @@ namespace ScoutViewModels.ViewModels.Dialogs
     public enum ReagentProcess
     {
         Flush,
-        Prime
+        Prime,
+        Clean
     }
 
     public class ReagentStatusDialogViewModel : BaseDialogViewModel
@@ -41,6 +42,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
             
             _reagentModel.PrimeReagentStateChanged += OnPrimeReagentStateChanged;
             _reagentModel.FlowCellFlushStateChanged += OnFlowCellFlushStateChanged;
+            _reagentModel.CleanFluidicsStateChanged += OnCleanFluidicsStateChanged;
             _statusSubscriber = _instrumentStatusService.SubscribeToSystemStatusCallback().Subscribe((OnUpdateReagentView));
 
             RefreshReagentStatus();
@@ -48,11 +50,12 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         protected override void DisposeUnmanaged()
         {
-	        if (_reagentModel != null)
-	        {
-		        _reagentModel.PrimeReagentStateChanged -= OnPrimeReagentStateChanged;
-		        _reagentModel.FlowCellFlushStateChanged -= OnFlowCellFlushStateChanged;
-	        }
+            if (_reagentModel != null)
+            {
+                _reagentModel.PrimeReagentStateChanged -= OnPrimeReagentStateChanged;
+                _reagentModel.FlowCellFlushStateChanged -= OnFlowCellFlushStateChanged;
+                _reagentModel.CleanFluidicsStateChanged -= OnCleanFluidicsStateChanged;
+            }
 
             _reagentModel?.Dispose();
             _statusSubscriber?.Dispose();
@@ -65,6 +68,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
         private CallBackProgressStatus _progressStatus;
         private bool _enablePrimeStatusListener;
         private bool _enableFlushStatusListener;
+        private bool _enableCleanStatusListener;
         private ReagentProcess _reagentCurrentProcess;
         private readonly IInstrumentStatusService _instrumentStatusService;
 
@@ -199,6 +203,42 @@ namespace ScoutViewModels.ViewModels.Dialogs
             }
         }
 
+        private void OnCleanFluidicsStateChanged(object sender, ApiEventArgs<eFlushFlowCellState> e)
+        {
+            if (!_enableCleanStatusListener)
+            {
+                return;
+            }
+
+            switch (e.Arg1)
+            {
+                case eFlushFlowCellState.ffc_FlushingCleaner:
+                    Status = LanguageResourceHelper.Get("LID_ReagentStatus_FlushClean");
+                    break;
+                case eFlushFlowCellState.ffc_FlushingConditioningSolution:
+                    Status = LanguageResourceHelper.Get("LID_ReagentStatus_FlushConditioningSolution");
+                    break;
+                case eFlushFlowCellState.ffc_FlushingBuffer:
+                    Status = LanguageResourceHelper.Get("LID_ReagentStatus_FlushBuffer");
+                    break;
+                case eFlushFlowCellState.ffc_FlushingAir:
+                    Status = LanguageResourceHelper.Get("LID_ReagentStatus_FlushAir");
+                    break;
+                case eFlushFlowCellState.ffc_Completed:
+                    Status = LanguageResourceHelper.Get("LID_ReagentStatus_FlushComplete");
+                    DispatcherHelper.ApplicationExecute(CompleteFinish);
+                    break;
+                case eFlushFlowCellState.ffc_Failed:
+                    Status = LanguageResourceHelper.Get("LID_ReagentStatus_FlushFailed");
+                    DispatcherHelper.ApplicationExecute(() =>
+                    {
+                        _progressStatus = CallBackProgressStatus.IsError;
+                        FaultError();
+                    });
+                    break;
+            }
+        }
+
         private void OnUpdateReagentView(SystemStatusDomain systemStatus)
         {
             if (!_instrumentStatusService.IsRunning())
@@ -300,6 +340,51 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         #endregion
 
+        #region Clean Sequence Command
+
+        private RelayCommand _cleanCommand;
+        public RelayCommand CleanSequenceCommand => _cleanCommand ?? (_cleanCommand = new RelayCommand(StartCleanSequence, CanClean));
+
+        private bool CanClean()
+        {
+            return IsHealthOk;
+        }
+
+        private void StartCleanSequence()
+        {
+            try
+            {
+                _reagentCurrentProcess = ReagentProcess.Clean;
+                _progressStatus = CallBackProgressStatus.IsStart;
+                Status = LanguageResourceHelper.Get("LID_ProgressIndication_CLEANSEQUENCE");
+
+                _enableCleanStatusListener = true;
+                var cleanStatus = _reagentModel.StartCleanFluidics();
+                if (cleanStatus.Equals(HawkeyeError.eSuccess))
+                {
+                    _progressStatus = CallBackProgressStatus.IsRunning;
+                    IsProgressActive = true;
+                    IsHealthOk = IsReplaceReagentActive = false;
+                    // Showing flush process started message in time bar
+                    PostToMessageHub(LanguageResourceHelper.Get("LID_ButtonContent_CleanSequenceStarted"));
+                }
+                else
+                {
+                    _enableCleanStatusListener = false;
+                    _progressStatus = CallBackProgressStatus.IsError;
+                    ApiHawkeyeMsgHelper.ErrorCommon(cleanStatus);
+                }
+            }
+            catch (Exception ex)
+            {
+                _enableCleanStatusListener = false;
+                _progressStatus = CallBackProgressStatus.IsError;
+                ExceptionHelper.HandleExceptions(ex, LanguageResourceHelper.Get("LID_EXCEPTIONMSG_ERROR_ON_CLEAN_SYSTEM"));
+            }
+        }
+
+        #endregion
+
         #region Decontaminate Command
 
         private RelayCommand _decontaminateCommand;
@@ -350,6 +435,11 @@ namespace ScoutViewModels.ViewModels.Dialogs
                     case ReagentProcess.Prime:
                         if (DialogEventBus.DialogBoxYesNo(this, LanguageResourceHelper.Get("LID_MSGBOX_PrimePropgress")) != true) return false;
                         CancelPrime();
+                        break;
+
+                    case ReagentProcess.Clean:
+                        if (DialogEventBus.DialogBoxYesNo(this, LanguageResourceHelper.Get("LID_MSGBOX_CleanInProgress")) != true) return false;
+                        CancelClean();
                         break;
                 }
                 return false; // window isn't closing yet
@@ -478,7 +568,30 @@ namespace ScoutViewModels.ViewModels.Dialogs
             }
         }
 
-        private void CancelPrime()
+        private void CancelClean()
+        {
+            try
+            {
+                var cancelClean = _reagentModel.CancelCleanSequence();
+                if (cancelClean.Equals(HawkeyeError.eSuccess))
+                {
+                    _progressStatus = CallBackProgressStatus.IsFinish;
+                    IsProgressActive = false;
+                    IsHealthOk = IsReplaceReagentActive = true;
+                    // Showing flush process cancelled message in time bar
+                    PostToMessageHub(LanguageResourceHelper.Get("LID_StatusBar_CleanCancelled"));
+                    return;
+                }
+
+                ApiHawkeyeMsgHelper.ErrorCommon(cancelClean);
+            }
+            catch (Exception ex)
+            {
+                ExceptionHelper.HandleExceptions(ex, LanguageResourceHelper.Get("LID_EXCEPTIONMSG_ERROR_ON_CANCELCLEAN"));
+            }
+        }
+
+            private void CancelPrime()
         {
             try
             {

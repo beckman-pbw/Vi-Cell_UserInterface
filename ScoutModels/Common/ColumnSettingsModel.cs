@@ -56,7 +56,7 @@ namespace ScoutModels.Common
                 list.Add(nameof(ColumnOption.AverageDiameter), new Tuple<string, bool, double>(LanguageResourceHelper.Get("LID_Label_AverageDiam_Abbr"), true, 85));
                 list.Add(nameof(ColumnOption.CellTypeQcName), new Tuple<string, bool, double>(LanguageResourceHelper.Get("LID_Label_CellType"), true, 125));
                 list.Add(nameof(ColumnOption.Dilution), new Tuple<string, bool, double>(LanguageResourceHelper.Get("LID_Label_Dilution"), true, 85));
-                list.Add(nameof(ColumnOption.WashType), new Tuple<string, bool, double>(LanguageResourceHelper.Get("LID_QMgmtHEADER_Wash"), true, 100));
+                list.Add(nameof(ColumnOption.WashType), new Tuple<string, bool, double>(LanguageResourceHelper.Get("LID_QMgmtHEADER_Workflow"), true, 100));
                 list.Add(nameof(ColumnOption.SampleTag), new Tuple<string, bool, double>(LanguageResourceHelper.Get("LID_Label_Tag"), true, 120));
             }
 

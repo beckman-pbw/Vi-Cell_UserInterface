@@ -125,5 +125,7 @@ namespace ScoutUtilities.Enums
 		evt_qcontrolmodify,
 		evt_deletecampaigndata,
 		evt_flowcelldepthupdate,
+		evt_automationlocked,
+		evt_automationunlocked,
 	}
 }

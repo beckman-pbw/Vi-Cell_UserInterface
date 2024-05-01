@@ -75,6 +75,10 @@ namespace HawkeyeCoreAPI
 
         [DllImport("HawkeyeCore.dll")]
         [MustUseReturnValue("Use HawkeyeError")]
+        public static extern HawkeyeError CancelCleanFluidics();
+
+        [DllImport("HawkeyeCore.dll")]
+        [MustUseReturnValue("Use HawkeyeError")]
         public static extern HawkeyeError CancelDecontaminateFlowCell();
 
         [DllImport("HawkeyeCore.dll")]
@@ -166,6 +170,12 @@ namespace HawkeyeCoreAPI
 		public static HawkeyeError CancelFlushFlowCellAPI()
 		{
 			return CancelFlushFlowCell();
+		}
+
+		[MustUseReturnValue("Use HawkeyeError")]
+		public static HawkeyeError CancelCleanSequenceAPI()
+		{
+			return CancelCleanFluidics();
 		}
 
 		[MustUseReturnValue("Use HawkeyeError")]

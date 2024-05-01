@@ -142,7 +142,7 @@ namespace ScoutServicesTests
                         SamplePosition = new SamplePosition { Row = "Y", Column = 1},
                         SaveEveryNthImage = 1,
                         Tag = "My tag for the cool sample",
-                        WashType = WashTypeEnum.FastWashType
+                        WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
                     }
                 };
 
@@ -182,7 +182,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "Y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -263,7 +263,7 @@ namespace ScoutServicesTests
                 CellType = new CellType {CellTypeName = expectedName},
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> {_mapper.Map<SampleEswDomain>(sample)};
@@ -339,7 +339,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "Y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -383,7 +383,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -418,7 +418,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "Y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -456,7 +456,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -494,7 +494,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -537,7 +537,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var map = _mapper.Map<SampleEswDomain>(sample);
@@ -582,7 +582,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -604,8 +604,10 @@ namespace ScoutServicesTests
         }
 
         [Test]
+        [Ignore("Obsoleted due to need to run alternate sample workflows for a-cup on CHM")]
         public void AcupCannotBeFastWashForSample()
         {
+		//TODO: look at this for Vi-Cell variant...
             _autoMock.Setup(m => m.GetAutomationConfig()).Returns(new AutomationConfig(true, true, 1));
             var expectedName = "Yeast";
             var expectedIndex = (uint)3;
@@ -623,7 +625,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
 
             var sampleEswDomain = _mapper.Map<SampleEswDomain>(sample);
@@ -657,7 +659,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition {Row = "", Column = 0}, // bad sample position
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -723,7 +725,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -765,7 +767,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -807,7 +809,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain> { _mapper.Map<SampleEswDomain>(sample) };
@@ -856,7 +858,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "h", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -866,7 +868,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "b", Column = 4 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -930,7 +932,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "h", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -940,7 +942,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "b", Column = 4 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -988,7 +990,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "h", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -998,7 +1000,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "b", Column = 4 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1051,7 +1053,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "h", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -1061,7 +1063,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "b", Column = 4 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1116,7 +1118,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1162,7 +1164,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "c", Column = 8 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1219,7 +1221,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "h", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -1229,7 +1231,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1279,7 +1281,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -1289,7 +1291,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "y", Column = 1 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1331,7 +1333,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "d", Column = 5 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var samples = new List<SampleEswDomain>
             {
@@ -1378,7 +1380,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "a", Column = 2 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 1",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -1388,7 +1390,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "c", Column = 9 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1431,7 +1433,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "c", Column = 8 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1476,7 +1478,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "a", Column = 2 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
             var sample2 = new SampleConfig
             {
@@ -1486,7 +1488,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "c", Column = 9 }, // use the same position as below
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             var sample3 = new SampleConfig
             {
@@ -1496,7 +1498,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "d", Column = 9 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
             var sample4 = new SampleConfig
             {
@@ -1506,7 +1508,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "C", Column = 9 }, // use the same position as above
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
             var sample5 = new SampleConfig
             {
@@ -1516,7 +1518,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "e", Column = 9 },
                 SaveEveryNthImage = 5,
                 Tag = "My tag for the cool sample 2",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
 
             var samples = new List<SampleEswDomain>
@@ -1564,7 +1566,7 @@ namespace ScoutServicesTests
                 SamplePosition = new SamplePosition { Row = "Y", Column = 1 },
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.NormalWashType
+                WorkflowType = WorkflowTypeEnum.NormalWorkflowType
             };
             var samples = new List<SampleEswDomain>
             {

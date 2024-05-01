@@ -62,6 +62,7 @@ namespace ScoutModels
             _previousWasteTubeCapacity = UInt32.MaxValue;
             _applicationStateServiceSubscription = _applicationStateService.SubscribeStateChanges(ApplicationStateHandler);
             _updateSystemStatusTimer = new SystemStatusTimer(UISettings.SystemStatusTimerInterval, this);
+            _instanceGUID = Guid.NewGuid();
         }
 
         #endregion
@@ -94,6 +95,7 @@ namespace ScoutModels
 
         // Keep for testing...
         //private int temp = 0;
+        private readonly Guid _instanceGUID;
         
         private SystemStatusDomain _systemStatusDom;
         public SystemStatusDomain SystemStatusDom
@@ -197,16 +199,20 @@ namespace ScoutModels
             switch (stateChange.State)
             {
                 case ApplicationStateEnum.Startup:
+                    _logger.Debug($"ApplicationStateHandler {_instanceGUID} : state change : startup");
                     if (!_updateSystemStatusTimer.Enabled)
                     {
+                        _logger.Debug($"ApplicationStateHandler {_instanceGUID} : state change : startup : added Elapsed Handler");
                         _updateSystemStatusTimer.Elapsed += OnTimedEventUpdateSystemStatus;
                         _updateSystemStatusTimer.AutoReset = true;
                         _updateSystemStatusTimer.Enabled = true;
                     }
                     break;
                 case ApplicationStateEnum.Shutdown:
+                    _logger.Debug($"ApplicationStateHandler {_instanceGUID} : state change : shutdown");
                     if (_updateSystemStatusTimer.Enabled)
                     {
+                        _logger.Debug($"ApplicationStateHandler {_instanceGUID} : state change : shutdown : removed Elapsed Handler");
                         _updateSystemStatusTimer.Elapsed -= OnTimedEventUpdateSystemStatus;
                         _updateSystemStatusTimer.Enabled = false;
                     }
@@ -442,7 +448,7 @@ namespace ScoutModels
             
             if (oldSystemStatus == null || oldSystemStatus != newSystemStatusDomain.SystemStatus)
 	            // "Callback" added so the log file can be sorted and include this along with sample status callbacks
-				_logger.Debug($"Instrument Status: {newSystemStatusDomain.SystemStatus}{Environment.NewLine}[Callback]");
+				_logger.Debug($"Instrument Status: {newSystemStatusDomain.SystemStatus}{Environment.NewLine}My instance: {_instanceGUID}[Callback]");
 
             PublishSystemStatusCallback(newSystemStatusDomain);
 

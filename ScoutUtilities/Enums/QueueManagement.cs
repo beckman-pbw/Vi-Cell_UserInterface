@@ -14,8 +14,8 @@ namespace ScoutUtilities.Enums
    
     public enum SamplePostWash : UInt16
     {
-        [Description("LID_Label_NormalWashType")] NormalWash = 0,
-        [Description("LID_Label_FastWashType")] FastWash
+        [Description("LID_Label_NormalWorkflowType")] NormalWash = 0,
+        [Description("LID_Label_LCDWorkflowType")] FastWash
     }
 
   

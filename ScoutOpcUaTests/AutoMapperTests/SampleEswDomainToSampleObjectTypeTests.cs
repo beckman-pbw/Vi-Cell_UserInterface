@@ -162,9 +162,9 @@ namespace ScoutOpcUaTests
             var map = new SampleConfig();
 
             PropertyReflectionTest(sample, map, ScoutUtilities.Enums.SamplePostWash.FastWash,
-                nameof(SampleEswDomain.WashType), nameof(SampleConfig.WashType));
+                nameof(SampleEswDomain.WashType), nameof(SampleConfig.WorkflowType));
             PropertyReflectionTest(sample, map, ScoutUtilities.Enums.SamplePostWash.NormalWash,
-                nameof(SampleEswDomain.WashType), nameof(SampleConfig.WashType));
+                nameof(SampleEswDomain.WashType), nameof(SampleConfig.WorkflowType));
         }
 
         [Test]

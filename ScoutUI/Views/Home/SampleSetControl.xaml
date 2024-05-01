@@ -194,7 +194,7 @@
                                                              Binding="{Binding Dilution, Mode=OneWay}" 
                                                              Width="{Binding Data.ColumnSettings[Dilution].ColumnWidth, Source={StaticResource Proxy}, Mode=TwoWay}"/>
 
-                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}" 
+                        <controls:DataGridTextColumnExtended Header="{Binding ResourceKeys[LID_QMgmtHEADER_Workflow], Source={StaticResource ScoutUILanguageResource}}" 
                                                              BindingName="WashType" IsReadOnly="True"
                                                              Visibility="{Binding Data.ColumnSettings[WashType].IsVisible, Source={StaticResource Proxy}, Mode=TwoWay, Converter={StaticResource BooleanToVisibilityConverter}}"
                                                              Binding="{Binding WashType, Converter={StaticResource EnumToDisplayWashValueConverter}}" 

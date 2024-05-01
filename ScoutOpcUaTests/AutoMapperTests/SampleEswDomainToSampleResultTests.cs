@@ -432,14 +432,14 @@ namespace ScoutOpcUaTests
             var map = Mapper.Map<SampleResult>(sampleDomain);
 
             Assert.IsNotNull(map);
-            Assert.AreEqual((WashTypeEnum)sampleDomain.SampleRecord.WashName, map.WashType);
+            Assert.AreEqual((WorkflowTypeEnum)sampleDomain.SampleRecord.WashName, map.WorkflowType);
 
             sampleDomain = new SampleEswDomain();
             sampleDomain.SampleRecord = new ScoutDomains.SampleRecordDomain { WashName = ScoutUtilities.Enums.SamplePostWash.FastWash };
             map = Mapper.Map<SampleResult>(sampleDomain);
 
             Assert.IsNotNull(map);
-            Assert.AreEqual((WashTypeEnum)sampleDomain.SampleRecord.WashName, map.WashType);
+            Assert.AreEqual((WorkflowTypeEnum)sampleDomain.SampleRecord.WashName, map.WorkflowType);
         }
 
         [Test]

@@ -347,7 +347,7 @@ namespace ScoutModels.Common
 		{
 			table.Columns.Add("LID_QMgmtHEADER_SampleId", typeof(string));
 			table.Columns.Add("LID_Label_Dilution", typeof(string));
-			table.Columns.Add("LID_QMgmtHEADER_Wash", typeof(string));
+			table.Columns.Add("LID_QMgmtHEADER_Workflow", typeof(string));
 			table.Columns.Add("LID_Label_Tag", typeof(string));
 			table.Columns.Add("LID_QCHeader_AnalysisDateTime", typeof(string));
 			table.Columns.Add("LID_QCHeader_ReAnalysisDateTime", typeof(string));
@@ -608,7 +608,7 @@ namespace ScoutModels.Common
 			table.Columns.Add("LID_Report_AnalysisBy", typeof(string));
 			table.Columns.Add("LID_Report_ReanalysisBy", typeof(string));
 			table.Columns.Add("LID_Label_Dilution", typeof(string));
-			table.Columns.Add("LID_QMgmtHEADER_Wash", typeof(string));
+			table.Columns.Add("LID_QMgmtHEADER_Workflow", typeof(string));
 			table.Columns.Add("LID_Label_Tag", typeof(string));
 			table.Columns.Add("LID_Label_AdjustmentFactorPercentage", typeof(string));
 			table.Columns.Add("LID_CSV_Row_Header", typeof(string));
@@ -638,7 +638,7 @@ namespace ScoutModels.Common
 			table.Columns.Add("LID_Report_AnalysisBy", typeof(string));
 			table.Columns.Add("LID_Report_ReanalysisBy", typeof(string));
 			table.Columns.Add("LID_Label_Dilution", typeof(string));
-			table.Columns.Add("LID_QMgmtHEADER_Wash", typeof(string));
+			table.Columns.Add("LID_QMgmtHEADER_Workflow", typeof(string));
 			table.Columns.Add("LID_Label_Tag", typeof(string));
 			table.Columns.Add("LID_Label_AdjustmentFactorPercentage", typeof(string));
 			table.Columns.Add("LID_CSV_Row_Header", typeof(string));

@@ -56,7 +56,7 @@
                 <Label Content="{Binding ResourceKeys[LID_Label_Dilution], Source={StaticResource ScoutUILanguageResource}}"
                        Style="{StaticResource SettingsLabelStyle}" Grid.Column="1" Grid.Row="10" />
                 
-                <Label Grid.Column="1" Grid.Row="11" Content="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}"
+                <Label Grid.Column="1" Grid.Row="11" Content="{Binding ResourceKeys[LID_QMgmtHEADER_Workflow], Source={StaticResource ScoutUILanguageResource}}"
                        Style="{StaticResource SettingsLabelStyle}" />
 
                 <Label Grid.ColumnSpan="4" Grid.Column="1" Grid.Row="12" Content="{Binding ResourceKeys[LID_Label_ConcDisplayDigits], Source={StaticResource ScoutUILanguageResource}}"
@@ -87,7 +87,7 @@
 
                 <TextBox Grid.Row="10" Grid.Column="3" Height="30" Width="100" MaxLength="4" Margin="0,0,2,0" HorizontalAlignment="Right" 
                          Text="{Binding Dilution, Mode=OneWay}" validate:ControlValidationHelper.AllowOnlyNumeric="True" 
-                         TabIndex="10" IsEnabled="False"
+                         TabIndex="10" IsEnabled="True"
                          Style="{StaticResource SettingTextBox}" VerticalAlignment="Center" />
 
                 <ComboBox Grid.Column="3" Grid.Row="11" Grid.ColumnSpan="2" Style="{StaticResource SettingComboBox}" Width="202" HorizontalAlignment="Right"

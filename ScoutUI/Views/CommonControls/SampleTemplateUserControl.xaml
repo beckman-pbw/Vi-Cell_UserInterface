@@ -43,7 +43,7 @@
             <TextBlock Grid.Row="0" Grid.Column="2" Style="{StaticResource BaseTextBlock}" Margin="5,0,0,0" TextWrapping="Wrap"
                        Text="{Binding ResourceKeys[LID_Label_Dilution], Source={StaticResource ScoutUILanguageResource}}" />
             <TextBlock Grid.Row="0" Grid.Column="3" Style="{StaticResource BaseTextBlock}" Margin="5,0,0,0" TextWrapping="Wrap"
-                       Text="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}" />
+                       Text="{Binding ResourceKeys[LID_QMgmtHEADER_Workflow], Source={StaticResource ScoutUILanguageResource}}" />
             <TextBlock Grid.Row="0" Grid.Column="4" Style="{StaticResource BaseTextBlock}" Margin="5,0,0,0" TextWrapping="Wrap"
                        Text="{Binding ResourceKeys[LID_Label_Tag], Source={StaticResource ScoutUILanguageResource}}" />
 
@@ -91,7 +91,7 @@
                      Height="30" Style="{StaticResource SettingTextBox}"
                      Text="{Binding Dilution, UpdateSourceTrigger=PropertyChanged}"
                      helper:ControlValidationHelper.AllowOnlyNumeric="True"
-                     IsEnabled="False" />
+                     IsEnabled="True" />
 
             <Border Grid.Row="1" Grid.Column="3" Focusable="False"
                     Height="30" Width="150" Style="{StaticResource DisablableBorderStyle}"

@@ -223,6 +223,7 @@ namespace ScoutViewModelTests.Dialogs
         // Note: We cannot currently test normal users without some additional refactoring to mock out getting whether a normal user has fastmode enabled.
         [Test]
         [Ignore("Requires refactoring")]
+//        [Ignore("Requires refactoring - CHM behavior changed")]		
         public void TestAutoCupVmIsFastModeEnabledAdmin()
         {
             var vm = SetupVmIsFastModeEnabled(SubstrateType.AutomationCup, true, false);
@@ -252,6 +253,7 @@ namespace ScoutViewModelTests.Dialogs
 
         [Test]
         [Ignore("Requires refactoring")]
+//        [Ignore("Requires refactoring - CHM behavior changed")]		
         public void TestAutoCupVmIsFastModeEnabledServiceUser()
         {
             var vm = SetupVmIsFastModeEnabled(SubstrateType.AutomationCup, false, true);

@@ -514,8 +514,8 @@ namespace ScoutViewModels.ViewModels
                     _lockManager.PublishAutomationLock(LockResult.Unlocked, string.Empty);
 
                     string msg = " Administrative unlock by " + loginArgs.DisplayedUsername;
-                    _auditLog.WriteToAuditLogAPI(LoggedInUser.CurrentUser.UserID, audit_event_type.evt_automation, msg);
-                    ApiHawkeyeMsgHelper.PublishHubMessage(ScoutUtilities.Misc.AuditEventString(audit_event_type.evt_automation) + msg, MessageType.Normal);
+                    _auditLog.WriteToAuditLogAPI(LoggedInUser.CurrentUser.UserID, audit_event_type.evt_automationunlocked, msg);
+                    ApiHawkeyeMsgHelper.PublishHubMessage(ScoutUtilities.Misc.AuditEventString(audit_event_type.evt_automationunlocked) + msg, MessageType.Normal);
                 }
             }
         }

@@ -478,6 +478,7 @@ namespace ScoutServices
             ushort sampleIndex = 0;
             foreach (var s in set.Samples)
             {
+//TODO: Remove this restriction to allow the automation system to invoke a second sampling workflow for a-cup samples
                 if (SubstrateType.AutomationCup == s.SubstrateType && SamplePostWash.FastWash == s.WashType)
                 {
                     // A Cup sample cannot be FastWash

@@ -111,8 +111,8 @@ namespace GrpcServer
             _lockManager.PublishAutomationLock(LockResult.Locked, username);
 
             msg = " Locked by " + username;
-            _auditLog.WriteToAuditLogAPI(username, audit_event_type.evt_automation, msg);
-            ApiHawkeyeMsgHelper.PublishHubMessage(ScoutUtilities.Misc.AuditEventString(audit_event_type.evt_automation) + msg, MessageType.Normal);
+            _auditLog.WriteToAuditLogAPI(username, audit_event_type.evt_automationlocked, msg);
+            ApiHawkeyeMsgHelper.PublishHubMessage(ScoutUtilities.Misc.AuditEventString(audit_event_type.evt_automationlocked) + msg, MessageType.Normal);
 
 			return MakeSuccessRequestLock(LockResult.Locked);
         }
@@ -156,8 +156,8 @@ namespace GrpcServer
             _lockManager.PublishAutomationLock(LockResult.Unlocked, username);
 
 			msg = " Unlocked by " + username;
-            _auditLog.WriteToAuditLogAPI(username, audit_event_type.evt_automation, msg);
-            ApiHawkeyeMsgHelper.PublishHubMessage(ScoutUtilities.Misc.AuditEventString(audit_event_type.evt_automation) + msg, MessageType.Normal);
+            _auditLog.WriteToAuditLogAPI(username, audit_event_type.evt_automationunlocked, msg);
+            ApiHawkeyeMsgHelper.PublishHubMessage(ScoutUtilities.Misc.AuditEventString(audit_event_type.evt_automationunlocked) + msg, MessageType.Normal);
 
 			return MakeSuccessReleaseLock(LockResult.Unlocked);
         }

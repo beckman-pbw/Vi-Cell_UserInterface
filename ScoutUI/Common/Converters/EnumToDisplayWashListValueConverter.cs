@@ -20,10 +20,10 @@ namespace ScoutUI.Common.Converters
                 switch (wash)
                 {
                     case SamplePostWash.NormalWash:
-                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_NormalWashWithUnits"));
+                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_NormalWorkflowWithUnits"));
                         break;
                     case SamplePostWash.FastWash:
-                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_FastWashWithUnits"));
+                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_LCDWorkflowWithUnits"));
                         break;
                     default:
                         return null;

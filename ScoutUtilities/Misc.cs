@@ -419,7 +419,9 @@ namespace ScoutUtilities
                 case audit_event_type.evt_qcontrolmodify: return "QualityControl Modification";
                 case audit_event_type.evt_deletecampaigndata: return "Campaign Data Deleted";
                 case audit_event_type.evt_flowcelldepthupdate: return "FlowCell Depth Update";
-			}
+                case audit_event_type.evt_automationlocked: return "Automation Locked";
+                case audit_event_type.evt_automationunlocked: return "Automation Unlocked";
+            }
 			return evt.ToString();
 		}
 

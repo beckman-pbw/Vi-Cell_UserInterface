@@ -5,7 +5,7 @@ In order to run/debug the UserInterface software on a worksation with Visual Stu
 
 1.  Install Git for windows: https://git-scm.com/downloads
 
-2.  Install VisualStudio 2019
+2.  Install VisualStudio 2019 Professional
     * Make sure and also select the "Visual C++ -> Microsoft Foundation Classes for C++" feature under the Features list as well.
     * If you want to user a newer version of VisualStudio, you can but you will need to edit the pom.xml file to user your version of MSBUILD.exe.
     * You can also install useful plugins, such as the [Markdown Editor plugin from Mads Kristensen](https://marketplace.visualstudio.com/items?itemName=MadsKristensen.MarkdownEditor)

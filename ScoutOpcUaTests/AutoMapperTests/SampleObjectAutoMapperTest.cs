@@ -288,17 +288,17 @@ namespace ScoutOpcUaTests
             var sampleObject = new SampleConfig();
             var map = new SampleEswDomain();
 
-            sampleObject.WashType = WashTypeEnum.FastWashType;
+            sampleObject.WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType;
             map = _mapper.Map<SampleEswDomain>(sampleObject);
 
             Assert.IsNotNull(map);
-            Assert.AreEqual((ushort) sampleObject.WashType, (ushort) map.WashType);
+            Assert.AreEqual((ushort) sampleObject.WorkflowType, (ushort) map.WashType);
 
-            sampleObject.WashType = WashTypeEnum.NormalWashType;
+            sampleObject.WorkflowType = WorkflowTypeEnum.NormalWorkflowType;
             map = _mapper.Map<SampleEswDomain>(sampleObject);
 
             Assert.IsNotNull(map);
-            Assert.AreEqual((ushort) sampleObject.WashType, (ushort) map.WashType);
+            Assert.AreEqual((ushort) sampleObject.WorkflowType, (ushort) map.WashType);
         }
 
         [Test]
@@ -334,7 +334,7 @@ namespace ScoutOpcUaTests
                 SamplePosition = new SamplePosition {Row = "Y", Column = 1},
                 SaveEveryNthImage = 1,
                 Tag = "My tag for the cool sample",
-                WashType = WashTypeEnum.FastWashType
+                WorkflowType = WorkflowTypeEnum.LowCellDensityWorkflowType
             };
             
             var map = _mapper.Map<SampleEswDomain>(sample);
@@ -347,7 +347,7 @@ namespace ScoutOpcUaTests
             Assert.AreEqual(sample.SamplePosition.Row, map.SamplePosition.Row.ToString());
             Assert.AreEqual(sample.SaveEveryNthImage, map.SaveEveryNthImage);
             Assert.AreEqual(sample.Tag, map.SampleTag);
-            Assert.AreEqual((uint)sample.WashType, (uint)map.WashType);
+            Assert.AreEqual((uint)sample.WorkflowType, (uint)map.WashType);
         }
     }
 }

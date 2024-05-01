@@ -113,6 +113,7 @@ namespace ScoutViewModels.ViewModels.Reports
             _instrumentStatusReportModel.InstrumentStatusReportDomain.InstrumentStatusReportStorageList = new List<ReportTableTemplate>();
             _instrumentStatusReportModel.InstrumentStatusReportDomain.InstrumentStatusReportSystemErrorList = new List<InstrumentStatusReportErrorDomain>();
             _instrumentStatusReportModel.InstrumentStatusReportDomain.InstrumentStatusReportSensorStatusList = new List<InstrumentStatusReportSensorStatusDomain>();
+//TODO:... next line is commented out in CHM.
             _instrumentStatusReportModel.InstrumentStatusReportDomain.InstrumentStatusReportRemainingTubesList = new List<ReportTableTemplate>();
         }
 
@@ -154,6 +155,7 @@ namespace ScoutViewModels.ViewModels.Reports
             AddReportDataSource("InstrumentStatusReportStorageListTBL", instrumentDomain.InstrumentStatusReportStorageList);
             AddReportDataSource("InstrumentStatusSystemErrorTBL", instrumentDomain.InstrumentStatusReportSystemErrorList);
             AddReportDataSource("InstrumentSensorStatusInfoTBL", instrumentDomain.InstrumentStatusReportSensorStatusList);
+//TODO:... next line is commented out in CHM.
             AddReportDataSource("InstrumentStatusReportRemainingTubesListTBL", instrumentDomain.InstrumentStatusReportRemainingTubesList);
 
             RefreshAndSetReportContent(reportViewerPath);
@@ -273,6 +275,8 @@ namespace ScoutViewModels.ViewModels.Reports
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_FLowCellDepth",
                 ScoutUtilities.Misc.ConvertToString(flowCellDepth));
             AddReportTableTemplateToLowerLevelList(reportTableTemplate);
+
+//TODO:... next lines are commented out in CHM.
             var sensorValue = GetSensorStateValue(systemStatusDomain.CarouselDetect.ToString());
             if (sensorValue != null)
             {
@@ -321,6 +325,7 @@ namespace ScoutViewModels.ViewModels.Reports
                 reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_ProbeHome", sensorValue);
                 AddReportTableTemplateToMotorStatusStateList(reportTableTemplate);
             }
+//TODO:... previous lines are commented out in CHM.
 
             sensorValue = GetSensorStateValue(systemStatusDomain.FocusHome.ToString());
             if (sensorValue != null)
@@ -329,6 +334,7 @@ namespace ScoutViewModels.ViewModels.Reports
                 AddReportTableTemplateToMotorStatusStateList(reportTableTemplate);
             }
 
+//TODO:... next lines are commented out in CHM.
             sensorValue = GetSensorStateValue(systemStatusDomain.ReagentUpper.ToString());
             if (sensorValue != null)
             {
@@ -358,6 +364,8 @@ namespace ScoutViewModels.ViewModels.Reports
             }
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Report_carousel", positionValue);
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
+//TODO:... previous lines are commented out in CHM.
+
             var valve = LowLevelModel.svc_GetValvePort(); 
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_ButtonContent_Valve", valve);
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
@@ -366,23 +374,31 @@ namespace ScoutViewModels.ViewModels.Reports
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
            
 
+//TODO:... next lines are commented out in CHM.
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Probe",
                 systemStatusDomain.MotorProbePosition.ToString());
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
+//TODO:... previous lines are commented out in CHM.
 
             const string volt = " V";
+//TODO:... next lines are commented out in CHM.
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Motortheta_WithoutColon",
                 ScoutUtilities.Misc.ConvertToString(systemStatusDomain.MotorThetaPosition));
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_MotorRadius_WithoutColon",
                 ScoutUtilities.Misc.ConvertToString(systemStatusDomain.MotorRadiusPosition));
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
+//TODO:... previous lines are commented out in CHM.
+
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_MotorFocus",
                 ScoutUtilities.Misc.ConvertToString(systemStatusDomain.MotorFocusPosition));
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
+//TODO:... next lines are commented out in CHM.
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_MotorReagent",
                 ScoutUtilities.Misc.ConvertToString(systemStatusDomain.MotorReagentPosition));
             AddReportTableTemplateToStatusStateList(reportTableTemplate);
+//TODO:... previous lines are commented out in CHM.
+
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Report_Pos33Volt",
                ScoutUtilities.Misc.UpdateTrailingPoint(systemStatusDomain.Voltage3_3V, TrailingPoint.Two) + volt);
             AddReportTableTemplateToVoltageList(reportTableTemplate);

@@ -269,7 +269,7 @@ namespace ScoutModels.Reports
                 AddReportTableTemplateToAnalysisParameterList(reportTableTemplateObj, reportTableTemplates);
 
                 var washNameKey = GetEnumDescription.GetDescription(sampleRecordDomain.WashName);
-                reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate("LID_QMgmtHEADER_Wash", LanguageResourceHelper.Get(washNameKey));
+                reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate("LID_QMgmtHEADER_Workflow", LanguageResourceHelper.Get(washNameKey));
                 AddReportTableTemplateToAnalysisParameterList(reportTableTemplateObj, reportTableTemplates);
 
                 reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate("LID_Label_Comments", sampleRecordDomain.Tag);

@@ -86,7 +86,7 @@
                         <DataTemplate>
                             <TextBox Text="{Binding Sample.Dilution, Mode=OneWay}"
                                      helper:ControlValidationHelper.AllowOnlyNumeric="True" VerticalAlignment="Center"
-                                     Background="Transparent" BorderThickness="0" IsEnabled="False"/>
+                                     Background="Transparent" BorderThickness="0" IsEnabled="True"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.CellTemplate>
                 </DataGridTemplateColumn>
@@ -94,7 +94,7 @@
                 <DataGridTemplateColumn Width="100" IsReadOnly="False">
                     <DataGridTemplateColumn.HeaderTemplate>
                         <DataTemplate>
-                            <TextBlock Text="{Binding ResourceKeys[LID_QMgmtHEADER_Wash], Source={StaticResource ScoutUILanguageResource}}" 
+                            <TextBlock Text="{Binding ResourceKeys[LID_QMgmtHEADER_Workflow], Source={StaticResource ScoutUILanguageResource}}" 
                                        Margin="5,0,0,0" HorizontalAlignment="Right" TextWrapping="Wrap"/>
                         </DataTemplate>
                     </DataGridTemplateColumn.HeaderTemplate>

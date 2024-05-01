@@ -299,7 +299,7 @@ namespace ScoutModels.Settings
                         generic.ParameterName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_Label_Dilution");
                         break;
                     case ResultParameter.eWash:
-                        generic.ParameterName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_QMgmtHEADER_Wash");
+                        generic.ParameterName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_QMgmtHEADER_Workflow");
                         break;
                     case ResultParameter.eComment:
                         generic.ParameterName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_Label_Tag");

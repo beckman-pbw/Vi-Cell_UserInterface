@@ -18,6 +18,7 @@ namespace ScoutViewModels.ViewModels.Home.ExpandedSampleWorkflow
             _createSampleSetDialogViewModel = createSampleSetDialogViewModel;
         }
 
+//TODO: LH6531-6757 - CHM / Automation cup now use the wash type to toggle an additional sampling script type (no internal dilution)
         public override bool IsFastModeEnabled => base.IsFastModeEnabled && _createSampleSetDialogViewModel.SelectedPlateType != SubstrateType.AutomationCup;
 
         public override object Clone()

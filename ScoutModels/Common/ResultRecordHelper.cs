@@ -330,7 +330,7 @@ namespace ScoutModels.Common
                         list.Add(new KeyValuePair<string, string>(LanguageResourceHelper.Get("LID_Label_Dilution"), genericData.Dilution));
                         break;
                     case ResultParameter.eWash:
-                        list.Add(new KeyValuePair<string, string>(LanguageResourceHelper.Get("LID_QMgmtHEADER_Wash"),
+                        list.Add(new KeyValuePair<string, string>(LanguageResourceHelper.Get("LID_QMgmtHEADER_Workflow"),
                             !string.IsNullOrEmpty(genericData.BpQc) ? LanguageResourceHelper.Get(GetEnumDescription.GetDescription(genericData.Wash)) : string.Empty));
                         break;
                     case ResultParameter.eComment:

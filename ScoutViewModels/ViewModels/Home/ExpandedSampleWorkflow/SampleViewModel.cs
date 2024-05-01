@@ -382,6 +382,7 @@ namespace ScoutViewModels.ViewModels.ExpandedSampleWorkflow
         {
             get 
             {
+//TODO: // Remove this restriction for CHM in order to allow us to run an alternate sample script
                 if (SubstrateType == SubstrateType.AutomationCup) return false;
                 if (IsAdminOrServiceUser) return true;
                 if (LoggedInUser.IsConsoleUserLoggedIn())
