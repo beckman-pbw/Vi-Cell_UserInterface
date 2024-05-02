@@ -848,8 +848,8 @@
   <data name="LID_QMgmtHEADER_SampleId" xml:space="preserve">
     <value>Sample ID</value>
   </data>
-  <data name="LID_QMgmtHEADER_Wash" xml:space="preserve">
-    <value>Wash</value>
+  <data name="LID_QMgmtHEADER_Workflow" xml:space="preserve">
+    <value>Workflow</value>
   </data>
   <data name="LID_RadioButton_CSV" xml:space="preserve">
     <value>*.csv</value>
@@ -4151,17 +4151,17 @@ Do you want to continue?</value>
   <data name="LID_Status_Processing" xml:space="preserve">
     <value>Processing</value>
   </data>
-  <data name="LID_Label_FastWashType" xml:space="preserve">
-    <value>Fast Wash</value>
+  <data name="LID_Label_LCDWorkflowType" xml:space="preserve">
+    <value>Low Cell Density</value>
   </data>
-  <data name="LID_Label_FastWashWithUnits" xml:space="preserve">
-    <value>Fast (170 µL)</value>
+  <data name="LID_Label_LCDWorkflowWithUnits" xml:space="preserve">
+    <value>Low Cell Density (172uL)</value>
   </data>
-  <data name="LID_Label_NormalWashType" xml:space="preserve">
-    <value>Normal Wash</value>
+  <data name="LID_Label_NormalWorkflowType" xml:space="preserve">
+    <value>Normal</value>
   </data>
-  <data name="LID_Label_NormalWashWithUnits" xml:space="preserve">
-    <value>Normal (200 µL)</value>
+  <data name="LID_Label_NormalWorkflowWithUnits" xml:space="preserve">
+    <value>Normal (43uL)</value>
   </data>
   <data name="LID_RunResultsReport_Graph_Diameter" xml:space="preserve">
     <value>Diameter (µm)</value>

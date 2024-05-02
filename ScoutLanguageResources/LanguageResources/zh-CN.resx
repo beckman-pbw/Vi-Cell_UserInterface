@@ -842,7 +842,7 @@
   <data name="LID_QMgmtHEADER_SampleId" xml:space="preserve">
     <value>样品ID</value>
   </data>
-  <data name="LID_QMgmtHEADER_Wash" xml:space="preserve">
+  <data name="LID_QMgmtHEADER_Workflow" xml:space="preserve">
     <value>清洗</value>
   </data>
   <data name="LID_RadioButton_CSV" xml:space="preserve">
@@ -4039,16 +4039,16 @@
   <data name="LID_Label_Medium" xml:space="preserve">
     <value>中</value>
   </data>
-  <data name="LID_Label_FastWashType" xml:space="preserve">
+  <data name="LID_Label_LCDWorkflowType" xml:space="preserve">
     <value>快速清洗</value>
   </data>
-  <data name="LID_Label_FastWashWithUnits" xml:space="preserve">
+  <data name="LID_Label_LCDWorkflowWithUnits" xml:space="preserve">
     <value>快速 (170 µL)</value>
   </data>
-  <data name="LID_Label_NormalWashType" xml:space="preserve">
+  <data name="LID_Label_NormalWorkflowType" xml:space="preserve">
     <value>正常清洗</value>
   </data>
-  <data name="LID_Label_NormalWashWithUnits" xml:space="preserve">
+  <data name="LID_Label_NormalWorkflowWithUnits" xml:space="preserve">
     <value>正常 (200 µL)</value>
   </data>
   <data name="LID_RunResultsReport_Graph_Diameter" xml:space="preserve">

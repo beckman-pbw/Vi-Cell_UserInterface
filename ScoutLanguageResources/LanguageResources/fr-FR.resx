@@ -842,7 +842,7 @@
   <data name="LID_QMgmtHEADER_SampleId" xml:space="preserve">
     <value>Entrée échant.</value>
   </data>
-  <data name="LID_QMgmtHEADER_Wash" xml:space="preserve">
+  <data name="LID_QMgmtHEADER_Workflow" xml:space="preserve">
     <value>Lavage</value>
   </data>
   <data name="LID_RadioButton_CSV" xml:space="preserve">
@@ -4037,16 +4037,16 @@
   <data name="LID_Label_Medium" xml:space="preserve">
     <value>Moyen</value>
   </data>
-  <data name="LID_Label_FastWashType" xml:space="preserve">
+  <data name="LID_Label_LCDWorkflowType" xml:space="preserve">
     <value>Lavage rapide</value>
   </data>
-  <data name="LID_Label_FastWashWithUnits" xml:space="preserve">
+  <data name="LID_Label_LCDWorkflowWithUnits" xml:space="preserve">
     <value>Rapide (170 µl)</value>
   </data>
-  <data name="LID_Label_NormalWashType" xml:space="preserve">
+  <data name="LID_Label_NormalWorkflowType" xml:space="preserve">
     <value>Lavage standard</value>
   </data>
-  <data name="LID_Label_NormalWashWithUnits" xml:space="preserve">
+  <data name="LID_Label_NormalWorkflowWithUnits" xml:space="preserve">
     <value>Standard (200 µl)</value>
   </data>
   <data name="LID_RunResultsReport_Graph_Diameter" xml:space="preserve">

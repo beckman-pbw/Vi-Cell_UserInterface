@@ -842,7 +842,7 @@
   <data name="LID_QMgmtHEADER_SampleId" xml:space="preserve">
     <value>ID mue</value>
   </data>
-  <data name="LID_QMgmtHEADER_Wash" xml:space="preserve">
+  <data name="LID_QMgmtHEADER_Workflow" xml:space="preserve">
     <value>Lav</value>
   </data>
   <data name="LID_RadioButton_CSV" xml:space="preserve">
@@ -4039,16 +4039,16 @@
   <data name="LID_Label_Medium" xml:space="preserve">
     <value>Medio</value>
   </data>
-  <data name="LID_Label_FastWashType" xml:space="preserve">
+  <data name="LID_Label_LCDWorkflowType" xml:space="preserve">
     <value>Lavado rápido</value>
   </data>
-  <data name="LID_Label_FastWashWithUnits" xml:space="preserve">
+  <data name="LID_Label_LCDWorkflowWithUnits" xml:space="preserve">
     <value>Rápido (170 µl)</value>
   </data>
-  <data name="LID_Label_NormalWashType" xml:space="preserve">
+  <data name="LID_Label_NormalWorkflowType" xml:space="preserve">
     <value>Lavado normal</value>
   </data>
-  <data name="LID_Label_NormalWashWithUnits" xml:space="preserve">
+  <data name="LID_Label_NormalWorkflowWithUnits" xml:space="preserve">
     <value>Normal (200 µl)</value>
   </data>
   <data name="LID_RunResultsReport_Graph_Diameter" xml:space="preserve">
