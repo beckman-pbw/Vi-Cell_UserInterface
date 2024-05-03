@@ -1,5 +1,4 @@
 ﻿using ApiProxies.Generic;
-using HawkeyeCoreAPI;
 using ScoutDomains;
 using ScoutDomains.Analysis;
 using ScoutDomains.Reports;
@@ -21,7 +20,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
-using HawkeyeCoreAPI.Facade;
 using ScoutModels.Interfaces;
 using ScoutViewModels.Interfaces;
 
@@ -44,7 +42,7 @@ namespace ScoutViewModels.ViewModels.Reports
         public ICommand OnInstrumentTypeSelectionChangedCommand { get; set; }
         public HardwareSettingsDomain HardwareSettingsData { get; set; }
         public List<UserDomain> UserList { get; set; }
-        public new List<CellTypeDomain> AllCellTypesList { get; set; }
+        public List<CellTypeDomain> AllCellTypesList { get; set; }
         public List<CalibrationActivityLogDomain> ConcDataListList { get; set; }
         public List<CalibrationActivityLogDomain> ACupConcDataListList { get; set; }
         public string AnalysisType { get; set; }

@@ -10,8 +10,6 @@ using ScoutLanguageResources;
 using ScoutModels;
 using ScoutModels.Common;
 using ScoutModels.Review;
-using ScoutServices.Enums;
-using ScoutServices.Interfaces;
 using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.CustomEventArgs;
@@ -56,16 +54,13 @@ namespace ScoutViewModels.ViewModels.Dialogs
         {
             ReviewModel?.Dispose();
             RecordHelper?.Dispose();
-            _lockStateSubscriber?.Dispose();
             _statusSubscriber?.Dispose();
             base.DisposeUnmanaged();
         }
 
         #region Properties & Fields
 
-        private IDisposable _lockStateSubscriber;
         private IDisposable _statusSubscriber;
-        private readonly ILockManager _lockManager;
         private readonly IInstrumentStatusService _instrumentStatusService;
         private bool _sampleHasChanged;
         private bool _enableSampleAnalysisListener;

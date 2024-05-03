@@ -6,14 +6,11 @@ using ScoutDomains.Reports.QualityControls;
 using ScoutLanguageResources;
 using ScoutModels.Reports;
 using ScoutUtilities.Enums;
-using ScoutUtilities.Helper;
 using ScoutViewModels.ViewModels.QualityControl;
 using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.Linq;
 using ScoutModels.Common;
-using ScoutServices.Interfaces;
 using ScoutViewModels.Interfaces;
 
 namespace ScoutViewModels.ViewModels.Reports
@@ -47,7 +44,6 @@ namespace ScoutViewModels.ViewModels.Reports
         private QualityControlViewModel _qualityControlVm;
         private QualityControlsReportModel _qualityControlsReportModel;
         private LineGraphDomain _lineGraphDomain;
-        private ILockManager _lockManager;
 
         private string _printTitle;
         private string _comments;

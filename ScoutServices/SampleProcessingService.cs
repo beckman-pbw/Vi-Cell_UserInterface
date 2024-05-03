@@ -302,12 +302,12 @@ namespace ScoutServices
 
         private void OnSampleStatusCallback(object sender, ApiEventArgs<SampleEswDomain> args)
         {
-            var argMsg = args.Arg1.ToString();
-            // Keep for debugging:_log.Debug($"Sample Status Callback [SERVICE]::args.Arg1:{argMsg}");
+            // Keep for debugging:var argMsg = args.Arg1.ToString();
+            // Keep for debugging: _log.Debug($"Sample Status Callback [SERVICE]::args.Arg1:{argMsg}");
             PublishSampleStatusCallback(args);
         }
 
-        private async void OnSampleCompleteCallback(object sender, ApiEventArgs<SampleEswDomain> args)
+        private void OnSampleCompleteCallback(object sender, ApiEventArgs<SampleEswDomain> args)
         {
             var argMsg = args.Arg1.ToString();
             _log.Debug($"Sample Complete Callback (w/ async) [SERVICE]::args.Arg1:{argMsg}");
@@ -317,10 +317,10 @@ namespace ScoutServices
             var sampleDataUuid = args?.Arg1?.SampleDataUuid ?? new uuidDLL();
             if (!sampleDataUuid.IsNullOrEmpty())
             {
-				sampleRecord = ResultModel.RetrieveSampleRecord(sampleDataUuid);
+                sampleRecord = ResultModel.RetrieveSampleRecord(sampleDataUuid);
 
-				var sampleEswDomain = args.Arg1;
-				sampleRecord.Position = sampleEswDomain.SamplePosition;
+                var sampleEswDomain = args.Arg1;
+                sampleRecord.Position = sampleEswDomain.SamplePosition;
                 if (args?.Arg1 != null) args.Arg1.SampleRecord = sampleRecord;
             }
 

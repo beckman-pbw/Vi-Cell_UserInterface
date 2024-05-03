@@ -1,6 +1,5 @@
 ﻿using ScoutDomains;
 using ScoutLanguageResources;
-using ScoutModels.Dialogs;
 using ScoutUtilities.CustomEventArgs;
 using ScoutUtilities.Enums;
 using System;
@@ -8,9 +7,7 @@ using System.Linq;
 using System.Windows;
 using ScoutUtilities.Events;
 using System.DirectoryServices.AccountManagement;
-using System.Web.Security;
 using ApiProxies.Generic;
-using HawkeyeCoreAPI.Facade;
 using ScoutModels;
 
 namespace ScoutViewModels.ViewModels.Dialogs
@@ -161,7 +158,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
         {
             try
             {
-                var result = false;
                 var activeDirDomain = new ActiveDirectoryDomain(ActiveDirServer, ActiveDirPort, ActiveDirBaseDn,
                     ActiveDirMapNormal, ActiveDirMapAdvanced, ActiveDirMapAdmin);
 

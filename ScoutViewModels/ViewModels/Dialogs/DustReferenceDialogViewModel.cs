@@ -69,10 +69,8 @@ namespace ScoutViewModels.ViewModels.Dialogs
         private CancellationTokenSource _cancelTokenSource;
         private bool _enableDustSubtractListener;
         private bool _isCancelRequestAccepted;
-        private bool _doAllocate;
 
         private const string IMG_LIST = "ImgList";
-        private const string FINAL_IMAGE = "ImgList";
 
         public ObservableCollection<ProgressDomain> ProgressList => new ObservableCollection<ProgressDomain>(_dustReferenceModel.ProgressList);
 
@@ -432,7 +430,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
                     }
                     break;
                 case eBrightfieldDustSubtractionState.bds_AspiratingBuffer:
-                    _doAllocate = true;
                     break;
                 case eBrightfieldDustSubtractionState.bds_DispensingBufferToFlowCell:
                     _dustReferenceModel.ProgressList[0].IsProgressComplete = true;

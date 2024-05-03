@@ -1,11 +1,7 @@
 ﻿using ScoutLanguageResources;
-using ScoutServices.Enums;
-using ScoutServices.Interfaces;
 using ScoutUtilities;
 using ScoutUtilities.CustomEventArgs;
-using ScoutUtilities.Enums;
 using System.Windows;
-using ScoutModels;
 
 namespace ScoutViewModels.ViewModels.Dialogs
 {
@@ -19,9 +15,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
         }
 
         #region Properties and Fields
-
-        private readonly ILockManager _lockManager;
-        private readonly UserPermissionLevel _currentUserRole;
 
         #endregion
 

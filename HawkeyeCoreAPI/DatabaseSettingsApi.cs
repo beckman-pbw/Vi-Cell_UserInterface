@@ -52,6 +52,7 @@ namespace HawkeyeCoreAPI
             }
             catch (Exception e)
             {
+                Log.Error($"SetOpticalHardwareConfigAPI:", e);
                 return false;
             }
         }

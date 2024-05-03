@@ -24,8 +24,6 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Windows;
-using HawkeyeCoreAPI;
 using HawkeyeCoreAPI.Facade;
 
 namespace ScoutViewModels.ViewModels.Common
@@ -446,7 +444,7 @@ namespace ScoutViewModels.ViewModels.Common
         #region Image Expand Command
 
         private RelayCommand _imageExpandCommand;
-        public RelayCommand ImageExpandCommand => _imageExpandCommand ?? (_imageExpandCommand = new RelayCommand(OnExpandImage));
+        public new RelayCommand ImageExpandCommand => _imageExpandCommand ?? (_imageExpandCommand = new RelayCommand(OnExpandImage));
 
         private void OnExpandImage()
         {

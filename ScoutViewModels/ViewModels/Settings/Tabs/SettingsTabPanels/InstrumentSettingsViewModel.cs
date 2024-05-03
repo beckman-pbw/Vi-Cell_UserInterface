@@ -16,10 +16,7 @@ using System.Net.NetworkInformation;
 using System.Net.Sockets;
 using ScoutServices.Watchdog;
 using ScoutServices.Interfaces;
-using log4net;
 using ScoutUtilities.Common;
-using System.Collections.ObjectModel;
-using System.Collections.Generic;
 
 namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 {
@@ -129,15 +126,16 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
             SaveOpticsConfigurationCommand.RaiseCanExecuteChanged();
         }
 
-        public bool IsAdminUser
-        {
-            get { return GetProperty<bool>(); }
-            set
-            {
-                SetProperty(value);
-                NotifyPropertyChanged(nameof(IsAdminOrServiceUser));
-            }
-        }
+        // Use the code in BaseViewModel.
+        //public bool IsAdminUser
+        //{
+        //    get { return GetProperty<bool>(); }
+        //    set
+        //    {
+        //        SetProperty(value);
+        //        NotifyPropertyChanged(nameof(IsAdminOrServiceUser));
+        //    }
+        //}
 
         public string SerialNumber
         {

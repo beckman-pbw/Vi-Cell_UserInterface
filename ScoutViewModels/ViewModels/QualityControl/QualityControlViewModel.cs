@@ -24,7 +24,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Threading.Tasks;
 using ScoutServices.Interfaces;
-using ScoutViewModels.ViewModels.Tabs.SettingsPanel;
 using ScoutServices.Enums;
 using ScoutViewModels.Interfaces;
 
@@ -530,7 +529,7 @@ namespace ScoutViewModels.ViewModels.QualityControl
         }
 
         private RelayCommand _imageExpandCommand;
-        public RelayCommand ImageExpandCommand => _imageExpandCommand ?? (_imageExpandCommand = new RelayCommand(OnExpandImage, null));
+        public new RelayCommand ImageExpandCommand => _imageExpandCommand ?? (_imageExpandCommand = new RelayCommand(OnExpandImage, null));
 
         private void OnExpandImage()
         {

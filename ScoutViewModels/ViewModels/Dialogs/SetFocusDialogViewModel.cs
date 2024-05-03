@@ -18,7 +18,6 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Threading;
 using System.Windows;
 using System.Windows.Threading;
 using ScoutModels.Interfaces;
@@ -59,8 +58,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         protected override void DisposeUnmanaged()
         {
-            _cancelTokenSource?.Dispose();
-
             if (_setFocusTimer != null)
             {
                 _setFocusTimer.Stop();
@@ -80,7 +77,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         private SetFocusModel _setFocusModel;
         private DispatcherTimer _setFocusTimer;
-        private CancellationTokenSource _cancelTokenSource;
         private CallBackProgressStatus _setFocusStatus;
         private readonly IInstrumentStatusService _instrumentStatusService;
 
@@ -306,7 +302,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         private void OnSetFocusTimer(object sender, EventArgs e)
         {
-            _cancelTokenSource?.Cancel();
+            //_cancelTokenSource?.Cancel();
 
             Log.Debug(LanguageResourceHelper.Get("LID_MSGBOX_CancelAutoFocusError"));
             var result = DialogEventBus.DialogBoxOk(this, LanguageResourceHelper.Get("LID_MSGBOX_CancelAutoFocusError"));
@@ -762,7 +758,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
                                       $"_isCancelRequestAccepted = {_isCancelRequestAccepted}" + $"   _userCancelled = {_userCancelled}");
                             _setFocusStatus = CallBackProgressStatus.IsCanceled;
                             _setFocusTimer?.Stop();
-                            _cancelTokenSource?.Cancel();
 
                             if (_isCancelRequestAccepted)
                             {
@@ -796,7 +791,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
                         _setFocusStatus = CallBackProgressStatus.IsError;
                         _enableAutoFocusListener = false;
                         _setFocusTimer?.Stop();
-                        _cancelTokenSource?.Cancel();
                         OnFaultError();
                         Log.Debug($"SetFocusDVM::AutoFocusState()::case eAutofocusState.af_Failed - Complete");
                         break;
