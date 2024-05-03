@@ -251,7 +251,6 @@ namespace ScoutUI.Common.Controls
             outlinedTextBlock.InvalidateVisual();
         }
 
-        [Obsolete]
         private void EnsureFormattedText()
         {
             if (_formattedText != null)
@@ -265,7 +264,17 @@ namespace ScoutUI.Common.Controls
                 FlowDirection,
                 new Typeface(FontFamily, FontStyle, FontWeight, FontStretch),
                 FontSize,
-                Brushes.Black);
+                Brushes.Black,
+                VisualTreeHelper.GetDpi(this).PixelsPerDip);
+
+            // This is the previous code...
+            //_formattedText = new FormattedText(
+            //    Text ?? string.Empty,
+            //    ScoutLanguageResources.LanguageResourceHelper.CurrentDisplayCulture,
+            //    FlowDirection,
+            //    new Typeface(FontFamily, FontStyle, FontWeight, FontStretch),
+            //    FontSize,
+            //    Brushes.Black);
 
             UpdateFormattedText();
         }
@@ -289,7 +298,6 @@ namespace ScoutUI.Common.Controls
             _formattedText.SetTextDecorations(TextDecorations);
         }
 
-        [Obsolete]
         private void EnsureGeometry()
         {
             if (_textGeometry != null)

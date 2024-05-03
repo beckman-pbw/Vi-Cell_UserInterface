@@ -39,9 +39,7 @@
     <None Remove="SqlServerTypes\**" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="AForge" Version="2.2.5" />
     <PackageReference Include="AForge.Imaging" Version="2.2.5" />
-    <PackageReference Include="AForge.Math" Version="2.2.5" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="2.0.217201" />
     <PackageReference Include="Microsoft.ReportingServices.ReportViewerControl.Winforms" Version="150.1404.0" />
     <PackageReference Include="Microsoft.SqlServer.Types" Version="14.0.1016.290" />
@@ -53,17 +51,6 @@
     <PackageReference Include="System.ValueTuple" Version="4.5.0" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="AForge">
-      <HintPath>..\..\..\Instrument\Software\AForge.dll</HintPath>
-    </Reference>
-    <Reference Include="AForge.Imaging, Version=2.2.4.0, Culture=neutral, PublicKeyToken=ba8ddea9676ca48b, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Instrument\Software\AForge.Imaging.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
-    <Reference Include="AForge.Math, Version=2.2.4.0, Culture=neutral, PublicKeyToken=abba2e25397ee8c9, processorArchitecture=MSIL">
-      <HintPath>..\..\..\Instrument\Software\AForge.Math.dll</HintPath>
-      <SpecificVersion>False</SpecificVersion>
-    </Reference>
     <Reference Include="Ninject.Extensions.Logging">
       <HintPath>..\packages\ninject.extensions.logging\3.3.0\lib\netstandard2.0\Ninject.Extensions.Logging.dll</HintPath>
     </Reference>
