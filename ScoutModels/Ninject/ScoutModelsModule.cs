@@ -31,8 +31,6 @@ using ScoutModels.Interfaces;
             Bind<IAuditLog>().To<AuditLog>().InSingletonScope();
             Bind<IErrorLog>().To<ErrorLog>().InSingletonScope();
             Bind<IDisplayService>().To<DisplayService>().InSingletonScope();
-            //Bind<IHardwareSettingsModel>().To<HardwareSettingsModel>().InTransientScope();
-//            Bind<IHardwareSettingsModel>().To<HardwareSettingsModel>().InSingletonScope();
             Bind<IApplicationStateService>().To<ApplicationStateService>().InSingletonScope();
             Bind<SecuredTask>().ToSelf().InTransientScope();
             Bind<IDataAccess>().ToConstant(XMLDataAccess.Instance);

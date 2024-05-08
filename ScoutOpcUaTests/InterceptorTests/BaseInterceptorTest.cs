@@ -45,7 +45,6 @@ namespace ScoutOpcUaTests
         protected readonly Mock<ISecurityService> MockSecurityService = new Mock<ISecurityService>();
         protected readonly Mock<ILockManager> MockLockManager = new Mock<ILockManager>();
         protected readonly Mock<IConfiguration> MockConfiguration = new Mock<IConfiguration>();
-        //protected readonly Mock<IHardwareSettingsModel> MockHardwareSettings = new Mock<IHardwareSettingsModel>();
         protected readonly Mock<ICellTypeManager> MockCellTypeManager = new Mock<ICellTypeManager>();
         protected readonly Mock<IConfigurationManager> MockConfigurationManager = new Mock<IConfigurationManager>();
         protected readonly Mock<ISampleProcessingService> MockSampleProcessingService = new Mock<ISampleProcessingService>();

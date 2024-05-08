@@ -62,7 +62,6 @@ namespace ScoutViewModels.ViewModels.Dialogs.Tests
             _instrStatusMock = new Mock<ISystemStatus>();
             _errorMock = new Mock<IErrorLog>();
             var loggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
             var userService = new Mock<IUserService>();
             userService.Setup(m => m.GetUserList()).Returns(new List<UserDomain>
             {
@@ -71,10 +70,8 @@ namespace ScoutViewModels.ViewModels.Dialogs.Tests
             });
             _kernel.Bind<IUserService>().ToConstant(userService.Object);
 
-            var serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, loggerMock.Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, loggerMock.Object, applicationStateServiceMock.Object);
 
             _kernel.Bind<IInstrumentStatusService>().ToConstant(_instrumentStatusService);
 

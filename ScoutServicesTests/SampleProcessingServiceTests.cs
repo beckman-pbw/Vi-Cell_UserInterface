@@ -69,11 +69,9 @@ namespace ScoutServicesTests
             _kernel.Bind<IAutomationSettingsService>().ToConstant(_autoMock.Object);
             var errorMock = new Mock<IErrorLog>();
             var loggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
             string serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            _instrumentStatusService = new InstrumentStatusService(_sysStatusMock.Object, errorMock.Object, loggerMock.Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+            _instrumentStatusService = new InstrumentStatusService(_sysStatusMock.Object, errorMock.Object, loggerMock.Object, applicationStateServiceMock.Object);
             _kernel.Bind<IWorkListModel>().To<WorkListModel>().InSingletonScope();
             _kernel.Bind<ICapacityManager>().To<CapacityManager>().InSingletonScope();
             _kernel.Bind<IDisplayService>().To<DisplayService>().InSingletonScope();

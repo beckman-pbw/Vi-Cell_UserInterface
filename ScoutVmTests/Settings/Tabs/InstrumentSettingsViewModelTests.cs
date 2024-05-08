@@ -133,11 +133,8 @@ namespace ScoutVmTests.Settings.Tabs
             var errorMock = new Mock<IErrorLog>();
             var iloggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
             var sysStatusMock = new Mock<ISystemStatus>();
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
-            string serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            var instrumentStatusService = new InstrumentStatusService(instrStatusMock.Object, errorMock.Object, iloggerMock.Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+            var instrumentStatusService = new InstrumentStatusService(instrStatusMock.Object, errorMock.Object, iloggerMock.Object, applicationStateServiceMock.Object);
             var vm = new InstrumentSettingsViewModel(watchdog.Object, lockManager.Object, opcUaCfgManager, dbMock.Object, smtpMock.Object, autoMock.Object, instrumentStatusService);
             
             Assert.IsNotNull(vm);

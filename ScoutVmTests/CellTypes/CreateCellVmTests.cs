@@ -39,11 +39,8 @@ namespace ScoutVmTests.CellTypes
             _errorMock = new Mock<IErrorLog>();
             var iloggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
             var sysStatusMock = new Mock<ISystemStatus>();
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
-            string serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, iloggerMock.Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, iloggerMock.Object, applicationStateServiceMock.Object);
             Kernel = new StandardKernel(new ScoutServiceModule(), new ScoutViewModelsModule());
             Kernel.Bind<IWorkListModel>().To<WorkListModel>().InSingletonScope();
             Kernel.Bind<ICapacityManager>().To<CapacityManager>().InSingletonScope();

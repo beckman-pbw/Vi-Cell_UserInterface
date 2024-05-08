@@ -44,13 +44,9 @@ namespace ScoutModelsTests.InstrumentStatus
         [Test]
         public void GetSystemErrorLog_ShouldLogAndReturnSystemErrorDomainIfApplicationLanguageIsNull()
         {
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
-            string serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
             InstrumentStatusService mockInstrumentStatusService = new InstrumentStatusService(
-                new Mock<ISystemStatus>().Object,
-                new Mock<IErrorLog>().Object, new Mock<ILogger>().Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+                new Mock<ISystemStatus>().Object, new Mock<IErrorLog>().Object, new Mock<ILogger>().Object, applicationStateServiceMock.Object);
 
             //Act
             var systemErrorDomain = mockInstrumentStatusService.SystemErrorCodeToExpandedResourceStrings(16908290);

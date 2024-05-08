@@ -64,11 +64,8 @@ namespace ScoutViewModelTests.Dialogs
             var iloggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
             var sysStatusMock = new Mock<ISystemStatus>();
             var displaySvcMock = new Mock<IDisplayService>();
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
-            string serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, iloggerMock.Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, iloggerMock.Object, applicationStateServiceMock.Object);
             _kernel = new StandardKernel(new ScoutServiceModule(), new ScoutViewModelsModule());
             _kernel.Bind<IWorkListModel>().To<WorkListModel>().InSingletonScope();
             _kernel.Bind<ICapacityManager>().To<CapacityManager>().InSingletonScope();

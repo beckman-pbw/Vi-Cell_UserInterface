@@ -63,11 +63,8 @@ namespace ScoutVmTests.Service
             _errorMock = new Mock<IErrorLog>();
             var loggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
             var sysStatusMock = new Mock<ISystemStatus>();
-            var hardwareSettingsMock = new Mock<IHardwareSettingsModel>();
-            string serialNumber = "12345";
-            hardwareSettingsMock.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, loggerMock.Object, hardwareSettingsMock.Object, applicationStateServiceMock.Object);
+            _instrumentStatusService = new InstrumentStatusService(_instrStatusMock.Object, _errorMock.Object, loggerMock.Object, applicationStateServiceMock.Object);
 
             _dialogCallerMock = new Mock<IDialogCaller>();
             _sampleProcessingServiceMock = new Mock<ISampleProcessingService>();
