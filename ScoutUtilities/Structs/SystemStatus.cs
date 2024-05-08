@@ -112,7 +112,5 @@ namespace ScoutUtilities.Structs
 
         /* Nightly clean cycle status*/
         public eNightlyCleanStatus nightly_clean_cycle;
-
-        public Int16 instrumentType;
     }
 }

@@ -21,13 +21,14 @@ using System.Reflection;
 using AForge.Imaging;
 using ApiProxies.Extensions;
 using Org.BouncyCastle.Math;
+using ScoutModels;
 
 namespace ScoutViewModels.ViewModels.Reports
 {
     public class RunResultsReportViewModel : ReportWindowViewModel
     {
         public RunResultsReportViewModel(string printTitle, string comments, UserPermissionLevel userPermissionLevel, SampleRecordDomain sampleRecord,
-            bool isAutoExportPDF, IEnumerable<ReportPrintOptions> reportPrintOptions, HardwareSettingsDomain hardwareSettings, List<BarGraphDomain> graphList,
+            bool isAutoExportPDF, IEnumerable<ReportPrintOptions> reportPrintOptions, List<BarGraphDomain> graphList,
             IEnumerable<ReportGraphOptions> reportGraphOptions, string reportImageCaption)
         {
             _runResultsReportModel = new RunResultsReportModel();
@@ -43,7 +44,6 @@ namespace ScoutViewModels.ViewModels.Reports
             _sampleRecord = sampleRecord;
             _isAutoExportPDF = isAutoExportPDF;
             _reportPrintOptions = reportPrintOptions;
-            _hardwareSettings = hardwareSettings;
             _graphList = graphList;
             _reportGraphOptions = reportGraphOptions;
             _reportImageCaption = reportImageCaption;
@@ -75,7 +75,6 @@ namespace ScoutViewModels.ViewModels.Reports
         private SampleRecordDomain _sampleRecord;
         private bool _isAutoExportPDF;
         private IEnumerable<ReportPrintOptions> _reportPrintOptions;
-        private HardwareSettingsDomain _hardwareSettings;
         private List<BarGraphDomain> _graphList;
         private IEnumerable<ReportGraphOptions> _reportGraphOptions;
         private string _reportImageCaption;
@@ -294,13 +293,10 @@ namespace ScoutViewModels.ViewModels.Reports
                     AddReportTableTemplateToSampleDetailList(reportTableTemplateObj);
                 }
 
-                if (_hardwareSettings != null)
-                {
-                    reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate(
-                        "LID_Report_AnalysisVersion",
-                        _hardwareSettings.ImageAnalysisSoftwareVersion);
-                    AddReportTableTemplateToSampleDetailList(reportTableTemplateObj);
-                }
+                reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate(
+                    "LID_Report_AnalysisVersion",
+                    HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.ImageAnalysisSoftwareVersion);
+                AddReportTableTemplateToSampleDetailList(reportTableTemplateObj);
 
                 string str;
                 string substrateTypeStr = ExportModel.SubstrateAsString(_sampleRecord.SubstrateType);

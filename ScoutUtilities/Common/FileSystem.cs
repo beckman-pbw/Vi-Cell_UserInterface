@@ -8,7 +8,6 @@ using System.Security.Cryptography;
 using System.Text;
 using log4net;
 using ScoutLanguageResources;
-using ScoutUtilities.CustomEventArgs;
 using ScoutUtilities.Services;
 using ScoutUtilities.UIConfiguration;
 

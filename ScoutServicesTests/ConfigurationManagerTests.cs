@@ -57,14 +57,14 @@ namespace ScoutServicesTests
             _kernel.Bind<IInstrumentStatusService>().To<InstrumentStatusService>().InSingletonScope();
             _kernel.Bind<HawkeyeCoreAPI.Interfaces.ISystemStatus>().To<HawkeyeCoreAPI.SystemStatus>().InSingletonScope();
             _kernel.Bind<HawkeyeCoreAPI.Interfaces.IErrorLog>().To<HawkeyeCoreAPI.ErrorLog>().InSingletonScope();
-            _kernel.Bind<IHardwareSettingsModel>().To<HardwareSettingsModel>().InTransientScope();
+            //_kernel.Bind<IHardwareSettingsModel>().To<HardwareSettingsModel>().InTransientScope();
 
             _mockSecurityService.Reset();
 
             if (HawkeyeCoreAPI.InitializeShutdown.IsInitializationCompleteAPI() !=
                 InitializationState.eInitializationComplete)
             {
-                HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(false);
+                HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(out ushort instrumentType, false);
                 Thread.Sleep(10000);
             }
 

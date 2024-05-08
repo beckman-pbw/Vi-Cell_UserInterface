@@ -173,15 +173,6 @@ namespace ScoutVmTests.Service
             Kernel.Bind<ScheduledExportAddEditViewModel>().ToSelf().InTransientScope();
         }
 
-        private void SetUser(string username, UserPermissionLevel userRole)
-        {
-            LoggedInUser.SetCurrentUserForUnitTestsOnly("Th1$Is@5ecr3tK3y___T311N0one!", new UserDomain
-            {
-                UserID = username,
-                RoleID = userRole
-            });
-        }
-
         [SetUp]
         public void SetUp()
         {

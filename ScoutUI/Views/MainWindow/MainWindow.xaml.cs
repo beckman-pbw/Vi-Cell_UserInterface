@@ -1,5 +1,4 @@
-﻿using HawkeyeCoreAPI.Facade;
-using log4net;
+﻿using log4net;
 using ScoutUI.Views.Dialogs;
 using ScoutUtilities.Common;
 using ScoutUtilities.Events;

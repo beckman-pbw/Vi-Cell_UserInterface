@@ -51,8 +51,6 @@ namespace ScoutViewModelTests.Dialogs
         private static InstrumentStatusService _instrumentStatusService;
         private static string _username = "username";
         private static string _password = "password";
-        private AppDomainSetup _appDomainSetup;
-        private AppDomain _appDomain;
         private RunOptionSettingsModel _runOptions;
         private readonly Mock<ISecurityService> _mockSecurityService = new Mock<ISecurityService>();
 

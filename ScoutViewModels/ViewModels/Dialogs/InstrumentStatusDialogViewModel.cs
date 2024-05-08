@@ -29,14 +29,12 @@ namespace ScoutViewModels.ViewModels.Dialogs
             _instrumentStatusService = instrumentStatusService;
             _diskSpaceModel = new DiskSpaceModel();
 
-            var hardwareInfo = new HardwareSettingsModel();
-            var versionInfo = hardwareInfo.GetVersionInformation();
             var autoConfig = automationSettingsService.GetAutomationConfig();
             IsACupEnabled = Misc.ByteToBool(autoConfig.ACupIsEnabled);
 
-            SerialNumber = versionInfo.SerialNumber;
+            SerialNumber = HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.SerialNumber;
             ApplicationVersion = UISettings.SoftwareVersion;
-            FirmwareVersion = versionInfo.FirmwareVersion;
+            FirmwareVersion = HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.FirmwareVersion;
 
             SetUserLevelAccess();
             GetDiskSpace();

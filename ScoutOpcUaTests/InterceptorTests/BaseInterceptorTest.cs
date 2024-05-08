@@ -45,7 +45,7 @@ namespace ScoutOpcUaTests
         protected readonly Mock<ISecurityService> MockSecurityService = new Mock<ISecurityService>();
         protected readonly Mock<ILockManager> MockLockManager = new Mock<ILockManager>();
         protected readonly Mock<IConfiguration> MockConfiguration = new Mock<IConfiguration>();
-        protected readonly Mock<IHardwareSettingsModel> MockHardwareSettings = new Mock<IHardwareSettingsModel>();
+        //protected readonly Mock<IHardwareSettingsModel> MockHardwareSettings = new Mock<IHardwareSettingsModel>();
         protected readonly Mock<ICellTypeManager> MockCellTypeManager = new Mock<ICellTypeManager>();
         protected readonly Mock<IConfigurationManager> MockConfigurationManager = new Mock<IConfigurationManager>();
         protected readonly Mock<ISampleProcessingService> MockSampleProcessingService = new Mock<ISampleProcessingService>();
@@ -90,10 +90,10 @@ namespace ScoutOpcUaTests
 
             MockSampleResultsManager.Reset();
 
-            MockHardwareSettings.Reset();
-            MockHardwareSettings.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
+            //MockHardwareSettings.Reset();
+            //MockHardwareSettings.Setup(m => m.GetSystemSerialNumber(ref serialNumber)).Returns(HawkeyeError.eSuccess);
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
-            InstrumentStatusService = new InstrumentStatusService(SysStatusMock.Object, errorMock.Object, loggerMock.Object, MockHardwareSettings.Object, applicationStateServiceMock.Object);
+            InstrumentStatusService = new InstrumentStatusService(SysStatusMock.Object, errorMock.Object, loggerMock.Object, applicationStateServiceMock.Object);
 
             MockConfigurationManager.Reset();
             MockConfigurationManager.Setup(m =>

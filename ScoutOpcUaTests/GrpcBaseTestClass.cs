@@ -80,7 +80,6 @@ namespace ScoutOpcUaTests
             Kernel.Bind<IInstrumentStatusService>().To<InstrumentStatusService>().InSingletonScope();
             Kernel.Bind<ISystemStatus>().To<SystemStatus>().InSingletonScope();
             Kernel.Bind<IErrorLog>().To<ErrorLog>().InSingletonScope();
-            Kernel.Bind<IHardwareSettingsModel>().To<HardwareSettingsModel>().InSingletonScope();
             Kernel.Bind<LockResultProcessor>().ToMethod(m => CreateEventProcessor<TestLockResultProcessor>()).InTransientScope();
             Kernel.Bind<ISampleProcessingService>().ToConstant(MockSampleProcessingService.Object);
             Kernel.Bind<ISampleResultsManager>().ToConstant(MockSampleResultsManager.Object);

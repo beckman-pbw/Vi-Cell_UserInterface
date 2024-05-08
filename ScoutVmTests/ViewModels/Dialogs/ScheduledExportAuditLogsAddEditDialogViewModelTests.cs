@@ -33,7 +33,6 @@ namespace ScoutViewModels.ViewModels.Dialogs.Tests
         private static Mock<ISystemStatus> _instrStatusMock;
         private static Mock<IDialogCaller> _dialogCallerMock;
         private static Mock<IFileSystemService> _fileSystemMock;
-        private string _cellTypeName = "Insect";
         public string Username = "username";
         public string Password = "password";
 

@@ -1,5 +1,4 @@
 ﻿using HawkeyeCoreAPI.Facade;
-using log4net;
 using ScoutDomains;
 using ScoutDomains.Analysis;
 using ScoutLanguageResources;
@@ -9,16 +8,14 @@ using ScoutServices.Interfaces;
 using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.Enums;
-using ScoutUtilities.Events;
-using ScoutUtilities.Helper;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reactive.Subjects;
-using HawkeyeCoreAPI.Interfaces;
 using Ninject.Extensions.Logging;
 using ScoutModels.Admin;
 using ScoutModels.Interfaces;
+using ScoutModels.Settings;
 
 namespace ScoutServices
 {
@@ -537,13 +534,17 @@ namespace ScoutServices
             if (!string.IsNullOrEmpty(username) && !string.IsNullOrEmpty(password))
             {
                 var qcDomain = GetQualityControlDomain(username, password, qualityControl.QcName);
-                if (qcDomain != null && _systemStatusDomain.InstrumentType != InstrumentType.Shepherd_ScienceModule)
-				{
-					// This QC name already exists... do not attempt to create it.
-					failureReason = $"Quality Control of this name already exists. You must choose a unique name.";
-                    _logger.Debug(failureReason);
-                    return false;
-                }
+
+//TODO: should this do the same thing for both variants ?
+                //HardwareManager.HardwareSettingsModel
+
+                //            if (qcDomain != null && _systemStatusDomain.InstrumentType != InstrumentType.CellHealth_ScienceModule)
+                //{
+                //	// This QC name already exists... do not attempt to create it.
+                //	failureReason = $"Quality Control of this name already exists. You must choose a unique name.";
+                //                _logger.Debug(failureReason);
+                //                return false;
+                //            }
             }
 
             if (string.IsNullOrWhiteSpace(qualityControl.LotInformation))

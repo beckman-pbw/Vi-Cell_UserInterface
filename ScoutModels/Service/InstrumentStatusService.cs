@@ -40,7 +40,6 @@ namespace ScoutModels
 	        ISystemStatus systemStatus, 
 	        IErrorLog errorLogService,
 	        ILogger logger, 
-	        IHardwareSettingsModel hardwareSettingsModel, 
 			IApplicationStateService applicationStateService)
         {
             _systemStatusCallbackSubject = new Subject<SystemStatusDomain>();
@@ -54,7 +53,6 @@ namespace ScoutModels
             _systemStatus = systemStatus;
             _errorLogService = errorLogService;
             _logger = logger;
-            _hardwareSettingsModel = hardwareSettingsModel;
             _applicationStateService = applicationStateService;
             _systemSerialNumber = null;
             _cellTypesObtained = false;
@@ -74,7 +72,6 @@ namespace ScoutModels
         private uint _previousReagentUseRemaining;
         private uint _previousWasteTubeCapacity;
         private static ILogger _logger;
-        private readonly IHardwareSettingsModel _hardwareSettingsModel;
         private readonly IApplicationStateService _applicationStateService;
         private readonly SystemStatusTimer _updateSystemStatusTimer;
         private readonly Subject<SystemStatusDomain> _systemStatusCallbackSubject;
@@ -452,14 +449,7 @@ namespace ScoutModels
 
             PublishSystemStatusCallback(newSystemStatusDomain);
 
-            if (_systemSerialNumber == null)
-            {
-                String systemSerialNumber = null;
-                _hardwareSettingsModel.GetSystemSerialNumber(ref systemSerialNumber);
-                _systemSerialNumber = systemSerialNumber;
-
-				PublishViCellIdentifierCallback(systemSerialNumber);
-            }
+			PublishViCellIdentifierCallback(HardwareManager.HardwareSettingsModel.SerialNumber);
 
             if (_cellTypesObtained == false)
             {
@@ -520,7 +510,6 @@ namespace ScoutModels
                 Voltage24v = newSystemStatusData.voltage_24V,
                 SamplePosition = newSystemStatusData.sampleStageLocation,
                 NightlyCleanStatus = newSystemStatusData.nightly_clean_cycle,
-				InstrumentType = (InstrumentType)newSystemStatusData.instrumentType
 			};
 
 

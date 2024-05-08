@@ -4,6 +4,7 @@ using Grpc.Core;
 using GrpcService;
 using Ninject.Extensions.Logging;
 using ScoutDomains;
+using ScoutModels;
 using ScoutModels.Interfaces;
 using ScoutModels.Settings;
 using ScoutUtilities.Enums;
@@ -35,13 +36,10 @@ namespace GrpcServer.EventProcessors
             _subscription?.Dispose();
             _logger.Debug("Subscription started for ViCellId changed");
             _responseStream = responseStream;
-            var hardwareInfo = new HardwareSettingsModel();
-            String systemSerialNumber = null;
-            hardwareInfo.GetSystemSerialNumber(ref systemSerialNumber);
+
             // This is done to help when debugging both the UI and OpcUa - this will initialize the variable
             // when it is subscribed to
-
-			SetViCellIdentifier(systemSerialNumber);
+			SetViCellIdentifier(HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.SerialNumber);
 
             _subscription = _instrumentStatusService.SubscribeViCellIdentifierCallback().Subscribe(SetViCellIdentifier);
             base.Subscribe(context, responseStream);

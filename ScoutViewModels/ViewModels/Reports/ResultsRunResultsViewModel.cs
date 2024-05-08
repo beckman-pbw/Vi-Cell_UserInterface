@@ -76,8 +76,6 @@ namespace ScoutViewModels.ViewModels.Reports
         public ResultModel ResultModel { get; set; }
         public ResultRecordHelper RecordHelper { get; set; }
         public RunResultsReportViewModel RunResultsReportViewModel { get; private set; }
-        public HardwareSettingsModel HardwareSettingsModel { get; private set; }
-        public HardwareSettingsDomain HardwareSettingsData { get; set; }
         public List<BarGraphDomain> GraphListForReport { get; set; }
 
         public string SampleId
@@ -236,20 +234,14 @@ namespace ScoutViewModels.ViewModels.Reports
         {
             if (SelectedSampleRecordFromList != null)
             {
-                if (HardwareSettingsModel == null)
-                {
-                    HardwareSettingsModel = new HardwareSettingsModel();
-                }
-                HardwareSettingsModel.GetVersionInformation();
-                HardwareSettingsData = HardwareSettingsModel.HardwareSettingsDomain;
                 var permission = LoggedInUser.CurrentUserId.Equals(ApplicationConstants.ServiceUser)
                     ? UserPermissionLevel.eService
                     : UserPermissionLevel.eNormal;
 
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    RunResultsReportViewModel = new RunResultsReportViewModel(ReportPrintTitle, ReportComments, permission, SelectedSampleRecordFromList, IsAutoExportPDF,
-                        ReportPrintOptionsList, HardwareSettingsData, GraphListForReport, GetGraphOptions(), ReportImageCaption);
+                    RunResultsReportViewModel = new RunResultsReportViewModel(ReportPrintTitle, ReportComments, permission, SelectedSampleRecordFromList,
+                        IsAutoExportPDF, ReportPrintOptionsList, GraphListForReport, GetGraphOptions(), ReportImageCaption);
 
                     RunResultsReportViewModel.LoadReport();
 

@@ -12,7 +12,7 @@ namespace HawkeyeCoreAPI
         #region API_Declarations
 
         [DllImport("HawkeyeCore.dll", CallingConvention = CallingConvention.Cdecl)]
-        static extern void Initialize(bool withHardware = true);
+        static extern void Initialize(out ushort instrumentType, bool withHardware = true);
 
         [DllImport("HawkeyeCore.dll", CallingConvention = CallingConvention.Cdecl)]
         static extern InitializationState IsInitializationComplete();
@@ -33,10 +33,10 @@ namespace HawkeyeCoreAPI
 
         #region API_Calls
 
-        public static void InitializeAPI(bool isFromHardware)
+        public static void InitializeAPI(out ushort instrumentType, bool isFromHardware)
         {
             Log.Info($"InitializeAPI:: isFromHardware: {isFromHardware}");
-            Initialize(isFromHardware);
+            Initialize(out instrumentType, isFromHardware);
         }
 
         public static InitializationState IsInitializationCompleteAPI()

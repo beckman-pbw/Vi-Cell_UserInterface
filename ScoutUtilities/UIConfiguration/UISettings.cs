@@ -50,9 +50,7 @@ namespace ScoutUtilities.UIConfiguration
 
         public static bool IsHardwareOrSimulated()
         {
-            if (IsFromHardware)
-                return true;
-            if (EnableSampleSetVcrControlsInOfflineMode)
+            if (IsFromHardware || EnableSampleSetVcrControlsInOfflineMode)
                 return true;
             return false;
         }

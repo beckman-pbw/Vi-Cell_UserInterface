@@ -3,7 +3,6 @@
 <Users>
   <User UserId="DefaultSettings" CreationDate="01/01/0001 00:00:00">
     <HardwareSettingsDomain>
-      <IsMonitorOn>False</IsMonitorOn>
       <SerialNumber></SerialNumber>
       <FirmwareVersion></FirmwareVersion>
       <SyringePumpFWVersion></SyringePumpFWVersion>

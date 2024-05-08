@@ -4,6 +4,7 @@ using Grpc.Core;
 using GrpcService;
 using Ninject.Extensions.Logging;
 using ScoutDomains;
+using ScoutModels;
 using ScoutModels.Interfaces;
 using ScoutModels.Settings;
 using ScoutUtilities.Enums;
@@ -34,10 +35,8 @@ namespace GrpcServer.EventProcessors
             _responseStream = responseStream;
 
             // This is done to help when debugging both the UI and OpcUa - this will initialize the variable
-			// when it is subscribed to.
-			var hardwareInfo = new HardwareSettingsModel();
-			var versionInfo = hardwareInfo.GetVersionInformation();
-			SetFirmwareVersion(versionInfo.FirmwareVersion);
+			// when it is subscribed to.           
+            SetFirmwareVersion(HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.FirmwareVersion);
 
             _subscription = _instrumentStatusService.SubscribeFirmwareVersionCallback().Subscribe(SetFirmwareVersion);
             base.Subscribe(context, responseStream);

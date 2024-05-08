@@ -78,8 +78,6 @@ namespace ScoutViewModels.ViewModels.Reports
 
         public ResultModel ResultModel { get; set; }
 
-        public HardwareSettingsDomain HardwareSettingsData { get; set; }
-
         public SettingsModel SettingsModel;
 
         public string PrintTitle
@@ -168,10 +166,6 @@ namespace ScoutViewModels.ViewModels.Reports
             {
                 if (CellList != null && CellList.Count > 0)
                 {
-                    var hardwareSettingsModel = new HardwareSettingsModel();
-                    hardwareSettingsModel.GetVersionInformation();
-                    HardwareSettingsData = hardwareSettingsModel.HardwareSettingsDomain;
-
                     DispatcherHelper.ApplicationExecute(() =>
                     {
                         var cellTypeReportViewModel = new CellTypesReportViewModel(SelectedUser.UserID, PrintTitle, Comments, CellList);

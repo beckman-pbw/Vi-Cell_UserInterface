@@ -250,12 +250,6 @@ namespace ScoutDomains
         {
             get { return GetProperty<string>(); }
             set { SetProperty(value); }
-        }
-    
-        public InstrumentType InstrumentType
-        {
-	        get { return GetProperty<InstrumentType>(); }
-	        set { SetProperty(value); }
-        }
+        }    
     }
 }

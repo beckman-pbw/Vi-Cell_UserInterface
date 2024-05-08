@@ -5,7 +5,6 @@ using ScoutDomains;
 using ScoutDomains.Reports.Common;
 using ScoutDomains.RunResult;
 using ScoutLanguageResources;
-using ScoutModels.Common;
 using ScoutModels.Settings;
 using ScoutUtilities.Common;
 using ScoutUtilities.CustomEventArgs;
@@ -134,20 +133,14 @@ namespace ScoutModels.Reports
                 CommentData = commentData
             };
 
-            var hardwareSettingsModel = new HardwareSettingsModel();
-            hardwareSettingsModel.GetVersionInformation();
-            var hardwareSettingsDomain = hardwareSettingsModel.HardwareSettingsDomain;
-            if (hardwareSettingsDomain != null)
-            {
-                const string colon = ":";
-                var stringBuilder = new StringBuilder();
-                stringBuilder.Append(LanguageResourceHelper.Get("LID_CheckBox_DeviceSerialNumber"));
-                stringBuilder.Append("".PadLeft(3, ' '));
-                stringBuilder.Append(colon);
-                stringBuilder.Append("".PadLeft(3, ' '));
-                stringBuilder.Append(hardwareSettingsDomain.SerialNumber);
-                reportMandatoryHeaderDomainObj.DeviceSerialData = stringBuilder.ToString();
-            }
+            const string colon = ":";
+            var stringBuilder = new StringBuilder();
+            stringBuilder.Append(LanguageResourceHelper.Get("LID_CheckBox_DeviceSerialNumber"));
+            stringBuilder.Append("".PadLeft(3, ' '));
+            stringBuilder.Append(colon);
+            stringBuilder.Append("".PadLeft(3, ' '));
+            stringBuilder.Append(HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.SerialNumber);
+            reportMandatoryHeaderDomainObj.DeviceSerialData = stringBuilder.ToString();
 
             return reportMandatoryHeaderDomainObj;
         }

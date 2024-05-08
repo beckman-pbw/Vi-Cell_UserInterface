@@ -42,7 +42,7 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
             IsSingleton = true;
             NetworkChange.NetworkAddressChanged += AddressChangedCallback;
             AutomationIpAddress = GetLocalIpAddress();
-            InitializeVm(UISettings.SoftwareVersion);
+            InitializeVm();
         }
 
         ~InstrumentSettingsViewModel()
@@ -50,11 +50,11 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
             NetworkChange.NetworkAddressChanged -= AddressChangedCallback;
         }
 
-        private void InitializeVm(string appVersion = null)
+        private void InitializeVm()
         {
             ListItemLabel = LanguageResourceHelper.Get("LID_ListOption_Instrument");
-            HwdSettingModel = new HardwareSettingsModel();
-            ApplicationVersion = appVersion ?? UISettings.SoftwareVersion;
+            _hardwareSettingsModel = HardwareManager.HardwareSettingsModel;
+            ApplicationVersion = UISettings.SoftwareVersion;
             GetOpticalHardwareConfig();
             GetDbSettings();
             GetSmtpSettings();
@@ -81,9 +81,7 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
         private IDbSettingsService _dbSettingsService;
         private IAutomationSettingsService _automationSettingsService;
         private readonly IInstrumentStatusService _instrumentStatusService;
-
-        protected HardwareSettingsModel HwdSettingModel { get; set; }
-
+        private HardwareSettingsModel _hardwareSettingsModel;
         private OpticalHardwareConfig _currentOpticsSelection;
         private OpticalHardwareConfig _desiredOpticsSelection;
 
@@ -139,10 +137,10 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         public string SerialNumber
         {
-            get { return HwdSettingModel.SerialNumber; }
+            get { return _hardwareSettingsModel.SerialNumber; }
             set
             {
-                HwdSettingModel.SerialNumber = value;
+                _hardwareSettingsModel.SerialNumber = value;
                 NotifyPropertyChanged(nameof(SerialNumber));
                 ValidateSerialNumber();
             }
@@ -150,10 +148,10 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         public string ConfirmSerialNumber
         {
-            get { return HwdSettingModel.ConfirmSerialNumber; }
+            get { return _hardwareSettingsModel.ConfirmSerialNumber; }
             set
             {
-                HwdSettingModel.ConfirmSerialNumber = value;
+                _hardwareSettingsModel.ConfirmSerialNumber = value;
                 NotifyPropertyChanged(nameof(ConfirmSerialNumber));
                 ValidateSerialNumber();
             }
@@ -161,10 +159,10 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         public string Password
         {
-            get { return HwdSettingModel.Password; }
+            get { return _hardwareSettingsModel.Password; }
             set
             {
-                HwdSettingModel.Password = value;
+                _hardwareSettingsModel.Password = value;
                 NotifyPropertyChanged(nameof(Password));
             }
         }
@@ -195,10 +193,10 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         public HardwareSettingsDomain HardwareSetting
         {
-            get { return HwdSettingModel.HardwareSettingsDomain; }
+            get { return _hardwareSettingsModel.HardwareSettingsDomain; }
             set
             {
-                HwdSettingModel.HardwareSettingsDomain = value;
+                _hardwareSettingsModel.HardwareSettingsDomain = value;
                 NotifyPropertyChanged(nameof(HardwareSetting));
             }
         }
@@ -542,7 +540,7 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
             {
                 if (!ValidateMe(Password))
                     return;
-                var validateStatus = HwdSettingModel.ValidateMe(Password);
+                var validateStatus = _hardwareSettingsModel.ValidateMe(Password);
                 if (validateStatus.Equals(HawkeyeError.eSuccess))
                 {
                     if (DialogEventBus.DialogBoxYesNo(this, LanguageResourceHelper.Get("LID_MSGBOX_SetSerialConfirmation")) != true)
@@ -786,7 +784,6 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
         private void RefreshSetSerialNumber()
         {
             ConfirmSerialNumber = Password = string.Empty;
-            HwdSettingModel.GetVersionInformation();
             NotifyPropertyChanged(nameof(HardwareSetting));
             NotifyPropertyChanged(nameof(SerialNumber));
         }
@@ -800,7 +797,7 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
                                                  string.IsNullOrWhiteSpace(ConfirmSerialNumber);
 
                 var serialNumber = string.Empty;
-                var getSerialStatus = HwdSettingModel.GetSystemSerialNumber(ref serialNumber);
+                var getSerialStatus = _hardwareSettingsModel.GetSystemSerialNumber(ref serialNumber);
                 if (getSerialStatus.Equals(HawkeyeError.eSuccess))
                 {
                     SavedSerialNumber = serialNumber;
@@ -823,7 +820,7 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         private void SetSerialNumber()
         {
-            var serialStatus = HwdSettingModel.SetSystemSerialNumber(SerialNumber, Password);
+            var serialStatus = _hardwareSettingsModel.SetSystemSerialNumber(SerialNumber, Password);
             if (serialStatus.Equals(HawkeyeError.eSuccess))
             {
                 PostToMessageHub(LanguageResourceHelper.Get("LID_StatusBar_SerialNumberChanged"));
@@ -859,7 +856,7 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
         {
             try
             {
-                HwdSettingModel.SaveInstrument(LoggedInUser.CurrentUserId);
+                _hardwareSettingsModel.SaveInstrument(LoggedInUser.CurrentUserId);
             }
             catch (Exception ex)
             {
@@ -869,8 +866,6 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         public override void SetDefaultSettings()
         {
-            HwdSettingModel.GetInstrumentSettings(LoggedInUser.CurrentUserId);
-            HardwareSetting = HwdSettingModel.HardwareSettingsDomain;
             Password = ConfirmSerialNumber = string.Empty;
             ValidateSerialNumber();
         }

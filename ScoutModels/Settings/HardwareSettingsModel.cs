@@ -10,7 +10,7 @@ using ScoutUtilities;
 
 namespace ScoutModels.Settings
 {
-    public class HardwareSettingsModel : IHardwareSettingsModel
+    public class HardwareSettingsModel
     {
         public HardwareSettingsModel()
         {
@@ -32,16 +32,6 @@ namespace ScoutModels.Settings
         }
 
         #region public Method
-
-        public void GetInstrumentSettings(string username)
-        {
-            bool userFound;
-            if (username == null)
-                return;
-            var hwSetting = XMLDataAccess.Instance.ReadConfigurationData<HardwareSettingsDomain>(username, nameof(HardwareSettingsDomain), out userFound);
-            GetVersionInformation();
-            HardwareSettingsDomain.IsMonitorOn = hwSetting.IsMonitorOn;
-        }
 
         public void SaveInstrument(string username)
         {

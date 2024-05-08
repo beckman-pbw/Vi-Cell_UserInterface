@@ -36,11 +36,9 @@ namespace ScoutViewModels.ViewModels.Reports
 
         #region Public Properties
 
-        public HardwareSettingsModel HardwareSettingsModel { get; private set; }
         public UserModel UserModel { get; set; }
         public ICommand PrintCommand { get; set; }
         public ICommand OnInstrumentTypeSelectionChangedCommand { get; set; }
-        public HardwareSettingsDomain HardwareSettingsData { get; set; }
         public List<UserDomain> UserList { get; set; }
         public List<CellTypeDomain> AllCellTypesList { get; set; }
         public List<CalibrationActivityLogDomain> ConcDataListList { get; set; }
@@ -169,29 +167,21 @@ namespace ScoutViewModels.ViewModels.Reports
      
         private void OnExecute()
         {
-            if (HardwareSettingsModel == null)
+            DispatcherHelper.ApplicationExecute(() =>
             {
-                HardwareSettingsModel = new HardwareSettingsModel();
-            }
-            HardwareSettingsModel.GetVersionInformation();
-            HardwareSettingsData = HardwareSettingsModel.HardwareSettingsDomain;
-            if (HardwareSettingsData != null)
-            {
-                DispatcherHelper.ApplicationExecute(() =>
-                {
-                    GetDataForPrint();
-                    var instrumentStatusReportViewModel = _viewModelFactory.CreateInstrumentStatusReportViewModel(PrintTitle, Comment, SystemStatusDomain, HardwareSettingsData,
-                        InstrumentStatusPrintOptionsList, ConcDataListList, ACupConcDataListList, UserList, ReagentContainers, AnalysisType);
-                    instrumentStatusReportViewModel.LoadReport();
-                    PublishReportProgressIndication(false);
-                    ReportEventBus.InstrumentStatusReport(this, instrumentStatusReportViewModel);
-                });
-            }
-            else
-            {
+                GetDataForPrint();
+                var instrumentStatusReportViewModel = _viewModelFactory.CreateInstrumentStatusReportViewModel(PrintTitle, Comment, SystemStatusDomain,
+                    InstrumentStatusPrintOptionsList, ConcDataListList, ACupConcDataListList, UserList, ReagentContainers, AnalysisType);
+                instrumentStatusReportViewModel.LoadReport();
                 PublishReportProgressIndication(false);
-                DialogEventBus.DialogBoxOk(this, LanguageResourceHelper.Get("LID_Report_NoDataFound"));
-            }
+                ReportEventBus.InstrumentStatusReport(this, instrumentStatusReportViewModel);
+            });
+            //}
+            //else
+            //{
+            //    PublishReportProgressIndication(false);
+            //    DialogEventBus.DialogBoxOk(this, LanguageResourceHelper.Get("LID_Report_NoDataFound"));
+            //}
         }
 
         private void PublishReportProgressIndication(bool value)

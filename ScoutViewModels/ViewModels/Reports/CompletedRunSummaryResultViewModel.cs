@@ -29,7 +29,6 @@ namespace ScoutViewModels.ViewModels.Reports
 
         public ICommand PrintCommand { get; set; }
         public ResultRecordHelper RecordHelper { get; set; }
-        public HardwareSettingsDomain HardwareSettingsData { get; set; }
         public ResultModel ResultModel;
         public UserModel UserModel;
         public List<ReportPrintOptions> DefaultParameterList;
@@ -160,9 +159,6 @@ namespace ScoutViewModels.ViewModels.Reports
 
         private void OnExecute()
         {
-            var hardwareSettingsModel = new HardwareSettingsModel();
-            hardwareSettingsModel.GetVersionInformation();
-            HardwareSettingsData = hardwareSettingsModel.HardwareSettingsDomain;
             var fromDateGreaterThanToDate = GetAllSampleData();
             if (SampleRecordListForPrint != null && SampleRecordListForPrint.Count > 0 && fromDateGreaterThanToDate)
             {

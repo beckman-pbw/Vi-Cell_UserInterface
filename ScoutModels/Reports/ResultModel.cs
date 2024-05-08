@@ -14,12 +14,10 @@ namespace ScoutModels.Reports
     {
         protected static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public HardwareSettingsModel HardwareSettingsModel;
         public UserModel UserModel { get; set; }
 
         public ResultModel()
         {
-            HardwareSettingsModel = new HardwareSettingsModel();
             UserModel = new UserModel();
         }
 
@@ -50,11 +48,6 @@ namespace ScoutModels.Reports
                 Log.Error($"Failed to get Sample Record: '{id}'", e);
                 return null;
             }
-        }
-
-        public HardwareSettingsDomain GetVersionInformation()
-        {
-            return HardwareSettingsModel.GetVersionInformation();
         }
     }
 }

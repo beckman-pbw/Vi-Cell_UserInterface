@@ -18,9 +18,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using HawkeyeCoreAPI;
-using HawkeyeCoreAPI.Facade;
-using ScoutUtilities.Helper;
 using ScoutViewModels.Interfaces;
 using SystemStatus = ScoutUtilities.Enums.SystemStatus;
 
@@ -28,10 +25,9 @@ namespace ScoutViewModels.ViewModels.Reports
 {
     public class InstrumentStatusReportViewModel : ReportWindowViewModel
     {
-
-        public InstrumentStatusReportViewModel(IScoutViewModelFactory viewModelFactory, string printTitle, string comments, SystemStatusDomain systemStatus, HardwareSettingsDomain hardwareSettings,
-            List<ReportPrintOptions> reportPrintOptions, List<CalibrationActivityLogDomain> calErrorLogs, List<CalibrationActivityLogDomain> aCupCalErrorLogs, List<UserDomain> userList, 
-            IList<ReagentContainerStateDomain> reagentContainers, string analysisType) : base()
+        public InstrumentStatusReportViewModel(IScoutViewModelFactory viewModelFactory, string printTitle, string comments, SystemStatusDomain systemStatus,
+            List<ReportPrintOptions> reportPrintOptions, List<CalibrationActivityLogDomain> calErrorLogs, List<CalibrationActivityLogDomain> aCupCalErrorLogs,
+            List<UserDomain> userList, IList<ReagentContainerStateDomain> reagentContainers, string analysisType) : base()
         {
             _diskSpaceModel = new DiskSpaceModel();
             _instrumentStatusReportModel = new InstrumentStatusReportModel();
@@ -42,7 +38,6 @@ namespace ScoutViewModels.ViewModels.Reports
             _printTitle = printTitle;
             _comments = comments;
             _systemStatus = systemStatus;
-            _hardwareSettings = hardwareSettings;
             _reportPrintOptions = reportPrintOptions;
             _calErrorLogs = calErrorLogs;
             _aCupCalErrorLogs = aCupCalErrorLogs;
@@ -71,7 +66,6 @@ namespace ScoutViewModels.ViewModels.Reports
         private string _comments;
         private string _analysisType;
         private SystemStatusDomain _systemStatus;
-        private HardwareSettingsDomain _hardwareSettings;
         private List<ReportPrintOptions> _reportPrintOptions;
         private List<CalibrationActivityLogDomain> _calErrorLogs;
         private List<CalibrationActivityLogDomain> _aCupCalErrorLogs;
@@ -986,27 +980,24 @@ namespace ScoutViewModels.ViewModels.Reports
         private void SetMandatoryTableData()
         {
             ReportTableTemplate reportTableTemplate;
-            if (_hardwareSettings != null)
-            {
-                var hardwareSettingsDataInstance = _hardwareSettings;
 
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_CheckBox_DeviceSerialNumber", hardwareSettingsDataInstance.SerialNumber);
-                AddReportTableTemplateToAboutReportSecondTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Softwareversion", UISettings.SoftwareVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Backendversion", hardwareSettingsDataInstance.HawkeyeCoreVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_FirmwareVersion", hardwareSettingsDataInstance.FirmwareVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_UIVersion", hardwareSettingsDataInstance.UIVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Imageanalysissoftwareversion", hardwareSettingsDataInstance.ImageAnalysisSoftwareVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_SyringePumpFirmwareVersion", hardwareSettingsDataInstance.SyringePumpFWVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-                reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_CameraFirmwareVersion_WithoutColon", hardwareSettingsDataInstance.CameraFirmwareVersion);
-                AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-            }
+            var hardwareSettingsDomain = HardwareManager.HardwareSettingsModel.HardwareSettingsDomain;
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_CheckBox_DeviceSerialNumber", hardwareSettingsDomain.SerialNumber);
+            AddReportTableTemplateToAboutReportSecondTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Softwareversion", UISettings.SoftwareVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Backendversion", hardwareSettingsDomain.HawkeyeCoreVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_FirmwareVersion", hardwareSettingsDomain.FirmwareVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_UIVersion", hardwareSettingsDomain.UIVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Imageanalysissoftwareversion", hardwareSettingsDomain.ImageAnalysisSoftwareVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_SyringePumpFirmwareVersion", hardwareSettingsDomain.SyringePumpFWVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_CameraFirmwareVersion_WithoutColon", hardwareSettingsDomain.CameraFirmwareVersion);
+            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
 
             string health;
             switch (_systemStatus.SystemStatus)

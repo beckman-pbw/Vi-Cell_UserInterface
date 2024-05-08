@@ -5,7 +5,6 @@ using System.Threading;
 using ApiProxies.Generic;
 using Microsoft.Win32;
 using Ninject.Extensions.Logging;
-using ScoutDomains;
 using ScoutLanguageResources;
 using ScoutModels.Common;
 using ScoutModels.Interfaces;
@@ -18,7 +17,6 @@ using ScoutUtilities.UIConfiguration;
 
 namespace ScoutModels
 {
-
     public class HardwareManager : Disposable, IHardwareManager
     {
         private static readonly object InitLock = new object();
@@ -51,10 +49,11 @@ namespace ScoutModels
         private readonly Subject<InitializationState> _hardwareStateChangeSubject;
         private readonly ILogger _logger;
         private readonly IDialogCaller _dialogCaller;
+        private static HardwareSettingsModel _hardwareSettingsModel = new HardwareSettingsModel();
+        public static HardwareSettingsModel HardwareSettingsModel { get { return _hardwareSettingsModel; } }
+
         public bool IsFromHardware { get; set; }
-
         public string AssemblyName = "ScoutModels.dll";
-
         public string ClassName = "ScoutModels.Common.SystemEventsHandler";
 
         public InitializationState? State { get; private set; }
@@ -96,7 +95,7 @@ namespace ScoutModels
 
             try
             {
-                HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(IsFromHardware);
+                HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(out ushort instrumentType, IsFromHardware);
                 State = InitializationState.eInitializationInProgress;
                 _logger.Info("StartHardwareInitialize(): InitializationState: " + State);
                 _hardwareStateChangeSubject.OnNext(State.Value);
@@ -116,7 +115,9 @@ namespace ScoutModels
                             case InitializationState.eInitializationComplete:
                                 ListenSystemEvents();
                                 Initialized = done = true;
+                                _hardwareSettingsModel.GetVersionInformation();
                                 break;
+
                             case InitializationState.eInitializationFailed:
                                 _logger.Debug("StartHardwareInitialize::eInitializationFailed::" +
                                               $"Cydem VT Cell Health version: {UISettings.SoftwareVersion}");
@@ -127,10 +128,12 @@ namespace ScoutModels
                                 _dialogCaller.DialogBoxOk(this, msg);
                                 done = true;
                                 break;
+
                             case InitializationState.eInitializationStopped_CarosuelTubeDetected:
                                 _logger.Warn("StartHardwareInitialize(): Tube detected. InitializationState: " + State);
                                 done = true;
                                 break;
+
                             case InitializationState.eFirmwareUpdateFailed:
                                 _logger.Error("StartHardwareInitialize(): Firmware update failure. InitializationState: " + State);
                                 var firmwareFailureMsg = LanguageResourceHelper.Get("LID_Label_Firmware_Update_Failed");

@@ -12,6 +12,7 @@ using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
 using ScoutModels.Settings;
+using ScoutModels;
 
 namespace ScoutUI.Views.ScoutUIMain
 {
@@ -69,8 +70,6 @@ namespace ScoutUI.Views.ScoutUIMain
                     {
                         await Task.Run(DisposeSplashScreen);
                     });
-                    var hardwareInfo = new HardwareSettingsModel();
-                    hardwareInfo.GetVersionInformation();
                     break;
 
                 case InitializationState.eFirmwareUpdateFailed:

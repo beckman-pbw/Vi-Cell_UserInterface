@@ -1,4 +1,6 @@
-﻿namespace ScoutDomains
+﻿using ScoutUtilities.Enums;
+
+namespace ScoutDomains
 {
     public class HardwareSettingsDomain
     {
@@ -17,7 +19,5 @@
         public string ImageAnalysisSoftwareVersion { get; set; }
 
         public string DeviceName { get; set; }
-
-        public bool IsMonitorOn { get; set; }
     }
 }

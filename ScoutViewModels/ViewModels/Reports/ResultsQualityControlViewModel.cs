@@ -198,7 +198,9 @@ namespace ScoutViewModels.ViewModels.Reports
             OnSelectedSample();
             if (SelectedQualityControl != null)
             {
-                _resultModel.GetVersionInformation();
+
+//TODO: fix this...
+                //_resultModel.GetVersionInformation();
 
                 SelectedQualityControl.CellTypeName = "";
 

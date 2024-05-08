@@ -710,10 +710,7 @@ namespace GrpcServer
             }
 
             _instrumentStatusService.PublishSoftwareVersionCallback(UISettings.SoftwareVersion);
-
-            var hardwareInfo = new HardwareSettingsModel();
-            var versionInfo = hardwareInfo.GetVersionInformation();
-            _instrumentStatusService.PublishFirmwareVersionCallback(versionInfo.FirmwareVersion);
+            _instrumentStatusService.PublishFirmwareVersionCallback(HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.FirmwareVersion);
 
 			return result ? MakeSuccess() : MakeFailure("Check validity of username/password.");
         }

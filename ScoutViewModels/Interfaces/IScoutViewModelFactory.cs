@@ -99,7 +99,7 @@ namespace ScoutViewModels.Interfaces
             System.Windows.Window parentWindow);
 
         InstrumentStatusReportViewModel CreateInstrumentStatusReportViewModel(string printTitle, string comments,
-            SystemStatusDomain systemStatus, HardwareSettingsDomain hardwareSettings,
+            SystemStatusDomain systemStatus,
             List<ReportPrintOptions> reportPrintOptions, List<CalibrationActivityLogDomain> calErrorLogs,
             List<CalibrationActivityLogDomain> aCupCalErrorLogs, List<UserDomain> userList,
             IList<ReagentContainerStateDomain> reagentContainers, string analysisType);

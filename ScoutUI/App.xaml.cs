@@ -78,6 +78,7 @@ namespace ScoutUI
             // Start backend initialization and react to state changes.
             _hardwareManager = _container.Get<IHardwareManager>();
             _applicationStateService = _container.Get<IApplicationStateService>();
+
             // Get an instance of the MainWindowViewModel so it will register with the ApplicationStateService
             _mainWindowViewModel = _container.Get<MainWindowViewModel>();
 

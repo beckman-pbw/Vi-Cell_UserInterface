@@ -305,27 +305,32 @@ namespace ScoutViewModels.ViewModels.Reports
             reportTableTemplateObj =
                 ReportWindowModel.CreateReportTableTemplate("LID_QCHeader_AssayParameter",
                     assayParameter);
-
             AddReportTemplateToCellTypeTableList(reportTableTemplateObj);
+            
             var acceptanceValue = "+/- " + selectedQualityControlObj.AcceptanceLimit + " %";
             reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate(
                 "LID_QCHeader_AcceptanceLimits", acceptanceValue);
             AddReportTemplateToCellTypeTableList(reportTableTemplateObj);
+            
             reportTableTemplateObj =
                 ReportWindowModel.CreateReportTableTemplate("LID_Label_Comments",
                     selectedQualityControlObj.CommentText);
             AddReportTemplateToCellTypeTableList(reportTableTemplateObj);
+            
             var sampleRecordList = _qualityControlVm.SampleRecordList;
             reportTableTemplateObj =
                 ReportWindowModel.CreateReportTableTemplate("LID_Report_NoOfRuns", ScoutUtilities.Misc.ConvertToString(sampleRecordList.Count));
             AddReportTemplateToCellTypeTableList(reportTableTemplateObj);
+
             reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate(
                 "LID_QCHeader_LotNumber", selectedQualityControlObj.LotInformation);
             AddReportTemplateToCurrentLotTableList(reportTableTemplateObj);
+
             reportTableTemplateObj = ReportWindowModel.CreateReportTableTemplate(
                 "LID_GridLabel_ExpirationDate",
                 ScoutUtilities.Misc.ConvertToString(selectedQualityControlObj.ExpirationDate));
             AddReportTemplateToCurrentLotTableList(reportTableTemplateObj);
+
             var assayValueData = string.Empty;
             if (selectedQualityControlObj.AssayValue != null)
             {
