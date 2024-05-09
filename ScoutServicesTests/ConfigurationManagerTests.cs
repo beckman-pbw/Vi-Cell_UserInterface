@@ -57,7 +57,6 @@ namespace ScoutServicesTests
             _kernel.Bind<IInstrumentStatusService>().To<InstrumentStatusService>().InSingletonScope();
             _kernel.Bind<HawkeyeCoreAPI.Interfaces.ISystemStatus>().To<HawkeyeCoreAPI.SystemStatus>().InSingletonScope();
             _kernel.Bind<HawkeyeCoreAPI.Interfaces.IErrorLog>().To<HawkeyeCoreAPI.ErrorLog>().InSingletonScope();
-            //_kernel.Bind<IHardwareSettingsModel>().To<HardwareSettingsModel>().InTransientScope();
 
             _mockSecurityService.Reset();
 

@@ -22,7 +22,10 @@ namespace ScoutModels.Settings
 
         public string ConfirmSerialNumber { get; set; }
 
+//TODO: what is this used for ???
         public string Password { get; set; }
+
+        public InstrumentType InstrumentType { get; set; }
 
         private HardwareSettingsDomain _hardwareSettings;
         public HardwareSettingsDomain HardwareSettingsDomain

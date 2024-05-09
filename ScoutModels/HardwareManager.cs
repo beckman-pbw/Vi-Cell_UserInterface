@@ -96,6 +96,8 @@ namespace ScoutModels
             try
             {
                 HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(out ushort instrumentType, IsFromHardware);
+                _hardwareSettingsModel.InstrumentType = (InstrumentType)instrumentType;
+
                 State = InitializationState.eInitializationInProgress;
                 _logger.Info("StartHardwareInitialize(): InitializationState: " + State);
                 _hardwareStateChangeSubject.OnNext(State.Value);

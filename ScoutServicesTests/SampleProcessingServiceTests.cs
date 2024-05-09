@@ -69,7 +69,6 @@ namespace ScoutServicesTests
             _kernel.Bind<IAutomationSettingsService>().ToConstant(_autoMock.Object);
             var errorMock = new Mock<IErrorLog>();
             var loggerMock = new Mock<Ninject.Extensions.Logging.ILogger>();
-            string serialNumber = "12345";
             var applicationStateServiceMock = new Mock<IApplicationStateService>();
             _instrumentStatusService = new InstrumentStatusService(_sysStatusMock.Object, errorMock.Object, loggerMock.Object, applicationStateServiceMock.Object);
             _kernel.Bind<IWorkListModel>().To<WorkListModel>().InSingletonScope();

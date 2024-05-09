@@ -535,16 +535,14 @@ namespace ScoutServices
             {
                 var qcDomain = GetQualityControlDomain(username, password, qualityControl.QcName);
 
-//TODO: should this do the same thing for both variants ?
-                //HardwareManager.HardwareSettingsModel
-
-                //            if (qcDomain != null && _systemStatusDomain.InstrumentType != InstrumentType.CellHealth_ScienceModule)
-                //{
-                //	// This QC name already exists... do not attempt to create it.
-                //	failureReason = $"Quality Control of this name already exists. You must choose a unique name.";
-                //                _logger.Debug(failureReason);
-                //                return false;
-                //            }
+                if (qcDomain != null && HardwareManager.HardwareSettingsModel.InstrumentType != InstrumentType.CellHealth_ScienceModule)
+                {
+                //TODO: should a message be sent ??? failureReason = LanguageResourceHelper.Get()
+                    // This QC name already exists... do not attempt to create it.
+                    failureReason = $"Quality Control of this name already exists. You must choose a unique name.";
+                    _logger.Debug(failureReason);
+                    return false;
+                }
             }
 
             if (string.IsNullOrWhiteSpace(qualityControl.LotInformation))
