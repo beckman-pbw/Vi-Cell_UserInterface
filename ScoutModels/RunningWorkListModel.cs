@@ -272,7 +272,7 @@ namespace ScoutModels
 
         private void RouteNextApiEvent(ApiEventArgs args)
         {
-            _logger.Error($"RouteNextApiEvent: {args.EventType}");
+            _logger.Debug($"RouteNextApiEvent: {args.EventType}");
 
             switch (args.EventType)
             {

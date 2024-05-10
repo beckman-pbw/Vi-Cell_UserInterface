@@ -14,6 +14,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using ScoutModels.Interfaces;
+using System.DirectoryServices.ActiveDirectory;
 
 namespace ScoutViewModels.ViewModels.Dialogs
 {
@@ -26,7 +27,8 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
     public class ReagentStatusDialogViewModel : BaseDialogViewModel
     {
-        public ReagentStatusDialogViewModel(ReagentStatusEventArgs args, Window parentWindow, IInstrumentStatusService instrumentStatusService) : base(args, parentWindow)
+        public ReagentStatusDialogViewModel(ReagentStatusEventArgs args, Window parentWindow, IInstrumentStatusService instrumentStatusService)
+            : base(args, parentWindow)
         {
             ShowDialogTitleBar = true;
             DialogTitle = LanguageResourceHelper.Get("LID_POPUPHeader_ReagentStatus");
@@ -114,7 +116,16 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
         public bool IsReplaceReagentActive
         {
-            get { return GetProperty<bool>(); }
+            get
+            {
+//                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_FL_Instrument)
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
+                    {
+                        return false;
+                }
+
+                return GetProperty<bool>();
+            }
             set
             {
                 SetProperty(value);
@@ -591,7 +602,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
             }
         }
 
-            private void CancelPrime()
+        private void CancelPrime()
         {
             try
             {

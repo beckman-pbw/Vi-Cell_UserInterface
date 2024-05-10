@@ -209,7 +209,21 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
 
         public string ApplicationVersion
         {
-            get { return GetProperty<string>(); }
+            get
+            {
+                switch (HardwareManager.HardwareSettingsModel.InstrumentType)
+                {
+                    case InstrumentType.CellHealth_ScienceModule:
+                        return LanguageResourceHelper.Get("LID_Label_CHM_Softwareversion") + " " + UISettings.SoftwareVersion;
+                    case InstrumentType.ViCELL_FL_Instrument:
+                        return LanguageResourceHelper.Get("LID_Label_ViCell_Softwareversion") + " " + UISettings.SoftwareVersion;
+                    default:
+                        ApplicationVersion = "Unknown type " + UISettings.SoftwareVersion;
+                        break;
+                }
+
+                return GetProperty<string>();
+            }
             set { SetProperty(value); }
         }
 

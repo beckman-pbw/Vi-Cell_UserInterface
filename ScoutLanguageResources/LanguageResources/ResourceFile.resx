@@ -659,8 +659,14 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>Silent login failed</value>
   </data>
+  <data name="LID_Label_CHM_Softwareversion" xml:space="preserve">
+    <value>Cydem VT Cell Health s/w version</value>
+  </data>
   <data name="LID_Label_Softwareversion" xml:space="preserve">
     <value>Cydem VT Cell Health s/w version</value>
+  </data>
+  <data name="LID_Label_ViCell_Softwareversion" xml:space="preserve">
+    <value>Vi-CELL BLU software version</value>
   </data>
   <data name="LID_Label_Backendversion" xml:space="preserve">
     <value>Backend software version</value>

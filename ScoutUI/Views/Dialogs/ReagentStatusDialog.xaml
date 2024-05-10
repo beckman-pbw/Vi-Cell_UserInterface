@@ -257,11 +257,11 @@
                     <Button Grid.Row="2" Grid.Column="0" Content="{Binding ResourceKeys[LID_POPUPHeader_Decontaminate], Source={StaticResource ScoutUILanguageResource}}" 
                                 Command="{Binding DecontaminateCommand}" IsEnabled="{Binding IsHealthOk}"
                                 Style="{StaticResource SignLeftUserButtonStyle}" Width="250" HorizontalAlignment="Center" />
-<!--
+
                     <Button Grid.Row="2" Grid.Column="2" Content="{Binding ResourceKeys[LID_ButtonContent_ReplaceReagentPack], Source={StaticResource ScoutUILanguageResource}}" 
                                 Command="{Binding ReplaceReagentCommand}" IsEnabled="{Binding IsReplaceReagentActive}" 
                                 Style="{StaticResource SignLeftUserButtonStyle}" Width="250" HorizontalAlignment="Center" />
--->
+
                 </Grid>
             </Grid>
         </Border>

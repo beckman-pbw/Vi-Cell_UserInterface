@@ -1,6 +1,5 @@
 ﻿using System.Windows.Controls;
 using ScoutViewModels.ViewModels;
-using ScoutUI.Views.Storage.UserControls;
 
 namespace ScoutUI.Views.Admin.UserControls
 {

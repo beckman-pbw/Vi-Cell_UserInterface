@@ -11,8 +11,6 @@ using System;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Threading.Tasks;
-using ScoutModels.Settings;
-using ScoutModels;
 
 namespace ScoutUI.Views.ScoutUIMain
 {
