@@ -270,6 +270,7 @@ namespace ScoutViewModels.ViewModels.Home
                     Log.Error("OnSampleStatusCallback - null args <exit>");
                     return;
                 }
+                
                 var sampleEswDomain = args.Arg1;
 
                 if (sampleEswDomain.SampleStatus == ScoutUtilities.Enums.SampleStatus.NotProcessed)
@@ -569,7 +570,7 @@ namespace ScoutViewModels.ViewModels.Home
                 var foundResult = GetSampleViewModelFromCallback(sampleSet, sampleEswDomain);
                 if (!foundResult.Item1)
                 {
-                    Log.Debug($"OnImageResultCallback::Unable to find SampleViewModel in HomeViewModel.SampleSets");
+                    //Log.Debug($"OnImageResultCallback::Unable to find SampleViewModel in HomeViewModel.SampleSets");
                     return;
                 }
 
@@ -764,7 +765,7 @@ namespace ScoutViewModels.ViewModels.Home
             var automationLocked = _lockManager.IsLocked();
             if (sampleSet == null && !automationLocked)
             {
-                Log.Debug($"GetSampleViewModelFromCallback:: Input parameter 'sampleSet' is null");
+                //Log.Debug($"GetSampleViewModelFromCallback:: Input parameter 'sampleSet' is null");
                 return new Tuple<bool, SampleViewModel>(false, null);
             }
 

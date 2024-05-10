@@ -58,19 +58,12 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
             DataPanelViewModel = viewModelFactory.CreateAcupDataPanelViewModel();
 
             // setup subscriptions
-            _systemStatusSubscription = instrumentStatusService.SubscribeToSystemStatusCallback()
-                                                               .Subscribe(OnSystemStatusChanged);
-            _lockStatusSubscription = lockManager.SubscribeStateChanges()
-                                                 .Subscribe(OnLockStatusChanged);
-
-            _sampleCompleteSubscription = sampleProcessingService.SubscribeToSampleCompleteCallback()
-                                                                 .Subscribe(OnSampleCompleted);
-            _sampleStatusSubscription = sampleProcessingService.SubscribeToSampleStatusCallback()
-                                                               .Subscribe(OnSampleStatusChanged);
-            _imageReceivedSubscription = sampleProcessingService.SubscribeToImageResultCallback()
-                                                                .Subscribe(OnReceivedImageResult);
-            _workListCompleteSubscription = sampleProcessingService.SubscribeToWorkListCompleteCallback()
-                                                                   .Subscribe(OnWorkListCompleted);
+            _systemStatusSubscription = instrumentStatusService.SubscribeToSystemStatusCallback().Subscribe(OnSystemStatusChanged);
+            _lockStatusSubscription = lockManager.SubscribeStateChanges().Subscribe(OnLockStatusChanged);
+            _sampleCompleteSubscription = sampleProcessingService.SubscribeToSampleCompleteCallback().Subscribe(OnSampleCompleted);
+            _sampleStatusSubscription = sampleProcessingService.SubscribeToSampleStatusCallback().Subscribe(OnSampleStatusChanged);
+            _imageReceivedSubscription = sampleProcessingService.SubscribeToImageResultCallback().Subscribe(OnReceivedImageResult);
+            _workListCompleteSubscription = sampleProcessingService.SubscribeToWorkListCompleteCallback().Subscribe(OnWorkListCompleted);
 
             HandleNewCalibrationState(CalibrationGuiState.NotStarted);
         }
@@ -174,11 +167,11 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
             if (!RunningConcentration) return; // don't worry about it, this callback is not for an a cup slope
             if (sampleStatusArgs?.Arg1 == null)
             {
-                _logger.Error($"Sample Status Callback [AcupConcentration]::Arg1 is null");
+                _logger.Error($"OnSampleStatusChanged [AcupConcentration]::Arg1 is null");
                 return;
             }
 
-            _logger.Debug($"Sample Status Callback [AcupConcentration]::New Status {sampleStatusArgs.Arg1.SampleStatus}");
+            _logger.Debug($"OnSampleStatusChanged [AcupConcentration]::New Status {sampleStatusArgs.Arg1.SampleStatus}");
 
             var concentration = GetAcupCalibrationConcentration(sampleStatusArgs.Arg1);
             HandleSampleStatusChanged(sampleStatusArgs.Arg1, concentration);
@@ -193,28 +186,29 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
         private void OnSampleCompleted(ApiEventArgs<SampleEswDomain, SampleRecordDomain> sampleCompleteArgs)
         {
             if (!RunningConcentration) return; // don't worry about it, this callback is not for an a cup slope
+
             if (sampleCompleteArgs.Arg1 == null)
             {
-                _logger.Error($"Sample Complete Callback [AcupConcentration]::Arg1 is null");
+                _logger.Error($"OnSampleCompleted [AcupConcentration]::Arg1 is null");
                 return;
             }
 
             if (sampleCompleteArgs.Arg2 == null)
             {
-                _logger.Error($"Sample Complete Callback [AcupConcentration]::Arg2 is null");
+                _logger.Error($"OnSampleCompleted [AcupConcentration]::Arg2 is null");
                 return;
             }
 
-            _logger.Debug($"Sample Complete Callback [AcupConcentration]::Sample Completed for index {sampleCompleteArgs.Arg1.Index}");
+            _logger.Debug($"OnSampleCompleted [AcupConcentration]::Sample Completed for index {sampleCompleteArgs.Arg1.Index}");
 
             var concentration = GetAcupCalibrationConcentration(sampleCompleteArgs.Arg1);
             HandleSampleCompleted(sampleCompleteArgs.Arg1, sampleCompleteArgs.Arg2, concentration);
         }
 
-        private void OnReceivedImageResult(
-            ApiEventArgs<SampleEswDomain, ushort, BasicResultAnswers, ImageSetDto, BasicResultAnswers> imageArgs)
+        private void OnReceivedImageResult(ApiEventArgs<SampleEswDomain, ushort, BasicResultAnswers, ImageSetDto, BasicResultAnswers> imageArgs)
         {
             if (!RunningConcentration) return; // don't worry about it, this callback is not for an a cup slope
+
             if (imageArgs.Arg1 == null)
             {
                 _logger.Error($"Image Received Callback [AcupConcentration]::Arg1 is null");
@@ -233,9 +227,25 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
         /// <param name="workListArgs"></param>
         private void OnWorkListCompleted(ApiEventArgs<List<uuidDLL>> workListArgs)
         {
-            if (!RunningConcentration || workListArgs.Arg1 == null || workListArgs.Arg1.Count <= 0) return;
+            _logger.Debug($"OnWorkListCompleted [AcupConcentration] <enter>");
 
-            _logger.Debug($"WorkList Complete Callback [AcupConcentration]::Uuids: '{string.Join(",", workListArgs.Arg1)}'");
+            if (workListArgs.Arg1 == null)
+            {
+                _logger.Debug($"OnWorkListCompleted [AcupConcentration]: workListArgs.Arg1 == null");
+            }
+
+            if (workListArgs.Arg1.Count <= 0)
+            {
+                _logger.Debug($"OnWorkListCompleted [AcupConcentration]: workListArgs.Arg1.Count <= 0");
+            }
+
+            if (!RunningConcentration || workListArgs.Arg1 == null || workListArgs.Arg1.Count <= 0)
+            {
+                _logger.Debug($"OnWorkListCompleted [AcupConcentration]: RunningConcentration: {RunningConcentration}, workListArgs.Arg1: {workListArgs?.Arg1}");
+                return;
+            }
+
+            _logger.Debug($"OnWorkListCompleted [AcupConcentration] <exit>, Uuids: '{string.Join(",", workListArgs.Arg1)}'");
             HandleWorkListCompleted(workListArgs.Arg1);
         }
 
@@ -245,7 +255,8 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
 
         public void HandleNewCalibrationState(CalibrationGuiState state)
         {
-            _logger.Debug($"{nameof(AcupConcentrationSlopeViewModel)}::{nameof(HandleNewCalibrationState)}::New State: '{state}");
+            _logger.Debug($"{nameof(AcupConcentrationSlopeViewModel)}::{nameof(HandleNewCalibrationState)}:: State: '{state}");
+
             switch (state)
             {
                 case CalibrationGuiState.NotStarted:
@@ -305,8 +316,7 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
             DataPanelViewModel.HandleSampleStatusChanged(sample, concentration);
         }
 
-        public void HandleSampleCompleted(SampleEswDomain sample, SampleRecordDomain sampleResult, 
-            AcupCalibrationConcentrationListDomain concentration)
+        public void HandleSampleCompleted(SampleEswDomain sample, SampleRecordDomain sampleResult, AcupCalibrationConcentrationListDomain concentration)
         {
             SamplesPanelViewModel.HandleSampleCompleted(sample, sampleResult, concentration);
         }
@@ -324,7 +334,7 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
         {
             if (_acupConcentrationSlopeModel.CalibrationSampleIndex >= SamplesPanelViewModel.ConcentrationSamples.Count)
             {
-                _logger.Info($"WorkList Complete Callback [AcupConcentration]:: Initial CalibrationSampleIndex is greater than/equal to number of samples. Was aborted: {Aborted}");
+                _logger.Info($"HandleWorkListCompleted [AcupConcentration]:: Initial CalibrationSampleIndex is greater than/equal to number of samples. Was aborted: {Aborted}");
             }
             else
             {
@@ -337,13 +347,13 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
 
             if (allSamplesComplete)
             {
-                _logger.Debug($"WorkList Complete Callback [AcupConcentration]::All samples have completed");
+                _logger.Debug($"HandleWorkListCompleted [AcupConcentration]::All samples have completed");
                 CalculateSlope();
                 HandleNewCalibrationState(CalibrationGuiState.Ended);
             }
             else if (_acupConcentrationSlopeModel.CalibrationSampleIndex >= SamplesPanelViewModel.ConcentrationSamples.Count)
             {
-                _logger.Error($"WorkList Complete Callback [AcupConcentration]::CalibrationSampleIndex is greater than/equal to number of samples. Stopping calibration...");
+                _logger.Error($"HandleWorkListCompleted [AcupConcentration]::CalibrationSampleIndex is greater than/equal to number of samples. Stopping calibration...");
                 CalculateSlope();
                 HandleNewCalibrationState(CalibrationGuiState.Ended);
             }
@@ -351,7 +361,7 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
             {
                 var nextSample = SamplesPanelViewModel.ConcentrationSamples[_acupConcentrationSlopeModel.CalibrationSampleIndex];
                 nextSample.IsActiveRow = true;
-                _logger.Debug($"WorkList Complete Callback [AcupConcentration]::Sample with index '{_acupConcentrationSlopeModel.CalibrationSampleIndex}' is now active");
+                _logger.Debug($"HandleWorkListCompleted [AcupConcentration]::Sample with index '{_acupConcentrationSlopeModel.CalibrationSampleIndex}' is now active");
             }
 
             if (Aborted && !allSamplesComplete)
@@ -409,8 +419,7 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
                 }
             }
 
-            if (_dialogCaller.DialogBoxOkCancel(this, 
-                LanguageResourceHelper.Get("LID_Label_ACupConcentrationPlay")) == true)
+            if (_dialogCaller.DialogBoxOkCancel(this, LanguageResourceHelper.Get("LID_Label_ACupConcentrationPlay")) == true)
             {
                 var comment = DataPanelViewModel.SummaryTabViewModel.ACupConcentrationComment;
                 var sampleSet = _acupConcentrationService.GetACupConcentrationSampleSetDomain(comment, calSample);

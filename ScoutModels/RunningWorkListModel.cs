@@ -18,6 +18,7 @@ using System.Windows;
 using Ninject.Extensions.Logging;
 using System.Collections.Generic;
 using ScoutUtilities;
+using HawkeyeCoreAPI;
 
 namespace ScoutModels
 {
@@ -271,6 +272,8 @@ namespace ScoutModels
 
         private void RouteNextApiEvent(ApiEventArgs args)
         {
+            _logger.Error($"RouteNextApiEvent: {args.EventType}");
+
             switch (args.EventType)
             {
                 case ApiEventType.WorkQueue_Completed:

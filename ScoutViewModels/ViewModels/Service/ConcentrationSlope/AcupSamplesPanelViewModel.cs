@@ -1,4 +1,5 @@
-﻿using ScoutDomains;
+﻿using Ninject.Extensions.Logging;
+using ScoutDomains;
 using ScoutDomains.EnhancedSampleWorkflow;
 using ScoutLanguageResources;
 using ScoutServices.Service.ConcentrationSlope;
@@ -6,7 +7,6 @@ using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
 using ScoutUtilities.Helper;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 
@@ -15,9 +15,12 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
     public class AcupSamplesPanelViewModel : BaseViewModel, IHandlesCalibrationState, IHandlesSystemStatus,
         IHandlesSampleStatus, IHandlesSampleCompleted
     {
-        public AcupSamplesPanelViewModel(IAcupConcentrationService acupConcentrationService,
+        public AcupSamplesPanelViewModel(
+            ILogger logger,
+            IAcupConcentrationService acupConcentrationService,
             IConcentrationSlopeService concentrationSlopeService)
         {
+            _logger = logger;
             _acupConcentrationService = acupConcentrationService;
             _concentrationSlopeService = concentrationSlopeService;
 
@@ -30,6 +33,7 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
 
         #region Properties & Fields
 
+        private readonly ILogger _logger;
         private readonly IAcupConcentrationService _acupConcentrationService;
         private readonly IConcentrationSlopeService _concentrationSlopeService;
         
@@ -118,7 +122,9 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
         
         public void HandleNewCalibrationState(CalibrationGuiState state)
         {
-            switch(state)
+            _logger.Debug($"{nameof(AcupConcentrationSlopeViewModel)}::{nameof(HandleNewCalibrationState)}:: State: '{state}");
+
+            switch (state)
             {
                 case CalibrationGuiState.NotStarted:
                 case CalibrationGuiState.Aborted:
@@ -126,13 +132,14 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
                     var latest = _concentrationSlopeService.GetMostRecentCalibration(calibration_type.cal_ACupConcentration);
                     MostRecentConcentrationCalibration = latest;
                     goto case CalibrationGuiState.CalibrationRejected;
+
                 case CalibrationGuiState.CalibrationRejected:
                     RunningConcentration = false;
                     ShowCancelCalibrationButton = false;
                     goto case CalibrationGuiState.Ended;
+
                 case CalibrationGuiState.Ended:
-                    ConcentrationSamples = _acupConcentrationService.GetDefaultACupConcentrationList()
-                                                                    .ToObservableCollection();
+                    ConcentrationSamples = _acupConcentrationService.GetDefaultACupConcentrationList().ToObservableCollection();
                     var first = ConcentrationSamples.FirstOrDefault();
                     if (first != null) first.IsActiveRow = true;
                     ShowConcentrationProgressBar = false;
@@ -146,12 +153,14 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
                     ImageAnalysisBrush = SampleProgressStatus.IsInActive;
                     ShowCancelCalibrationButton = false;
                     break;
+
                 case CalibrationGuiState.Started:
                     RunningConcentration = true;
                     ShowLoadingIndicator = true;
                     ShowConcentrationProgressBar = true;
                     ShowCancelCalibrationButton = true;
                     break;
+
                 default:
                     throw new ArgumentOutOfRangeException(nameof(state), state, null);
             }
@@ -159,20 +168,25 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
         
         public void HandleSystemStatusChanged(SystemStatusDomain systemStatus)
         {
+            _logger.Debug($"{nameof(AcupConcentrationSlopeViewModel)}::{nameof(HandleNewCalibrationState)}:: systemStatus.SystemStatus: '{systemStatus.SystemStatus}");
+
             switch (systemStatus.SystemStatus)
             {
                 case SystemStatus.Idle:
                     ShowConcentrationProgressBar = false;
                     break;
+
                 case SystemStatus.ProcessingSample:
                     ShowConcentrationProgressBar = true;
                     break;
+
                 case SystemStatus.Pausing:
                     ShowConcentrationProgressBar = true;
                     ShowLoadingIndicator = true;
                     AbortStatusString = string.Empty;
                     PauseResumeStatusString = LanguageResourceHelper.Get("LID_MSGBOX_PausingPleaseWait");
                     break;
+
                 case SystemStatus.Paused:
                     ShowConcentrationProgressBar = true;
                     AbortStatusString = string.Empty;
@@ -180,16 +194,19 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
                     PostToMessageHub(LanguageResourceHelper.Get("LID_StatusBar_WorkQueuePaused"));
                     ShowLoadingIndicator = false;
                     break;
+
                 case SystemStatus.Stopping:
                     ShowConcentrationProgressBar = true;
                     AbortStatusString = LanguageResourceHelper.Get("LID_Label_Aborting");
                     PauseResumeStatusString = string.Empty;
                     break;
+
                 case SystemStatus.Stopped:
                     // todo: we may call this directly in the parent's HandleNewCalibrationState()
                     HandleNewCalibrationState(CalibrationGuiState.Aborted);
                     ShowConcentrationProgressBar = false;
                     break;
+
                 case SystemStatus.Faulted:
                     // todo: we may call this directly in the parent's HandleNewCalibrationState()
                     if (RunningConcentration)
@@ -198,6 +215,7 @@ namespace ScoutViewModels.ViewModels.Service.ConcentrationSlope
                         DialogEventBus.DialogBoxOk(this, LanguageResourceHelper.Get("LID_MSGBOX_ABORTEDSAMPLE"));
                     }
                     break;
+
                 case SystemStatus.SearchingTube:
                     ShowLoadingIndicator = true;
                     ShowConcentrationProgressBar = false;

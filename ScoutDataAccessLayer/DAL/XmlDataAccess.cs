@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
 using System.Linq;
+using System.Xml;
 using System.Xml.Linq;
 
 namespace ScoutDataAccessLayer.DAL
@@ -118,14 +119,16 @@ namespace ScoutDataAccessLayer.DAL
             if (configurationDataXMLDoc.Root == null)
                 return outputObject;
 
-            var userElement = configurationDataXMLDoc.Root
-                .Elements("User").SingleOrDefault(user => userId != null && ((string)user.Attribute("UserId")).Equals(userId));
-            if(userElement == null)
+            XElement userElement = null;
+            if (!string.IsNullOrEmpty(userId))
             {
-#if DEBUG
-                Log.Warn(string.Format("User id {0} does not exist", userId));
-#endif
-                return outputObject;
+                userElement = configurationDataXMLDoc.Root
+                    .Elements("User").SingleOrDefault(user => userId != null && ((string)user.Attribute("UserId")).Equals(userId));
+                if (userElement == null)
+                {
+                    Log.Warn(string.Format("User id {0} does not exist", userId));
+                    return outputObject;
+                }
             }
 
             userFound = true;

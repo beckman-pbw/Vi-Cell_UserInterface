@@ -310,7 +310,7 @@ namespace ScoutServices
         private void OnSampleCompleteCallback(object sender, ApiEventArgs<SampleEswDomain> args)
         {
             var argMsg = args.Arg1.ToString();
-            _log.Debug($"Sample Complete Callback (w/ async) [SERVICE]::args.Arg1:{argMsg}");
+            _log.Debug($"OnSampleCompleteCallback [SERVICE]::args.Arg1:{argMsg}");
 
             // We are going to make the call to retrieve the sample result here before allowing the service user to handle the callback
             SampleRecordDomain sampleRecord = null;
@@ -326,7 +326,7 @@ namespace ScoutServices
 
             if (sampleRecord == null)
             {
-                _log.Debug($"Sample Complete Callback [SERVICE]::Failed to retrieve the sample record for the sample data '{sampleDataUuid}'. Export of sample data not performed::args.Arg1:{args?.Arg1}");
+                _log.Debug($"OnSampleCompleteCallback [SERVICE]::Failed to retrieve the sample record for the sample data '{sampleDataUuid}'. Export of sample data not performed::args.Arg1:{args?.Arg1}");
             }
 
             PublishSampleCompleteCallback(new ApiEventArgs<SampleEswDomain, SampleRecordDomain>(args?.Arg1, sampleRecord));
@@ -334,7 +334,8 @@ namespace ScoutServices
 
         private void OnWorkListCompleteCallback(object sender, ApiEventArgs<List<uuidDLL>> args)
         {
-            var argMsg = args.Arg1.ToString();
+            _log.Debug($"OnWorkListCompleteCallback [SERVICE]");
+            
             PublishWorkListCompleteCallback(args);
         }
 
@@ -372,10 +373,6 @@ namespace ScoutServices
             {
                 _log.Error($"Failed to EjectSampleStage(): {result}");
                 ApiHawkeyeMsgHelper.ErrorCommon(result, null, showDialogPrompt);
-            }
-            else
-            {
-                _log.Debug($"EjectSampleStage() success");
             }
 
             return result == HawkeyeError.eSuccess;
