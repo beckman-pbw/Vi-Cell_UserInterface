@@ -14,7 +14,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows;
 using ScoutModels.Interfaces;
-using System.DirectoryServices.ActiveDirectory;
 
 namespace ScoutViewModels.ViewModels.Dialogs
 {
@@ -96,6 +95,21 @@ namespace ScoutViewModels.ViewModels.Dialogs
             set { SetProperty(value); }
         }
 
+        public Visibility HasReagentPack
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
+                {
+                    return Visibility.Hidden;
+                }
+
+                return GetProperty<Visibility>();
+            }
+
+            set { SetProperty(value); }
+        }
+
         public bool IsServiceEnable
         {
             get { return GetProperty<bool>(); }
@@ -118,9 +132,8 @@ namespace ScoutViewModels.ViewModels.Dialogs
         {
             get
             {
-//                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_FL_Instrument)
                 if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
-                    {
+                {
                         return false;
                 }
 
