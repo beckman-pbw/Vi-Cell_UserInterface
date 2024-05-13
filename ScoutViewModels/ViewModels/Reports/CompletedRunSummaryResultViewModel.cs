@@ -8,12 +8,10 @@ using ScoutModels;
 using ScoutModels.Admin;
 using ScoutModels.Common;
 using ScoutModels.Reports;
-using ScoutModels.Settings;
 using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
-using ScoutUtilities.UIConfiguration;
 using ScoutViewModels.Events;
 using System;
 using System.Collections.Generic;
@@ -42,13 +40,6 @@ namespace ScoutViewModels.ViewModels.Reports
         public List<ReportPrintOptions> AnalysisParameterList
         {
             get { return GetProperty<List<ReportPrintOptions>>(); }
-            set { SetProperty(value); }
-        }
-
-        [SessionVariable(SessionKey.CompletedRuns_PrintTitle)]
-        public string PrintTitle
-        {
-            get { return GetProperty<string>(); }
             set { SetProperty(value); }
         }
 
@@ -124,11 +115,7 @@ namespace ScoutViewModels.ViewModels.Reports
             LoadDefaultParameters();
             SetUserList();
 
-            var type = GetType();
-            
-            var defaultPrintTitle = $"{LanguageResourceHelper.Get("LID_Title_ViCellBluVersion")}{UISettings.SoftwareVersion}";
             var currentUserSession = LoggedInUser.CurrentUser.Session;
-            PrintTitle = currentUserSession.GetVariable(SessionKey.CompletedRuns_PrintTitle, defaultPrintTitle);
             Comments = currentUserSession.GetVariable(SessionKey.CompletedRuns_Comments, string.Empty);
 
             FromDate = DateTime.Today.AddDays(ApplicationConstants.DefaultFilterFromDaysToSubtract);
@@ -164,7 +151,7 @@ namespace ScoutViewModels.ViewModels.Reports
             {
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    var runSummaryReportViewModel = new RunSummaryReportViewModel(PrintTitle, Comments, ReportPrintOptionsList, AnalysisParameterList, 
+                    var runSummaryReportViewModel = new RunSummaryReportViewModel(ApplicationVersion, Comments, ReportPrintOptionsList, AnalysisParameterList, 
                         DefaultParameterList, SampleRecordListForPrint);
                     runSummaryReportViewModel.LoadReport();
                     PublishReportProgressIndication(false);

@@ -15,6 +15,7 @@ using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
 using ScoutUtilities.UIConfiguration;
 
+
 namespace ScoutModels
 {
     public class HardwareManager : Disposable, IHardwareManager
@@ -91,15 +92,17 @@ namespace ScoutModels
         [HandleProcessCorruptedStateExceptions]
         public void StartHardwareInitialize()
         {
-            _logger.Info("StartHardwareInitialize(): UI version: " + "v" + UISettings.SoftwareVersion);
+            _logger.Info($"StartHardwareInitialize: UI version: v {UISettings.SoftwareVersion}");
 
             try
             {
                 HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(out ushort instrumentType, IsFromHardware);
                 _hardwareSettingsModel.InstrumentType = (InstrumentType)instrumentType;
+//TODO: for debugging as Vi-Cell_BLU...
+                _hardwareSettingsModel.InstrumentType = InstrumentType.ViCELL_BLU_Instrument;
 
                 State = InitializationState.eInitializationInProgress;
-                _logger.Info("StartHardwareInitialize(): InitializationState: " + State);
+                _logger.Info("StartHardwareInitialize: InitializationState: " + State);
                 _hardwareStateChangeSubject.OnNext(State.Value);
                 var lastInitializationState = State;
                 var done = false;
@@ -110,7 +113,7 @@ namespace ScoutModels
                     
                     if (State != lastInitializationState)
                     {
-                        _logger.Info("StartHardwareInitialize(): InitializationState: " + State);
+                        _logger.Info("StartHardwareInitialize: InitializationState: " + State);
 
                         switch (State)
                         {
@@ -121,8 +124,7 @@ namespace ScoutModels
                                 break;
 
                             case InitializationState.eInitializationFailed:
-                                _logger.Debug("StartHardwareInitialize::eInitializationFailed::" +
-                                              $"Cydem VT Cell Health version: {UISettings.SoftwareVersion}");
+                                _logger.Error($"StartHardwareInitialize:eInitializationFailed");
 
                                 // Show a dialog before broadcasting eInitializationFailed (that broadcast
                                 // will shut the application down).
@@ -132,12 +134,12 @@ namespace ScoutModels
                                 break;
 
                             case InitializationState.eInitializationStopped_CarosuelTubeDetected:
-                                _logger.Warn("StartHardwareInitialize(): Tube detected. InitializationState: " + State);
+                                _logger.Warn("StartHardwareInitialize: Tube detected. InitializationState: " + State);
                                 done = true;
                                 break;
 
                             case InitializationState.eFirmwareUpdateFailed:
-                                _logger.Error("StartHardwareInitialize(): Firmware update failure. InitializationState: " + State);
+                                _logger.Error("StartHardwareInitialize: Firmware update failure. InitializationState: " + State);
                                 var firmwareFailureMsg = LanguageResourceHelper.Get("LID_Label_Firmware_Update_Failed");
                                 _dialogCaller.DialogBoxOk(this, firmwareFailureMsg);
                                 done = true;

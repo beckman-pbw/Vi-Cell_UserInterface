@@ -24,8 +24,8 @@ namespace ScoutViewModels.ViewModels
 #if DEBUG
             // Auto sign-in for debugging...
             // ie: factory_admin or bci_service
-            var username = Environment.GetEnvironmentVariable("ScoutX_Username") ?? "factory_admin";
-            var password = Environment.GetEnvironmentVariable("ScoutX_Password") ?? "";
+            var username = Environment.GetEnvironmentVariable("ScoutX_Username") ?? "bci_service" /*ApplicationConstants.FactoryAdminUserId*/;
+            var password = Environment.GetEnvironmentVariable("ScoutX_Password") ?? "865910";
             Task.Delay(1000).ContinueWith((o) =>
             {
                 DispatcherHelper.ApplicationExecute(() =>

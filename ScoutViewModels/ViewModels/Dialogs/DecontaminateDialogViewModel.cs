@@ -9,6 +9,7 @@ using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
 using System;
 using ScoutUtilities.Common;
+using System.Windows;
 
 namespace ScoutViewModels.ViewModels.Dialogs
 {
@@ -73,6 +74,21 @@ namespace ScoutViewModels.ViewModels.Dialogs
                     AcceptCommand.RaiseCanExecuteChanged();
                 });
             }
+        }
+
+        public Visibility HasCarousel
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
+                {
+                    return Visibility.Collapsed;
+                }
+
+                return GetProperty<Visibility>();
+            }
+
+            set { SetProperty(value); }
         }
 
         #endregion

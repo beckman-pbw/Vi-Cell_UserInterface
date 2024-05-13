@@ -984,13 +984,13 @@ namespace ScoutViewModels.ViewModels.Reports
             var hardwareSettingsDomain = HardwareManager.HardwareSettingsModel.HardwareSettingsDomain;
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_CheckBox_DeviceSerialNumber", hardwareSettingsDomain.SerialNumber);
             AddReportTableTemplateToAboutReportSecondTable(reportTableTemplate);
-            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Softwareversion", UISettings.SoftwareVersion);
+            //reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Softwareversion", UISettings.SoftwareVersion);
+            //AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
+            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_UIVersion", UISettings.SoftwareVersion);
             AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Backendversion", hardwareSettingsDomain.HawkeyeCoreVersion);
             AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_FirmwareVersion", hardwareSettingsDomain.FirmwareVersion);
-            AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
-            reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_UIVersion", hardwareSettingsDomain.UIVersion);
             AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);
             reportTableTemplate = ReportWindowModel.CreateReportTableTemplate("LID_Label_Imageanalysissoftwareversion", hardwareSettingsDomain.ImageAnalysisSoftwareVersion);
             AddReportTableTemplateToAboutReportFirstTable(reportTableTemplate);

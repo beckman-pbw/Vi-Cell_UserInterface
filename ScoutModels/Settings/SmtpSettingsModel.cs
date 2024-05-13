@@ -102,7 +102,7 @@ namespace ScoutModels.Settings
                     Subject = LanguageResourceHelper.Get("LID_Password_Reset_Email_Subject"),
                 };
 
-                messageToSend.From.Add(new MailboxAddress(LanguageResourceHelper.Get("LID_Title_ViCellBlu"), smtpConfig.Username));
+                messageToSend.From.Add(new MailboxAddress(HardwareManager.HardwareSettingsModel.ApplicationName, smtpConfig.Username));
                 messageToSend.Body = new TextPart(TextFormat.Plain) { Text = LanguageResourceHelper.Get("LID_Password_Reset_Email_Body") };
                 messageToSend.To.Add(new MailboxAddress(userId, email));
 

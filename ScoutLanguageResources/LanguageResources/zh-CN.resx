@@ -653,9 +653,9 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>无提示登录失败</value>
   </data>
-  <data name="LID_Label_Softwareversion" xml:space="preserve">
+  <!--<data name="LID_Label_Softwareversion" xml:space="preserve">
     <value>Vi-CELL BLU 软件版本</value>
-  </data>
+  </data>-->
   <data name="LID_Label_Backendversion" xml:space="preserve">
     <value>后端软件版本</value>
   </data>
@@ -1319,7 +1319,7 @@
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+  <data name="LID_Title_ViCell_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
@@ -3897,9 +3897,6 @@
   </data>
   <data name="LID_Label_SerialNumberColon" xml:space="preserve">
     <value>序列号：</value>
-  </data>
-  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
-    <value>Vi-CELL BLU 软件版本：</value>
   </data>
   <data name="LID_Label_SpotAreaRange" xml:space="preserve">
     <value>活细胞斑点面积必须介于 {0} 到 {1} 之间</value>

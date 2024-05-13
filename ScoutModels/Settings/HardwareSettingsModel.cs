@@ -4,9 +4,10 @@ using ScoutDataAccessLayer.DAL;
 using ScoutDomains;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Structs;
-using ScoutUtilities.UIConfiguration;
 using System;
 using ScoutUtilities;
+using ScoutLanguageResources;
+using ScoutUtilities.UIConfiguration;
 
 namespace ScoutModels.Settings
 {
@@ -17,6 +18,9 @@ namespace ScoutModels.Settings
         }
 
         protected static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public string ApplicationName { get; set; }
+        public string ApplicationVersion { get; set; }
 
         public string SerialNumber { get; set; }
 
@@ -67,6 +71,33 @@ namespace ScoutModels.Settings
             }
 
             HardwareSettingsDomain = GetHardWareSetting(systemVersion);
+
+            switch (InstrumentType)
+            {
+                case InstrumentType.CellHealth_ScienceModule:
+                    ApplicationName = LanguageResourceHelper.Get("LID_Title_CHM_Name");
+                    break;
+                case InstrumentType.ViCELL_BLU_Instrument:
+                    ApplicationName = LanguageResourceHelper.Get("LID_Title_ViCell_Name");
+                    break;
+                default:
+                    ApplicationName = "Unknown application name";
+                    break;
+            }
+
+            switch (HardwareManager.HardwareSettingsModel.InstrumentType)
+            {
+                case InstrumentType.CellHealth_ScienceModule:
+                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_CHM_SW_Version") + UISettings.SoftwareVersion;
+                    break;
+                case InstrumentType.ViCELL_BLU_Instrument:
+                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_ViCell_SW_Version") + UISettings.SoftwareVersion;
+                    break;
+                default:
+                    ApplicationVersion = "Unknown application name: " + UISettings.SoftwareVersion;
+                    break;
+            }
+
             return HardwareSettingsDomain;
         }
 
@@ -102,7 +133,6 @@ namespace ScoutModels.Settings
             var hwdSetting = new HardwareSettingsDomain()
             {
                 SerialNumber = sysVersion.system_serial_number,
-                UIVersion = UISettings.SoftwareVersion,
 				HawkeyeCoreVersion = sysVersion.software_version,
 				FirmwareVersion = sysVersion.controller_firmware_version,
                 SyringePumpFWVersion = sysVersion.syringepump_firmware_version,

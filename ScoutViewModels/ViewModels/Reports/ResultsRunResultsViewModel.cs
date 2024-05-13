@@ -6,14 +6,12 @@ using ScoutLanguageResources;
 using ScoutModels;
 using ScoutModels.Common;
 using ScoutModels.Reports;
-using ScoutModels.Settings;
 using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.CustomEventArgs;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
 using ScoutUtilities.Structs;
-using ScoutUtilities.UIConfiguration;
 using ScoutViewModels.ViewModels.Common;
 using System;
 using System.Collections.Generic;
@@ -42,7 +40,7 @@ namespace ScoutViewModels.ViewModels.Reports
             {
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    ReportPrintTitle = $"{LanguageResourceHelper.Get("LID_Title_ViCellBluVersion")}{UISettings.SoftwareVersion}";
+                    //PrintTitle = ApplicationVersion;
                     FromDate = DateTime.Today;
                     IsAutoExportPDF = true;
                     BarGraphViewList = new List<BarGraphDomain>();
@@ -123,12 +121,6 @@ namespace ScoutViewModels.ViewModels.Reports
         }
 
         public string ReportImageCaption
-        {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
-        }
-
-        public string ReportPrintTitle
         {
             get { return GetProperty<string>(); }
             set { SetProperty(value); }
@@ -240,7 +232,7 @@ namespace ScoutViewModels.ViewModels.Reports
 
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    RunResultsReportViewModel = new RunResultsReportViewModel(ReportPrintTitle, ReportComments, permission, SelectedSampleRecordFromList,
+                    RunResultsReportViewModel = new RunResultsReportViewModel(ApplicationVersion, ReportComments, permission, SelectedSampleRecordFromList,
                         IsAutoExportPDF, ReportPrintOptionsList, GraphListForReport, GetGraphOptions(), ReportImageCaption);
 
                     RunResultsReportViewModel.LoadReport();

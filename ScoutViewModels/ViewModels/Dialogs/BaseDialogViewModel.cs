@@ -1,5 +1,4 @@
-﻿using ScoutLanguageResources;
-using ScoutUtilities;
+﻿using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.CustomEventArgs;
 using ScoutUtilities.Enums;
@@ -78,7 +77,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
         protected BaseDialogViewModel(BaseDialogEventArgs args, Window parentWindow)
         {
             ShowDialogTitleBar = true;
-            DialogTitle = LanguageResourceHelper.Get("LID_Title_ViCellBlu");
+            DialogTitle = ApplicationName;
             
             FadeBackground = args.FadeBackground;
             SizeToContent = args.SizeToContent;

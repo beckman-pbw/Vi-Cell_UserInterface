@@ -3,7 +3,6 @@ using ScoutDomains;
 using ScoutLanguageResources;
 using ScoutModels;
 using ScoutModels.Common;
-using ScoutModels.Settings;
 using ScoutServices.Interfaces;
 using ScoutUtilities;
 using ScoutUtilities.CustomEventArgs;
@@ -33,20 +32,6 @@ namespace ScoutViewModels.ViewModels.Dialogs
             IsACupEnabled = Misc.ByteToBool(autoConfig.ACupIsEnabled);
 
             SerialNumber = HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.SerialNumber;
-
-            switch (HardwareManager.HardwareSettingsModel.InstrumentType)
-            {
-                case InstrumentType.CellHealth_ScienceModule:
-                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_CHM_Softwareversion") + " " + UISettings.SoftwareVersion;
-                    break;
-                case InstrumentType.ViCELL_FL_Instrument:
-                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_ViCell_Softwareversion") + " " + UISettings.SoftwareVersion;
-                    break;
-                default:
-                    ApplicationVersion = UISettings.SoftwareVersion;
-                    break;
-            }
-
             FirmwareVersion = HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.FirmwareVersion;
 
             SetUserLevelAccess();
@@ -91,11 +76,11 @@ namespace ScoutViewModels.ViewModels.Dialogs
             set { SetProperty(value); }
         }
 
-        public string ApplicationVersion
-        {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
-        }
+        //public string ApplicationVersion
+        //{
+        //    get { return GetProperty<string>(); }
+        //    set { SetProperty(value); }
+        //}
 
         public string DiskFreeSpace
         {

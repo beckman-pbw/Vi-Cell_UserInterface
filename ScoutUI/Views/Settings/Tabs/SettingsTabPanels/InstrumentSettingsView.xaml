@@ -40,8 +40,6 @@
                         </WrapPanel>
 
                         <WrapPanel Margin="40,0,0,0" Grid.Row="1">
-                            <!--<Label Content="{Binding ResourceKeys[LID_Label_Softwareversion], Source={StaticResource ScoutUILanguageResource}}"
-                               Width="auto" Style="{StaticResource SettingHeadLabel}" ContentStringFormat="{}{0}:" />-->
                             <Label Content="{Binding ApplicationVersion}" Width="auto" Style="{StaticResource SettingLabel}" />
                         </WrapPanel>
 

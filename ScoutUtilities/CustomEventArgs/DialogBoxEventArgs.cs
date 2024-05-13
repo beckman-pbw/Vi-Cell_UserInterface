@@ -33,7 +33,7 @@ namespace ScoutUtilities.CustomEventArgs
         /// Arguments used in the creation of a DialogBox
         /// </summary>
         /// <param name="message"></param>
-        /// <param name="title">LanguageResourceHelper.Get("LID_Title_ViCellBlu") is used if null</param>
+        /// <param name="title">ApplicationName property is used if null</param>
         /// <param name="buttons"></param>
         /// <param name="acceptButtonText">Default text is based on the DialogButtons parameter if kept NULL</param>
         /// <param name="declineButtonText">Default text is based on the DialogButtons parameter if kept NULL</param>

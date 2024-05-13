@@ -54,7 +54,6 @@ namespace ScoutModels
             _errorLogService = errorLogService;
             _logger = logger;
             _applicationStateService = applicationStateService;
-            _systemSerialNumber = null;
             _cellTypesObtained = false;
             _previousReagentUseRemaining = UInt32.MaxValue;
             _previousWasteTubeCapacity = UInt32.MaxValue;
@@ -67,7 +66,6 @@ namespace ScoutModels
 
         #region Properties & Fields
 
-        private String _systemSerialNumber;
         private bool _cellTypesObtained;
         private uint _previousReagentUseRemaining;
         private uint _previousWasteTubeCapacity;

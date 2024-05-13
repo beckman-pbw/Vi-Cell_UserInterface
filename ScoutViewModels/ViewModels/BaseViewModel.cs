@@ -8,10 +8,10 @@ using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
+using ScoutUtilities.UIConfiguration;
 using ScoutViewModels.Common;
 using System.Linq;
 using System.Windows;
-using System.Windows.Forms;
 using System.Windows.Markup;
 
 namespace ScoutViewModels.ViewModels
@@ -122,6 +122,16 @@ namespace ScoutViewModels.ViewModels
                 var xmlLang = XmlLanguage.GetLanguage(ApplicationLanguage.GetLanguage());
                 return xmlLang;
             }
+        }
+
+        public string ApplicationVersion
+        {
+            get { return HardwareManager.HardwareSettingsModel.ApplicationVersion; }
+        }
+
+        public string ApplicationName
+        {
+            get { return HardwareManager.HardwareSettingsModel.ApplicationName; }
         }
 
         #endregion

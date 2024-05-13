@@ -546,7 +546,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
                 var setFocusAccept = _setFocusModel.svc_CameraAutoFocus_FocusAcceptance(eAutofocusCompletion.afc_Accept);
                 if (setFocusAccept.Equals(HawkeyeError.eSuccess))
                 {
-	                PostToMessageHub(LanguageResourceHelper.Get("LID_Icon_AcceptSetFocusSuccessful"));
+                    PostToMessageHub(LanguageResourceHelper.Get("LID_Icon_AcceptSetFocusSuccessful"));
                     IsAcceptEnabled = false;
                     _setFocusStatus = CallBackProgressStatus.IsFinish;
                     NewFocusAcceptanceState = LanguageResourceHelper.Get("LID_Label_Accepted");
@@ -588,7 +588,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
                 }
                 else
                 {
-	                ApiHawkeyeMsgHelper.ErrorCommon(setFocusCancel);
+                    ApiHawkeyeMsgHelper.ErrorCommon(setFocusCancel);
                 }
             }
             catch (Exception ex)

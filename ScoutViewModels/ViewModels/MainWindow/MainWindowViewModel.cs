@@ -69,7 +69,6 @@ namespace ScoutViewModels.ViewModels
             _applicationStateService = applicationStateService;
             _applicationStateServiceSubscription = _applicationStateService.SubscribeStateChanges(ApplicationStateHandler);
 
-            UiSoftwareVersion = Misc.GetUiVersionString();
             Copyright = Misc.GetCopyright();
 
             _redStatusBarHasBeenClicked = false;
@@ -348,11 +347,11 @@ namespace ScoutViewModels.ViewModels
 
         #endregion
 
-        public string UiSoftwareVersion
-        {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
-        }
+        //public string UiSoftwareVersion
+        //{
+        //    get { return GetProperty<string>(); }
+        //    set { SetProperty(value); }
+        //}
 
         public string Copyright
         {

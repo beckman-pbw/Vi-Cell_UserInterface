@@ -1,7 +1,5 @@
 using System;
 using ScoutDomains;
-using ScoutServices.Watchdog;
-using ScoutUtilities;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
 using ScoutUtilities.UIConfiguration;
@@ -14,9 +12,8 @@ namespace ScoutViewModels.ViewModels
 {
     public class SettingsViewModel : BaseViewModel
     {
-        public SettingsViewModel(IWatchdog watchdog, ILockManager lockManager, IOpcUaCfgManager opcUaCfgManager, IInstrumentStatusService instrumentStatusService, IScoutViewModelFactory viewModelFactory)
+        public SettingsViewModel(ILockManager lockManager, IOpcUaCfgManager opcUaCfgManager, IInstrumentStatusService instrumentStatusService, IScoutViewModelFactory viewModelFactory)
         {
-            _watchDog = watchdog;
             _lockManager = lockManager;
             _viewModelFactory = viewModelFactory;
             _opcUaCfgManager = opcUaCfgManager;
@@ -45,9 +42,7 @@ namespace ScoutViewModels.ViewModels
 
         public string HelpHtmlPath => UISettings.HelpHtmlPath;
         public string LicensesHtmlPath => UISettings.LicensesHtmlPath;
-        public string UiSoftwareVersion => Misc.GetUiVersionString();
 
-        private IWatchdog _watchDog;
         private ILockManager _lockManager;
         private readonly IScoutViewModelFactory _viewModelFactory;
         private IOpcUaCfgManager _opcUaCfgManager;

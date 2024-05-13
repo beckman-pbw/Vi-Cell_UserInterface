@@ -20,6 +20,8 @@ using ScoutUtilities;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Structs;
 using ScoutDomains.EnhancedSampleWorkflow;
+using ScoutModels.Interfaces;
+using ScoutModels;
 
 namespace ExportManager
 {
@@ -42,9 +44,9 @@ namespace ExportManager
         #endregion
 
         #region Private_Const
-        private const UInt32 kUSER_CSV_EXPORT_DELAY = 3;
-        private const UInt32 kSCHED_CSV_EXPORT_DELAY = 311;
-        private const UInt32 kOFFLINE_EXPORT_DELAY = 127;
+        private const uint kUSER_CSV_EXPORT_DELAY = 3;
+        private const uint kSCHED_CSV_EXPORT_DELAY = 311;
+        private const uint kOFFLINE_EXPORT_DELAY = 127;
         private const int kSYS_START_EXPORT_DELAY_SECS = 173;
 
         private const int kTIMEOUT_SECS = 71; // Timeout for any single action 
@@ -1904,7 +1906,7 @@ namespace ExportManager
                 TraceThis("Send email to " + toAddr);
 
                 var messageToSend = new MimeMessage();
-                messageToSend.From.Add(new MailboxAddress(LanguageResourceHelper.Get("LID_Title_ViCellBlu"), smtpConfig.Username));
+                messageToSend.From.Add(new MailboxAddress(HardwareManager.HardwareSettingsModel.ApplicationName, smtpConfig.Username));
                 messageToSend.To.Add(new MailboxAddress(toAddr, toAddr));
                 messageToSend.Subject = subject;
                 messageToSend.Body = new TextPart(TextFormat.Plain) { Text = textBody };

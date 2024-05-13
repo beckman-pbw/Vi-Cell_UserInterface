@@ -55,7 +55,7 @@ namespace ScoutViewModels.ViewModels.Common
                         }
 
 						adminViewModel.SelectedSampleRecordFromList = sampleRecord;
-                        adminViewModel.ReportPrintTitle = $"{adminViewModel.ReportPrintTitle} {sampleRecord.SampleIdentifier}";
+                        //adminViewModel.PrintTitle = $"{adminViewModel.PrintTitle} {sampleRecord.SampleIdentifier}";
                         adminViewModel.ReportComments = sampleRecord.Tag;
 
                         foreach (var param in adminViewModel.ReportPrintOptionsList)

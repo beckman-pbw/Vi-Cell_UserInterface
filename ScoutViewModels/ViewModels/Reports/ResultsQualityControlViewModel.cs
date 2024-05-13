@@ -41,7 +41,6 @@ namespace ScoutViewModels.ViewModels.Reports
 
         private void Initialize()
         {
-            PrintTitle = $"{LanguageResourceHelper.Get("LID_Title_ViCellBluVersion")}{UISettings.SoftwareVersion}";
             IsOpenFileEnable = true;
 
             _resultModel = new ResultModel();
@@ -117,11 +116,11 @@ namespace ScoutViewModels.ViewModels.Reports
             set { SetProperty(value); }
         }
 
-        public string PrintTitle
-        {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
-        }
+        //public string PrintTitle
+        //{
+        //    get { return GetProperty<string>(); }
+        //    set { SetProperty(value); }
+        //}
 
         public string Comments
         {
@@ -213,7 +212,7 @@ namespace ScoutViewModels.ViewModels.Reports
 
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    var qualityControlsReportViewModel = _viewModelFactory.CreateQualityControlsReportViewModel(PrintTitle, Comments, SelectedQualityControl, _graphListForReport);
+                    var qualityControlsReportViewModel = _viewModelFactory.CreateQualityControlsReportViewModel(ApplicationVersion, Comments, SelectedQualityControl, _graphListForReport);
                     qualityControlsReportViewModel.LoadReport();
                     PublishReportProgressIndication(false);
                     ReportEventBus.QualityControlsReport(this, qualityControlsReportViewModel);

@@ -4,7 +4,6 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
         xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
         mc:Ignorable="d" Title="InstrumentStatusDialog" 
@@ -58,8 +57,6 @@
                                 </StackPanel>
 
                                 <StackPanel Grid.Row="1" Orientation="Horizontal">
-                                    <!--<Label Name="lblSoftwareVersion" Content="{Binding ResourceKeys[LID_Label_Softwareversion], Source={StaticResource ScoutUILanguageResource}}"
-                                                       ContentStringFormat="{}{0}:" Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />-->
                                     <Label Name="lblSoftwareVersionDetails" Foreground="Blue" Content="{Binding ApplicationVersion}"
                                                        Style="{StaticResource LabelStyleFontSizeEighteenRegular}" />
                                 </StackPanel>

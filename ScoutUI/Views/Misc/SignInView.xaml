@@ -27,7 +27,7 @@
             </Grid>
             <Grid Grid.Column="1">
                 <StackPanel Margin="-80,50,0,0" HorizontalAlignment="Center">
-                    <Label Content="{Binding ResourceKeys[LID_Title_ViCellBlu], Source={StaticResource ScoutUILanguageResource}}"
+                    <Label Content="{Binding ApplicationName}"
                                Foreground="{StaticResource Label_Foreground}" FontSize="28" HorizontalAlignment="Center"
                                FontFamily ="Montserrat Extra" FontWeight="Bold"/>
                     <Label Content="{Binding ResourceKeys[LID_Label_CellViabilityAnalyzer], Source={StaticResource ScoutUILanguageResource}}"

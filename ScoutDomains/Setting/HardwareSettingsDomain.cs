@@ -1,6 +1,4 @@
-﻿using ScoutUtilities.Enums;
-
-namespace ScoutDomains
+﻿namespace ScoutDomains
 {
     public class HardwareSettingsDomain
     {
@@ -13,8 +11,6 @@ namespace ScoutDomains
         public string SyringePumpFWVersion { get; set; }
 
         public string CameraFirmwareVersion { get; set; }
-
-        public string UIVersion { get; set; }
 
         public string ImageAnalysisSoftwareVersion { get; set; }
 

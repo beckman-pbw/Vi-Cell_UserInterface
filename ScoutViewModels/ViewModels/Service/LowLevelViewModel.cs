@@ -1,7 +1,6 @@
 ﻿using ApiProxies.Generic;
 using ScoutDomains;
 using ScoutLanguageResources;
-using ScoutModels;
 using ScoutModels.Common;
 using ScoutModels.Home.QueueManagement;
 using ScoutModels.Service;
@@ -9,12 +8,13 @@ using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
-using ScoutViewModels.Common;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using ScoutModels.Interfaces;
+using ScoutModels;
+using System.Windows;
 
 namespace ScoutViewModels.ViewModels.Service
 {
@@ -494,6 +494,21 @@ namespace ScoutViewModels.ViewModels.Service
                 default:
                     break;
             }
+        }
+
+        public Visibility ShowAll
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
+                {
+                    return Visibility.Hidden;
+                }
+
+                return GetProperty<Visibility>();
+            }
+
+            set { SetProperty(value); }
         }
     }
 }

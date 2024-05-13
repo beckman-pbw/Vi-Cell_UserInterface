@@ -65,12 +65,6 @@ namespace ScoutViewModels.ViewModels.Reports
             set { SetProperty(value); }
         }
 
-        public string PrintTitle
-        {
-            get { return GetProperty<string>(); }
-            set { SetProperty(value); }
-        }
-
         public string Comment
         {
             get { return GetProperty<string>(); }
@@ -122,7 +116,6 @@ namespace ScoutViewModels.ViewModels.Reports
             OnInstrumentTypeSelectionChangedCommand = new RelayCommand(OnInstrumentTypeSelectionChangedExecute, null);
             PrintCommand = new RelayCommand(PrintExecute, null);
             LoadParameterList();
-            PrintTitle = $"{LanguageResourceHelper.Get("LID_Title_ViCellBluVersion")}{UISettings.SoftwareVersion}";
             _statusSubscriber = _instrumentStatusService.SubscribeToSystemStatusCallback().Subscribe((OnSystemStatusChanged));
         }
 
@@ -170,18 +163,12 @@ namespace ScoutViewModels.ViewModels.Reports
             DispatcherHelper.ApplicationExecute(() =>
             {
                 GetDataForPrint();
-                var instrumentStatusReportViewModel = _viewModelFactory.CreateInstrumentStatusReportViewModel(PrintTitle, Comment, SystemStatusDomain,
+                var instrumentStatusReportViewModel = _viewModelFactory.CreateInstrumentStatusReportViewModel(ApplicationVersion, Comment, SystemStatusDomain,
                     InstrumentStatusPrintOptionsList, ConcDataListList, ACupConcDataListList, UserList, ReagentContainers, AnalysisType);
                 instrumentStatusReportViewModel.LoadReport();
                 PublishReportProgressIndication(false);
                 ReportEventBus.InstrumentStatusReport(this, instrumentStatusReportViewModel);
             });
-            //}
-            //else
-            //{
-            //    PublishReportProgressIndication(false);
-            //    DialogEventBus.DialogBoxOk(this, LanguageResourceHelper.Get("LID_Report_NoDataFound"));
-            //}
         }
 
         private void PublishReportProgressIndication(bool value)

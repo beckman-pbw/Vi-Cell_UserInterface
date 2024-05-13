@@ -4,10 +4,8 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ScoutUI.Views.Dialogs"
-        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         xmlns:enum="clr-namespace:ScoutUtilities.Enums;assembly=ScoutUtilities"
         xmlns:controls="clr-namespace:ScoutUI.Common.Controls"
-        xmlns:helper="clr-namespace:ScoutUI.Common.Helper"
         xmlns:commonControls="clr-namespace:ScoutUI.Views.CommonControls"
         mc:Ignorable="d" Title="ReplaceReagentPackDialog" Height="800" Width="1280"
         WindowStyle="None" AllowsTransparency="True" Background="{x:Null}">
@@ -22,7 +20,6 @@
 
             <commonControls:DialogTitleBar Grid.Row="0" Visibility="{Binding ShowDialogTitleBar, Converter={StaticResource BooleanToVisibilityConverter}}"/>
 
-<!--
             <Grid Grid.Row="2" Visibility="{Binding IsStepOneEnable, Converter={StaticResource BooleanToVisibilityConverter}}">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="33" />
@@ -581,9 +578,8 @@
                 <Button Name="btnOk" Grid.Row="3" Grid.Column="3" Command="{Binding AcceptCommand}" Style="{StaticResource RoundButtonDashBoardStyle}" Width="55" Height="55">
                     <Image Source="{StaticResource TickSource}" />
                 </Button>
-            </Grid>
--->
 
+            </Grid>
         </Grid>
     </Border>
 

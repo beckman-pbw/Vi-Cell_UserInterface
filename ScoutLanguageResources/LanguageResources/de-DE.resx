@@ -653,9 +653,9 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>Stiller Login fehlgeschlagen</value>
   </data>
-  <data name="LID_Label_Softwareversion" xml:space="preserve">
+  <!--<data name="LID_Label_Softwareversion" xml:space="preserve">
     <value>Vi-CELL BLU Softwareversion</value>
-  </data>
+  </data>-->
   <data name="LID_Label_Backendversion" xml:space="preserve">
     <value>Back-End-Softwareversion</value>
   </data>
@@ -1323,7 +1323,7 @@ wiederholen.</value>
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+  <data name="LID_Title_ViCell_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
@@ -2813,7 +2813,7 @@ Authentifizieren für Weiter.</value>
     <value>Motor-Theta</value>
   </data>
   <data name="LID_MSGBOX_ExitProgressMsg" xml:space="preserve">
-    <value>Exist. Vi-CELL BLU Anwendung</value>
+    <value>Exist. Anwendung</value>
   </data>
   <data name="LID_Label_GraphHistorical" xml:space="preserve">
     <value>Graphverlauf</value>
@@ -3907,9 +3907,6 @@ Fortfahren?</value>
   </data>
   <data name="LID_Label_SerialNumberColon" xml:space="preserve">
     <value>Seriennummer:</value>
-  </data>
-  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
-    <value>Vi-CELL BLU Softwareversion:</value>
   </data>
   <data name="LID_Label_SpotAreaRange" xml:space="preserve">
     <value>Lebensf. Spotber. muss zwischen {0} und {1} sein</value>

@@ -648,9 +648,9 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>ログイン失敗</value>
   </data>
-  <data name="LID_Label_Softwareversion" xml:space="preserve">
+  <!--<data name="LID_Label_Softwareversion" xml:space="preserve">
     <value>Vi-CELL BLUソフトウェアバージョン</value>
-  </data>
+  </data>-->
   <data name="LID_Label_Backendversion" xml:space="preserve">
     <value>バックエンドソフトウェアバージョン</value>
   </data>
@@ -1314,7 +1314,7 @@
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+  <data name="LID_Title_ViCell_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
@@ -2803,7 +2803,7 @@
     <value>モーターシータ</value>
   </data>
   <data name="LID_MSGBOX_ExitProgressMsg" xml:space="preserve">
-    <value>Vi-CELL BLUアプリケーションの終了</value>
+    <value>アプリケーションの終了</value>
   </data>
   <data name="LID_Label_GraphHistorical" xml:space="preserve">
     <value>グラフ履歴</value>
@@ -3892,9 +3892,6 @@
   </data>
   <data name="LID_Label_SerialNumberColon" xml:space="preserve">
     <value>シリアルナンバー：</value>
-  </data>
-  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
-    <value>Vi-CELL BLUソフトウェアバージョン：</value>
   </data>
   <data name="LID_Label_SpotAreaRange" xml:space="preserve">
     <value>生細胞スポットエリアは、{0}と{1}の間でなければなりません</value>

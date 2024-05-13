@@ -653,9 +653,9 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>Falló el inicio de sesión silencioso</value>
   </data>
-  <data name="LID_Label_Softwareversion" xml:space="preserve">
+  <!--<data name="LID_Label_Softwareversion" xml:space="preserve">
     <value>Versión software Vi-CELL BLU</value>
-  </data>
+  </data>-->
   <data name="LID_Label_Backendversion" xml:space="preserve">
     <value>Versión software fondo</value>
   </data>
@@ -920,7 +920,7 @@
   <data name="LID_TabItem_Viability" xml:space="preserve">
     <value>Viab</value>
   </data>
-  <data name="LID_Title_ViCellBluVersion" xml:space="preserve">
+  <data name="LID_Label_ViCell_SW_Version" xml:space="preserve">
     <value>Vi-CELL BLU v</value>
   </data>
   <data name="LID_UsersLabel_CellType" xml:space="preserve">
@@ -1319,7 +1319,7 @@
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+  <data name="LID_Title_ViCell_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
@@ -3897,9 +3897,6 @@
   </data>
   <data name="LID_Label_SerialNumberColon" xml:space="preserve">
     <value>Núm serie:</value>
-  </data>
-  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
-    <value>Vers software Vi-CELL BLU:</value>
   </data>
   <data name="LID_Label_SpotAreaRange" xml:space="preserve">
     <value>El área pun viab debe estar entre {0} y {1}</value>

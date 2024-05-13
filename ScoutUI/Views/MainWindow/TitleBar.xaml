@@ -34,7 +34,7 @@
 
                 <Separator Style="{StaticResource VerticalSeparatorForMasterPageStyle}" Margin="20,0,20,0" />
 
-                <Label x:Name="lblApplicationName" Content="{Binding ResourceKeys[LID_Title_ViCellBlu], Source={StaticResource ScoutUILanguageResource}}"
+                <Label x:Name="lblApplicationName" Content="{Binding ApplicationName}"
                        VerticalAlignment="Center" Style="{StaticResource SignHeaderLabelStyle}" 
                        FontFamily ="Montserrat Extra"  FontSize="26" FontWeight="Bold" />
 

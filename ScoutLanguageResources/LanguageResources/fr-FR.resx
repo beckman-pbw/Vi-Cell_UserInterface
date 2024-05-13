@@ -653,7 +653,7 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>L’authentification silencieuse a échoué</value>
   </data>
-  <data name="LID_Label_Softwareversion" xml:space="preserve">
+  <data name="LID_Label_ViCell_SW_Version" xml:space="preserve">
     <value>V. logiciel Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_Backendversion" xml:space="preserve">
@@ -1319,7 +1319,7 @@
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+  <data name="LID_Title_ViCell_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
@@ -2808,7 +2808,7 @@
     <value>Thêta moteur</value>
   </data>
   <data name="LID_MSGBOX_ExitProgressMsg" xml:space="preserve">
-    <value>Application Vi-CELL BLU existante</value>
+    <value>Application existante</value>
   </data>
   <data name="LID_Label_GraphHistorical" xml:space="preserve">
     <value>Graphes historiques</value>
@@ -3895,9 +3895,6 @@
   </data>
   <data name="LID_Label_SerialNumberColon" xml:space="preserve">
     <value>Nº de série :</value>
-  </data>
-  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
-    <value>Version du logiciel Vi-CELL BLU :</value>
   </data>
   <data name="LID_Label_SpotAreaRange" xml:space="preserve">
     <value>La zone lumin. cell. viables doit être entre {0} et {1}</value>

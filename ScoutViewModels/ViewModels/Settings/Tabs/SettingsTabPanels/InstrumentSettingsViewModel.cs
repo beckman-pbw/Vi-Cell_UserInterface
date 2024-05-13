@@ -54,7 +54,6 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
         {
             ListItemLabel = LanguageResourceHelper.Get("LID_ListOption_Instrument");
             _hardwareSettingsModel = HardwareManager.HardwareSettingsModel;
-            ApplicationVersion = UISettings.SoftwareVersion;
             GetOpticalHardwareConfig();
             GetDbSettings();
             GetSmtpSettings();
@@ -204,26 +203,6 @@ namespace ScoutViewModels.ViewModels.Tabs.SettingsPanel
         public bool IsSetSerialNumberEnable
         {
             get { return GetProperty<bool>(); }
-            set { SetProperty(value); }
-        }
-
-        public string ApplicationVersion
-        {
-            get
-            {
-                switch (HardwareManager.HardwareSettingsModel.InstrumentType)
-                {
-                    case InstrumentType.CellHealth_ScienceModule:
-                        return LanguageResourceHelper.Get("LID_Label_CHM_Softwareversion") + " " + UISettings.SoftwareVersion;
-                    case InstrumentType.ViCELL_FL_Instrument:
-                        return LanguageResourceHelper.Get("LID_Label_ViCell_Softwareversion") + " " + UISettings.SoftwareVersion;
-                    default:
-                        ApplicationVersion = "Unknown type " + UISettings.SoftwareVersion;
-                        break;
-                }
-
-                return GetProperty<string>();
-            }
             set { SetProperty(value); }
         }
 

@@ -273,11 +273,6 @@ namespace ScoutUtilities
             return $"{qcName} ({cellTypeName})";
         }
 
-        public static string GetUiVersionString()
-        {
-            return $"{LanguageResourceHelper.Get("LID_Title_ViCellBluVersion")}{UISettings.SoftwareVersion}";
-        }
-
         public static string GetCopyright()
         {
             return string.Format(LanguageResourceHelper.Get("LID_Label_CopyRight"), UISettings.CopyrightYear);

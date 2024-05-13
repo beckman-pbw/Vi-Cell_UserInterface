@@ -112,7 +112,7 @@ namespace ScoutViewModels.ViewModels.Dialogs
         public DialogBoxViewModel(DialogBoxEventArgs args, Window parentWindow) : base(args, parentWindow)
         {
             ShowDialogTitleBar = true;
-            DialogTitle = args.Title ?? LanguageResourceHelper.Get("LID_Title_ViCellBlu");
+            DialogTitle = args.Title ?? ApplicationName;
             Message = args.Message;
             Icon = args.Icon;
             ShowMessageIcon = args.Icon != MessageBoxImage.None;

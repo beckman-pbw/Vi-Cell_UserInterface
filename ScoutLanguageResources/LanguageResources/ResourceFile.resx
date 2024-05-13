@@ -659,14 +659,11 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>Silent login failed</value>
   </data>
-  <data name="LID_Label_CHM_Softwareversion" xml:space="preserve">
-    <value>Cydem VT Cell Health s/w version</value>
+  <data name="LID_Label_CHM_SW_Version" xml:space="preserve">
+    <value>Cydem VT Cell Health v</value>
   </data>
-  <data name="LID_Label_Softwareversion" xml:space="preserve">
-    <value>Cydem VT Cell Health s/w version</value>
-  </data>
-  <data name="LID_Label_ViCell_Softwareversion" xml:space="preserve">
-    <value>Vi-CELL BLU software version</value>
+  <data name="LID_Label_ViCell_SW_Version" xml:space="preserve">
+    <value>Vi-CELL BLU v</value>
   </data>
   <data name="LID_Label_Backendversion" xml:space="preserve">
     <value>Backend software version</value>
@@ -931,9 +928,6 @@
   </data>
   <data name="LID_TabItem_Viability" xml:space="preserve">
     <value>Viability</value>
-  </data>
-  <data name="LID_Title_ViCellBluVersion" xml:space="preserve">
-    <value>Cydem VT Cell Health v</value>
   </data>
   <data name="LID_UsersLabel_CellType" xml:space="preserve">
     <value>Cell type</value>
@@ -1338,9 +1332,17 @@ button to repeat as needed.</value>
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCellBlu" xml:space="preserve">
+  <data name="LID_Title_Name" xml:space="preserve">
+    <value>No name specified</value>
+  </data>
+
+  <data name="LID_Title_CHM_Name" xml:space="preserve">
     <value>Cydem VT Cell Health</value>
   </data>
+  <data name="LID_Title_ViCell_Name" xml:space="preserve">
+    <value>Vi-CELL BLU</value>
+  </data>
+
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
     <value>Avg. diameter</value>
   </data>
@@ -2831,7 +2833,7 @@ button to repeat as needed.</value>
     <value>Motor theta</value>
   </data>
   <data name="LID_MSGBOX_ExitProgressMsg" xml:space="preserve">
-    <value>Exiting Cydem VT CellHealth application</value>
+    <value>Exiting application</value>
   </data>
   <data name="LID_Label_GraphHistorical" xml:space="preserve">
     <value>Graphs historical</value>
@@ -4015,9 +4017,6 @@ Do you want to continue?</value>
   </data>
   <data name="LID_Label_SerialNumberColon" xml:space="preserve">
     <value>Serial number:</value>
-  </data>
-  <data name="LID_Label_SoftwareversionColon" xml:space="preserve">
-    <value>Cydem VT Cell Health s/w version:</value>
   </data>
   <data name="LID_Label_SpotAreaRange" xml:space="preserve">
     <value>The Viable spot area must be between  {0} to {1}</value>
