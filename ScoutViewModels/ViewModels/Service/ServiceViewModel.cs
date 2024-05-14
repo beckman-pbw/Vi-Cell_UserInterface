@@ -1,6 +1,5 @@
 ﻿using ApiProxies.Generic;
 using HawkeyeCoreAPI.Facade;
-using Ninject;
 using ScoutLanguageResources;
 using ScoutModels;
 using ScoutModels.Service;
@@ -12,7 +11,6 @@ using System.Windows;
 using System.Windows.Controls;
 using ScoutModels.Interfaces;
 using ScoutModels.Settings;
-using ScoutServices.Interfaces;
 using ScoutUtilities;
 using ScoutViewModels.Interfaces;
 using ScoutViewModels.ViewModels.Service.ConcentrationSlope;
@@ -323,6 +321,21 @@ namespace ScoutViewModels.ViewModels.Service
             {
                 ExceptionHelper.HandleExceptions(ex, LanguageResourceHelper.Get("LID_EXCEPTIONMSG_ERROR_ON_SWITCH_TO_MANUAL_CONTROLS_CONTENT"));
             }
+        }
+
+        public Visibility ShowAll
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
+                {
+                    return Visibility.Collapsed;
+                }
+
+                return GetProperty<Visibility>();
+            }
+
+            set { SetProperty(value); }
         }
 
         #endregion

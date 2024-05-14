@@ -502,7 +502,7 @@ namespace ScoutViewModels.ViewModels.Service
             {
                 if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.CellHealth_ScienceModule)
                 {
-                    return Visibility.Hidden;
+                    return Visibility.Collapsed;
                 }
 
                 return GetProperty<Visibility>();

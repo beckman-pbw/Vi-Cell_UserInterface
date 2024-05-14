@@ -6,8 +6,8 @@
              xmlns:validate="clr-namespace:ScoutUI.Common.Helper"
              xmlns:service="clr-namespace:ScoutUI.Views.Service"
              xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
-             Focusable="False" IsTabStop="False" KeyboardNavigation.TabNavigation="Local"
-             xmlns:converter="clr-namespace:ScoutUI.Common.Converters">
+             Focusable="False" IsTabStop="False" KeyboardNavigation.TabNavigation="Local">
+
     <Grid Focusable="False">
         <Border Style="{StaticResource BaseBorderStyle}" Focusable="False"/>
         <Grid Margin="5" Focusable="False">
@@ -22,7 +22,6 @@
                     <ColumnDefinition Width="270" />
                     <ColumnDefinition Width="250" />
                     <ColumnDefinition Width="270" />
-                    <ColumnDefinition Width="230" />
                 </Grid.ColumnDefinitions>
 
                 <GroupBox Grid.Column="0" Name="grpSensorStatusState" Focusable="False"
@@ -45,39 +44,42 @@
                             <ColumnDefinition Width="130" />
                             <ColumnDefinition Width="80" />
                         </Grid.ColumnDefinitions>
+
                         <Label Grid.Row="0" Grid.Column="1" Name="lblCarousel"
                                Content="{Binding ResourceKeys[LID_Label_Carousel], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" HorizontalAlignment="Right"
                                VerticalAlignment="Bottom" ContentStringFormat="{}{0} :" Padding="0" />
+                        <controls:SensorButton x:Name="rbCarousel" Grid.Row="0" Grid.Column="2"
+                               Style="{StaticResource HardwareSensorStatus}"
+                               Focusable="False"
+                               SensorStatus="{Binding CarouselDetect}" />
+
                         <Label Grid.Row="1" Grid.Column="1" Name="lblCup" HorizontalAlignment="Right"
                                VerticalAlignment="Bottom" ContentStringFormat="{}{0} :" Padding="0"
                                Content="{Binding ResourceKeys[LID_Label_Tube], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="1" Grid.Column="2"
+                               Style="{StaticResource HardwareSensorStatus}"
+                               Focusable="False"
+                               SensorStatus="{Binding TubeDetect}" />
+						
                         <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblReagentDoor"
                                HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_ReagentDoor], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="2" Grid.Column="2"
+                               Style="{StaticResource HardwareSensorStatus}"
+                               Focusable="False"
+                               SensorStatus="{Binding ReagentDoor}" />
+
                         <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblReagentPack"
                                HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_ReagentPack], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
-
-                        <controls:SensorButton x:Name="rbCarousel" Grid.Row="0" Grid.Column="2"
-                                                    Style="{StaticResource HardwareSensorStatus}"
-                                                    Focusable="False"
-                                                    SensorStatus="{Binding CarouselDetect}" />
-                        <controls:SensorButton Grid.Row="1" Grid.Column="2"
-                                                    Style="{StaticResource HardwareSensorStatus}"
-                                                    Focusable="False"
-                                                    SensorStatus="{Binding TubeDetect}" />
-                        <controls:SensorButton Grid.Row="2" Grid.Column="2"
-                                                    Style="{StaticResource HardwareSensorStatus}"
-                                                    Focusable="False"
-                                                    SensorStatus="{Binding ReagentDoor}" />
                         <controls:SensorButton Grid.Row="3" Grid.Column="2"
-                                                    Style="{StaticResource HardwareSensorStatus}"
-                                                    Focusable="False"
-                                                    SensorStatus="{Binding ReagentPack}" />
+                               Style="{StaticResource HardwareSensorStatus}"
+                               Focusable="False"
+                               SensorStatus="{Binding ReagentPack}" />
                     </Grid>
                 </GroupBox>
 
@@ -107,51 +109,65 @@
                                VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_FocusHome], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="0" Grid.Column="2"
+                               Focusable="False"
+                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                               SensorStatus="{Binding FocusHome,Mode=OneWay}" />
+						
                         <Label Grid.Row="1" Grid.Column="1" Name="lblRadiushome" HorizontalAlignment="Right"
+                               Visibility="{Binding ShowAll}"
                                VerticalAlignment="Bottom" ContentStringFormat="{}{0} :" Padding="0"
                                Content="{Binding ResourceKeys[LID_Label_RadiusHome], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="1" Grid.Column="2"
+                               Visibility="{Binding ShowAll}"
+                               Focusable="False"
+                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                               SensorStatus="{Binding RadiusHome,Mode=OneWay}" />
+
                         <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblThetahome" HorizontalAlignment="Right"
+                               Visibility="{Binding ShowAll}"
                                VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_ThetaHome], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="2" Grid.Column="2"
+                               Visibility="{Binding ShowAll}"
+                               Focusable="False"
+                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                               SensorStatus="{Binding ThetaHome,Mode=OneWay}" />
+
                         <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblProbehome" HorizontalAlignment="Right"
+                               Visibility="{Binding ShowAll}"
                                VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_ProbeHome], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="3" Grid.Column="2"
+                               Visibility="{Binding ShowAll}"
+                               Focusable="False"
+                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                               SensorStatus="{Binding ProbeHome,Mode=OneWay}" />
+
                         <Label Grid.Row="4" Grid.Column="1" Padding="0" Name="lblReagentUpper"
+                               Visibility="{Binding ShowAll}"
                                HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_ReagentUpper], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
+                        <controls:SensorButton Grid.Row="4" Grid.Column="2"
+                               Visibility="{Binding ShowAll}"
+                               Focusable="False"
+                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                               SensorStatus="{Binding ReagentUpper,Mode=OneWay}" />
+
                         <Label Grid.Row="5" Grid.Column="1" Padding="0" Name="lblReagentlower"
+                               Visibility="{Binding ShowAll}"
                                HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                Content="{Binding ResourceKeys[LID_Label_ReagentLower], Source={StaticResource ScoutUILanguageResource}}"
                                Style="{StaticResource ReportCommonLabelStyle}" />
-
-                        <controls:SensorButton Grid.Row="0" Grid.Column="2"
-                                                Focusable="False"
-                                                Style="{StaticResource HardwareSensorStatus}" Height="30"
-                                                SensorStatus="{Binding FocusHome,Mode=OneWay}" />
-                        <controls:SensorButton Grid.Row="1" Grid.Column="2"
-                                                Focusable="False"
-                                                Style="{StaticResource HardwareSensorStatus}" Height="30"
-                                                SensorStatus="{Binding RadiusHome,Mode=OneWay}" />
-                        <controls:SensorButton Grid.Row="2" Grid.Column="2"
-                                                Focusable="False"
-                                                Style="{StaticResource HardwareSensorStatus}" Height="30"
-                                                SensorStatus="{Binding ThetaHome,Mode=OneWay}" />
-                        <controls:SensorButton Grid.Row="3" Grid.Column="2"
-                                                Focusable="False"
-                                                Style="{StaticResource HardwareSensorStatus}" Height="30"
-                                                SensorStatus="{Binding ProbeHome,Mode=OneWay}" />
-                        <controls:SensorButton Grid.Row="4" Grid.Column="2"
-                                               Focusable="False"
-                                               Style="{StaticResource HardwareSensorStatus}" Height="30"
-                                               SensorStatus="{Binding ReagentUpper,Mode=OneWay}" />
                         <controls:SensorButton Grid.Row="5" Grid.Column="2"
-                                               Focusable="False"
-                                               Style="{StaticResource HardwareSensorStatus}" Height="30"
-                                               SensorStatus="{Binding ReagentLower}" />
+                               Visibility="{Binding ShowAll}"
+                               Focusable="False"
+                               Style="{StaticResource HardwareSensorStatus}" Height="30"
+                               SensorStatus="{Binding ReagentLower}" />
                     </Grid>
                 </GroupBox>
 
@@ -173,7 +189,6 @@
                             <RowDefinition Height="35" />
                             <RowDefinition Height="35" />
                             <RowDefinition Height="*" />
-
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="10" />
@@ -182,65 +197,92 @@
                         </Grid.ColumnDefinitions>
 
                         <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblCameraLamp"
-	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
-	                           Content="{Binding ResourceKeys[LID_Label_CameraLamp], Source={StaticResource ScoutUILanguageResource}}"
-	                           ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblSyringePosition"
-	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
-	                           Content="{Binding ResourceKeys[LID_ButtonContent_Syringe], Source={StaticResource ScoutUILanguageResource}}"
-	                           ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblValvePositionx"
-	                           HorizontalAlignment="Right" VerticalAlignment="Bottom"
-	                           Content="{Binding ResourceKeys[LID_ButtonContent_Valve], Source={StaticResource ScoutUILanguageResource}}"
-	                           ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblMotorRadius"
                                HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Content="{Binding ResourceKeys[LID_Label_MotorRadius], Source={StaticResource ScoutUILanguageResource}}"
-                               Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="4" Grid.Column="1" Padding="0" Name="lblMotortheta"
-                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Content="{Binding ResourceKeys[LID_Label_Motortheta], Source={StaticResource ScoutUILanguageResource}}"
-                               Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="5" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
-                               VerticalAlignment="Bottom"
-                               Content="{Binding ResourceKeys[LID_Label_MotorFocus], Source={StaticResource ScoutUILanguageResource}}"
+                               Content="{Binding ResourceKeys[LID_Label_CameraLamp], Source={StaticResource ScoutUILanguageResource}}"
                                ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="6" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
-                               VerticalAlignment="Bottom"
-                               Content="{Binding ResourceKeys[LID_Label_MotorReagent], Source={StaticResource ScoutUILanguageResource}}"
-                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-
                         <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding BrightFieldLED,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}" />
+				   
+                        <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblSyringePosition"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_ButtonContent_Syringe], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding SyringePosition,Mode=OneWay}" />
+
+                        <Label Grid.Row="2" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               Visibility="{Binding ShowAll}"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_MotorReagent], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Visibility="{Binding ShowAll}"
+                               HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
+                               Padding="5,0,0,0"
+                               Content="{Binding MotorReagentPosition,Mode=OneWay}" />
+
+
+                        <!--<Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblValvePosition"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_ButtonContent_Valve], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
                                Foreground="{DynamicResource GenericVeryDark}"
-                               Content="{Binding ValvePosition,Mode=OneWay}" />
-                        <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Content="{Binding ValvePosition,Mode=OneWay}" />-->
+
+
+                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblMotorRadius"
+                               Visibility="{Binding ShowAll}"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_MotorRadius], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Visibility="{Binding ShowAll}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
-	                           Content="{Binding MotorRadiusPosition,Mode=OneWay}" />
-                        <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Content="{Binding MotorRadiusPosition,Mode=OneWay}" />
+
+                        <Label Grid.Row="4" Grid.Column="1" Padding="0" Name="lblMotortheta"
+                               Visibility="{Binding ShowAll}"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_Motortheta], Source={StaticResource ScoutUILanguageResource}}"
+                               Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Visibility="{Binding ShowAll}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding MotorThetaPosition,Mode=OneWay}" />
-                        <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+			       
+                        <Label Grid.Row="5" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               Visibility="{Binding ShowAll}"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_MotorFocus], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Visibility="{Binding ShowAll}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding MotorFocusPosition,Mode=OneWay}" />
-                        <Label Grid.Row="5" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+
+                        <Label Grid.Row="6" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               Visibility="{Binding ShowAll}"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_MotorReagent], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
+                        <Label Grid.Row="6" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
+                               Visibility="{Binding ShowAll}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding MotorReagentPosition,Mode=OneWay}" />
                     </Grid>
                 </GroupBox>
-                <GroupBox Grid.Column="4" Name="grpVoltage"
+
+                <GroupBox Grid.Column="3" Name="grpVoltage"
                           Header="{Binding ResourceKeys[LID_Label_Voltage], Source={StaticResource ScoutUILanguageResource}}"
                           Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
                           HorizontalAlignment="Stretch"
@@ -266,40 +308,44 @@
                                HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                Content="{Binding ResourceKeys[LID_Report_Pos33Volt], Source={StaticResource ScoutUILanguageResource}}" 
                                ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Padding="0"
-                               VerticalAlignment="Bottom"
-                               Content="{Binding ResourceKeys[LID_Label_Sensor], Source={StaticResource ScoutUILanguageResource}}"
-                               ContentStringFormat="+5V {0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Padding="0"
-                               VerticalAlignment="Bottom"
-                               Content="{Binding ResourceKeys[LID_Label_Circuit], Source={StaticResource ScoutUILanguageResource}}"
-                               ContentStringFormat="+5V {0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblTwelveVolt"
-                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                               Content="+12V :" Style="{StaticResource ReportCommonLabelStyle}" />
-                        <Label Grid.Row="4" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
-                               VerticalAlignment="Bottom"
-                               Content="+24V :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
                                Padding="5,0,0,0"
                                Content="{Binding Voltage3_3V ,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
                                ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+			       
+                        <Label Grid.Row="1" Grid.Column="1" HorizontalAlignment="Right" Padding="0"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_Sensor], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="+5V {0} :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding Voltage5vSensor,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
                                ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+
+                        <Label Grid.Row="2" Grid.Column="1" HorizontalAlignment="Right" Padding="0"
+                               VerticalAlignment="Bottom"
+                               Content="{Binding ResourceKeys[LID_Label_Circuit], Source={StaticResource ScoutUILanguageResource}}"
+                               ContentStringFormat="+5V {0} :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" VerticalAlignment="Bottom" Foreground="{DynamicResource GenericVeryDark}"
                                Padding="5,0,0,0"
                                Content="{Binding Voltage5vCircuit,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
                                ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+
+                        <Label Grid.Row="3" Grid.Column="1" Padding="0" Name="lblTwelveVolt"
+                               HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                               Content="+12V :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="3" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" Foreground="{DynamicResource GenericVeryDark}" VerticalAlignment="Bottom"
                                Padding="5,0,0,0"
                                Content="{Binding Voltage12v,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.Two}}"
                                ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
+
+                        <Label Grid.Row="4" Grid.Column="1" Padding="0" HorizontalAlignment="Right"
+                               VerticalAlignment="Bottom"
+                               Content="+24V :" Style="{StaticResource ReportCommonLabelStyle}" />
                         <Label Grid.Row="4" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                HorizontalAlignment="Left" Foreground="{DynamicResource GenericVeryDark}" VerticalAlignment="Bottom"
                                Padding="5,0,0,0"
@@ -307,6 +353,7 @@
                                ContentStringFormat="{StaticResource VoltageDoubleTrailing}" />
                     </Grid>
                 </GroupBox>
+
                 <Grid Grid.Column="4">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="*" />
@@ -323,47 +370,47 @@
                                 <RowDefinition Height="30" />
                                 <RowDefinition Height="30" />
                                 <RowDefinition Height="*" />
-
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10" />
                                 <ColumnDefinition Width="140" />
                                 <ColumnDefinition Width="140" />
                             </Grid.ColumnDefinitions>
+			    
                             <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblControlboard"
                                    HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
                                    Content="{Binding ResourceKeys[LID_Label_Controlboard], Source={StaticResource ScoutUILanguageResource}}"
                                    Style="{StaticResource ReportCommonLabelStyle}" />
-                            <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblCPU" HorizontalAlignment="Right"
-                                   VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
-                                   Content="{Binding ResourceKeys[LID_Label_CPU], Source={StaticResource ScoutUILanguageResource}}"
-                                   Style="{StaticResource ReportCommonLabelStyle}" />
-                            <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblOpticalCase"
-                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
-                                   Content="{Binding ResourceKeys[LID_Label_Opticalcase], Source={StaticResource ScoutUILanguageResource}}"
-                                   Style="{StaticResource ReportCommonLabelStyle}" />
-
                             <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                    Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
                                    Padding="5,0,0,0"
                                    Content="{Binding TemperatureControlBoard,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}"
                                    ContentStringFormat="{StaticResource TemperatureSingleTrailing}" />
+
+                            <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblCPU" HorizontalAlignment="Right"
+                                   VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_CPU], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
                             <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                    Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Bottom"
                                    Padding="5,0,0,0"
                                    Content="{Binding TemperatureCPU,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}"
                                    ContentStringFormat="{StaticResource TemperatureSingleTrailing}" />
 
+                            <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblOpticalCase"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_Opticalcase], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
                             <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                    Foreground="{DynamicResource GenericVeryDark}" HorizontalAlignment="Left" VerticalAlignment="Top"
                                    Margin="0,0,0,0"
                                    Content="{Binding TemperatureOpticalCase,Mode=OneWay,Converter={StaticResource TrailingPointConverter},ConverterParameter={x:Static enum:TrailingPoint.One}}"
                                    ContentStringFormat="{StaticResource TemperatureSingleTrailing}" />
-
                         </Grid>
                     </GroupBox>
 
                     <GroupBox Grid.Row="1"
+                              Visibility="{Binding ShowAll}"
                               Header="{Binding ResourceKeys[LID_Label_StatusState], Source={StaticResource ScoutUILanguageResource}}"
                               Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
                               HorizontalAlignment="Stretch" VerticalAlignment="Stretch" FontSize="16"
@@ -374,14 +421,14 @@
                                 <RowDefinition Height="30" />
                                 <RowDefinition Height="30" />
                                 <RowDefinition Height="30" />
-                                <RowDefinition Height="*" />
-
+                            <RowDefinition Height="*" />
                             </Grid.RowDefinitions>
                             <Grid.ColumnDefinitions>
                                 <ColumnDefinition Width="10" />
                                 <ColumnDefinition Width="140" />
                                 <ColumnDefinition Width="100" />
                             </Grid.ColumnDefinitions>
+
                             <Label Grid.Row="0" Grid.Column="1" Padding="0" Name="lblCarouselor96wellposition"
                                    HorizontalAlignment="Right" VerticalAlignment="Bottom"
                                    ContentStringFormat="{}{0} :">
@@ -406,26 +453,26 @@
                                         </Style.Triggers>
                                     </Style>
                                 </Label.Style>
-
                             </Label>
-                            <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblValvePosition"
-                                   HorizontalAlignment="Right" VerticalAlignment="Bottom"
-                                   Content="{Binding ResourceKeys[LID_ButtonContent_Valve], Source={StaticResource ScoutUILanguageResource}}"
-                                   ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
-                            <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblProbePosition"
-                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
-                                   Content="{Binding ResourceKeys[LID_Label_Probe], Source={StaticResource ScoutUILanguageResource}}"
-                                   Style="{StaticResource ReportCommonLabelStyle}" />
 
                             <Label Grid.Row="0" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                    HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
                                    Foreground="{DynamicResource GenericVeryDark}"
                                    Content="{Binding StagePositionString,Mode=OneWay}" />
+							
+                            <Label Grid.Row="1" Grid.Column="1" Padding="0" Name="lblValvePositionxxx"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom"
+                                   Content="{Binding ResourceKeys[LID_ButtonContent_Valve], Source={StaticResource ScoutUILanguageResource}}"
+                                   ContentStringFormat="{}{0} :" Style="{StaticResource ReportCommonLabelStyle}" />
                             <Label Grid.Row="1" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                    HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
                                    Foreground="{DynamicResource GenericVeryDark}"
                                    Content="{Binding ValvePosition,Mode=OneWay}" />
 
+                            <Label Grid.Row="2" Grid.Column="1" Padding="0" Name="lblProbePosition"
+                                   HorizontalAlignment="Right" VerticalAlignment="Bottom" ContentStringFormat="{}{0} :"
+                                   Content="{Binding ResourceKeys[LID_Label_Probe], Source={StaticResource ScoutUILanguageResource}}"
+                                   Style="{StaticResource ReportCommonLabelStyle}" />
                             <Label Grid.Row="2" Grid.Column="2" Style="{StaticResource ReportCommonLabelStyle}"
                                    HorizontalAlignment="Left" VerticalAlignment="Bottom" Padding="5,0,0,0"
                                    Foreground="{DynamicResource GenericVeryDark}"
@@ -435,6 +482,7 @@
 
                 </Grid>
             </Grid>
+
             <Grid Grid.Row="1">                
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="10" />
@@ -980,20 +1028,21 @@
                         </Button>
                     </StackPanel>
                 </GroupBox>
-				<GroupBox Grid.Column="3" 
+                <GroupBox Grid.Column="3" 
                     Header="{Binding ResourceKeys[LID_Label_InitializeSampleDeck], Source={StaticResource ScoutUILanguageResource}}"
                           Style="{StaticResource ServiceGroupBox}" Background="{StaticResource LowLevelBackground}"
                           HorizontalAlignment="Stretch"
                           VerticalAlignment="Stretch" FontSize="16" Foreground="{DynamicResource GenericVeryLight}">
-					<Grid>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="60" />
-							<RowDefinition Height="70" />
-							<RowDefinition Height="50" />
-							<RowDefinition Height="*" />
-						</Grid.RowDefinitions>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="60" />
+                            <RowDefinition Height="70" />
+                            <RowDefinition Height="50" />
 
-						<Button Grid.Row="0" Command="{Binding RepetitionSectionCommand}" Width="100"
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
+
+                        <Button Grid.Row="0" Command="{Binding RepetitionSectionCommand}" Width="100"
                                 IsEnabled="{Binding IsRepetitionRunning,Mode=TwoWay}"
                                 HorizontalAlignment="Left" Margin="20,0,0,0"
                                 CommandParameter="Initialize"
@@ -1001,158 +1050,157 @@
                                 Focusable="True" TabIndex="18"
                                 Style="{StaticResource LowLevelButtonStyle}" />
 
-						<Grid Grid.Row="1">
+                        <Grid Grid.Row="1">
 
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="60*" />
-								<ColumnDefinition Width="Auto" />
-								<ColumnDefinition Width="60*" />
-							</Grid.ColumnDefinitions>
-
-							<Grid.Style>
-								<Style TargetType="Grid">
-									<Style.Triggers>
-										<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="60*" />
+                                <ColumnDefinition Width="Auto" />
+                                <ColumnDefinition Width="60*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                      Value="{x:Static enum:eSensorStatus.ssStateActive}">
-											<Setter Property="IsEnabled" Value="True" />
-										</DataTrigger>
-										<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                      Value="{x:Static enum:eSensorStatus.ssStateInactive}">
-											<Setter Property="IsEnabled" Value="True" />
-										</DataTrigger>
-										<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                      Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
-											<Setter Property="IsEnabled" Value="False" />
-										</DataTrigger>
-									</Style.Triggers>
-								</Style>
-							</Grid.Style>
-							<Label FontSize="16" Foreground="{DynamicResource GenericVeryLight}" HorizontalAlignment="Right"
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Label FontSize="16" Foreground="{DynamicResource GenericVeryLight}" HorizontalAlignment="Right"
                                    VerticalAlignment="Center" FontWeight="Normal" ContentStringFormat="{}{0} :">
-								<Label.Style>
-									<Style BasedOn="{StaticResource ReportCommonLabelStyle }" TargetType="Label">
-										<Style.Triggers>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                <Label.Style>
+                                    <Style BasedOn="{StaticResource ReportCommonLabelStyle }" TargetType="Label">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                          Value="{x:Static enum:eSensorStatus.ssStateActive}">
-												<Setter Property="Content"
+                                                <Setter Property="Content"
                                                         Value="{Binding ResourceKeys[LID_Label_Carousel], Source={StaticResource ScoutUILanguageResource}}" />
-											</DataTrigger>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                          Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
-												<Setter Property="Content"
+                                                <Setter Property="Content"
                                                         Value="{Binding ResourceKeys[LID_Label_Carousel], Source={StaticResource ScoutUILanguageResource}}" />
-											</DataTrigger>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                          Value="{x:Static enum:eSensorStatus.ssStateInactive}">
-												<Setter Property="Content"
+                                                <Setter Property="Content"
                                                         Value="{Binding ResourceKeys[LID_Label_96Well], Source={StaticResource ScoutUILanguageResource}}" />
-											</DataTrigger>
-										</Style.Triggers>
-									</Style>
-								</Label.Style>
-							</Label>
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </Label.Style>
+                            </Label>
 
-							<ComboBox Name="sampleRowPosition" Grid.Column="1" Height="30" HorizontalAlignment="Left"
+                            <ComboBox Name="sampleRowPosition" Grid.Column="1" Height="30" HorizontalAlignment="Left"
                                       ItemsSource="{Binding GridColumnPositionList}" DisplayMemberPath="Value"
                                       SelectedValuePath="Key"
                                       SelectedItem="{Binding Path= SelectedColumnPosition,Mode=TwoWay}">
-								<ComboBox.Style>
-									<Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
-										<Style.Triggers>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                <ComboBox.Style>
+                                    <Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                          Value="{x:Static enum:eSensorStatus.ssStateActive}">
-												<Setter Property="Width" Value="0" />
-												<Setter Property="Visibility" Value="Collapsed" />
-											</DataTrigger>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                <Setter Property="Width" Value="0" />
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                             </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                          Value="{x:Static enum:eSensorStatus.ssStateInactive}">
-												<Setter Property="Width" Value="55" />
-												<Setter Property="Visibility" Value="Visible" />
-											</DataTrigger>
-										</Style.Triggers>
-									</Style>
-								</ComboBox.Style>
-							</ComboBox>
+                                                <Setter Property="Width" Value="55" />
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                            </ComboBox>
 
-							<ComboBox Name="sampleColumnPosition" Grid.Column="2" Width="55" Height="30" HorizontalAlignment="Left"
+                            <ComboBox Name="sampleColumnPosition" Grid.Column="2" Width="55" Height="30" HorizontalAlignment="Left"
                                       ItemsSource="{Binding GridRowPositionList}" DisplayMemberPath="Value"
                                       SelectedItem="{Binding Path= SelectedGridRowPosition,Mode=TwoWay}">
-								<ComboBox.Style>
-									<Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
-										<Style.Triggers>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                <ComboBox.Style>
+                                    <Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                          Value="{x:Static enum:eSensorStatus.ssStateActive}">
-												<Setter Property="Visibility" Value="Collapsed" />
-											</DataTrigger>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                          Value="{x:Static enum:eSensorStatus.ssStateInactive}">
-												<Setter Property="Visibility" Value="Visible" />
-											</DataTrigger>
-										</Style.Triggers>
-									</Style>
-								</ComboBox.Style>
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
 
-							</ComboBox>
-							<ComboBox Name="CarouselColumnPosition" Grid.Column="2" Width="55" Height="30" HorizontalAlignment="Left"
+                            </ComboBox>
+                            <ComboBox Name="CarouselColumnPosition" Grid.Column="2" Width="55" Height="30" HorizontalAlignment="Left"
                                       ItemsSource="{Binding PositionList}" DisplayMemberPath="Value"
                                       TabIndex="19"
                                       SelectedItem="{Binding Path= SelectedPosition,Mode=TwoWay}">
-								<ComboBox.Style>
-									<Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
-										<Style.Triggers>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                <ComboBox.Style>
+                                    <Style BasedOn="{StaticResource SettingComboBox}" TargetType="ComboBox">
+                                        <Style.Triggers>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                          Value="{x:Static enum:eSensorStatus.ssStateActive}">
-												<Setter Property="Visibility" Value="Visible" />
-											</DataTrigger>
-											<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                                <Setter Property="Visibility" Value="Visible" />
+                                            </DataTrigger>
+                                            <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                          Value="{x:Static enum:eSensorStatus.ssStateInactive}">
-												<Setter Property="Visibility" Value="Collapsed" />
-											</DataTrigger>
-										</Style.Triggers>
-									</Style>
-								</ComboBox.Style>
-							</ComboBox>
+                                                <Setter Property="Visibility" Value="Collapsed" />
+                                            </DataTrigger>
+                                        </Style.Triggers>
+                                    </Style>
+                                </ComboBox.Style>
+                            </ComboBox>                  
 
-						</Grid>
-						<Grid Grid.Row="2">
+                        </Grid>
+                        <Grid Grid.Row="2">
 
-							<Grid.ColumnDefinitions>
-								<ColumnDefinition Width="20" />
-								<ColumnDefinition Width="120" />
-								<ColumnDefinition Width="50" />
-							</Grid.ColumnDefinitions>
-							<Grid.Style>
-								<Style TargetType="Grid">
-									<Style.Triggers>
-										<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="20" />
+                                <ColumnDefinition Width="120" />
+                                <ColumnDefinition Width="50" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.Style>
+                                <Style TargetType="Grid">
+                                    <Style.Triggers>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                      Value="{x:Static enum:eSensorStatus.ssStateActive}">
-											<Setter Property="IsEnabled" Value="True" />
-										</DataTrigger>
-										<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus }"
                                                      Value="{x:Static enum:eSensorStatus.ssStateInactive}">
-											<Setter Property="IsEnabled" Value="True" />
-										</DataTrigger>
-										<DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
+                                            <Setter Property="IsEnabled" Value="True" />
+                                        </DataTrigger>
+                                        <DataTrigger Binding="{Binding ElementName=rbCarousel,Path=SensorStatus}"
                                                      Value="{x:Static enum:eSensorStatus.ssStateUnknown}">
-											<Setter Property="IsEnabled" Value="False" />
-										</DataTrigger>
-									</Style.Triggers>
-								</Style>
-							</Grid.Style>
-							<Label Grid.Column="1"
+                                            <Setter Property="IsEnabled" Value="False" />
+                                        </DataTrigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Grid.Style>
+                            <Label Grid.Column="1"
                                    Content="{Binding ResourceKeys[LID_Label_GoToPosition], Source={StaticResource ScoutUILanguageResource}}"
                                    ContentStringFormat="{}{0} :" HorizontalAlignment="Right" VerticalAlignment="Center"
                                    FontWeight="Normal" Foreground="{DynamicResource GenericVeryLight}" />
-							<Button Grid.Column="2" Height="35" Width="35"
+                            <Button Grid.Column="2" Height="35" Width="35"
                                     Style="{StaticResource RoundButtonDashBoardStyle}"
                                     Focusable="True" TabIndex="20"
                                     Command="{Binding CarouselPositionCommand}" VerticalAlignment="Center">
-								<Image Source="{StaticResource NextSource}" />
-							</Button>
-						</Grid>
-					</Grid>
-				</GroupBox>
-			</Grid>
+                                <Image Source="{StaticResource NextSource}" />
+                            </Button>
+                        </Grid>
+                    </Grid>
+                </GroupBox>
+            </Grid>
         </Grid>
     </Grid>
 </UserControl>
