@@ -4160,13 +4160,35 @@ Do you want to continue?</value>
   <data name="LID_Status_Processing" xml:space="preserve">
     <value>Processing</value>
   </data>
-  <data name="LID_Label_LCDWorkflowType" xml:space="preserve">
+  <!--<data name="LID_Label_LCDWorkflowType" xml:space="preserve">
     <value>Low Cell Density</value>
+  </data>-->
+  <!--<data name="LID_Label_LCDWorkflowWithUnits" xml:space="preserve">
+    <value>Low Cell Density (172uL)</value>
+  </data>-->
+
+
+  <data name="LID_Label_FluidicType_1" xml:space="preserve">
+    <value>200ul (1:1)</value>
   </data>
-  <data name="LID_Label_LCDWorkflowWithUnits" xml:space="preserve">
+  <data name="LID_Label_FluidicTypeWithUnits_1" xml:space="preserve">
     <value>Low Cell Density (172uL)</value>
   </data>
-  <data name="LID_Label_NormalWorkflowType" xml:space="preserve">
+	<data name="LID_Label_FluidicType_2" xml:space="preserve">
+    <value>50ul (1:4)</value>
+  </data>
+	<data name="LID_Label_FluidicTypeWithUnits_2" xml:space="preserve">
+    <value>Low Cell Density (172uL)</value>
+  </data>
+	<data name="LID_Label_FluidicType_3" xml:space="preserve">
+    <value>25ul (1:8)</value>
+  </data>
+	<data name="LID_Label_FluidicTypeWithUnits_3" xml:space="preserve">
+    <value>Low Cell Density (172uL)</value>
+  </data>
+
+
+	<data name="LID_Label_NormalWorkflowType" xml:space="preserve">
     <value>Normal</value>
   </data>
   <data name="LID_Label_NormalWorkflowWithUnits" xml:space="preserve">

@@ -83,7 +83,9 @@
 
             <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,30,0">
 
-                <Button Style="{StaticResource InstrumentStatusRoundButtonStyle}" Command="{Binding InstrumentStatusCommand}" Uid="btnInstrumentStatus" TabIndex="2">
+                <Button Style="{StaticResource InstrumentStatusRoundButtonStyle}" 
+					Visibility="{Binding IsVisible, Converter={StaticResource BooleanToVisibilityConverter}}"
+					Command="{Binding InstrumentStatusCommand}" Uid="btnInstrumentStatus" TabIndex="2">
                     <Grid>
                         <controls:OutlinedTextBlock Text="{Binding WasteTrayCapacity, FallbackValue=101}" Panel.ZIndex="1000"
                                                     HorizontalAlignment="Center" Margin="0,25,1,0" FontWeight="Bold" FontSize="16" 

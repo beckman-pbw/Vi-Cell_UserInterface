@@ -1,24 +1,24 @@
-﻿// ***********************************************************************
-// <copyright file="QueueManagement.cs" company="Beckman Coulter Life Sciences">
-//     Copyright (C) 2019 Beckman Coulter Life Sciences. All rights reserved.
-// </copyright>
-// <summary></summary>
-// ***********************************************************************
-
-using System;
+﻿using System;
 using System.ComponentModel;
-
 
 namespace ScoutUtilities.Enums
 {
    
     public enum SamplePostWash : UInt16
     {
-        [Description("LID_Label_NormalWorkflowType")] NormalWash = 0,
-        [Description("LID_Label_LCDWorkflowType")] FastWash
+        //[Description("LID_Label_NormalWorkflowType")] NormalWash = 0,
+        //[Description("LID_Label_LCDWorkflowType")] FastWash
+        [Description("LID_Label_FluidicType_1")] NormalWash = 0,
+        [Description("LID_Label_FluidicType_2")] FastWash
     }
 
-  
+    public enum FluidicCycleVolume : UInt16
+    {
+        [Description("LID_Label_FluidicType_1")] FluidicCycleVolume_1 = 0,
+        [Description("LID_Label_FluidicType_2")] FluidicCycleVolume_2,
+        [Description("LID_Label_FluidicType_3")] FluidicCycleVolume_3,
+    }
+
     public enum SubstrateType : UInt16
     {
         NoType = 0,

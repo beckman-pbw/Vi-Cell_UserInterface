@@ -20,15 +20,18 @@ namespace ScoutUI.Common.Converters
                 switch (wash)
                 {
                     case SamplePostWash.NormalWash:
-                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_NormalWorkflowWithUnits"));
+//                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_NormalWorkflowWithUnits"));
+                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_FluidicType_1"));
                         break;
                     case SamplePostWash.FastWash:
-                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_LCDWorkflowWithUnits"));
+//                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_LCDWorkflowWithUnits"));
+                        displayWashList.Add(LanguageResourceHelper.Get("LID_Label_FluidicType_2"));
                         break;
                     default:
                         return null;
                 }
             }
+
             return displayWashList;
         }
 

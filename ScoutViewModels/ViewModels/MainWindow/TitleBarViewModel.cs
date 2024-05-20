@@ -638,5 +638,20 @@ namespace ScoutViewModels.ViewModels
         #endregion
 
         #endregion
+
+        public bool IsVisible
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_GO_Instrument)
+                {
+                    return false;
+                }
+                return GetProperty<bool>();
+            }
+
+            set { SetProperty(value); }
+        }
     }
+
 }

@@ -298,9 +298,17 @@ namespace ScoutViewModels.ViewModels.Reports
                     HardwareManager.HardwareSettingsModel.HardwareSettingsDomain.ImageAnalysisSoftwareVersion);
                 AddReportTableTemplateToSampleDetailList(reportTableTemplateObj);
 
-                string str;
-                string substrateTypeStr = ExportModel.SubstrateAsString(_sampleRecord.SubstrateType);
+                string substrateTypeStr;
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_GO_Instrument)
+                {
+                    substrateTypeStr = "SampleCup";
+                }
+                else
+                {
+                    substrateTypeStr = ExportModel.SubstrateAsString(_sampleRecord.SubstrateType);
+                }
 
+                string str;
                 if (substrateTypeStr == ApplicationConstants.PlateName)
                 {
 					str = substrateTypeStr + "-" + _sampleRecord.Position.Row + "-" + _sampleRecord.Position.Column;

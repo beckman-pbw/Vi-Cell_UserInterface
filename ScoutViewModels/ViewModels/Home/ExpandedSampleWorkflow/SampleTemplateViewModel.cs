@@ -1,22 +1,17 @@
 ﻿using HawkeyeCoreAPI.Facade;
-using ScoutDataAccessLayer.DAL;
 using ScoutDomains;
 using ScoutDomains.Analysis;
 using ScoutModels;
-using ScoutModels.Admin;
 using ScoutModels.Settings;
 using ScoutUtilities;
 using ScoutUtilities.Common;
 using ScoutUtilities.CustomEventArgs;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
-using ScoutUtilities.Helper;
 using ScoutViewModels.ViewModels.ExpandedSampleWorkflow;
 using System;
 using System.Collections.ObjectModel;
-using System.Linq;
 using ScoutDomains.EnhancedSampleWorkflow;
-using ScoutServices;
 using ScoutServices.Interfaces;
 using ScoutViewModels.Interfaces;
 
@@ -344,5 +339,19 @@ namespace ScoutViewModels.ViewModels.Home.ExpandedSampleWorkflow
         }
 
         #endregion
+
+        public bool IsVisible
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_GO_Instrument)
+                {
+                    return false;
+                }
+                return GetProperty<bool>();
+            }
+
+            set { SetProperty(value); }
+        }
     }
 }
