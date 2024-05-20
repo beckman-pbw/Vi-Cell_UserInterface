@@ -2,7 +2,6 @@
 using HawkeyeCoreAPI.Facade;
 using ScoutDataAccessLayer.DAL;
 using ScoutDomains;
-using ScoutDomains.Common;
 using ScoutDomains.DataTransferObjects;
 using ScoutDomains.EnhancedSampleWorkflow;
 using ScoutLanguageResources;
@@ -10,7 +9,6 @@ using ScoutModels;
 using ScoutModels.Common;
 using ScoutModels.ExpandedSampleWorkflow;
 using ScoutModels.Home.QueueManagement;
-using ScoutModels.Service;
 using ScoutModels.Settings;
 using ScoutUtilities;
 using ScoutUtilities.Common;
@@ -27,7 +25,6 @@ using System.Collections.Specialized;
 using System.Linq;
 using System.Threading.Tasks;
 using ScoutDomains.RunResult;
-using ScoutModels.Review;
 using ScoutServices.Interfaces;
 
 // ReSharper disable once RedundantUsingDirective
@@ -42,9 +39,6 @@ using SubstrateType = ScoutUtilities.Enums.SubstrateType;
 using ScoutViewModels.Interfaces;
 using ScoutServices.Enums;
 using System.Threading;
-using System.Windows;
-using ScoutServices;
-using log4net;
 
 namespace ScoutViewModels.ViewModels.Home
 {

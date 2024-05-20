@@ -4731,7 +4731,7 @@ Do you want to continue?</value>
     <value>Current Lot</value>
   </data>
   <data name="LID_Label_AutomationCup" xml:space="preserve">
-    <value>Sample Cup</value>
+    <value>Automation Cup</value>
   </data>
   <data name="LID_MSGBOX_AutomationNightCleaning" xml:space="preserve">
     <value>Cleaning for automation is in progress</value>

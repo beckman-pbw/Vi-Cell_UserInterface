@@ -1,14 +1,11 @@
-﻿using ApiProxies.Generic;
-using ScoutDomains;
+﻿using ScoutDomains;
 using ScoutDomains.Reports;
-using ScoutLanguageResources;
 using ScoutModels;
 using ScoutModels.Reports;
 using ScoutUtilities.Common;
 using ScoutUtilities.Enums;
 using ScoutUtilities.Events;
 using ScoutViewModels.Interfaces;
-using System;
 using System.Collections.Generic;
 
 namespace ScoutViewModels.ViewModels.Reports

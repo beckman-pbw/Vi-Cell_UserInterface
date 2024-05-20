@@ -1,5 +1,6 @@
 ﻿using ScoutDomains;
 using ScoutUtilities.Common;
+using ScoutUtilities.Enums;
 using System.Collections.Generic;
 
 namespace ScoutModels.Reports
@@ -96,29 +97,40 @@ namespace ScoutModels.Reports
 
         private List<ReportsDomain> LoadReportLogsNameList()
         {
-            var logsNameList = new List<ReportsDomain>
+            var logsNameList = new List<ReportsDomain>();
+            ReportsDomain temp;
+
+            if (HardwareManager.HardwareSettingsModel.InstrumentType != InstrumentType.ViCELL_GO_Instrument)
             {
-                new ReportsDomain
+                temp = new ReportsDomain
                 {
                     ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_AuditLog"),
                     ReportId = 1
-                },
-                new ReportsDomain
-                {
-                    ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_SampleActivity"),
-                    ReportId = 2
-                },
-                new ReportsDomain
-                {
-                    ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_SystemError"),
-                    ReportId = 3
-                },
-                new ReportsDomain
-                {
-                    ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_CalibraionLog"),
-                    ReportId = 4
-                }
+                };
+                logsNameList.Add(temp);
+            }
+
+            temp = new ReportsDomain
+            {
+                ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_SampleActivity"),
+                ReportId = 2
             };
+            logsNameList.Add(temp);
+
+            temp = new ReportsDomain
+            {
+                ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_SystemError"),
+                ReportId = 3
+            };
+            logsNameList.Add(temp);
+
+            temp = new ReportsDomain
+            {
+                ReportLogName = ScoutLanguageResources.LanguageResourceHelper.Get("LID_LogsList_CalibraionLog"),
+                ReportId = 4
+            };
+            logsNameList.Add(temp);
+
             if ((LoggedInUser.CurrentUserRoleId == ScoutUtilities.Enums.UserPermissionLevel.eAdministrator) ||
                 (LoggedInUser.CurrentUserRoleId == ScoutUtilities.Enums.UserPermissionLevel.eService))
             {
