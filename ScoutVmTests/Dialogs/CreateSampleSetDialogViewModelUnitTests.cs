@@ -368,8 +368,7 @@ namespace ScoutViewModelTests.Dialogs
             var autoMock = new Mock<IAutomationSettingsService>();
             autoMock.Setup(m => m.GetAutomationConfig()).Returns(automationConfig);
 
-            var vm = viewModelFactory.CreateCreateSampleSetDialogViewModel(args, null, colorServiceMock.Object, _runOptions,
-                autoMock.Object);
+            var vm = viewModelFactory.CreateCreateSampleSetDialogViewModel(args, null, colorServiceMock.Object, _runOptions, autoMock.Object);
             return vm;
         }
 

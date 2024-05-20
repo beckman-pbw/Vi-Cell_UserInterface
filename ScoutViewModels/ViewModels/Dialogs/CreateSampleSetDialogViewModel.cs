@@ -1,6 +1,4 @@
 ﻿using ApiProxies.Generic;
-using HawkeyeCoreAPI.Facade;
-using ScoutDataAccessLayer.DAL;
 using ScoutLanguageResources;
 using ScoutModels;
 using ScoutModels.Common;
@@ -24,7 +22,6 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Windows;
-using ScoutServices.Interfaces;
 
 namespace ScoutViewModels.ViewModels.Dialogs
 {
@@ -85,8 +82,10 @@ namespace ScoutViewModels.ViewModels.Dialogs
                                          .ToObservableCollection();
 
                         if (Misc.ByteToBool(_automationConfig.ACupIsEnabled))
+                        {
                             PlateTypes.Add(SubstrateType.AutomationCup);
-					
+                        }
+
                         SelectedPlateType = PlateTypes.FirstOrDefault(t => t == args.InitialSubstrateType);
                         if (default == SelectedPlateType)
                         {
@@ -97,10 +96,11 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
                     case InstrumentType.CellHealth_ScienceModule:
                     case InstrumentType.ViCELL_GO_Instrument:
+                    default:
                         PlateTypes = new ObservableCollection<SubstrateType>()
-				        {
-					        SubstrateType.AutomationCup
-				        };
+                        {
+                            SubstrateType.AutomationCup
+                        };
                         break;
                 }
 

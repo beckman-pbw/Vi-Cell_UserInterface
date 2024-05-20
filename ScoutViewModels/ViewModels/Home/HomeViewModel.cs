@@ -42,6 +42,9 @@ using SubstrateType = ScoutUtilities.Enums.SubstrateType;
 using ScoutViewModels.Interfaces;
 using ScoutServices.Enums;
 using System.Threading;
+using System.Windows;
+using ScoutServices;
+using log4net;
 
 namespace ScoutViewModels.ViewModels.Home
 {
@@ -66,6 +69,7 @@ namespace ScoutViewModels.ViewModels.Home
             WorkListSampleTemplate = _viewModelFactory.CreateUserSampleTemplateViewModel();
             OrphanSampleTemplate = _viewModelFactory.CreateOrphanSampleTemplateViewModel();
             OrphanSampleTemplate.CopyFrom(WorkListSampleTemplate);
+            //VCRButtonsAreVisible = (lockManager.IsLocked() ? false : true) && ShowEjectButton == true;
             VCRButtonsAreVisible = lockManager.IsLocked() ? false : true;
             WorkListSampleTemplateIsVisible = true;
             _worklistMutex = new EventWaitHandle (false, EventResetMode.ManualReset);
@@ -1088,7 +1092,8 @@ namespace ScoutViewModels.ViewModels.Home
 
         private void LockStatusChanged(LockResult res)
         {
-            VCRButtonsAreVisible = (res == LockResult.Locked ? false : true);
+//            VCRButtonsAreVisible = (res == LockResult.Locked ? false : true) && ShowEjectButton == true;
+            VCRButtonsAreVisible = res == LockResult.Locked ? false : true;
             UpdateButtons();
         }
 
@@ -1445,5 +1450,20 @@ namespace ScoutViewModels.ViewModels.Home
         #endregion // Play Button Command
 
         #endregion // Commands
+
+        public bool ShowEjectButton
+        {
+            get
+            {
+                if (VCRButtonsAreVisible || HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_GO_Instrument)
+                {
+                    return false;
+                }
+                return GetProperty<bool>();
+            }
+
+            set { SetProperty(value); }
+        }
+
     }
 }
