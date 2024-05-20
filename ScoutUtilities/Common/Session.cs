@@ -20,6 +20,7 @@ namespace ScoutUtilities.Common
         public const string OpenSampleDialog_FromDate = "OpenSampleDialog_FromDate";
         public const string OpenSampleDialog_ToDate = "OpenSampleDialog_ToDate";
 
+        public const string CompletedRuns_PrintTitle = "CompletedRuns_PrintTitle";
         public const string CompletedRuns_Comments = "CompletedRuns_Comments";
         public const string CompletedRuns_SelectedUser = "CompletedRuns_SelectedUser";
         public const string CompletedRuns_FromDate = "CompletedRuns_FromDate";

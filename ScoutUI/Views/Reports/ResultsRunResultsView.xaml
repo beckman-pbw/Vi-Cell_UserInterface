@@ -82,10 +82,10 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0"
-                       Content="{Binding ResourceKeys[LID_Label_PrintTitle], Source={StaticResource ScoutUILanguageResource}}"
+                       Content="{Binding PrintTitle}"
                        Style="{StaticResource ReportCommonLabelStyle}" Margin="0,0,15,0" />
                 <TextBox Grid.Column="1" Style="{StaticResource ResultTextBoxStyle}" MaxLength="30"
-                         Text="{Binding ApplicationVersion}" BorderThickness="0"
+                         Text="{Binding PrintTitle,Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}" BorderThickness="0"
                          HorizontalAlignment="Left"
                          commonHelper:ControlValidationHelper.TrimText="True"
                          Height="40" Width="300" />

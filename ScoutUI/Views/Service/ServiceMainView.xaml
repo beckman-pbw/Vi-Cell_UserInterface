@@ -79,8 +79,8 @@
                                 <ContentControl Content="{Binding OpticsControlsCommonContent}" Focusable="False" KeyboardNavigation.IsTabStop="False" KeyboardNavigation.TabNavigation="Local"/>
                             </TabItem>
 
-							<TabItem Name="tbiMotorReg" Style="{StaticResource CommonTabItemStyle}" Visibility="{Binding ShowAll}">
-								<TabItem.HeaderTemplate>
+                            <TabItem Name="tbiMotorReg" Style="{StaticResource CommonTabItemStyle}" Visibility="{Binding ShowAll}">
+                                <TabItem.HeaderTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
                                             <Rectangle Width="30" Height="30" Margin="4">

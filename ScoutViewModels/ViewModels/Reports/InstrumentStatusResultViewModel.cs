@@ -65,6 +65,12 @@ namespace ScoutViewModels.ViewModels.Reports
             set { SetProperty(value); }
         }
 
+        public string PrintTitle
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty(value); }
+        }
+
         public string Comment
         {
             get { return GetProperty<string>(); }
@@ -116,6 +122,7 @@ namespace ScoutViewModels.ViewModels.Reports
             OnInstrumentTypeSelectionChangedCommand = new RelayCommand(OnInstrumentTypeSelectionChangedExecute, null);
             PrintCommand = new RelayCommand(PrintExecute, null);
             LoadParameterList();
+            PrintTitle = ApplicationVersion;
             _statusSubscriber = _instrumentStatusService.SubscribeToSystemStatusCallback().Subscribe((OnSystemStatusChanged));
         }
 

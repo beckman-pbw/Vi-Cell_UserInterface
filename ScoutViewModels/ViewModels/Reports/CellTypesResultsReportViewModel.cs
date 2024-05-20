@@ -48,6 +48,7 @@ namespace ScoutViewModels.ViewModels.Reports
             PrintCommand = new RelayCommand(PrintExecute, null);
             UserList = new List<UserDomain>(SettingsModel.UserModel.UserList);
             SetUserList();
+            PrintTitle = ApplicationVersion;
             IsPrintCommandEnabled = true;
             IsUserListEnable = !LoggedInUser.CurrentUserRoleId.Equals(UserPermissionLevel.eNormal);
 
@@ -78,6 +79,12 @@ namespace ScoutViewModels.ViewModels.Reports
         public ResultModel ResultModel { get; set; }
 
         public SettingsModel SettingsModel;
+
+        public string PrintTitle
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty(value); }
+        }
 
         public string Comments
         {
@@ -161,7 +168,7 @@ namespace ScoutViewModels.ViewModels.Reports
                 {
                     DispatcherHelper.ApplicationExecute(() =>
                     {
-                        var cellTypeReportViewModel = new CellTypesReportViewModel(SelectedUser.UserID, ApplicationVersion, Comments, CellList);
+                        var cellTypeReportViewModel = new CellTypesReportViewModel(SelectedUser.UserID, PrintTitle, Comments, CellList);
                         cellTypeReportViewModel.LoadReport();
                         PublishReportProgressIndication(false);
                         ReportEventBus.CellTypesReport(this, cellTypeReportViewModel);

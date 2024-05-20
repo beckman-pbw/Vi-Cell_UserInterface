@@ -159,6 +159,7 @@ namespace ScoutModels
             userSession.SetVariable(SessionKey.CompletedRuns_FromDate, defaultFromDate);
             userSession.SetVariable(SessionKey.CompletedRuns_ToDate, defaultToDate);
             userSession.SetVariable(SessionKey.CompletedRuns_Comments, string.Empty);
+            userSession.SetVariable(SessionKey.CompletedRuns_PrintTitle, $"{HardwareManager.HardwareSettingsModel.ApplicationVersion}");
 
             // StorageTab VM
             userSession.SetVariable(SessionKey.StorageTab_FromDate, defaultFromDate);

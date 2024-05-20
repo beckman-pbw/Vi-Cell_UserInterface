@@ -60,28 +60,49 @@ namespace ScoutViewModels.ViewModels.Dialogs
 
                 var samplePosition = _instrumentStatusService.SystemStatusDom.SamplePosition;
                 CarouselModel.Instance.SetTopCarouselPosition(samplePosition.Column);
+
                 var hideWells = args.WorkListStatus == WorkListStatus.Paused || args.WorkListStatus == WorkListStatus.Running;
-                CarouselVm = new CarouselViewModel(SampleTemplate, SampleSet, LoggedInUser.GetCtQcs(), hideWells,
-                    colorBrushService, runOptionSettings);
+
+                CarouselVm = new CarouselViewModel(SampleTemplate, SampleSet, LoggedInUser.GetCtQcs(), hideWells, colorBrushService, runOptionSettings);
                 CarouselVm.WellWasClicked += CarouselVmWellWasClicked;
 
-                PlateVm = new PlateViewModel(SampleTemplate, SampleSet, LoggedInUser.GetCtQcs(), true,
-                    colorBrushService, runOptionSettings);
+                PlateVm = new PlateViewModel(SampleTemplate, SampleSet, LoggedInUser.GetCtQcs(), true, colorBrushService, runOptionSettings);
                 PlateVm.WellWasClicked += PlateVmWellWasClicked;
 
-                AutoCupVm = new AutomationCupViewModel(SampleTemplate, SampleSet, LoggedInUser.GetCtQcs(),
-                    colorBrushService, runOptionSettings);
+                AutoCupVm = new AutomationCupViewModel(SampleTemplate, SampleSet, LoggedInUser.GetCtQcs(), colorBrushService, runOptionSettings);
                 AutoCupVm.WellWasClicked += AutomationCupVmWellWasClicked;
 
                 CarouselVm.SampleTemplate.SequentialNamingItems.ResetSequenceNumbering();
                 PlateVm.SampleTemplate.SequentialNamingItems.ResetSequenceNumbering();
                 AutoCupVm.SampleTemplate.SequentialNamingItems.ResetSequenceNumbering();
 
-				// Only the A-Cup is supported in CellHealth.
-				PlateTypes = new ObservableCollection<SubstrateType>()
-				{
-					SubstrateType.AutomationCup
-				};
+                switch (HardwareManager.HardwareSettingsModel.InstrumentType)
+                {
+                    case InstrumentType.ViCELL_BLU_Instrument:
+                        PlateTypes = Enum.GetValues(typeof(SubstrateType))
+                                         .Cast<SubstrateType>()
+                                         .Where(e => e != SubstrateType.NoType && e != SubstrateType.AutomationCup) // don't show the "None" option
+                                         .ToObservableCollection();
+
+                        if (Misc.ByteToBool(_automationConfig.ACupIsEnabled))
+                            PlateTypes.Add(SubstrateType.AutomationCup);
+					
+                        SelectedPlateType = PlateTypes.FirstOrDefault(t => t == args.InitialSubstrateType);
+                        if (default == SelectedPlateType)
+                        {
+                            // Handle case where the last used substrate type (most likely ACup) is no longer available.
+                            SelectedPlateType = PlateTypes.FirstOrDefault();
+                        }
+                        break;
+
+                    case InstrumentType.CellHealth_ScienceModule:
+                    case InstrumentType.ViCELL_GO_Instrument:
+                        PlateTypes = new ObservableCollection<SubstrateType>()
+				        {
+					        SubstrateType.AutomationCup
+				        };
+                        break;
+                }
 
                 // Handle case where the last used substrate type (most likely ACup) is no longer available.
                 SelectedPlateType = PlateTypes.FirstOrDefault();
@@ -273,6 +294,21 @@ namespace ScoutViewModels.ViewModels.Dialogs
         public bool AllowSubstrateChanges
         {
             get { return GetProperty<bool>(); }
+            set { SetProperty(value); }
+        }
+
+        public Visibility ShowCarrierTypeSelector
+        {
+            get
+            {
+                if (HardwareManager.HardwareSettingsModel.InstrumentType == InstrumentType.ViCELL_BLU_Instrument)
+                {
+                    return GetProperty<Visibility>();
+                }
+
+                return Visibility.Collapsed;
+            }
+
             set { SetProperty(value); }
         }
 

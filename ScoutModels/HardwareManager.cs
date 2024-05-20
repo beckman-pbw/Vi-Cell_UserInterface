@@ -99,7 +99,8 @@ namespace ScoutModels
                 HawkeyeCoreAPI.InitializeShutdown.InitializeAPI(out ushort instrumentType, IsFromHardware);
                 _hardwareSettingsModel.InstrumentType = (InstrumentType)instrumentType;
 //TODO: for debugging as Vi-Cell_BLU...
-                //_hardwareSettingsModel.InstrumentType = InstrumentType.ViCELL_BLU_Instrument;
+//                _hardwareSettingsModel.InstrumentType = InstrumentType.ViCELL_BLU_Instrument;
+                _hardwareSettingsModel.InstrumentType = InstrumentType.ViCELL_GO_Instrument;
 
                 State = InitializationState.eInitializationInProgress;
                 _logger.Info("StartHardwareInitialize: InitializationState: " + State);

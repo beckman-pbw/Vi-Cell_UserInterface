@@ -8,5 +8,10 @@ namespace ScoutUI.Views.Dialogs
         {
             InitializeComponent();
         }
+
+        private void ComboBox_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }

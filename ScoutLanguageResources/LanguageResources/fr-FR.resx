@@ -653,7 +653,7 @@
   <data name="LID_Label_SilentLoginFailed" xml:space="preserve">
     <value>L’authentification silencieuse a échoué</value>
   </data>
-  <data name="LID_Label_ViCell_SW_Version" xml:space="preserve">
+  <data name="LID_Label_ViCell__BLU_SW_Version" xml:space="preserve">
     <value>V. logiciel Vi-CELL BLU</value>
   </data>
   <data name="LID_Label_Backendversion" xml:space="preserve">
@@ -1319,8 +1319,11 @@
   <data name="LID_Label_Led" xml:space="preserve">
     <value>LED</value>
   </data>
-  <data name="LID_Title_ViCell_Name" xml:space="preserve">
+  <data name="LID_Title_ViCell_BLU_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
+  </data>
+  <data name="LID_Title_ViCell_GO_Name" xml:space="preserve">
+    <value>Vi-CELL GO</value>
   </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
     <value>Diamètre moy.</value>

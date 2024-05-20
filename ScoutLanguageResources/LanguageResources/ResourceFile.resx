@@ -510,7 +510,7 @@
     <value>Decluster degree</value>
   </data>
   <data name="LID_Label_Dilution" xml:space="preserve">
-    <value>Dilution</value>
+    <value>Pre-Dilution</value>
   </data>
   <data name="LID_Label_Disable" xml:space="preserve">
     <value>Enable</value>
@@ -662,10 +662,13 @@
   <data name="LID_Label_CHM_SW_Version" xml:space="preserve">
     <value>Cydem VT Cell Health v</value>
   </data>
-  <data name="LID_Label_ViCell_SW_Version" xml:space="preserve">
+  <data name="LID_Label_ViCell_BLU_SW_Version" xml:space="preserve">
     <value>Vi-CELL BLU v</value>
   </data>
-  <data name="LID_Label_Backendversion" xml:space="preserve">
+	<data name="LID_Label_ViCell_GO_SW_Version" xml:space="preserve">
+    <value>Vi-CELL GO v</value>
+  </data>
+	<data name="LID_Label_Backendversion" xml:space="preserve">
     <value>Backend software version</value>
   </data>
   <data name="LID_Label_SpotArea" xml:space="preserve">
@@ -852,7 +855,7 @@
     <value>Sample ID</value>
   </data>
   <data name="LID_QMgmtHEADER_Workflow" xml:space="preserve">
-    <value>Workflow</value>
+    <value>Volume (Fluidic Cycle)</value>
   </data>
   <data name="LID_RadioButton_CSV" xml:space="preserve">
     <value>*.csv</value>
@@ -1335,14 +1338,15 @@ button to repeat as needed.</value>
   <data name="LID_Title_Name" xml:space="preserve">
     <value>No name specified</value>
   </data>
-
   <data name="LID_Title_CHM_Name" xml:space="preserve">
     <value>Cydem VT Cell Health</value>
   </data>
-  <data name="LID_Title_ViCell_Name" xml:space="preserve">
+  <data name="LID_Title_ViCell_BLU_Name" xml:space="preserve">
     <value>Vi-CELL BLU</value>
   </data>
-
+  <data name="LID_Title_ViCell_GO_Name" xml:space="preserve">
+    <value>Vi-CELL GO</value>
+  </data>
   <data name="LID_Label_AvgDiameter" xml:space="preserve">
     <value>Avg. diameter</value>
   </data>
@@ -4727,7 +4731,7 @@ Do you want to continue?</value>
     <value>Current Lot</value>
   </data>
   <data name="LID_Label_AutomationCup" xml:space="preserve">
-    <value>Automation Cup</value>
+    <value>Sample Cup</value>
   </data>
   <data name="LID_MSGBOX_AutomationNightCleaning" xml:space="preserve">
     <value>Cleaning for automation is in progress</value>

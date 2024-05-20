@@ -78,7 +78,10 @@ namespace ScoutModels.Settings
                     ApplicationName = LanguageResourceHelper.Get("LID_Title_CHM_Name");
                     break;
                 case InstrumentType.ViCELL_BLU_Instrument:
-                    ApplicationName = LanguageResourceHelper.Get("LID_Title_ViCell_Name");
+                    ApplicationName = LanguageResourceHelper.Get("LID_Title_ViCell_BLU_Name");
+                    break;
+                case InstrumentType.ViCELL_GO_Instrument:
+                    ApplicationName = LanguageResourceHelper.Get("LID_Title_ViCell_GO_Name");
                     break;
                 default:
                     ApplicationName = "Unknown application name";
@@ -91,7 +94,10 @@ namespace ScoutModels.Settings
                     ApplicationVersion = LanguageResourceHelper.Get("LID_Label_CHM_SW_Version") + UISettings.SoftwareVersion;
                     break;
                 case InstrumentType.ViCELL_BLU_Instrument:
-                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_ViCell_SW_Version") + UISettings.SoftwareVersion;
+                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_ViCell_BLU_SW_Version") + UISettings.SoftwareVersion;
+                    break;
+                case InstrumentType.ViCELL_GO_Instrument:
+                    ApplicationVersion = LanguageResourceHelper.Get("LID_Label_ViCell_GO_SW_Version") + UISettings.SoftwareVersion;
                     break;
                 default:
                     ApplicationVersion = "Unknown application name: " + UISettings.SoftwareVersion;

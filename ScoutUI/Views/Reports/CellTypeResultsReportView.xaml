@@ -67,11 +67,11 @@
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
                 <Label Grid.Column="0"
-                       Content="{Binding ApplicationVersion}"
+                       Content="{Binding ResourceKeys[LID_Label_PrintTitle], Source={StaticResource ScoutUILanguageResource}}"
                        Style="{StaticResource ReportCommonLabelStyle}" Margin="10,0,5,0" />
                 <TextBox Grid.Column="1" Style="{StaticResource ResultTextBoxStyle}" MaxLength="30"
                          HorizontalAlignment="Left"
-                         Text="{Binding ApplicationVersion, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
+                         Text="{Binding PrintTitle, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
                          BorderThickness="0"
                          Height="40" Width="300" />
             </Grid>

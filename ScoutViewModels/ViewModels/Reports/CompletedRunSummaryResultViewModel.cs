@@ -43,6 +43,13 @@ namespace ScoutViewModels.ViewModels.Reports
             set { SetProperty(value); }
         }
 
+        [SessionVariable(SessionKey.CompletedRuns_PrintTitle)]
+        public string PrintTitle
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty(value); }
+        }
+
         [SessionVariable(SessionKey.CompletedRuns_Comments)]
         public string Comments
         {
@@ -116,6 +123,7 @@ namespace ScoutViewModels.ViewModels.Reports
             SetUserList();
 
             var currentUserSession = LoggedInUser.CurrentUser.Session;
+            PrintTitle = currentUserSession.GetVariable(SessionKey.CompletedRuns_PrintTitle, ApplicationVersion);
             Comments = currentUserSession.GetVariable(SessionKey.CompletedRuns_Comments, string.Empty);
 
             FromDate = DateTime.Today.AddDays(ApplicationConstants.DefaultFilterFromDaysToSubtract);
@@ -151,7 +159,7 @@ namespace ScoutViewModels.ViewModels.Reports
             {
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    var runSummaryReportViewModel = new RunSummaryReportViewModel(ApplicationVersion, Comments, ReportPrintOptionsList, AnalysisParameterList, 
+                    var runSummaryReportViewModel = new RunSummaryReportViewModel(PrintTitle, Comments, ReportPrintOptionsList, AnalysisParameterList, 
                         DefaultParameterList, SampleRecordListForPrint);
                     runSummaryReportViewModel.LoadReport();
                     PublishReportProgressIndication(false);

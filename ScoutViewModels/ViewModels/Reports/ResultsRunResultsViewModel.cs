@@ -40,7 +40,7 @@ namespace ScoutViewModels.ViewModels.Reports
             {
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    //PrintTitle = ApplicationVersion;
+                    PrintTitle = ApplicationVersion;
                     FromDate = DateTime.Today;
                     IsAutoExportPDF = true;
                     BarGraphViewList = new List<BarGraphDomain>();
@@ -121,6 +121,12 @@ namespace ScoutViewModels.ViewModels.Reports
         }
 
         public string ReportImageCaption
+        {
+            get { return GetProperty<string>(); }
+            set { SetProperty(value); }
+        }
+
+        public string PrintTitle
         {
             get { return GetProperty<string>(); }
             set { SetProperty(value); }
@@ -232,7 +238,7 @@ namespace ScoutViewModels.ViewModels.Reports
 
                 DispatcherHelper.ApplicationExecute(() =>
                 {
-                    RunResultsReportViewModel = new RunResultsReportViewModel(ApplicationVersion, ReportComments, permission, SelectedSampleRecordFromList,
+                    RunResultsReportViewModel = new RunResultsReportViewModel(PrintTitle, ReportComments, permission, SelectedSampleRecordFromList,
                         IsAutoExportPDF, ReportPrintOptionsList, GraphListForReport, GetGraphOptions(), ReportImageCaption);
 
                     RunResultsReportViewModel.LoadReport();
