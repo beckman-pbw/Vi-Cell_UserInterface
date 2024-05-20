@@ -59,13 +59,13 @@
                     <ColumnDefinition Width="6.5*"/>
                 </Grid.ColumnDefinitions>
 
-				<StackPanel Grid.Column="0" Orientation="Vertical">
+                <StackPanel Grid.Column="0" Orientation="Vertical">
                     <Border Margin="10" CornerRadius="8" Background="{DynamicResource GenericVeryLight}" Width="430">
                         <ComboBox ItemsSource="{Binding PlateTypes, Converter={StaticResource SubstrateConverter}}" Height="50"
                                   SelectedItem="{Binding SelectedPlateType, Converter={StaticResource SubstrateConverter}}" 
                                   Style="{StaticResource CustomComboBox}" FontSize="22" IsEnabled="{Binding AllowSubstrateChanges}"
                                   Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type Border}}}"
-								  Visibility="{Binding ShowCarrierTypeSelector}"/>
+                                  Visibility="{Binding ShowCarrierTypeSelector}"/>
                     </Border>
 
                     <Grid Visibility="{Binding ShowCarousel, 
