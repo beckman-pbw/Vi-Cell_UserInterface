@@ -4899,4 +4899,16 @@ Folgende Formel wird empfohlen, um den Wert zu bestimmen.</value>
   <data name="LID_CSV_Column_Header" xml:space="preserve">
     <value>COLUMN</value>
   </data>
+  <data name="LID_Label_Optics_Beckman_Allied" xml:space="preserve">
+    <value>Beckman-Beleuchtung + Allied Vision-Kamera</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Basler" xml:space="preserve">
+    <value>Beckman-Beleuchtung + Basler-Kamera</value>
+  </data>
+  <data name="LID_Label_Optics_Omicron_Basler" xml:space="preserve">
+    <value>Omicron-Beleuchtung + Basler-Kamera</value>
+  </data>
+  <data name="LID_Label_Optics_Override" xml:space="preserve">
+    <value>Optik-Konfigurationsüberschreibung</value>
+  </data>
 </root>

@@ -5006,6 +5006,18 @@ It is recommended to use the following formula to determine the value.</value>
   <data name="LID_CSV_Column_Header" xml:space="preserve">
     <value>COLUMN</value>
   </data>
+  <data name="LID_Label_Optics_Beckman_Allied" xml:space="preserve">
+    <value>Beckman Illumination + Allied Vision Camera</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Basler" xml:space="preserve">
+    <value>Beckman Illumination + Basler Camera</value>
+  </data>
+  <data name="LID_Label_Optics_Omicron_Basler" xml:space="preserve">
+    <value>Omicron Illumination + Basler Camera</value>
+  </data>
+  <data name="LID_Label_Optics_Override" xml:space="preserve">
+    <value>Optics Configuration Override</value>
+  </data>
   <data name="LID_CSV_QC_Pass" xml:space="preserve">
     <value>Pass</value>
   </data>

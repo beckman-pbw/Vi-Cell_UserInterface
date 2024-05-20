@@ -4886,4 +4886,16 @@ Use la siguiente fórmula para determinar el valor.</value>
   <data name="LID_CSV_Column_Header" xml:space="preserve">
     <value>COLUMN</value>
   </data>
+  <data name="LID_Label_Optics_Beckman_Allied" xml:space="preserve">
+    <value>Iluminación Beckman + cámara Allied Vision</value>
+  </data>
+  <data name="LID_Label_Optics_Beckman_Basler" xml:space="preserve">
+    <value>Iluminación Beckman + cámara Basler</value>
+  </data>
+  <data name="LID_Label_Optics_Omicron_Basler" xml:space="preserve">
+    <value>Iluminación Omicron + cámara Basler</value>
+  </data>
+  <data name="LID_Label_Optics_Override" xml:space="preserve">
+    <value>Anulación de configuración de óptica</value>
+  </data>
 </root>
